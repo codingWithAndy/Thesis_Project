@@ -4,20 +4,15 @@ from PyQt5.QtCore import *
 import os
 import sys
 import pygame
+from PyQt5.QtGui import *
 
 current_path = os.getcwd()
 print(current_path)
 
 
-###### Trying QT Web #######
-
 app = QApplication(sys.argv)
 web = QWebEngineView()
 web.load(QUrl("https://www.nintendo.co.uk/"))
-
-
-#########
-
 
 #class Background(pygame.sprite.Sprite):
 #    def __init__(self, image_file, location):
@@ -91,7 +86,7 @@ def text_objects(text, font):
 def button(msg, x, y, w, h, ic, ac, action=None):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
-    print(click)
+    #print(click)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, ac, (x, y, w, h))
 
@@ -106,13 +101,38 @@ def button(msg, x, y, w, h, ic, ac, action=None):
     screen.blit(textSurf, textRect)
 
 
+def web_init():
+    app = QApplication(sys.argv)
+    web = QWebEngineView()
+    web.load(QUrl("https://www.nintendo.co.uk/"))
+
+    #########
+    
+
+
 def show_web_page():
+    ###### Trying QT Web #######
+    pygame.display.quit()
+    reading = True
+    #app, web = web_init()
+    print("In show web page")
     web.show()
-    # sys.exit(app.exec_())  -> Figure out a better way to close the application
+
+    while reading:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                
+                # -> Figure out a better way to close the application
+                #web.hide()
+                #web_init()
+                reading = False
+                menu()
+        #pygame.display.update()
+    
 
 
 def menu():
-    
+    print("In menu")
     pygame.display.set_caption("Main Menu")
     window_width = 1024
     window_height = 640
@@ -168,7 +188,7 @@ def splash_screen():
     window_width = 910
     window_height = 607
     #size = (window_width, window_height)
-    set_screen_size(window_width,window_height)
+    screen = set_screen_size(window_width,window_height)
     background_image = pygame.image.load(current_path + '/Images/artificial-intelligence-codes-developing-screen.jpg').convert()
     while(dead == False):
         for event in pygame.event.get():
@@ -187,3 +207,4 @@ screen = set_screen_size(200,200)
 splash_screen()
 
 print("I am out!")
+#quit()
