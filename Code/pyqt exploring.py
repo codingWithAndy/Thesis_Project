@@ -24,10 +24,13 @@ class MyWindow(QMainWindow):
         
     def clicked(self):
         print("Clicked button")
-        t = time.time()
-        self.label.setText("you pressed the button")
+        self.label.setText("you pressed the button! \n Boom!")
+        self.update()
         self.label.repaint() # Need this to work on Mac OS
-        print(time.time()-t)
+        
+
+    def update(self):
+        self.label.adjustSize()
 
 
 
