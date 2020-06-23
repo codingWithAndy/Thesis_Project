@@ -77,6 +77,10 @@ clock = pygame.time.Clock()
 #background_image = pygame.image.load(current_path+'/Images/artificial-intelligence-codes-developing-screen.jpg').convert()
 count = 0
 
+def hide_display():
+    pygame.display.quit()
+
+
 # Creating text
 def text_objects(text, font):
     text_surface = font.render(text, True, black)
@@ -161,7 +165,7 @@ def menu():
             pygame.draw.rect(screen, green, (150, 450, 100, 50))
 
         button("GO!", 150, 450, 100, 50, green, bright_green, splash_screen)
-        button("Quit", 550, 450, 100, 50, red, bright_red, show_web_page)
+        button("Quit", 550, 450, 100, 50, red, bright_red, hide_display)
 
         '''
         # Creating buttons
