@@ -1,0 +1,30 @@
+.container {
+    width: 940px;
+    margin: auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #C3C02C;
+}
+
+.textBackground {
+    background-color: #A5A5A5;
+    margin: 10px 0px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 25px;
+}
+
+.fullPageImg {
+    width: 890px;
+    border-radius: 25px;
+    padding: 10px 10px;
+}
+
+body {
+    background-color: #2F5597;
+    color: black;
+    font-size: 1.2em;
+}
+
+h2 {
+    color: black;
+}
