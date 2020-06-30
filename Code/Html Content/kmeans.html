@@ -7,22 +7,19 @@
 
 <body>
 
-<div class="container">
-    <h1>K-Means</h1>
+<div class="container" >
     <div class="textBackground">
+        <img class="titlePageImg" src="./Images/kmeanstitle.png" alt="K-Means Title Image"/>
+    </div>
+    
+    <div class="textBackgroundLight">
         <p>K-Means is known as an unsupervised machine learning algorithm. K-Means aim is to cluster data points together based on their values within the decision boundaries.</p>
-
+    </div>
+    <div class="textBackgroundLight">
         <h2>Unsupervised Learning</h2>
 
         <p>Unsupervised machine learning is the term used when the dataset provided has no labels. The aim of the unsupervised models is then to gain insights, from the data, without a teacher.</p>
-    </div>
-
-    <div class="textBackground">
-        <img class="fullPageImg" src="/Users/Andy/Developer/Swansea Uni/Project/Code/Html Content/Images/ML Overview.jpeg" alt="Break down of machine learning tasks." style="width:890px"/>
-    </div>
-
-    <div class="textBackground">
-    <p>There are many different types of unsupervised learning algorithms which can get split into four main categories.</br>
+        <p>There are many different types of unsupervised learning algorithms which can get split into four main categories.</br>
     These are:
     <uo>
         <li><b>Clustering</b> - K-Means; DBSCAN; Hierarchical Cluster Analysis (HCA); Gaussian Mixture Model (GMM).</li>
@@ -32,10 +29,17 @@
     </uo>
     </p>
     </div>
+
+    <div class="textBackgroundLight">
+        <img class="fullPageImg" src="./Images/ML Overview.jpeg" alt="Break down of machine learning tasks." />
+        <p style="text-align:center">The image shows an overview of the different Machine Learning tasks for the different types of problems.</p>
+    </div>
+
+
     <div class="textBackground">
         <h2>What is the Purpose of Clustering?</h2>
     </div>
-    <div class="textBackground">
+    <div class="textBackgroundLight">
         <p>The purpose of clustering is to allow the ability to make sense of large datasets possible, by extracting values from large sets of either structured or unstructured data. 
             Like in life, when you are trying to complete a big task, it is always better to slip the tasks up into similar groups. Well, this is what clustering is doing with your data, sorting it out. 
             Grouping similar data attributes, to create some logical groupings, which will then aim to allow the user to attempt then to analyse it.<p>
@@ -44,6 +48,155 @@
             Therefore, allowing you to have a good idea of what you will find within the data, before going deeper into it and exploring more of it through further analysis. </p>
 
         <p>In a nutshell, clusters are sets of data points that share similar attributes. While clustering algorithms are tools to help group these data points, into clusters, based their similarities.</p>
+    
+        <p>
+            You might have heard of classification and thought that classification is the same thing as 
+            clustering. Many people do, but this is not the case. In classification, before you start, 
+            you already know the number of classes into which your data should get grouped.  Also, you 
+            already know what class you want each data point to be assigned. In classification, the data 
+            in the dataset is getting learned from is also labelled. When we use clustering algorithms, 
+            on the other hand, we have no predefined concept for how many clusters are appropriate for 
+            your data. Sometimes you need to guess the number, and sometimes you rely upon the clustering 
+            algorithms to sort and cluster the data in the most appropriate way. With clustering 
+            techniques, you’re learning from unlabeled data.
+        </p>
+        <p>
+            There are different clustering methods, depending on how you want your dataset to get divided. 
+            The two main types of clustering algorithms are:
+            <uo>
+                <li><b>Hard Clustering</b>: In hard clustering, each data point either belongs to a cluster 
+                entirely or not.</li>
+                <li><b>Soft Clustering</b>: In soft clustering, instead of putting each data point into a 
+                separate cluster, a probability or likelihood of that data point to be in those clusters is 
+                assigned.</li>
+            </uo>
+        </p>
+    </div>
+
+    <div class="textBackground">
+        <h2>Types of Clustering Algorithms</h2>
+    </div>
+
+    <div class="textBackgroundLight">
+        <p>
+            Since the task of clustering is subjective, the means available for achieving this goal are plenty. 
+            Every methodology follows a different set of rules for defining the ‘similarity’ among data points. 
+            There are more than 100 clustering algorithms known. But few of the algorithms are used popularly, 
+            let’s look at them in detail:
+            <uo>
+                <li><b>Connectivity Models</b>: Based on the premise that the data points closer in data space exhibit 
+                more similarity to each other than the data points lying farther away. These models can follow 
+                two approaches. In the first approach, they start with classifying all data points into separate 
+                clusters & then aggregating them as the distance decreases. In the second approach, all data 
+                points are classified as a single cluster and then partitioned as the distance increases. Also, 
+                the choice of distance function is subjective. These models are very easy to interpret but lack 
+                scalability for handling big datasets. Examples of these models are hierarchical clustering 
+                algorithm and its variants.</li>
+                <li><b>Centroid Models</b>: These are iterative clustering algorithms in which the notion of 
+                similarity is derived by the closeness of a data point to the centroid of the clusters. K-Means 
+                clustering algorithm is a popular algorithm that falls into this category. In these models, the 
+                no. of clusters required at the end is required beforehand, which makes it important to have 
+                prior knowledge of the dataset. These models run iteratively to find the local optima.</li>
+                <li><b>Distribution Models</b>: These clustering models are based on the notion of how probable 
+                is it that all data points in the cluster belong to the same distribution (For example: Normal, 
+                Gaussian). These models often suffer from overfitting. A popular example of these models is 
+                Expectation-maximization algorithm which uses multivariate normal distributions.</li>
+                <li><b>Density Models</b>: These models search the data space for areas of varied density of data 
+                points in the data space. It isolates various density regions and assigns the data points within 
+                these regions in the same cluster. Popular examples of density models are DBSCAN and OPTICS.</li>
+            </uo>
+        </p>
+
+    </div>
+    
+
+
+
+
+
+
+    <div class="textBackground">
+        <h2>In-depth Look into K-Means</h2>
+    </div>
+    <div class="textBackgroundLight">
+        <h2>What is K-Means?</h2>
+        <p>
+            K-Means is one of the hard partitioning clustering algorithms.  The centre of the cluster 
+            represents each cluster of data, and each data point gets assigned to the nearest cluster centre, 
+            also known as the centroid. However, the number of clusters is a pre-set value. This pre-set value 
+            is known as the number of K. K-Means is an iterative process which starts with random 
+            initialisation of the centroids and updates on each iteration.
+        </p>
+
+        <h2>Determining a good cluster, by K-Means Standards</h2>
+        <p> K-Means looks for a couple of key things for deciding what makes a good cluster. </p> 
+        <p>
+            These are:
+            <ul>
+            <li>
+                With each data point to minimise the Sum of Squared Error (SSE) from the data to their 
+                corresponding centroid.</br>
+                <img class="contentInline" src="./Images/SSE Formula.png" /></br>
+                <img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" /> denotes the 
+                <img src="https://latex.codecogs.com/gif.latex?j^{th}" title="j^{th}" /> cluster. 
+                <img src="https://latex.codecogs.com/gif.latex?m_{j}" title="m_{j}" /> represents the centroid to 
+                the cluster <img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" />. While 
+                <img src="https://latex.codecogs.com/gif.latex?dist(x,m_{j})^{2}" title="dist(x,m_{j})^{2}" /> 
+                represents the distance between the data point x and its centroid.
+            </li>
+            <li>
+                Therefore the stopping criteria for the number of iterations K-Means goes through is either 
+                very small changes in the SSE, showing there is convergence within the data, or if a fixed 
+                number of iterations has been reached.
+            </li>
+        </p>
+
+        <h2>The Stages of K-Means</h2>
+        <img class="contentInline" src="./Images/blobs_plot.png">
+        <p>
+            K-Means is an iterative clustering algorithm that aims to find local maxima in each iteration. 
+            This algorithm works in these 5 steps:
+            <ol>
+                <li>
+                    First, a specified desired number of clusters K. From the above image, we can see that 
+                    there are five different clusters.
+                </li>
+                <li>
+                    The algorithm randomly assigns the centroids for each cluster. 
+                </li>
+                <li>
+                    Each data point gets assigned to the closest centroid to the data point.
+                </li>
+                <li>
+                    Once all data points have been assigned to the corresponding centroid, the centroids are 
+                    updated.
+                </li>
+                <li>
+                    Steps 3 and 4 are repeated until no improvements are possible: Similarly, we’ll repeat the 
+                    3rd and 4th steps until we’ll reach global optima. When there will be no further switching 
+                    of data points between the clusters. It will mark the termination of the algorithm if 
+                    not explicitly mentioned.
+                </li>
+                <img class="contentInline" src="./Images/voronoi_plot.png">
+        
+    
+    </div>
+    
+    <div class="textBackground">
+        <h2>K-Means in Action</h2>
+    </div>
+    <div class="textBackgroundLight">
+        <h2></h2>
+        <p><img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" /></a><p>
+    </div>
+    
+    <div class="textBackground">
+        <h2>Link to Additional Documents</h2>
+    </div>
+    <div class="textBackgroundLight">
+        <h2></h2>
+        <p><p>
+    
     </div>
 </div>
 </body>
