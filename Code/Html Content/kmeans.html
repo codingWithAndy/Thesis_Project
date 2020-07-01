@@ -13,21 +13,30 @@
     </div>
     
     <div class="textBackgroundLight">
-        <p>K-Means is known as an unsupervised machine learning algorithm. K-Means aim is to cluster data points together based on their values within the decision boundaries.</p>
+        <p>
+            K-Means is known as an unsupervised machine learning algorithm. K-Means aim is to cluster data 
+            points together based on their values within the decision boundaries.
+        </p>
     </div>
     <div class="textBackgroundLight">
         <h2>Unsupervised Learning</h2>
 
-        <p>Unsupervised machine learning is the term used when the dataset provided has no labels. The aim of the unsupervised models is then to gain insights, from the data, without a teacher.</p>
-        <p>There are many different types of unsupervised learning algorithms which can get split into four main categories.</br>
-    These are:
-    <uo>
-        <li><b>Clustering</b> - K-Means; DBSCAN; Hierarchical Cluster Analysis (HCA); Gaussian Mixture Model (GMM).</li>
-        <li><b>Anomaly Detection and Novelty Detection</b> - One-class SVM; Isolation Forrest.</li>
-        <li><b>Visualisation and Dimensionality Reduction</b> - Principal Component Analysis (PCA); Kernel PCA; Locally Linear Embedding (LLE); t-Distributed Stochastic Neighbour Embedding (t-SNE).</li>
-        <li><b>Association Rule Learning</b> - Apriori; Eclat.</li>
-    </uo>
-    </p>
+        <p>
+            Unsupervised machine learning is the term used when the dataset provided has no labels. The aim 
+            of the unsupervised models is then to gain insights, from the data, without a teacher.
+        </p>
+        <p>
+            There are many different types of unsupervised learning algorithms which can get split into four 
+            main categories.</br>
+            These are:
+            <uo>
+                <li><b>Clustering</b> - K-Means; DBSCAN; Hierarchical Cluster Analysis (HCA); Gaussian Mixture Model (GMM).</li>
+                <li><b>Anomaly Detection and Novelty Detection</b> - One-class SVM; Isolation Forrest.</li>
+                <li><b>Visualisation and Dimensionality Reduction</b> - Principal Component Analysis (PCA); Kernel PCA; Locally 
+                Linear Embedding (LLE); t-Distributed Stochastic Neighbour Embedding (t-SNE).</li>
+                <li><b>Association Rule Learning</b> - Apriori; Eclat.</li>
+            </uo>
+        </p>
     </div>
 
     <div class="textBackgroundLight">
@@ -40,14 +49,26 @@
         <h2>What is the Purpose of Clustering?</h2>
     </div>
     <div class="textBackgroundLight">
-        <p>The purpose of clustering is to allow the ability to make sense of large datasets possible, by extracting values from large sets of either structured or unstructured data. 
-            Like in life, when you are trying to complete a big task, it is always better to slip the tasks up into similar groups. Well, this is what clustering is doing with your data, sorting it out. 
-            Grouping similar data attributes, to create some logical groupings, which will then aim to allow the user to attempt then to analyse it.<p>
+        <p>
+            The purpose of clustering is to allow the ability to make sense of large datasets possible, by 
+            extracting values from large sets of either structured or unstructured data. 
+            Like in life, when you are trying to complete a big task, it is always better to slip the 
+            tasks up into similar groups. Well, this is what clustering is doing with your data, sorting it out. 
+            Grouping similar data attributes, to create some logical groupings, which will then aim to 
+            allow the user to attempt then to analyse it.
+        <p>
     
-        <p><b>Clustering</b> allows you to take a sweeping glance at your dataset. By doing this, this will then allow you to form some insights/logical structures based on what you have found in the data. 
-            Therefore, allowing you to have a good idea of what you will find within the data, before going deeper into it and exploring more of it through further analysis. </p>
+        <p>
+            <b>Clustering</b> allows you to take a sweeping glance at your dataset. By doing this, this 
+            will then allow you to form some insights/logical structures based on what you have found in the data. 
+            Therefore, allowing you to have a good idea of what you will find within the data, before going 
+            deeper into it and exploring more of it through further analysis.
+        </p>
 
-        <p>In a nutshell, clusters are sets of data points that share similar attributes. While clustering algorithms are tools to help group these data points, into clusters, based their similarities.</p>
+        <p>
+            In a nutshell, clusters are sets of data points that share similar attributes. While clustering 
+            algorithms are tools to help group these data points, into clusters, based their similarities.
+        </p>
     
         <p>
             You might have heard of classification and thought that classification is the same thing as 
@@ -87,7 +108,7 @@
                 <li><b>Connectivity Models</b>: Based on the premise that the data points closer in data space exhibit 
                 more similarity to each other than the data points lying farther away. These models can follow 
                 two approaches. In the first approach, they start with classifying all data points into separate 
-                clusters & then aggregating them as the distance decreases. In the second approach, all data 
+                clusters and then aggregating them as the distance decreases. In the second approach, all data 
                 points are classified as a single cluster and then partitioned as the distance increases. Also, 
                 the choice of distance function is subjective. These models are very easy to interpret but lack 
                 scalability for handling big datasets. Examples of these models are hierarchical clustering 
@@ -133,22 +154,23 @@
         <p>
             These are:
             <ul>
-            <li>
-                With each data point to minimise the Sum of Squared Error (SSE) from the data to their 
-                corresponding centroid.</br>
-                <img class="contentInline" src="./Images/SSE Formula.png" /></br>
-                <img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" /> denotes the 
-                <img src="https://latex.codecogs.com/gif.latex?j^{th}" title="j^{th}" /> cluster. 
-                <img src="https://latex.codecogs.com/gif.latex?m_{j}" title="m_{j}" /> represents the centroid to 
-                the cluster <img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" />. While 
-                <img src="https://latex.codecogs.com/gif.latex?dist(x,m_{j})^{2}" title="dist(x,m_{j})^{2}" /> 
-                represents the distance between the data point x and its centroid.
-            </li>
-            <li>
-                Therefore the stopping criteria for the number of iterations K-Means goes through is either 
-                very small changes in the SSE, showing there is convergence within the data, or if a fixed 
-                number of iterations has been reached.
-            </li>
+                <li>
+                    With each data point to minimise the Sum of Squared Error (SSE) from the data to their 
+                    corresponding centroid.</br>
+                    <img class="contentInline" src="./Images/SSE Formula.png" /></br>
+                    <img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" /> denotes the 
+                    <img src="https://latex.codecogs.com/gif.latex?j^{th}" title="j^{th}" /> cluster. 
+                    <img src="https://latex.codecogs.com/gif.latex?m_{j}" title="m_{j}" /> represents the centroid to 
+                    the cluster <img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" />. While 
+                    <img src="https://latex.codecogs.com/gif.latex?dist(x,m_{j})^{2}" title="dist(x,m_{j})^{2}" /> 
+                    represents the distance between the data point x and its centroid.
+                </li>
+                <li>
+                    Therefore the stopping criteria for the number of iterations K-Means goes through is either 
+                    very small changes in the SSE, showing there is convergence within the data, or if a fixed 
+                    number of iterations has been reached.
+                </li>
+            </ul>
         </p>
 
         <h2>The Stages of K-Means</h2>
@@ -178,6 +200,7 @@
                     not explicitly mentioned.
                 </li>
                 <img class="contentInline" src="./Images/voronoi_plot.png">
+            </ol>
         
     
     </div>
@@ -187,7 +210,32 @@
     </div>
     <div class="textBackgroundLight">
         <h2></h2>
-        <p><img src="https://latex.codecogs.com/gif.latex?C{j}" title="C{j}" /></a><p>
+        <p>
+            Clustering algorithms get used for disease classification in medical science. However, you will also see clustering 
+            get used for customer classification in marketing research and environmental health risk assessment in environmental 
+            engineering.
+        <p>
+        <p>
+            To better illustrate the nature of classification, though, take a look at Twitter and its hashtagging system. Say you 
+            just got hold of your favourite drink in the entire world: an iced caramel latte from Starbucks. You’re so happy to 
+            have your drink that you decide to tweet about it with a photo and the phrase “This is the best latte EVER! 
+            #StarbucksRocks.”  You include “#StarbucksRocks” in your tweet so that the tweet goes into the #StarbucksRocks stream 
+            and is classified together with all the other tweets that get labelled as #StarbucksRocks. Your use of the hashtag 
+            label in your tweet told Twitter how to classify your data into a recognisable and accessible group, or cluster.
+        </p>
+
+        <p>
+            Clustering has a large number of applications spread across various domains. Some of the most popular uses of clustering are:
+            <ul>
+                <li>Recommendation engines</li>
+                <li>Market segmentation</li>
+                <li>Social network analysis</li>
+                <li>Search result grouping</li>
+                <li>Medical imaging</li>
+                <li>Image segmentation</li>
+                <li>Anomaly detection</li>
+            </ul>
+        </p>
     </div>
     
     <div class="textBackground">
