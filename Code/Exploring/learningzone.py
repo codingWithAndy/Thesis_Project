@@ -14,8 +14,11 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 
+import os
 
 class Ui_MainWindow(object):
+    current_path = os.getcwd()
+    print("current pathis:"+current_path)
     def setupUi(self, MainWindow):
         # Main Window set up
         MainWindow.setObjectName("MainWindow")
@@ -32,7 +35,7 @@ class Ui_MainWindow(object):
                                         "border-radius: 15px;")
         self.homeButton.setText("")
         icon = QIcon()
-        icon.addPixmap(QPixmap("Desktop/home-solid.svg"), QIcon.Normal, QIcon.Off)
+        icon.addPixmap(QPixmap(self.current_path+"/Code/home-solid.svg"), QIcon.Normal, QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QSize(50, 60))
         self.homeButton.setObjectName("homeButton")
@@ -47,7 +50,7 @@ class Ui_MainWindow(object):
         self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
 "border-radius: 15px;")
         icon1 = QIcon()
-        icon1.addPixmap(QPixmap("Desktop/play-circle-regular.svg"), QIcon.Normal, QIcon.Off)
+        icon1.addPixmap(QPixmap(self.current_path+"/Code/play-circle-regular.svg"), QIcon.Normal, QIcon.Off)
         self.freePlayButton.setIcon(icon1)
         self.freePlayButton.setIconSize(QSize(60, 60))
         self.freePlayButton.setObjectName("freePlayButton")
@@ -60,7 +63,8 @@ class Ui_MainWindow(object):
 "border-radius: 15px;")
         self.quizButton.setText("")
         icon2 = QIcon()
-        icon2.addPixmap(QPixmap("Desktop/Screenshot 2020-06-26 at 11.46.35.png"), QIcon.Normal, QIcon.Off)
+        icon2.addPixmap(QPixmap(
+            self.current_path+"/Code/Screenshot 2020-06-26 at 11.46.35.png"), QIcon.Normal, QIcon.Off)
         self.quizButton.setIcon(icon2)
         self.quizButton.setIconSize(QSize(60, 60))
         self.quizButton.setObjectName("quizButton")
@@ -70,7 +74,9 @@ class Ui_MainWindow(object):
         self.widget = QWebEngineView(self.centralwidget)
         self.widget.setGeometry(QRect(20, 20, 1871, 921))
         self.widget.setObjectName("widget")
-        self.widget.setUrl(QUrl("https://www.nintendo.co.uk/"))
+        self.widget.setStyleSheet("border-radius: 15px;")
+        self.widget.setUrl(
+            QUrl("https://leegray8850371.ipage.com/snappygames/Andy/kmeans.html"))
         self.widget.show()
         '''
         original code
@@ -91,6 +97,17 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QMetaObject.connectSlotsByName(MainWindow)
+
+        self.homeButton.clicked.connect(self.goHome)
+
+    def goHome(self):
+        # Create a pop up window for the test
+        msg = QMessageBox()
+        msg.setWindowTitle("Pop up window!")
+        msg.setText("This is the main text!")
+
+        x = msg.exec_() # This is needed to show the pop up!
+
 
     def retranslateUi(self, MainWindow):
         _translate = QCoreApplication.translate
