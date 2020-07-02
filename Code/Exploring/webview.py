@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QApplication
 
 app = QApplication(sys.argv)
 web = QWebEngineView()
+web.setGeometry(20,20,1871,921)
 web.load(QUrl("https://www.nintendo.co.uk/"))
 web.show()
 
