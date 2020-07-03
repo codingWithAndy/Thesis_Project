@@ -16,9 +16,9 @@ from PyQt5.QtWebEngineWidgets import *
 
 import os
 
-class Ui_MainWindow(object):
+class LearningZone(object):
     current_path = os.getcwd()
-    print("current pathis:"+current_path)
+    #print("current pathis:"+current_path)
     def setupUi(self, MainWindow):
         # Main Window set up
         MainWindow.setObjectName("MainWindow")
@@ -76,7 +76,7 @@ class Ui_MainWindow(object):
         self.widget.setObjectName("widget")
         self.widget.setStyleSheet("border-radius: 15px;")
         self.widget.setUrl(
-            QUrl("https://leegray8850371.ipage.com/snappygames/Andy/kmeans.html"))
+            QUrl("https://snappygames.co.uk/Andy/kmeans.html"))
         self.widget.show()
         '''
         original code
@@ -119,7 +119,8 @@ if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
+    ui = LearningZone()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
