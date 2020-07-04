@@ -113,6 +113,7 @@ class MainMenu(object):
 
                 self.retranslateUi(MainWindow)
                 QtCore.QMetaObject.connectSlotsByName(MainWindow)
+                MainWindow.show()
 
         def retranslateUi(self, MainWindow):
                 _translate = QtCore.QCoreApplication.translate
@@ -129,6 +130,8 @@ class MainMenu(object):
                 self.ui.setupUi(self.window)
                 MainWindow.hide()
                 self.window.show()
+
+
 
 
 if __name__ == "__main__":

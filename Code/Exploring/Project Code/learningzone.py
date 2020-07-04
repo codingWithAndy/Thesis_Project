@@ -21,10 +21,11 @@ import sys
 class LearningZone(object):
     app = QApplication(sys.argv)
     current_path = os.getcwd()
+    MainWindow = QMainWindow()
 
     #print("current pathis:"+current_path)
     def setupUi(self, MainWindow):
-
+        MainWindow = MainWindow
         # Main Window set up
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1920, 1080)
@@ -104,6 +105,7 @@ class LearningZone(object):
         QMetaObject.connectSlotsByName(MainWindow)
 
         self.homeButton.clicked.connect(self.main_menu_clicked)
+
 
     def main_menu_clicked(self):
         self.window = QMainWindow()
