@@ -13,13 +13,18 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
+import mainmenu
 
 import os
+import sys
 
 class LearningZone(object):
+    app = QApplication(sys.argv)
     current_path = os.getcwd()
+
     #print("current pathis:"+current_path)
     def setupUi(self, MainWindow):
+
         # Main Window set up
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1920, 1080)
@@ -98,7 +103,14 @@ class LearningZone(object):
         self.retranslateUi(MainWindow)
         QMetaObject.connectSlotsByName(MainWindow)
 
-        self.homeButton.clicked.connect(self.goHome)
+        self.homeButton.clicked.connect(self.main_menu_clicked)
+
+    def main_menu_clicked(self):
+        self.window = QMainWindow()
+        self.ui = mainmenu.MainMenu()
+        self.ui.setupUi(self.window)
+        MainWindow.hide()
+        self.window.show()
 
     def goHome(self):
         # Create a pop up window for the test
@@ -114,7 +126,7 @@ class LearningZone(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.freePlayButton.setText(_translate("MainWindow", "Free "))
 
-
+'''
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
@@ -123,4 +135,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
+'''
