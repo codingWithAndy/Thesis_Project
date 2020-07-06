@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import *
 class MainMenu(QtWidgets.QWidget):
     print(" in the mainmenu class")
     switch_window = QtCore.pyqtSignal(str)
-    current_path = '/Users/Andy/Developer/Swansea Uni/Project'  # os.getcwd()
+    current_path = os.getcwd()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)

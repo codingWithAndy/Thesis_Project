@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import *
 class LearningZone(QtWidgets.QWidget):
 
     switch_window = QtCore.pyqtSignal(str)
-    current_path = '/Users/Andy/Developer/Swansea Uni/Project'
+    current_path = os.getcwd()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -76,13 +76,22 @@ class LearningZone(QtWidgets.QWidget):
 
         self.retranslateUi()
 
-        self.homeButton.clicked.connect(self.switch)
+        # Button connectons
+        self.homeButton.clicked.connect(self.home_pressed)
+        self.freePlayButton.clicked.connect(self.freeplay_pressed)
+        self.quizButton.clicked.connect(self.quiz_pressed)
 
     def retranslateUi(self):
         _translate = QCoreApplication.translate
         #MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.freePlayButton.setText(_translate("Learning Zone", "Free "))
 
-    def switch(self):
+    def home_pressed(self):
         self.switch_window.emit("mainmenu,learningzone")
         # self.switch_window.emit(self.line_edit.text()) will pass a value through
+    
+    def quiz_pressed(self):
+        self.switch_window.emit("quiz,learningzone")
+    
+    def freeplay_pressed(self):
+        self.switch_window.emit("quiz,learningzone")

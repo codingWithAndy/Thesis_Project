@@ -9,6 +9,7 @@ from PyQt5.QtWidgets import *
 from mainmenu import MainMenu
 from learningzone import LearningZone
 from splashscreen import SplashScreen
+from quiz import Quiz
 
 class Controller:
 
@@ -35,6 +36,11 @@ class Controller:
         self.learningzone.switch_window.connect(self.choose_window)
         self.learningzone.show()
 
+    def show_quizscreen(self):
+        self.quizscreen = Quiz()
+        # show_mainmenu This is needed to connect between the windows
+        self.quizscreen.switch_window.connect(self.choose_window)
+        self.quizscreen.show()
 
     def show_window_two(self):
         #self.window_two = MainWindow()
@@ -58,6 +64,8 @@ class Controller:
             self.learningzone.hide()
         elif window_options[1] == "mainmenu":
             self.mainmenu.hide()
+        elif window_options[1] == "quiz":
+            self.quizscreen.hide()
 
         if window_options[0] == "mainmenu":
             self.show_mainmenu()
@@ -65,6 +73,8 @@ class Controller:
             self.show_learningzone()
         elif window_options[0] == "splashscreen":
             self.show_splashscreen()
+        elif window_options[0] == "quiz":
+            self.show_quizscreen()
         #else:
         #    self.show_splashscreen()
 
