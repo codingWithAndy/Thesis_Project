@@ -5,6 +5,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+import time
 
 
 class LearningZone(QtWidgets.QWidget):
@@ -110,9 +111,82 @@ class WindowTwo(QtWidgets.QWidget):
         self.setLayout(layout)
 
 
+class SplashScreen(QtWidgets.QWidget):
+    current_path = os.getcwd()
+    switch_window = QtCore.pyqtSignal(str)
+
+    def __init__(self):
+        QtWidgets.QWidget.__init__(self)
+        self.setupUi()
+
+    def mainmenu(self):
+        self.switch_window.emit("mainmenu,splashscreen")
+
+    def setupUi(self):
+        self.setObjectName("Data Splash!")
+        self.resize(1920, 1080)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.sizePolicy().hasHeightForWidth())
+        self.setSizePolicy(sizePolicy)
+        self.setAutoFillBackground(False)
+        self.setStyleSheet("background-color: rgb(47, 85, 151)")
+        self.centralwidget = QtWidgets.QWidget(self)
+        self.centralwidget.setObjectName("centralwidget")
+
+        # Data Drop Image
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QRect(720, 400, 451, 491))
+        self.label.setText("")
+        self.label.setPixmap(QPixmap(
+            self.current_path+"/Code/Water-drop-data-v2 edit copy.png"))
+        self.label.setScaledContents(True)
+        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setObjectName("label")
+
+        # Data Splash Logo Image
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(590, 130, 711, 301))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QPixmap(
+            self.current_path+"/Code/Data Splash Title.png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        #self.label.clicked.connect(self.main_menu_wait)
+
+        # Enter Button
+        self.mainmenuButton = QPushButton(self.centralwidget)
+        self.mainmenuButton.setGeometry(QRect(711, 931, 461, 91))
+        font = QFont()
+        font.setPointSize(40)
+        self.mainmenuButton.setFont(font)
+        self.mainmenuButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                          "border-radius: 25px;\n"
+                                          "color: white;")
+        self.mainmenuButton.setObjectName("pushButton")
+        self.mainmenuButton.clicked.connect(
+            self.mainmenu)
+
+
+        self.retranslateUi()
+        #QtCore.QMetaObject.connectSlotsByName(self)
+        
+        #self.mainmenu()
+
+    def retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.setWindowTitle(_translate("MainWindow", "Data Splash!"))
+        self.mainmenuButton.setText(_translate("MainWindow", "Enter!"))
+    
+    
+
 class MainMenu(QtWidgets.QWidget):
     print(" in the mainmenu class")
-    switch_window = QtCore.pyqtSignal()
+    switch_window = QtCore.pyqtSignal(str)
     current_path = '/Users/Andy/Developer/Swansea Uni/Project'  # os.getcwd()
 
     def __init__(self):
@@ -158,6 +232,8 @@ class MainMenu(QtWidgets.QWidget):
         self.playButton.setStyleSheet("background-color : rgb(3, 193, 161);\n"
                                       "border-radius: 25px;")
         self.playButton.setObjectName("playButton")
+        self.playButton.clicked.connect(
+            self.splashscreen)
 
         # Learning Zone Button
         self.learningZoneButton = QPushButton(
@@ -204,9 +280,12 @@ class MainMenu(QtWidgets.QWidget):
         self.awardsZoneButton.setObjectName("awardsZoneButton")
 
         self.retranslateMenuUi()
+    
+    def splashscreen(self):
+        self.switch_window.emit('splashscreen,mainmenu')
 
     def login(self):
-        self.switch_window.emit()
+        self.switch_window.emit('learningzone,mainmenu')
     
     def retranslateMenuUi(self):
         _translate = QCoreApplication.translate
@@ -225,10 +304,16 @@ class Controller:
     def __init__(self):
         pass
 
+    def show_splashscreen(self):
+        self.splashscreen = SplashScreen()
+        self.splashscreen.switch_window.connect(self.choose_window)
+        self.splashscreen.show()
+        
+
     def show_mainmenu(self):
         self.login = MainMenu()
         self.login.show()
-        self.login.switch_window.connect(self.show_learningzone)
+        self.login.switch_window.connect(self.choose_window)
         print("Still in the mainmenu function")
 
     def show_learningzone(self):
@@ -243,13 +328,29 @@ class Controller:
         self.login.show()
     
     def choose_window(self, options):
+        """
+        Selecting appropriate windows to open and close.
+
+        Args:
+            options (list): [0] indicated the desired screen to open. [1] indicated the screen that needs to close.
+        """
+
         window1 = options.split(',')
         if window1[1] == "learningzone":
             self.window.hide()
+        elif window1[1] == "learningzone":
+            self.window.hide()
+        elif window1[1] == "mainmenu":
+            self.login.hide()
+
         if window1[0] == "mainmenu":
             self.show_mainmenu()
-        else:
+        elif window1[0] == "learningzone":
             self.show_learningzone()
+        elif window1[0] == "splashscreen":
+            self.show_splashscreen()
+        #else:
+        #    self.show_splashscreen()
         
         print("choose window:", window1[0])
     

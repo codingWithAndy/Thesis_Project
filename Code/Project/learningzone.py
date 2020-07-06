@@ -1,0 +1,88 @@
+import sys
+import os
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtGui import *
+from PyQt5.QtWebEngineWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+
+
+class LearningZone(QtWidgets.QWidget):
+
+    switch_window = QtCore.pyqtSignal(str)
+    current_path = '/Users/Andy/Developer/Swansea Uni/Project'
+
+    def __init__(self):
+        QtWidgets.QWidget.__init__(self)
+        self.setupUi()
+
+    def setupUi(self):
+        # Main Window set up
+        self.setObjectName("Learning Zone")
+        self.resize(1920, 1080)
+        self.setStyleSheet("background-color: rgb(47, 85, 151)")
+        self.centralwidget = QWidget(self)
+        self.centralwidget.setObjectName("centralwidget")
+
+        #Home Button set up
+        self.homeButton = QPushButton(self.centralwidget)
+        self.homeButton.setGeometry(QRect(670, 960, 121, 71))
+        self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);"
+                                      "border-radius: 15px;")
+        self.homeButton.setText("")
+        icon = QIcon()
+        icon.addPixmap(QPixmap(self.current_path +
+                               "/Code/home-solid.svg"), QIcon.Normal, QIcon.Off)
+        self.homeButton.setIcon(icon)
+        self.homeButton.setIconSize(QSize(50, 60))
+        self.homeButton.setObjectName("homeButton")
+
+        # Free play button set up
+        self.freePlayButton = QPushButton(self.centralwidget)
+        self.freePlayButton.setGeometry(QRect(800, 960, 211, 70))
+        font = QFont()
+        font.setPointSize(30)
+        self.freePlayButton.setFont(font)
+        self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                          "border-radius: 15px;")
+        icon1 = QIcon()
+        icon1.addPixmap(QPixmap(
+            self.current_path+"/Code/play-circle-regular.svg"), QIcon.Normal, QIcon.Off)
+        self.freePlayButton.setIcon(icon1)
+        self.freePlayButton.setIconSize(QSize(60, 60))
+        self.freePlayButton.setObjectName("freePlayButton")
+
+        # Quiz Button Set up
+        self.quizButton = QPushButton(self.centralwidget)
+        self.quizButton.setGeometry(QRect(1020, 960, 121, 71))
+        self.quizButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                      "border-radius: 15px;")
+        self.quizButton.setText("")
+        icon2 = QIcon()
+        icon2.addPixmap(QPixmap(
+            self.current_path+"/Code/Screenshot 2020-06-26 at 11.46.35.png"), QIcon.Normal, QIcon.Off)
+        self.quizButton.setIcon(icon2)
+        self.quizButton.setIconSize(QSize(60, 60))
+        self.quizButton.setObjectName("quizButton")
+
+        #Web View Set up
+        self.widget = QWebEngineView(self.centralwidget)
+        self.widget.setGeometry(QRect(20, 20, 1871, 921))
+        self.widget.setObjectName("widget")
+        self.widget.setStyleSheet("border-radius: 15px;")
+        self.widget.setUrl(
+            QUrl("https://snappygames.co.uk/Andy/kmeans.html"))
+        self.widget.show()
+
+        self.retranslateUi()
+
+        self.homeButton.clicked.connect(self.switch)
+
+    def retranslateUi(self):
+        _translate = QCoreApplication.translate
+        #MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.freePlayButton.setText(_translate("Learning Zone", "Free "))
+
+    def switch(self):
+        self.switch_window.emit("mainmenu,learningzone")
+        # self.switch_window.emit(self.line_edit.text()) will pass a value through

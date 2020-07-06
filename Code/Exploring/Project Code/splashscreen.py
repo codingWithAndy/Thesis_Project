@@ -53,6 +53,18 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName("label_2")
         #self.label.clicked.connect(self.main_menu_wait)
 
+        self.mainmenuButton = QtWidgets.QPushButton(self.centralwidget)
+        self.mainmenuButton.setGeometry(QtCore.QRect(711, 931, 461, 91))
+        font = QtGui.QFont()
+        font.setPointSize(40)
+        self.mainmenuButton.setFont(font)
+        self.mainmenuButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                          "border-radius: 25px;\n"
+                                          "color: white;")
+        self.mainmenuButton.setObjectName("pushButton")
+        self.mainmenuButton.clicked.connect(
+            self.login)
+
 
         # Additional Details
         MainWindow.setCentralWidget(self.centralwidget)
