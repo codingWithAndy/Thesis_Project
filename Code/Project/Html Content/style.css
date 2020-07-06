@@ -6,6 +6,13 @@
     background-color: #C3C02C;
 }
 
+.outerContainer {
+    width: 1920px;
+    margin: auto;
+    border-radius: 25px;
+    background-color: #C3C02C;
+}
+
 .contentInline {
     width: 500px;
     margin-top: 15px;
@@ -39,6 +46,24 @@
     border-radius: 25px;
 }
 
+.floating-menu {
+    font-family: sans-serif;
+    background: yellowgreen;
+    padding: 5px;
+    ;
+    width: 130px;
+    z-index: 100;
+    position: fixed;
+}
+
+.floating-menu a,
+.floating-menu h3 {
+    font-size: 0.9em;
+    display: block;
+    margin: 0 0.5em;
+    color: white;
+}
+
 body {
     background-color: #2F5597;
     color: black;
@@ -52,4 +77,21 @@ h2 {
 
 li {
     padding-bottom: 15px;
+}
+
+main {
+    padding: 10px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
