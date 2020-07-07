@@ -121,12 +121,12 @@ class Quiz(QtWidgets.QWidget):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(650, 10, 631, 231))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/quiz title.png"))
+        self.label.setPixmap(QtGui.QPixmap(self.current_path+"/Code/quiz title.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         
-        
+
+        # Layout text
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
 
@@ -138,33 +138,27 @@ class Quiz(QtWidgets.QWidget):
         self.buttonGroup.addButton(self.option3Button)
         self.buttonGroup.addButton(self.option4Button)
 
-        
         self.buttonGroup.buttonClicked.connect(self.options_pressed)
         self.clickedButton = self.buttonGroup.checkedId()
-        print(self.clickedButton)
-        print("Button Id in main func:", self.buttonGroup.checkedId())
+        #print(self.clickedButton)
+        #print("Button Id in main func:", self.buttonGroup.checkedId())
 
         # Putting Questions into Label and Buttons
         self.questionLabel.setText(self.questions[self.question_number])
-        self.option1Button.setText(
-            self.answer_options[self.question_number][0])
-        self.option2Button.setText(
-            self.answer_options[self.question_number][1])
-        self.option3Button.setText(
-            self.answer_options[self.question_number][2])
-        self.option4Button.setText(
-            self.answer_options[self.question_number][3])
+        self.option1Button.setText(self.answer_options[self.question_number][0])
+        self.option2Button.setText(self.answer_options[self.question_number][1])
+        self.option3Button.setText(self.answer_options[self.question_number][2])
+        self.option4Button.setText(self.answer_options[self.question_number][3])
 
-        #self.updateButtonOptions()
-        
-        
         # Button connectons
         self.homeButton.clicked.connect(self.home_pressed)
         #self.option1Button.clicked.connect(self.option1_pressed)
     
+
     def home_pressed(self):
         self.switch_window.emit("mainmenu,quiz")
     
+
     def options_pressed(self, button):
         print("checked ID:", self.clickedButton)
         print("Button ID Pressed:", button.text())
@@ -194,14 +188,10 @@ class Quiz(QtWidgets.QWidget):
             self.home_pressed()
         else:
             self.questionLabel.setText(self.questions[self.question_number])
-            self.option1Button.setText(
-                self.answer_options[self.question_number][0])
-            self.option2Button.setText(
-                self.answer_options[self.question_number][1])
-            self.option3Button.setText(
-                self.answer_options[self.question_number][2])
-            self.option4Button.setText(
-                self.answer_options[self.question_number][3])
+            self.option1Button.setText(self.answer_options[self.question_number][0])
+            self.option2Button.setText(self.answer_options[self.question_number][1])
+            self.option3Button.setText(self.answer_options[self.question_number][2])
+            self.option4Button.setText(self.answer_options[self.question_number][3])
 
         
 

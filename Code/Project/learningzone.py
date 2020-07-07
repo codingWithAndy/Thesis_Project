@@ -11,6 +11,7 @@ class LearningZone(QtWidgets.QWidget):
 
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
+    topic = "kmeans" # Change this when the time comes to welcome
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -31,8 +32,7 @@ class LearningZone(QtWidgets.QWidget):
                                       "border-radius: 15px;")
         self.homeButton.setText("")
         icon = QIcon()
-        icon.addPixmap(QPixmap(self.current_path +
-                               "/Code/home-solid.svg"), QIcon.Normal, QIcon.Off)
+        icon.addPixmap(QPixmap(self.current_path+"/Code/home-solid.svg"), QIcon.Normal, QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QSize(50, 60))
         self.homeButton.setObjectName("homeButton")
@@ -46,11 +46,11 @@ class LearningZone(QtWidgets.QWidget):
         self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                           "border-radius: 15px;")
         icon1 = QIcon()
-        icon1.addPixmap(QPixmap(
-            self.current_path+"/Code/play-circle-regular.svg"), QIcon.Normal, QIcon.Off)
+        icon1.addPixmap(QPixmap(self.current_path+"/Code/play-circle-regular.svg"), QIcon.Normal, QIcon.Off)
         self.freePlayButton.setIcon(icon1)
         self.freePlayButton.setIconSize(QSize(60, 60))
         self.freePlayButton.setObjectName("freePlayButton")
+
 
         # Quiz Button Set up
         self.quizButton = QPushButton(self.centralwidget)
@@ -65,13 +65,13 @@ class LearningZone(QtWidgets.QWidget):
         self.quizButton.setIconSize(QSize(60, 60))
         self.quizButton.setObjectName("quizButton")
 
+
         #Web View Set up
         self.widget = QWebEngineView(self.centralwidget)
         self.widget.setGeometry(QRect(20, 20, 1871, 921))
         self.widget.setObjectName("widget")
         self.widget.setStyleSheet("border-radius: 15px;")
-        self.widget.setUrl(
-            QUrl("https://snappygames.co.uk/Andy/kmeans.html"))
+        self.widget.setUrl(self.url(self.topic))
         self.widget.show()
 
         self.retranslateUi()
@@ -80,6 +80,12 @@ class LearningZone(QtWidgets.QWidget):
         self.homeButton.clicked.connect(self.home_pressed)
         self.freePlayButton.clicked.connect(self.freeplay_pressed)
         self.quizButton.clicked.connect(self.quiz_pressed)
+
+    def url(self,content):
+        if content == "kmeans":
+            url = QUrl("https://snappygames.co.uk/Andy/kmeans.html")
+        return url
+
 
     def retranslateUi(self):
         _translate = QCoreApplication.translate
