@@ -1,11 +1,36 @@
 import sys
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import *
 
 
 class Quiz(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
+    question_number = 0
+    answer_number = 0
+    answer_options_number = 0
+
+    questions = [
+        "Question 1",
+        "Question 2",
+        "Question 3",
+        "Question 4"
+    ]
+
+    answers = [
+        "Question 1",
+        "Question 2",
+        "Question 3",
+        "Question 4"
+    ]
+
+    answer_options = [
+        ["Question 1", "Question 2", "Question 3", "Question 4"],
+        ["Question 1", "Question 2", "Question 3", "Question 4"],
+        ["Question 1", "Question 2", "Question 3", "Question 4"],
+        ["Question 1", "Question 2", "Question 3", "Question 4"]
+    ]
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -105,15 +130,52 @@ class Quiz(QtWidgets.QWidget):
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
 
+        # Button Group
+        self.buttonGroup = QButtonGroup()
+        self.buttonGroup.setExclusive(True)
+        self.buttonGroup.addButton(self.option1Button)
+        self.buttonGroup.addButton(self.option2Button)
+        self.buttonGroup.addButton(self.option3Button)
+        self.buttonGroup.addButton(self.option4Button)
+
+        
+        self.buttonGroup.buttonClicked.connect(self.options_pressed)
+        self.clickedButton = self.buttonGroup.checkedId()
+        print(self.clickedButton)
+        print("Button Id in main func:", self.buttonGroup.checkedId())
+
+        # Putting Questions into Label and Buttons
+        self.questionLabel.setText(self.questions[self.question_number])
+        self.option1Button.setText(
+            self.answer_options[self.question_number][0])
+        self.option2Button.setText(
+            self.answer_options[self.question_number][1])
+        self.option3Button.setText(
+            self.answer_options[self.question_number][2])
+        self.option4Button.setText(
+            self.answer_options[self.question_number][3])
+
+        #self.updateButtonOptions()
+        
+        
         # Button connectons
         self.homeButton.clicked.connect(self.home_pressed)
-        self.option1Button.clicked.connect(self.option1_pressed)
+        #self.option1Button.clicked.connect(self.option1_pressed)
     
     def home_pressed(self):
         self.switch_window.emit("mainmenu,quiz")
     
-    def option1_pressed(self):
-        self.questionLabel.setText("I have changed the label!")
+    def options_pressed(self, button):
+        print("checked ID:", self.clickedButton)
+        print("Button ID Pressed:", button.text())
+        if button.text() == self.answers[self.answer_number]:
+            print("Correct!")
+            self.updateButtonOptions()
+        else:
+            print("Incorrect")
+            self.updateButtonOptions()
+
+        #self.questionLabel.setText("I have changed the label!")
 
     def retranslateUi(self, QuizScreen):
         _translate = QtCore.QCoreApplication.translate
@@ -123,3 +185,29 @@ class Quiz(QtWidgets.QWidget):
         self.option3Button.setText(_translate("QuizScreen", "Option 3"))
         self.option4Button.setText(_translate("QuizScreen", "Option 4"))
         self.questionLabel.setText(_translate("QuizScreen", "Question"))
+    
+    def updateButtonOptions(self):
+        self.question_number += 1
+        self.answer_number += 1
+
+        if self.question_number >= len(self.questions):
+            self.home_pressed()
+        else:
+            self.questionLabel.setText(self.questions[self.question_number])
+            self.option1Button.setText(
+                self.answer_options[self.question_number][0])
+            self.option2Button.setText(
+                self.answer_options[self.question_number][1])
+            self.option3Button.setText(
+                self.answer_options[self.question_number][2])
+            self.option4Button.setText(
+                self.answer_options[self.question_number][3])
+
+        
+
+        # Need to put a check in that not all the questions have been asked.
+        
+
+
+
+
