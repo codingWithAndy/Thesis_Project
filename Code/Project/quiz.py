@@ -11,6 +11,7 @@ class Quiz(QtWidgets.QWidget):
     answer_number = 0
     answer_options_number = 0
     score = 0
+    question_topic = "kmeans"
 
     questions = [
         "Question 1",
