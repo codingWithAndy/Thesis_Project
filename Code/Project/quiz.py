@@ -10,6 +10,7 @@ class Quiz(QtWidgets.QWidget):
     question_number = 0
     answer_number = 0
     answer_options_number = 0
+    score = 0
 
     questions = [
         "Question 1",
@@ -164,6 +165,7 @@ class Quiz(QtWidgets.QWidget):
         print("Button ID Pressed:", button.text())
         if button.text() == self.answers[self.answer_number]:
             print("Correct!")
+            self.score += 1
             self.updateButtonOptions()
         else:
             print("Incorrect")
@@ -185,6 +187,7 @@ class Quiz(QtWidgets.QWidget):
         self.answer_number += 1
 
         if self.question_number >= len(self.questions):
+            self.showScore()
             self.home_pressed()
         else:
             self.questionLabel.setText(self.questions[self.question_number])
@@ -193,7 +196,14 @@ class Quiz(QtWidgets.QWidget):
             self.option3Button.setText(self.answer_options[self.question_number][2])
             self.option4Button.setText(self.answer_options[self.question_number][3])
 
-        
+    def showScore(self):
+        # Create a pop up window for the test
+        msg = QMessageBox()
+        msg.setWindowTitle("Te Results are in......!")
+        msg_text = "Your score was: " + str(self.score)
+        msg.setText(msg_text)
+
+        x = msg.exec_()
 
         # Need to put a check in that not all the questions have been asked.
         
