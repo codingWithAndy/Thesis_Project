@@ -11,7 +11,7 @@ class LearningZone(QtWidgets.QWidget):
 
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
-    topic = "kmeans" # Change this when the time comes to welcome
+    topic = "welcome" # Change this when the time comes to welcome
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -84,6 +84,10 @@ class LearningZone(QtWidgets.QWidget):
     def url(self,content):
         if content == "kmeans":
             url = QUrl("https://snappygames.co.uk/Andy/kmeans.html")
+        elif content == "welcome":
+            url = QUrl("https://snappygames.co.uk/Andy/welcome.html")
+        elif content == "linear":
+            url = QUrl("https://snappygames.co.uk/Andy/linearregression.html")
         return url
 
 
