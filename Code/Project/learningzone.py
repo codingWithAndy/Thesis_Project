@@ -68,7 +68,7 @@ class LearningZone(QtWidgets.QWidget):
 
         #Web View Set up
         self.widget = QWebEngineView(self.centralwidget)
-        self.widget.setGeometry(QRect(0, 20, 1920, 921))
+        self.widget.setGeometry(QRect(20, 20, 1871, 921))
         self.widget.setObjectName("widget")
         self.widget.setStyleSheet("border-radius: 15px;")
         self.widget.setUrl(self.url(self.topic))
