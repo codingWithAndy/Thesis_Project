@@ -32,7 +32,8 @@ class LearningZone(QtWidgets.QWidget):
                                       "border-radius: 15px;")
         self.homeButton.setText("")
         icon = QIcon()
-        icon.addPixmap(QPixmap(self.current_path+"/Code/home-solid.svg"), QIcon.Normal, QIcon.Off)
+        icon.addPixmap(QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"),
+                               QIcon.Normal, QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QSize(50, 60))
         self.homeButton.setObjectName("homeButton")
@@ -46,7 +47,8 @@ class LearningZone(QtWidgets.QWidget):
         self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                           "border-radius: 15px;")
         icon1 = QIcon()
-        icon1.addPixmap(QPixmap(self.current_path+"/Code/play-circle-regular.svg"), QIcon.Normal, QIcon.Off)
+        icon1.addPixmap(QPixmap(self.current_path+"/Code/Project/Images/play-circle-regular.svg"),
+                        QIcon.Normal, QIcon.Off)
         self.freePlayButton.setIcon(icon1)
         self.freePlayButton.setIconSize(QSize(60, 60))
         self.freePlayButton.setObjectName("freePlayButton")
@@ -59,8 +61,8 @@ class LearningZone(QtWidgets.QWidget):
                                       "border-radius: 15px;")
         self.quizButton.setText("")
         icon2 = QIcon()
-        icon2.addPixmap(QPixmap(
-            self.current_path+"/Code/Screenshot 2020-06-26 at 11.46.35.png"), QIcon.Normal, QIcon.Off)
+        icon2.addPixmap(QPixmap(self.current_path+"/Code/Project/Images/Screenshot 2020-06-26 at 11.46.35.png"),
+                        QIcon.Normal, QIcon.Off)
         self.quizButton.setIcon(icon2)
         self.quizButton.setIconSize(QSize(60, 60))
         self.quizButton.setObjectName("quizButton")
@@ -81,6 +83,8 @@ class LearningZone(QtWidgets.QWidget):
         self.freePlayButton.clicked.connect(self.freeplay_pressed)
         self.quizButton.clicked.connect(self.quiz_pressed)
 
+
+    # Changing URL 
     def url(self,content):
         if content == "kmeans":
             url = QUrl("https://snappygames.co.uk/Andy/kmeans.html")
@@ -88,14 +92,18 @@ class LearningZone(QtWidgets.QWidget):
             url = QUrl("https://snappygames.co.uk/Andy/welcome.html")
         elif content == "linear":
             url = QUrl("https://snappygames.co.uk/Andy/linearregression.html")
+        
         return url
 
 
+    # Updating Layout on init
     def retranslateUi(self):
         _translate = QCoreApplication.translate
         #MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.freePlayButton.setText(_translate("Learning Zone", "Free "))
 
+
+    # Navigational Functions
     def home_pressed(self):
         self.switch_window.emit("mainmenu,learningzone")
         # self.switch_window.emit(self.line_edit.text()) will pass a value through

@@ -6,10 +6,10 @@ from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
-from mainmenu import MainMenu
-from learningzone import LearningZone
-from splashscreen import SplashScreen
-from quiz import Quiz
+from views.mainmenu import MainMenu
+from views.learningzone import LearningZone
+from views.splashscreen import SplashScreen
+from views.quiz import Quiz
 
 class Controller:
 

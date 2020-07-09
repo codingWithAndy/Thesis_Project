@@ -7,7 +7,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
 # Views
-from controller import Controller
+from views.controller import Controller
 
 def main():
     app = QtWidgets.QApplication(sys.argv)

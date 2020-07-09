@@ -28,7 +28,7 @@ class MainMenu(QtWidgets.QWidget):
         self.label.setGeometry(QRect(530, 60, 821, 311))
         self.label.setText("")
         self.label.setPixmap(QPixmap(
-            self.current_path+"/Code/Main Menu.png"))
+            self.current_path+"/Code/Project/Images/Main Menu.png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setObjectName("label")
@@ -54,14 +54,12 @@ class MainMenu(QtWidgets.QWidget):
         self.playButton.setStyleSheet("background-color : rgb(3, 193, 161);\n"
                                       "border-radius: 25px;")
         self.playButton.setObjectName("playButton")
-        self.playButton.clicked.connect(
-            self.splashscreen)
+        self.playButton.clicked.connect(self.splashscreen)
 
         # Learning Zone Button
         self.learningZoneButton = QPushButton(
             self.centralwidget)
-        self.learningZoneButton.setGeometry(
-            QRect(640, 610, 641, 91))
+        self.learningZoneButton.setGeometry(QRect(640, 610, 641, 91))
         font = QFont()
         font.setPointSize(40)
         font.setBold(False)
@@ -71,13 +69,11 @@ class MainMenu(QtWidgets.QWidget):
                                               "border-radius: 25px;\n"
                                               "")
         self.learningZoneButton.setObjectName("learningZoneButton")
-        self.learningZoneButton.clicked.connect(
-            self.login)
+        self.learningZoneButton.clicked.connect(self.login)
 
         # Free Play Button
         self.freePlayButton = QPushButton(self.centralwidget)
-        self.freePlayButton.setGeometry(
-            QRect(640, 740, 641, 91))
+        self.freePlayButton.setGeometry(QRect(640, 740, 641, 91))
         font = QFont()
         font.setPointSize(40)
         font.setBold(False)
@@ -88,10 +84,8 @@ class MainMenu(QtWidgets.QWidget):
         self.freePlayButton.setObjectName("freePlayButton")
 
         # Awards Zone Button
-        self.awardsZoneButton = QPushButton(
-            self.centralwidget)
-        self.awardsZoneButton.setGeometry(
-            QRect(640, 870, 641, 91))
+        self.awardsZoneButton = QPushButton(self.centralwidget)
+        self.awardsZoneButton.setGeometry(QRect(640, 870, 641, 91))
         self.font = QFont()
         self.font.setPointSize(40)
         self.font.setBold(False)

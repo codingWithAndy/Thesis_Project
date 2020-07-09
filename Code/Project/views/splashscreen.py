@@ -35,7 +35,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.label.setGeometry(QRect(720, 400, 451, 491))
         self.label.setText("")
         self.label.setPixmap(QPixmap(
-            self.current_path+"/Code/Water-drop-data-v2.png"))
+            self.current_path+"/Code/Project/Images/Water-drop-data-v2.png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setObjectName("label")
@@ -45,7 +45,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.label_2.setGeometry(QtCore.QRect(590, 130, 711, 301))
         self.label_2.setText("")
         self.label_2.setPixmap(QPixmap(
-            self.current_path+"/Code/Data Splash Title.png"))
+            self.current_path+"/Code/Project/Images/Data Splash Title.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")

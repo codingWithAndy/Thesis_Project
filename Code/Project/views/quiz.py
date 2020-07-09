@@ -102,8 +102,8 @@ class Quiz(QtWidgets.QWidget):
                                       "border-radius: 25px;")
         self.homeButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"), 
+                                     QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QtCore.QSize(40, 50))
         self.homeButton.setObjectName("homeButton")
@@ -123,7 +123,7 @@ class Quiz(QtWidgets.QWidget):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(650, 10, 631, 231))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(self.current_path+"/Code/quiz title.png"))
+        self.label.setPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/quiz title.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         
