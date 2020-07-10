@@ -41,11 +41,15 @@ class FreePlay(QtWidgets.QWidget):
         self.label.setObjectName("label")
         
         # Matplotlib Widget
-        self.MplWidget = MplWidget(self) # Here is the MPLWidget
+        #sc = MplWidget(self, width=5, height=4, dpi=100)
+        #sc.axes.plot([0, 1, 2, 3, 4], [10, 1, 20, 3, 40])
+        self.MplWidget = MplWidget(self)  # Here is the MPLWidget
         self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
         self.MplWidget.setObjectName("MplWidget")
+        #self.MplWidget.addToolBar(NavigationToolbar(self.MplWidget.canvas, self))
+        #self.MplWidget.show()
         
-        # Group bow
+        # Group box
         self.groupBox = QtWidgets.QGroupBox(self)
         self.groupBox.setGeometry(QtCore.QRect(80, 690, 1761, 351))
         self.groupBox.setStyleSheet("background-color: rgb(193,192,44);\n")
@@ -147,6 +151,7 @@ class FreePlay(QtWidgets.QWidget):
         # Button Connects
         self.playButton.clicked.connect(self.update_graph)
         self.homeButton.clicked.connect(self.home_pressed)
+        self.clearButton.clicked.connect(self.clear_graph)
 
 
         self.retranslateUi()
@@ -162,6 +167,11 @@ class FreePlay(QtWidgets.QWidget):
         self.learningTypeLabel.setText(_translate("Form", "Unsupervised Learning"))
         self.label_4.setText(_translate("Form", "Overview:"))
         self.overviewLabel.setText(_translate("Form", "Model Overview"))
+
+    def clear_graph(self):
+        self.MplWidget.canvas.axes.clear()
+        self.MplWidget.canvas.draw()
+
 
     def update_graph(self):
 
