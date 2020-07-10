@@ -168,10 +168,11 @@ class FreePlay(QtWidgets.QWidget):
         self.label_4.setText(_translate("Form", "Overview:"))
         self.overviewLabel.setText(_translate("Form", "Model Overview"))
 
+
+    # Button click actions
     def clear_graph(self):
         self.MplWidget.canvas.axes.clear()
         self.MplWidget.canvas.draw()
-
 
     def update_graph(self):
 

@@ -50,6 +50,10 @@
     font-weight: bold;
 }
 
+.textCenter {
+    padding-left: 25%;
+}
+
 .quoteName {
     padding-left: 10%;
 }
@@ -60,6 +64,7 @@ body {
     font-size: 1.2em;
 }
 
+h1,
 h2 {
     text-align: center;
     color: black;
@@ -67,6 +72,31 @@ h2 {
 
 li {
     padding-bottom: 15px;
+}
+
+.rightText {
+    text-align: right;
+    right: 0;
+}
+
+.inlineContainer {
+    width: 800px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.inlineLeft {
+    float: left;
+    border: 1px solid red;
+    margin: 10px;
+    width: 300px;
+}
+
+.inlineRight {
+    float: right;
+    border: 1px solid red;
+    margin: 10px;
+    width: 300px;
 }
 
 
