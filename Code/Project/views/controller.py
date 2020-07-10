@@ -10,6 +10,7 @@ from views.mainmenu import MainMenu
 from views.learningzone import LearningZone
 from views.splashscreen import SplashScreen
 from views.quiz import Quiz
+from views.freeplay import FreePlay
 
 class Controller:
 
@@ -41,6 +42,12 @@ class Controller:
         # show_mainmenu This is needed to connect between the windows
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
+    
+    def show_freeplay(self):
+        self.freeplay = FreePlay()
+        # show_mainmenu This is needed to connect between the windows
+        self.freeplay.switch_window.connect(self.choose_window)
+        self.freeplay.show()
 
     def show_window_two(self):
         #self.window_two = MainWindow()
@@ -66,6 +73,8 @@ class Controller:
             self.mainmenu.hide()
         elif window_options[1] == "quiz":
             self.quizscreen.hide()
+        elif window_options[1] == "freeplay":
+            self.freeplay.hide()
 
         if window_options[0] == "mainmenu":
             self.show_mainmenu()
@@ -75,6 +84,8 @@ class Controller:
             self.show_splashscreen()
         elif window_options[0] == "quiz":
             self.show_quizscreen()
+        elif window_options[0] == "freeplay":
+            self.show_freeplay()
         #else:
         #    self.show_splashscreen()
 

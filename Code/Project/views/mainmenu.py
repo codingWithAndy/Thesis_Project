@@ -69,7 +69,7 @@ class MainMenu(QtWidgets.QWidget):
                                               "border-radius: 25px;\n"
                                               "")
         self.learningZoneButton.setObjectName("learningZoneButton")
-        self.learningZoneButton.clicked.connect(self.login)
+        
 
         # Free Play Button
         self.freePlayButton = QPushButton(self.centralwidget)
@@ -83,6 +83,7 @@ class MainMenu(QtWidgets.QWidget):
                                           "border-radius: 25px;")
         self.freePlayButton.setObjectName("freePlayButton")
 
+
         # Awards Zone Button
         self.awardsZoneButton = QPushButton(self.centralwidget)
         self.awardsZoneButton.setGeometry(QRect(640, 870, 641, 91))
@@ -95,6 +96,10 @@ class MainMenu(QtWidgets.QWidget):
                                             "border-radius: 25px;")
         self.awardsZoneButton.setObjectName("awardsZoneButton")
 
+        # Button Connects
+        self.learningZoneButton.clicked.connect(self.login)
+        self.freePlayButton.clicked.connect(self.freeplay)
+
         self.retranslateMenuUi()
 
     def splashscreen(self):
@@ -102,6 +107,9 @@ class MainMenu(QtWidgets.QWidget):
 
     def login(self):
         self.switch_window.emit('learningzone,mainmenu')
+
+    def freeplay(self):
+        self.switch_window.emit('freeplay,mainmenu')
 
     def retranslateMenuUi(self):
         _translate = QCoreApplication.translate

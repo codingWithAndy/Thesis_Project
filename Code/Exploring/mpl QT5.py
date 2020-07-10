@@ -1,18 +1,45 @@
 import sys
 from PyQt5.QtWidgets import QDialog, QApplication, QPushButton, QVBoxLayout
 
+import matplotlib.backends.backend_qt5agg
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
 
 import random
+import numpy as np
+import matplotlib.pyplot as plt
+import sklearn.discriminant_analysis
+
 
 class Window(QDialog):
+    global ax, fig, playerID, pointOwner, model, bgd_mesh, xx, yy, turn
+    model = sklearn.discriminant_analysis.LinearDiscriminantAnalysis()
+
+
+    playerID = False
+    turn = 0
+    pointOwner = []
+    points = []
+    playerColors = ['b', 'r']
+
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.set_xlim([-1, 1])
+    ax.set_ylim([-1, 1])
+
+    #def background mesh
+    xx, yy = np.meshgrid(np.arange(-1, 1, 0.01),
+                        np.arange(-1, 1, 0.01))
+    bgd_mesh = np.c_[xx.ravel(), yy.ravel()]
+
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
 
         # a figure instance to plot on
-        self.figure = plt.figure()
+        self.figure = fig.canvas.mpl_connect(
+            'button_press_event', self.onclick)  # would be the same
 
         # this is the Canvas Widget that displays the `figure`
         # it takes the `figure` instance as a parameter to __init__
@@ -34,25 +61,39 @@ class Window(QDialog):
         layout.addWidget(self.button)
         self.setLayout(layout)
 
-    def plot(self):
-        ''' plot some random stuff '''
-        # random data
-        data = [random.random() for i in range(10)]
+    def onclick(self):
+        global ax, fig, points, playerID, pointOwner, model, bgd_mesh, xx, yy, turn
+        global ix, iy
+        ix, iy = event.xdata, event.ydata
+        print('x = {0:.3f}, y = {1:.3f}'.format(ix, iy))
 
-        # instead of ax.hold(False)
-        self.figure.clear()
+        points.append([ix, iy])
+        pointOwner.append(playerID)
+        playerID = not playerID
 
-        # create an axis
-        ax = self.figure.add_subplot(111)
+        ax.scatter(ix, iy, marker='x', s=20, c=playerColors[playerID])
+        fig.canvas.draw()
 
-        # discards the old graph
-        # ax.hold(False) # deprecated, see above
+        if not playerID and turn >= 4:
+            ax.clear()
+            ax.set_xlim([-1, 1])
+            ax.set_ylim([-1, 1])
+            player_points = np.asarray([points[i]
+                                        for i in np.where(pointOwner)[0].tolist()])
+            ax.scatter(player_points[:, 0], player_points[:, 1],
+                    marker='x', s=20, c=playerColors[0])
+            player_points = np.asarray(
+                [points[i] for i in np.where((np.logical_not(pointOwner)))[0].tolist()])
+            ax.scatter(player_points[:, 0], player_points[:, 1],
+                    marker='x', s=20, c=playerColors[1])
+            model.fit(points, pointOwner)
+            Z = model.predict(bgd_mesh)
+            Z = Z.reshape(xx.shape)
+            plt.contour(xx, yy, Z)
+            fig.canvas.draw()
 
-        # plot data
-        ax.plot(data, '*-')
-
-        # refresh canvas
-        self.canvas.draw()
+        turn += 1
+        return points
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
