@@ -13,6 +13,35 @@
     background-color: #C3C02C;
 }
 
+A {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Unvisited link  */
+
+a:visited {
+    color: black;
+}
+
+
+/* Visited link    */
+
+a:hover {
+    color: black;
+}
+
+
+/* Mouse over link */
+
+a:active {
+    color: black;
+}
+
+
+/* Selected link   */
+
 .contentInline {
     width: 500px;
     margin-top: 15px;
@@ -97,6 +126,10 @@ li {
     border: 1px solid red;
     margin: 10px;
     width: 300px;
+}
+
+.unbulletedList {
+    list-style-type: none;
 }
 
 
@@ -225,8 +258,17 @@ li {
 }
 
 #menu li {
-    padding: 10px 0;
-    font-size: 22px;
+    padding: 8px 0;
+    font-size: 24px;
+}
+
+#subMenu li {
+    padding: 2px 0;
+    font-size: 20px;
+}
+
+.centreContent {
+    margin: auto;
 }
 
 
