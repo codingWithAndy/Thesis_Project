@@ -10,6 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from views.mplwidget import MplWidget
+
+from views.mplwidget import LineBuilder # Test
+from matplotlib import pyplot as plt # Test
+
 import sys
 import os
 import random
@@ -21,6 +25,8 @@ from matplotlib.backends.backend_qt5agg import (
 class FreePlay(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
+
+    #players_moves = []
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -41,13 +47,16 @@ class FreePlay(QtWidgets.QWidget):
         self.label.setObjectName("label")
         
         # Matplotlib Widget
-        #sc = MplWidget(self, width=5, height=4, dpi=100)
-        #sc.axes.plot([0, 1, 2, 3, 4], [10, 1, 20, 3, 40])
-        self.MplWidget = MplWidget(self)  # Here is the MPLWidget
+    
+        # MplWidget(self)  # Here is the MPLWidget
+        self.MplWidget = MplWidget(self)
         self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
         self.MplWidget.setObjectName("MplWidget")
-        #self.MplWidget.addToolBar(NavigationToolbar(self.MplWidget.canvas, self))
         #self.MplWidget.show()
+        #self.cid = self.MplWidget.canvas.mpl_connect(
+        #    'button_press_event', self.get_datapoint)
+        self.MplWidget.canvas.draw()
+
         
         # Group box
         self.groupBox = QtWidgets.QGroupBox(self)
@@ -195,5 +204,12 @@ class FreePlay(QtWidgets.QWidget):
 
     def home_pressed(self):
         self.switch_window.emit("mainmenu,freeplay")
+
+    def get_datapoint(self, event):
+        print('click', event)
+        #if event.inaxes != self.MplWidget.canvas.axes:
+            #return
+        
+        #self.MplWidget.canvas.axes.plot(event.in)
 
 

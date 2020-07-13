@@ -5,7 +5,6 @@ class LineBuilder:
     name = "Andy"
     number=0
     def __init__(self, line):
-        self.line = line
         self.xs = list(line.get_xdata())
         self.ys = list(line.get_ydata())
         self.cid = line.figure.canvas.mpl_connect('button_press_event', self)
