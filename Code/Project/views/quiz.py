@@ -12,7 +12,9 @@ class Quiz(QtWidgets.QWidget):
     answer_options_number = 0
     score = 0
     question_topic = "kmeans"
+    questions_and_answers = []
 
+    '''
     questions = [
         "Question 1",
         "Question 2",
@@ -33,13 +35,21 @@ class Quiz(QtWidgets.QWidget):
         ["Question 1", "Question 2", "Question 3", "Question 4"],
         ["Question 1", "Question 2", "Question 3", "Question 4"]
     ]
-
+    '''
+    
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         self.setupUi()
 
     
     def setupUi(self):
+        with open(self.current_path+"/Code/Project/Quiz Questions/"+self.question_topic+".txt") as f:
+            for line in f:
+                inner_list = [elt.strip() for elt in line.split(',')]
+                self.questions_and_answers.append(inner_list)
+
+        print("Did the questions print out?:", self.questions_and_answers)
+
         self.setObjectName("QuizScreen")
         self.resize(1920, 1080)
         self.setMaximumSize(QtCore.QSize(1920, 1080))
@@ -146,11 +156,16 @@ class Quiz(QtWidgets.QWidget):
         #print("Button Id in main func:", self.buttonGroup.checkedId())
 
         # Putting Questions into Label and Buttons
-        self.questionLabel.setText(self.questions[self.question_number])
-        self.option1Button.setText(self.answer_options[self.question_number][0])
-        self.option2Button.setText(self.answer_options[self.question_number][1])
-        self.option3Button.setText(self.answer_options[self.question_number][2])
-        self.option4Button.setText(self.answer_options[self.question_number][3])
+        self.questionLabel.setText(
+            self.questions_and_answers[self.question_number][0])
+        self.option1Button.setText(
+            self.questions_and_answers[self.question_number][2])
+        self.option2Button.setText(
+            self.questions_and_answers[self.question_number][3])
+        self.option3Button.setText(
+            self.questions_and_answers[self.question_number][4])
+        self.option4Button.setText(
+            self.questions_and_answers[self.question_number][5])
 
         # Button connectons
         self.homeButton.clicked.connect(self.home_pressed)
@@ -164,7 +179,7 @@ class Quiz(QtWidgets.QWidget):
     def options_pressed(self, button):
         print("checked ID:", self.clickedButton)
         print("Button ID Pressed:", button.text())
-        if button.text() == self.answers[self.answer_number]:
+        if button.text() == self.questions_and_answers[self.answer_number][1]:
             print("Correct!")
             self.score += 1
             self.updateButtonOptions()
@@ -187,15 +202,20 @@ class Quiz(QtWidgets.QWidget):
         self.question_number += 1
         self.answer_number += 1
 
-        if self.question_number >= len(self.questions):
+        if self.question_number >= len(self.questions_and_answers):
             self.showScore()
             self.home_pressed()
         else:
-            self.questionLabel.setText(self.questions[self.question_number])
-            self.option1Button.setText(self.answer_options[self.question_number][0])
-            self.option2Button.setText(self.answer_options[self.question_number][1])
-            self.option3Button.setText(self.answer_options[self.question_number][2])
-            self.option4Button.setText(self.answer_options[self.question_number][3])
+            self.questionLabel.setText(
+                self.questions_and_answers[self.question_number][0])
+            self.option1Button.setText(
+                self.questions_and_answers[self.question_number][2])
+            self.option2Button.setText(
+                self.questions_and_answers[self.question_number][3])
+            self.option3Button.setText(
+                self.questions_and_answers[self.question_number][4])
+            self.option4Button.setText(
+                self.questions_and_answers[self.question_number][5])
 
     def showScore(self):
         # Create a pop up window for the test

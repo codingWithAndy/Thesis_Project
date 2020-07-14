@@ -32,7 +32,6 @@ class MplWidget(QWidget):
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
         
-        
         self.canvas.axes = self.canvas.figure.add_subplot(111)
         self.canvas.axes.set_xlim([-1, 1])
         self.canvas.axes.set_ylim([-1, 1])
@@ -70,31 +69,26 @@ class MplWidget(QWidget):
             self.canvas.axes.set_xlim([-1, 1])
             self.canvas.axes.set_ylim([-1, 1])
 
-            #figure = Figure() #
-            #axes = figure.gca() #
-            #axes.set_title("title") #
-            
-
             player_points = np.asarray([self.points[i]
                                         for i in np.where(self.pointOwner)[0].tolist()])
             #print("First player points:", player_points.shape)
-            
             self.canvas.axes.scatter(player_points[:, 0], player_points[:, 1],
                                      marker='x', s=20, c=self.playerColors[0])
             player_points = np.asarray(
                 [self.points[i] for i in np.where((np.logical_not(self.pointOwner)))[0].tolist()])
-            
             #print("Second player points:", player_points.shape)
-
             self.canvas.axes.scatter(player_points[:, 0], player_points[:, 1],
                                      marker='x', s=20, c=self.playerColors[1])
+            
             self.model.fit(self.points, self.pointOwner)
             Z = self.model.predict(self.bgd_mesh)
-            Z = Z.reshape(self.xx.shape)
-            #axes.plot(plt.contour(self.xx, self.yy, Z,
-            #                      cmap=plt.cm.autumn, alpha=0.8))#
-            #self.canvas.draw(plt.contour(self.xx, self.yy, Z))
             
+            # Plot boundary
+            Z = Z.reshape(self.xx.shape)
+            plt.contour(self.xx, self.yy, Z)
+            plt.savefig('graphs.png')
+        
+            # Relayout Canvas
             self.canvas.draw()
 
         self.turn += 1
