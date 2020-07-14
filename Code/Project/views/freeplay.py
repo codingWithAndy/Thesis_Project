@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from views.mplwidget import MplWidget
 
-from views.mplwidget import LineBuilder # Test
 from matplotlib import pyplot as plt # Test
 
 import sys
@@ -26,8 +25,6 @@ class FreePlay(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
 
-    #players_moves = []
-
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         self.setupUi()
@@ -35,8 +32,9 @@ class FreePlay(QtWidgets.QWidget):
     def setupUi(self):
         self.setObjectName("Form")
         self.resize(1920, 1080)
-        self.setStyleSheet("background-color: rgb(47, 85, 151);\n"
-"")
+        self.setStyleSheet("background-color: rgb(47, 85, 151);\n")
+        
+        # Main title Image
         self.label = QtWidgets.QLabel(self)
         self.label.setGeometry(QtCore.QRect(600, 20, 781, 181))
         self.label.setText("")
@@ -46,9 +44,7 @@ class FreePlay(QtWidgets.QWidget):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         
-        # Matplotlib Widget
-    
-        # MplWidget(self)  # Here is the MPLWidget
+        # Matplotlib Widget -> More like game board
         self.MplWidget = MplWidget(self)
         self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
         self.MplWidget.setObjectName("MplWidget")
@@ -57,14 +53,13 @@ class FreePlay(QtWidgets.QWidget):
         #    'button_press_event', self.get_datapoint)
         self.MplWidget.canvas.draw()
 
-        
         # Group box
         self.groupBox = QtWidgets.QGroupBox(self)
         self.groupBox.setGeometry(QtCore.QRect(80, 690, 1761, 351))
         self.groupBox.setStyleSheet("background-color: rgb(193,192,44);\n")
         self.groupBox.setObjectName("groupBox")
-        
-        
+
+        # Play Button        
         self.playButton = QtWidgets.QPushButton(self.groupBox)
         self.playButton.setGeometry(QtCore.QRect(1650, 140, 101, 61))
         self.playButton.setStyleSheet("background-color: rgb(3,193,161);\n"
@@ -106,11 +101,12 @@ class FreePlay(QtWidgets.QWidget):
         # Additional Text
         self.textFrame = QtWidgets.QFrame(self)
         self.textFrame.setGeometry(QtCore.QRect(860, 240, 981, 421))
-        self.textFrame.setStyleSheet("background-color: white;\n"
-"")
+        self.textFrame.setStyleSheet("background-color: white;\n")
         self.textFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.textFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.textFrame.setObjectName("textFrame")
+
+
         self.label_2 = QtWidgets.QLabel(self.textFrame)
         self.label_2.setGeometry(QtCore.QRect(120, 50, 111, 31))
         font = QtGui.QFont()
@@ -119,6 +115,8 @@ class FreePlay(QtWidgets.QWidget):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
+        
+
         self.modelTypeLabel = QtWidgets.QLabel(self.textFrame)
         self.modelTypeLabel.setGeometry(QtCore.QRect(220, 50, 121, 31))
         font = QtGui.QFont()
@@ -126,6 +124,8 @@ class FreePlay(QtWidgets.QWidget):
         font.setItalic(True)
         self.modelTypeLabel.setFont(font)
         self.modelTypeLabel.setObjectName("modelTypeLabel")
+        
+        
         self.label_3 = QtWidgets.QLabel(self.textFrame)
         self.label_3.setGeometry(QtCore.QRect(10, 10, 211, 41))
         font = QtGui.QFont()
@@ -134,6 +134,8 @@ class FreePlay(QtWidgets.QWidget):
         font.setWeight(75)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
+        
+        
         self.learningTypeLabel = QtWidgets.QLabel(self.textFrame)
         self.learningTypeLabel.setGeometry(QtCore.QRect(220, 10, 301, 41))
         font = QtGui.QFont()
@@ -141,6 +143,8 @@ class FreePlay(QtWidgets.QWidget):
         font.setItalic(True)
         self.learningTypeLabel.setFont(font)
         self.learningTypeLabel.setObjectName("learningTypeLabel")
+        
+        
         self.label_4 = QtWidgets.QLabel(self.textFrame)
         self.label_4.setGeometry(QtCore.QRect(70, 80, 141, 41))
         font = QtGui.QFont()
@@ -149,6 +153,8 @@ class FreePlay(QtWidgets.QWidget):
         font.setWeight(75)
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
+        
+        
         self.overviewLabel = QtWidgets.QLabel(self.textFrame)
         self.overviewLabel.setGeometry(QtCore.QRect(220, 90, 701, 261))
         font = QtGui.QFont()
@@ -180,7 +186,13 @@ class FreePlay(QtWidgets.QWidget):
 
     # Button click actions
     def clear_graph(self):
+        print("Free play clear graph button activated!")
+        self.MplWidget.points = []
+        self.MplWidget.turn = 0
+        self.MplWidget.pointOwner = []
         self.MplWidget.canvas.axes.clear()
+        self.MplWidget.canvas.axes.set_xlim([-1, 1])
+        self.MplWidget.canvas.axes.set_ylim([-1, 1])
         self.MplWidget.canvas.draw()
 
     def update_graph(self):
