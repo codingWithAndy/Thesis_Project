@@ -48,6 +48,7 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget = MplWidget(self)
         self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
         self.MplWidget.setObjectName("MplWidget")
+
         #self.MplWidget.show()
         #self.cid = self.MplWidget.canvas.mpl_connect(
         #    'button_press_event', self.get_datapoint)
@@ -190,9 +191,9 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget.points = []
         self.MplWidget.turn = 0
         self.MplWidget.pointOwner = []
-        self.MplWidget.canvas.axes.clear()
-        self.MplWidget.canvas.axes.set_xlim([-1, 1])
-        self.MplWidget.canvas.axes.set_ylim([-1, 1])
+        self.MplWidget.canvas.ax.clear()
+        self.MplWidget.canvas.ax.set_xlim([-1, 1])
+        self.MplWidget.canvas.ax.set_ylim([-1, 1])
         self.MplWidget.canvas.draw()
 
     def update_graph(self):
@@ -206,12 +207,12 @@ class FreePlay(QtWidgets.QWidget):
         cosinus_signal = np.cos(2*np.pi*f*t)
         sinus_signal = np.sin(2*np.pi*f*t)
 
-        self.MplWidget.canvas.axes.clear()
-        self.MplWidget.canvas.axes.plot(t, cosinus_signal)
-        self.MplWidget.canvas.axes.plot(t, sinus_signal)
-        self.MplWidget.canvas.axes.legend(
+        self.MplWidget.canvas.ax.clear()
+        self.MplWidget.canvas.ax.plot(t, cosinus_signal)
+        self.MplWidget.canvas.ax.plot(t, sinus_signal)
+        self.MplWidget.canvas.ax.legend(
             ('cosinus', 'sinus'), loc='upper right')
-        self.MplWidget.canvas.axes.set_title('Cosinus - Sinus Signal')
+        self.MplWidget.canvas.ax.set_title('Cosinus - Sinus Signal')
         self.MplWidget.canvas.draw()
 
     def home_pressed(self):
