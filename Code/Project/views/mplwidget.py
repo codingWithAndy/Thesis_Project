@@ -1,8 +1,5 @@
-from matplotlib.backends.backend_qt5agg import (
-    FigureCanvas, NavigationToolbar2QT as NavigationToolbar)
-
 from PyQt5.QtWidgets import *
-#from matplotlib.backends.backend_qt5agg import FigureCanvas
+from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
 import matplotlib, sklearn.discriminant_analysis
@@ -10,7 +7,6 @@ matplotlib.use('Qt5Agg')
 import numpy as np
 import matplotlib.pyplot as plt
 from random import randint
-
 
 
 class MplWidget(QWidget):
@@ -35,12 +31,10 @@ class MplWidget(QWidget):
         
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
-
-        self.fig = self.canvas.figure #
         
-        self.canvas.ax = self.fig.add_subplot(111)
-        self.canvas.ax.set_xlim([-1, 1])
-        self.canvas.ax.set_ylim([-1, 1])
+        self.canvas.axes = self.canvas.figure.add_subplot(111)
+        self.canvas.axes.set_xlim([-1, 1])
+        self.canvas.axes.set_ylim([-1, 1])
 
         self.xs = list()
         self.ys = list()
@@ -49,12 +43,10 @@ class MplWidget(QWidget):
         self.cid = self.canvas.figure.canvas.mpl_connect(
             'button_press_event', self)
         #self.canvas.addToolBar(NavigationToolbar(self.MplWidget.canvas, self))
-
-        
     
     def __call__(self, event):
         print('click', event)
-        if event.inaxes != self.canvas.ax:
+        if event.inaxes != self.canvas.axes:
             return
         
 
@@ -63,27 +55,29 @@ class MplWidget(QWidget):
         
         self.points.append([self.ix, self.iy])
         self.pointOwner.append(self.playerID)
-  
+        
+        #print(self.points)
+
         # from classifier game
         self.playerID = not self.playerID
-        self.canvas.ax.scatter(self.ix, self.iy, marker='x', 
+        self.canvas.axes.scatter(self.ix, self.iy, marker='x', 
                                  s=20, c=self.playerColors[self.playerID])
-        self.fig.canvas.draw() # self.canvas.draw()
+        self.canvas.draw()
 
         if not self.playerID and self.turn >= 4:
-            self.canvas.ax.clear()
-            self.canvas.ax.set_xlim([-1, 1])
-            self.canvas.ax.set_ylim([-1, 1])
+            self.canvas.axes.clear()
+            self.canvas.axes.set_xlim([-1, 1])
+            self.canvas.axes.set_ylim([-1, 1])
 
             player_points = np.asarray([self.points[i]
                                         for i in np.where(self.pointOwner)[0].tolist()])
             #print("First player points:", player_points.shape)
-            self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
+            self.canvas.axes.scatter(player_points[:, 0], player_points[:, 1],
                                      marker='x', s=20, c=self.playerColors[0])
             player_points = np.asarray(
                 [self.points[i] for i in np.where((np.logical_not(self.pointOwner)))[0].tolist()])
             #print("Second player points:", player_points.shape)
-            self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
+            self.canvas.axes.scatter(player_points[:, 0], player_points[:, 1],
                                      marker='x', s=20, c=self.playerColors[1])
             
             self.model.fit(self.points, self.pointOwner)
@@ -91,16 +85,13 @@ class MplWidget(QWidget):
             
             # Plot boundary
             Z = Z.reshape(self.xx.shape)
-            #plt.contour(self.xx, self.yy, Z)
+            plt.contour(self.xx, self.yy, Z)
             plt.savefig('graphs.png')
-            self.canvas.ax.contour(self.xx, self.yy, Z)  #
-            #plt.show()
+        
             # Relayout Canvas
-            self.fig.canvas.draw() # self.canvas.draw()
-            
+            self.canvas.draw()
 
         self.turn += 1
-   
         
         
         
