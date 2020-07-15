@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from views.mplwidget import MplWidget
+from views.kmeansgameboard import KMeansGameboard
 
 from matplotlib import pyplot as plt # Test
 
@@ -17,13 +18,13 @@ import sys
 import os
 import random
 import numpy as np
-from matplotlib.backends.backend_qt5agg import (
-    NavigationToolbar2QT as NavigationToolbar)
+
 
 
 class FreePlay(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
+    game_mode = "kmeans"
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -45,7 +46,10 @@ class FreePlay(QtWidgets.QWidget):
         self.label.setObjectName("label")
         
         # Matplotlib Widget -> More like game board
-        self.MplWidget = MplWidget(self)
+        if self.game_mode == 'kmeans':
+            self.MplWidget = KMeansGameboard(self)
+        else:
+            self.MplWidget = MplWidget(self)
         self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
         self.MplWidget.setObjectName("MplWidget")
 
