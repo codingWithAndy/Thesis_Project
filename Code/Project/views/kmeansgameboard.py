@@ -73,6 +73,8 @@ class KMeansGameboard(QWidget):
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
         self.plot_decision_boundaries(self.kmeans, self.X)
+
+        # Plot new data points prediction.
         
 
     
@@ -147,27 +149,4 @@ class KMeansGameboard(QWidget):
         self.fig.canvas.draw()
             # Need to figure out how to clear the boundaries
 
-#'''
-'''
-class LineBuilder:
-    name = "Andy"
-    number = 0
 
-    def __init__(self, line):
-        self.line = line
-        self.xs = list(self.line.get_xdata())
-        self.ys = list(self.line.get_ydata())
-        self.cid = self.line.figure.canvas.mpl_connect('button_press_event', self)
-
-    def __call__(self, event):
-        print('click', event)
-        if event.inaxes != self.line.axes:
-            return
-        self.xs.append(event.xdata)
-        self.ys.append(event.ydata)
-        self.line.set_data(self.xs, self.ys)
-        self.line.figure.canvas.draw()
-        self.name = "name"+str(self.number)
-        print(self.name)
-        self.number += 1
-'''
