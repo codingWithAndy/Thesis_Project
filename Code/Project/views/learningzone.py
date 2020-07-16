@@ -43,6 +43,7 @@ class LearningZone(QtWidgets.QWidget):
         self.freePlayButton.setGeometry(QRect(800, 960, 211, 70))
         font = QFont()
         font.setPointSize(30)
+        self.freePlayButton.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.freePlayButton.setFont(font)
         self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                           "border-radius: 15px;")
@@ -69,12 +70,13 @@ class LearningZone(QtWidgets.QWidget):
 
 
         #Web View Set up
-        self.widget = QWebEngineView(self.centralwidget)
-        self.widget.setGeometry(QRect(20, 20, 1871, 921))
-        self.widget.setObjectName("widget")
-        self.widget.setStyleSheet("border-radius: 15px;")
-        self.widget.setUrl(self.url(self.topic))
-        self.widget.show()
+        #self.webView = QWebEngineView(self.centralwidget)
+        #self.webView.setGeometry(QRect(20, 20, 1871, 921))
+        #self.webView.setObjectName("widget")
+        #self.webView.setStyleSheet("border-radius: 15px;")
+        #self.webView.setUrl(self.url(self.topic))
+        #self.webView.show()
+        self.setup_webview()
 
         self.retranslateUi()
 
@@ -82,6 +84,14 @@ class LearningZone(QtWidgets.QWidget):
         self.homeButton.clicked.connect(self.home_pressed)
         self.freePlayButton.clicked.connect(self.freeplay_pressed)
         self.quizButton.clicked.connect(self.quiz_pressed)
+
+    def setup_webview(self):
+        self.webView = QWebEngineView(self.centralwidget)
+        self.webView.setGeometry(QRect(20, 20, 1871, 921))
+        self.webView.setObjectName("widget")
+        self.webView.setStyleSheet("border-radius: 15px;")
+        self.webView.setUrl(self.url(self.topic))
+        self.webView.show()
 
 
     # Changing URL 

@@ -66,8 +66,6 @@ class KMeansGameboard(QWidget):
         self.fig.canvas.draw()
 
 
-
-
     def __call__(self, event):
         print('click', event)
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
@@ -130,7 +128,7 @@ class KMeansGameboard(QWidget):
         self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
                                     cluster_std=self.blob_std, random_state=7)
         
-        self.plot_data(self.X)
+        self.plot_clusters(self.X)
         self.fig.canvas.draw()
 
 
@@ -144,7 +142,7 @@ class KMeansGameboard(QWidget):
             self.plot_decision_boundaries(self.kmeans, self.X)
         else:
             self.canvas.ax.clear()
-            self.plot_data(self.X)
+            self.plot_clusters(self.X)  # plot_data(self.X)
             
         self.fig.canvas.draw()
             # Need to figure out how to clear the boundaries
