@@ -16,6 +16,10 @@ matplotlib.use('Qt5Agg')
 
 
 class KMeansGameboard(QWidget):
+    model_name = "K-Means!"
+    learning_type = "Unsupervised Learning!"
+    model_overview = """K-Means is one of the hard partitioning clustering algorithms. The centre of the cluster represents each cluster of data, and each data point gets assigned to the nearest cluster centre, also known as the centroid. However, the number of clusters is a pre-set value. This pre-set value is known as the number of K. K-Means is an iterative process which starts with random initialisation of the centroids and updates on each iteration."""
+
     blob_centers = np.array(
         [[0.2,  2.3],
          [-1.5,  2.3],
@@ -29,6 +33,8 @@ class KMeansGameboard(QWidget):
                          0.1, 0.1, 
                          0.1]
                         )
+
+    k = 5
 
     def __init__(self, parent=None):
 
@@ -51,6 +57,8 @@ class KMeansGameboard(QWidget):
         self.setLayout(self.vertical_layout)
         self.cid = self.canvas.figure.canvas.mpl_connect(
             'button_press_event', self)
+        
+        
 
 
     def plot_clusters(self, X, y=None):
@@ -62,12 +70,8 @@ class KMeansGameboard(QWidget):
 
     def __call__(self, event):
         print('click', event)
-        self.k = 5
-
-
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
-
         self.plot_decision_boundaries(self.kmeans, self.X)
         
 
@@ -106,6 +110,42 @@ class KMeansGameboard(QWidget):
             self.plot_centroids(clusterer.cluster_centers_)
         
         self.fig.canvas.draw()
+    
+
+    # Experimenting
+    def replot_kmeans(self):
+        print(self.k)
+        self.canvas.ax.clear()
+        self.blob_centers = np.array(
+            [[0.2,  2.3],
+             [-1.5,  2.3],
+             [-2.8,  1.3]
+             ]
+        )
+        self.blob_std = np.array([0.4, 0.3,
+                             0.1]
+                            )
+        self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
+                                    cluster_std=self.blob_std, random_state=7)
+        
+        self.plot_data(self.X)
+        self.fig.canvas.draw()
+
+
+    boundaries_on = False
+
+    # Toggle decision boundary off
+    def switch_boundaries_on_off(self):
+        if self.boundaries_on != False:
+            self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+            self.y_pred = self.kmeans.fit_predict(self.X)
+            self.plot_decision_boundaries(self.kmeans, self.X)
+        else:
+            self.canvas.ax.clear()
+            self.plot_data(self.X)
+            
+        self.fig.canvas.draw()
+            # Need to figure out how to clear the boundaries
 
 #'''
 '''

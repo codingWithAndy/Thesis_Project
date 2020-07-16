@@ -14,6 +14,12 @@ from random import randint
 
 
 class MplWidget(QWidget):
+
+    model_name = "LDA - Linear Discrimant Analysis"
+    learning_type = "Supervised Learning"
+    model_overview = """Something fancy about LDA."""
+
+
     ix, iy = 0,0 
     model = sklearn.discriminant_analysis.LinearDiscriminantAnalysis()
 

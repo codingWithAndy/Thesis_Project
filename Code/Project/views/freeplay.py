@@ -31,6 +31,7 @@ class FreePlay(QtWidgets.QWidget):
         self.setupUi()
 
     def setupUi(self):
+        print(self.game_mode)
         self.setObjectName("Form")
         self.resize(1920, 1080)
         self.setStyleSheet("background-color: rgb(47, 85, 151);\n")
@@ -45,24 +46,21 @@ class FreePlay(QtWidgets.QWidget):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         
-        # Matplotlib Widget -> More like game board
-        if self.game_mode == 'kmeans':
-            self.MplWidget = KMeansGameboard(self)
-        else:
-            self.MplWidget = MplWidget(self)
-        self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
-        self.MplWidget.setObjectName("MplWidget")
-
-        #self.MplWidget.show()
-        #self.cid = self.MplWidget.canvas.mpl_connect(
-        #    'button_press_event', self.get_datapoint)
-        self.MplWidget.canvas.draw()
-
         # Group box
         self.groupBox = QtWidgets.QGroupBox(self)
         self.groupBox.setGeometry(QtCore.QRect(80, 690, 1761, 351))
         self.groupBox.setStyleSheet("background-color: rgb(193,192,44);\n")
         self.groupBox.setObjectName("groupBox")
+
+        # Drop Down Menu (Combo Box)
+        self.comboBox = QtWidgets.QComboBox(self.groupBox)
+        self.comboBox.setGeometry(QtCore.QRect(150, 50, 131, 21))
+        self.comboBox.setStyleSheet("background-color: white;")
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
 
         # Play Button        
         self.playButton = QtWidgets.QPushButton(self.groupBox)
@@ -123,7 +121,7 @@ class FreePlay(QtWidgets.QWidget):
         
 
         self.modelTypeLabel = QtWidgets.QLabel(self.textFrame)
-        self.modelTypeLabel.setGeometry(QtCore.QRect(220, 50, 121, 31))
+        self.modelTypeLabel.setGeometry(QtCore.QRect(220, 50, 700, 31))
         font = QtGui.QFont()
         font.setPointSize(30)
         font.setItalic(True)
@@ -142,7 +140,7 @@ class FreePlay(QtWidgets.QWidget):
         
         
         self.learningTypeLabel = QtWidgets.QLabel(self.textFrame)
-        self.learningTypeLabel.setGeometry(QtCore.QRect(220, 10, 301, 41))
+        self.learningTypeLabel.setGeometry(QtCore.QRect(220, 10, 700, 41))
         font = QtGui.QFont()
         font.setPointSize(30)
         font.setItalic(True)
@@ -161,35 +159,177 @@ class FreePlay(QtWidgets.QWidget):
         
         
         self.overviewLabel = QtWidgets.QLabel(self.textFrame)
-        self.overviewLabel.setGeometry(QtCore.QRect(220, 90, 701, 261))
+        self.overviewLabel.setGeometry(QtCore.QRect(220, 90, 710, 261))
+
+        self.overviewLabel.setWordWrap(True)
         font = QtGui.QFont()
         font.setPointSize(20)
         self.overviewLabel.setFont(font)
         self.overviewLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.overviewLabel.setObjectName("overviewLabel")
 
+        # Matplotlib Widget -> More like game board
+        self.setup_gameboard()
+
+        # These two might not be needed.
+        #self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
+        #self.MplWidget.setObjectName("MplWidget")
+
+        #self.MplWidget.show()
+        #self.cid = self.MplWidget.canvas.mpl_connect(
+        #    'button_press_event', self.get_datapoint)
+        self.MplWidget.canvas.draw()
+
         # Button Connects
         self.playButton.clicked.connect(self.update_graph)
         self.homeButton.clicked.connect(self.home_pressed)
         self.clearButton.clicked.connect(self.clear_graph)
+        self.comboBox.activated.connect(self.handleActivated)
+
+        if self.game_mode == 'kmeans':
+            self.kmeans_setup()
 
 
         self.retranslateUi()
         
+    def setup_gameboard(self):
+        print("in setup gameboard")
+        if self.game_mode == 'kmeans':
+            self.MplWidget = KMeansGameboard(self)
+        elif self.game_mode == 'lda':
+            print("in else if statement for lda")
+            self.MplWidget = MplWidget(self)
+            self.kmeans_setup()
+        
+        self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
+        self.MplWidget.setObjectName("MplWidget")
+        self.MplWidget.show()
+        self.MplWidget.canvas.draw()
+
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Form", "Data Splash! - Free Play"))
         self.groupBox.setTitle(_translate("Form", "Model Options:"))
         self.label_2.setText(_translate("Form", "Model:"))
-        self.modelTypeLabel.setText(_translate("Form", "K-Means"))
+        #self.modelTypeLabel.setText(_translate("Form", "K-Means"))
         self.label_3.setText(_translate("Form", "Learning Type:"))
-        self.learningTypeLabel.setText(_translate("Form", "Unsupervised Learning"))
+        #self.learningTypeLabel.setText(_translate("Form", "Unsupervised Learning"))
         self.label_4.setText(_translate("Form", "Overview:"))
-        self.overviewLabel.setText(_translate("Form", "Model Overview"))
+        #self.overviewLabel.setText(_translate("Form", "Model Overview"))
+        self.comboBox.setItemText(0, _translate("Form", "Please Select:"))
+        self.comboBox.setItemText(1, _translate("Form", "KMeans"))
+        self.comboBox.setItemText(2, _translate("Form", "LDA"))
+        self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
 
+        self.overviewLabel.setText(_translate(
+            "Form", self.MplWidget.model_overview))
+        self.modelTypeLabel.setText(_translate(
+            "Form", self.MplWidget.model_name))
+        self.learningTypeLabel.setText(
+            _translate("Form", self.MplWidget.learning_type))
+
+    def kmeans_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.numberOfClustersLabel.setText(_translate("Form", "Number of Clusters:"))
+        self.modelLabel.setText(_translate("Form", "Model:"))
+        self.boundaryLabel.setText(_translate("Form", "Boundary (On/Off):"))
+
+    def kmeans_setup(self, shown_before=False):
+        print("In kmeans set up")
+        self.numberOfClustersLabel = QtWidgets.QLabel(self.groupBox)
+        self.numberOfClustersLabel.setGeometry(QtCore.QRect(20, 90, 131, 21))
+        self.numberOfClustersLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.numberOfClustersLabel.setObjectName("numberOfClustersLabel")
+        
+
+        self.modelLabel = QtWidgets.QLabel(self.groupBox)
+        self.modelLabel.setGeometry(QtCore.QRect(67, 45, 81, 31))
+        self.modelLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.modelLabel.setObjectName("modelLabel")
+        self.lineEdit = QtWidgets.QLineEdit(self.groupBox)
+        self.lineEdit.setGeometry(QtCore.QRect(160, 90, 31, 21))
+        self.lineEdit.setStyleSheet("background-color: white;")
+        self.lineEdit.setObjectName("lineEdit")
+
+        self.boundaryLabel = QtWidgets.QLabel(self.groupBox)
+        self.boundaryLabel.setGeometry(QtCore.QRect(30, 130, 121, 21))
+        self.boundaryLabel.setObjectName("boundaryLabel")
+        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(self.groupBox)
+        self.boundaryOnOffRadioButton.setGeometry(
+            QtCore.QRect(170, 130, 31, 20))
+        self.boundaryOnOffRadioButton.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.boundaryOnOffRadioButton.setText("")
+        self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
+        self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
+
+        if shown_before == True:
+            self.numberOfClustersLabel.show()
+            self.lineEdit.show()
+            self.boundaryLabel.show()
+            self.boundaryOnOffRadioButton.show()
+
+        self.kmeans_retranslateUi()
+
+    #def show_kmeans_widgets(self):
+    #    self.numberOfClustersLabel.show()
+    #    self.lineEdit.show()
+    #    self.boundaryLabel.show()
+    #    self.boundaryOnOffRadioButton.show()
+    #    self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
+        
+
+    def hide_kmeans_ui(self):
+        self.numberOfClustersLabel.hide()
+        self.lineEdit.hide()
+        self.boundaryLabel.hide()
+        self.boundaryOnOffRadioButton.hide()
+
+
+    def handleActivated(self, index):
+        print(self.comboBox.itemText(index))
+        if self.comboBox.itemText(index) == "LDA":
+            self.game_mode = "lda"
+            self.MplWidget.hide()
+            
+            self.hide_kmeans_ui()
+            self.setup_gameboard()
+            '''
+            self.kmeans_retranslateUi()
+            self.setupUi()
+            self.MplWidget.canvas.ax.clear()
+            self.MplWidget.canvas.draw()
+            '''
+        elif self.comboBox.itemText(index) == "KMeans":
+            self.game_mode = "kmeans"
+            # Need to hide previous layout widgets, add needed widgets.
+            self.MplWidget.hide()
+            # self.hide_ui() # Needs to be to the "other gameboards" widgets
+            self.setup_gameboard()
+            self.kmeans_setup(True)
+        
+        self.retranslateUi()
+
+    
+
+    # Linking to Models boundaries on off function
+    def change_boundary(self):
+        if self.boundaryOnOffRadioButton.isChecked() == True:
+            self.MplWidget.boundaries_on = True
+        else:
+            self.MplWidget.boundaries_on = False
+
+        self.MplWidget.switch_boundaries_on_off()
+    
+    
 
     # Button click actions
+
+    def home_pressed(self):
+        self.switch_window.emit("mainmenu,freeplay")
+
     def clear_graph(self):
         print("Free play clear graph button activated!")
         self.MplWidget.points = []
@@ -200,8 +340,22 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget.canvas.ax.set_ylim([-1, 1])
         self.MplWidget.canvas.draw()
 
-    def update_graph(self):
 
+    def update_graph(self):
+        if self.comboBox == "LDA":
+            self.game_mode = "lda"
+            self.hide_ui()
+            self.setupUi()
+
+        else:
+            no_of_clusters = self.lineEdit.text()
+            self.MplWidget.k = int(no_of_clusters)
+            self.MplWidget.replot_kmeans()
+
+            _translate = QtCore.QCoreApplication.translate
+            
+
+        '''# Original Content
         fs = 500
         f = random.randint(1, 100)
         ts = 1/fs
@@ -218,9 +372,8 @@ class FreePlay(QtWidgets.QWidget):
             ('cosinus', 'sinus'), loc='upper right')
         self.MplWidget.canvas.ax.set_title('Cosinus - Sinus Signal')
         self.MplWidget.canvas.draw()
-
-    def home_pressed(self):
-        self.switch_window.emit("mainmenu,freeplay")
+    '''
+    
 
     def get_datapoint(self, event):
         print('click', event)
@@ -228,5 +381,5 @@ class FreePlay(QtWidgets.QWidget):
             #return
         
         #self.MplWidget.canvas.axes.plot(event.in)
-
+        
 
