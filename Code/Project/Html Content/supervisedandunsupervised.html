@@ -1,0 +1,189 @@
+<html>
+
+<head>
+    <title>Task Driven vs Data Driven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <nav role="navigation">
+            <div id="menuToggle">
+                <!--
+                                            A fake / hidden checkbox is used as click reciever,
+                                            so you can use the :checked selector on it.
+                                            -->
+                <input type="checkbox" />
+
+                <!--
+                                            Some spans to act as a hamburger.
+                                            
+                                            They are acting like a real hamburger,
+                                            not that McDonalds stuff.
+                                            -->
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <!--
+                                            Too bad the menu has to be inside of the button
+                                            but hey, it's pure CSS magic.
+                                            -->
+                <ul id="menu">
+                    <a href="https://snappygames.co.uk/Andy/welcome.html">
+                        <li>Welcome</li>
+                    </a>
+                    <a href="https://snappygames.co.uk/Andy/whatismachinelearning.html">
+                        <li>What is Machine Learning?</li>
+                    </a>
+                    <a href="#">
+                        <li>Task Driven vs Data Driven</li>
+                    </a>
+                    <a href="#">
+                        <li>Supervised and Unsupervised Learning</li>
+                    </a>
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Classification</li>
+                    </a>
+                    <ul id="subMenu">
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                            <li>Support Vector Machines (SVM)</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Nearest Neighbour</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Neural Networks</li>
+                        </a>
+                    </ul>
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Regression</li>
+                    </a>
+                    <ul id="subMenu">
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                            <li>Linear Regression</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Logistic Regression</li>
+                        </a>
+                    </ul>
+
+
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Clustering</li>
+                    </a>
+                    <ul id="subMenu">
+                        <a href="https://snappygames.co.uk/Andy/kmeans.html">
+                            <li>K-Means</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Gaussian Mixture Model (GMM)</li>
+                        </a>
+                    </ul>
+                    <a href="https://erikterwan.com/">
+                        <li>Association Rule</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <!-- Title Image -->
+            <div class="textBackground">
+                <img class="titlePageImg" src="./Images/TDvsDD.png" alt="Task Driven vs Data Driven Tasks" />
+            </div>
+
+            <div class="textBackgroundLight">
+                <h2>Task Driven vs Data Driven</h2>
+
+                <p>
+                    Depending on what your intended outcome of machine learning is, there are two main routes you can go
+                    down. The journey
+                    usually gets decided upon the type of data you have. If you have data that is labelled, you can take
+                    the task-driven
+                    course, but if your data is unlabelled, then you can go down the data-driven route. Each way has a
+                    selection of machine
+                    learning models that are best suited for each journey. The different options are in the image below.
+                </p>
+
+            </div>
+
+            <!-- Quotes Section -->
+            <div class="textBackgroundLight">
+                <img src="./Images/ML Overview.jpeg" class="fullPageImg"
+                    alt="An overview of Machine Learning Algorithms">
+            </div>
+
+
+            <div class="textBackgroundLight">
+                <h2>Task Driven</h2>
+                <p>
+                    Task-driven is the avenue most people will go down when the data is labelled. When you have labelled
+                    data, this allows
+                    you to use the supervised training methods, as these require the outputted data’s intended outcome
+                    (more about this will
+                    appear in the following sections).
+                </p>
+
+                <p>
+                    When the option of supervised learning get identified as the direction you intend to take, this
+                    opens up to two further
+                    choices.
+                <ul>
+                    <li><b>Classification</b> - [Add a brief overview here]</li>
+                    <li><b>Regression</b> - [Add a brief overview here]</li>
+                </ul>
+
+
+                </p>
+            </div>
+
+            <div class="textBackgroundLight">
+
+                <h2>Data Driven</h2>
+
+                <p>
+                    Data-driven is the avenue most people will go down when the data is unlabelled. When you have
+                    unlabelled data, this
+                    would mean you will have to use unsupervised training methods, as your data does not have any labels
+                    you are unable to
+                    train how well the models are doing against the outputted labels.
+                </p>
+                <p>
+                    When the option of unsupervised learning get identified as the direction you intend to take, this
+                    opens up to three
+                    further choices.
+                <ul>
+                    <li><b>Clustering</b> - [Add a brief overview here]</li>
+                    <li><b>Association</b> - [Add a brief overview here]</li>
+                    <li><b>Dimensionality Reduction</b> - [Add a brief overview here]</li>
+                </ul>
+
+
+
+                </p>
+
+            </div>
+
+            <!-- Footer -->
+            <footer>
+
+                <!-- Copyright -->
+                <div>
+                    <a href="whatismachinelearning.html"><i class="far fa-arrow-alt-circle-left"
+                            style="padding-left: 38%;"></i> Previous</a> <a href="supervisedandunsupervised.html"><span
+                            style="padding-left: 20px;">Next</span> <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+
+        </div>
+    </main>
+</body>
+
+</html>
