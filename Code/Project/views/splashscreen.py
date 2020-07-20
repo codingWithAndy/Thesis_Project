@@ -14,7 +14,7 @@ class SplashScreen(QtWidgets.QWidget):
     def setupUi(self):
         self.setObjectName("Form")
         self.resize(1158, 720)
-        self.setMinimumSize(QtCore.QSize(1158, 720))
+        self.setMinimumSize(QtCore.QSize(1158, 770))
         self.setStyleSheet("background-color: rgb(47,85,151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -29,7 +29,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.horizontalLayout_2.addItem(spacerItem)
         self.horizontalLayout.addLayout(self.horizontalLayout_2)
         self.label = QtWidgets.QLabel(self)
-        self.label.setMinimumSize(QtCore.QSize(600, 300))
+        self.label.setMinimumSize(QtCore.QSize(500, 250))
         self.label.setMaximumSize(QtCore.QSize(900, 300))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap(
@@ -56,7 +56,8 @@ class SplashScreen(QtWidgets.QWidget):
         self.horizontalLayout_5.addItem(spacerItem2)
         self.horizontalLayout_4.addLayout(self.horizontalLayout_5)
         self.label_2 = QtWidgets.QLabel(self)
-        self.label_2.setMinimumSize(QtCore.QSize(200, 300))
+        self.label_2.setMinimumSize(QtCore.QSize(200, 400))
+        self.label_2.setMaximumSize(QtCore.QSize(400, 600))
         self.label_2.setText("")
         self.label_2.setPixmap(QtGui.QPixmap(
             self.current_path+"/Code/Project/Images/Water-drop-data-v2.png"))

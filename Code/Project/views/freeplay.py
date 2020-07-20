@@ -21,7 +21,7 @@ class FreePlay(QtWidgets.QWidget):
 
     def setupUi(self):
         self.setObjectName("self")
-        self.resize(1158, 730)
+        self.resize(1158, 770)
         self.setStyleSheet("background-color:rgb(47, 85, 151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
