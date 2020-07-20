@@ -214,6 +214,11 @@ class FreePlay(QtWidgets.QWidget):
         self.playButton.setMinimumSize(QtCore.QSize(101, 51))
         self.playButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(
+            self.current_path+"/Code/Project/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.playButton.setIcon(icon)
+        self.playButton.setIconSize(QtCore.QSize(40, 40))
         self.playButton.setObjectName("playButton")
         self.buttonLayoutV.addWidget(self.playButton)
         
@@ -221,6 +226,12 @@ class FreePlay(QtWidgets.QWidget):
         self.clearButton.setMinimumSize(QtCore.QSize(101, 51))
         self.clearButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                        "border-radius: 15px;")
+        self.clearButton.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(
+            self.current_path+"/Code/Project/Images/times-circle-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.clearButton.setIcon(icon1)
+        self.clearButton.setIconSize(QtCore.QSize(40, 40))
         self.clearButton.setObjectName("clearButton")
         self.buttonLayoutV.addWidget(self.clearButton)
         
@@ -228,6 +239,12 @@ class FreePlay(QtWidgets.QWidget):
         self.homeButton.setMinimumSize(QtCore.QSize(101, 51))
         self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
+        self.homeButton.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(
+            self.current_path+"/Code/Project/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.homeButton.setIcon(icon2)
+        self.homeButton.setIconSize(QtCore.QSize(40, 30))
         self.homeButton.setObjectName("homeButton")
         self.buttonLayoutV.addWidget(self.homeButton)
         
@@ -273,396 +290,7 @@ class FreePlay(QtWidgets.QWidget):
         self.learningTypeInfoLabel.setText(
             _translate("Form", self.MplWidget.learning_type))
         
-    '''
-    def setupUi(self):
-        print(self.game_mode)
-
-        # Main form layout
-        self.setObjectName("Form")
-        self.resize(1158, 720)
-        self.setStyleSheet("background-color:rgb(47, 85, 151);")
-
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
-
-        # Main title Image
-        self.titleLabel = QtWidgets.QLabel(self)
-        self.titleLabel.setMinimumSize(QtCore.QSize(582, 120))
-        self.titleLabel.setMaximumSize(QtCore.QSize(582, 120))
-        self.titleLabel.setText("")
-        self.titleLabel.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/freeplay.png"))
-        self.titleLabel.setObjectName("titleLabel")
-        
-        self.horizontalLayout.addWidget(self.titleLabel)
-        spacerItem1 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
-        self.verticalLayout_2.addLayout(self.horizontalLayout)
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-
-        # Matplotlib Widget -> More like game board
-        self.setup_gameboard()
-        self.MplWidget.canvas.draw()
-
-
-        
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-
-        # Information frame box
-        self.frame = QtWidgets.QFrame(self)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(2)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.frame.sizePolicy().hasHeightForWidth())
-        self.frame.setSizePolicy(sizePolicy)
-        self.frame.setMinimumSize(QtCore.QSize(570, 350))
-        self.frame.setMaximumSize(QtCore.QSize(1710, 525))
-        self.frame.setStyleSheet("background-color:white;")
-
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-
-
-        self.formLayout_2 = QtWidgets.QFormLayout(self.frame)
-        self.formLayout_2.setObjectName("formLayout_2")
-        self.learningTypeLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.learningTypeLabel.setFont(font)
-        self.learningTypeLabel.setObjectName("learningTypeLabel")
-        self.formLayout_2.setWidget(
-            0, QtWidgets.QFormLayout.LabelRole, self.learningTypeLabel)
-        self.learningTypeInfoLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.learningTypeInfoLabel.setFont(font)
-        self.learningTypeInfoLabel.setObjectName("learningTypeInfoLabel")
-        self.formLayout_2.setWidget(
-            0, QtWidgets.QFormLayout.FieldRole, self.learningTypeInfoLabel)
-        self.modelLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.modelLabel.setFont(font)
-        self.modelLabel.setObjectName("modelLabel")
-        self.formLayout_2.setWidget(
-            1, QtWidgets.QFormLayout.LabelRole, self.modelLabel)
-        self.modelTypeLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.modelTypeLabel.setFont(font)
-        self.modelTypeLabel.setObjectName("modelTypeLabel")
-        self.formLayout_2.setWidget(
-            1, QtWidgets.QFormLayout.FieldRole, self.modelTypeLabel)
-        
-        self.overviewLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.overviewLabel.setFont(font)
-        self.overviewLabel.setObjectName("overviewLabel")
-        self.formLayout_2.setWidget(
-            2, QtWidgets.QFormLayout.LabelRole, self.overviewLabel)
-        self.overviewLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.overviewLabel.setFont(font)
-        self.overviewLabel.setWordWrap(True)
-        self.overviewLabel.setObjectName("overviewLabel")
-        self.formLayout_2.setWidget(
-            2, QtWidgets.QFormLayout.FieldRole, self.overviewLabel)
-        self.horizontalLayout_3.addWidget(self.frame)
-        self.horizontalLayout_2.addLayout(self.horizontalLayout_3)
-        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.groupBox = QtWidgets.QGroupBox(self)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy)
-        self.groupBox.setMinimumSize(QtCore.QSize(700, 210))
-        self.groupBox.setMaximumSize(QtCore.QSize(16777215, 600))
-        self.groupBox.setStyleSheet("background-color: rgb(195, 192, 44);")
-        self.groupBox.setObjectName("groupBox")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.groupBox)
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox)
-        self.groupBox_2.setObjectName("groupBox_2")
-        self.formLayout_3 = QtWidgets.QFormLayout(self.groupBox_2)
-        self.formLayout_3.setObjectName("formLayout_3")
-        self.modelLabel = QtWidgets.QLabel(self.groupBox_2)
-        self.modelLabel.setObjectName("modelLabel")
-        self.formLayout_3.setWidget(
-            0, QtWidgets.QFormLayout.LabelRole, self.modelLabel)
-        
-        # Drop Down Menu (Combo Box)
-        self.comboBox = QtWidgets.QComboBox(self.groupBox_2)
-        self.comboBox.setStyleSheet("background-color: white;"
-                                    "selection-color: rgb(200, 200, 200)")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-
-
-        self.formLayout_3.setWidget(
-            0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
-        self.numberOfClustersLabel = QtWidgets.QLabel(self.groupBox_2)
-        self.numberOfClustersLabel.setObjectName("numberOfClustersLabel")
-        self.formLayout_3.setWidget(
-            1, QtWidgets.QFormLayout.LabelRole, self.numberOfClustersLabel)
-        self.lineEdit = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit.setMaximumSize(QtCore.QSize(30, 16777215))
-        self.lineEdit.setAutoFillBackground(False)
-        self.lineEdit.setStyleSheet("background-color: white;\n"
-                                    "")
-        self.lineEdit.setObjectName("lineEdit")
-        self.formLayout_3.setWidget(
-            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
-        self.boundaryLabel = QtWidgets.QLabel(self.groupBox_2)
-        self.boundaryLabel.setObjectName("boundaryLabel")
-        self.formLayout_3.setWidget(
-            2, QtWidgets.QFormLayout.LabelRole, self.boundaryLabel)
-        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(self.groupBox_2)
-        self.boundaryOnOffRadioButton.setMaximumSize(
-            QtCore.QSize(25, 16777215))
-        self.boundaryOnOffRadioButton.setText("")
-        self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
-        self.formLayout_3.setWidget(
-            2, QtWidgets.QFormLayout.FieldRole, self.boundaryOnOffRadioButton)
-        self.horizontalLayout_6.addWidget(self.groupBox_2)
-        self.horizontalLayout_5.addLayout(self.horizontalLayout_6)
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.horizontalLayout_5.addLayout(self.horizontalLayout_8)
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.horizontalLayout_5.addLayout(self.horizontalLayout_9)
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.horizontalLayout_5.addLayout(self.horizontalLayout_4)
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
-        
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-
-        spacerItem2 = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_3.addItem(spacerItem2)
-        self.playButton = QtWidgets.QPushButton(self.groupBox)
-        self.playButton.setMinimumSize(QtCore.QSize(101, 51))
-        self.playButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
-                                      "border-radius: 15px;")
-        self.playButton.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.playButton.setIcon(icon)
-        self.playButton.setIconSize(QtCore.QSize(40, 40))
-        self.playButton.setObjectName("playButton")
-        
-        self.verticalLayout_3.addWidget(self.playButton)
-
-        self.clearButton = QtWidgets.QPushButton(self.groupBox)
-        self.clearButton.setMinimumSize(QtCore.QSize(101, 51))
-        self.clearButton.setStyleSheet("background-color: rgb(3, 193, 161);"
-                                       "border-radius: 15px;")
-        self.clearButton.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/times-circle-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.clearButton.setIcon(icon1)
-        self.clearButton.setIconSize(QtCore.QSize(40, 40))
-        self.clearButton.setObjectName("clearButton")
-
-
-        self.verticalLayout_3.addWidget(self.clearButton)
-        
-        self.homeButton = QtWidgets.QPushButton(self.groupBox)
-        self.homeButton.setMinimumSize(QtCore.QSize(101, 51))
-        self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);"
-                                      "border-radius: 15px;")
-        self.homeButton.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.homeButton.setIcon(icon2)
-        self.homeButton.setIconSize(QtCore.QSize(40, 30))
-        self.homeButton.setObjectName("homeButton")
-        
-        self.verticalLayout_3.addWidget(self.homeButton)
-        self.horizontalLayout_7.addLayout(self.verticalLayout_3)
-        self.horizontalLayout_5.addLayout(self.horizontalLayout_7)
-        self.verticalLayout.addWidget(self.groupBox)
-        self.verticalLayout_2.addLayout(self.verticalLayout)
-
-        # Button Connects
-        self.playButton.clicked.connect(self.update_graph)
-        self.homeButton.clicked.connect(self.home_pressed)
-        self.clearButton.clicked.connect(self.clear_graph)
-        self.comboBox.activated.connect(self.handleActivated)
-        self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
-
-        self.retranslateUi()
-
-
-        # Group box
-        self.groupBox = QtWidgets.QGroupBox(self)
-        self.groupBox.setGeometry(QtCore.QRect(80, 690, 1761, 351))
-        self.groupBox.setStyleSheet("background-color: rgb(193,192,44);\n")
-        self.groupBox.setObjectName("groupBox")
-
-        # Drop Down Menu (Combo Box)
-        self.comboBox = QtWidgets.QComboBox(self.groupBox)
-        self.comboBox.setGeometry(QtCore.QRect(150, 50, 131, 21))
-        self.comboBox.setStyleSheet("background-color: white;")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-
-        # Play Button        
-        self.playButton = QtWidgets.QPushButton(self.groupBox)
-        self.playButton.setGeometry(QtCore.QRect(1650, 140, 101, 61))
-        self.playButton.setStyleSheet("background-color: rgb(3,193,161);\n"
-                                      "border-radius:15px;")
-        self.playButton.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.playButton.setIcon(icon)
-        self.playButton.setIconSize(QtCore.QSize(40, 40))
-        self.playButton.setObjectName("playButton")
-        
-        # Clear Button
-        self.clearButton = QtWidgets.QPushButton(self.groupBox)
-        self.clearButton.setGeometry(QtCore.QRect(1650, 210, 101, 61))
-        self.clearButton.setStyleSheet("background-color: rgb(3,193,161);\n"
-                                       "border-radius:15px;")
-        self.clearButton.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/times-circle-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.clearButton.setIcon(icon1)
-        self.clearButton.setIconSize(QtCore.QSize(40, 40))
-        self.clearButton.setObjectName("clearButton")
-        
-        # Home Button
-        self.homeButton = QtWidgets.QPushButton(self.groupBox)
-        self.homeButton.setGeometry(QtCore.QRect(1651, 281, 101, 61))
-        self.homeButton.setStyleSheet("background-color: rgb(3,193,161);\n"
-                                      "border-radius:15px;")
-        self.homeButton.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.homeButton.setIcon(icon2)
-        self.homeButton.setIconSize(QtCore.QSize(40, 30))
-        self.homeButton.setObjectName("homeButton")
-        
-        # Additional Text
-        self.textFrame = QtWidgets.QFrame(self)
-        self.textFrame.setGeometry(QtCore.QRect(860, 240, 981, 421))
-        self.textFrame.setStyleSheet("background-color: white;\n")
-        self.textFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.textFrame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.textFrame.setObjectName("textFrame")
-
-
-        self.label_2 = QtWidgets.QLabel(self.textFrame)
-        self.label_2.setGeometry(QtCore.QRect(120, 50, 111, 31))
-        font = QtGui.QFont()
-        font.setPointSize(30)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
-        
-
-        self.modelTypeLabel = QtWidgets.QLabel(self.textFrame)
-        self.modelTypeLabel.setGeometry(QtCore.QRect(220, 50, 700, 31))
-        font = QtGui.QFont()
-        font.setPointSize(30)
-        font.setItalic(True)
-        self.modelTypeLabel.setFont(font)
-        self.modelTypeLabel.setObjectName("modelTypeLabel")
-        
-        
-        self.label_3 = QtWidgets.QLabel(self.textFrame)
-        self.label_3.setGeometry(QtCore.QRect(10, 10, 211, 41))
-        font = QtGui.QFont()
-        font.setPointSize(30)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_3.setFont(font)
-        self.label_3.setObjectName("label_3")
-        
-        
-        self.learningTypeLabel = QtWidgets.QLabel(self.textFrame)
-        self.learningTypeLabel.setGeometry(QtCore.QRect(220, 10, 700, 41))
-        font = QtGui.QFont()
-        font.setPointSize(30)
-        font.setItalic(True)
-        self.learningTypeLabel.setFont(font)
-        self.learningTypeLabel.setObjectName("learningTypeLabel")
-        
-        
-        self.label_4 = QtWidgets.QLabel(self.textFrame)
-        self.label_4.setGeometry(QtCore.QRect(70, 80, 141, 41))
-        font = QtGui.QFont()
-        font.setPointSize(30)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_4.setFont(font)
-        self.label_4.setObjectName("label_4")
-        
-        
-        self.overviewLabel = QtWidgets.QLabel(self.textFrame)
-        self.overviewLabel.setGeometry(QtCore.QRect(220, 90, 710, 261))
-
-        self.overviewLabel.setWordWrap(True)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.overviewLabel.setFont(font)
-        self.overviewLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.overviewLabel.setObjectName("overviewLabel")
-
-        
-
-        
-        
-
-        if self.game_mode == 'kmeans':
-            self.kmeans_setup()
-
-
-        self.retranslateUi()
-
-        '''
+    
         
     def setup_gameboard(self):
         print("in setup gameboard")
@@ -686,126 +314,12 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget.setObjectName("MplWidget")
         self.gameboardPlacing.addWidget(self.MplWidget)
         
-        '''
-        self.MplWidget.setGeometry(QtCore.QRect(80, 240, 731, 421))
-        self.MplWidget.setObjectName("MplWidget")
-        self.MplWidget.show()
-        self.MplWidget.canvas.draw()
-        '''
-    '''
-    def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("Form", "Data Splash! - Free Play"))
-        self.learningTypeLabel.setText(_translate("Form", "Learning Type:"))
-        self.learningTypeInfoLabel.setText(
-            _translate("Form", "Learning type info"))
-        self.modelLabel.setText(_translate("Form", "Model:"))
-        self.modelTypeLabel.setText(_translate("Form", "Model name"))
-        self.overviewLabel.setText(_translate("Form", "Overview:"))
-        self.overviewLabel.setText(_translate("Form", ""))
-        self.groupBox.setTitle(_translate("Form", "Model Options:"))
-        self.groupBox_2.setTitle(_translate("Form", "General:"))
-        self.modelLabel.setText(_translate("Form", "Model:"))
-        self.numberOfClustersLabel.setText(
-            _translate("Form", "No. of Clusters:"))
-        self.boundaryLabel.setText(_translate("Form", "Bandary (On/Off):"))
-        self.playButton.setText(_translate("Form", ""))
-        self.clearButton.setText(_translate("Form", ""))
-        self.homeButton.setText(_translate("Form", ""))
 
-        self.comboBox.setItemText(0, _translate("Form", "Please Select:"))
-        self.comboBox.setItemText(1, _translate("Form", "KMeans"))
-        self.comboBox.setItemText(2, _translate("Form", "LDA"))
-        self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
-
-        self.overviewLabel.setText(_translate(
-            "Form", self.MplWidget.model_overview))
-        self.modelTypeLabel.setText(_translate(
-            "Form", self.MplWidget.model_name))
-        self.learningTypeInfoLabel.setText(
-            _translate("Form", self.MplWidget.learning_type))
-
-    '''
-    '''
-    def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("Form", "Data Splash! - Free Play"))
-        self.groupBox.setTitle(_translate("Form", "Model Options:"))
-        self.label_2.setText(_translate("Form", "Model:"))
-        #self.modelTypeLabel.setText(_translate("Form", "K-Means"))
-        self.label_3.setText(_translate("Form", "Learning Type:"))
-        #self.learningTypeLabel.setText(_translate("Form", "Unsupervised Learning"))
-        self.label_4.setText(_translate("Form", "Overview:"))
-        #self.overviewLabel.setText(_translate("Form", "Model Overview"))
-        self.comboBox.setItemText(0, _translate("Form", "Please Select:"))
-        self.comboBox.setItemText(1, _translate("Form", "KMeans"))
-        self.comboBox.setItemText(2, _translate("Form", "LDA"))
-        self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
-
-        self.overviewLabel.setText(_translate(
-            "Form", self.MplWidget.model_overview))
-        self.modelTypeLabel.setText(_translate(
-            "Form", self.MplWidget.model_name))
-        self.learningTypeLabel.setText(
-            _translate("Form", self.MplWidget.learning_type))
-    '''
     def kmeans_retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.numberOfClustersLabel.setText(_translate("Form", "Number of Clusters:"))
         self.modelLabel.setText(_translate("Form", "Model:"))
         self.boundaryLabel.setText(_translate("Form", "Boundary (On/Off):"))
-
-    def kmeans_setup(self, shown_before=False):
-        print("In kmeans set up")
-        #self.numberOfClustersLabel = QtWidgets.QLabel(self.groupBox)
-        #self.numberOfClustersLabel.setGeometry(QtCore.QRect(20, 90, 131, 21))
-        #self.numberOfClustersLabel.setAlignment(
-        #    QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        #self.numberOfClustersLabel.setObjectName("numberOfClustersLabel")
-        #
-
-        #self.modelLabel = QtWidgets.QLabel(self.groupBox)
-        #self.modelLabel.setGeometry(QtCore.QRect(67, 45, 81, 31))
-        #self.modelLabel.setAlignment(
-        #    QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        #self.modelLabel.setObjectName("modelLabel")
-        #self.lineEdit = QtWidgets.QLineEdit(self.groupBox)
-        #self.lineEdit.setGeometry(QtCore.QRect(160, 90, 31, 21))
-        #self.lineEdit.setStyleSheet("background-color: white;")
-        #self.lineEdit.setObjectName("lineEdit")
-
-        #self.boundaryLabel = QtWidgets.QLabel(self.groupBox)
-        #self.boundaryLabel.setGeometry(QtCore.QRect(30, 130, 121, 21))
-        #self.boundaryLabel.setObjectName("boundaryLabel")
-        #self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(self.groupBox)
-        #self.boundaryOnOffRadioButton.setGeometry(
-        #    QtCore.QRect(170, 130, 31, 20))
-        #self.boundaryOnOffRadioButton.setLayoutDirection(QtCore.Qt.LeftToRight)
-        #self.boundaryOnOffRadioButton.setText("")
-        #self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
-        #self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
-
-        #if shown_before == True:
-        #    self.numberOfClustersLabel.show()
-        #    self.lineEdit.show()
-        #    self.boundaryLabel.show()
-        #    self.boundaryOnOffRadioButton.show()
-
-        #self.kmeans_retranslateUi()
-
-    #def show_kmeans_widgets(self):
-    #    self.numberOfClustersLabel.show()
-    #    self.lineEdit.show()
-    #    self.boundaryLabel.show()
-    #    self.boundaryOnOffRadioButton.show()
-    #    self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
-        
-
-    def hide_kmeans_ui(self):
-        self.numberOfClustersLabel.hide()
-        self.lineEdit.hide()
-        self.boundaryLabel.hide()
-        self.boundaryOnOffRadioButton.hide()
 
 
     def handleActivated(self, index):
@@ -841,9 +355,18 @@ class FreePlay(QtWidgets.QWidget):
     
 
     # Button click actions
+    def update_graph(self):
+        if self.comboBox == "LDA":
+                self.game_mode = "lda"
+                self.hide_ui()
+                self.setupUi()
 
-    def home_pressed(self):
-        self.switch_window.emit("mainmenu,freeplay")
+        else:
+            no_of_clusters = self.lineEdit.text()
+            self.MplWidget.k = int(no_of_clusters)
+            self.MplWidget.replot_kmeans()
+
+            _translate = QtCore.QCoreApplication.translate
 
     def clear_graph(self):
         print("Free play clear graph button activated!")
@@ -855,46 +378,7 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget.canvas.ax.set_ylim([-1, 1])
         self.MplWidget.canvas.draw()
 
-
-    def update_graph(self):
-        if self.comboBox == "LDA":
-            self.game_mode = "lda"
-            self.hide_ui()
-            self.setupUi()
-
-        else:
-            no_of_clusters = self.lineEdit.text()
-            self.MplWidget.k = int(no_of_clusters)
-            self.MplWidget.replot_kmeans()
-
-            _translate = QtCore.QCoreApplication.translate
-            
-
-        '''# Original Content
-        fs = 500
-        f = random.randint(1, 100)
-        ts = 1/fs
-        length_of_signal = 100
-        t = np.linspace(0, 1, length_of_signal)
-
-        cosinus_signal = np.cos(2*np.pi*f*t)
-        sinus_signal = np.sin(2*np.pi*f*t)
-
-        self.MplWidget.canvas.ax.clear()
-        self.MplWidget.canvas.ax.plot(t, cosinus_signal)
-        self.MplWidget.canvas.ax.plot(t, sinus_signal)
-        self.MplWidget.canvas.ax.legend(
-            ('cosinus', 'sinus'), loc='upper right')
-        self.MplWidget.canvas.ax.set_title('Cosinus - Sinus Signal')
-        self.MplWidget.canvas.draw()
-    '''
-    
-
-    def get_datapoint(self, event):
-        print('click', event)
-        #if event.inaxes != self.MplWidget.canvas.axes:
-            #return
-        
-        #self.MplWidget.canvas.axes.plot(event.in)
+    def home_pressed(self):
+        self.switch_window.emit("mainmenu,freeplay")
         
 
