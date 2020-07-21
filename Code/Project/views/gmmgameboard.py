@@ -16,9 +16,15 @@ matplotlib.use('Qt5Agg')
 
 
 class GMMGameboard(QWidget):
-    model_name = "Gaussian Mixture Model"
-    learning_type = "Unsupervised Learning!"
-    model_overview = """K-Means is one of the hard partitioning clustering algorithms. The centre of the cluster represents each cluster of data, and each data point gets assigned to the nearest cluster centre, also known as the centroid. However, the number of clusters is a pre-set value. This pre-set value is known as the number of K. K-Means is an iterative process which starts with random initialisation of the centroids and updates on each iteration."""
+    model_name = "GMM - Gaussian Mixture Model"
+    learning_type = "Unsupervised Learning"
+    model_overview = """A Gaussian Mixture is a function that is comprised of several Gaussians, each identified by k ∈ {1,…, K}, where K is the number of clusters of our dataset. Each Gaussian k in the mixture is comprised of the following parameters:
+    
+    - A mean μ that defines its centre.
+
+    - A covariance Σ that defines its width. This would be equivalent to the dimensions of an ellipsoid in a multivariate scenario.
+    
+    - A mixing probability π that defines how big or small the Gaussian function will be."""
 
     data = load_iris()
     X = data.data

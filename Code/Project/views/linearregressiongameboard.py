@@ -17,10 +17,12 @@ matplotlib.use('Qt5Agg')
 class LinearRegressionGameboard(QWidget):
     model_name = "Linear Regression"
     learning_type = "Supervised Learning!"
-    model_overview = """Stuff about Linear Regression!"""
+    model_overview = """Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data. One variable is considered to be an explanatory variable, and the other is considered to be a dependent variable. For example, a modeler might want to relate the weights of individuals to their heights using a linear regression model."""
 
     X = 2 * np.random.rand(100, 1)
     y = 4+3 * X + np.random.randn(100, 1)
+
+    boundaries_on = False
 
 
     def __init__(self, parent=None):
@@ -42,7 +44,7 @@ class LinearRegressionGameboard(QWidget):
         self.X_new = np.array([[0], [2]])
         self.y_pred = self.lin_reg.predict(self.X_new)
 
-        self.canvas.ax.plot(self.X_new, self.y_pred, "r-")
+        
         self.canvas.ax.plot(self.X, self.y, "b.")
         #self.canvas.ax..axis([0, 2, 0, 15])
 
@@ -125,12 +127,11 @@ class LinearRegressionGameboard(QWidget):
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
-            self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-            self.y_pred = self.kmeans.fit_predict(self.X)
-            self.plot_decision_boundaries(self.kmeans, self.X)
+            self.canvas.ax.plot(self.X_new, self.y_pred, "r-")
+
         else:
             self.canvas.ax.clear()
-            self.plot_clusters(self.X)  # plot_data(self.X)
+            self.canvas.ax.plot(self.X, self.y, "b.")  # plot_data(self.X)
 
         self.fig.canvas.draw()
         # Need to figure out how to clear the boundaries

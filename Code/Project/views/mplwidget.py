@@ -17,7 +17,9 @@ class MplWidget(QWidget):
 
     model_name = "LDA - Linear Discrimant Analysis"
     learning_type = "Supervised Learning"
-    model_overview = """Something fancy about LDA."""
+    model_overview = """LDA consists of statistical properties of your data, calculated for each class. For a single input variable (x) this is the mean and the variance of the variable for each class. For multiple variables, this is the same properties calculated over the multivariate Gaussian, namely the means and the covariance matrix.
+
+These statistical properties are estimated from your data and plug into the LDA equation to make predictions. These are the model values that you would save to file for your model."""
 
 
     ix, iy = 0,0 

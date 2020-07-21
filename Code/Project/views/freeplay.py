@@ -268,7 +268,7 @@ class FreePlay(QtWidgets.QWidget):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("self", "Form"))
+        self.setWindowTitle(_translate("self", "Data Splash! - Free Play"))
         self.learningTypeLabel.setText(_translate("self", "Learning Type:"))
         self.learningTypeInfoLabel.setText(
             _translate("self", "Learning type info"))
