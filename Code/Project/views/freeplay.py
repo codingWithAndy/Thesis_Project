@@ -1,6 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from views.mplwidget import MplWidget
 from views.kmeansgameboard import KMeansGameboard
+from views.gmmgameboard import GMMGameboard
+from views.linearregressiongameboard import LinearRegressionGameboard
 
 from matplotlib import pyplot as plt # Test
 
@@ -115,7 +117,7 @@ class FreePlay(QtWidgets.QWidget):
         self.overviewDescriptionLabel = QtWidgets.QLabel(self.frame)
         self.overviewDescriptionLabel.setMinimumSize(QtCore.QSize(0, 400))
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setPointSize(18)
         self.overviewDescriptionLabel.setFont(font)
         self.overviewDescriptionLabel.setText("")
         self.overviewDescriptionLabel.setAlignment(
@@ -159,6 +161,7 @@ class FreePlay(QtWidgets.QWidget):
         self.comboBox.setStyleSheet("background-color: white;"
                                     "selection-color: rgb(200, 200, 200)")
         self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -282,6 +285,7 @@ class FreePlay(QtWidgets.QWidget):
         self.comboBox.setItemText(1, _translate("Form", "KMeans"))
         self.comboBox.setItemText(2, _translate("Form", "LDA"))
         self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
+        self.comboBox.setItemText(4, _translate("Form", "GMM"))
 
         self.overviewDescriptionLabel.setText(_translate(
             "Form", self.MplWidget.model_overview))
@@ -299,7 +303,12 @@ class FreePlay(QtWidgets.QWidget):
         elif self.game_mode == 'lda':
             print("in else if statement for lda")
             self.MplWidget = MplWidget(self)
-            self.kmeans_setup()
+        elif self.game_mode == 'gmm':
+            print("in else if statement for gmm")
+            self.MplWidget = GMMGameboard(self)
+        elif self.game_mode == 'linearreg':
+            print("in else if statement for lin_reg")
+            self.MplWidget = LinearRegressionGameboard(self)
         
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -337,7 +346,18 @@ class FreePlay(QtWidgets.QWidget):
             self.MplWidget.hide()
             # self.hide_ui() # Needs to be to the "other gameboards" widgets
             self.setup_gameboard()
-            self.kmeans_setup(True)
+        elif self.comboBox.itemText(index) == "GMM":
+            self.game_mode = "gmm"
+            # Need to hide previous layout widgets, add needed widgets.
+            self.MplWidget.hide()
+            # self.hide_ui() # Needs to be to the "other gameboards" widgets
+            self.setup_gameboard()
+        elif self.comboBox.itemText(index) == "Linear Regression":
+            self.game_mode = "linearreg"
+            # Need to hide previous layout widgets, add needed widgets.
+            self.MplWidget.hide()
+            # self.hide_ui() # Needs to be to the "other gameboards" widgets
+            self.setup_gameboard()
         
         self.retranslateUi()
 
