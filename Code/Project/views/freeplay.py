@@ -3,6 +3,7 @@ from views.mplwidget import MplWidget
 from views.kmeansgameboard import KMeansGameboard
 from views.gmmgameboard import GMMGameboard
 from views.linearregressiongameboard import LinearRegressionGameboard
+from views.svmgameboard import SVMGameboard
 
 from matplotlib import pyplot as plt # Test
 
@@ -166,6 +167,7 @@ class FreePlay(QtWidgets.QWidget):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.formLayout_3.setWidget(
             0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
         
@@ -286,6 +288,7 @@ class FreePlay(QtWidgets.QWidget):
         self.comboBox.setItemText(2, _translate("Form", "LDA"))
         self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
         self.comboBox.setItemText(4, _translate("Form", "GMM"))
+        self.comboBox.setItemText(5, _translate("Form", "SVM"))
 
         self.overviewDescriptionLabel.setText(_translate(
             "Form", self.MplWidget.model_overview))
@@ -309,6 +312,9 @@ class FreePlay(QtWidgets.QWidget):
         elif self.game_mode == 'linearreg':
             print("in else if statement for lin_reg")
             self.MplWidget = LinearRegressionGameboard(self)
+        elif self.game_mode == 'svm':
+            print("in else if statement for lin_reg")
+            self.MplWidget = SVMGameboard(self)
         
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -354,6 +360,12 @@ class FreePlay(QtWidgets.QWidget):
             self.setup_gameboard()
         elif self.comboBox.itemText(index) == "Linear Regression":
             self.game_mode = "linearreg"
+            # Need to hide previous layout widgets, add needed widgets.
+            self.MplWidget.hide()
+            # self.hide_ui() # Needs to be to the "other gameboards" widgets
+            self.setup_gameboard()
+        elif self.comboBox.itemText(index) == "SVM":
+            self.game_mode = "svm"
             # Need to hide previous layout widgets, add needed widgets.
             self.MplWidget.hide()
             # self.hide_ui() # Needs to be to the "other gameboards" widgets
