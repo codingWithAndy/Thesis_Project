@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clustering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav role="navigation">
+            <div id="menuToggle">
+                <!--
+                                    A fake / hidden checkbox is used as click reciever,
+                                    so you can use the :checked selector on it.
+                                    -->
+                <input type="checkbox" />
+
+                <!--
+                                    Some spans to act as a hamburger.
+                                    
+                                    They are acting like a real hamburger,
+                                    not that McDonalds stuff.
+                                    -->
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <!--
+                                    Too bad the menu has to be inside of the button
+                                    but hey, it's pure CSS magic.
+                                    -->
+                <ul id="menu">
+                    <a href="https://snappygames.co.uk/Andy/welcome.html">
+                        <li>Welcome</li>
+                    </a>
+                    <a href="#">
+                        <li>What is Machine Learning?</li>
+                    </a>
+                    <a href="#">
+                        <li>Task Driven vs Data Driven</li>
+                    </a>
+                    <a href="#">
+                        <li>Supervised and Unsupervised Learning</li>
+                    </a>
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Classification</li>
+                    </a>
+                    <ul>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                            <li>Support Vector Machines (SVM)</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Nearest Neighbour</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Neural Networks</li>
+                        </a>
+                    </ul>
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Regression</li>
+                    </a>
+                    <ul>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                            <li>Linear Regression</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Logistic Regression</li>
+                        </a>
+                    </ul>
+
+
+                    <a href="https://erikterwan.com/" target="_blank">
+                        <li>Clustering</li>
+                    </a>
+                    <ul>
+                        <a href="https://snappygames.co.uk/Andy/kmeans.html">
+                            <li>K-Means</li>
+                        </a>
+                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <li>Gaussian Mixture Model (GMM)</li>
+                        </a>
+                    </ul>
+                    <a href="https://erikterwan.com/">
+                        <li>Association Rule</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <!--<nav class="floating-menu">
+            <h3>Floating Menu</h3>
+            <a href="/css/">CSS</a>
+            <a href="/html/">HTML</a>
+            <a href="/coldfusion/">ColdFusion</a>
+            <a href="/database/">Database</a>
+        </nav> -->
+
+
+
+            <div class="textBackground">
+                <img class="titlePageImg" src="./Images/kmeanstitle.png" alt="K-Means Title Image" />
+            </div>
+
+            <div class="textBackgroundLight">
+                <p>
+                    K-Means is known as an unsupervised machine learning algorithm. K-Means aim is to cluster data points together based on their values within the decision boundaries. !!! update this!!!!!
+                </p>
+            </div>
+
+
+
+            <div class="textBackground">
+                <h2>What is the Purpose of Clustering?</h2>
+            </div>
+            <div class="textBackgroundLight">
+                <p>
+                    The purpose of clustering is to allow the ability to make sense of large datasets possible, by extracting values from large sets of either structured or unstructured data. Like in life, when you are trying to complete a big task, it is always better to
+                    slip the tasks up into similar groups. Well, this is what clustering is doing with your data, sorting it out. Grouping similar data attributes, to create some logical groupings, which will then aim to allow the user to attempt then
+                    to analyse it.
+                </p>
+
+                <p>
+                    <b>Clustering</b> allows you to take a sweeping glance at your dataset. By doing this, this will then allow you to form some insights/logical structures based on what you have found in the data. Therefore, allowing you to have a good
+                    idea of what you will find within the data, before going deeper into it and exploring more of it through further analysis.
+                </p>
+
+                <p>
+                    In a nutshell, clusters are sets of data points that share similar attributes. While clustering algorithms are tools to help group these data points, into clusters, based their similarities.
+                </p>
+
+                <p>
+                    You might have heard of classification and thought that classification is the same thing as clustering. Many people do, but this is not the case. In classification, before you start, you already know the number of classes into which your data should get
+                    grouped. Also, you already know what class you want each data point to be assigned. In classification, the data in the dataset is getting learned from is also labelled. When we use clustering algorithms, on the other hand, we have
+                    no predefined concept for how many clusters are appropriate for your data. Sometimes you need to guess the number, and sometimes you rely upon the clustering algorithms to sort and cluster the data in the most appropriate way. With
+                    clustering techniques, you’re learning from unlabeled data.
+                </p>
+            </div>
+
+            <div class="textBackgroundLight">
+
+                <p>
+                    There are different clustering methods, depending on how you want your dataset to get divided. The two main types of clustering algorithms are:
+                    <uo>
+                        <li><b>Hard Clustering</b>: In hard clustering, each data point either belongs to a cluster entirely or not.</li>
+                        <li><b>Soft Clustering</b>: In soft clustering, instead of putting each data point into a separate cluster, a probability or likelihood of that data point to be in those clusters is assigned.
+                        </li>
+                    </uo>
+                </p>
+            </div>
+
+            <div class="textBackground">
+                <h2>Types of Clustering Algorithms</h2>
+            </div>
+
+            <div class="textBackgroundLight">
+                <p>
+                    Since the task of clustering is subjective, the means available for achieving this goal are plenty. Every methodology follows a different set of rules for defining the ‘similarity’ among data points. There are more than 100 clustering algorithms known.
+                    But few of the algorithms are used popularly, let’s look at them in detail:
+                    <uo>
+                        <li><b>Connectivity Models</b>: Based on the premise that the data points closer in data space exhibit more similarity to each other than the data points lying farther away. These models can follow two approaches. In the first approach,
+                            they start with classifying all data points into separate clusters and then aggregating them as the distance decreases. In the second approach, all data points are classified as a single cluster and then partitioned as the
+                            distance increases. Also, the choice of distance function is subjective. These models are very easy to interpret but lack scalability for handling big datasets. Examples of these models are hierarchical clustering algorithm
+                            and its variants.</li>
+                        <li><b>Centroid Models</b>: These are iterative clustering algorithms in which the notion of similarity is derived by the closeness of a data point to the centroid of the clusters. K-Means clustering algorithm is a popular algorithm
+                            that falls into this category. In these models, the no. of clusters required at the end is required beforehand, which makes it important to have prior knowledge of the dataset. These models run iteratively to find the local
+                            optima.
+                        </li>
+                        <li><b>Distribution Models</b>: These clustering models are based on the notion of how probable is it that all data points in the cluster belong to the same distribution (For example: Normal, Gaussian). These models often suffer from
+                            overfitting. A popular example of these models is Expectation-maximization algorithm which uses multivariate normal distributions.</li>
+                        <li><b>Density Models</b>: These models search the data space for areas of varied density of data points in the data space. It isolates various density regions and assigns the data points within these regions in the same cluster. Popular
+                            examples of density models are DBSCAN and OPTICS.</li>
+                    </uo>
+                </p>
+
+            </div>
+            <!-- Footer -->
+            <footer>
+
+                <!-- Copyright -->
+                <div>
+                    <a href="whatismachinelearning.html"><i class="far fa-arrow-alt-circle-left"
+                            style="padding-left: 38%;"></i> Previous</a> <a href="supervisedandunsupervised.html"><span
+                            style="padding-left: 20px;">Next</span> <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+
+        </div>
+
+    </main>
+    </div>
+    </main>
+</body>
+
+</html>
