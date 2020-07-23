@@ -33,7 +33,7 @@ class Quiz(QtWidgets.QWidget):
 
 
         self.setObjectName("self")
-        self.resize(1158, 770)
+        self.resize(1300, 770)
         self.setMinimumSize(QtCore.QSize(1158, 770))
         self.setStyleSheet("background-color: rgb(47, 85, 151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)

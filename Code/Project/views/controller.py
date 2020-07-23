@@ -43,10 +43,11 @@ class Controller:
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
     
-    def show_freeplay(self):
-        self.freeplay = FreePlay()
+    def show_freeplay(self, model_choice="kmeans"):
+        self.freeplay = FreePlay(model_choice)
         # show_mainmenu This is needed to connect between the windows
         self.freeplay.switch_window.connect(self.choose_window)
+    
         self.freeplay.show()
 
     def show_window_two(self):
@@ -85,7 +86,10 @@ class Controller:
         elif window_options[0] == "quiz":
             self.show_quizscreen(window_options[2])
         elif window_options[0] == "freeplay":
-            self.show_freeplay()
+            if window_options[1] == "learningzone":
+                self.show_freeplay(window_options[2])
+            else:
+                self.show_freeplay()
         #else:
         #    self.show_splashscreen()
 

@@ -13,7 +13,7 @@ class SplashScreen(QtWidgets.QWidget):
 
     def setupUi(self):
         self.setObjectName("Form")
-        self.resize(1158, 720)
+        self.resize(1300, 720)
         self.setMinimumSize(QtCore.QSize(1158, 770))
         self.setStyleSheet("background-color: rgb(47,85,151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)

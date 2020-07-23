@@ -16,15 +16,19 @@ import numpy as np
 class FreePlay(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
-    game_mode = "kmeans"
+    
 
-    def __init__(self):
+    def __init__(self, model_choice = "kmeans"): # Change the auto model down the line.
         QtWidgets.QWidget.__init__(self)
+        
+        self.game_mode = model_choice
+
         self.setupUi()
 
     def setupUi(self):
         self.setObjectName("self")
-        self.resize(1158, 770)
+        self.resize(1300, 770)
+
         self.setStyleSheet("background-color:rgb(47, 85, 151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
         self.verticalLayout_2.setObjectName("verticalLayout_2")

@@ -13,7 +13,7 @@ class MainMenu(QtWidgets.QWidget):
 
     def setupUi(self):
         self.setObjectName("self")
-        self.resize(1158, 770)
+        self.resize(1300, 770)
         self.setMinimumSize(QtCore.QSize(1158, 770))
         self.setStyleSheet("background-color: rgb(47, 85, 151);")
         self.gridLayout = QtWidgets.QGridLayout(self)

@@ -24,7 +24,7 @@ class LearningZone(QWidget):
 
     def setupUi(self):
         self.setObjectName("self")
-        self.resize(1158, 770)
+        self.resize(1300, 770)
         #self.centralwidget = QtWidgets.QWidget(self)
         #self.centralwidget.setObjectName("centralwidget")
         self.setMinimumSize(QtCore.QSize(1158, 770))
@@ -151,4 +151,19 @@ class LearningZone(QWidget):
         self.switch_window.emit("quiz,learningzone,"+html_title)
     
     def freeplay_pressed(self):
-        self.switch_window.emit("quiz,learningzone")
+        html_title = str(self.webView.title())
+
+        print("quizURL is:", str(html_title))
+        if html_title in ['Kmeans','GMM','Linear Regression','LDA','SVM']:
+            if html_title == 'Linear Regression':
+                html_title = 'linearreg'
+            self.switch_window.emit("freeplay,learningzone,"+html_title.lower())
+        else:
+            msg = QMessageBox()
+            msg.setWindowTitle("")
+            msg_text = "Sorry!" + \
+                "This page does not have a model in Free Play." + \
+                    "Please try another Model."
+            msg.setText(msg_text)
+            x = msg.exec_()
+    
