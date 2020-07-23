@@ -18,10 +18,11 @@ class FreePlay(QtWidgets.QWidget):
     current_path = os.getcwd()
     
 
-    def __init__(self, model_choice = "kmeans"): # Change the auto model down the line.
+    def __init__(self, model_choice = "k-means"): # Change the auto model down the line.
         QtWidgets.QWidget.__init__(self)
         
         self.game_mode = model_choice
+        print("game mode:", self.game_mode)
 
         self.setupUi()
 
@@ -288,7 +289,7 @@ class FreePlay(QtWidgets.QWidget):
             _translate("self", "No. of Clusters:"))
         self.boundaryLabel.setText(_translate("self", "Bandary (On/Off):"))
         self.comboBox.setItemText(0, _translate("Form", "Please Select:"))
-        self.comboBox.setItemText(1, _translate("Form", "KMeans"))
+        self.comboBox.setItemText(1, _translate("Form", "K-Means"))
         self.comboBox.setItemText(2, _translate("Form", "LDA"))
         self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
         self.comboBox.setItemText(4, _translate("Form", "GMM"))
@@ -305,7 +306,7 @@ class FreePlay(QtWidgets.QWidget):
         
     def setup_gameboard(self):
         print("in setup gameboard")
-        if self.game_mode == 'kmeans':
+        if self.game_mode == 'k-means':
             self.MplWidget = KMeansGameboard(self)
         elif self.game_mode == 'lda':
             print("in else if statement for lda")
@@ -322,8 +323,8 @@ class FreePlay(QtWidgets.QWidget):
         
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
+        #sizePolicy.setHorizontalStretch(0)
+        #sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
             self.MplWidget.sizePolicy().hasHeightForWidth())
         self.MplWidget.setSizePolicy(sizePolicy)
@@ -350,8 +351,8 @@ class FreePlay(QtWidgets.QWidget):
             #self.hide_kmeans_ui()
             self.setup_gameboard()
             
-        elif self.comboBox.itemText(index) == "KMeans":
-            self.game_mode = "kmeans"
+        elif self.comboBox.itemText(index) == "K-Means":
+            self.game_mode = "k-means"
             # Need to hide previous layout widgets, add needed widgets.
             self.MplWidget.hide()
             # self.hide_ui() # Needs to be to the "other gameboards" widgets

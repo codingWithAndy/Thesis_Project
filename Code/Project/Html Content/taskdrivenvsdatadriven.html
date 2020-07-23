@@ -11,77 +11,77 @@
         <nav role="navigation">
             <div id="menuToggle">
                 <!--
-                                            A fake / hidden checkbox is used as click reciever,
-                                            so you can use the :checked selector on it.
-                                            -->
+                            A fake / hidden checkbox is used as click reciever,
+                            so you can use the :checked selector on it.
+                            -->
                 <input type="checkbox" />
 
                 <!--
-                                            Some spans to act as a hamburger.
-                                            
-                                            They are acting like a real hamburger,
-                                            not that McDonalds stuff.
-                                            -->
+                            Some spans to act as a hamburger.
+                            
+                            They are acting like a real hamburger,
+                            not that McDonalds stuff.
+                            -->
                 <span></span>
                 <span></span>
                 <span></span>
 
                 <!--
-                                            Too bad the menu has to be inside of the button
-                                            but hey, it's pure CSS magic.
-                                            -->
+                            Too bad the menu has to be inside of the button
+                            but hey, it's pure CSS magic.
+                            -->
                 <ul id="menu">
-                    <a href="https://snappygames.co.uk/Andy/welcome.html">
+                    <a href="welcome.html">
                         <li>Welcome</li>
                     </a>
-                    <a href="https://snappygames.co.uk/Andy/whatismachinelearning.html">
+                    <a href="whatismachinelearning.html">
                         <li>What is Machine Learning?</li>
                     </a>
-                    <a href="#">
+                    <a href="taskdrivenvsdatadriven.html">
                         <li>Task Driven vs Data Driven</li>
                     </a>
-                    <a href="#">
+                    <a href="supervisedvsunsupervised.html">
                         <li>Supervised and Unsupervised Learning</li>
                     </a>
-                    <a href="https://erikterwan.com/" target="_blank">
+                    <a href="classification.html">
                         <li>Classification</li>
                     </a>
-                    <ul id="subMenu">
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                    <ul>
+                        <a href="svm.html">
                             <li>Support Vector Machines (SVM)</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="knearestneighbour.html"></a>
                         <li>Nearest Neighbour</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="neuralnetworks.html"></a>
                         <li>Neural Networks</li>
                         </a>
                     </ul>
-                    <a href="https://erikterwan.com/" target="_blank">
+                    <a href="regression.html">
                         <li>Regression</li>
                     </a>
-                    <ul id="subMenu">
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                    <ul>
+                        <a href="linearregression.html">
                             <li>Linear Regression</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="logisticregression.html"></a>
                         <li>Logistic Regression</li>
                         </a>
                     </ul>
 
 
-                    <a href="https://erikterwan.com/" target="_blank">
+                    <a href="clustering.html" target="_blank">
                         <li>Clustering</li>
                     </a>
-                    <ul id="subMenu">
-                        <a href="https://snappygames.co.uk/Andy/kmeans.html">
+                    <ul>
+                        <a href="kmeans.html">
                             <li>K-Means</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="gmm.html"></a>
                         <li>Gaussian Mixture Model (GMM)</li>
                         </a>
                     </ul>
-                    <a href="https://erikterwan.com/">
+                    <a href="associationrule.html">
                         <li>Association Rule</li>
                     </a>
                 </ul>
@@ -120,10 +120,39 @@
 
                 <p>
                     When the option of supervised learning get identified as the direction you intend to take, this opens up to two further choices.
-                    <ul>
-                        <li><b>Classification</b> - [Add a brief overview here]</li>
-                        <li><b>Regression</b> - [Add a brief overview here]</li>
-                    </ul>
+                    <dl>
+                        <ul>
+                            <li><b>Classification</b> -
+                                <dd>
+                                    <p>
+                                        In machine learning, classification refers to a predictive modeling problem where a class label is predicted for a given example of input data.
+                                    </p>
+                                    <p>
+                                        Examples of classification problems include:
+                                        <ul>
+                                            <li>Given an example, classify if it is spam or not.</li>
+                                            <li>Given a handwritten character, classify it as one of the known characters.</li>
+                                            <li>Given recent user behavior, classify as churn or not.</li>
+                                        </ul>
+                                    </p>
+                                    From a modeling perspective, classification requires a training dataset with many examples of inputs and outputs from which to learn.
+                                </dd>
+                            </li>
+
+                            <li><b>Regression</b> -
+                                <dd>
+                                    <p>
+                                        Regression analysis is a form of predictive modelling technique which investigates the relationship between a dependent (target) and independent variable (s) (predictor). This technique gets used for forecasting, time series modelling and finding the
+                                        causal effect relationship between the variables. For example, the relationship between rash driving and the number of road accidents by a driver is studied best through regression.
+                                    </p>
+
+                                    <p>
+                                        Regression analysis is an essential tool for modelling and analysing data. Here, we fit a curve/line to the data points, in such a way that the differences between the distances of data points from the curve/line get minimised.
+                                    </p>
+                                </dd>
+                            </li>
+                        </ul>
+                    </dl>
 
 
                 </p>

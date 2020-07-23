@@ -11,77 +11,77 @@
         <nav role="navigation">
             <div id="menuToggle">
                 <!--
-                                            A fake / hidden checkbox is used as click reciever,
-                                            so you can use the :checked selector on it.
-                                            -->
+                            A fake / hidden checkbox is used as click reciever,
+                            so you can use the :checked selector on it.
+                            -->
                 <input type="checkbox" />
 
                 <!--
-                                            Some spans to act as a hamburger.
-                                            
-                                            They are acting like a real hamburger,
-                                            not that McDonalds stuff.
-                                            -->
+                            Some spans to act as a hamburger.
+                            
+                            They are acting like a real hamburger,
+                            not that McDonalds stuff.
+                            -->
                 <span></span>
                 <span></span>
                 <span></span>
 
                 <!--
-                                            Too bad the menu has to be inside of the button
-                                            but hey, it's pure CSS magic.
-                                            -->
+                            Too bad the menu has to be inside of the button
+                            but hey, it's pure CSS magic.
+                            -->
                 <ul id="menu">
-                    <a href="https://snappygames.co.uk/Andy/welcome.html">
+                    <a href="welcome.html">
                         <li>Welcome</li>
                     </a>
-                    <a href="https://snappygames.co.uk/Andy/whatismachinelearning.html">
+                    <a href="whatismachinelearning.html">
                         <li>What is Machine Learning?</li>
                     </a>
-                    <a href="#">
+                    <a href="taskdrivenvsdatadriven.html">
                         <li>Task Driven vs Data Driven</li>
                     </a>
-                    <a href="#">
+                    <a href="supervisedvsunsupervised.html">
                         <li>Supervised and Unsupervised Learning</li>
                     </a>
-                    <a href="https://erikterwan.com/" target="_blank">
+                    <a href="classification.html">
                         <li>Classification</li>
                     </a>
-                    <ul id="subMenu">
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                    <ul>
+                        <a href="svm.html">
                             <li>Support Vector Machines (SVM)</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="knearestneighbour.html"></a>
                         <li>Nearest Neighbour</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="neuralnetworks.html"></a>
                         <li>Neural Networks</li>
                         </a>
                     </ul>
-                    <a href="https://erikterwan.com/" target="_blank">
+                    <a href="regression.html">
                         <li>Regression</li>
                     </a>
-                    <ul id="subMenu">
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
+                    <ul>
+                        <a href="linearregression.html">
                             <li>Linear Regression</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="logisticregression.html"></a>
                         <li>Logistic Regression</li>
                         </a>
                     </ul>
 
 
-                    <a href="https://erikterwan.com/" target="_blank">
+                    <a href="clustering.html" target="_blank">
                         <li>Clustering</li>
                     </a>
-                    <ul id="subMenu">
-                        <a href="https://snappygames.co.uk/Andy/kmeans.html">
+                    <ul>
+                        <a href="kmeans.html">
                             <li>K-Means</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
+                        <a href="gmm.html"></a>
                         <li>Gaussian Mixture Model (GMM)</li>
                         </a>
                     </ul>
-                    <a href="https://erikterwan.com/">
+                    <a href="associationrule.html">
                         <li>Association Rule</li>
                     </a>
                 </ul>
@@ -92,43 +92,21 @@
 
             <!-- Title Image -->
             <div class="textBackground">
-                <img class="titlePageImg" src="./Images/TDvsDD.png" alt="Task Driven vs Data Driven Tasks" />
+                <img class="titlePageImg" src="./Images/superandunsup.png" alt="Task Driven vs Data Driven Tasks" />
             </div>
 
             <div class="textBackgroundLight">
-                <h2>Task Driven vs Data Driven</h2>
+                <h2>Supervised and Unsupervised Learning</h2>
 
                 <p>
                     Depending on what your intended outcome of machine learning is, there are two main routes you can go down. The journey usually gets decided upon the type of data you have. If you have data that is labelled, you can take the task-driven course, but if
-                    your data is unlabelled, then you can go down the data-driven route. Each way has a selection of machine learning models that are best suited for each journey. The different options are in the image below.
+                    your data is unlabelled, then you can go down the data-driven route. Each way has a selection of machine learning models that are best suited for each journey. The different options are in the image below. !!! update !!!!
                 </p>
 
             </div>
 
-            <!-- Quotes Section -->
-            <div class="textBackgroundLight">
-                <img src="./Images/ML Overview.jpeg" class="fullPageImg" alt="An overview of Machine Learning Algorithms">
-            </div>
 
-
-            <div class="textBackgroundLight">
-                <h2>Task Driven</h2>
-                <p>
-                    Task-driven is the avenue most people will go down when the data is labelled. When you have labelled data, this allows you to use the supervised training methods, as these require the outputted data’s intended outcome (more about this will appear in the
-                    following sections).
-                </p>
-
-                <p>
-                    When the option of supervised learning get identified as the direction you intend to take, this opens up to two further choices.
-                    <ul>
-                        <li><b>Classification</b> - [Add a brief overview here]</li>
-                        <li><b>Regression</b> - [Add a brief overview here]</li>
-                    </ul>
-
-
-                </p>
-            </div>
-
+            <!-- Supervised Learning -->
             <div class="textBackgroundLight">
                 <h2>Supervised Learning</h2>
 
@@ -142,12 +120,33 @@
                     These are:
                 </p>
                 <ul>
-                    <li><b>Regression</b>: Linear Regression; Logistic Regression; Polynomial Regression; Stepwise Regression; Ridge Regression; Lasso Regression; ElasticNet Regression; Decision Trees.</li>
-                    <li><b>Classification</b>: k-Nearest Neighbours (kNN); Support Vector Machines (SVMs); Decision Trees; Neural Networks.</li>
+                    <li><b>Regression</b>:
+                        <ul>
+                            <div style="width: 50%; float:left;">
+                                <li>Linear Regression;</li>
+                                <li>Logistic Regression;</li>
+                                <li>Ridge Regression;</li>
+                                <li>Lasso Regression;</li>
+                            </div>
+                            <div style="width: 50%; float:right;">
+                                <li>Polynomial Regression;</li>
+                                <li>Stepwise Regression;</li>
+                                <li>ElasticNet Regression;</li>
+                                <li>Decision Trees.</li>
+                            </div>
+                        </ul>
+
+                        <li><b>Classification</b>:</li>
+                        <ul>
+                            <li>k-Nearest Neighbours (kNN);</li>
+                            <li>Support Vector Machines (SVMs);</li>
+                            <li>Decision Trees; Neural Networks.</li>
+                        </ul>
                 </ul>
                 <p></p>
             </div>
 
+            <!-- Unsupervised Learning -->
             <div class="textBackgroundLight">
                 <h2>Unsupervised Learning</h2>
 
@@ -157,35 +156,46 @@
                 <p>
                     There are many different types of unsupervised learning algorithms which can get split into four main categories.</br>
                     These are:
-                    <uo>
-                        <li><b>Clustering</b> - K-Means; DBSCAN; Hierarchical Cluster Analysis (HCA); Gaussian Mixture Model (GMM).</li>
-                        <li><b>Anomaly Detection and Novelty Detection</b> - One-class SVM; Isolation Forrest.</li>
-                        <li><b>Visualisation and Dimensionality Reduction</b> - Principal Component Analysis (PCA); Kernel PCA; Locally Linear Embedding (LLE); t-Distributed Stochastic Neighbour Embedding (t-SNE).</li>
-                        <li><b>Association Rule Learning</b> - Apriori; Eclat.</li>
-                    </uo>
-                </p>
-            </div>
-
-            <div class="textBackgroundLight">
-
-                <h2>Data Driven</h2>
-
-                <p>
-                    Data-driven is the avenue most people will go down when the data is unlabelled. When you have unlabelled data, this would mean you will have to use unsupervised training methods, as your data does not have any labels you are unable to train how well the
-                    models are doing against the outputted labels.
-                </p>
-                <p>
-                    When the option of unsupervised learning get identified as the direction you intend to take, this opens up to three further choices.
                     <ul>
-                        <li><b>Clustering</b> - [Add a brief overview here]</li>
-                        <li><b>Association</b> - [Add a brief overview here]</li>
-                        <li><b>Dimensionality Reduction</b> - [Add a brief overview here]</li>
+                        <li><b>Clustering</b>:</li>
+                        <ul>
+                            <div style="width: 50%; float:left;">
+                                <li>K-Means; </li>
+                                <li>DBSCAN;</li>
+                            </div>
+                            <div style="width: 50%; float:right;">
+                                <li>Hierarchical Cluster Analysis (HCA); </li>
+                                <li>Gaussian Mixture Model (GMM).</li>
+                            </div>
+
+                        </ul>
+                        <li><b>Anomaly Detection and Novelty Detection</b>:</li>
+                        <ul>
+
+                            <li>One-class SVM;</li>
+                            <li>Isolation Forrest.</li>
+
+                        </ul>
+
+
+                        <li><b>Visualisation and Dimensionality Reduction</b>:</li>
+                        <ul>
+                            <div style="width: 50%; float:left;">
+                                <li>Component Analysis (PCA);</li>
+                                <li>Kernel PCA;</li>
+                            </div>
+                            <div style="width: 50%; float:right;">
+                                <li>Locally Linear Embedding (LLE); </li>
+                                <li>t-Distributed Stochastic Neighbour Embedding (t-SNE).</li>
+                            </div>
+                        </ul>
+                        <li><b>Association Rule Learning</b>:</li>
+                        <ul>
+                            <li>Apriori;</li>
+                            <li>Eclat.</li>
+                        </ul>
                     </ul>
-
-
-
                 </p>
-
             </div>
 
             <!-- Footer -->
@@ -193,8 +203,8 @@
 
                 <!-- Copyright -->
                 <div>
-                    <a href="whatismachinelearning.html"><i class="far fa-arrow-alt-circle-left"
-                            style="padding-left: 38%;"></i> Previous</a> <a href="supervisedandunsupervised.html"><span
+                    <a href="taskdrivenvsdatadriven.html"><i class="far fa-arrow-alt-circle-left"
+                            style="padding-left: 38%;"></i> Previous</a> <a href="clustering.html"><span
                             style="padding-left: 20px;">Next</span> <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
                 <!-- Copyright -->
