@@ -1,31 +1,27 @@
 from matplotlib.backends.backend_qt5agg import (
-    FigureCanvas, NavigationToolbar2QT as NavigationToolbar)
-
+    FigureCanvas, FigureCanvasQTAgg)
+from random import randint
 from PyQt5.QtWidgets import *
-#from matplotlib.backends.backend_qt5agg import FigureCanvas
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+
 from matplotlib.figure import Figure
 import matplotlib, sklearn.discriminant_analysis
-matplotlib.use('Qt5Agg')
 import numpy as np
-import matplotlib.pyplot as plt
-from random import randint
-
+matplotlib.use('Qt5Agg')
 
 
 class MplWidget(QWidget):
-
+    model = sklearn.discriminant_analysis.LinearDiscriminantAnalysis()
+    
     model_name = "LDA - Linear Discrimant Analysis"
     learning_type = "Supervised Learning"
-    model_overview = """LDA consists of statistical properties of your data, calculated for each class. For a single input variable (x) this is the mean and the variance of the variable for each class. For multiple variables, this is the same properties calculated over the multivariate Gaussian, namely the means and the covariance matrix.
-
-These statistical properties are estimated from your data and plug into the LDA equation to make predictions. These are the model values that you would save to file for your model."""
-
-
-    ix, iy = 0,0 
-    model = sklearn.discriminant_analysis.LinearDiscriminantAnalysis()
+    model_overview = "LDA consists of statistical properties of your data, calculated for each class. " + \
+                     "For a single input variable (x) this is the mean and the variance of the variable for each class. " + \
+                     "For multiple variables, this is the same properties calculated over the multivariate Gaussian, namely the means and the covariance matrix." + \
+                     "These statistical properties are estimated from your data and plug into the LDA equation to make predictions. " + \
+                     "These are the model values that you would save to file for your model."
 
 
+    ix, iy = 0, 0 
     playerID = False
     turn = 0
     pointOwner = []
@@ -34,6 +30,7 @@ These statistical properties are estimated from your data and plug into the LDA 
     xx, yy = np.meshgrid(np.arange(-1, 1, 0.01),
                          np.arange(-1, 1, 0.01))
     bgd_mesh = np.c_[xx.ravel(), yy.ravel()]
+    boundaries_on = False
     
     def __init__(self, parent = None):
 
@@ -65,7 +62,6 @@ These statistical properties are estimated from your data and plug into the LDA 
         if event.inaxes != self.canvas.ax:
             return
         
-
         self.ix, self.iy = event.xdata, event.ydata
         print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
         
@@ -78,19 +74,15 @@ These statistical properties are estimated from your data and plug into the LDA 
                                  s=20, c=self.playerColors[self.playerID])
         self.fig.canvas.draw() # self.canvas.draw()
 
-        if not self.playerID and self.turn >= 4:
+        if not self.playerID and self.turn >= 4 and self.boundaries_on != False:
             self.canvas.ax.clear()
             self.canvas.ax.set_xlim([-1, 1])
             self.canvas.ax.set_ylim([-1, 1])
 
-            player_points = np.asarray([self.points[i]
-                                        for i in np.where(self.pointOwner)[0].tolist()])
-            #print("First player points:", player_points.shape)
+            player_points = np.asarray([self.points[i] for i in np.where(self.pointOwner)[0].tolist()])
             self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
                                      marker='x', s=20, c=self.playerColors[0])
-            player_points = np.asarray(
-                [self.points[i] for i in np.where((np.logical_not(self.pointOwner)))[0].tolist()])
-            #print("Second player points:", player_points.shape)
+            player_points = np.asarray([self.points[i] for i in np.where((np.logical_not(self.pointOwner)))[0].tolist()])
             self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
                                      marker='x', s=20, c=self.playerColors[1])
             
@@ -99,44 +91,32 @@ These statistical properties are estimated from your data and plug into the LDA 
             
             # Plot boundary
             Z = Z.reshape(self.xx.shape)
-            #plt.contour(self.xx, self.yy, Z)
-            plt.savefig('graphs.png')
-            self.canvas.ax.contour(self.xx, self.yy, Z)  #
-            #plt.show()
+            
+            #plt.savefig('graphs.png')
+            self.canvas.ax.contour(self.xx, self.yy, Z) # Creates decision bondary
+            
             # Relayout Canvas
             self.fig.canvas.draw() # self.canvas.draw()
             
 
         self.turn += 1
-   
-        
-        
-        
 
-        
-        
-#'''
+    def switch_boundaries_on_off(self):
+        if self.boundaries_on != False:
+            pass
 
-'''
-class LineBuilder:
-    name = "Andy"
-    number = 0
+        else:
+            self.canvas.ax.clear()
+            self.canvas.ax.set_xlim([-1, 1])
+            self.canvas.ax.set_ylim([-1, 1])
+            # plot_data(self.X)
+            player_points = np.asarray(
+                [self.points[i] for i in np.where(self.pointOwner)[0].tolist()])
+            self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
+                                   marker='x', s=20, c=self.playerColors[0])
+            player_points = np.asarray([self.points[i] for i in np.where(
+                (np.logical_not(self.pointOwner)))[0].tolist()])
+            self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
+                                   marker='x', s=20, c=self.playerColors[1])
 
-    def __init__(self, line):
-        self.line = line
-        self.xs = list(self.line.get_xdata())
-        self.ys = list(self.line.get_ydata())
-        self.cid = self.line.figure.canvas.mpl_connect('button_press_event', self)
-
-    def __call__(self, event):
-        print('click', event)
-        if event.inaxes != self.line.axes:
-            return
-        self.xs.append(event.xdata)
-        self.ys.append(event.ydata)
-        self.line.set_data(self.xs, self.ys)
-        self.line.figure.canvas.draw()
-        self.name = "name"+str(self.number)
-        print(self.name)
-        self.number += 1
-'''
+        self.fig.canvas.draw()

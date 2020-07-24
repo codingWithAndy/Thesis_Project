@@ -18,24 +18,20 @@ matplotlib.use('Qt5Agg')
 
 
 class LinearRegressionGameboard(QWidget):
+    lin_reg = LinearRegression()
+    
     model_name = "Linear Regression"
     learning_type = "Supervised Learning!"
-    model_overview = "Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data." + \
+    model_overview = "\nLinear regression attempts to model the relationship between two variables by fitting a linear equation to observed data." + \
                      " One variable is considered to be an explanatory variable, and the other is considered to be a dependent variable." + \
                      " For example, a modeler might want to relate the weights of individuals to their heights using a linear regression model."
 
-    data_sample_1 = datasets.load_diabetes()
+    data_sample_1 = datasets.load_diabetes() # Might not be needed here
     data_sample_2 = datasets.load_boston()
-
-    
-
-    lin_reg = LinearRegression()
-
     boundaries_on = False
 
 
     def __init__(self, parent=None):
-
         QWidget.__init__(self, parent)
 
         self.canvas = FigureCanvas(Figure())
@@ -52,13 +48,16 @@ class LinearRegressionGameboard(QWidget):
         self.fit_data_points()
         
         self.fig.canvas.draw()
-
         self.setLayout(self.vertical_layout)
  
  
-
     def generate_data_points(self):
         print("Data option:",self.data_option)
+        #if self.data_option == 0:
+        #    self.X, self.y = datasets.load_boston(return_X_y=True)
+        #    self.X = self.X.target
+        #    self.X_new = self.X.target
+        #    self.fit_data_points()
         if self.data_option == 1:
             self.X, self.y = datasets.load_diabetes(return_X_y=True)
             self.X = self.X[:, np.newaxis, 2]

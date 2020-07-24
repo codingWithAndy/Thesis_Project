@@ -5,6 +5,7 @@ from views.gmmgameboard import GMMGameboard
 from views.linearregressiongameboard import LinearRegressionGameboard
 from views.svmgameboard import SVMGameboard
 
+
 from matplotlib import pyplot as plt # Test
 
 import sys
@@ -16,28 +17,38 @@ import numpy as np
 class FreePlay(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
     current_path = os.getcwd()
-    
 
-    def __init__(self, model_choice = "k-means"): # Change the auto model down the line.
+    model_options = ["k-means", "lda", 
+                     "svm", "gmm", 
+                     "linearreg"]
+    
+    def __init__(self, model_choice=""):
         QtWidgets.QWidget.__init__(self)
         
-        self.game_mode = model_choice
-        print("game mode:", self.game_mode)
-
+        # Init game mode
+        if model_choice == "": 
+            self.game_mode = self.model_options[random.randint(0, len(self.model_options)-1)] 
+        else: 
+            self.game_mode = model_choice
+        
+        #print("game mode:", self.game_mode)
         self.setupUi()
+
 
     def setupUi(self):
         self.setObjectName("self")
         self.resize(1300, 770)
-
         self.setStyleSheet("background-color:rgb(47, 85, 151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
+        
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, 
+                                           QtWidgets.QSizePolicy.Expanding, 
+                                           QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
+        
         self.titleLabel = QtWidgets.QLabel(self)
         self.titleLabel.setMinimumSize(QtCore.QSize(582, 120))
         self.titleLabel.setMaximumSize(QtCore.QSize(582, 120))
@@ -46,9 +57,12 @@ class FreePlay(QtWidgets.QWidget):
             self.current_path+"/Code/Project/Images/freeplay.png"))
         self.titleLabel.setObjectName("titleLabel")
         self.horizontalLayout.addWidget(self.titleLabel)
-        spacerItem1 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, 
+                                            QtWidgets.QSizePolicy.Expanding, 
+                                            QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
+        
         self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.gamboardModelInforLayoutV = QtWidgets.QHBoxLayout()
         self.gamboardModelInforLayoutV.setObjectName(
@@ -62,6 +76,7 @@ class FreePlay(QtWidgets.QWidget):
         self.gamboardModelInforLayoutV.addLayout(self.gameboardPlacing)
         self.modelInfoLayoutV = QtWidgets.QHBoxLayout()
         self.modelInfoLayoutV.setObjectName("modelInfoLayoutV")
+        
         self.frame = QtWidgets.QFrame(self)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -72,59 +87,53 @@ class FreePlay(QtWidgets.QWidget):
         self.frame.setSizePolicy(sizePolicy)
         self.frame.setMinimumSize(QtCore.QSize(570, 350))
         self.frame.setMaximumSize(QtCore.QSize(1710, 525))
-        self.frame.setStyleSheet("background-color:white;\n"
-                                 "")
+        self.frame.setStyleSheet("background-color:white;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
+        
         self.formLayout_2 = QtWidgets.QFormLayout(self.frame)
         self.formLayout_2.setObjectName("formLayout_2")
         self.learningTypeLabel = QtWidgets.QLabel(self.frame)
+        
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
+
         self.learningTypeLabel.setFont(font)
         self.learningTypeLabel.setObjectName("learningTypeLabel")
         self.formLayout_2.setWidget(
             0, QtWidgets.QFormLayout.LabelRole, self.learningTypeLabel)
         self.learningTypeInfoLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.learningTypeInfoLabel.setFont(font)
+        font_normal = QtGui.QFont()
+        font_normal.setPointSize(20)
+        self.learningTypeInfoLabel.setFont(font_normal)
         self.learningTypeInfoLabel.setObjectName("learningTypeInfoLabel")
         self.formLayout_2.setWidget(
             0, QtWidgets.QFormLayout.FieldRole, self.learningTypeInfoLabel)
         self.modelLabel_2 = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
+
         self.modelLabel_2.setFont(font)
         self.modelLabel_2.setObjectName("modelLabel_2")
         self.formLayout_2.setWidget(
             1, QtWidgets.QFormLayout.LabelRole, self.modelLabel_2)
         self.modelTypeLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.modelTypeLabel.setFont(font)
+
+        self.modelTypeLabel.setFont(font_normal)
         self.modelTypeLabel.setObjectName("modelTypeLabel")
         self.formLayout_2.setWidget(
             1, QtWidgets.QFormLayout.FieldRole, self.modelTypeLabel)
         self.overviewLabel = QtWidgets.QLabel(self.frame)
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
         self.overviewLabel.setFont(font)
         self.overviewLabel.setObjectName("overviewLabel")
         self.formLayout_2.setWidget(
             2, QtWidgets.QFormLayout.LabelRole, self.overviewLabel)
         self.overviewDescriptionLabel = QtWidgets.QLabel(self.frame)
         self.overviewDescriptionLabel.setMinimumSize(QtCore.QSize(0, 400))
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.overviewDescriptionLabel.setFont(font)
+        font_overview = QtGui.QFont()
+        font_overview.setPointSize(18)
+        self.overviewDescriptionLabel.setFont(font_overview)
         self.overviewDescriptionLabel.setText("")
         self.overviewDescriptionLabel.setAlignment(
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
@@ -139,8 +148,8 @@ class FreePlay(QtWidgets.QWidget):
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.groupBox = QtWidgets.QGroupBox(self)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, 
+                                           QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
@@ -161,19 +170,20 @@ class FreePlay(QtWidgets.QWidget):
 
         self.modelLabel = QtWidgets.QLabel(self.generalGroupbox)
         self.modelLabel.setObjectName("modelLabel")
-        self.formLayout_3.setWidget(
-            0, QtWidgets.QFormLayout.LabelRole, self.modelLabel)
+        self.formLayout_3.setWidget(0,
+                                    QtWidgets.QFormLayout.LabelRole, 
+                                    self.modelLabel)
 
         self.comboBox = QtWidgets.QComboBox(self.generalGroupbox)
         self.comboBox.setStyleSheet("background-color: white;"
                                     "selection-color: rgb(200, 200, 200)")
         self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
+        for i in range(len(self.model_options)): self.comboBox.addItem("")
+        #self.comboBox.addItem("")
+        #self.comboBox.addItem("")
+        #self.comboBox.addItem("")
+        #self.comboBox.addItem("")
+        #self.comboBox.addItem("")
         self.formLayout_3.setWidget(
             0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
 
@@ -539,13 +549,7 @@ class FreePlay(QtWidgets.QWidget):
         self.gameboardPlacing.addWidget(self.MplWidget)
         
 
-    def kmeans_retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
-        self.numberOfClustersLabel.setText(_translate("Form", "Number of Clusters:"))
-        self.modelLabel.setText(_translate("Form", "Model:"))
-        self.boundaryLabel.setText(_translate("Form", "Boundary (On/Off):"))
-
-
+   # Handles radio button toggle actions
     def handleActivated(self, index):
         print(self.comboBox.itemText(index))
         if self.boundaryOnOffRadioButton.isChecked() == True:
@@ -554,33 +558,26 @@ class FreePlay(QtWidgets.QWidget):
         if self.comboBox.itemText(index) == "LDA":
             self.game_mode = "lda"
             self.MplWidget.hide()
-            
-            #self.hide_kmeans_ui()
             self.setup_gameboard()
             
         elif self.comboBox.itemText(index) == "K-Means":
             self.game_mode = "k-means"
-            # Need to hide previous layout widgets, add needed widgets.
             self.MplWidget.hide()
-            # self.hide_ui() # Needs to be to the "other gameboards" widgets
             self.setup_gameboard()
+
         elif self.comboBox.itemText(index) == "GMM":
             self.game_mode = "gmm"
-            # Need to hide previous layout widgets, add needed widgets.
             self.MplWidget.hide()
-            # self.hide_ui() # Needs to be to the "other gameboards" widgets
             self.setup_gameboard()
+
         elif self.comboBox.itemText(index) == "Linear Regression":
             self.game_mode = "linearreg"
-            # Need to hide previous layout widgets, add needed widgets.
             self.MplWidget.hide()
-            # self.hide_ui() # Needs to be to the "other gameboards" widgets
             self.setup_gameboard()
+
         elif self.comboBox.itemText(index) == "SVM":
             self.game_mode = "svm"
-            # Need to hide previous layout widgets, add needed widgets.
             self.MplWidget.hide()
-            # self.hide_ui() # Needs to be to the "other gameboards" widgets
             self.setup_gameboard()
         
         self.retranslateUi()

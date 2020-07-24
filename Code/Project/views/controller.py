@@ -43,7 +43,7 @@ class Controller:
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
     
-    def show_freeplay(self, model_choice="k-means"):
+    def show_freeplay(self, model_choice=""):
         self.freeplay = FreePlay(model_choice)
         # show_mainmenu This is needed to connect between the windows
         self.freeplay.switch_window.connect(self.choose_window)
