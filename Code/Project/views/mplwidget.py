@@ -30,7 +30,7 @@ class MplWidget(QWidget):
     xx, yy = np.meshgrid(np.arange(-1, 1, 0.01),
                          np.arange(-1, 1, 0.01))
     bgd_mesh = np.c_[xx.ravel(), yy.ravel()]
-    boundaries_on = False
+    boundaries_on = True
     
     def __init__(self, parent = None):
 
