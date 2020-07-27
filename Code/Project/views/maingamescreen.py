@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import QTimer
 import sys
 import os
 
@@ -25,6 +26,8 @@ class MainGameScreen(QtWidgets.QWidget):
 
     def __init__(self, model_choice="linearreg"):
         QtWidgets.QWidget.__init__(self)
+
+        
 
         #self.game_mode = 'linearreg'
         # Init game mode
@@ -378,8 +381,31 @@ class MainGameScreen(QtWidgets.QWidget):
         self.horizontalLayout_3.addWidget(self.homeButton)
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
 
+        # Button Connect
+        self.homeButton.clicked.connect(self.load_mainmenu)
+
         self.retranslateUi()
+
+        self.qTimer = QTimer()
+        self.qTimer.setInterval(1000)
+        self.qTimer.timeout.connect(self.update_player_moves)
+        self.qTimer.start()
         QtCore.QMetaObject.connectSlotsByName(self)
+
+    def update_player_moves(self):
+        if len(self.gbWidget.points) > 0:
+            print(self.gbWidget.points[0])
+            # str(round(self.gbWidget.points[0][0],2))
+            coor_X = "X: {:.2f}".format(self.gbWidget.points[0][0])
+            # str(round(self.gbWidget.points[0][1],2))
+            coor_y = "y: {:.2f}".format(self.gbWidget.points[0][1])
+            move_text = coor_X + ", " + coor_y
+            print('move text:', move_text)
+            self.p1M1Label.setText(str(move_text))
+            # "{:.2f}".format(a)
+        else:
+            print("Not updating score!")
+
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -412,6 +438,21 @@ class MainGameScreen(QtWidgets.QWidget):
         self.playerTurnLabel.setText(_translate("Form", "Player % Turn!"))
         self.tipLabel.setText(_translate("Form", "Tip: "))
         self.tipContentLabel.setText(_translate("Form", "TextLabel"))
+    
+
+    # Closes screen on escape press.
+    def keyPressEvent(self, e):
+        print("Button pressed:", e.key())
+        if e.key() == 16777216:
+            self.close()
+
+    def clear_game_moves(self):
+        self.gbWidget.points = []
+        self.turns = 0
+
+    def load_mainmenu(self):
+        self.clear_game_moves()
+        self.switch_window.emit('mainmenu,maingamescreen')
     
     def setup_gameboard(self):
         print("in setup gameboard")

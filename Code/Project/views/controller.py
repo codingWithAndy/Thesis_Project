@@ -82,6 +82,8 @@ class Controller:
             self.quizscreen.close()
         elif window_options[1] == "freeplay":
             self.freeplay.close()
+        elif window_options[1] == "maingamescreen":
+            self.maingamescreen.close()
 
         if window_options[0] == "mainmenu":
             self.show_mainmenu()
