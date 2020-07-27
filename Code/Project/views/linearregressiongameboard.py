@@ -89,12 +89,12 @@ class LinearRegressionGameboard(QWidget):
         self.y_pred = self.lin_reg.predict(self.X_new)
 
     def __call__(self, event):
-        print('click', event)
+        #print('click', event)
         if event.inaxes != self.canvas.ax:
             return
 
         self.ix, self.iy = event.xdata, event.ydata
-        print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
+        #print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
 
         self.points.append([self.ix, self.iy])
         self.pointOwner.append(self.playerID)

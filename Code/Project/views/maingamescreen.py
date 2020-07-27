@@ -10,6 +10,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 import sys
 import os
 
@@ -42,6 +45,12 @@ class MainGameScreen(QtWidgets.QWidget):
 
 
     def setupUi(self):
+
+        self.player_moves = ["X, y", "X, y",
+                             "X, y", "X, y",
+                             "X, y", "X, y",
+                             "X, y", "X, y"]
+
         self.setObjectName("Form")
         self.resize(1300, 770)
         self.setMinimumSize(QtCore.QSize(1300, 770))
@@ -386,25 +395,127 @@ class MainGameScreen(QtWidgets.QWidget):
 
         self.retranslateUi()
 
+        
+
         self.qTimer = QTimer()
-        self.qTimer.setInterval(1000)
+        self.qTimer.setInterval(50)
         self.qTimer.timeout.connect(self.update_player_moves)
         self.qTimer.start()
         QtCore.QMetaObject.connectSlotsByName(self)
 
     def update_player_moves(self):
-        if len(self.gbWidget.points) > 0:
+        print("Turn no.:", self.gbWidget.turn)
+        
+        
+        if len(self.gbWidget.points) > 0 and self.gbWidget.turn < 9:
+            gb_points = self.gbWidget.points
+            idx = self.gbWidget.turn - 1
+            print("Index:", idx)
+            move_text = "X: {0:.2f}, y: {1:.2f}".format(
+                gb_points[idx][0], gb_points[idx][1])
+            self.player_moves[idx] = move_text
+
+            self.p1M1Label.setText(self.player_moves[0])
+            self.p2M1Label.setText(self.player_moves[1])
+            self.p1M2Label.setText(self.player_moves[2])
+            self.p2M2Label.setText(self.player_moves[3])
+            self.p1M3Label.setText(self.player_moves[4])
+            self.p2M3Label.setText(self.player_moves[5])
+            self.p1M4Label.setText(self.player_moves[6])
+            self.p2M4Label.setText(self.player_moves[7])
+
+            
+            
+            '''
             print(self.gbWidget.points[0])
-            # str(round(self.gbWidget.points[0][0],2))
-            coor_X = "X: {:.2f}".format(self.gbWidget.points[0][0])
-            # str(round(self.gbWidget.points[0][1],2))
-            coor_y = "y: {:.2f}".format(self.gbWidget.points[0][1])
-            move_text = coor_X + ", " + coor_y
-            print('move text:', move_text)
-            self.p1M1Label.setText(str(move_text))
-            # "{:.2f}".format(a)
+            ### Need to tidy this up! #######
+            if self.gbWidget.turn == 1:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[0][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[0][1])
+                move_text = coor_X + ", " + coor_y
+                
+                self.p1M1Label.setText(str(move_text))
+            elif self.gbWidget.turn == 2:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[1][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[1][1])
+                move_text = coor_X + ", " + coor_y
+                
+                self.p2M1Label.setText(str(move_text))
+            elif self.gbWidget.turn == 3:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[2][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[2][1])
+                move_text = coor_X + ", " + coor_y
+                
+                self.p1M2Label.setText(str(move_text))
+            elif self.gbWidget.turn == 4:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[3][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[3][1])
+                move_text = coor_X + ", " + coor_y
+                print('move text:', move_text)
+                self.p2M2Label.setText(str(move_text))
+            elif self.gbWidget.turn == 5:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[4][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[4][1])
+                move_text = coor_X + ", " + coor_y
+                print('move text:', move_text)
+                self.p1M3Label.setText(str(move_text))
+            elif self.gbWidget.turn == 6:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[5][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[5][1])
+                move_text = coor_X + ", " + coor_y
+                print('move text:', move_text)
+                self.p2M3Label.setText(str(move_text))
+            elif self.gbWidget.turn == 7:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[6][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[6][1])
+                move_text = coor_X + ", " + coor_y
+                print('move text:', move_text)
+                self.p1M4Label.setText(str(move_text))
+            elif self.gbWidget.turn == 8:
+                coor_X = "X: {:.2f}".format(self.gbWidget.points[7][0])
+                coor_y = "y: {:.2f}".format(self.gbWidget.points[7][1])
+                move_text = coor_X + ", " + coor_y
+                print('move text:', move_text)
+                self.p2M4Label.setText(str(move_text))
+                msg = QMessageBox()
+                msg.setWindowTitle("")
+                msg_text = "Level Over!\n" + \
+                    "You have both made all of your moves!\n" + \
+                    "Scores are in......"
+                msg.setText(msg_text)
+                x = msg.exec_()
+                self.load_mainmenu()
+                '''
         else:
-            print("Not updating score!")
+            #print("Not updating score!")
+            pass
+
+        
+        
+        players_turn = "Player 2's Turn!" if self.gbWidget.playerID == True  else "Player 1's Turn!"
+        self.playerTurnLabel.setText(players_turn)
+
+        if self.gbWidget.turn == 8:
+            print("In message box if")
+            loop = QEventLoop()
+            QTimer.singleShot(1000, loop.quit)
+            loop.exec_()
+
+            msg = QMessageBox()
+            msg.setWindowTitle("")
+            msg_text = "Level Over!\n" + \
+                "You have both made all of your moves!\n" + \
+                "Scores are in......"
+            msg.setText(msg_text)
+            x = msg.exec_()
+            self.qTimer.stop()
+            self.load_mainmenu()
+        
+            self.gbWidget.turn = 0
+            
+            
+
+        
 
 
     def retranslateUi(self):
@@ -435,14 +546,14 @@ class MainGameScreen(QtWidgets.QWidget):
         self.p2M3Label.setText(_translate("Form", "X, y"))
         self.label_20.setText(_translate("Form", "4:"))
         self.p2M4Label.setText(_translate("Form", "X, y"))
-        self.playerTurnLabel.setText(_translate("Form", "Player % Turn!"))
+        self.playerTurnLabel.setText(_translate("Form", "Player 1's Turn!"))
         self.tipLabel.setText(_translate("Form", "Tip: "))
         self.tipContentLabel.setText(_translate("Form", "TextLabel"))
     
 
     # Closes screen on escape press.
     def keyPressEvent(self, e):
-        print("Button pressed:", e.key())
+        #print("Button pressed:", e.key())
         if e.key() == 16777216:
             self.close()
 
