@@ -11,6 +11,7 @@ from views.learningzone import LearningZone
 from views.splashscreen import SplashScreen
 from views.quiz import Quiz
 from views.freeplay import FreePlay
+from views.maingamescreen import MainGameScreen
 
 class Controller:
 
@@ -55,6 +56,11 @@ class Controller:
         self.window.close()
         self.login.show()
 
+    def show_gamescreen(self):
+        self.maingamescreen = MainGameScreen()
+        self.maingamescreen.switch_window.connect(self.choose_window)
+        self.maingamescreen.show()
+
 
     def choose_window(self, options):
         """
@@ -90,6 +96,8 @@ class Controller:
                 self.show_freeplay(window_options[2])
             else:
                 self.show_freeplay()
+        elif window_options[0] == "maingamescreen":
+            self.show_gamescreen()
         #else:
         #    self.show_splashscreen()
 

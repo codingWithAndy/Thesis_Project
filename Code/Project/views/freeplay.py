@@ -181,9 +181,7 @@ class FreePlay(QtWidgets.QWidget):
 
         self.gameboardPlacing = QtWidgets.QHBoxLayout()
         self.gameboardPlacing.setObjectName("gameboardPlacing")
-
-        
-
+        # Here is where the gameboard sits.
         self.gamboardModelInforLayoutV.addLayout(self.gameboardPlacing)
         
         

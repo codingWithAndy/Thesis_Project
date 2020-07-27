@@ -116,15 +116,16 @@ class MainMenu(QtWidgets.QWidget):
         
         
         # Button Connects
-        self.learningZoneButton.clicked.connect(self.login)
+        self.playButton.clicked.connect(self.load_main_gamescreen)
+        self.learningZoneButton.clicked.connect(self.load_learning_zone)
         self.freePlayButton.clicked.connect(self.freeplay)
 
         self.retranslateUi()
 
-    def splashscreen(self):
-        self.switch_window.emit('splashscreen,mainmenu')
+    def load_main_gamescreen(self):
+        self.switch_window.emit('maingamescreen,mainmenu')
 
-    def login(self):
+    def load_learning_zone(self):
         self.switch_window.emit('learningzone,mainmenu')
 
     def freeplay(self):
