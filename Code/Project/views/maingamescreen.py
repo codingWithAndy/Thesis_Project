@@ -17,6 +17,8 @@ class MainGameScreen(QtWidgets.QWidget):
                      "svm", "gmm",
                      "linearreg"]
 
+    score = [100, 80, 60, 50, 40, 30, 20, 0]
+    
     def __init__(self, model_choice="linearreg"): # Change model_choice back to "" when more games are added. 
         QtWidgets.QWidget.__init__(self)
 
@@ -409,27 +411,12 @@ class MainGameScreen(QtWidgets.QWidget):
         if len(self.gbWidget.points) > 0 and self.gbWidget.turn < 9:
             gb_points = self.gbWidget.points
             idx = self.gbWidget.turn - 1
-            print("Index:", idx)
-            move_text = "X: {0:.2f}, y: {1:.2f}".format(
-                gb_points[idx][0], gb_points[idx][1])
+
+            move_text = "X: {0:.2f}, y: {1:.2f}".format(gb_points[idx][0], 
+                                                        gb_points[idx][1])
             self.player_moves[idx] = move_text
-
-            #### These should be in their own function. ####
-            self.p1M1Label.setText(self.player_moves[0])
-            self.p2M1Label.setText(self.player_moves[1])
-            self.p1M2Label.setText(self.player_moves[2])
-            self.p2M2Label.setText(self.player_moves[3])
-            self.p1M3Label.setText(self.player_moves[4])
-            self.p2M3Label.setText(self.player_moves[5])
-            self.p1M4Label.setText(self.player_moves[6])
-            self.p2M4Label.setText(self.player_moves[7])
-
-        else:
-            #print("Not updating score!")
-            pass
-
-        players_turn = "Player 2's Turn!" if self.gbWidget.playerID == True  else "Player 1's Turn!"
-        self.playerTurnLabel.setText(players_turn)
+        
+        self.update_player_moves_label()
 
         if self.gbWidget.turn == 8:
             # Creating wait timer for results to come in.
@@ -437,27 +424,65 @@ class MainGameScreen(QtWidgets.QWidget):
             self.generate_winner()
             self.wait_timer()
             
-            msg_text = "Level Over!\n" + \
-                "You have both made all of your moves!\n" + \
-                "Scores are in......\n" + \
-            "Player " + str(self.winner_id) + " Wins!\n"  +\
-                "With the co-ordinance: X: " + str(round(self.winning_points[0],2)) + "y: " + str(round(self.winning_points[1],2)) + "\n" +\
-                "With an SSE score of: " + str(round(self.winner, 3)) + "!"
+            msg_text =  "Level Over!\n" + \
+                        "You have both made all of your moves!\n" + \
+                        "Scores are in......\n" + \
+                        "Player " + str(self.winner_id) + " wins the bonus point!\n"  +\
+                        "With the co-ordinance: X: " + str(round(self.winning_points[0],2)) + " y: " + str(round(self.winning_points[1],2)) + "\n" +\
+                        "With an SSE score of: " + str(round(self.winner, 3)) + "!\n" +\
+                        "Player 1 score: " + str(self.player1_score) + "\n" +\
+                        "Player 2 score: " + str(self.player2_score) + "\n" +\
+                        "Player " + str(self.game_winner) + " wins the round!!!!!!"
             self.create_msgbox(msg_text)
 
             self.load_mainmenu()
+    
+    def update_player_moves_label(self):
+        self.p1M1Label.setText(self.player_moves[0])
+        self.p2M1Label.setText(self.player_moves[1])
+        self.p1M2Label.setText(self.player_moves[2])
+        self.p2M2Label.setText(self.player_moves[3])
+        self.p1M3Label.setText(self.player_moves[4])
+        self.p2M3Label.setText(self.player_moves[5])
+        self.p1M4Label.setText(self.player_moves[6])
+        self.p2M4Label.setText(self.player_moves[7])
 
-            # "X: {0:.2f}, y: {1:.2f}".format(gb_points[idx][0], gb_points[idx][1])
- 
-
+        # Players Turn Indicator 
+        players_turn = "Player 2's Turn!" if self.gbWidget.playerID == True else "Player 1's Turn!"
+        self.playerTurnLabel.setText(players_turn)
     
     def generate_winner(self):
-        print("Figuring out the winner!")
-        # Need to link to model to find the SSE
         self.gbWidget.pin_the_data_result()
         self.winner = self.gbWidget.results[0]
         self.winner_id = 1 if self.gbWidget.results_id[0] == False else 2
         self.winning_points = self.gbWidget.data_points[0]
+
+        self.player1_score = 0
+        self.player2_score = 0
+
+        for i in range(len(self.gbWidget.results_id)):
+            if self.gbWidget.results_id[i] == False:
+                self.player1_score += self.score[i]
+            else:
+                self.player2_score += self.score[i]
+        
+        if self.gbWidget.results_id[0] == False:
+            self.player1_score += 100
+        else:
+            self.player2_score += 100
+
+        
+        msg = "P1: " + str(self.player1_score)
+        self.play1ScoreLabel.setText(msg)
+        msg = "P2: " + str(self.player2_score)
+        self.player2ScoreLabel.setText(msg)
+
+        if self.player1_score > self.player2_score:
+            self.game_winner = 1
+        elif self.player2_score > self.player1_score:
+            self.game_winner = 2
+        else:
+            self.game_winner = "Draw"
             
 
     def retranslateUi(self):
@@ -493,22 +518,15 @@ class MainGameScreen(QtWidgets.QWidget):
         self.tipContentLabel.setText(_translate("Form", "TextLabel"))
     
 
-    # Closes screen on escape press.
     def keyPressEvent(self, e):
         #print("Button pressed:", e.key())
         if e.key() == 16777216:
             self.close()
 
-    def clear_game_moves(self):
-        self.gbWidget.points = []
-        self.turns = 0
-
     def load_mainmenu(self):
-        self.clear_game_moves()
         self.switch_window.emit('mainmenu,maingamescreen')
     
     def setup_gameboard(self):
-        print("in setup gameboard")
         if self.game_mode == 'k-means':
             self.gbWidget = KMeansGameboard(self)
         elif self.game_mode == 'lda':

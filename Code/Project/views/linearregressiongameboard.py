@@ -163,6 +163,7 @@ class LinearRegressionGameboard(QWidget):
                     changed_value = self.results[j]
                     self.results[j] = self.results[j+1]
                     self.results[j+1] = changed_value
+                    
                     changed_value_id = self.results_id[j]
                     self.results_id[j] = self.results_id[j+1]
                     self.results_id[j+1] = changed_value_id

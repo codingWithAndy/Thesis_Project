@@ -15,9 +15,9 @@ from views.maingamescreen import MainGameScreen
 
 class Controller:
 
+
     def __init__(self):
         pass
-
 
     def show_splashscreen(self):
         self.splashscreen = SplashScreen()
