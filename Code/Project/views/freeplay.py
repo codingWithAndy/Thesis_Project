@@ -115,7 +115,6 @@ class FreePlay(QtWidgets.QWidget):
     # Button click actions
     def update_graph(self):
         print("update graph pressed!")
-        print(self.comboBox.currentText())
         if self.comboBox.currentText() == "K-Means":
             no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
             print("No of clusters:", no_of_clusters)
@@ -125,8 +124,10 @@ class FreePlay(QtWidgets.QWidget):
 
     def clear_graph(self):
         print("Free play clear graph button activated!")
-        if self.comboBox == "K-Means":
+        if self.comboBox.currentText() == "K-Means":
             self.clear_kmeans()
+        elif self.comboBox.currentText() == "LDA":
+            self.clear_lda()
         
 
     def home_pressed(self):
@@ -135,6 +136,12 @@ class FreePlay(QtWidgets.QWidget):
     
     # Clearning Models
     def clear_kmeans(self):
+        self.MplWidget.canvas.ax.clear()
+        self.MplWidget.canvas.ax.set_xlim([-1, 1])
+        self.MplWidget.canvas.ax.set_ylim([-1, 1])
+        self.MplWidget.canvas.draw()
+    
+    def clear_lda(self):
         self.MplWidget.points = []
         self.MplWidget.turn = 0
         self.MplWidget.pointOwner = []
