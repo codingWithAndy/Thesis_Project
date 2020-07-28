@@ -440,15 +440,15 @@ class MainGameScreen(QtWidgets.QWidget):
             msg_text = "Level Over!\n" + \
                 "You have both made all of your moves!\n" + \
                 "Scores are in......\n" + \
-            "Player " + str(self.winner_id) + " Wins!\n" +\
-                "With an SSE score of: " + str(self.winner) + "!"
+            "Player " + str(self.winner_id) + " Wins!\n"  +\
+                "With the co-ordinance: X: " + str(round(self.winning_points[0],2)) + "y: " + str(round(self.winning_points[1],2)) + "\n" +\
+                "With an SSE score of: " + str(round(self.winner, 3)) + "!"
             self.create_msgbox(msg_text)
-            
-            
-            
+
             self.load_mainmenu()
-        
-            #self.gbWidget.turn = 0
+
+            # "X: {0:.2f}, y: {1:.2f}".format(gb_points[idx][0], gb_points[idx][1])
+ 
 
     
     def generate_winner(self):
@@ -457,11 +457,8 @@ class MainGameScreen(QtWidgets.QWidget):
         self.gbWidget.pin_the_data_result()
         self.winner = self.gbWidget.results[0]
         self.winner_id = 1 if self.gbWidget.results_id[0] == False else 2
+        self.winning_points = self.gbWidget.data_points[0]
             
-            
-
-        
-
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate

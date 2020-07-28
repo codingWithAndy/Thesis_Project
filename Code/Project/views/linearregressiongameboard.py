@@ -45,7 +45,7 @@ class LinearRegressionGameboard(QWidget):
         self.points = []
 
         self.canvas = FigureCanvas(Figure())
-        self.data_option = 0 #randint(0, 1)
+        self.data_option = randint(0, 1)
 
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
@@ -79,14 +79,17 @@ class LinearRegressionGameboard(QWidget):
             self.X, self.y = datasets.load_diabetes(return_X_y=True)
             self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
+            print("X Shape:", self.X.shape)
             self.fit_data_points()
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
+            print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
             self.fit_data_points()
 
     def fit_data_points(self):
+        print("fit data y:", self.y)
         self.lin_reg.fit(self.X, self.y)
         self.canvas.ax.plot(self.X, self.y, "b.")
         
@@ -131,18 +134,27 @@ class LinearRegressionGameboard(QWidget):
         # Need to figure out how to clear the boundaries
     
     def pin_the_data_result(self):
-        # This function does not like data sample 1 for some reason! -> check at a latter date
-        finished = False
-        print("pin the tail test")
-        print(self.pointOwner)
         for idx in range(len(self.points)):
-            mse_value = metrics.mean_squared_error(self.points[idx], self.y_pred)
+            data = np.asarray(self.points)
+            new_X = data[:, :-1]
+            new_y = data[:, 1]
+
+            new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1))
+
+            #print("Points Shape:", np.asarray(self.points).shape)
+            #print("Points 0 value:", self.points[idx][0])
+            #new_y_pred = self.lin_reg.predict([self.points[:,0]])#)[idx][0])
+            #new_y = self.points[:,1]#[idx][1]
+            #print("Y pred Shape:", self.y_pred.shape)
+            
+            mse_value = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
             print('Mean Squared Error:', mse_value)
             self.results.append(mse_value)
             self.results_id.append(self.pointOwner[idx])
+        
         print("Values and ID 1s: ",self.results, self.results_id)
-        
-        
+
+        self.data_points = self.points
         
         n = len(self.results)
         for i in range(n-1):
@@ -154,26 +166,13 @@ class LinearRegressionGameboard(QWidget):
                     changed_value_id = self.results_id[j]
                     self.results_id[j] = self.results_id[j+1]
                     self.results_id[j+1] = changed_value_id
-            
-        #while self.place < len(self.points):
-        #    for idx in range (len(self.points)):
-        #        mse_value = metrics.mean_squared_error(self.points[idx], self.y_pred)
-        #        if idx == 0:
-        #            self.results.append(mse_value)
-        #            self.results_id.append(self.pointOwner[idx])
-        #            print("idx == 0 results and ID: ",
-        #                  self.results, self.results_id[idx])
-        #        elif idx < len(self.points) and idx != 0:
-        #            for result in range(idx):
-        #                if self.results[result] > mse_value:
-        #                    replacing_value = self.results[result]
-        #                    self.results[result] = mse_value
-        #                    self.results.append(replacing_value)
-        #                else:
-        #                    self.results.append(mse_value)
-        #                    self.results_id.append(self.pointOwner[idx])
-        #        
-        #    self.place += 1
+
+                    # Experiment
+                    changed_value_coor = self.data_points[j]
+                    self.data_points[j] = self.data_points[j+1]
+                    self.data_points[j+1] = changed_value_coor
+
+
         print("Values and ID 2nd: ", self.results, self.results_id)
 
 
