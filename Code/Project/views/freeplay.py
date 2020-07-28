@@ -114,8 +114,11 @@ class FreePlay(QtWidgets.QWidget):
 
     # Button click actions
     def update_graph(self):
-        if self.comboBox == "K-Means":
-            no_of_clusters = self.numberOfClustersLineedit.text()
+        print("update graph pressed!")
+        print(self.comboBox.currentText())
+        if self.comboBox.currentText() == "K-Means":
+            no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
+            print("No of clusters:", no_of_clusters)
             self.MplWidget.k = int(no_of_clusters)
             self.MplWidget.replot_kmeans()
 
@@ -445,14 +448,15 @@ class FreePlay(QtWidgets.QWidget):
         self.setup_gameboard()
 
 
-        self.button_connection_seup()
+        self.button_connection_setup()
         self.retranslateUi()
         
         QtCore.QMetaObject.connectSlotsByName(self)
 
         
     # Button Connections
-    def button_connection_seup(self):
+    def button_connection_setup(self):
+        print("In FP button set up")
         self.playButton.clicked.connect(self.update_graph)
         self.homeButton.clicked.connect(self.home_pressed)
         self.clearButton.clicked.connect(self.clear_graph)

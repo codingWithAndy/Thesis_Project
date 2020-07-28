@@ -11,6 +11,7 @@ import matplotlib
 ##
 from sklearn.linear_model import LinearRegression
 from sklearn import datasets
+from sklearn import metrics
 
 from random import randint
 
@@ -44,7 +45,7 @@ class LinearRegressionGameboard(QWidget):
         self.points = []
 
         self.canvas = FigureCanvas(Figure())
-        self.data_option = randint(0, 1)
+        self.data_option = 0 #randint(0, 1)
 
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
@@ -60,6 +61,11 @@ class LinearRegressionGameboard(QWidget):
         self.setLayout(self.vertical_layout)
         self.cid = self.canvas.figure.canvas.mpl_connect(
             'button_press_event', self)
+
+        # Tidy up later
+        self.results = []
+        self.results_id = []
+        self.place = 0
  
  
     def generate_data_points(self):
@@ -109,9 +115,6 @@ class LinearRegressionGameboard(QWidget):
             self.boundaries_on = True
             self.switch_boundaries_on_off()
 
-        
-        # 
-
         self.turn += 1
 
     # Toggle decision boundary off
@@ -126,3 +129,51 @@ class LinearRegressionGameboard(QWidget):
 
         self.fig.canvas.draw()
         # Need to figure out how to clear the boundaries
+    
+    def pin_the_data_result(self):
+        # This function does not like data sample 1 for some reason! -> check at a latter date
+        finished = False
+        print("pin the tail test")
+        print(self.pointOwner)
+        for idx in range(len(self.points)):
+            mse_value = metrics.mean_squared_error(self.points[idx], self.y_pred)
+            print('Mean Squared Error:', mse_value)
+            self.results.append(mse_value)
+            self.results_id.append(self.pointOwner[idx])
+        print("Values and ID 1s: ",self.results, self.results_id)
+        
+        
+        
+        n = len(self.results)
+        for i in range(n-1):
+            for j in range(0,n-i-1):
+                if self.results[j] > self.results[j+1]:
+                    changed_value = self.results[j]
+                    self.results[j] = self.results[j+1]
+                    self.results[j+1] = changed_value
+                    changed_value_id = self.results_id[j]
+                    self.results_id[j] = self.results_id[j+1]
+                    self.results_id[j+1] = changed_value_id
+            
+        #while self.place < len(self.points):
+        #    for idx in range (len(self.points)):
+        #        mse_value = metrics.mean_squared_error(self.points[idx], self.y_pred)
+        #        if idx == 0:
+        #            self.results.append(mse_value)
+        #            self.results_id.append(self.pointOwner[idx])
+        #            print("idx == 0 results and ID: ",
+        #                  self.results, self.results_id[idx])
+        #        elif idx < len(self.points) and idx != 0:
+        #            for result in range(idx):
+        #                if self.results[result] > mse_value:
+        #                    replacing_value = self.results[result]
+        #                    self.results[result] = mse_value
+        #                    self.results.append(replacing_value)
+        #                else:
+        #                    self.results.append(mse_value)
+        #                    self.results_id.append(self.pointOwner[idx])
+        #        
+        #    self.place += 1
+        print("Values and ID 2nd: ", self.results, self.results_id)
+
+
