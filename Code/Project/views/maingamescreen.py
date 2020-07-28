@@ -33,7 +33,6 @@ class MainGameScreen(QtWidgets.QWidget):
 
 
     def setupUi(self):
-
         self.player_moves = ["X, y", "X, y",
                              "X, y", "X, y",
                              "X, y", "X, y",
@@ -386,6 +385,41 @@ class MainGameScreen(QtWidgets.QWidget):
         
         QtCore.QMetaObject.connectSlotsByName(self)
 
+
+    def retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.setWindowTitle(_translate(
+            "Form", "Data Splash! - Main Game Screen"))
+        self.aimLabel.setText(_translate("Form", "Aim:"))
+        self.aimContentLabel.setText(_translate("Form", "TextLabel"))
+        self.scoreLabel.setText(_translate("Form", "Score: "))
+        self.play1ScoreLabel.setText(_translate("Form", "P1 - 200"))
+        self.scoreDividerLabel.setText(_translate("Form", "|"))
+        self.player2ScoreLabel.setText(_translate("Form", "P2 - 300"))
+        self.currentMovesLabel.setText(_translate("Form", "Current Moves:"))
+        self.p1Label.setText(_translate("Form", "P1:"))
+        self.p11Label.setText(_translate("Form", "1:"))
+        self.p1M1Label.setText(_translate("Form", "X, y"))
+        self.p12Label.setText(_translate("Form", "2:"))
+        self.p1M2Label.setText(_translate("Form", "X, y"))
+        self.p13Label.setText(_translate("Form", "3:"))
+        self.p1M3Label.setText(_translate("Form", "X, y"))
+        self.p14Label.setText(_translate("Form", "4:"))
+        self.p1M4Label.setText(_translate("Form", "X, y"))
+        self.p2Label.setText(_translate("Form", "P2:"))
+        self.label_17.setText(_translate("Form", "1:"))
+        self.p2M1Label.setText(_translate("Form", "X, y"))
+        self.label_18.setText(_translate("Form", "2:"))
+        self.p2M2Label.setText(_translate("Form", "X, y"))
+        self.label_19.setText(_translate("Form", "3:"))
+        self.p2M3Label.setText(_translate("Form", "X, y"))
+        self.label_20.setText(_translate("Form", "4:"))
+        self.p2M4Label.setText(_translate("Form", "X, y"))
+        self.playerTurnLabel.setText(_translate("Form", "Player 1's Turn!"))
+        self.tipLabel.setText(_translate("Form", "Tip: "))
+        self.tipContentLabel.setText(_translate("Form", "TextLabel"))
+
+
     def timer_checker(self, duration=50, action="start"):
         if action == "start":
             self.qTimer = QTimer()
@@ -406,6 +440,7 @@ class MainGameScreen(QtWidgets.QWidget):
         msg.setWindowTitle("")
         msg.setText(msg_contents)
         x = msg.exec_()
+
 
     def update_player_moves(self):
         if len(self.gbWidget.points) > 0 and self.gbWidget.turn < 9:
@@ -485,38 +520,6 @@ class MainGameScreen(QtWidgets.QWidget):
             self.game_winner = "Draw"
             
 
-    def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("Form", "Data Splash! - Main Game Screen"))
-        self.aimLabel.setText(_translate("Form", "Aim:"))
-        self.aimContentLabel.setText(_translate("Form", "TextLabel"))
-        self.scoreLabel.setText(_translate("Form", "Score: "))
-        self.play1ScoreLabel.setText(_translate("Form", "P1 - 200"))
-        self.scoreDividerLabel.setText(_translate("Form", "|"))
-        self.player2ScoreLabel.setText(_translate("Form", "P2 - 300"))
-        self.currentMovesLabel.setText(_translate("Form", "Current Moves:"))
-        self.p1Label.setText(_translate("Form", "P1:"))
-        self.p11Label.setText(_translate("Form", "1:"))
-        self.p1M1Label.setText(_translate("Form", "X, y"))
-        self.p12Label.setText(_translate("Form", "2:"))
-        self.p1M2Label.setText(_translate("Form", "X, y"))
-        self.p13Label.setText(_translate("Form", "3:"))
-        self.p1M3Label.setText(_translate("Form", "X, y"))
-        self.p14Label.setText(_translate("Form", "4:"))
-        self.p1M4Label.setText(_translate("Form", "X, y"))
-        self.p2Label.setText(_translate("Form", "P2:"))
-        self.label_17.setText(_translate("Form", "1:"))
-        self.p2M1Label.setText(_translate("Form", "X, y"))
-        self.label_18.setText(_translate("Form", "2:"))
-        self.p2M2Label.setText(_translate("Form", "X, y"))
-        self.label_19.setText(_translate("Form", "3:"))
-        self.p2M3Label.setText(_translate("Form", "X, y"))
-        self.label_20.setText(_translate("Form", "4:"))
-        self.p2M4Label.setText(_translate("Form", "X, y"))
-        self.playerTurnLabel.setText(_translate("Form", "Player 1's Turn!"))
-        self.tipLabel.setText(_translate("Form", "Tip: "))
-        self.tipContentLabel.setText(_translate("Form", "TextLabel"))
-    
 
     def keyPressEvent(self, e):
         #print("Button pressed:", e.key())
@@ -530,20 +533,15 @@ class MainGameScreen(QtWidgets.QWidget):
         if self.game_mode == 'k-means':
             self.gbWidget = KMeansGameboard(self)
         elif self.game_mode == 'lda':
-            print("in else if statement for lda")
             self.MplWidget = MplWidget(self)
             self.boundaryOnOffRadioButton.setChecked(True)
         elif self.game_mode == 'gmm':
-            print("in else if statement for gmm")
             self.MplWidget = GMMGameboard(self)
         elif self.game_mode == 'linearreg':
-            print("in else if statement for lin_reg")
             self.gbWidget = LinearRegressionGameboard(self)
         elif self.game_mode == 'svm':
-            print("in else if statement for lin_reg")
             self.gbWidget = SVMGameboard(self)
 
-        #### Form needs to be self when in main app ####
         self.gbWidget.setMinimumSize(QtCore.QSize(630, 500))
         self.gbWidget.setStyleSheet("background-color: white;")
         self.gbWidget.setObjectName("gbWidget")

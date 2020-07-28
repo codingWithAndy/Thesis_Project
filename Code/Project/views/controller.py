@@ -1,17 +1,19 @@
 import sys
 import os
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import *
-from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
+#from PyQt5.QtGui import *
+#from PyQt5.QtWebEngineWidgets import *
+#from PyQt5.QtCore import *
+#from PyQt5.QtWidgets import *
+#
+#from views.mainmenu import MainMenu
+#from views.learningzone import LearningZone
+#from views.splashscreen import SplashScreen
+#from views.quiz import Quiz
+#from views.freeplay import FreePlay
+#from views.maingamescreen import MainGameScreen
 
-from views.mainmenu import MainMenu
-from views.learningzone import LearningZone
-from views.splashscreen import SplashScreen
-from views.quiz import Quiz
-from views.freeplay import FreePlay
-from views.maingamescreen import MainGameScreen
+from views.reqimports import *
 
 class Controller:
 
@@ -38,17 +40,18 @@ class Controller:
         self.learningzone.switch_window.connect(self.choose_window)
         self.learningzone.show()
 
+
     def show_quizscreen(self,q_topic):
         self.quizscreen = Quiz(q_topic)
         # show_mainmenu This is needed to connect between the windows
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
-    
+
+
     def show_freeplay(self, model_choice=""):
         self.freeplay = FreePlay(model_choice)
         # show_mainmenu This is needed to connect between the windows
-        self.freeplay.switch_window.connect(self.choose_window)
-    
+        self.freeplay.switch_window.connect(self.choose_window)    
         self.freeplay.show()
 
     def show_window_two(self):
@@ -67,7 +70,9 @@ class Controller:
         Selecting appropriate windows to open and close.
 
         Args:
-            options (list): [0] indicated the desired screen to open. [1] indicated the screen that needs to close.
+            options (list): 
+                        [0] indicated the desired screen to open. 
+                        [1] indicated the screen that needs to close.
         """
         
         window_options = options.split(',')
@@ -103,5 +108,5 @@ class Controller:
         #else:
         #    self.show_splashscreen()
 
-        print("Window to open:", window_options[0])
-        print("Window to close:", window_options[1])
+        #print("Window to open:", window_options[0])
+        #print("Window to close:", window_options[1])
