@@ -360,9 +360,9 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QHBoxLayout" name="dataOptionsHorizontalLayout">
             <item>
-             <widget class="QGroupBox" name="groupBox_2">
+             <widget class="QGroupBox" name="modelOptionsGroupBox">
               <property name="title">
                <string>Model Options:</string>
               </property>
@@ -457,7 +457,7 @@
                   </widget>
                  </item>
                  <item row="3" column="0">
-                  <widget class="QLabel" name="label_8">
+                  <widget class="QLabel" name="outcomeLabel">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>

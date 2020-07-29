@@ -424,7 +424,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.tipLabel.setText(_translate("Form", "Tip: "))
         self.tipContentLabel.setText(_translate("Form", "TextLabel"))
 
-
+    
     def timer_checker(self, duration=50, action="start"):
         if action == "start":
             self.qTimer = QTimer()

@@ -42,6 +42,7 @@ class Ui_self(object):
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.MplWidget.sizePolicy().hasHeightForWidth())
+        
         self.MplWidget.setSizePolicy(sizePolicy)
         self.MplWidget.setMinimumSize(QtCore.QSize(450, 350))
         self.MplWidget.setMaximumSize(QtCore.QSize(855, 525))
@@ -116,6 +117,8 @@ class Ui_self(object):
         self.modelInfoLayoutV.addWidget(self.frame)
         self.gamboardModelInforLayoutV.addLayout(self.modelInfoLayoutV)
         self.verticalLayout_2.addLayout(self.gamboardModelInforLayoutV)
+        
+        
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.groupBox = QtWidgets.QGroupBox(self)
@@ -128,6 +131,7 @@ class Ui_self(object):
         self.groupBox.setMaximumSize(QtCore.QSize(16777215, 600))
         self.groupBox.setStyleSheet("background-color: rgb(195, 192, 44);")
         self.groupBox.setObjectName("groupBox")
+        
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.groupBox)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.modelOptionsHSplit = QtWidgets.QVBoxLayout()
@@ -137,10 +141,10 @@ class Ui_self(object):
         self.modelSelectionLabel = QtWidgets.QLabel(self.groupBox)
         self.modelSelectionLabel.setObjectName("modelSelectionLabel")
         self.horizontalLayout_3.addWidget(self.modelSelectionLabel)
-        self.modelSelectComboXox = QtWidgets.QComboBox(self.groupBox)
-        self.modelSelectComboXox.setMinimumSize(QtCore.QSize(150, 0))
-        self.modelSelectComboXox.setObjectName("modelSelectComboXox")
-        self.horizontalLayout_3.addWidget(self.modelSelectComboXox)
+        self.modelSelectComboBox = QtWidgets.QComboBox(self.groupBox)
+        self.modelSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
+        self.modelSelectComboBox.setObjectName("modelSelectComboXox")
+        self.horizontalLayout_3.addWidget(self.modelSelectComboBox)
         self.dataSelectionLabel = QtWidgets.QLabel(self.groupBox)
         self.dataSelectionLabel.setObjectName("dataSelectionLabel")
         self.horizontalLayout_3.addWidget(self.dataSelectionLabel)
@@ -162,14 +166,19 @@ class Ui_self(object):
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem2)
         self.modelOptionsHSplit.addLayout(self.horizontalLayout_3)
+        
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        
         self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_2.setObjectName("groupBox_2")
+        
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.groupBox_2)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.formLayout_4 = QtWidgets.QFormLayout()
         self.formLayout_4.setObjectName("formLayout_4")
+        
+        
         self.interceptLabel = QtWidgets.QLabel(self.groupBox_2)
         self.interceptLabel.setMinimumSize(QtCore.QSize(0, 15))
         self.interceptLabel.setObjectName("interceptLabel")
@@ -209,9 +218,12 @@ class Ui_self(object):
         self.lineEdit_4.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.lineEdit_4.setStyleSheet("background-color: white;")
         self.lineEdit_4.setObjectName("lineEdit_4")
+        
         self.formLayout_4.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_4)
+        
         self.horizontalLayout_4.addLayout(self.formLayout_4)
         self.horizontalLayout_2.addWidget(self.groupBox_2)
+        
         self.generalGroupbox = QtWidgets.QGroupBox(self.groupBox)
         self.generalGroupbox.setObjectName("generalGroupbox")
         self.formLayout_3 = QtWidgets.QFormLayout(self.generalGroupbox)

@@ -74,31 +74,32 @@ class FreePlay(QtWidgets.QWidget):
 
    # Handles radio button toggle actions
     def handleActivated(self, index):
-        print(self.comboBox.itemText(index))
+        print(self.modelSelectComboBox.itemText(index))
         if self.boundaryOnOffRadioButton.isChecked() == True:
             self.boundaryOnOffRadioButton.setChecked(False)
         
-        if self.comboBox.itemText(index) == "LDA":
+        if self.modelSelectComboBox.itemText(index) == "LDA":
             self.game_mode = "lda"
             self.MplWidget.hide()
             self.setup_gameboard()
             
-        elif self.comboBox.itemText(index) == "K-Means":
+        elif self.modelSelectComboBox.itemText(index) == "K-Means":
             self.game_mode = "k-means"
             self.MplWidget.hide()
             self.setup_gameboard()
 
-        elif self.comboBox.itemText(index) == "GMM":
+        elif self.modelSelectComboBox.itemText(index) == "GMM":
             self.game_mode = "gmm"
             self.MplWidget.hide()
             self.setup_gameboard()
 
-        elif self.comboBox.itemText(index) == "Linear Regression":
+        elif self.modelSelectComboBox.itemText(index) == "Linear Regression":
             self.game_mode = "linearreg"
             self.MplWidget.hide()
             self.setup_gameboard()
+            self.model_and_data_options()
 
-        elif self.comboBox.itemText(index) == "SVM":
+        elif self.modelSelectComboBox.itemText(index) == "SVM":
             self.game_mode = "svm"
             self.MplWidget.hide()
             self.setup_gameboard()
@@ -119,7 +120,7 @@ class FreePlay(QtWidgets.QWidget):
     # Button click actions
     def update_graph(self):
         print("update graph pressed!")
-        if self.comboBox.currentText() == "K-Means":
+        if self.modelSelectComboBox.currentText() == "K-Means":
             no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
             print("No of clusters:", no_of_clusters)
             self.MplWidget.k = int(no_of_clusters)
@@ -130,9 +131,9 @@ class FreePlay(QtWidgets.QWidget):
 
     def clear_graph(self):
         print("Free play clear graph button activated!")
-        if self.comboBox.currentText() == "K-Means":
+        if self.modelSelectComboBox.currentText() == "K-Means":
             self.clear_kmeans()
-        elif self.comboBox.currentText() == "LDA":
+        elif self.modelSelectComboBox.currentText() == "LDA":
             self.clear_lda()
         
 
@@ -274,6 +275,7 @@ class FreePlay(QtWidgets.QWidget):
         self.gamboardModelInforLayoutV.addLayout(self.modelInfoLayoutV)
         self.verticalLayout_2.addLayout(self.gamboardModelInforLayoutV)
 
+        '''
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.groupBox = QtWidgets.QGroupBox(self)
@@ -457,7 +459,144 @@ class FreePlay(QtWidgets.QWidget):
         self.horizontalLayout_5.addLayout(self.groupBoxHButtons)
         self.verticalLayout.addWidget(self.groupBox)
         self.verticalLayout_2.addLayout(self.verticalLayout)
+        '''
 
+        #### New Lin Reg #######
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.groupBox = QtWidgets.QGroupBox(self)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy)
+        self.groupBox.setMinimumSize(QtCore.QSize(700, 210))
+        self.groupBox.setMaximumSize(QtCore.QSize(16777215, 600))
+        self.groupBox.setStyleSheet("background-color: rgb(195, 192, 44);")
+        self.groupBox.setObjectName("groupBox")
+
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.groupBox)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.modelOptionsHSplit = QtWidgets.QVBoxLayout()
+        self.modelOptionsHSplit.setObjectName("modelOptionsHSplit")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.modelSelectionLabel = QtWidgets.QLabel(self.groupBox)
+        self.modelSelectionLabel.setObjectName("modelSelectionLabel")
+        self.horizontalLayout_3.addWidget(self.modelSelectionLabel)
+        
+        self.modelSelectComboBox = QtWidgets.QComboBox(self.groupBox)
+        self.modelSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
+        self.modelSelectComboBox.setObjectName("modelSelectComboBox")
+
+        for i in range(len(self.model_options)+1):
+            self.modelSelectComboBox.addItem("")
+
+        self.horizontalLayout_3.addWidget(self.modelSelectComboBox)
+        self.dataSelectionLabel = QtWidgets.QLabel(self.groupBox)
+        self.dataSelectionLabel.setObjectName("dataSelectionLabel")
+        self.horizontalLayout_3.addWidget(self.dataSelectionLabel)
+        self.dataSelectComboBox = QtWidgets.QComboBox(self.groupBox)
+        self.dataSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
+        self.dataSelectComboBox.setObjectName("dataSelectComboBox")
+        self.dataSelectComboBox.addItem("")
+        self.dataSelectComboBox.addItem("")
+        self.dataSelectComboBox.addItem("")
+        self.horizontalLayout_3.addWidget(self.dataSelectComboBox)
+        self.boundaryLabel = QtWidgets.QLabel(self.groupBox)
+        self.boundaryLabel.setObjectName("boundaryLabel")
+        self.horizontalLayout_3.addWidget(self.boundaryLabel)
+        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(self.groupBox)
+        self.boundaryOnOffRadioButton.setMaximumSize(
+            QtCore.QSize(25, 16777215))
+        self.boundaryOnOffRadioButton.setText("")
+        self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
+        self.horizontalLayout_3.addWidget(self.boundaryOnOffRadioButton)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem2)
+        self.modelOptionsHSplit.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+
+        
+
+        self.modelOptionsGroupBox = QtWidgets.QGroupBox(self.groupBox)
+        self.modelOptionsGroupBox.setObjectName("groupBox_2")
+        
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(
+            self.modelOptionsGroupBox)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.formLayout_4 = QtWidgets.QFormLayout()
+        self.formLayout_4.setObjectName("formLayout_4")
+        
+        ### Bottom half of Model Options Group Box
+        self.model_and_data_options()
+        #self.lin_reg_model_options_setup()
+
+        self.horizontalLayout_4.addLayout(self.formLayout_4)
+        self.horizontalLayout_2.addWidget(self.modelOptionsGroupBox)
+
+        self.generalGroupbox = QtWidgets.QGroupBox(self.groupBox)
+        self.generalGroupbox.setObjectName("generalGroupbox")
+        self.formLayout_3 = QtWidgets.QFormLayout(self.generalGroupbox)
+        self.formLayout_3.setObjectName("formLayout_3")
+        self.dataSampleLineedit = QtWidgets.QLineEdit(self.generalGroupbox)
+        self.dataSampleLineedit.setMinimumSize(QtCore.QSize(150, 0))
+        self.dataSampleLineedit.setMaximumSize(
+            QtCore.QSize(16777215, 16777215))
+        self.dataSampleLineedit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.dataSampleLineedit.setAutoFillBackground(False)
+        self.dataSampleLineedit.setStyleSheet("background-color: white;")
+        self.dataSampleLineedit.setObjectName("dataSampleLineedit")
+        self.formLayout_3.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.dataSampleLineedit)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.formLayout_3.setItem(
+            2, QtWidgets.QFormLayout.LabelRole, spacerItem3)
+        self.dataSampleLabel = QtWidgets.QLabel(self.generalGroupbox)
+        self.dataSampleLabel.setMinimumSize(QtCore.QSize(0, 20))
+        self.dataSampleLabel.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.dataSampleLabel.setObjectName("dataSampleLabel")
+        self.formLayout_3.setWidget(
+            1, QtWidgets.QFormLayout.LabelRole, self.dataSampleLabel)
+        self.horizontalLayout_2.addWidget(self.generalGroupbox)
+        self.modelOptionsHSplit.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_5.addLayout(self.modelOptionsHSplit)
+        self.groupBoxHButtons = QtWidgets.QHBoxLayout()
+        self.groupBoxHButtons.setObjectName("groupBoxHButtons")
+        self.buttonLayoutV = QtWidgets.QVBoxLayout()
+        self.buttonLayoutV.setObjectName("buttonLayoutV")
+        spacerItem4 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.buttonLayoutV.addItem(spacerItem4)
+        self.playButton = QtWidgets.QPushButton(self.groupBox)
+        self.playButton.setMinimumSize(QtCore.QSize(101, 51))
+        self.playButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                      "border-radius: 15px;")
+        self.playButton.setObjectName("playButton")
+        self.buttonLayoutV.addWidget(self.playButton)
+        self.clearButton = QtWidgets.QPushButton(self.groupBox)
+        self.clearButton.setMinimumSize(QtCore.QSize(101, 51))
+        self.clearButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                       "border-radius: 15px;")
+        self.clearButton.setObjectName("clearButton")
+        self.buttonLayoutV.addWidget(self.clearButton)
+        self.homeButton = QtWidgets.QPushButton(self.groupBox)
+        self.homeButton.setMinimumSize(QtCore.QSize(101, 51))
+        self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
+                                      "border-radius: 15px;")
+        self.homeButton.setObjectName("homeButton")
+        self.buttonLayoutV.addWidget(self.homeButton)
+        self.groupBoxHButtons.addLayout(self.buttonLayoutV)
+        self.horizontalLayout_5.addLayout(self.groupBoxHButtons)
+        self.verticalLayout.addWidget(self.groupBox)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
+
+        ########
         self.setup_gameboard()
 
 
@@ -469,12 +608,68 @@ class FreePlay(QtWidgets.QWidget):
         
     # Button Connections
     def button_connection_setup(self):
-        print("In FP button set up")
         self.playButton.clicked.connect(self.update_graph)
         self.homeButton.clicked.connect(self.home_pressed)
         self.clearButton.clicked.connect(self.clear_graph)
-        self.comboBox.activated.connect(self.handleActivated)
+        self.modelSelectComboBox.activated.connect(self.handleActivated)
         self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
+
+    def model_and_data_options(self):
+        if self.game_mode == 'linearreg':
+            self.lin_reg_model_options_setup()
+            self.lin_reg_retranslateUi()
+
+    def lin_reg_model_options_setup(self):
+        
+        
+        self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.interceptLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.interceptLabel.setObjectName("interceptLabel")
+        self.formLayout_4.setWidget(
+            0, QtWidgets.QFormLayout.LabelRole, self.interceptLabel)
+        self.interceptLineEdit = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
+        self.interceptLineEdit.setMinimumSize(QtCore.QSize(0, 15))
+        self.interceptLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.interceptLineEdit.setStyleSheet("background-color: white;")
+        self.interceptLineEdit.setObjectName("interceptLineEdit")
+        self.formLayout_4.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.interceptLineEdit)
+        self.coefLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.coefLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.coefLabel.setObjectName("coefLabel")
+        self.formLayout_4.setWidget(
+            1, QtWidgets.QFormLayout.LabelRole, self.coefLabel)
+        self.coefLineEdit = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
+        self.coefLineEdit.setMinimumSize(QtCore.QSize(0, 15))
+        self.coefLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.coefLineEdit.setStyleSheet("background-color: white;")
+        self.coefLineEdit.setObjectName("coefLineEdit")
+        self.formLayout_4.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.coefLineEdit)
+        self.predictLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.predictLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.predictLabel.setObjectName("predictLabel")
+        self.formLayout_4.setWidget(
+            2, QtWidgets.QFormLayout.LabelRole, self.predictLabel)
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
+        self.lineEdit_3.setMinimumSize(QtCore.QSize(0, 15))
+        self.lineEdit_3.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.lineEdit_3.setStyleSheet("background-color: white;")
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.formLayout_4.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
+        self.outcomeLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.outcomeLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.outcomeLabel.setObjectName("label_8")
+        self.formLayout_4.setWidget(
+            3, QtWidgets.QFormLayout.LabelRole, self.outcomeLabel)
+        self.outcomeLineEdit = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
+        self.outcomeLineEdit.setMinimumSize(QtCore.QSize(0, 15))
+        self.outcomeLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.outcomeLineEdit.setStyleSheet("background-color: white;")
+        self.outcomeLineEdit.setObjectName("outcomeLineEdit")
+        self.formLayout_4.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.outcomeLineEdit)
 
         
 
@@ -489,24 +684,25 @@ class FreePlay(QtWidgets.QWidget):
         self.overviewLabel.setText(_translate("self", "Overview:"))
         self.groupBox.setTitle(_translate("self", "Model Options:"))
         self.generalGroupbox.setTitle(_translate("self", "General:"))
-        self.modelLabel.setText(_translate("self", "Model:"))
-        self.numberOfClustersLabel.setText(
-            _translate("self", "No. of Clusters:"))
+        self.modelSelectionLabel.setText(_translate("self", "Model:"))
+        #self.numberOfClustersLabel.setText(
+        #    _translate("self", "No. of Clusters:"))
         self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
 
-        self.comboBox.setItemText(0, _translate("Form", "Please Select:"))
-        self.comboBox.setItemText(1, _translate("Form", "K-Means"))
-        self.comboBox.setItemText(2, _translate("Form", "LDA"))
-        self.comboBox.setItemText(3, _translate("Form", "Linear Regression"))
-        self.comboBox.setItemText(4, _translate("Form", "GMM"))
-        self.comboBox.setItemText(5, _translate("Form", "SVM"))
+        self.modelSelectComboBox.setItemText(0, _translate("Form", "Please Select:"))
+        self.modelSelectComboBox.setItemText(1, _translate("Form", "K-Means"))
+        self.modelSelectComboBox.setItemText(2, _translate("Form", "LDA"))
+        self.modelSelectComboBox.setItemText(3, _translate("Form", "Linear Regression"))
+        self.modelSelectComboBox.setItemText(4, _translate("Form", "GMM"))
+        self.modelSelectComboBox.setItemText(5, _translate("Form", "SVM"))
 
+        '''    
         self.dataSampleLabel.setText(_translate("self", "No. data samples:"))
         self.dataGroupbox.setTitle(_translate("self", "Pre-Generated Data:"))
         self.data1Label.setText(_translate("self", "House Prices:"))
         self.data2Label.setText(_translate("self", "Health (Diabetes):"))
         self.data3Label.setText(_translate("self", "OG Created Data:"))
-
+        '''
         self.overviewDescriptionLabel.setText(_translate(
             "Form", self.MplWidget.model_overview))
         self.modelTypeLabel.setText(_translate(
@@ -514,6 +710,27 @@ class FreePlay(QtWidgets.QWidget):
         self.learningTypeInfoLabel.setText(
             _translate("Form", self.MplWidget.learning_type))
 
+        self.modelSelectionLabel.setText(_translate("self", "Model:"))
+        self.dataSelectionLabel.setText(_translate("self", "Data Selection:"))
+        self.dataSelectComboBox.setItemText(0, _translate("self", "Custom"))
+        self.dataSelectComboBox.setItemText(1, _translate("self", "Diabeties"))
+        self.dataSelectComboBox.setItemText(
+            2, _translate("self", "Boston House Prices"))
+        self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
+        self.modelOptionsGroupBox.setTitle(
+            _translate("self", "Model Options:"))
+        self.generalGroupbox.setTitle(_translate("self", "Data Options:"))
+
+    def lin_reg_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        
+        self.interceptLabel.setText(_translate("self", "Intercept"))
+        self.coefLabel.setText(_translate("self", "Estimated coefficients:"))
+        self.predictLabel.setText(_translate("self", "Predict"))
+        self.outcomeLabel.setText(_translate("self", "Outcome:"))
+        
+        self.dataSampleLabel.setText(
+            _translate("self", "Number of data samples:"))
 
         
 
