@@ -1,3 +1,4 @@
+from sklearn.datasets.samples_generator import make_blobs
 from random import randint
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,6 +14,8 @@ from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
 matplotlib.use('Qt5Agg')
+
+
 
 
 class KMeansGameboard(QWidget):
@@ -36,9 +39,20 @@ class KMeansGameboard(QWidget):
 
     k = 5
 
+    data_samples = 100
+    boundaries_on = False
+
     def __init__(self, parent=None):
 
         QWidget.__init__(self, parent)
+
+        self.ix, iy = 0, 0
+        self.playerID = False
+        self.turn = 0
+        self.pointOwner = []
+        self.points = []
+
+        self.boundaries_on = False
 
         self.canvas = FigureCanvas(Figure())
 
@@ -52,7 +66,10 @@ class KMeansGameboard(QWidget):
         self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
                                     cluster_std=self.blob_std, random_state=7)
 
+        self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+        self.y_pred = self.kmeans.fit_predict(self.X)
         self.plot_clusters(self.X)
+        
 
         self.setLayout(self.vertical_layout)
         self.cid = self.canvas.figure.canvas.mpl_connect(
@@ -67,12 +84,34 @@ class KMeansGameboard(QWidget):
 
 
     def __call__(self, event):
-        print('click', event)
-        self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-        self.y_pred = self.kmeans.fit_predict(self.X)
-        self.plot_decision_boundaries(self.kmeans, self.X)
+        #print('click', event)
+        #self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+        #self.y_pred = self.kmeans.fit_predict(self.X)
+        #self.plot_decision_boundaries(self.kmeans, self.X)
 
         # Plot new data points prediction.
+
+        if event.inaxes != self.canvas.ax:
+            return
+
+        self.ix, self.iy = event.xdata, event.ydata
+        #print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
+
+        self.points.append([self.ix, self.iy])
+        self.pointOwner.append(self.playerID)
+
+        # from classifier game
+        self.playerID = not self.playerID
+        self.canvas.ax.scatter(self.ix, self.iy, marker='x',
+                               s=20, c=self.playerColors[self.playerID])
+        self.fig.canvas.draw()
+
+        if not self.playerID and self.turn >= 6:
+            self.boundaries_on = True
+            self.switch_boundaries_on_off()
+
+        self.turn += 1
+
         
 
     
@@ -83,10 +122,10 @@ class KMeansGameboard(QWidget):
     def plot_centroids(self, centroids, weights=None, circle_color='w', cross_color='k'):
         if weights is not None:
             centroids = centroids[weights > weights.max() / 10]
+        
         self.canvas.ax.scatter(centroids[:, 0], centroids[:, 1],
                                 marker='o', s=30, linewidths=8,
-                                color=circle_color, zorder=10, alpha=0.9
-                                )
+                                color=circle_color, zorder=10, alpha=0.9)
         self.canvas.ax.scatter(centroids[:, 0], centroids[:, 1],
                     marker='x', s=50, linewidths=50,
                     color=cross_color, zorder=11, alpha=1)
@@ -116,23 +155,27 @@ class KMeansGameboard(QWidget):
     def replot_kmeans(self):
         print(self.k)
         self.canvas.ax.clear()
-        self.blob_centers = np.array(
-            [[0.2,  2.3],
-             [-1.5,  2.3],
-             [-2.8,  1.3]
-             ]
-        )
-        self.blob_std = np.array([0.4, 0.3,
-                             0.1]
-                            )
-        self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
-                                    cluster_std=self.blob_std, random_state=7)
+        #self.blob_centers = np.array(
+        #    [[0.2,  2.3],
+        #     [-1.5,  2.3],
+        #     [-2.8,  1.3]
+        #     ]
+        #)
+        #self.blob_std = np.array([0.4, 0.3,
+        #                     0.1]
+        #                    )
+        #self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
+        #                            cluster_std=self.blob_std, random_state=7)
+
+        self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
+                                    cluster_std=0.6, random_state=0)
         
         self.plot_clusters(self.X)
         self.fig.canvas.draw()
+        self.find_cluster_centre()
 
 
-    boundaries_on = False
+    
 
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
@@ -143,8 +186,17 @@ class KMeansGameboard(QWidget):
         else:
             self.canvas.ax.clear()
             self.plot_clusters(self.X)  # plot_data(self.X)
+            self.boundaries_on = False
             
         self.fig.canvas.draw()
             # Need to figure out how to clear the boundaries
+
+    def find_cluster_centre(self):
+        print("Hello centre!")
+        self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+        self.y_pred = self.kmeans.fit_predict(self.X)
+        centers = self.kmeans.cluster_centers_
+
+        print("Cluster Centers:", centers)
 
 

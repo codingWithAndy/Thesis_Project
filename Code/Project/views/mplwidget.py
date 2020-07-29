@@ -110,13 +110,14 @@ class MplWidget(QWidget):
             self.canvas.ax.set_xlim([-1, 1])
             self.canvas.ax.set_ylim([-1, 1])
             # plot_data(self.X)
-            player_points = np.asarray(
-                [self.points[i] for i in np.where(self.pointOwner)[0].tolist()])
-            self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
-                                   marker='x', s=20, c=self.playerColors[0])
-            player_points = np.asarray([self.points[i] for i in np.where(
-                (np.logical_not(self.pointOwner)))[0].tolist()])
-            self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
-                                   marker='x', s=20, c=self.playerColors[1])
+            if self.points != []:
+                player_points = np.asarray(
+                    [self.points[i] for i in np.where(self.pointOwner)[0].tolist()])
+                self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
+                                    marker='x', s=20, c=self.playerColors[0])
+                player_points = np.asarray([self.points[i] for i in np.where(
+                    (np.logical_not(self.pointOwner)))[0].tolist()])
+                self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
+                                    marker='x', s=20, c=self.playerColors[1])
 
         self.fig.canvas.draw()

@@ -79,17 +79,17 @@ class LinearRegressionGameboard(QWidget):
             self.X, self.y = datasets.load_diabetes(return_X_y=True)
             self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
-            print("X Shape:", self.X.shape)
+            #print("X Shape:", self.X.shape)
             self.fit_data_points()
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
-            print("X Shape:", self.X.shape)
+            #print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
             self.fit_data_points()
 
     def fit_data_points(self):
-        print("fit data y:", self.y)
+        #print("fit data y:", self.y)
         self.lin_reg.fit(self.X, self.y)
         self.canvas.ax.plot(self.X, self.y, "b.")
         
@@ -148,11 +148,11 @@ class LinearRegressionGameboard(QWidget):
             #print("Y pred Shape:", self.y_pred.shape)
             
             mse_value = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
-            print('Mean Squared Error:', mse_value)
+            #print('Mean Squared Error:', mse_value)
             self.results.append(mse_value)
             self.results_id.append(self.pointOwner[idx])
         
-        print("Values and ID 1s: ",self.results, self.results_id)
+        #print("Values and ID 1s: ",self.results, self.results_id)
 
         self.data_points = self.points
         
@@ -174,6 +174,6 @@ class LinearRegressionGameboard(QWidget):
                     self.data_points[j+1] = changed_value_coor
 
 
-        print("Values and ID 2nd: ", self.results, self.results_id)
+        #print("Values and ID 2nd: ", self.results, self.results_id)
 
 

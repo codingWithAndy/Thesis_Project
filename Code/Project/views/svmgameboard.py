@@ -143,12 +143,14 @@ class SVMGameboard(QWidget):
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
-            self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-            self.y_pred = self.kmeans.fit_predict(self.X)
-            self.plot_decision_boundaries(self.kmeans, self.X)
+            #self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+            #self.y_pred = self.kmeans.fit_predict(self.X)
+            #self.plot_decision_boundaries(self.kmeans, self.X)
+            print("boundary = True")
         else:
-            self.canvas.ax.clear()
-            self.plot_clusters(self.X)  # plot_data(self.X)
+            print("boundary = False")
+            #self.canvas.ax.clear()
+            #self.plot_clusters(self.X)  # plot_data(self.X)
 
         self.fig.canvas.draw()
         # Need to figure out how to clear the boundaries

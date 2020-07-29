@@ -18,6 +18,10 @@ class MainGameScreen(QtWidgets.QWidget):
                      "linearreg"]
 
     score = [100, 80, 60, 50, 40, 30, 20, 0]
+
+    aim_desc = "Your aim is to place your data points as close to the decision boundary as possible. " + \
+                "The more you have close to the boundary, the more points. " + \
+                "Bonus points are awarded for the lowest SSE score."
     
     def __init__(self, model_choice="linearreg"): # Change model_choice back to "" when more games are added. 
         QtWidgets.QWidget.__init__(self)
@@ -68,7 +72,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.aimFrame = QtWidgets.QFrame(self)
-        self.aimFrame.setMaximumSize(QtCore.QSize(16777215, 200))
+        self.aimFrame.setMaximumSize(QtCore.QSize(16777215, 120))
         self.aimFrame.setStyleSheet("background-color: rgb(195,192,44);")
         self.aimFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.aimFrame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -86,12 +90,13 @@ class MainGameScreen(QtWidgets.QWidget):
         self.aimLabel.setObjectName("aimLabel")
         self.verticalLayout_3.addWidget(self.aimLabel)
         self.aimContentLabel = QtWidgets.QLabel(self.aimFrame)
-        self.aimContentLabel.setMinimumSize(QtCore.QSize(0, 70))
+        self.aimContentLabel.setMinimumSize(QtCore.QSize(0, 60))
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(16)
         self.aimContentLabel.setFont(font)
         self.aimContentLabel.setStyleSheet("color: white;")
         self.aimContentLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.aimContentLabel.setWordWrap(True)
         self.aimContentLabel.setObjectName("aimContentLabel")
         self.verticalLayout_3.addWidget(self.aimContentLabel)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -391,7 +396,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.setWindowTitle(_translate(
             "Form", "Data Splash! - Main Game Screen"))
         self.aimLabel.setText(_translate("Form", "Aim:"))
-        self.aimContentLabel.setText(_translate("Form", "TextLabel"))
+        self.aimContentLabel.setText(_translate("Form", self.aim_desc))
         self.scoreLabel.setText(_translate("Form", "Score: "))
         self.play1ScoreLabel.setText(_translate("Form", "P1 - 200"))
         self.scoreDividerLabel.setText(_translate("Form", "|"))

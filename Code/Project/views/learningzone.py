@@ -8,7 +8,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, QtWidgets, QtGui
 
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 
 
 
@@ -25,8 +25,7 @@ class LearningZone(QWidget):
     def setupUi(self):
         self.setObjectName("self")
         self.resize(1300, 770)
-        #self.centralwidget = QtWidgets.QWidget(self)
-        #self.centralwidget.setObjectName("centralwidget")
+
         self.setMinimumSize(QtCore.QSize(1158, 770))
         self.setStyleSheet("background-color: rgb(47, 85, 151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
@@ -35,8 +34,6 @@ class LearningZone(QWidget):
         self.verticalLayout.setObjectName("verticalLayout")
 
         self.setup_webview()
-        
-        
         
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
@@ -63,8 +60,8 @@ class LearningZone(QWidget):
         self.freePlayButton.setIcon(icon1)
         self.freePlayButton.setIconSize(QSize(60, 60))
         self.freePlayButton.setFont(font)
-        self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
-"border-radius: 15px;")
+        self.freePlayButton.setStyleSheet("background-color: rgb(3, 193, 161);"
+                                          "border-radius: 15px;")
         self.freePlayButton.setObjectName("freePlayButton")
         self.gridLayout.addWidget(self.freePlayButton, 0, 2, 1, 1)
         

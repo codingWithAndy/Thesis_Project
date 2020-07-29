@@ -39,6 +39,7 @@ class FreePlay(QtWidgets.QWidget):
     def setup_gameboard(self):
         print("in setup gameboard")
         if self.game_mode == 'k-means':
+            self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = KMeansGameboard(self)
         elif self.game_mode == 'lda':
             print("in else if statement for lda")
@@ -46,13 +47,16 @@ class FreePlay(QtWidgets.QWidget):
             self.boundaryOnOffRadioButton.setChecked(True)
         elif self.game_mode == 'gmm':
             print("in else if statement for gmm")
+            self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = GMMGameboard(self)
         elif self.game_mode == 'linearreg':
             print("in else if statement for lin_reg")
+            self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = LinearRegressionGameboard(self)
         elif self.game_mode == 'svm':
             print("in else if statement for lin_reg")
             self.MplWidget = SVMGameboard(self)
+            self.boundaryOnOffRadioButton.setChecked(True)
         
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -119,6 +123,8 @@ class FreePlay(QtWidgets.QWidget):
             no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
             print("No of clusters:", no_of_clusters)
             self.MplWidget.k = int(no_of_clusters)
+            no_of_data_samples = self.dataSampleLineedit.text() if self.numberOfClustersLineedit.text() != "" else 100
+            self.MplWidget.data_samples = int(no_of_data_samples)
             self.MplWidget.replot_kmeans()
 
 
@@ -303,7 +309,7 @@ class FreePlay(QtWidgets.QWidget):
         self.comboBox.setObjectName("comboBox")
         
         # Creating placeholders for the different models.
-        for i in range(len(self.model_options)):self.comboBox.addItem("")
+        for i in range(len(self.model_options)+1):self.comboBox.addItem("")
         
         self.formLayout_3.setWidget(
             0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
