@@ -39,7 +39,8 @@ class KMeansGameboard(QWidget):
 
     k = 5
 
-    data_samples = 100
+    data_samples = 1000
+    playerColors = ['g', 'r']
     boundaries_on = False
 
     def __init__(self, parent=None):
@@ -84,7 +85,7 @@ class KMeansGameboard(QWidget):
 
 
     def __call__(self, event):
-        #print('click', event)
+        print('click', event)
         #self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         #self.y_pred = self.kmeans.fit_predict(self.X)
         #self.plot_decision_boundaries(self.kmeans, self.X)
@@ -172,6 +173,8 @@ class KMeansGameboard(QWidget):
         
         self.plot_clusters(self.X)
         self.fig.canvas.draw()
+
+        # EXPERIMENT!: finding out cluster centres.
         self.find_cluster_centre()
 
 
