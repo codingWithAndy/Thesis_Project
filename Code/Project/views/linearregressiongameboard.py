@@ -48,6 +48,7 @@ class LinearRegressionGameboard(QWidget):
         self.y = [] 
         self.x_point = []
         self.y_point = []
+        self.prepopulated = False
 
         # Canvas setup
         self.canvas = FigureCanvas(Figure())
@@ -58,10 +59,12 @@ class LinearRegressionGameboard(QWidget):
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
 
-
+        print("game mode:", self.game_mode)
         # create data points
-        #self.generate_data_points()
-        #self.fit_data_points()
+        if self.game_mode == "game":
+            self.generate_data_points()
+            self.generate_data_points()
+            self.fit_model()
         
         self.fig.canvas.draw()
         self.setLayout(self.vertical_layout)
@@ -91,7 +94,7 @@ class LinearRegressionGameboard(QWidget):
         self.y_point.append(self.iy)
 
         # from classifier game
-        #self.playerID = not self.playerID
+        self.playerID = not self.playerID
         self.canvas.ax.scatter(self.ix, self.iy, marker='x',
                                s=20, c=self.playerColors[self.playerID])
         self.fig.canvas.draw()
@@ -100,12 +103,20 @@ class LinearRegressionGameboard(QWidget):
             print("game mode is:", self.game_mode)
             self.create_own_points()
 
-        if self.turn >= 6:
+        if not self.playerID and self.turn >= 6 and self.game_mode == "fp":
             self.boundaries_on = True
             self.switch_boundaries_on_off()
-            self.fit_model()
             self.make_prediction()
             
+            # Make prediction
+            self.fig.canvas.draw()
+
+        if not self.playerID and self.turn >= 6 and self.game_mode == "game":
+            
+            self.boundaries_on = True
+            self.switch_boundaries_on_off()
+            #self.pin_the_data_result()
+
             # Make prediction
             self.fig.canvas.draw()
 
@@ -126,6 +137,7 @@ class LinearRegressionGameboard(QWidget):
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
+            if self.game_mode != "game": self.canvas.ax.clear()
             self.fit_model()
             self.make_prediction()
             self.canvas.ax.plot(self.X_new, self.y_pred, "r-")
@@ -151,8 +163,10 @@ class LinearRegressionGameboard(QWidget):
             self.results_id.append(self.pointOwner[idx])
 
         self.data_points = self.points
-        
-        n = len(self.results)
+        print("results length:",len(self.results))
+        print("data_points length:", len(self.data_points))
+
+        n = len(self.data_points)
         for i in range(n-1):
             for j in range(0,n-i-1):
                 if self.results[j] > self.results[j+1]:
@@ -173,7 +187,6 @@ class LinearRegressionGameboard(QWidget):
     #######     General Methods     #######
     def fit_model(self):
         # Model fits datapoints to the model 
-        # Does this come out and go on the predict part?
         self.lin_reg.fit(self.X, self.y)
         self.canvas.ax.plot(self.X, self.y, "b.")
 
@@ -181,7 +194,7 @@ class LinearRegressionGameboard(QWidget):
         # Model Makes a Prediction
         self.X_new = self.X
 
-        if len(self.X) < 100:
+        if len(self.X) < 100: 
             # Need to figure out the trigger for reshaping
             print("In len X make pred")
             self.X_new = self.X_new.reshape(-1, 1)
@@ -201,7 +214,6 @@ class LinearRegressionGameboard(QWidget):
     
     ####### Data Generation ########
     def create_own_points(self):
-        self.canvas.ax.clear()
         # np.concatenate((self.X, self.points[0]), axis=0)
         player_points = np.asarray([self.points[i]
                              for i in np.where(self.pointOwner)[0].tolist()])
@@ -269,6 +281,21 @@ class LinearRegressionGameboard(QWidget):
             self.X_new = np.array([[0], [2]])
             self.fit_model()
             self.make_prediction()
+
+    def clear_values(self):
+        self.ix, iy = 0, 0
+        self.playerID = False
+        self.turn = 0
+        self.pointOwner = []
+        self.points = []
+        self.X = []
+        self.y = []
+        self.x_point = []
+        self.y_point = []
+        self.prepopulated = False
+
+        self.canvas.ax.clear()
+        self.fig.canvas.draw()
 
 
 

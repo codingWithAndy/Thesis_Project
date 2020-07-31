@@ -616,11 +616,12 @@ class FreePlay(QtWidgets.QWidget):
         elif self.modelSelectComboBox.currentText() == "LDA":
             self.clear_lda()
         else:
-            self.set_boundary_rb_check(False)
-            self.MplWidget.canvas.ax.clear()
-            self.MplWidget.X = []
-            self.MplWidget.y = []
-            self.MplWidget.canvas.draw()
+            self.MplWidget.clear_values()
+            #self.set_boundary_rb_check(False)
+            #self.MplWidget.canvas.ax.clear()
+            #self.MplWidget.X = []
+            #self.MplWidget.y = []
+            #self.MplWidget.canvas.draw()
 
     
     def home_pressed(self):

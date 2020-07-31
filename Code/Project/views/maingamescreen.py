@@ -543,7 +543,7 @@ class MainGameScreen(QtWidgets.QWidget):
         elif self.game_mode == 'gmm':
             self.MplWidget = GMMGameboard(self)
         elif self.game_mode == 'linearreg':
-            self.gbWidget = LinearRegressionGameboard(self)
+            self.gbWidget = LinearRegressionGameboard(self, game_mode="game")
         elif self.game_mode == 'svm':
             self.gbWidget = SVMGameboard(self)
 
