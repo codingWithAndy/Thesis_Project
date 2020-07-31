@@ -43,19 +43,25 @@ class LinearRegressionGameboard(QWidget):
         self.pointOwner = []
         self.points = []
         self.game_mode = game_mode
-
-        self.canvas = FigureCanvas(Figure())
         self.data_option = randint(0, 1)
+        self.X = [] 
+        self.y = [] 
+        self.x_point = []
+        self.y_point = []
+
+        # Canvas setup
+        self.canvas = FigureCanvas(Figure())
+        self.fig = self.canvas.figure
+        self.canvas.ax = self.fig.add_subplot(111)
+
 
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
 
-        self.fig = self.canvas.figure
-        self.canvas.ax = self.fig.add_subplot(111)
 
         # create data points
-        self.generate_data_points()
-        self.fit_data_points()
+        #self.generate_data_points()
+        #self.fit_data_points()
         
         self.fig.canvas.draw()
         self.setLayout(self.vertical_layout)
@@ -66,18 +72,9 @@ class LinearRegressionGameboard(QWidget):
         self.results = []
         self.results_id = []
         self.place = 0
- 
- 
-    
-    def fit_data_points(self):
-        #print("fit data y:", self.y)
-        self.lin_reg.fit(self.X, self.y) # Does this come out and go on the predict part?
-        self.canvas.ax.plot(self.X, self.y, "b.")
-        
-        # Creating Predictions   
-        self.y_pred = self.lin_reg.predict(self.X_new) #### needs to be in preditions
 
 
+    # Gameboard Click interaction handling
     def __call__(self, event):
         #print('click', event)
         if event.inaxes != self.canvas.ax:
@@ -85,29 +82,35 @@ class LinearRegressionGameboard(QWidget):
 
         self.ix, self.iy = event.xdata, event.ydata
         #print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
-        
+
         self.points.append([self.ix, self.iy])
         self.pointOwner.append(self.playerID)
 
+        ## FP data points
+        self.x_point.append(self.ix)
+        self.y_point.append(self.iy)
+
         # from classifier game
-        self.playerID = not self.playerID
+        #self.playerID = not self.playerID
         self.canvas.ax.scatter(self.ix, self.iy, marker='x',
                                s=20, c=self.playerColors[self.playerID])
-        self.fig.canvas.draw() 
+        self.fig.canvas.draw()
 
         if self.game_mode == "fp":
             print("game mode is:", self.game_mode)
             self.create_own_points()
 
-
-
-        if not self.playerID and self.turn >= 6:
+        if self.turn >= 6:
             self.boundaries_on = True
             self.switch_boundaries_on_off()
-            self.fit_data_points()
+            self.fit_model()
+            self.make_prediction()
+            
+            # Make prediction
             self.fig.canvas.draw()
 
         self.turn += 1
+    
 
     def find_parameters(self):
         # Find models parameters
@@ -119,13 +122,12 @@ class LinearRegressionGameboard(QWidget):
         return coef, intercept
         
 
-    def predict_outcome(self):
-        # Predicting output on user input
-        outcome = ""
 
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
+            self.fit_model()
+            self.make_prediction()
             self.canvas.ax.plot(self.X_new, self.y_pred, "r-")
 
         else:
@@ -134,7 +136,6 @@ class LinearRegressionGameboard(QWidget):
             self.boundaries_on = False
 
         self.fig.canvas.draw()
-        # Need to figure out how to clear the boundaries
     
     def pin_the_data_result(self):
         for idx in range(len(self.points)):
@@ -143,19 +144,11 @@ class LinearRegressionGameboard(QWidget):
             new_y = data[:, 1]
 
             new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1))
-
-            #print("Points Shape:", np.asarray(self.points).shape)
-            #print("Points 0 value:", self.points[idx][0])
-            #new_y_pred = self.lin_reg.predict([self.points[:,0]])#)[idx][0])
-            #new_y = self.points[:,1]#[idx][1]
-            #print("Y pred Shape:", self.y_pred.shape)
             
             mse_value = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
             #print('Mean Squared Error:', mse_value)
             self.results.append(mse_value)
             self.results_id.append(self.pointOwner[idx])
-        
-        #print("Values and ID 1s: ",self.results, self.results_id)
 
         self.data_points = self.points
         
@@ -177,18 +170,23 @@ class LinearRegressionGameboard(QWidget):
                     self.data_points[j+1] = changed_value_coor
 
 
-        #print("Values and ID 2nd: ", self.results, self.results_id)
-
     #######     General Methods     #######
     def fit_model(self):
         # Model fits datapoints to the model 
-        ## Put what is needed to fit the data points here
-        pass
+        # Does this come out and go on the predict part?
+        self.lin_reg.fit(self.X, self.y)
+        self.canvas.ax.plot(self.X, self.y, "b.")
 
     def make_prediction(self):
         # Model Makes a Prediction
-        #### Put only what is needed here!
-        pass
+        self.X_new = self.X
+
+        if len(self.X) < 100:
+            # Need to figure out the trigger for reshaping
+            print("In len X make pred")
+            self.X_new = self.X_new.reshape(-1, 1)
+
+        self.y_pred = self.lin_reg.predict(self.X_new)
 
     #### Free Play Linear Regression Interaction options.
     def fp_predict(self,pred):
@@ -203,20 +201,22 @@ class LinearRegressionGameboard(QWidget):
     
     ####### Data Generation ########
     def create_own_points(self):
-        self.X = np.append(self.X, self.points[0])
-        self.y = np.append(self.y, self.points[1])
+        self.canvas.ax.clear()
+        # np.concatenate((self.X, self.points[0]), axis=0)
+        player_points = np.asarray([self.points[i]
+                             for i in np.where(self.pointOwner)[0].tolist()])
+        
+        print("player_points:", player_points)
 
-        self.X_new = self.X
-        self.y_pred = self.X
+        self.X = np.asarray(self.x_point).reshape(-1, 1)
+        self.y = np.asarray(self.y_point).reshape(-1, 1)
 
-        self.X_new = self.X_new.reshape(-1, 1)
+        print("Lenth of X", len(self.X))
+        print("Contents of X:", self.X)
 
-        #self.fit_data_points()
-        #self.fig.canvas.draw()
 
 
     def generate_random_data(self, n_samples, outliers="no", n_outliers=0):
-        print("Need to make data to sample_size and plot")
         # Clear ax
         self.canvas.ax.clear()
 
@@ -228,7 +228,7 @@ class LinearRegressionGameboard(QWidget):
         print("generate random data coef:", coef)
         # Creating Prediction values for fitting model
         self.X_new = self.X
-        self.y_pred = self.X
+        #self.y_pred = self.X
 
         # Create outliers
         if outliers == "yes":
@@ -244,7 +244,8 @@ class LinearRegressionGameboard(QWidget):
             #outlier_mask = np.logical_not(inlier_mask)
 
         # Fit Data
-        self.fit_data_points()
+        self.fit_model()
+        self.make_prediction()
         self.fig.canvas.draw()
 
     def generate_data_points(self): # Change this to existing datasets
@@ -259,13 +260,15 @@ class LinearRegressionGameboard(QWidget):
             self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
             #print("X Shape:", self.X.shape)
-            self.fit_data_points()
+            self.fit_model()
+            self.make_prediction()
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
             #print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
-            self.fit_data_points()
+            self.fit_model()
+            self.make_prediction()
 
 
 

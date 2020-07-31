@@ -556,30 +556,32 @@ class FreePlay(QtWidgets.QWidget):
         if self.modelSelectComboBox.itemText(index) == "LDA":
             self.game_mode = "lda"
             self.MplWidget.hide()
-            self.setup_gameboard()
+            #self.setup_gameboard()
 
         elif self.modelSelectComboBox.itemText(index) == "K-Means":
             self.game_mode = "k-means"
             self.MplWidget.hide()
-            self.setup_gameboard()
+            #self.setup_gameboard()
 
         elif self.modelSelectComboBox.itemText(index) == "GMM":
             self.game_mode = "gmm"
             self.MplWidget.hide()
-            self.setup_gameboard()
+            #self.setup_gameboard()
 
         elif self.modelSelectComboBox.itemText(index) == "Linear Regression":
             ###self.modelOptionsGroupBox.hide() ### Temp Fix
             self.game_mode = "linearreg"
             self.MplWidget.hide()
-            self.setup_gameboard()
-            self.model_and_data_options()
+            #self.setup_gameboard()
+            
             ###self.modelOptionsGroupBox.show()
 
         elif self.modelSelectComboBox.itemText(index) == "SVM":
             self.game_mode = "svm"
             self.MplWidget.hide()
-            self.setup_gameboard()
+        
+        self.setup_gameboard()
+        self.model_and_data_options()
 
         self.retranslateUi()
 
@@ -592,7 +594,7 @@ class FreePlay(QtWidgets.QWidget):
 
         self.MplWidget.switch_boundaries_on_off()
 
-    # Button click actions
+    ################ Button click actions #################
     def update_graph(self):
         print("update graph pressed!")
         if self.modelSelectComboBox.currentText() == "K-Means":
@@ -604,11 +606,11 @@ class FreePlay(QtWidgets.QWidget):
             ) if self.numberOfClustersLineedit.text() != "" else 100
             self.MplWidget.data_samples = int(no_of_data_samples)
             self.MplWidget.replot_kmeans()
-        if self.modelSelectComboBox.currentText() == "Linear Regression":
+        elif self.modelSelectComboBox.currentText() == "Linear Regression":
             self.lr_play_button_control()
 
     def clear_graph(self):
-        print("Free play clear graph button activated!")
+        # Only trigger own cleaning if different values are used
         if self.modelSelectComboBox.currentText() == "K-Means":
             self.clear_kmeans()
         elif self.modelSelectComboBox.currentText() == "LDA":
@@ -619,6 +621,12 @@ class FreePlay(QtWidgets.QWidget):
             self.MplWidget.X = []
             self.MplWidget.y = []
             self.MplWidget.canvas.draw()
+
+    
+    def home_pressed(self):
+        self.switch_window.emit("mainmenu,freeplay")
+
+    ##################################################################
             
             
     # Change state of radio button
@@ -627,8 +635,6 @@ class FreePlay(QtWidgets.QWidget):
         self.boundaryOnOffRadioButton.setChecked(state)
 
 
-    def home_pressed(self):
-        self.switch_window.emit("mainmenu,freeplay")
 
     # Clearning Models
     def clear_kmeans(self):
@@ -655,6 +661,95 @@ class FreePlay(QtWidgets.QWidget):
         if self.game_mode == 'linearreg':
             self.lin_reg_model_options_setup()
             self.lin_reg_retranslateUi()
+
+
+
+    def retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.setWindowTitle(_translate("self", "Data Splash! - Free Play"))
+        self.learningTypeLabel.setText(_translate("self", "Learning Type:"))
+        self.learningTypeInfoLabel.setText(
+            _translate("self", "Learning type info"))
+        self.modelLabel_2.setText(_translate("self", "Model:"))
+        self.modelTypeLabel.setText(_translate("self", "Model name"))
+        self.overviewLabel.setText(_translate("self", "Overview:"))
+        self.groupBox.setTitle(_translate("self", "Model Options:"))
+        self.generalGroupbox.setTitle(_translate("self", "General:"))
+        self.modelSelectionLabel.setText(_translate("self", "Model:"))
+        #self.numberOfClustersLabel.setText(
+        #    _translate("self", "No. of Clusters:"))
+        self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
+
+        self.modelSelectComboBox.setItemText(0, _translate("Form", "Please Select:"))
+        self.modelSelectComboBox.setItemText(1, _translate("Form", "K-Means"))
+        self.modelSelectComboBox.setItemText(2, _translate("Form", "LDA"))
+        self.modelSelectComboBox.setItemText(3, _translate("Form", "Linear Regression"))
+        self.modelSelectComboBox.setItemText(4, _translate("Form", "GMM"))
+        self.modelSelectComboBox.setItemText(5, _translate("Form", "SVM"))
+
+        self.dataSampleLabel.setText(
+            _translate("self", "Number of data samples:"))
+        self.overviewDescriptionLabel.setText(_translate(
+            "Form", self.MplWidget.model_overview))
+        self.modelTypeLabel.setText(_translate(
+            "Form", self.MplWidget.model_name))
+        self.learningTypeInfoLabel.setText(
+            _translate("Form", self.MplWidget.learning_type))
+
+        self.modelSelectionLabel.setText(_translate("self", "Model:"))
+        self.dataSelectionLabel.setText(_translate("self", "Data Selection:"))
+        self.dataSelectComboBox.setItemText(0, _translate("self", "Custom"))
+        self.dataSelectComboBox.setItemText(1, _translate("self", "Diabeties"))
+        self.dataSelectComboBox.setItemText(
+            2, _translate("self", "Boston House Prices"))
+        self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
+        self.modelOptionsGroupBox.setTitle(
+            _translate("self", "Model Options:"))
+        self.generalGroupbox.setTitle(_translate("self", "Data Options:"))
+
+
+    ###### Linear Regression Actions ######
+    def lin_reg_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        
+        self.interceptLabel.setText(_translate("self", "Intercept"))
+        self.coefLabel.setText(_translate("self", "Estimated coefficients:"))
+        self.predictLabel.setText(_translate("self", "Predict"))
+        self.outcomeLabel.setText(_translate("self", "Outcome:"))
+
+
+    def generate_lr_custom_data(self):
+        n_sample = int(self.dataSampleLineedit.text()) #if self.dataSampleLineedit.text() != "" else 2
+        n_sample = int(n_sample)
+
+        self.MplWidget.generate_random_data(n_sample)
+        self.dataSampleLineedit.setText("")
+
+        self.update_lr_param_output()
+
+    def lr_pred(self):
+        prediction = self.lineEdit_3.text()
+        output = self.MplWidget.fp_predict(float(prediction))
+        # Add to label/text box
+        output = output[0]
+        print("output is:", output)
+        self.outcomeLineEdit.setText(str(output))
+        self.update_lr_param_output()
+
+    def update_lr_param_output(self):
+        coef, intercept = self.MplWidget.find_parameters()
+        self.coefLineEdit.setText(str(round(float(coef), 5)))
+        self.interceptLineEdit.setText(str(round(float(intercept), 5)))
+
+
+    def lr_play_button_control(self):
+        if self.dataSampleLineedit.text() != "":
+            self.set_boundary_rb_check(False)
+            self.generate_lr_custom_data()
+            self.dataSampleLineedit.setText("")
+        if self.lineEdit_3.text() != "":
+            self.lr_pred()
+        
 
     def lin_reg_model_options_setup(self):
         self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
@@ -707,95 +802,5 @@ class FreePlay(QtWidgets.QWidget):
             3, QtWidgets.QFormLayout.FieldRole, self.outcomeLineEdit)
 
         ## Get Models Paramters
-        ### These might need to move from here.
-        self.update_lr_param_output()
-
-
-
-    def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("self", "Data Splash! - Free Play"))
-        self.learningTypeLabel.setText(_translate("self", "Learning Type:"))
-        self.learningTypeInfoLabel.setText(
-            _translate("self", "Learning type info"))
-        self.modelLabel_2.setText(_translate("self", "Model:"))
-        self.modelTypeLabel.setText(_translate("self", "Model name"))
-        self.overviewLabel.setText(_translate("self", "Overview:"))
-        self.groupBox.setTitle(_translate("self", "Model Options:"))
-        self.generalGroupbox.setTitle(_translate("self", "General:"))
-        self.modelSelectionLabel.setText(_translate("self", "Model:"))
-        #self.numberOfClustersLabel.setText(
-        #    _translate("self", "No. of Clusters:"))
-        self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
-
-        self.modelSelectComboBox.setItemText(0, _translate("Form", "Please Select:"))
-        self.modelSelectComboBox.setItemText(1, _translate("Form", "K-Means"))
-        self.modelSelectComboBox.setItemText(2, _translate("Form", "LDA"))
-        self.modelSelectComboBox.setItemText(3, _translate("Form", "Linear Regression"))
-        self.modelSelectComboBox.setItemText(4, _translate("Form", "GMM"))
-        self.modelSelectComboBox.setItemText(5, _translate("Form", "SVM"))
-
-        self.dataSampleLabel.setText(
-            _translate("self", "Number of data samples:"))
-        self.overviewDescriptionLabel.setText(_translate(
-            "Form", self.MplWidget.model_overview))
-        self.modelTypeLabel.setText(_translate(
-            "Form", self.MplWidget.model_name))
-        self.learningTypeInfoLabel.setText(
-            _translate("Form", self.MplWidget.learning_type))
-
-        self.modelSelectionLabel.setText(_translate("self", "Model:"))
-        self.dataSelectionLabel.setText(_translate("self", "Data Selection:"))
-        self.dataSelectComboBox.setItemText(0, _translate("self", "Custom"))
-        self.dataSelectComboBox.setItemText(1, _translate("self", "Diabeties"))
-        self.dataSelectComboBox.setItemText(
-            2, _translate("self", "Boston House Prices"))
-        self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
-        self.modelOptionsGroupBox.setTitle(
-            _translate("self", "Model Options:"))
-        self.generalGroupbox.setTitle(_translate("self", "Data Options:"))
-
-    def lin_reg_retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
-        
-        self.interceptLabel.setText(_translate("self", "Intercept"))
-        self.coefLabel.setText(_translate("self", "Estimated coefficients:"))
-        self.predictLabel.setText(_translate("self", "Predict"))
-        self.outcomeLabel.setText(_translate("self", "Outcome:"))
-        
-        #self.dataSampleLabel.setText(
-        #    _translate("self", "Number of data samples:"))
-
-    def generate_lr_custom_data(self):
-        n_sample = int(self.dataSampleLineedit.text()) #if self.dataSampleLineedit.text() != "" else 2
-        n_sample = int(n_sample)
-        print(n_sample)
-        # Check that outliers is selected or not
-
-        self.MplWidget.generate_random_data(n_sample)
-
-        self.dataSampleLineedit.setText("")
-        self.update_lr_param_output()
-
-    def lr_pred(self):
-        prediction = self.lineEdit_3.text()
-        output = self.MplWidget.fp_predict(float(prediction))
-        # Add to label/text box
-        output = output[0]
-        print("output is:", output)
-        self.outcomeLineEdit.setText(str(output))
-
-    def update_lr_param_output(self):
-        coef, intercept = self.MplWidget.find_parameters()
-        self.coefLineEdit.setText(str(round(float(coef), 5)))
-        self.interceptLineEdit.setText(str(round(float(intercept), 5)))
-
-
-    def lr_play_button_control(self):
-        if self.dataSampleLineedit.text() != "":
-            self.generate_lr_custom_data()
-        if self.lineEdit_3.text() != "":
-            self.lr_pred()
-        self.set_boundary_rb_check(False) ### Change this at a latter date
         
 
