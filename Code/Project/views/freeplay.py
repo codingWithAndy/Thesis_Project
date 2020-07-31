@@ -35,132 +35,6 @@ class FreePlay(QtWidgets.QWidget):
         self.setupUi()
 
 
-    # Interactive game board set up      
-    def setup_gameboard(self):
-        print("in setup gameboard")
-        if self.game_mode == 'k-means':
-            self.boundaryOnOffRadioButton.setChecked(False)
-            self.MplWidget = KMeansGameboard(self)
-        elif self.game_mode == 'lda':
-            print("in else if statement for lda")
-            self.MplWidget = MplWidget(self)
-            self.boundaryOnOffRadioButton.setChecked(True)
-        elif self.game_mode == 'gmm':
-            print("in else if statement for gmm")
-            self.boundaryOnOffRadioButton.setChecked(False)
-            self.MplWidget = GMMGameboard(self)
-        elif self.game_mode == 'linearreg':
-            print("in else if statement for lin_reg")
-            self.boundaryOnOffRadioButton.setChecked(False)
-            self.MplWidget = LinearRegressionGameboard(self)
-        elif self.game_mode == 'svm':
-            print("in else if statement for lin_reg")
-            self.MplWidget = SVMGameboard(self)
-            self.boundaryOnOffRadioButton.setChecked(True)
-        
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        #sizePolicy.setHorizontalStretch(0)
-        #sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.MplWidget.sizePolicy().hasHeightForWidth())
-        self.MplWidget.setSizePolicy(sizePolicy)
-        self.MplWidget.setMinimumSize(QtCore.QSize(450, 350))
-        self.MplWidget.setMaximumSize(QtCore.QSize(855, 525))
-        self.MplWidget.setStyleSheet("background-color: white;")
-        self.MplWidget.setObjectName("MplWidget")
-        self.gameboardPlacing.addWidget(self.MplWidget)
-        
-
-   # Handles radio button toggle actions
-    def handleActivated(self, index):
-        print(self.modelSelectComboBox.itemText(index))
-        if self.boundaryOnOffRadioButton.isChecked() == True:
-            self.boundaryOnOffRadioButton.setChecked(False)
-        
-        if self.modelSelectComboBox.itemText(index) == "LDA":
-            self.game_mode = "lda"
-            self.MplWidget.hide()
-            self.setup_gameboard()
-            
-        elif self.modelSelectComboBox.itemText(index) == "K-Means":
-            self.game_mode = "k-means"
-            self.MplWidget.hide()
-            self.setup_gameboard()
-
-        elif self.modelSelectComboBox.itemText(index) == "GMM":
-            self.game_mode = "gmm"
-            self.MplWidget.hide()
-            self.setup_gameboard()
-
-        elif self.modelSelectComboBox.itemText(index) == "Linear Regression":
-            self.game_mode = "linearreg"
-            self.MplWidget.hide()
-            self.setup_gameboard()
-            self.model_and_data_options()
-
-        elif self.modelSelectComboBox.itemText(index) == "SVM":
-            self.game_mode = "svm"
-            self.MplWidget.hide()
-            self.setup_gameboard()
-        
-        self.retranslateUi()
-
-    
-
-    # Linking to Models boundaries on off function
-    def change_boundary(self):
-        if self.boundaryOnOffRadioButton.isChecked() == True:
-            self.MplWidget.boundaries_on = True
-        else:
-            self.MplWidget.boundaries_on = False
-
-        self.MplWidget.switch_boundaries_on_off()
-
-    # Button click actions
-    def update_graph(self):
-        print("update graph pressed!")
-        if self.modelSelectComboBox.currentText() == "K-Means":
-            no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
-            print("No of clusters:", no_of_clusters)
-            self.MplWidget.k = int(no_of_clusters)
-            no_of_data_samples = self.dataSampleLineedit.text() if self.numberOfClustersLineedit.text() != "" else 100
-            self.MplWidget.data_samples = int(no_of_data_samples)
-            self.MplWidget.replot_kmeans()
-
-
-    def clear_graph(self):
-        print("Free play clear graph button activated!")
-        if self.modelSelectComboBox.currentText() == "K-Means":
-            self.clear_kmeans()
-        elif self.modelSelectComboBox.currentText() == "LDA":
-            self.clear_lda()
-        
-
-    def home_pressed(self):
-        self.switch_window.emit("mainmenu,freeplay")
-
-    
-    # Clearning Models
-    def clear_kmeans(self):
-        self.MplWidget.canvas.ax.clear()
-        self.MplWidget.canvas.ax.set_xlim([-1, 1])
-        self.MplWidget.canvas.ax.set_ylim([-1, 1])
-        self.MplWidget.canvas.draw()
-    
-    def clear_lda(self):
-        self.MplWidget.points = []
-        self.MplWidget.turn = 0
-        self.MplWidget.pointOwner = []
-        self.MplWidget.canvas.ax.clear()
-        self.MplWidget.canvas.ax.set_xlim([-1, 1])
-        self.MplWidget.canvas.ax.set_ylim([-1, 1])
-        self.MplWidget.canvas.draw()
-    
-    def clear_linreg(self):
-        print("Need to clear linear regression contents.")
-
-
     # Page layout set up
     def setupUi(self):
         self.setObjectName("self")
@@ -462,6 +336,7 @@ class FreePlay(QtWidgets.QWidget):
         '''
 
         #### New Lin Reg #######
+        #Options layout and group box
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.groupBox = QtWidgets.QGroupBox(self)
@@ -477,6 +352,7 @@ class FreePlay(QtWidgets.QWidget):
         self.groupBox.setStyleSheet("background-color: rgb(195, 192, 44);")
         self.groupBox.setObjectName("groupBox")
 
+        #### Start of first virtical row -> Model options, Data options and boundary on/off
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.groupBox)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.modelOptionsHSplit = QtWidgets.QVBoxLayout()
@@ -489,6 +365,8 @@ class FreePlay(QtWidgets.QWidget):
         
         self.modelSelectComboBox = QtWidgets.QComboBox(self.groupBox)
         self.modelSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
+        self.modelSelectComboBox.setStyleSheet("background-color: white;"
+                                               "selection-color: rgb(200, 200, 200)")
         self.modelSelectComboBox.setObjectName("modelSelectComboBox")
 
         for i in range(len(self.model_options)+1):
@@ -500,6 +378,8 @@ class FreePlay(QtWidgets.QWidget):
         self.horizontalLayout_3.addWidget(self.dataSelectionLabel)
         self.dataSelectComboBox = QtWidgets.QComboBox(self.groupBox)
         self.dataSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
+        self.dataSelectComboBox.setStyleSheet("background-color: white;"
+                                               "selection-color: rgb(200, 200, 200)")
         self.dataSelectComboBox.setObjectName("dataSelectComboBox")
         self.dataSelectComboBox.addItem("")
         self.dataSelectComboBox.addItem("")
@@ -520,9 +400,9 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsHSplit.addLayout(self.horizontalLayout_3)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-
+        #### end of top line of model set up options.
         
-
+        ### Start of Model options
         self.modelOptionsGroupBox = QtWidgets.QGroupBox(self.groupBox)
         self.modelOptionsGroupBox.setObjectName("groupBox_2")
         
@@ -533,12 +413,15 @@ class FreePlay(QtWidgets.QWidget):
         self.formLayout_4.setObjectName("formLayout_4")
         
         ### Bottom half of Model Options Group Box
+        self.setup_gameboard()
         self.model_and_data_options()
         #self.lin_reg_model_options_setup()
 
         self.horizontalLayout_4.addLayout(self.formLayout_4)
         self.horizontalLayout_2.addWidget(self.modelOptionsGroupBox)
+        ### End of model group box
 
+        #### Start of Data selection group box
         self.generalGroupbox = QtWidgets.QGroupBox(self.groupBox)
         self.generalGroupbox.setObjectName("generalGroupbox")
         self.formLayout_3 = QtWidgets.QFormLayout(self.generalGroupbox)
@@ -565,7 +448,7 @@ class FreePlay(QtWidgets.QWidget):
             1, QtWidgets.QFormLayout.LabelRole, self.dataSampleLabel)
         self.horizontalLayout_2.addWidget(self.generalGroupbox)
         self.modelOptionsHSplit.addLayout(self.horizontalLayout_2)
-        self.horizontalLayout_5.addLayout(self.modelOptionsHSplit)
+        self.horizontalLayout_5.addLayout(self.modelOptionsHSplit)  # Adding Model options to 
         self.groupBoxHButtons = QtWidgets.QHBoxLayout()
         self.groupBoxHButtons.setObjectName("groupBoxHButtons")
         self.buttonLayoutV = QtWidgets.QVBoxLayout()
@@ -577,18 +460,33 @@ class FreePlay(QtWidgets.QWidget):
         self.playButton.setMinimumSize(QtCore.QSize(101, 51))
         self.playButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(
+            self.current_path+"/Code/Project/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.playButton.setIcon(icon)
+        self.playButton.setIconSize(QtCore.QSize(40, 40))
         self.playButton.setObjectName("playButton")
         self.buttonLayoutV.addWidget(self.playButton)
         self.clearButton = QtWidgets.QPushButton(self.groupBox)
         self.clearButton.setMinimumSize(QtCore.QSize(101, 51))
         self.clearButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                        "border-radius: 15px;")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(
+            self.current_path+"/Code/Project/Images/times-circle-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.clearButton.setIcon(icon1)
+        self.clearButton.setIconSize(QtCore.QSize(40, 40))
         self.clearButton.setObjectName("clearButton")
         self.buttonLayoutV.addWidget(self.clearButton)
         self.homeButton = QtWidgets.QPushButton(self.groupBox)
         self.homeButton.setMinimumSize(QtCore.QSize(101, 51))
         self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.homeButton.setIcon(icon2)
+        self.homeButton.setIconSize(QtCore.QSize(40, 30))
         self.homeButton.setObjectName("homeButton")
         self.buttonLayoutV.addWidget(self.homeButton)
         self.groupBoxHButtons.addLayout(self.buttonLayoutV)
@@ -597,8 +495,7 @@ class FreePlay(QtWidgets.QWidget):
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
         ########
-        self.setup_gameboard()
-
+        
 
         self.button_connection_setup()
         self.retranslateUi()
@@ -614,14 +511,152 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSelectComboBox.activated.connect(self.handleActivated)
         self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
 
+    # Interactive game board set up
+    def setup_gameboard(self):
+        print("in setup gameboard")
+        if self.game_mode == 'k-means':
+            self.boundaryOnOffRadioButton.setChecked(False)
+            self.MplWidget = KMeansGameboard(self)
+        elif self.game_mode == 'lda':
+            print("in else if statement for lda")
+            self.MplWidget = MplWidget(self)
+            self.boundaryOnOffRadioButton.setChecked(True)
+        elif self.game_mode == 'gmm':
+            print("in else if statement for gmm")
+            self.boundaryOnOffRadioButton.setChecked(False)
+            self.MplWidget = GMMGameboard(self)
+        elif self.game_mode == 'linearreg':
+            print("in else if statement for lin_reg")
+            self.boundaryOnOffRadioButton.setChecked(False)
+            self.MplWidget = LinearRegressionGameboard(self,game_mode="fp")
+        elif self.game_mode == 'svm':
+            print("in else if statement for lin_reg")
+            self.MplWidget = SVMGameboard(self)
+            self.boundaryOnOffRadioButton.setChecked(True)
+
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        #sizePolicy.setHorizontalStretch(0)
+        #sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.MplWidget.sizePolicy().hasHeightForWidth())
+        self.MplWidget.setSizePolicy(sizePolicy)
+        self.MplWidget.setMinimumSize(QtCore.QSize(450, 350))
+        self.MplWidget.setMaximumSize(QtCore.QSize(855, 525))
+        self.MplWidget.setStyleSheet("background-color: white;")
+        self.MplWidget.setObjectName("MplWidget")
+        self.gameboardPlacing.addWidget(self.MplWidget)
+
+    # Handles radio button toggle actions
+    def handleActivated(self, index):
+        print(self.modelSelectComboBox.itemText(index))
+        if self.boundaryOnOffRadioButton.isChecked() == True:
+            self.boundaryOnOffRadioButton.setChecked(False)
+
+        if self.modelSelectComboBox.itemText(index) == "LDA":
+            self.game_mode = "lda"
+            self.MplWidget.hide()
+            self.setup_gameboard()
+
+        elif self.modelSelectComboBox.itemText(index) == "K-Means":
+            self.game_mode = "k-means"
+            self.MplWidget.hide()
+            self.setup_gameboard()
+
+        elif self.modelSelectComboBox.itemText(index) == "GMM":
+            self.game_mode = "gmm"
+            self.MplWidget.hide()
+            self.setup_gameboard()
+
+        elif self.modelSelectComboBox.itemText(index) == "Linear Regression":
+            ###self.modelOptionsGroupBox.hide() ### Temp Fix
+            self.game_mode = "linearreg"
+            self.MplWidget.hide()
+            self.setup_gameboard()
+            self.model_and_data_options()
+            ###self.modelOptionsGroupBox.show()
+
+        elif self.modelSelectComboBox.itemText(index) == "SVM":
+            self.game_mode = "svm"
+            self.MplWidget.hide()
+            self.setup_gameboard()
+
+        self.retranslateUi()
+
+    # Linking to Models boundaries on off function
+    def change_boundary(self):
+        if self.boundaryOnOffRadioButton.isChecked() == True:
+            self.MplWidget.boundaries_on = True
+        else:
+            self.MplWidget.boundaries_on = False
+
+        self.MplWidget.switch_boundaries_on_off()
+
+    # Button click actions
+    def update_graph(self):
+        print("update graph pressed!")
+        if self.modelSelectComboBox.currentText() == "K-Means":
+            no_of_clusters = self.numberOfClustersLineedit.text(
+            ) if self.numberOfClustersLineedit.text() != "" else 3
+            print("No of clusters:", no_of_clusters)
+            self.MplWidget.k = int(no_of_clusters)
+            no_of_data_samples = self.dataSampleLineedit.text(
+            ) if self.numberOfClustersLineedit.text() != "" else 100
+            self.MplWidget.data_samples = int(no_of_data_samples)
+            self.MplWidget.replot_kmeans()
+        if self.modelSelectComboBox.currentText() == "Linear Regression":
+            self.lr_play_button_control()
+
+    def clear_graph(self):
+        print("Free play clear graph button activated!")
+        if self.modelSelectComboBox.currentText() == "K-Means":
+            self.clear_kmeans()
+        elif self.modelSelectComboBox.currentText() == "LDA":
+            self.clear_lda()
+        else:
+            self.set_boundary_rb_check(False)
+            self.MplWidget.canvas.ax.clear()
+            self.MplWidget.X = []
+            self.MplWidget.y = []
+            self.MplWidget.canvas.draw()
+            
+            
+    # Change state of radio button
+    def set_boundary_rb_check(self,state):
+        self.MplWidget.boundaries_on = state
+        self.boundaryOnOffRadioButton.setChecked(state)
+
+
+    def home_pressed(self):
+        self.switch_window.emit("mainmenu,freeplay")
+
+    # Clearning Models
+    def clear_kmeans(self):
+        self.MplWidget.canvas.ax.clear()
+        self.MplWidget.canvas.ax.set_xlim([-1, 1])
+        self.MplWidget.canvas.ax.set_ylim([-1, 1])
+        self.MplWidget.canvas.draw()
+
+    def clear_lda(self):
+        self.MplWidget.points = []
+        self.MplWidget.turn = 0
+        self.MplWidget.pointOwner = []
+        self.MplWidget.canvas.ax.clear()
+        self.MplWidget.canvas.ax.set_xlim([-1, 1])
+        self.MplWidget.canvas.ax.set_ylim([-1, 1])
+        self.MplWidget.canvas.draw()
+
+    def clear_linreg(self):
+        print("Need to clear linear regression contents.")
+
+
+
     def model_and_data_options(self):
         if self.game_mode == 'linearreg':
             self.lin_reg_model_options_setup()
             self.lin_reg_retranslateUi()
 
     def lin_reg_model_options_setup(self):
-        
-        
         self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.interceptLabel.setMinimumSize(QtCore.QSize(0, 15))
         self.interceptLabel.setObjectName("interceptLabel")
@@ -671,7 +706,11 @@ class FreePlay(QtWidgets.QWidget):
         self.formLayout_4.setWidget(
             3, QtWidgets.QFormLayout.FieldRole, self.outcomeLineEdit)
 
-        
+        ## Get Models Paramters
+        ### These might need to move from here.
+        self.update_lr_param_output()
+
+
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -696,13 +735,8 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSelectComboBox.setItemText(4, _translate("Form", "GMM"))
         self.modelSelectComboBox.setItemText(5, _translate("Form", "SVM"))
 
-        '''    
-        self.dataSampleLabel.setText(_translate("self", "No. data samples:"))
-        self.dataGroupbox.setTitle(_translate("self", "Pre-Generated Data:"))
-        self.data1Label.setText(_translate("self", "House Prices:"))
-        self.data2Label.setText(_translate("self", "Health (Diabetes):"))
-        self.data3Label.setText(_translate("self", "OG Created Data:"))
-        '''
+        self.dataSampleLabel.setText(
+            _translate("self", "Number of data samples:"))
         self.overviewDescriptionLabel.setText(_translate(
             "Form", self.MplWidget.model_overview))
         self.modelTypeLabel.setText(_translate(
@@ -729,8 +763,39 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLabel.setText(_translate("self", "Predict"))
         self.outcomeLabel.setText(_translate("self", "Outcome:"))
         
-        self.dataSampleLabel.setText(
-            _translate("self", "Number of data samples:"))
+        #self.dataSampleLabel.setText(
+        #    _translate("self", "Number of data samples:"))
 
+    def generate_lr_custom_data(self):
+        n_sample = int(self.dataSampleLineedit.text()) #if self.dataSampleLineedit.text() != "" else 2
+        n_sample = int(n_sample)
+        print(n_sample)
+        # Check that outliers is selected or not
+
+        self.MplWidget.generate_random_data(n_sample)
+
+        self.dataSampleLineedit.setText("")
+        self.update_lr_param_output()
+
+    def lr_pred(self):
+        prediction = self.lineEdit_3.text()
+        output = self.MplWidget.fp_predict(float(prediction))
+        # Add to label/text box
+        output = output[0]
+        print("output is:", output)
+        self.outcomeLineEdit.setText(str(output))
+
+    def update_lr_param_output(self):
+        coef, intercept = self.MplWidget.find_parameters()
+        self.coefLineEdit.setText(str(round(float(coef), 5)))
+        self.interceptLineEdit.setText(str(round(float(intercept), 5)))
+
+
+    def lr_play_button_control(self):
+        if self.dataSampleLineedit.text() != "":
+            self.generate_lr_custom_data()
+        if self.lineEdit_3.text() != "":
+            self.lr_pred()
+        self.set_boundary_rb_check(False) ### Change this at a latter date
         
 

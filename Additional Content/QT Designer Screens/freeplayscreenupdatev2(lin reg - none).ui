@@ -290,6 +290,10 @@
                 <height>0</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: white;
+selection-color: rgb(200, 200, 200);</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -306,6 +310,10 @@
                 <width>150</width>
                 <height>0</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: white;
+selection-color: rgb(200, 200, 200)</string>
               </property>
               <item>
                <property name="text">
@@ -373,28 +381,34 @@
                   <widget class="QLabel" name="interceptLabel">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
+                     <width>60</width>
                      <height>15</height>
                     </size>
                    </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Intercept</string>
+                    <string>Intercept:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLineEdit" name="interceptLineEdit">
+                  <widget class="QLabel" name="interceptLabel_2">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
                      <height>15</height>
                     </size>
                    </property>
-                   <property name="focusPolicy">
-                    <enum>Qt::ClickFocus</enum>
+                   <property name="text">
+                    <string/>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: white;</string>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -402,8 +416,14 @@
                   <widget class="QLabel" name="coefLabel">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
+                     <width>138</width>
                      <height>15</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
                     </size>
                    </property>
                    <property name="text">
@@ -411,32 +431,22 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="QLineEdit" name="coefLineEdit">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>15</height>
-                    </size>
-                   </property>
-                   <property name="focusPolicy">
-                    <enum>Qt::ClickFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: white;</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="predictLabel">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
+                     <width>47</width>
                      <height>15</height>
                     </size>
                    </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Predict</string>
+                    <string>Predict:</string>
                    </property>
                   </widget>
                  </item>
@@ -460,8 +470,14 @@
                   <widget class="QLabel" name="outcomeLabel">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
+                     <width>60</width>
                      <height>15</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
                     </size>
                    </property>
                    <property name="text">
@@ -469,19 +485,35 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="1">
-                  <widget class="QLineEdit" name="lineEdit_4">
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="coefLabels">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
                      <height>15</height>
                     </size>
                    </property>
-                   <property name="focusPolicy">
-                    <enum>Qt::ClickFocus</enum>
+                   <property name="text">
+                    <string/>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: white;</string>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLabel" name="outputLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>15</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>text</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -496,12 +528,31 @@
                <string>Data Options:</string>
               </property>
               <layout class="QFormLayout" name="formLayout_3">
+               <item row="1" column="0">
+                <widget class="QLabel" name="dataSampleLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>160</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Number of data samples:</string>
+                 </property>
+                </widget>
+               </item>
                <item row="1" column="1">
                 <widget class="QLineEdit" name="dataSampleLineedit">
                  <property name="minimumSize">
                   <size>
                    <width>150</width>
-                   <height>0</height>
+                   <height>15</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -519,9 +570,12 @@
                  <property name="styleSheet">
                   <string notr="true">background-color: white;</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                 </property>
                 </widget>
                </item>
-               <item row="2" column="0">
+               <item row="5" column="0">
                 <spacer name="verticalSpacer">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -534,22 +588,61 @@
                  </property>
                 </spacer>
                </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="dataSampleLabel">
+               <item row="3" column="1">
+                <widget class="QRadioButton" name="radioButton_2">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>300</width>
-                   <height>16777215</height>
+                   <height>15</height>
                   </size>
                  </property>
                  <property name="text">
-                  <string>Number of data samples:</string>
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Outliers (Yes/No):</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Number of Outliers:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="outliersNoLineedit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="baseSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white;</string>
                  </property>
                 </widget>
                </item>
