@@ -1,9 +1,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import QTimer
 from views.mplwidget import MplWidget
 from views.kmeansgameboard import KMeansGameboard
 from views.gmmgameboard import GMMGameboard
 from views.linearregressiongameboard import LinearRegressionGameboard
 from views.svmgameboard import SVMGameboard
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 
 
 from matplotlib import pyplot as plt # Test
@@ -499,6 +503,7 @@ class FreePlay(QtWidgets.QWidget):
 
         self.button_connection_setup()
         self.retranslateUi()
+        self.timer_checker()
         
         QtCore.QMetaObject.connectSlotsByName(self)
 
@@ -625,6 +630,8 @@ class FreePlay(QtWidgets.QWidget):
 
     
     def home_pressed(self):
+        self.MplWidget.clear_values()
+        self.timer_checker(action="stop")
         self.switch_window.emit("mainmenu,freeplay")
 
     ##################################################################
@@ -738,9 +745,13 @@ class FreePlay(QtWidgets.QWidget):
         self.update_lr_param_output()
 
     def update_lr_param_output(self):
-        coef, intercept = self.MplWidget.find_parameters()
-        self.coefLineEdit.setText(str(round(float(coef), 5)))
-        self.interceptLineEdit.setText(str(round(float(intercept), 5)))
+        try:
+            coef, intercept = self.MplWidget.find_parameters()
+            self.coefLineEdit.setText(str(round(float(coef), 5)))
+            self.interceptLineEdit.setText(str(round(float(intercept), 5)))
+        except:
+            pass
+            #print("An exception occurred")
 
 
     def lr_play_button_control(self):
@@ -803,5 +814,40 @@ class FreePlay(QtWidgets.QWidget):
             3, QtWidgets.QFormLayout.FieldRole, self.outcomeLineEdit)
 
         ## Get Models Paramters
+
+
+    def update_models_metrics(self):
+        
+        if self.game_mode == 'linearreg':
+            self.update_lr_param_output()
+            #self.asked_q = False
+            #if self.MplWidget.turn > 0 and self.MplWidget.turn % 5 == 0 and self.asked_q == False:
+            #    # This eventually needs to be in line with the other if
+            #    msg = "What about turning on the boundary line?"
+            #    self.create_msgbox(msg)
+            #    self.asked_q = True
+
+
+    ###### Form Refresh Actions ########
+    def timer_checker(self, duration=50, action="start"):
+        if action == "start":
+            self.qTimer = QTimer()
+            self.qTimer.setInterval(duration)
+            self.qTimer.timeout.connect(self.update_models_metrics)
+            self.qTimer.start()
+        elif action == "stop":
+            self.qTimer.stop()
+
+    def wait_timer(self, duration=1000):
+        loop = QEventLoop()
+        QTimer.singleShot(duration, loop.quit)
+        loop.exec_()
+
+    def create_msgbox(self, msg_contents):
+        msg = QMessageBox()
+        msg.setWindowTitle("")
+        msg.setText(msg_contents)
+        x = msg.exec_()
+         
         
 
