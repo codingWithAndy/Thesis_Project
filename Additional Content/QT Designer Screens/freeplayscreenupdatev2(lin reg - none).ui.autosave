@@ -589,7 +589,10 @@ selection-color: rgb(200, 200, 200)</string>
                   <string notr="true">background-color: white;</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>
@@ -661,6 +664,12 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: white;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>

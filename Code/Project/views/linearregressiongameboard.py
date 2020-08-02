@@ -54,8 +54,7 @@ class LinearRegressionGameboard(QWidget):
         self.canvas = FigureCanvas(Figure())
         self.fig = self.canvas.figure
         self.canvas.ax = self.fig.add_subplot(111)
-        self.canvas.ax.set_xlim([-1, 1])
-        self.canvas.ax.set_ylim([-1, 1])
+        
 
 
         self.vertical_layout = QVBoxLayout()
@@ -65,8 +64,10 @@ class LinearRegressionGameboard(QWidget):
         # create data points
         if self.game_mode == "game":
             self.generate_data_points()
-            self.generate_data_points()
             self.fit_model()
+        else:
+            self.canvas.ax.set_xlim([-1, 1])
+            self.canvas.ax.set_ylim([-1, 1])
         
         self.fig.canvas.draw()
         self.setLayout(self.vertical_layout)
@@ -122,16 +123,11 @@ class LinearRegressionGameboard(QWidget):
                 self.switch_boundaries_on_off()
                 self.find_parameters()
             
-            
-                
-
         if not self.playerID and self.turn >= 6 and self.game_mode == "game":
             self.boundaries_on = True
             self.switch_boundaries_on_off()
             # Make prediction
 
-        
-        
         self.fig.canvas.draw()
     
 
@@ -142,23 +138,20 @@ class LinearRegressionGameboard(QWidget):
 
         coef = self.lin_reg.intercept_
         intercept = self.lin_reg.coef_
-
         #print("Est coef:", coef, "Intercept:", intercept[0])
 
         return coef, intercept
         
 
-
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
-            print("In != False boundaries.")
+            #print("In != False boundaries.")
             if self.game_mode != "game": 
                 self.clear_canvas()
             self.fit_model()
             self.make_prediction()
             self.canvas.ax.plot(self.X_new, self.y_pred, "r-")
-
         else:
             self.clear_canvas()
             self.canvas.ax.plot(self.X, self.y, "b.")  # plot_data(self.X)
@@ -172,16 +165,15 @@ class LinearRegressionGameboard(QWidget):
             new_X = data[:, :-1]
             new_y = data[:, 1]
 
-            new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1))
-            
+            new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1)) 
             mse_value = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
             #print('Mean Squared Error:', mse_value)
             self.results.append(mse_value)
             self.results_id.append(self.pointOwner[idx])
 
         self.data_points = self.points
-        print("results length:",len(self.results))
-        print("data_points length:", len(self.data_points))
+        #print("results length:",len(self.results))
+        #print("data_points length:", len(self.data_points))
 
         n = len(self.data_points)
         for i in range(n-1):
@@ -200,11 +192,12 @@ class LinearRegressionGameboard(QWidget):
                     self.data_points[j] = self.data_points[j+1]
                     self.data_points[j+1] = changed_value_coor
 
+
     def clear_canvas(self):
         self.canvas.ax.clear()
-        if self.prepopulated == False:
-            self.canvas.ax.set_xlim([-1, 1])
-            self.canvas.ax.set_ylim([-1, 1])
+        #if self.prepopulated == False or self.game_mode == "fp":
+        #    self.canvas.ax.set_xlim([-1, 1])
+        #    self.canvas.ax.set_ylim([-1, 1])
 
 
     #######     General Methods     #######
@@ -217,7 +210,7 @@ class LinearRegressionGameboard(QWidget):
         # Model Makes a Prediction
         self.X_new = self.X
 
-        if len(self.X) < 100: 
+        if self.prepopulated == False: 
             # Need to figure out the trigger for reshaping
             self.X_new = self.X_new.reshape(-1, 1)
 
@@ -240,6 +233,8 @@ class LinearRegressionGameboard(QWidget):
         #player_points = np.asarray([self.points[i]
         #                     for i in np.where(self.pointOwner)[0].tolist()])
         print("create own data points")
+        
+        
         
         self.X = np.asarray(self.x_point).reshape(-1, 1)
         self.y = np.asarray(self.y_point).reshape(-1, 1)
@@ -272,7 +267,9 @@ class LinearRegressionGameboard(QWidget):
     def generate_random_data(self, n_samples, outliers="no", n_outliers=0):
         # Clear ax
         self.canvas.ax.clear()
+        self.clear_values()
         self.prepopulated = True
+        
 
         # Create Random Data
         self.X, self.y, coef = datasets.make_regression(n_samples=n_samples, n_features=1,
@@ -315,15 +312,16 @@ class LinearRegressionGameboard(QWidget):
             self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
             #print("X Shape:", self.X.shape)
-            self.fit_model()
-            self.make_prediction()
+            
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
             #print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
-            self.fit_model()
-            self.make_prediction()
+        
+        self.fit_model()
+        self.make_prediction()
+        self.fig.canvas.draw()
 
     def clear_values(self):
         self.ix, iy = 0, 0
@@ -336,9 +334,13 @@ class LinearRegressionGameboard(QWidget):
         self.x_point = []
         self.y_point = []
         self.prepopulated = False
+        #self.canvas.ax.set_xlim([-2, 3])
+        #self.canvas.ax.set_ylim([-1, 15])
 
         self.canvas.ax.clear()
         self.fig.canvas.draw()
+
+    ###### Note: Need to get the xlim/ylim to reset to a standard value but doesn't affect the premade data points.
 
 
 

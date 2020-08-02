@@ -128,3 +128,20 @@ class GMMGameboard(QWidget):
 
         self.fig.canvas.draw()
         # Need to figure out how to clear the boundaries
+
+    def clear_values(self):
+        self.ix, iy = 0, 0
+        self.playerID = False
+        self.turn = 0
+        self.pointOwner = []
+        self.points = []
+        self.X = []
+        self.y = []
+        self.x_point = []
+        self.y_point = []
+        self.prepopulated = False
+        self.canvas.ax.set_xlim([-2, 3])
+        self.canvas.ax.set_ylim([-1, 15])
+
+        self.canvas.ax.clear()
+        self.fig.canvas.draw()
