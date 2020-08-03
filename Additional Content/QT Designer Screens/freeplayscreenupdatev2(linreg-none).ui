@@ -610,7 +610,7 @@ selection-color: rgb(200, 200, 200)</string>
                 </widget>
                </item>
                <item row="3" column="1">
-                <widget class="QRadioButton" name="outliersRadioButton">
+                <widget class="QRadioButton" name="radioButton_2">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>

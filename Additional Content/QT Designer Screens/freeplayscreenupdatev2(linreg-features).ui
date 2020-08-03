@@ -245,7 +245,7 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QGroupBox" name="groupBox">
+      <widget class="QGroupBox" name="modelSettingsGroupBox">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -268,7 +268,7 @@
         <string notr="true">background-color: rgb(195, 192, 44);</string>
        </property>
        <property name="title">
-        <string>Model Options:</string>
+        <string>Model Settings:</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
@@ -403,7 +403,7 @@ selection-color: rgb(200, 200, 200)</string>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLabel" name="interceptLabel_2">
+                  <widget class="QLabel" name="interceptValueLabel">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -457,7 +457,7 @@ selection-color: rgb(200, 200, 200)</string>
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit_3">
+                  <widget class="QLineEdit" name="predictLineEdit">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -498,7 +498,7 @@ selection-color: rgb(200, 200, 200)</string>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLabel" name="coefLabels">
+                  <widget class="QLabel" name="coefValueLabel">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -522,7 +522,7 @@ selection-color: rgb(200, 200, 200)</string>
                     </size>
                    </property>
                    <property name="text">
-                    <string>text</string>
+                    <string/>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -535,7 +535,7 @@ selection-color: rgb(200, 200, 200)</string>
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="generalGroupbox">
+             <widget class="QGroupBox" name="dataOptionsGroupBox">
               <property name="minimumSize">
                <size>
                 <width>299</width>
@@ -545,58 +545,110 @@ selection-color: rgb(200, 200, 200)</string>
               <property name="title">
                <string>Data Options:</string>
               </property>
-              <layout class="QFormLayout" name="formLayout_3">
-               <item row="1" column="0">
-                <widget class="QLabel" name="dataSampleLabel">
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="feature1Label">
                  <property name="minimumSize">
                   <size>
-                   <width>0</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>160</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>Number of data samples:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="dataSampleLineedit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
+                   <width>65</width>
                    <height>15</height>
                   </size>
                  </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
-                 </property>
-                 <property name="autoFillBackground">
-                  <bool>false</bool>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: white;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
+                 <property name="text">
+                  <string>Feature 1:</string>
                  </property>
                 </widget>
                </item>
-               <item row="5" column="0">
+               <item row="2" column="1">
+                <widget class="QRadioButton" name="f3XRadioButton">
+                 <property name="text">
+                  <string>X</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QRadioButton" name="f4XRadioButton">
+                 <property name="text">
+                  <string>X</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QRadioButton" name="f4YRadioButton">
+                 <property name="text">
+                  <string>y</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="3">
+                <widget class="QRadioButton" name="f4NoneRadioButton">
+                 <property name="text">
+                  <string>None</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="feature4Label">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Feature 4:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QRadioButton" name="f1XRadioButton">
+                 <property name="text">
+                  <string>X</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QRadioButton" name="f1NoneRadioButton">
+                 <property name="text">
+                  <string>None</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QRadioButton" name="f2YRadioButton">
+                 <property name="text">
+                  <string>y</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="feature3Label">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Feature 3:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QRadioButton" name="f3YRadioButton">
+                 <property name="text">
+                  <string>y</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QRadioButton" name="f1YRadioButton">
+                 <property name="text">
+                  <string>y</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
                 <spacer name="verticalSpacer">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -609,8 +661,15 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                 </spacer>
                </item>
-               <item row="3" column="1">
-                <widget class="QRadioButton" name="radioButton_2">
+               <item row="1" column="3">
+                <widget class="QRadioButton" name="f2NoneRadioButton">
+                 <property name="text">
+                  <string>None</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="feature2Label">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -618,60 +677,36 @@ selection-color: rgb(200, 200, 200)</string>
                   </size>
                  </property>
                  <property name="text">
-                  <string/>
+                  <string>Feature 2:</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
+               <item row="1" column="1">
+                <widget class="QRadioButton" name="f2XRadioButton">
                  <property name="text">
-                  <string>Outliers (Yes/No):</string>
+                  <string>X</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
+               <item row="2" column="3">
+                <widget class="QRadioButton" name="f3NoneRadioButton">
                  <property name="text">
-                  <string>Number of Outliers:</string>
+                  <string>None</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
-                <widget class="QLineEdit" name="outliersNoLineedit">
-                 <property name="minimumSize">
+               <item row="0" column="4">
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
                   <size>
-                   <width>0</width>
-                   <height>15</height>
+                   <width>40</width>
+                   <height>20</height>
                   </size>
                  </property>
-                 <property name="baseSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: white;</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
+                </spacer>
                </item>
               </layout>
              </widget>
