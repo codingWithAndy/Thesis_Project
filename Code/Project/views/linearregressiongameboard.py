@@ -248,18 +248,18 @@ class LinearRegressionGameboard(QWidget):
         generated_X = np.asarray(self.x_point).reshape(-1, 1)
         generated_y = np.asarray(self.y_point).reshape(-1, 1)
 
-        print("Values of X:", self.X)
-        print("Values gen X:", generated_X)
-        print("X shape", self.X.shape)
-        print("gen X shape", generated_X.shape)
-        print("y shape", self.y.shape)
-        print("gen y shape", generated_y.shape)
+        #print("Values of X:", self.X)
+        #print("Values gen X:", generated_X)
+        #print("X shape", self.X.shape)
+        #print("gen X shape", generated_X.shape)
+        #print("y shape", self.y.shape)
+        #print("gen y shape", generated_y.shape)
 
         self.X = np.concatenate((self.X, generated_X.reshape(-1,1)))  # , axis=0
         self.y = np.concatenate(
             (self.y, generated_y[:, -1]))  # , axis=0
 
-        print("add data points -> X + y:",self.X,self.y)
+        #print("add data points -> X + y:",self.X,self.y)
 
 
 
@@ -302,11 +302,11 @@ class LinearRegressionGameboard(QWidget):
 
     def generate_data_points(self): # Change this to existing datasets
         #print("Data option:",self.data_option)
-        #if self.data_option == 0:
-        #    self.X, self.y = datasets.load_boston(return_X_y=True)
-        #    self.X = self.X.target
-        #    self.X_new = self.X.target
-        #    self.fit_data_points()
+        if self.data_option == 0:
+            self.X, self.y = datasets.load_boston(return_X_y=True)
+            self.X = self.X.target
+            self.X_new = self.X.target
+        
         if self.data_option == 1:
             self.X, self.y = datasets.load_diabetes(return_X_y=True)
             self.X = self.X[:, np.newaxis, 2]
@@ -322,6 +322,21 @@ class LinearRegressionGameboard(QWidget):
         self.fit_model()
         self.make_prediction()
         self.fig.canvas.draw()
+
+    
+    def alter_generated_features(self, dataset, new_X, new_y):
+        if dataset == 'Diabetes':
+            data = datasets.load_diabetes()
+            feature_skip = 2
+        
+        self.X = data.data[:, new_X + feature_skip]
+        self.y = data.data[:, new_y + feature_skip]
+
+        self.fit_model()
+        self.make_prediction()
+        self.fig.canvas.draw()
+
+
 
     def clear_values(self):
         self.ix, iy = 0, 0

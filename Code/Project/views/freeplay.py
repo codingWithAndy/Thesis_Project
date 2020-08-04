@@ -26,6 +26,7 @@ class FreePlay(QtWidgets.QWidget):
                      "svm", "gmm", 
                      "linearreg"]
     current_game = ""
+    previous_data_option = ""
     
     def __init__(self, model_choice=""):
         QtWidgets.QWidget.__init__(self)
@@ -389,25 +390,31 @@ class FreePlay(QtWidgets.QWidget):
         # Chose what display to show
         if self.fp_model == 'linearreg':
             if self.dataSelectComboBox.currentText() == 'Custom':
-                self.hide_dataset_feature_data_options()
+                if self.previous_data_option == 'features':
+                    self.hide_dataset_feature_data_options()
                 self.lr_custom_data_options()
                 self.lr_data_options_retranslateUi()
-            elif self.dataSelectComboBox.currentText() != 'Custom':
-                #if self.dataSelectComboBox.currentText() != 'Please Select:':
-                #    self.hide_lr_custom_data_options()
+                self.previous_data_option = 'Custom'
+            elif self.dataSelectComboBox.currentText() != 'Custom' and self.previous_data_option != 'features':
+                if self.previous_data_option == "Custom":
+                    self.hide_lr_custom_data_options()
                 self.dataset_feature_data_options()
-            #else:
-            #    self.lr_custom_data_options()
+                self.previous_data_option = 'features'
             
              
     # Linking to Models boundaries on off function
     def change_boundary(self):
-        if self.boundaryOnOffRadioButton.isChecked() == True:
-            self.MplWidget.boundaries_on = True
-        else:
-            self.MplWidget.boundaries_on = False
+        try:
+            if self.boundaryOnOffRadioButton.isChecked() == True:
+                self.MplWidget.boundaries_on = True
+            else:
+                self.MplWidget.boundaries_on = False
 
-        self.MplWidget.switch_boundaries_on_off()
+            self.MplWidget.switch_boundaries_on_off()
+        except:
+            msg = "No data available to plot"
+            self.create_msgbox(msg)
+            self.set_boundary_rb_check(False)
 
 
     ################ Button click actions #################
@@ -648,8 +655,11 @@ class FreePlay(QtWidgets.QWidget):
             self.set_boundary_rb_check(False)
             self.generate_lr_custom_data()
             self.dataSampleLineedit.setText("")
+            self.outliersNoLineedit.setText("")
+            self.outliersRadioButton.setChecked(False)
         if self.predictLineEdit.text() != "":
             self.lr_pred()
+
         
 
     
@@ -776,9 +786,21 @@ class FreePlay(QtWidgets.QWidget):
 
         self.custom_data_retranslateUi()
         self.outliersRadioButton.toggled.connect(
-            self.outliersNoLineedit.setEnabled)
+            self.handle_outliers_selection)
 
     
+    def handle_outliers_selection(self):
+        #if self.outliersRadioButton.isChecked() == True:
+        #    print(1)
+        #    self.outliersRadioButton.setChecked(False)
+        if self.outliersRadioButton.isChecked() == True:
+            print(2)
+            self.outliersNoLineedit.setEnabled(True)
+        elif self.outliersRadioButton.isChecked() == False:
+            print(3)
+            self.outliersNoLineedit.setEnabled(False)
+
+
     # Hide LR Custom Data Options
     def hide_lr_custom_data_options(self):
         self.dataSampleLabel.deleteLater()
@@ -795,6 +817,7 @@ class FreePlay(QtWidgets.QWidget):
         self.feature1Label.setMinimumSize(QtCore.QSize(65, 15))
         self.feature1Label.setObjectName("feature1Label")
         self.gridLayout.addWidget(self.feature1Label, 0, 0, 1, 1)
+
         self.f3XRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f3XRadioButton.setObjectName("f3XRadioButton")
         self.gridLayout.addWidget(self.f3XRadioButton, 2, 1, 1, 1)
@@ -855,6 +878,27 @@ class FreePlay(QtWidgets.QWidget):
         self.gridLayout.addItem(spacerItem5, 0, 4, 1, 1)
 
         self.dataOptionsGroupBox.setLayout(self.gridLayout)
+
+        feature1 = QButtonGroup(self)
+        feature2 = QButtonGroup(self)
+        feature3 = QButtonGroup(self)
+        feature4 = QButtonGroup(self)
+
+        feature1.addButton(self.f1XRadioButton)
+        feature1.addButton(self.f1YRadioButton)
+        feature1.addButton(self.f1NoneRadioButton)
+
+        feature2.addButton(self.f2XRadioButton)
+        feature2.addButton(self.f2YRadioButton)
+        feature2.addButton(self.f2NoneRadioButton)
+
+        feature3.addButton(self.f3XRadioButton)
+        feature3.addButton(self.f3YRadioButton)
+        feature3.addButton(self.f3NoneRadioButton)
+
+        feature4.addButton(self.f4XRadioButton)
+        feature4.addButton(self.f4YRadioButton)
+        feature4.addButton(self.f4NoneRadioButton)
 
         self.dataset_feature_retranslateUi()
 
