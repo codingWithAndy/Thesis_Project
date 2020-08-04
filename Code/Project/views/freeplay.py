@@ -251,6 +251,9 @@ class FreePlay(QtWidgets.QWidget):
             self.groupBox)  # self.modelSettingsGroupBox
         self.dataOptionsGroupBox.setMinimumSize(QtCore.QSize(299, 0))
         self.dataOptionsGroupBox.setObjectName("dataOptionsGroupBox")
+
+        self.gridLayout = QtWidgets.QGridLayout(self.dataOptionsGroupBox)
+        self.gridLayout.setObjectName("gridLayout")
         
         self.horizontalLayout_2.addWidget(self.dataOptionsGroupBox)
         self.modelOptionsHSplit.addLayout(self.horizontalLayout_2)
@@ -386,18 +389,28 @@ class FreePlay(QtWidgets.QWidget):
         # Chose what display to show
         if self.fp_model == 'linearreg':
             if self.dataSelectComboBox.currentText() == 'Custom':
+                self.hide_dataset_feature_data_options()
                 self.lr_custom_data_options()
+                self.lr_data_options_retranslateUi()
             elif self.dataSelectComboBox.currentText() != 'Custom':
-                self.dataset_feature_data_options
+                #if self.dataSelectComboBox.currentText() != 'Please Select:':
+                #    self.hide_lr_custom_data_options()
+                self.dataset_feature_data_options()
             #else:
             #    self.lr_custom_data_options()
             
-            self.lr_data_options_retranslateUi()
+            
 
     def dataset_feature_data_options(self):
         print("Data set feature options")
-        self.gridLayout = QtWidgets.QGridLayout(self.dataOptionsGroupBox)
-        self.gridLayout.setObjectName("gridLayout")
+        # 
+        #self.dataOptionsGroupBox.deleteLayout()  # QGridLayout()
+        #self.dataOptionsGroupBox.setLayout(QGridLayout())
+        # self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.dataSampleLabel)
+
+        #self.gridLayout = QtWidgets.QGridLayout(
+        #    self.dataOptionsGroupBox)  # QGridLayout() 
+        #self.gridLayout.setObjectName("gridLayout")
         self.feature1Label = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.feature1Label.setMinimumSize(QtCore.QSize(65, 15))
         self.feature1Label.setObjectName("feature1Label")
@@ -457,10 +470,56 @@ class FreePlay(QtWidgets.QWidget):
             self.dataOptionsGroupBox)
         self.f3NoneRadioButton.setObjectName("f3NoneRadioButton")
         self.gridLayout.addWidget(self.f3NoneRadioButton, 2, 3, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(
+        spacerItem5 = QtWidgets.QSpacerItem(
             40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem4, 0, 4, 1, 1)
-        self.dataOptionsHorizontalLayout.addWidget(self.dataOptionsGroupBox)
+        self.gridLayout.addItem(spacerItem5, 0, 4, 1, 1)
+        
+        self.dataOptionsGroupBox.setLayout(self.gridLayout)
+
+        self.dataset_feature_retranslateUi()
+
+    def dataset_feature_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+
+        self.feature1Label.setText(_translate("self", "Feature 1:"))
+        self.f3XRadioButton.setText(_translate("self", "X"))
+        self.f4XRadioButton.setText(_translate("self", "X"))
+        self.f4YRadioButton.setText(_translate("self", "y"))
+        self.f4NoneRadioButton.setText(_translate("self", "None"))
+        self.feature4Label.setText(_translate("self", "Feature 4:"))
+        self.f1XRadioButton.setText(_translate("self", "X"))
+        self.f1NoneRadioButton.setText(_translate("self", "None"))
+        self.f2YRadioButton.setText(_translate("self", "y"))
+        self.feature3Label.setText(_translate("self", "Feature 3:"))
+        self.f3YRadioButton.setText(_translate("self", "y"))
+        self.f1YRadioButton.setText(_translate("self", "y"))
+        self.f2NoneRadioButton.setText(_translate("self", "None"))
+        self.feature2Label.setText(_translate("self", "Feature 2:"))
+        self.f2XRadioButton.setText(_translate("self", "X"))
+        self.f3NoneRadioButton.setText(_translate("self", "None"))
+
+
+
+    def hide_dataset_feature_data_options(self):
+        self.feature1Label.deleteLater()
+        self.f3XRadioButton.deleteLater()
+        self.f4XRadioButton.deleteLater()
+        self.f4YRadioButton.deleteLater()
+        self.f4NoneRadioButton.deleteLater()
+        self.feature4Label.deleteLater()
+        self.f1XRadioButton.deleteLater()
+        self.f1NoneRadioButton.deleteLater()
+        self.f2YRadioButton.deleteLater()
+        self.feature3Label.deleteLater()
+        self.f3YRadioButton.deleteLater()
+        self.f1YRadioButton.deleteLater()
+        self.f2NoneRadioButton.deleteLater()
+        self.feature2Label.deleteLater()
+        self.f2XRadioButton.deleteLater()
+        self.f3NoneRadioButton.deleteLater()
+        
+        
+
 
     # Linking to Models boundaries on off function
     def change_boundary(self):
@@ -540,19 +599,10 @@ class FreePlay(QtWidgets.QWidget):
         self.hide_model_options()
 
         if self.fp_model == 'linearreg':
-            if self.lin_reg_shown == False:
-                self.lin_reg_model_options_setup()
-                #self.data_options_setup()
-                #self.lr_custom_data_options()
-            elif self.lin_reg_shown == True:
-                self.reshow_lr_options()
-                #self.reshow_lr_custom_data_options()
+            self.lin_reg_model_options_setup()
             self.lin_reg_retranslateUi()
 
-    lin_reg_shown = False ## All shown -> Need to change these to an array
-    custom_shown = False
-    diabeties_shown = False
-
+    
     def clear_model_options(self):
         if self.current_model == "linearreg":
             self.lin_reg_shown = True
@@ -563,8 +613,6 @@ class FreePlay(QtWidgets.QWidget):
     def hide_model_options(self):
         if self.current_game == 'linearreg':
             self.hide_lr_model_options()
-            if dataSelectComboBox.currentText() == "Custom":
-                self.lr_custom_data_options_hide()
         elif self.current_game == 'k-means':
             pass
         elif self.current_game == 'svm':
@@ -588,6 +636,7 @@ class FreePlay(QtWidgets.QWidget):
 
 
     ##########          Retranslate UI          ###################
+    ### Note: Try and connect these into one big one ####
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("self", "Data Splash! - Free Play"))
@@ -624,8 +673,6 @@ class FreePlay(QtWidgets.QWidget):
         self.boundaryLabel.setText(_translate("self","Boundary (On/Off):"))
         self.modelOptionsGroupBox.setTitle(_translate("self","Model Options:"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
-
-
 
 
     # Linear Regression
@@ -750,26 +797,26 @@ class FreePlay(QtWidgets.QWidget):
 
     #######    Hide and Show Lin Reg Model Options ################
     def hide_lr_model_options(self):
-        self.interceptLabel.hide()
-        self.interceptValueLabel.hide()
-        self.coefLabel.hide()
-        self.coefValueLabel.hide()
-        self.predictLabel.hide()
-        self.predictLineEdit.hide()
-        self.outcomeLabel.hide()
-        self.outputLabel.hide()
+        self.interceptLabel.deleteLater()
+        self.interceptValueLabel.deleteLater()
+        self.coefLabel.deleteLater()
+        self.coefValueLabel.deleteLater()
+        self.predictLabel.deleteLater()
+        self.predictLineEdit.deleteLater()
+        self.outcomeLabel.deleteLater()
+        self.outputLabel.deleteLater()
+        
 
-        self.custom_shown == True
+    def hide_lr_custom_data_options(self):
+        self.dataSampleLabel.deleteLater()
+        self.dataSampleLineedit.deleteLater()
+        self.outliersLabel.deleteLater()
+        self.outliersRadioButton.deleteLater()
+        self.noOfOutliersLabel.deleteLater()
+        self.outliersNoLineedit.deleteLater()
+        #self.formLayout_3.layout.deleteLater()
+    
 
-    def reshow_lr_options(self):
-        self.interceptLabel.show()
-        self.interceptValueLabel.show()
-        self.coefLabel.show()
-        self.coefValueLabel.show()
-        self.predictLabel.show()
-        self.predictLineEdit.show()
-        self.outcomeLabel.show()
-        self.outputLabel.show()
 
     ############################################################
 
@@ -777,15 +824,16 @@ class FreePlay(QtWidgets.QWidget):
     #########     Data Options       #########################
     # Linear Regresion
     def lr_custom_data_options(self):
-        
-        self.formLayout_3 = QtWidgets.QFormLayout(self.dataOptionsGroupBox)
+        '''
+        self.formLayout_3 = QtWidgets.QGridLayout(
+            self.dataOptionsGroupBox)  # QFormLayout
         self.formLayout_3.setObjectName("formLayout_3")
         self.dataSampleLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.dataSampleLabel.setMinimumSize(QtCore.QSize(0, 20))
         self.dataSampleLabel.setMaximumSize(QtCore.QSize(160, 16777215))
         self.dataSampleLabel.setObjectName("dataSampleLabel")
-        self.formLayout_3.setWidget(
-            1, QtWidgets.QFormLayout.LabelRole, self.dataSampleLabel)
+        self.formLayout_3.addWidget(self.dataSampleLabel,0,0)
+        #.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.dataSampleLabel)
         self.dataSampleLineedit = QtWidgets.QLineEdit(self.dataOptionsGroupBox)
         self.dataSampleLineedit.setMinimumSize(QtCore.QSize(150, 15))
         self.dataSampleLineedit.setMaximumSize(
@@ -825,6 +873,48 @@ class FreePlay(QtWidgets.QWidget):
         self.outliersNoLineedit.setDisabled(True)
         self.formLayout_3.setWidget(
             4, QtWidgets.QFormLayout.FieldRole, self.outliersNoLineedit)
+
+            '''
+
+        
+        self.dataSampleLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.dataSampleLabel.setMinimumSize(QtCore.QSize(0, 20))
+        self.dataSampleLabel.setMaximumSize(QtCore.QSize(160, 16777215))
+        self.dataSampleLabel.setObjectName("dataSampleLabel")
+        self.gridLayout.addWidget(self.dataSampleLabel, 0, 0, 1, 1)
+        self.dataSampleLineedit = QtWidgets.QLineEdit(self.dataOptionsGroupBox)
+        self.dataSampleLineedit.setMinimumSize(QtCore.QSize(150, 15))
+        self.dataSampleLineedit.setMaximumSize(
+            QtCore.QSize(16777215, 16777215))
+        self.dataSampleLineedit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.dataSampleLineedit.setAutoFillBackground(False)
+        self.dataSampleLineedit.setStyleSheet("background-color: white;")
+        self.dataSampleLineedit.setAlignment(QtCore.Qt.AlignCenter)
+        self.dataSampleLineedit.setClearButtonEnabled(True)
+        self.dataSampleLineedit.setObjectName("dataSampleLineedit")
+        self.gridLayout.addWidget(self.dataSampleLineedit, 0, 1, 1, 1)
+        self.outliersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.outliersLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.outliersLabel.setObjectName("outliersLabel")
+        self.gridLayout.addWidget(self.outliersLabel, 1, 0, 1, 1)
+        self.outliersRadioButton = QtWidgets.QRadioButton(
+            self.dataOptionsGroupBox)
+        self.outliersRadioButton.setMinimumSize(QtCore.QSize(0, 15))
+        self.outliersRadioButton.setText("")
+        self.outliersRadioButton.setObjectName("outliersRadioButton")
+        self.gridLayout.addWidget(self.outliersRadioButton, 1, 1, 1, 1)
+        self.noOfOutliersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.noOfOutliersLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.noOfOutliersLabel.setObjectName("noOfOutliersLabel")
+        self.gridLayout.addWidget(self.noOfOutliersLabel, 2, 0, 1, 1)
+        self.outliersNoLineedit = QtWidgets.QLineEdit(self.dataOptionsGroupBox)
+        self.outliersNoLineedit.setMinimumSize(QtCore.QSize(0, 15))
+        self.outliersNoLineedit.setBaseSize(QtCore.QSize(0, 15))
+        self.outliersNoLineedit.setStyleSheet("background-color: white;")
+        self.outliersNoLineedit.setAlignment(QtCore.Qt.AlignCenter)
+        self.outliersNoLineedit.setClearButtonEnabled(True)
+        self.outliersNoLineedit.setObjectName("outliersNoLineedit")
+        self.gridLayout.addWidget(self.outliersNoLineedit, 2, 1, 1, 1)
         
         self.group = QButtonGroup()
         self.group.setExclusive(True)
