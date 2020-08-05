@@ -325,12 +325,18 @@ class LinearRegressionGameboard(QWidget):
 
     
     def alter_generated_features(self, dataset, new_X, new_y):
-        if dataset == 'Diabetes':
+        self.clear_canvas()
+        if dataset == 'Diabeties':
             data = datasets.load_diabetes()
             feature_skip = 2
+            new_X = int(new_X)+feature_skip
+            new_y = new_y + feature_skip
         
-        self.X = data.data[:, new_X + feature_skip]
-        self.y = data.data[:, new_y + feature_skip]
+        self.X = data.data[:, np.newaxis, new_X]
+        self.y = data.data[:, np.newaxis, new_y]
+
+        #self.X.reshape(1, -1)
+        #self.y.reshape(1, -1)
 
         self.fit_model()
         self.make_prediction()

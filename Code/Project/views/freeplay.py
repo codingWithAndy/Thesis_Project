@@ -651,14 +651,36 @@ class FreePlay(QtWidgets.QWidget):
 
     # Play button LR action handler
     def lr_play_button_control(self):
-        if self.dataSampleLineedit.text() != "":
-            self.set_boundary_rb_check(False)
-            self.generate_lr_custom_data()
-            self.dataSampleLineedit.setText("")
-            self.outliersNoLineedit.setText("")
-            self.outliersRadioButton.setChecked(False)
-        if self.predictLineEdit.text() != "":
-            self.lr_pred()
+        combo_current_txt = self.dataSelectComboBox.currentText()
+        if combo_current_txt == "Custom":
+            if self.dataSampleLineedit.text() != "":
+                self.set_boundary_rb_check(False)
+                self.generate_lr_custom_data()
+                self.dataSampleLineedit.setText("")
+                self.outliersNoLineedit.setText("")
+                self.outliersRadioButton.setChecked(False)
+            if self.predictLineEdit.text() != "":
+                self.lr_pred()
+        elif combo_current_txt == "Diabeties":
+            if self.f1XRadioButton.isChecked():
+                new_X_ax = 1
+            elif self.f2XRadioButton.isChecked():
+                new_X_ax = 2
+            elif self.f3XRadioButton.isChecked():
+                new_X_ax = 3
+            elif self.f4XRadioButton.isChecked():
+                new_X_ax = 4
+            
+            if self.f1YRadioButton.isChecked():
+                new_y_ax = 1
+            elif self.f2YRadioButton.isChecked():
+                new_y_ax = 2
+            elif self.f3YRadioButton.isChecked():
+                new_y_ax = 3
+            elif self.f4YRadioButton.isChecked():
+                new_y_ax = 4
+
+            self.MplWidget.alter_generated_features(combo_current_txt, new_X_ax, new_y_ax)
 
         
 
