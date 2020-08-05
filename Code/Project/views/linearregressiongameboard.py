@@ -30,7 +30,6 @@ class LinearRegressionGameboard(QWidget):
     data_sample_1 = datasets.load_diabetes() # Might not be needed here
     data_sample_2 = datasets.load_boston()
     boundaries_on = False
-
     
     playerColors = ['g', 'r']
 
@@ -314,14 +313,16 @@ class LinearRegressionGameboard(QWidget):
             self.X, self.y = datasets.load_boston(return_X_y=True)
             self.X = self.X[:, np.newaxis, 5]
             self.X_new = self.X
-            self.canvas.ax.set_xlim([np.min(self.X), np.max(self.X)])
-            self.canvas.ax.set_ylim([np.min(self.y), np.max(self.y)])
+            
             
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
             #print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
+        
+        self.canvas.ax.set_xlim([np.min(self.X-1), np.max(self.X+1)])
+        self.canvas.ax.set_ylim([np.min(self.y-1), np.max(self.y+1)])
         
         self.fit_model()
         self.make_prediction()

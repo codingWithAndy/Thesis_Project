@@ -404,6 +404,7 @@ class FreePlay(QtWidgets.QWidget):
             
     def load_predata(self, value):
         current_text = self.dataSelectComboBox.currentText()
+        self.MplWidget.clear_values()
         if current_text == "Diabeties":
             self.MplWidget.data_options = value
             print('the value of value:',value)
@@ -552,7 +553,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSelectionLabel.setText(_translate("self", "Model:"))
         #self.numberOfClustersLabel.setText(
         #    _translate("self", "No. of Clusters:"))
-        self.boundaryLabel.setText(_translate("self", "Boundary (On/Off):"))
+        self.boundaryLabel.setText(_translate("self", "Model Visualisation (On/Off):"))
 
         self.modelSelectComboBox.setItemText(0, _translate("Form", "Please Select:"))
         self.modelSelectComboBox.setItemText(1, _translate("Form", "K-Means"))
@@ -571,7 +572,6 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectComboBox.setItemText(1,_translate("self","Custom"))
         self.dataSelectComboBox.setItemText(2,_translate("self","Diabeties"))
         self.dataSelectComboBox.setItemText(3,_translate("self","Boston House Prices"))
-        self.boundaryLabel.setText(_translate("self","Boundary (On/Off):"))
         self.modelOptionsGroupBox.setTitle(_translate("self","Model Options:"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
 
@@ -599,23 +599,22 @@ class FreePlay(QtWidgets.QWidget):
         self.f3XRadioButton.setText(_translate("self", "X"))
         self.f4XRadioButton.setText(_translate("self", "X"))
         self.f4YRadioButton.setText(_translate("self", "y"))
-        self.f4NoneRadioButton.setText(_translate("self", "None"))
+        #self.f4NoneRadioButton.setText(_translate("self", "None"))
         self.feature4Label.setText(_translate("self", "Feature 4:"))
         self.f1XRadioButton.setText(_translate("self", "X"))
-        self.f1NoneRadioButton.setText(_translate("self", "None"))
+        #self.f1NoneRadioButton.setText(_translate("self", "None"))
         self.f2YRadioButton.setText(_translate("self", "y"))
         self.feature3Label.setText(_translate("self", "Feature 3:"))
         self.f3YRadioButton.setText(_translate("self", "y"))
         self.f1YRadioButton.setText(_translate("self", "y"))
-        self.f2NoneRadioButton.setText(_translate("self", "None"))
+        #self.f2NoneRadioButton.setText(_translate("self", "None"))
         self.feature2Label.setText(_translate("self", "Feature 2:"))
         self.f2XRadioButton.setText(_translate("self", "X"))
-        self.f3NoneRadioButton.setText(_translate("self", "None"))
+        #self.f3NoneRadioButton.setText(_translate("self", "None"))
     
 
     def custom_data_retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
         self.dataSampleLabel.setText(
             _translate("self", "Number of data samples:"))
@@ -859,10 +858,10 @@ class FreePlay(QtWidgets.QWidget):
         self.f4YRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f4YRadioButton.setObjectName("f4YRadioButton")
         self.gridLayout.addWidget(self.f4YRadioButton, 3, 2, 1, 1)
-        self.f4NoneRadioButton = QtWidgets.QRadioButton(
-            self.dataOptionsGroupBox)
-        self.f4NoneRadioButton.setObjectName("f4NoneRadioButton")
-        self.gridLayout.addWidget(self.f4NoneRadioButton, 3, 3, 1, 1)
+        #self.f4NoneRadioButton = QtWidgets.QRadioButton(
+        #    self.dataOptionsGroupBox)
+        #self.f4NoneRadioButton.setObjectName("f4NoneRadioButton")
+        #self.gridLayout.addWidget(self.f4NoneRadioButton, 3, 3, 1, 1)
         self.feature4Label = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.feature4Label.setMinimumSize(QtCore.QSize(0, 15))
         self.feature4Label.setObjectName("feature4Label")
@@ -870,10 +869,10 @@ class FreePlay(QtWidgets.QWidget):
         self.f1XRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f1XRadioButton.setObjectName("f1XRadioButton")
         self.gridLayout.addWidget(self.f1XRadioButton, 0, 1, 1, 1)
-        self.f1NoneRadioButton = QtWidgets.QRadioButton(
-            self.dataOptionsGroupBox)
-        self.f1NoneRadioButton.setObjectName("f1NoneRadioButton")
-        self.gridLayout.addWidget(self.f1NoneRadioButton, 0, 3, 1, 1)
+        #self.f1NoneRadioButton = QtWidgets.QRadioButton(
+        #    self.dataOptionsGroupBox)
+        #self.f1NoneRadioButton.setObjectName("f1NoneRadioButton")
+        #self.gridLayout.addWidget(self.f1NoneRadioButton, 0, 3, 1, 1)
         self.f2YRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f2YRadioButton.setObjectName("f2YRadioButton")
         self.gridLayout.addWidget(self.f2YRadioButton, 1, 2, 1, 1)
@@ -890,10 +889,10 @@ class FreePlay(QtWidgets.QWidget):
         spacerItem3 = QtWidgets.QSpacerItem(
             20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem3, 4, 1, 1, 1)
-        self.f2NoneRadioButton = QtWidgets.QRadioButton(
-            self.dataOptionsGroupBox)
-        self.f2NoneRadioButton.setObjectName("f2NoneRadioButton")
-        self.gridLayout.addWidget(self.f2NoneRadioButton, 1, 3, 1, 1)
+        #self.f2NoneRadioButton = QtWidgets.QRadioButton(
+        #    self.dataOptionsGroupBox)
+        #self.f2NoneRadioButton.setObjectName("f2NoneRadioButton")
+        #self.gridLayout.addWidget(self.f2NoneRadioButton, 1, 3, 1, 1)
         self.feature2Label = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.feature2Label.setMinimumSize(QtCore.QSize(0, 15))
         self.feature2Label.setObjectName("feature2Label")
@@ -901,10 +900,10 @@ class FreePlay(QtWidgets.QWidget):
         self.f2XRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f2XRadioButton.setObjectName("f2XRadioButton")
         self.gridLayout.addWidget(self.f2XRadioButton, 1, 1, 1, 1)
-        self.f3NoneRadioButton = QtWidgets.QRadioButton(
-            self.dataOptionsGroupBox)
-        self.f3NoneRadioButton.setObjectName("f3NoneRadioButton")
-        self.gridLayout.addWidget(self.f3NoneRadioButton, 2, 3, 1, 1)
+        #self.f3NoneRadioButton = QtWidgets.QRadioButton(
+        #    self.dataOptionsGroupBox)
+        #self.f3NoneRadioButton.setObjectName("f3NoneRadioButton")
+        #self.gridLayout.addWidget(self.f3NoneRadioButton, 2, 3, 1, 1)
         spacerItem5 = QtWidgets.QSpacerItem(
             40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem5, 0, 4, 1, 1)
@@ -951,7 +950,7 @@ class FreePlay(QtWidgets.QWidget):
         #none_group.addButton(self.f4NoneRadioButton)
 
         ###### Note: Get rid of the Nones.
-        
+
 
         self.dataset_feature_retranslateUi()
 
@@ -962,18 +961,18 @@ class FreePlay(QtWidgets.QWidget):
         self.f3XRadioButton.deleteLater()
         self.f4XRadioButton.deleteLater()
         self.f4YRadioButton.deleteLater()
-        self.f4NoneRadioButton.deleteLater()
+        #self.f4NoneRadioButton.deleteLater()
         self.feature4Label.deleteLater()
         self.f1XRadioButton.deleteLater()
-        self.f1NoneRadioButton.deleteLater()
+        #self.f1NoneRadioButton.deleteLater()
         self.f2YRadioButton.deleteLater()
         self.feature3Label.deleteLater()
         self.f3YRadioButton.deleteLater()
         self.f1YRadioButton.deleteLater()
-        self.f2NoneRadioButton.deleteLater()
+        #self.f2NoneRadioButton.deleteLater()
         self.feature2Label.deleteLater()
         self.f2XRadioButton.deleteLater()
-        self.f3NoneRadioButton.deleteLater()
+        #self.f3NoneRadioButton.deleteLater()
 
 
     ############################################################
