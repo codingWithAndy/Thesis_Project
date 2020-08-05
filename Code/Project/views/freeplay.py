@@ -325,6 +325,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSelectComboBox.activated.connect(self.handleActivated)
         self.dataSelectComboBox.activated.connect(self.data_options_setup)
         self.boundaryOnOffRadioButton.toggled.connect(self.change_boundary)
+        self.dataSelectComboBox.currentIndexChanged.connect(self.load_predata)
 
     # Interactive game board set up
     def setup_gameboard(self):
@@ -401,7 +402,19 @@ class FreePlay(QtWidgets.QWidget):
                 self.dataset_feature_data_options()
                 self.previous_data_option = 'features'
             
-             
+    def load_predata(self, value):
+        current_text = self.dataSelectComboBox.currentText()
+        if current_text == "Diabeties":
+            self.MplWidget.data_options = value
+            print('the value of value:',value)
+            self.MplWidget.generate_data_points()
+            self.set_boundary_rb_check(False)
+        elif current_text == "Boston House Prices":
+            self.MplWidget.data_options = value
+            print('the value of value:', value)
+            self.MplWidget.generate_data_points()
+            self.set_boundary_rb_check(False)
+
     # Linking to Models boundaries on off function
     def change_boundary(self):
         try:
@@ -802,24 +815,21 @@ class FreePlay(QtWidgets.QWidget):
         self.outliersNoLineedit.setObjectName("outliersNoLineedit")
         self.gridLayout.addWidget(self.outliersNoLineedit, 2, 1, 1, 1)
 
-        self.group = QButtonGroup()
-        self.group.setExclusive(True)
-        self.group.addButton(self.outliersRadioButton)
+        outliersGroup = QButtonGroup(self)
+        outliersGroup.setExclusive(True)
+        outliersGroup.addButton(self.outliersRadioButton)
+
+        #self.outliersNoLineedit.setEnabled(not self.outliersRadioButton.isChecked())
 
         self.custom_data_retranslateUi()
-        self.outliersRadioButton.toggled.connect(
-            self.handle_outliers_selection)
+        self.outliersRadioButton.toggled.connect(self.handle_outliers_selection) 
 
     
     def handle_outliers_selection(self):
-        #if self.outliersRadioButton.isChecked() == True:
-        #    print(1)
-        #    self.outliersRadioButton.setChecked(False)
+        self.outliersNoLineedit.clearFocus()
         if self.outliersRadioButton.isChecked() == True:
-            print(2)
             self.outliersNoLineedit.setEnabled(True)
         elif self.outliersRadioButton.isChecked() == False:
-            print(3)
             self.outliersNoLineedit.setEnabled(False)
 
 

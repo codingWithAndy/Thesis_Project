@@ -43,7 +43,7 @@ class LinearRegressionGameboard(QWidget):
         self.pointOwner = []
         self.points = []
         self.game_mode = game_mode
-        self.data_option = randint(0, 1)
+        self.data_option = randint(0, 4)
         self.X = [] 
         self.y = [] 
         self.x_point = []
@@ -302,16 +302,20 @@ class LinearRegressionGameboard(QWidget):
 
     def generate_data_points(self): # Change this to existing datasets
         #print("Data option:",self.data_option)
-        if self.data_option == 0:
-            self.X, self.y = datasets.load_boston(return_X_y=True)
-            self.X = self.X.target
-            self.X_new = self.X.target
         
-        if self.data_option == 1:
+        self.clear_canvas()
+        if self.data_option == 2:
             self.X, self.y = datasets.load_diabetes(return_X_y=True)
             self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
             #print("X Shape:", self.X.shape)
+        
+        elif self.data_option == 3:
+            self.X, self.y = datasets.load_boston(return_X_y=True)
+            self.X = self.X[:, np.newaxis, 5]
+            self.X_new = self.X
+            self.canvas.ax.set_xlim([np.min(self.X), np.max(self.X)])
+            self.canvas.ax.set_ylim([np.min(self.y), np.max(self.y)])
             
         else:
             self.X = 2 * np.random.rand(100, 1)
