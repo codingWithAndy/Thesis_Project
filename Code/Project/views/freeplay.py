@@ -915,22 +915,43 @@ class FreePlay(QtWidgets.QWidget):
         feature2 = QButtonGroup(self)
         feature3 = QButtonGroup(self)
         feature4 = QButtonGroup(self)
+        x_group = QButtonGroup(self)
+        y_group = QButtonGroup(self)
+        none_group = QButtonGroup(self)
 
-        feature1.addButton(self.f1XRadioButton)
-        feature1.addButton(self.f1YRadioButton)
-        feature1.addButton(self.f1NoneRadioButton)
+        #feature1.addButton(self.f1XRadioButton)
+        #feature1.addButton(self.f1YRadioButton)
+        #feature1.addButton(self.f1NoneRadioButton)
 
-        feature2.addButton(self.f2XRadioButton)
-        feature2.addButton(self.f2YRadioButton)
-        feature2.addButton(self.f2NoneRadioButton)
+        #feature2.addButton(self.f2XRadioButton)
+        #feature2.addButton(self.f2YRadioButton)
+        #feature2.addButton(self.f2NoneRadioButton)
 
-        feature3.addButton(self.f3XRadioButton)
-        feature3.addButton(self.f3YRadioButton)
-        feature3.addButton(self.f3NoneRadioButton)
+        #feature3.addButton(self.f3XRadioButton)
+        #feature3.addButton(self.f3YRadioButton)
+        #feature3.addButton(self.f3NoneRadioButton)
 
-        feature4.addButton(self.f4XRadioButton)
-        feature4.addButton(self.f4YRadioButton)
-        feature4.addButton(self.f4NoneRadioButton)
+        #feature4.addButton(self.f4XRadioButton)
+        #feature4.addButton(self.f4YRadioButton)
+        #feature4.addButton(self.f4NoneRadioButton)
+
+        x_group.addButton(self.f1XRadioButton)
+        x_group.addButton(self.f2XRadioButton)
+        x_group.addButton(self.f3XRadioButton)
+        x_group.addButton(self.f4XRadioButton)
+
+        y_group.addButton(self.f1YRadioButton)
+        y_group.addButton(self.f2YRadioButton)
+        y_group.addButton(self.f3YRadioButton)
+        y_group.addButton(self.f4YRadioButton)
+
+        #none_group.addButton(self.f1NoneRadioButton)
+        #none_group.addButton(self.f2NoneRadioButton)
+        #none_group.addButton(self.f3NoneRadioButton)
+        #none_group.addButton(self.f4NoneRadioButton)
+
+        ###### Note: Get rid of the Nones.
+        
 
         self.dataset_feature_retranslateUi()
 
