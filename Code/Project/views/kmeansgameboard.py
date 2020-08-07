@@ -1,4 +1,5 @@
 from sklearn.datasets.samples_generator import make_blobs
+from sklearn import datasets
 from random import randint
 import matplotlib.pyplot as plt
 import numpy as np
@@ -44,7 +45,6 @@ class KMeansGameboard(QWidget):
     boundaries_on = False
 
     def __init__(self, parent=None):
-
         QWidget.__init__(self, parent)
 
         self.ix, iy = 0, 0
@@ -52,7 +52,6 @@ class KMeansGameboard(QWidget):
         self.turn = 0
         self.pointOwner = []
         self.points = []
-
         self.boundaries_on = False
 
         self.canvas = FigureCanvas(Figure())
@@ -70,28 +69,21 @@ class KMeansGameboard(QWidget):
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
         self.plot_clusters(self.X)
-        
 
         self.setLayout(self.vertical_layout)
         self.cid = self.canvas.figure.canvas.mpl_connect(
             'button_press_event', self)
         
-        
-
-
     def plot_clusters(self, X, y=None):
-        self.canvas.ax.scatter(X[:, 0], X[:, 1], c=y, s=1)
+        self.canvas.ax.scatter(X[:, 0], X[:, 1], c=y)
         self.fig.canvas.draw()
+
+    def show_predictions(self):
+        self.canvas.ax.scatter(self.X[:, 0], self.X[:, 1], c=self.y_pred)
 
 
     def __call__(self, event):
-        print('click', event)
-        #self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-        #self.y_pred = self.kmeans.fit_predict(self.X)
-        #self.plot_decision_boundaries(self.kmeans, self.X)
-
         # Plot new data points prediction.
-
         if event.inaxes != self.canvas.ax:
             return
 
@@ -116,8 +108,9 @@ class KMeansGameboard(QWidget):
         
 
     
-    def plot_data(self, X):
+    def plot_data(self):
         self.canvas.ax.plot(self.X[:, 0], self.X[:, 1], 'k.', markersize=2)
+        print("Plot data")
 
 
     def plot_centroids(self, centroids, weights=None, circle_color='w', cross_color='k'):
@@ -134,18 +127,22 @@ class KMeansGameboard(QWidget):
 
     def plot_decision_boundaries(self, clusterer, X, resolution=1000, show_centroids=True,
                                 show_xlabels=True, show_ylabels=True):
-        mins = X.min(axis=0) - 0.1
-        maxs = X.max(axis=0) + 0.1
-        xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
-                            np.linspace(mins[1], maxs[1], resolution))
-        Z = clusterer.predict(np.c_[xx.ravel(), yy.ravel()])
-        Z = Z.reshape(xx.shape)
+        try:
+            mins = X.min(axis=0) - 0.1
+            maxs = X.max(axis=0) + 0.1
+            xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
+                                np.linspace(mins[1], maxs[1], resolution))
+            Z = clusterer.predict(np.c_[xx.ravel(), yy.ravel()])
+            Z = Z.reshape(xx.shape)
 
-        self.canvas.ax.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
-                    cmap="Pastel2")
-        self.canvas.ax.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
-                    linewidths=1, colors='k')
-        self.plot_data(self.X)
+            self.canvas.ax.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
+                        cmap="Pastel2")
+            self.canvas.ax.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
+                        linewidths=1, colors='k')
+            self.plot_data()
+        except:
+            self.show_predictions()
+
         if show_centroids:
             self.plot_centroids(clusterer.cluster_centers_)
         
@@ -167,11 +164,10 @@ class KMeansGameboard(QWidget):
         self.find_cluster_centre()
 
 
-    
-
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
+            print("In boundarys != False")
             self.kmeans = KMeans(n_clusters=self.k, random_state=42)
             self.y_pred = self.kmeans.fit_predict(self.X)
             self.plot_decision_boundaries(self.kmeans, self.X)
@@ -183,17 +179,80 @@ class KMeansGameboard(QWidget):
         self.fig.canvas.draw()
             # Need to figure out how to clear the boundaries
 
+        '''
+            self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+            self.y_pred = self.kmeans.fit_predict(self.X)
+            '''
+
     def find_cluster_centre(self):
-        print("Hello centre!")
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
         centers = self.kmeans.cluster_centers_
 
-        print("Cluster Centers:", centers)
+        #print("Cluster Centers:", centers)
 
-    def generate_data_points(self):
-        pass
-        # Need to generate pre made data.
+    def generate_data_points(self, data_option):
+        ## Taken from LR -> Nees addapting to K-Means
+        self.clear_canvas()
+
+        if data_option == 2:
+            iris = datasets.load_iris()
+            self.k = 3
+            self.X = iris.data
+            self.y = iris.target
+        elif data_option == 3:
+            print("In boston data options")
+            boston = datasets.load_boston()
+            self.X = boston.data[:, 5]
+            self.X = self.X.reshape(-1, 1)
+            self.y = boston.target
+            self.X_new = self.X
+
+        self.plot_clusters(self.X)  # self.fit_model()
+        self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+        self.y_pred = self.kmeans.fit_predict(self.X)
+        #self.make_prediction()
+        self.fig.canvas.draw()
+
+    n_init = 10
+    max_iter = 300
+    algo = "auto"
+
+    def fit_model(self):
+        # Model fits datapoints to the model
+        self.k = n_clust
+
+        self.replot_kmeans()
+
+        self.kmeans = KMeans(n_clusters=self.k, n_init=self.n_init, 
+                             max_iter=self.max_iter, algorithm=self.algo)
+        self.y_pred = self.kmeans.fit_predict(self.X)
+
+    def generate_random_data(self, k, n_init, max_iter, algorithm):
+        self.k = k
+        self.n_init = n_init
+        self.max_iter = max_iter
+        self.algo = algorithm
+        
+        self.canvas.ax.clear()
+
+        self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
+                                    cluster_std=0.6, random_state=0)
+
+        self.plot_clusters(self.X)
+
+        self.kmeans = KMeans(n_clusters=self.k, n_init=self.n_init,
+                             max_iter=self.max_iter, algorithm=self.algo)
+        self.y_pred = self.kmeans.fit_predict(self.X)
+
+        self.fig.canvas.draw()
+
+        # EXPERIMENT!: finding out cluster centres.
+        self.find_cluster_centre()
+
+
+    def clear_canvas(self):
+        self.canvas.ax.clear()
 
     def clear_values(self):
         self.ix, iy = 0, 0

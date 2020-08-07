@@ -301,7 +301,6 @@ class LinearRegressionGameboard(QWidget):
 
     def generate_data_points(self, data_option): # Change this to existing datasets
         #print("Data option:",self.data_option)
-        
         self.clear_canvas()
         
         if data_option == 2:
@@ -322,31 +321,13 @@ class LinearRegressionGameboard(QWidget):
             self.X = self.X.reshape(-1, 1)
             self.y = boston.target
             self.X_new = self.X
-            print("bos X min:", np.amin(
-                boston.data[:, 5]), "Max", np.amax(boston.data[:, 5]))
-            print("bos y min:", np.amin(boston.target), "Max", np.amax(boston.target))
 
-            
-            
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
             #print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
         
-        # et_xlim(self, left=None, right=None, emit=True, auto=False, *, xmin=None, xmax=None)
-        self.canvas.ax.axis(xmin=np.amin(self.X), xmax=np.amax(self.X), 
-                            ymin=np.amin(self.y), ymax=np.amax(self.y))
-
-        #self.canvas.ax.xlim([np.amin(self.X), np.amax(self.X)]) 
-        #self.canvas.ax.ylim([np.amin(self.y), np.amax(self.y)])
-        print("X min:", np.amin(self.X), "Max", np.amax(self.X))
-        print("y min:", np.amin(self.y), "Max", np.amax(self.y))
-
-
-        #self.canvas.ax.relim()
-        self.canvas.ax.autoscale(axis="both", tight=False)
-        #self.canvas.ax.axis('auto')
         
         self.fit_model()
         self.make_prediction()
@@ -358,14 +339,18 @@ class LinearRegressionGameboard(QWidget):
         if dataset == 'Diabeties':
             data = datasets.load_diabetes()
             feature_skip = 2
-            new_X = int(new_X)+feature_skip
-            new_y = new_y + feature_skip
-        
-        self.X = data.data[:, np.newaxis, new_X]
-        self.y = data.data[:, np.newaxis, new_y]
+        elif dataset == 'Boston House Prices':
+            data = datasets.load_boston()
+            feature_skip = 4
 
-        #self.X.reshape(1, -1)
-        #self.y.reshape(1, -1)
+        new_X = int(new_X)+ feature_skip
+        new_y = new_y + feature_skip
+        
+        self.X = data.data[:, new_X]
+        self.y = data.data[:, new_y]
+
+        self.X = self.X.reshape(-1, 1)
+        self.y = self.y.reshape(-1, 1)
 
         self.fit_model()
         self.make_prediction()

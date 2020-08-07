@@ -445,11 +445,12 @@ class FreePlay(QtWidgets.QWidget):
     def update_graph(self):
         print("update graph pressed!")
         if self.modelSelectComboBox.currentText() == "K-Means":
-            no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
-            self.MplWidget.k = int(no_of_clusters)
-            no_of_data_samples = self.dataSampleLineedit.text() if self.numberOfClustersLineedit.text() != "" else 100
-            self.MplWidget.data_samples = int(no_of_data_samples)
-            self.MplWidget.replot_kmeans()
+            self.km_play_button_control()
+            #no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
+            #self.MplWidget.k = int(no_of_clusters)
+            #no_of_data_samples = self.dataSampleLineedit.text() if self.numberOfClustersLineedit.text() != "" else 100
+            #self.MplWidget.data_samples = int(no_of_data_samples)
+            #self.MplWidget.replot_kmeans()
         elif self.modelSelectComboBox.currentText() == "Linear Regression":
             self.lr_play_button_control()
 
@@ -700,7 +701,7 @@ class FreePlay(QtWidgets.QWidget):
                 self.outliersRadioButton.setChecked(False)
             if self.predictLineEdit.text() != "":
                 self.lr_pred()
-        elif combo_current_txt == "Diabeties":
+        elif combo_current_txt != "Custom":
             if self.f1XRadioButton.isChecked():
                 new_X_ax = 1
             elif self.f2XRadioButton.isChecked():
@@ -721,9 +722,28 @@ class FreePlay(QtWidgets.QWidget):
 
             self.MplWidget.alter_generated_features(combo_current_txt, new_X_ax, new_y_ax)
 
-        
+    def km_play_button_control(self):
+        combo_current_txt = self.dataSelectComboBox.currentText()
+        if combo_current_txt == "Custom":
+            self.set_boundary_rb_check(False)
+            self.generate_km_custom_data()
+            self.noOfClustersLineEdit.setText("")
+            self.noOfInitialisersLineEdit.setText("")
+            self.maxIterationsLineEdit.setText("")
+            #self.outliersRadioButton.setChecked(False) # Change to check box
 
-    
+    def generate_km_custom_data(self):
+        # if self.dataSampleLineedit.text() != "" else 2
+        #n_sample = int(self.dataSampleLineedit.text())
+        k = int(self.noOfClustersLineEdit.text())
+        n_init = int(self.noOfInitialisersLineEdit.text())
+        max_iter = int(self.maxIterationsLineEdit.text())
+        algo = self.algorithmComboBox.currentText().lower()
+
+
+        self.MplWidget.generate_random_data(k, n_init, max_iter, algo)
+
+        ### Need KM version self.update_lr_param_output()
     #######    Hide and Show Model and Data Options ################
 
     ##### Model Options #######
