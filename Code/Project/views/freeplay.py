@@ -115,6 +115,8 @@ class FreePlay(QtWidgets.QWidget):
         font_overview.setPointSize(18)
 
         self.learningTypeLabel.setFont(font)
+        self.learningTypeLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
         self.learningTypeLabel.setObjectName("learningTypeLabel")
         self.formLayout_2.setWidget(
             0, QtWidgets.QFormLayout.LabelRole, self.learningTypeLabel)
@@ -127,6 +129,8 @@ class FreePlay(QtWidgets.QWidget):
         self.modelLabel_2 = QtWidgets.QLabel(self.frame)
 
         self.modelLabel_2.setFont(font)
+        self.modelLabel_2.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
         self.modelLabel_2.setObjectName("modelLabel_2")
         self.formLayout_2.setWidget(
             1, QtWidgets.QFormLayout.LabelRole, self.modelLabel_2)
@@ -138,11 +142,15 @@ class FreePlay(QtWidgets.QWidget):
             1, QtWidgets.QFormLayout.FieldRole, self.modelTypeLabel)
         self.overviewLabel = QtWidgets.QLabel(self.frame)
         self.overviewLabel.setFont(font)
+        self.overviewLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
         self.overviewLabel.setObjectName("overviewLabel")
         self.formLayout_2.setWidget(
             2, QtWidgets.QFormLayout.LabelRole, self.overviewLabel)
         self.overviewDescriptionLabel = QtWidgets.QLabel(self.frame)
         self.overviewDescriptionLabel.setMinimumSize(QtCore.QSize(0, 400))
+        self.overviewDescriptionLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
         
         self.overviewDescriptionLabel.setFont(font_overview)
         self.overviewDescriptionLabel.setText("")
@@ -183,6 +191,7 @@ class FreePlay(QtWidgets.QWidget):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.modelSelectionLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
         self.modelSelectionLabel.setObjectName("modelSelectionLabel")
+        self.modelSelectionLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.horizontalLayout_3.addWidget(self.modelSelectionLabel)
         
         self.modelSelectComboBox = QtWidgets.QComboBox(
@@ -197,6 +206,7 @@ class FreePlay(QtWidgets.QWidget):
 
         self.horizontalLayout_3.addWidget(self.modelSelectComboBox)
         self.dataSelectionLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
+        self.dataSelectionLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.dataSelectionLabel.setObjectName("dataSelectionLabel")
         self.horizontalLayout_3.addWidget(self.dataSelectionLabel)
         self.dataSelectComboBox = QtWidgets.QComboBox(
@@ -212,6 +222,7 @@ class FreePlay(QtWidgets.QWidget):
         self.horizontalLayout_3.addWidget(self.dataSelectComboBox)
         self.boundaryLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
         self.boundaryLabel.setObjectName("boundaryLabel")
+        self.boundaryLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.horizontalLayout_3.addWidget(self.boundaryLabel)
 
         self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(
@@ -219,6 +230,8 @@ class FreePlay(QtWidgets.QWidget):
         self.boundaryOnOffRadioButton.setMaximumSize(
             QtCore.QSize(25, 16777215))
         self.boundaryOnOffRadioButton.setText("")
+        self.boundaryOnOffRadioButton.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
         self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
         self.horizontalLayout_3.addWidget(self.boundaryOnOffRadioButton)
         spacerItem2 = QtWidgets.QSpacerItem(
@@ -238,11 +251,6 @@ class FreePlay(QtWidgets.QWidget):
         ## Kmeans Grid Box
         self.modelOptionsGridLayout = QtWidgets.QGridLayout(self.modelOptionsGroupBox)  # Was gridLayout_2
         self.modelOptionsGridLayout.setObjectName("modelOptionsGridLayout")
-        ##self.horizontalLayout_4 = QtWidgets.QHBoxLayout(
-        ##    self.modelOptionsGroupBox)
-        ##self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        ##self.formLayout_4 = QtWidgets.QFormLayout()
-        ##self.formLayout_4.setObjectName("formLayout_4")
         
         ### Bottom half of Model Options Group Box
         self.setup_gameboard()
@@ -717,64 +725,9 @@ class FreePlay(QtWidgets.QWidget):
     ##### Model Options #######
     # Show LR Model Options
     def lin_reg_model_options_setup(self):
-        '''
         self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.interceptLabel.setMinimumSize(QtCore.QSize(60, 15))
-        self.interceptLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.interceptLabel.setObjectName("interceptLabel")
-        self.formLayout_4.setWidget(
-            0, QtWidgets.QFormLayout.LabelRole, self.interceptLabel)
-        self.interceptValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.interceptValueLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.interceptValueLabel.setText("")
-        self.interceptValueLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.interceptValueLabel.setObjectName("interceptValueLabel")
-        self.formLayout_4.setWidget(
-            0, QtWidgets.QFormLayout.FieldRole, self.interceptValueLabel)
-        self.coefLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.coefLabel.setMinimumSize(QtCore.QSize(138, 15))
-        self.coefLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.coefLabel.setObjectName("coefLabel")
-        self.formLayout_4.setWidget(
-            1, QtWidgets.QFormLayout.LabelRole, self.coefLabel)
-        self.predictLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
-        self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.predictLabel.setObjectName("predictLabel")
-        self.formLayout_4.setWidget(
-            2, QtWidgets.QFormLayout.LabelRole, self.predictLabel)
-        self.predictLineEdit = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
-        self.predictLineEdit.setMinimumSize(QtCore.QSize(0, 15))
-        self.predictLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.predictLineEdit.setStyleSheet("background-color: white;")
-        self.predictLineEdit.setAlignment(QtCore.Qt.AlignCenter)
-        self.predictLineEdit.setClearButtonEnabled(True)
-        self.predictLineEdit.setObjectName("predictLineEdit")
-        self.formLayout_4.setWidget(
-            2, QtWidgets.QFormLayout.FieldRole, self.predictLineEdit)
-        self.outcomeLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.outcomeLabel.setMinimumSize(QtCore.QSize(60, 15))
-        self.outcomeLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.outcomeLabel.setObjectName("outcomeLabel")
-        self.formLayout_4.setWidget(
-            3, QtWidgets.QFormLayout.LabelRole, self.outcomeLabel)
-        self.coefValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.coefValueLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.coefValueLabel.setText("")
-        self.coefValueLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.coefValueLabel.setObjectName("coefValueLabel")
-        self.formLayout_4.setWidget(
-            1, QtWidgets.QFormLayout.FieldRole, self.coefValueLabel)
-        self.outputLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.outputLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.outputLabel.setText("")
-        self.outputLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.outputLabel.setObjectName("outputLabel")
-        self.formLayout_4.setWidget(
-            3, QtWidgets.QFormLayout.FieldRole, self.outputLabel)
-        '''
-        self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.interceptLabel.setMinimumSize(QtCore.QSize(60, 15))
+        self.interceptLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.interceptLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.interceptLabel.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
@@ -782,6 +735,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addWidget(self.interceptLabel, 0, 0, 1, 1)
         self.interceptValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.interceptValueLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.interceptValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.interceptValueLabel.setText("")
         self.interceptValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.interceptValueLabel.setObjectName("interceptValueLabel")
@@ -790,18 +744,21 @@ class FreePlay(QtWidgets.QWidget):
         self.coefLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.coefLabel.setMinimumSize(QtCore.QSize(138, 15))
         self.coefLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.coefLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.coefLabel.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.coefLabel.setObjectName("coefLabel")
         self.modelOptionsGridLayout.addWidget(self.coefLabel, 1, 0, 1, 1)
         self.coefValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.coefValueLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.coefValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.coefValueLabel.setText("")
         self.coefValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.coefValueLabel.setObjectName("coefValueLabel")
         self.modelOptionsGridLayout.addWidget(self.coefValueLabel, 1, 1, 1, 1)
         self.predictLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
+        self.predictLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.predictLabel.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
@@ -816,6 +773,7 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLineEdit.setObjectName("predictLineEdit")
         self.modelOptionsGridLayout.addWidget(self.predictLineEdit, 2, 1, 1, 1)
         self.outcomeLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.outcomeLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.outcomeLabel.setMinimumSize(QtCore.QSize(60, 15))
         self.outcomeLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.outcomeLabel.setAlignment(
@@ -824,6 +782,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addWidget(self.outcomeLabel, 3, 0, 1, 1)
         self.outputLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.outputLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.outputLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.outputLabel.setText("")
         self.outputLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.outputLabel.setObjectName("outputLabel")
