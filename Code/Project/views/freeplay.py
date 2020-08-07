@@ -160,31 +160,33 @@ class FreePlay(QtWidgets.QWidget):
         #Options layout and group box
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.groupBox = QtWidgets.QGroupBox(self)
+        self.modelSettingsGroupBox = QtWidgets.QGroupBox(self)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
-            self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy)
-        self.groupBox.setMinimumSize(QtCore.QSize(700, 210))
-        self.groupBox.setMaximumSize(QtCore.QSize(16777215, 600))
-        self.groupBox.setStyleSheet("background-color: rgb(195, 192, 44);")
-        self.groupBox.setObjectName("groupBox")
+            self.modelSettingsGroupBox.sizePolicy().hasHeightForWidth())
+        self.modelSettingsGroupBox.setSizePolicy(sizePolicy)
+        self.modelSettingsGroupBox.setMinimumSize(QtCore.QSize(700, 210))
+        self.modelSettingsGroupBox.setMaximumSize(QtCore.QSize(16777215, 600))
+        self.modelSettingsGroupBox.setStyleSheet("background-color: rgb(195, 192, 44);")
+        self.modelSettingsGroupBox.setObjectName("modelSettingsGroupBox")
 
         #### Start of first virtical row -> Model options, Data options and boundary on/off
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.groupBox)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(
+            self.modelSettingsGroupBox)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.modelOptionsHSplit = QtWidgets.QVBoxLayout()
         self.modelOptionsHSplit.setObjectName("modelOptionsHSplit")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.modelSelectionLabel = QtWidgets.QLabel(self.groupBox)
+        self.modelSelectionLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
         self.modelSelectionLabel.setObjectName("modelSelectionLabel")
         self.horizontalLayout_3.addWidget(self.modelSelectionLabel)
         
-        self.modelSelectComboBox = QtWidgets.QComboBox(self.groupBox)
+        self.modelSelectComboBox = QtWidgets.QComboBox(
+            self.modelSettingsGroupBox)
         self.modelSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
         self.modelSelectComboBox.setStyleSheet("background-color: white;"
                                                "selection-color: rgb(200, 200, 200)")
@@ -194,10 +196,11 @@ class FreePlay(QtWidgets.QWidget):
             self.modelSelectComboBox.addItem("")
 
         self.horizontalLayout_3.addWidget(self.modelSelectComboBox)
-        self.dataSelectionLabel = QtWidgets.QLabel(self.groupBox)
+        self.dataSelectionLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
         self.dataSelectionLabel.setObjectName("dataSelectionLabel")
         self.horizontalLayout_3.addWidget(self.dataSelectionLabel)
-        self.dataSelectComboBox = QtWidgets.QComboBox(self.groupBox)
+        self.dataSelectComboBox = QtWidgets.QComboBox(
+            self.modelSettingsGroupBox)
         self.dataSelectComboBox.setMinimumSize(QtCore.QSize(150, 0))
         self.dataSelectComboBox.setStyleSheet("background-color: white;"
                                                "selection-color: rgb(200, 200, 200)")
@@ -207,12 +210,12 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectComboBox.addItem("")
         self.dataSelectComboBox.addItem("")
         self.horizontalLayout_3.addWidget(self.dataSelectComboBox)
-        self.boundaryLabel = QtWidgets.QLabel(self.groupBox)
+        self.boundaryLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
         self.boundaryLabel.setObjectName("boundaryLabel")
         self.horizontalLayout_3.addWidget(self.boundaryLabel)
 
-
-        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(self.groupBox)
+        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(
+            self.modelSettingsGroupBox)
         self.boundaryOnOffRadioButton.setMaximumSize(
             QtCore.QSize(25, 16777215))
         self.boundaryOnOffRadioButton.setText("")
@@ -227,15 +230,19 @@ class FreePlay(QtWidgets.QWidget):
         #### end of top line of model set up options.
         
         ### Start of Model options
-        self.modelOptionsGroupBox = QtWidgets.QGroupBox(self.groupBox)
+        self.modelOptionsGroupBox = QtWidgets.QGroupBox(
+            self.modelSettingsGroupBox)
         self.modelOptionsGroupBox.setMinimumSize(QtCore.QSize(299, 0))
         self.modelOptionsGroupBox.setObjectName("modelOptionsGroupBox")
         
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(
-            self.modelOptionsGroupBox)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.formLayout_4 = QtWidgets.QFormLayout()
-        self.formLayout_4.setObjectName("formLayout_4")
+        ## Kmeans Grid Box
+        self.modelOptionsGridLayout = QtWidgets.QGridLayout(self.modelOptionsGroupBox)  # Was gridLayout_2
+        self.modelOptionsGridLayout.setObjectName("modelOptionsGridLayout")
+        ##self.horizontalLayout_4 = QtWidgets.QHBoxLayout(
+        ##    self.modelOptionsGroupBox)
+        ##self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        ##self.formLayout_4 = QtWidgets.QFormLayout()
+        ##self.formLayout_4.setObjectName("formLayout_4")
         
         ### Bottom half of Model Options Group Box
         self.setup_gameboard()
@@ -243,13 +250,18 @@ class FreePlay(QtWidgets.QWidget):
         
         #self.lin_reg_model_options_setup()
 
-        self.horizontalLayout_4.addLayout(self.formLayout_4)
-        self.horizontalLayout_2.addWidget(self.modelOptionsGroupBox)
+        # Lin Reg Options
+        #self.horizontalLayout_4.addLayout(self.formLayout_4) ### Need to change to grid
+        
+        
+        self.horizontalLayout_2.addWidget(self.modelOptionsGroupBox) ## Puts Model options GB onto form
+
+
         ### End of model group box
 
         #### Start of Data selection group box
         self.dataOptionsGroupBox = QtWidgets.QGroupBox(
-            self.groupBox)  # self.modelSettingsGroupBox
+            self.modelSettingsGroupBox)  # self.modelSettingsGroupBox
         self.dataOptionsGroupBox.setMinimumSize(QtCore.QSize(299, 0))
         self.dataOptionsGroupBox.setObjectName("dataOptionsGroupBox")
 
@@ -269,7 +281,7 @@ class FreePlay(QtWidgets.QWidget):
         spacerItem4 = QtWidgets.QSpacerItem(
             20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.buttonLayoutV.addItem(spacerItem4)
-        self.playButton = QtWidgets.QPushButton(self.groupBox)
+        self.playButton = QtWidgets.QPushButton(self.modelSettingsGroupBox)
         self.playButton.setMinimumSize(QtCore.QSize(101, 51))
         self.playButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
@@ -280,7 +292,7 @@ class FreePlay(QtWidgets.QWidget):
         self.playButton.setIconSize(QtCore.QSize(40, 40))
         self.playButton.setObjectName("playButton")
         self.buttonLayoutV.addWidget(self.playButton)
-        self.clearButton = QtWidgets.QPushButton(self.groupBox)
+        self.clearButton = QtWidgets.QPushButton(self.modelSettingsGroupBox)
         self.clearButton.setMinimumSize(QtCore.QSize(101, 51))
         self.clearButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                        "border-radius: 15px;")
@@ -291,7 +303,7 @@ class FreePlay(QtWidgets.QWidget):
         self.clearButton.setIconSize(QtCore.QSize(40, 40))
         self.clearButton.setObjectName("clearButton")
         self.buttonLayoutV.addWidget(self.clearButton)
-        self.homeButton = QtWidgets.QPushButton(self.groupBox)
+        self.homeButton = QtWidgets.QPushButton(self.modelSettingsGroupBox)
         self.homeButton.setMinimumSize(QtCore.QSize(101, 51))
         self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
@@ -304,7 +316,7 @@ class FreePlay(QtWidgets.QWidget):
         self.buttonLayoutV.addWidget(self.homeButton)
         self.groupBoxHButtons.addLayout(self.buttonLayoutV)
         self.horizontalLayout_5.addLayout(self.groupBoxHButtons)
-        self.verticalLayout.addWidget(self.groupBox)
+        self.verticalLayout.addWidget(self.modelSettingsGroupBox)
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
         ########
@@ -503,6 +515,8 @@ class FreePlay(QtWidgets.QWidget):
         if self.fp_model == 'linearreg':
             self.lin_reg_model_options_setup()
             self.lin_reg_retranslateUi()
+        elif self.fp_model == "k-means":
+            self.km_model_options_setup()
 
     
     def clear_model_options(self):
@@ -516,7 +530,7 @@ class FreePlay(QtWidgets.QWidget):
         if self.current_game == 'linearreg':
             self.hide_lr_model_options()
         elif self.current_game == 'k-means':
-            pass
+            self.hide_km_model_options()
         elif self.current_game == 'svm':
             pass
         elif self.current_game == 'lda':
@@ -548,7 +562,8 @@ class FreePlay(QtWidgets.QWidget):
         self.modelLabel_2.setText(_translate("self", "Model:"))
         self.modelTypeLabel.setText(_translate("self", "Model name"))
         self.overviewLabel.setText(_translate("self", "Overview:"))
-        self.groupBox.setTitle(_translate("self", "Model Options:"))
+        self.modelSettingsGroupBox.setTitle(
+            _translate("self", "Model Options:"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "General:"))
         self.modelSelectionLabel.setText(_translate("self", "Model:"))
         #self.numberOfClustersLabel.setText(
@@ -702,6 +717,7 @@ class FreePlay(QtWidgets.QWidget):
     ##### Model Options #######
     # Show LR Model Options
     def lin_reg_model_options_setup(self):
+        '''
         self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.interceptLabel.setMinimumSize(QtCore.QSize(60, 15))
         self.interceptLabel.setMaximumSize(QtCore.QSize(150, 16777215))
@@ -756,6 +772,63 @@ class FreePlay(QtWidgets.QWidget):
         self.outputLabel.setObjectName("outputLabel")
         self.formLayout_4.setWidget(
             3, QtWidgets.QFormLayout.FieldRole, self.outputLabel)
+        '''
+        self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.interceptLabel.setMinimumSize(QtCore.QSize(60, 15))
+        self.interceptLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.interceptLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.interceptLabel.setObjectName("interceptLabel")
+        self.modelOptionsGridLayout.addWidget(self.interceptLabel, 0, 0, 1, 1)
+        self.interceptValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.interceptValueLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.interceptValueLabel.setText("")
+        self.interceptValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.interceptValueLabel.setObjectName("interceptValueLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.interceptValueLabel, 0, 1, 1, 1)
+        self.coefLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.coefLabel.setMinimumSize(QtCore.QSize(138, 15))
+        self.coefLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.coefLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.coefLabel.setObjectName("coefLabel")
+        self.modelOptionsGridLayout.addWidget(self.coefLabel, 1, 0, 1, 1)
+        self.coefValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.coefValueLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.coefValueLabel.setText("")
+        self.coefValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.coefValueLabel.setObjectName("coefValueLabel")
+        self.modelOptionsGridLayout.addWidget(self.coefValueLabel, 1, 1, 1, 1)
+        self.predictLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
+        self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.predictLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.predictLabel.setObjectName("predictLabel")
+        self.modelOptionsGridLayout.addWidget(self.predictLabel, 2, 0, 1, 1)
+        self.predictLineEdit = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
+        self.predictLineEdit.setMinimumSize(QtCore.QSize(0, 15))
+        self.predictLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.predictLineEdit.setStyleSheet("background-color: white;")
+        self.predictLineEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.predictLineEdit.setClearButtonEnabled(True)
+        self.predictLineEdit.setObjectName("predictLineEdit")
+        self.modelOptionsGridLayout.addWidget(self.predictLineEdit, 2, 1, 1, 1)
+        self.outcomeLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.outcomeLabel.setMinimumSize(QtCore.QSize(60, 15))
+        self.outcomeLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.outcomeLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.outcomeLabel.setObjectName("outcomeLabel")
+        self.modelOptionsGridLayout.addWidget(self.outcomeLabel, 3, 0, 1, 1)
+        self.outputLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.outputLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.outputLabel.setText("")
+        self.outputLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.outputLabel.setObjectName("outputLabel")
+        self.modelOptionsGridLayout.addWidget(self.outputLabel, 3, 1, 1, 1)
+        #self.horizontalLayout_4.addLayout(self.modelOptionsGridLayout)
 
 
     # Hide LR Model Options
@@ -768,6 +841,230 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLineEdit.deleteLater()
         self.outcomeLabel.deleteLater()
         self.outputLabel.deleteLater()
+
+
+    # K-Means
+    def km_model_options_setup(self):
+        print("In km model set up")
+        # Need to convert LR model options to a grid.
+        # Cluster centres click switch add
+        self.clusterCentresOnOffLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
+        self.clusterCentresOnOffLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.clusterCentresOnOffLabel.setObjectName("clusterCentresOnOffLabel")
+        self.horizontalLayout_3.addWidget(self.clusterCentresOnOffLabel)
+        self.checkBox = QtWidgets.QCheckBox(self.modelSettingsGroupBox)
+        self.checkBox.setText("")
+        self.checkBox.setObjectName("checkBox")
+        self.horizontalLayout_3.addWidget(self.checkBox)
+
+        # Main Options
+
+        self.inertiaValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.inertiaValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.inertiaValueLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%)")
+        self.inertiaValueLabel.setText("")
+        self.inertiaValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.inertiaValueLabel.setObjectName("inertiaValueLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.inertiaValueLabel, 0, 1, 1, 1)
+        self.predictInfoLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.predictInfoLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.predictInfoLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.predictInfoLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.predictInfoLabel.setObjectName("predictInfoLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.predictInfoLabel, 2, 1, 1, 1)
+        self.inertiaLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.inertiaLabel.setMinimumSize(QtCore.QSize(60, 15))
+        self.inertiaLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.inertiaLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.inertiaLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.inertiaLabel.setObjectName("inertiaLabel")
+        self.modelOptionsGridLayout.addWidget(self.inertiaLabel, 0, 0, 1, 1)
+        self.predictLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
+        self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.predictLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.predictLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.predictLabel.setObjectName("predictLabel")
+        self.modelOptionsGridLayout.addWidget(self.predictLabel, 2, 0, 1, 1)
+        self.distFromCentroidValueLabel = QtWidgets.QLabel(
+            self.modelOptionsGroupBox)
+        self.distFromCentroidValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.distFromCentroidValueLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.distFromCentroidValueLabel.setText("")
+        self.distFromCentroidValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.distFromCentroidValueLabel.setObjectName(
+            "distFromCentroidValueLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.distFromCentroidValueLabel, 4, 1, 1, 1)
+        self.outputValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.outputValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.outputValueLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.outputValueLabel.setText("")
+        self.outputValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.outputValueLabel.setObjectName("outputValueLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.outputValueLabel, 3, 1, 1, 1)
+        self.outputLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.outputLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.outputLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.outputLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.outputLabel.setObjectName("outputLabel")
+        self.modelOptionsGridLayout.addWidget(self.outputLabel, 3, 0, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.modelOptionsGridLayout.addItem(spacerItem3, 5, 0, 1, 1)
+        self.distFromCentroidLabel = QtWidgets.QLabel(
+            self.modelOptionsGroupBox)
+        self.distFromCentroidLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.distFromCentroidLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.distFromCentroidLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.distFromCentroidLabel.setObjectName("distFromCentroidLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.distFromCentroidLabel, 4, 0, 1, 1)
+        self.noOfIterationsLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.noOfIterationsLabel.setMinimumSize(QtCore.QSize(138, 15))
+        self.noOfIterationsLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.noOfIterationsLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.noOfIterationsLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.noOfIterationsLabel.setObjectName("noOfIterationsLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.noOfIterationsLabel, 1, 0, 1, 1)
+        self.noOfIterationsValueLabel = QtWidgets.QLabel(
+            self.modelOptionsGroupBox)
+        self.noOfIterationsValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.noOfIterationsValueLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.noOfIterationsValueLabel.setText("")
+        self.noOfIterationsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.noOfIterationsValueLabel.setObjectName("noOfIterationsValueLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.noOfIterationsValueLabel, 1, 1, 1, 1)
+        spacerItem4 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.modelOptionsGridLayout.addItem(spacerItem4, 0, 2, 1, 1)
+        
+        self.km_model_options_retranslateUi()
+
+    def km_model_options_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.clusterCentresOnOffLabel.setText(
+            _translate("self", "Cluster Centre(s) (On/Off):"))
+        self.predictInfoLabel.setText(_translate("self", "{Click in Grid to plot}"))
+        self.inertiaLabel.setText(_translate("self", "Inertia:"))
+        self.predictLabel.setText(_translate("self", "Predict:"))
+        self.outputLabel.setText(_translate("self", "Output:"))
+        self.distFromCentroidLabel.setText(_translate("self", "Distance from Centroid:"))
+        self.noOfIterationsLabel.setText(_translate("self", "Number of Iterations:"))
+
+    def hide_km_model_options(self):
+        print("In hide km model")
+        self.inertiaValueLabel.deleteLater()
+        self.predictInfoLabel.deleteLater()
+        self.inertiaLabel.deleteLater()
+        self.predictLabel.deleteLater()
+        self.distFromCentroidValueLabel.deleteLater()
+        self.outputValueLabel.deleteLater()
+        self.outputLabel.deleteLater()
+        self.distFromCentroidLabel.deleteLater()
+        self.noOfIterationsLabel.deleteLater()
+        self.noOfIterationsValueLabel.deleteLater()
+
+        
+    def km_custom_data_options(self):
+        self.noOfInitialisersLineEdit = QtWidgets.QLineEdit(
+            self.dataOptionsGroupBox)
+        self.noOfInitialisersLineEdit.setMinimumSize(QtCore.QSize(350, 15))
+        self.noOfInitialisersLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.noOfInitialisersLineEdit.setStyleSheet("background-color: white;")
+        self.noOfInitialisersLineEdit.setObjectName("noOfInitialisersLineEdit")
+        self.gridLayout.addWidget(self.noOfInitialisersLineEdit, 1, 1, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem5, 0, 2, 1, 1)
+        self.noOfInitialisersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.noOfInitialisersLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.noOfInitialisersLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.noOfInitialisersLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.noOfInitialisersLabel.setObjectName("noOfInitialisersLabel")
+        self.gridLayout.addWidget(self.noOfInitialisersLabel, 1, 0, 1, 1)
+        self.maxIterationsLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.maxIterationsLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.maxIterationsLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.maxIterationsLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.maxIterationsLabel.setObjectName("maxIterationsLabel")
+        self.gridLayout.addWidget(self.maxIterationsLabel, 2, 0, 1, 1)
+        self.algorithmLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.algorithmLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.algorithmLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.algorithmLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.algorithmLabel.setObjectName("algorithmLabel")
+        self.gridLayout.addWidget(self.algorithmLabel, 3, 0, 1, 1)
+        self.maxIterationsLineEdit = QtWidgets.QLineEdit(
+            self.dataOptionsGroupBox)
+        self.maxIterationsLineEdit.setMinimumSize(QtCore.QSize(350, 15))
+        self.maxIterationsLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.maxIterationsLineEdit.setStyleSheet("background-color: white;")
+        self.maxIterationsLineEdit.setObjectName("maxIterationsLineEdit")
+        self.gridLayout.addWidget(self.maxIterationsLineEdit, 2, 1, 1, 1)
+        spacerItem6 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem6, 4, 0, 1, 1)
+        self.algorithmComboBox = QtWidgets.QComboBox(self.dataOptionsGroupBox)
+        self.algorithmComboBox.setMinimumSize(QtCore.QSize(350, 15))
+        self.algorithmComboBox.setStyleSheet("background-color: white;\n"
+                                             "selection-color: rgb(200, 200, 200)")
+        self.algorithmComboBox.setObjectName("algorithmComboBox")
+        self.algorithmComboBox.addItem("")
+        self.algorithmComboBox.addItem("")
+        self.algorithmComboBox.addItem("")
+        self.gridLayout.addWidget(self.algorithmComboBox, 3, 1, 1, 1)
+        self.noOfClustersLineEdit = QtWidgets.QLineEdit(
+            self.dataOptionsGroupBox)
+        self.noOfClustersLineEdit.setMinimumSize(QtCore.QSize(350, 15))
+        self.noOfClustersLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.noOfClustersLineEdit.setStyleSheet("background-color: white;")
+        self.noOfClustersLineEdit.setObjectName("noOfClustersLineEdit")
+        self.gridLayout.addWidget(self.noOfClustersLineEdit, 0, 1, 1, 1)
+        self.noOfClustersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.noOfClustersLabel.setMinimumSize(QtCore.QSize(0, 15))
+        self.noOfClustersLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%);")
+        self.noOfClustersLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.noOfClustersLabel.setObjectName("noOfClustersLabel")
+        self.gridLayout.addWidget(self.noOfClustersLabel, 0, 0, 1, 1)
+
+        self.km_model_custom_retranslateUi()
+
+    def km_model_custom_retranslateUi(self):
+        self.noOfInitialisersLabel.setText(_translate("self", "Number of Initialisers:"))
+        self.maxIterationsLabel.setText(_translate("self", "Max Iterations:"))
+        self.algorithmLabel.setText(_translate("self", "Algorithm:"))
+        self.algorithmComboBox.setItemText(0, _translate("self", "Auto"))
+        self.algorithmComboBox.setItemText(1, _translate("self", "Full"))
+        self.algorithmComboBox.setItemText(2, _translate("self", "Elkan"))
+        self.noOfClustersLabel.setText(_translate("self", "Number of Clusters:"))
+
+
 
 
     ##########
@@ -974,6 +1271,8 @@ class FreePlay(QtWidgets.QWidget):
         self.f2XRadioButton.deleteLater()
         #self.f3NoneRadioButton.deleteLater()
 
+    
+
 
     ############################################################
 
@@ -1013,3 +1312,24 @@ class FreePlay(QtWidgets.QWidget):
          
         
 
+'''
+    self.clearButton.clicked.connect(lambda: self.boxdelete(self.modelOptionsGridLayout))
+
+    def deleteItemsOfLayout(self, layout):
+        if layout is not None:
+                while layout.count():
+                        item = layout.takeAt(0)
+                        widget = item.widget()
+                        if widget is not None:
+                                widget.setParent(None)
+                        else:
+                                deleteItemsOfLayout(item.layout())
+
+    def boxdelete(self, box):
+        for i in range(self.vlayout.count()):
+                layout_item = self.vlayout.itemAt(i)
+                if layout_item.layout() == box:
+                        self.deleteItemsOfLayout(layout_item.layout())
+                        self.vlayout.removeItem(layout_item)
+                        break
+                    '''
