@@ -156,18 +156,7 @@ class KMeansGameboard(QWidget):
     def replot_kmeans(self):
         print(self.k)
         self.canvas.ax.clear()
-        #self.blob_centers = np.array(
-        #    [[0.2,  2.3],
-        #     [-1.5,  2.3],
-        #     [-2.8,  1.3]
-        #     ]
-        #)
-        #self.blob_std = np.array([0.4, 0.3,
-        #                     0.1]
-        #                    )
-        #self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
-        #                            cluster_std=self.blob_std, random_state=7)
-
+        
         self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
                                     cluster_std=0.6, random_state=0)
         
@@ -201,6 +190,10 @@ class KMeansGameboard(QWidget):
         centers = self.kmeans.cluster_centers_
 
         print("Cluster Centers:", centers)
+
+    def generate_data_points(self):
+        pass
+        # Need to generate pre made data.
 
     def clear_values(self):
         self.ix, iy = 0, 0

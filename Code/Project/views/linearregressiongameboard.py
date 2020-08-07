@@ -299,20 +299,33 @@ class LinearRegressionGameboard(QWidget):
         self.make_prediction()
         self.fig.canvas.draw()
 
-    def generate_data_points(self): # Change this to existing datasets
+    def generate_data_points(self, data_option): # Change this to existing datasets
         #print("Data option:",self.data_option)
         
         self.clear_canvas()
-        if self.data_option == 2:
-            self.X, self.y = datasets.load_diabetes(return_X_y=True)
-            self.X = self.X[:, np.newaxis, 2]
+        
+        if data_option == 2:
+            diabetes = datasets.load_diabetes()
+            self.X = diabetes.data[:, 2]
+            self.X = self.X.reshape(-1, 1)
+            self.y = diabetes.target
+            #self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
             #print("X Shape:", self.X.shape)
         
-        elif self.data_option == 3:
-            self.X, self.y = datasets.load_boston(return_X_y=True)
-            self.X = self.X[:, np.newaxis, 5]
+        elif data_option == 3:
+            print("In boston data options")
+            boston = datasets.load_boston()
+            #self.X, self.y = datasets.load_boston(return_X_y=True)
+            #self.X = self.X[:, np.newaxis, 5]
+            self.X = boston.data[:, 5]
+            self.X = self.X.reshape(-1, 1)
+            self.y = boston.target
             self.X_new = self.X
+            print("bos X min:", np.amin(
+                boston.data[:, 5]), "Max", np.amax(boston.data[:, 5]))
+            print("bos y min:", np.amin(boston.target), "Max", np.amax(boston.target))
+
             
             
         else:
@@ -321,8 +334,19 @@ class LinearRegressionGameboard(QWidget):
             #print("X Shape:", self.X.shape)
             self.X_new = np.array([[0], [2]])
         
-        self.canvas.ax.set_xlim([np.min(self.X-1), np.max(self.X+1)])
-        self.canvas.ax.set_ylim([np.min(self.y-1), np.max(self.y+1)])
+        # et_xlim(self, left=None, right=None, emit=True, auto=False, *, xmin=None, xmax=None)
+        self.canvas.ax.axis(xmin=np.amin(self.X), xmax=np.amax(self.X), 
+                            ymin=np.amin(self.y), ymax=np.amax(self.y))
+
+        #self.canvas.ax.xlim([np.amin(self.X), np.amax(self.X)]) 
+        #self.canvas.ax.ylim([np.amin(self.y), np.amax(self.y)])
+        print("X min:", np.amin(self.X), "Max", np.amax(self.X))
+        print("y min:", np.amin(self.y), "Max", np.amax(self.y))
+
+
+        #self.canvas.ax.relim()
+        self.canvas.ax.autoscale(axis="both", tight=False)
+        #self.canvas.ax.axis('auto')
         
         self.fit_model()
         self.make_prediction()
