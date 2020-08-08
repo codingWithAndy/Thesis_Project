@@ -113,26 +113,31 @@ class KMeansGameboard(QWidget):
         print("Plot data")
 
 
-    def plot_centroids(self, centroids, weights=None, circle_color='w', cross_color='k'):
+    show_centroids = False
+
+    def plot_centroids(self, weights=None, circle_color='w', cross_color='k'):
         if weights is not None:
-            centroids = centroids[weights > weights.max() / 10]
+            self.centroids = self.centroids[weights > weights.max() / 10]
         
-        self.canvas.ax.scatter(centroids[:, 0], centroids[:, 1],
-                                marker='o', s=30, linewidths=8,
-                                color=circle_color, zorder=10, alpha=0.9)
-        self.canvas.ax.scatter(centroids[:, 0], centroids[:, 1],
-                    marker='x', s=50, linewidths=50,
-                    color=cross_color, zorder=11, alpha=1)
+        if self.show_centroids == True:
+            self.canvas.ax.scatter(self.centroids[:, 0], self.centroids[:, 1],
+                                    marker='o', s=30, linewidths=8,
+                                    color=circle_color, zorder=10, alpha=0.9)
+            self.canvas.ax.scatter(self.centroids[:, 0], self.centroids[:, 1],
+                        marker='x', s=50, linewidths=50,
+                        color=cross_color, zorder=11, alpha=1)
+
+        self.fig.canvas.draw()
 
 
-    def plot_decision_boundaries(self, clusterer, X, resolution=1000, show_centroids=True,
+    def plot_decision_boundaries(self, resolution=1000, show_centroids=True,
                                 show_xlabels=True, show_ylabels=True):
         try:
-            mins = X.min(axis=0) - 0.1
-            maxs = X.max(axis=0) + 0.1
+            mins = self.X.min(axis=0) - 0.1
+            maxs = self.X.max(axis=0) + 0.1
             xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
                                 np.linspace(mins[1], maxs[1], resolution))
-            Z = clusterer.predict(np.c_[xx.ravel(), yy.ravel()])
+            Z = self.kmeans.predict(np.c_[xx.ravel(), yy.ravel()])
             Z = Z.reshape(xx.shape)
 
             self.canvas.ax.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
@@ -143,15 +148,16 @@ class KMeansGameboard(QWidget):
         except:
             self.show_predictions()
 
-        if show_centroids:
-            self.plot_centroids(clusterer.cluster_centers_)
+        self.centroids = self.kmeans.cluster_centers_
+        
+        if self.show_centroids == True:
+            self.plot_centroids()
         
         self.fig.canvas.draw()
     
 
     # Experimenting
     def replot_kmeans(self):
-        print(self.k)
         self.canvas.ax.clear()
         
         self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
@@ -170,7 +176,7 @@ class KMeansGameboard(QWidget):
             print("In boundarys != False")
             self.kmeans = KMeans(n_clusters=self.k, random_state=42)
             self.y_pred = self.kmeans.fit_predict(self.X)
-            self.plot_decision_boundaries(self.kmeans, self.X)
+            self.plot_decision_boundaries()
         else:
             self.canvas.ax.clear()
             self.plot_clusters(self.X)  # plot_data(self.X)
@@ -201,12 +207,8 @@ class KMeansGameboard(QWidget):
             self.X = iris.data
             self.y = iris.target
         elif data_option == 3:
-            print("In boston data options")
-            boston = datasets.load_boston()
-            self.X = boston.data[:, 5]
-            self.X = self.X.reshape(-1, 1)
-            self.y = boston.target
-            self.X_new = self.X
+            noisy_moons = datasets.make_moons(n_samples=n_samples, noise=.05)
+            self.k = 2
 
         self.plot_clusters(self.X)  # self.fit_model()
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
