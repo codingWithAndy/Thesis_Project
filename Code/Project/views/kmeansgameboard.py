@@ -220,6 +220,12 @@ class KMeansGameboard(QWidget):
     max_iter = 300
     algo = "auto"
 
+    def find_parameters(self):
+        inetia = self.kmeans.inertia_
+        n_iterations = self.kmeans.n_iter_
+
+        return inetia, n_iterations
+
     def fit_model(self):
         # Model fits datapoints to the model
         self.k = n_clust

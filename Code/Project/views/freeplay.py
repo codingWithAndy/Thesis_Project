@@ -695,6 +695,15 @@ class FreePlay(QtWidgets.QWidget):
         self.update_lr_param_output()
 
 
+    def update_km_param_output(self):
+        try:
+            inetia, n_iterations = self.MplWidget.find_parameters()
+            self.inertiaValueLabel.setText(str(inetia))
+            self.noOfIterationsValueLabel.setText(str(n_iterations))
+        except:
+            self.inertiaValueLabel.setText("No Value, yet!")
+            self.noOfIterationsValueLabel.setText("No Value, yet!")
+
     def update_lr_param_output(self):
         try:
             coef, intercept = self.MplWidget.find_parameters()
@@ -703,6 +712,7 @@ class FreePlay(QtWidgets.QWidget):
         except:
             self.coefValueLabel.setText("No Value, yet!")
             self.interceptValueLabel.setText("No Value, yet!")
+
 
 
     # Play button LR action handler
@@ -747,6 +757,7 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfInitialisersLineEdit.setText("")
             self.maxIterationsLineEdit.setText("")
             #self.outliersRadioButton.setChecked(False) # Change to check box
+        self.update_km_param_output()
 
     def generate_km_custom_data(self):
         k = int(self.noOfClustersLineEdit.text())
@@ -756,8 +767,7 @@ class FreePlay(QtWidgets.QWidget):
 
 
         self.MplWidget.generate_random_data(k, n_init, max_iter, algo)
-
-        ### Need KM version self.update_lr_param_output()
+        self.update_km_param_output()
 
 
     #######    Hide and Show Model and Data Options ################
@@ -956,7 +966,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addItem(spacerItem4, 0, 2, 1, 1)
 
         self.checkBox.toggled.connect(self.show_km_centroids)
-        
+        self.update_km_param_output()
         self.km_model_options_retranslateUi()
 
 
@@ -964,7 +974,7 @@ class FreePlay(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         self.clusterCentresOnOffLabel.setText(
             _translate("self", "Cluster Centre(s) (On/Off):"))
-        self.predictInfoLabel.setText(_translate("self", "{Click in Grid to plot}"))
+        self.predictInfoLabel.setText(_translate("self", "{Click in Grid to predict}"))
         self.inertiaLabel.setText(_translate("self", "Inertia:"))
         self.predictLabel.setText(_translate("self", "Predict:"))
         self.outputLabel.setText(_translate("self", "Output:"))
