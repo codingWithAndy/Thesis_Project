@@ -897,25 +897,21 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
         self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.predictLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.predictLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.predictLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing 
+                                       | QtCore.Qt.AlignVCenter)
         self.predictLabel.setObjectName("predictLabel")
         self.modelOptionsGridLayout.addWidget(self.predictLabel, 2, 0, 1, 1)
-        self.distFromCentroidValueLabel = QtWidgets.QLabel(
-            self.modelOptionsGroupBox)
+        self.distFromCentroidValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.distFromCentroidValueLabel.setMinimumSize(QtCore.QSize(350, 15))
-        self.distFromCentroidValueLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.distFromCentroidValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.distFromCentroidValueLabel.setText("")
         self.distFromCentroidValueLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.distFromCentroidValueLabel.setObjectName(
-            "distFromCentroidValueLabel")
+        self.distFromCentroidValueLabel.setObjectName("distFromCentroidValueLabel")
         self.modelOptionsGridLayout.addWidget(
             self.distFromCentroidValueLabel, 4, 1, 1, 1)
         self.outputValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.outputValueLabel.setMinimumSize(QtCore.QSize(350, 15))
-        self.outputValueLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.outputValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.outputValueLabel.setText("")
         self.outputValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.outputValueLabel.setObjectName("outputValueLabel")
@@ -934,8 +930,7 @@ class FreePlay(QtWidgets.QWidget):
         self.distFromCentroidLabel = QtWidgets.QLabel(
             self.modelOptionsGroupBox)
         self.distFromCentroidLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.distFromCentroidLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.distFromCentroidLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.distFromCentroidLabel.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.distFromCentroidLabel.setObjectName("distFromCentroidLabel")
@@ -944,8 +939,7 @@ class FreePlay(QtWidgets.QWidget):
         self.noOfIterationsLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.noOfIterationsLabel.setMinimumSize(QtCore.QSize(138, 15))
         self.noOfIterationsLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.noOfIterationsLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.noOfIterationsLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.noOfIterationsLabel.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.noOfIterationsLabel.setObjectName("noOfIterationsLabel")
@@ -954,8 +948,7 @@ class FreePlay(QtWidgets.QWidget):
         self.noOfIterationsValueLabel = QtWidgets.QLabel(
             self.modelOptionsGroupBox)
         self.noOfIterationsValueLabel.setMinimumSize(QtCore.QSize(350, 15))
-        self.noOfIterationsValueLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.noOfIterationsValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.noOfIterationsValueLabel.setText("")
         self.noOfIterationsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.noOfIterationsValueLabel.setObjectName("noOfIterationsValueLabel")
@@ -972,8 +965,7 @@ class FreePlay(QtWidgets.QWidget):
 
     def km_model_options_retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.clusterCentresOnOffLabel.setText(
-            _translate("self", "Cluster Centre(s) (On/Off):"))
+        self.clusterCentresOnOffLabel.setText(_translate("self", "Cluster Centre(s) (On/Off):"))
         self.predictInfoLabel.setText(_translate("self", "{Click in Grid to predict}"))
         self.inertiaLabel.setText(_translate("self", "Inertia:"))
         self.predictLabel.setText(_translate("self", "Predict:"))
@@ -981,8 +973,7 @@ class FreePlay(QtWidgets.QWidget):
         self.distFromCentroidLabel.setText(_translate("self", "Distance from Centroid:"))
         self.noOfIterationsLabel.setText(_translate("self", "Number of Iterations:"))
         self.dataSelectComboBox.setItemText(2, _translate("self", "Iris"))
-        self.dataSelectComboBox.setItemText(
-            3, _translate("self", "Something Else!"))
+        self.dataSelectComboBox.setItemText(3, _translate("self", "Something Else!"))
 
 
     def hide_km_model_options(self):

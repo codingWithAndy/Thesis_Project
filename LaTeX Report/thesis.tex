@@ -11,8 +11,8 @@
 	
 % The custom data for Swansea University and your degree name.
 % The \protect\\ command forces a new line in the title which might be otherwise overriden by the template
-	\title{Gradient Descent by Grad Student}
-	\author{Philip J. Fry\protect\\{\normalsize 123456}}
+	\title{Data Splash! \protect\\An Educational Game about Machine Learning}
+	\author{Andrew Gray\protect\\{\normalsize 445348}}
 	\awardinginst{Swansea University}
 	
 % Comment / uncomment your degree type as needed.
@@ -24,9 +24,10 @@
 	\department{Department of Computer Science}
 	\university{Swansea University}
 	\unilogo{graphics/swansea.png}
+	\date{September \nth{20}, 2020}
 	
 % Hard code the date or allow the LaTeX compiler to fill it in whenever you recompile the document.
-	\date{\today}
+	
 	
 % Build the title and declaration pages, and pad the document so the text starts on a right hand book page.
 % Page numbering is in roman numerals until the first page of an actual chapter which resets numbers 
@@ -78,8 +79,9 @@
 
 % Insert the code for each of your chapters
 	\input{./chapter/thesis_intro}
-	\input{./chapter/thesis_resources}
-	\input{./chapter/thesis_typesetting}
+	\input{./chapter/background_lit_review}
+	\input{./chapter/thesis_methodology}
+	\input{./chapter/thesis_implementation}
 	\input{./chapter/thesis_conclusion}
 	
 % Formatting citations properly when they are rendering incorrectly in your PDF can be fiddly,
