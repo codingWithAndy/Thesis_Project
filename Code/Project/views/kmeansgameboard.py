@@ -1,3 +1,4 @@
+from sklearn.metrics.pairwise import euclidean_distances
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn import datasets
 from random import randint
@@ -15,7 +16,6 @@ from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
 matplotlib.use('Qt5Agg')
-
 
 
 
@@ -43,6 +43,7 @@ class KMeansGameboard(QWidget):
     data_samples = 1000
     playerColors = ['g', 'r']
     boundaries_on = False
+    game_mode = ""
 
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
@@ -99,7 +100,10 @@ class KMeansGameboard(QWidget):
                                s=20, c=self.playerColors[self.playerID])
         self.fig.canvas.draw()
 
-        if not self.playerID and self.turn >= 6:
+        if self.game_mode == 'fp':
+            self.model_predict()
+
+        if not self.playerID and self.turn >= 6 and self.game_mode == "game":
             self.boundaries_on = True
             self.switch_boundaries_on_off()
 
@@ -257,6 +261,30 @@ class KMeansGameboard(QWidget):
 
         # EXPERIMENT!: finding out cluster centres.
         self.find_cluster_centre()
+
+    
+
+    def model_predict(self):
+        # Get inputted values
+        idx = len(self.points) - 1
+        print("points location:", self.points[idx][0], self.points[idx][1])
+        self.pred_x = self.points[idx][0]
+        self.pred_y = self.points[idx][1]
+        self.prediction = self.kmeans.predict(
+            [[self.points[idx][0], self.points[idx][1]]])
+        print("Label: ", self.prediction)
+        label = int(self.prediction)
+        self.prediction_centre = self.kmeans.cluster_centers_
+        print("Cluster Centres:", self.kmeans.cluster_centers_)
+        self.prediction_centre = self.prediction_centre[label]
+        print("Predict centre:", self.prediction_centre)
+        print("Predict centre X:",
+              self.prediction_centre[0], "Predict centre y:", self.prediction_centre[1])
+        self.euclidean_dist = euclidean_distances(
+            [[self.points[idx][0], self.points[idx][1]]], [self.prediction_centre])
+        
+        print("euclidean_dist:", self.euclidean_dist[0])
+        
 
 
     def clear_canvas(self):

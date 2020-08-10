@@ -332,6 +332,7 @@ class FreePlay(QtWidgets.QWidget):
         if self.fp_model == 'k-means':
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = KMeansGameboard(self)
+            self.MplWidget.game_mode = "fp"
         elif self.fp_model == 'lda':
             print("in else if statement for lda")
             self.MplWidget = MplWidget(self)
@@ -386,7 +387,6 @@ class FreePlay(QtWidgets.QWidget):
         self.retranslateUi()
 
     def data_options_setup(self):
-        #self.clear_model_options()
         # Chose what display to show
         if self.fp_model == 'linearreg':
             if self.dataSelectComboBox.currentText() == 'Custom':
@@ -414,18 +414,10 @@ class FreePlay(QtWidgets.QWidget):
 
             
     def load_predata(self, value):
-        #current_idx = self.dataSelectComboBox.currentIndex()
-        #self.MplWidget.clear_values()
-        #if current_idx != 0 or current_idx != 1:  # Change these to indexes?
         self.MplWidget.data_options = value
-        print('the value of value:',value)
         self.MplWidget.generate_data_points(int(value))
         self.set_boundary_rb_check(False)
-        #elif current_text == "Boston House Prices":
-        #    self.MplWidget.data_options = value
-        #    print('the value of value:', value)
-        #    self.MplWidget.generate_data_points()
-        #    self.set_boundary_rb_check(False)
+        
 
     # Linking to Models boundaries on off function
     def change_boundary(self):
@@ -447,11 +439,6 @@ class FreePlay(QtWidgets.QWidget):
         print("update graph pressed!")
         if self.modelSelectComboBox.currentText() == "K-Means":
             self.km_play_button_control()
-            #no_of_clusters = self.numberOfClustersLineedit.text() if self.numberOfClustersLineedit.text() != "" else 3
-            #self.MplWidget.k = int(no_of_clusters)
-            #no_of_data_samples = self.dataSampleLineedit.text() if self.numberOfClustersLineedit.text() != "" else 100
-            #self.MplWidget.data_samples = int(no_of_data_samples)
-            #self.MplWidget.replot_kmeans()
         elif self.modelSelectComboBox.currentText() == "Linear Regression":
             self.lr_play_button_control()
 
@@ -535,15 +522,6 @@ class FreePlay(QtWidgets.QWidget):
         
         self.current_model = self.fp_model
     
-    #def clear_all_data_options(self):
-    #    data_options = [self.hide_dataset_feature_data_options(), self.hide_km_custom_data_options(), self.hide_lr_custom_data_options()]
-    #    for func in [data_options]:
-    #        try:
-    #            func
-    #            break
-    #        except:
-    #            print("Could not close any options")
-
     
     def clear_model_options(self):
         #self.clear_all_data_options()
@@ -568,6 +546,8 @@ class FreePlay(QtWidgets.QWidget):
     def update_models_metrics(self):
         if self.fp_model == 'linearreg':
             self.update_lr_param_output()
+        elif self.fp_model == "k-means":
+            self.km_predict()
             #self.asked_q = False
             #if self.MplWidget.turn > 0 and self.MplWidget.turn % 5 == 0 and self.asked_q == False:
             #    # This eventually needs to be in line with the other if
@@ -594,8 +574,6 @@ class FreePlay(QtWidgets.QWidget):
             _translate("self", "Model Options:"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "General:"))
         self.modelSelectionLabel.setText(_translate("self", "Model:"))
-        #self.numberOfClustersLabel.setText(
-        #    _translate("self", "No. of Clusters:"))
         self.boundaryLabel.setText(_translate("self", "Model Visualisation (On/Off):"))
 
         self.modelSelectComboBox.setItemText(0, _translate("Form", "Please Select:"))
@@ -643,10 +621,10 @@ class FreePlay(QtWidgets.QWidget):
         self.f3XRadioButton.setText(_translate("self", "X"))
         self.f4XRadioButton.setText(_translate("self", "X"))
         self.f4YRadioButton.setText(_translate("self", "y"))
-        #self.f4NoneRadioButton.setText(_translate("self", "None"))
+        
         self.feature4Label.setText(_translate("self", "Feature 4:"))
         self.f1XRadioButton.setText(_translate("self", "X"))
-        #self.f1NoneRadioButton.setText(_translate("self", "None"))
+        
         self.f2YRadioButton.setText(_translate("self", "y"))
         self.feature3Label.setText(_translate("self", "Feature 3:"))
         self.f3YRadioButton.setText(_translate("self", "y"))
@@ -770,6 +748,20 @@ class FreePlay(QtWidgets.QWidget):
         self.update_km_param_output()
 
 
+    def km_predict(self):
+        try:
+            self.outputValueLabel.setText(str(self.MplWidget.prediction))
+            self.distFromCentroidValueLabel.setText(
+                str(round(float(self.MplWidget.euclidean_dist[0]), 4)))
+            pred_txt = "X: " + str(round(float(self.MplWidget.pred_x), 4)) + \
+                " | y: " + str(round(float(self.MplWidget.pred_y), 4))
+            self.predictInfoLabel.setText(pred_txt)
+        except:
+            self.outputValueLabel.setText("No Preiction(s) yet!")
+            self.distFromCentroidValueLabel.setText("No Preiction(s) yet!")
+
+
+
     #######    Hide and Show Model and Data Options ################
     ##### Model Options #######
     # Show LR Model Options
@@ -867,7 +859,6 @@ class FreePlay(QtWidgets.QWidget):
         self.horizontalLayout_3.addWidget(self.checkBox)
 
         # Main Options
-
         self.inertiaValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.inertiaValueLabel.setMinimumSize(QtCore.QSize(350, 15))
         self.inertiaValueLabel.setStyleSheet(

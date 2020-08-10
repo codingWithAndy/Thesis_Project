@@ -2,6 +2,10 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
+White space in argument---line 89 of file thesis.aux
+ : \citation{list
+ :                exam boards here}
+I'm skipping whatever remains of this command
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -13,44 +17,45 @@ Database file #1: citations.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 8 entries,
+You've used 17 entries,
             4087 wiz_defined-function locations,
-            860 strings with 7926 characters,
-and the built_in function-call counts, 3360 in all, are:
-= -- 255
-> -- 40
+            896 strings with 9105 characters,
+and the built_in function-call counts, 6556 in all, are:
+= -- 515
+> -- 76
 < -- 9
-+ -- 22
-- -- 8
-* -- 117
-:= -- 601
-add.period$ -- 17
-call.type$ -- 8
-change.case$ -- 7
++ -- 40
+- -- 17
+* -- 205
+:= -- 1218
+add.period$ -- 35
+call.type$ -- 17
+change.case$ -- 17
 chr.to.int$ -- 24
-cite$ -- 8
-duplicate$ -- 251
-empty$ -- 319
-format.name$ -- 8
-if$ -- 734
+cite$ -- 17
+duplicate$ -- 500
+empty$ -- 628
+format.name$ -- 17
+if$ -- 1432
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 59
-newline$ -- 59
-num.names$ -- 8
-pop$ -- 177
+int.to.str$ -- 17
+missing$ -- 123
+newline$ -- 104
+num.names$ -- 17
+pop$ -- 375
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 260
+skip$ -- 515
 stack$ -- 0
-substring$ -- 57
-swap$ -- 168
+substring$ -- 60
+swap$ -- 323
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 8
+type$ -- 17
 warning$ -- 0
-while$ -- 12
-width$ -- 9
-write$ -- 98
+while$ -- 21
+width$ -- 19
+write$ -- 189
+(There was 1 error message)

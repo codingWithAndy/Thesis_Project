@@ -302,6 +302,8 @@ class LinearRegressionGameboard(QWidget):
     def generate_data_points(self, data_option): # Change this to existing datasets
         #print("Data option:",self.data_option)
         self.clear_canvas()
+        self.clear_values()
+        self.prepopulated = True
         
         if data_option == 2:
             diabetes = datasets.load_diabetes()

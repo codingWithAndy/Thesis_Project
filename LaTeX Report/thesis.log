@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  9 AUG 2020 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  10 AUG 2020 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2128,7 +2128,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.45 ...ine {chapter}{Appendices}{21}{section*.11}
+l.45 ...ine {chapter}{Appendices}{24}{section*.12}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
@@ -2208,34 +2208,37 @@ LaTeX Font Info:    Font shape `TS1/SourceCodePro-TLF/m/n' will be
 
 ]
 
-LaTeX Warning: Citation `swift' on page 9 undefined on input line 8.
+LaTeX Warning: Citation `list exam boards here' on page 9 undefined on input li
+ne 12.
+
+[9]
+<graphics/python_vs_java_vs_c++.jpg, id=306, 770.88pt x 578.16pt>
+File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
+<use graphics/python_vs_java_vs_c++.jpg>
+Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
+ 21.
+(pdftex.def)             Requested size: 426.79134pt x 320.08861pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 21--22
+[][] 
+ []
 
 
-LaTeX Warning: Citation `9to5mac' on page 9 undefined on input line 8.
+Underfull \vbox (badness 4805) has occurred while \output is active []
 
+ [10 <./graphics/python_vs_java_vs_c++.jpg>] [11]
 
-LaTeX Warning: Citation `wired_python' on page 9 undefined on input line 12.
-
-
-LaTeX Warning: Citation `sof_dev_servay20' on page 9 undefined on input line 12
-.
-
-
-LaTeX Warning: Citation `hackr.io' on page 9 undefined on input line 12.
-
-[9] [10]
-
-LaTeX Warning: Reference `sec:resources_bibtex' on page 11 undefined on input l
-ine 43.
+LaTeX Warning: Reference `sec:resources_bibtex' on page 12 undefined on input l
+ine 52.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 43.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
 
-LaTeX Warning: Reference `sec:resources_bibtex' on page 11 undefined on input l
-ine 43.
+LaTeX Warning: Reference `sec:resources_bibtex' on page 12 undefined on input l
+ine 52.
 
-(./chapter/thesis_typesetting_equations.tex [11] (./graphics/texnique.tex
-<./graphics/texnique.png, id=308, 1015.54407pt x 582.67688pt>
+(./chapter/thesis_typesetting_equations.tex [12] (./graphics/texnique.tex
+<./graphics/texnique.png, id=337, 1015.54407pt x 582.67688pt>
 File: ./graphics/texnique.png Graphic file (type png)
 <use ./graphics/texnique.png>
 Package pdftex.def Info: ./graphics/texnique.png  used on input line 7.
@@ -2248,22 +2251,22 @@ Overfull \hbox (0.79999pt too wide) in paragraph at lines 7--8
 )
 Underfull \vbox (badness 7326) has occurred while \output is active []
 
- [12])
+ [13])
 (./chapter/thesis_typesetting_figures.tex
 
-LaTeX Warning: Reference `chap:typesetting' on page 13 undefined on input line 
+LaTeX Warning: Reference `chap:typesetting' on page 14 undefined on input line 
 4.
 
-[13 <./graphics/texnique.png>] (./listings/example_figure.tex)
+[14 <./graphics/texnique.png>] (./listings/example_figure.tex)
 (./graphics/example_figure.tex
-<./graphics/dragon.png, id=342, 1927.2pt x 1084.05pt>
+<./graphics/dragon.png, id=371, 1927.2pt x 1084.05pt>
 File: ./graphics/dragon.png Graphic file (type png)
 <use ./graphics/dragon.png>
 Package pdftex.def Info: ./graphics/dragon.png  used on input line 7.
 (pdftex.def)             Requested size: 412.0pt x 231.7429pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 11.
-) [14] (./graphics/example_2x1_figure.tex
+) [15] (./graphics/example_2x1_figure.tex
 File: ./graphics/dragon.png Graphic file (type png)
 <use ./graphics/dragon.png>
 Package pdftex.def Info: ./graphics/dragon.png  used on input line 9.
@@ -2277,7 +2280,7 @@ Overfull \hbox (2.75146pt too wide) in paragraph at lines 9--12
  [][]  [][] 
  []
 
-[15 <./graphics/dragon.png (PNG copy)>]) (./graphics/example_2x2_figure.tex
+[16 <./graphics/dragon.png (PNG copy)>]) (./graphics/example_2x2_figure.tex
 File: ./graphics/dragon.png Graphic file (type png)
 <use ./graphics/dragon.png>
 Package pdftex.def Info: ./graphics/dragon.png  used on input line 9.
@@ -2307,7 +2310,7 @@ Overfull \hbox (2.75146pt too wide) in paragraph at lines 15--18
 )
 Underfull \vbox (badness 4543) has occurred while \output is active []
 
- [16])
+ [17])
 (./chapter/thesis_typesetting_listings.tex
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
@@ -2318,21 +2321,33 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 (./listings/hello_world.c
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [17] (./listings/listings.tex))
+) [18] (./listings/listings.tex))
 (./chapter/thesis_typesetting_tables.tex (./tables/example_table.tex
 Underfull \hbox (badness 10000) in alignment at lines 21--21
 [][][][][][] 
  []
 
-))) (./chapter/thesis_conclusion.tex [18]) (./thesis.bbl [19
+))) (./chapter/thesis_conclusion.tex [19] [20
 
-] [20
+]) (./thesis.bbl [21] [22
 
 ]
 bibitemlist
-) (./chapter/appendix.tex [21] [22
 
-] (./listings/hello_world.c) [23] [24
+Overfull \hbox (15.54434pt too wide) in paragraph at lines 63--67
+\T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
+-[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 83--87
+\T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
+hackr . io / blog /
+ []
+
+[23]) (./chapter/appendix.tex [24] (./listings/hello_world.c) [25
+
+] [26
 
 ])
 Package minitoc Info: I0009
@@ -2341,7 +2356,7 @@ Package minitoc Info: I0009
 \openout4 = `thesis.maf'.
 
 
-[25]
+[27]
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -2357,7 +2372,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 402472E25B85CF3DBB15F426F362EF49;1475.
+(rerunfilecheck)             Checksum: DC1511A65667DB14E78F4743DFABDA92;1475.
 
 
 LaTeX Warning: There were undefined references.
@@ -2368,13 +2383,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 40929 strings out of 492616
- 725820 string characters out of 6129480
- 1118971 words of memory out of 5000000
- 43704 multiletter control sequences out of 15000+600000
+ 40953 strings out of 492616
+ 726272 string characters out of 6129480
+ 1119545 words of memory out of 5000000
+ 43714 multiletter control sequences out of 15000+600000
  617340 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,17n,92p,1130b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,17n,92p,1337b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_24hhf2.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -2391,10 +2406,10 @@ local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (39 pages, 5060776 bytes).
+Output written on thesis.pdf (41 pages, 5128944 bytes).
 PDF statistics:
- 573 PDF objects out of 1000 (max. 8388607)
- 502 compressed objects within 6 object streams
- 171 named destinations out of 1000 (max. 500000)
- 228 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 624 PDF objects out of 1000 (max. 8388607)
+ 549 compressed objects within 6 object streams
+ 183 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
