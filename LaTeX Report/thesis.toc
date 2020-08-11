@@ -22,26 +22,20 @@
 \contentsline {chapter}{\chapternumberline {4}Implementation}{9}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Tools}{9}{section.4.1}% 
 \contentsline {subsection}{\numberline {4.1.1}Programming Languages}{9}{subsection.4.1.1}% 
-\contentsline {section}{\numberline {4.2}Referencing items within this document}{12}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Equations}{12}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Inline equations}{12}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Block equations}{13}{subsection.4.3.2}% 
-\contentsline {subsubsection}{\numberline {4.3.2.1}Aligning multi-line block equations}{13}{subsubsection.4.3.2.1}% 
-\contentsline {subsection}{\numberline {4.3.3}A masochistic approach to learning to typeset mathematics in LaTeX}{14}{subsection.4.3.3}% 
-\contentsline {section}{\numberline {4.4}Figures}{14}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Consistent presentation throughout the document}{15}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Justified use of space in the document}{15}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Placement that supports and enhances the flow of the document}{16}{subsection.4.4.3}% 
-\contentsline {subsection}{\numberline {4.4.4}Avoid directly importing other peoples images}{16}{subsection.4.4.4}% 
-\contentsline {subsection}{\numberline {4.4.5}Format sub-figures in LaTeX, not in the image itself}{16}{subsection.4.4.5}% 
-\contentsline {subsection}{\numberline {4.4.6}Robust captions that can stand in isolation}{18}{subsection.4.4.6}% 
-\contentsline {subsection}{\numberline {4.4.7}Proper attribution and citation of images}{18}{subsection.4.4.7}% 
-\contentsline {section}{\numberline {4.5}Code Listings}{18}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Tables}{19}{section.4.6}% 
-\contentsline {chapter}{\chapternumberline {5}Conclusions and Future Work}{21}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Contributions}{21}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Future Work}{21}{section.5.2}% 
-\contentsline {chapter}{Bibliography}{23}{chapter*.11}% 
-\contentsline {chapter}{Appendices}{24}{section*.12}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{25}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{27}{appendix.B}% 
+\contentsline {section}{\numberline {4.2}Frameworks}{14}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}GUI Framework}{14}{subsection.4.2.1}% 
+\contentsline {section}{\numberline {4.3}Packages Used}{16}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}IDE Used}{16}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Intricacies of the Game Components}{16}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Gameplay Area}{16}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Free Play Area}{16}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Learning Area}{16}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.4}Achievements Area}{16}{subsection.4.5.4}% 
+\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{16}{section.4.6}% 
+\contentsline {chapter}{\chapternumberline {5}Conclusions and Future Work}{17}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Contributions}{17}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Future Work}{17}{section.5.2}% 
+\contentsline {chapter}{Bibliography}{19}{chapter*.6}% 
+\contentsline {chapter}{Appendices}{20}{section*.7}% 
+\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{21}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{23}{appendix.B}% 

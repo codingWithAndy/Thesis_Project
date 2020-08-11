@@ -103,24 +103,61 @@ A.~Goel. (2020) Best programming language to learn in 2020 (for job and
   \url{https://www.python.org/doc/essays/comparisons/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{overleafdocs}
+\bibitem{r_project}
 \BIBentryALTinterwordspacing
-{Overleaf}. (2020) Overleaf documentation. [Online]. Available:
-  \url{https://www.overleaf.com/learn}
+{The R Foundation}. (2020) What is r? [Online]. Available:
+  \url{https://www.r-project.org/about.html}
 \BIBentrySTDinterwordspacing
 
-\bibitem{texstackexchange}
+\bibitem{r_vs_py}
 \BIBentryALTinterwordspacing
-{Stack Overflow}. (2008) Tex stackexchange. [Online]. Available:
-  \url{https://tex.stackexchange.com}
+{Guru 99}. (2020) R vs python: What’s the difference? [Online]. Available:
+  \url{https://www.guru99.com/r-vs-python.html#:~:text=New%20libraries%20or%20tools%20are,general%20approach%20to%20data%20science.&text=Python%20is%20a%20general%2Dpurpose,and%20encompasses%20their%20specific%20language.}
 \BIBentrySTDinterwordspacing
 
-\bibitem{texnique}
+\bibitem{securitytoday}
 \BIBentryALTinterwordspacing
-A.~Ravikumar. (2019) Texnique. [Online]. Available: \url{https://texnique.xyz}
+G.~D. Maayan. (2020) The iot rundown for 2020: Stats, risks, and solutions.
+  [Online]. Available:
+  \url{https://securitytoday.com/Articles/2020/01/13/The-IoT-Rundown-for-2020.aspx?Page=1}
 \BIBentrySTDinterwordspacing
 
-\bibitem{whittle15_dragons}
-J.~Whittle. (2015) Path traced glass dragons.
+\bibitem{statista_iot}
+\BIBentryALTinterwordspacing
+{Statista}. (2020) Internet of things (iot) connected devices installed base
+  worldwide from 2015 to 2025. [Online]. Available:
+  \url{https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{web_foundation}
+\BIBentryALTinterwordspacing
+{World Wide Web Foundation}. (2020) History of the web. [Online]. Available:
+  \url{https://webfoundation.org/about/vision/history-of-the-web/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{css_history}
+\BIBentryALTinterwordspacing
+{W3C}. (2016) A brief history of css until 2016. [Online]. Available:
+  \url{https://www.w3.org/Style/CSS20/history.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{js_springboard}
+\BIBentryALTinterwordspacing
+T.~DeGroat. (2019) The history of javascript: Everything you need to know.
+  [Online]. Available:
+  \url{https://www.springboard.com/blog/history-of-javascript/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pygame_wiki}
+\BIBentryALTinterwordspacing
+{Pygame}. (2020) About. [Online]. Available:
+  \url{https://www.pygame.org/wiki/about}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pyqt_rbc}
+\BIBentryALTinterwordspacing
+{Riverbank Computing}. (2020) What is pyqt? [Online]. Available:
+  \url{https://riverbankcomputing.com/software/pyqt/intro}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

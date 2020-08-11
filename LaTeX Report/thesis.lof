@@ -9,20 +9,10 @@
 \contentsline {xchapter}{}{5}{chapter.3}% 
 \addvspace {10pt}
 \contentsline {xchapter}{}{9}{chapter.4}% 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A comparison between Java, Python and C++ to print an output to the console. \cite {py_ja_c++}\relax }}{10}{figure.caption.5}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces A screenshot of TeXnique, a game about typesetting equations.}}{14}{figure.caption.6}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces An image of many glass dragons being used to demonstrate typesetting a figure.}}{16}{figure.caption.7}% 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A demonstration of a 2x1 sub-figure layout.}}{17}{figure.caption.8}% 
-\contentsline {subfigure}{\numberline {(A.)}{\ignorespaces {Left image sub-caption.}}}{17}{subfigure.4.1}% 
-\contentsline {subfigure}{\numberline {(B.)}{\ignorespaces {Right image sub-caption.}}}{17}{subfigure.4.2}% 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces A demonstration of a 2x2 sub-figure layout.}}{17}{figure.caption.9}% 
-\contentsline {subfigure}{\numberline {(A.)}{\ignorespaces {Top-Left image sub-caption.}}}{17}{subfigure.5.1}% 
-\contentsline {subfigure}{\numberline {(B.)}{\ignorespaces {Top-Right image sub-caption.}}}{17}{subfigure.5.2}% 
-\contentsline {subfigure}{\numberline {(C.)}{\ignorespaces {Bottom-Left image sub-caption.}}}{17}{subfigure.5.3}% 
-\contentsline {subfigure}{\numberline {(D.)}{\ignorespaces {Bottom-Right image sub-caption.}}}{17}{subfigure.5.4}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A comparison between Java, Python and C++ to print an output to the console. \cite {py_ja_c++}\relax }}{12}{figure.caption.5}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{21}{chapter.5}% 
+\contentsline {xchapter}{}{17}{chapter.5}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{25}{appendix.A}% 
+\contentsline {xchapter}{}{21}{appendix.A}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{27}{appendix.B}% 
+\contentsline {xchapter}{}{23}{appendix.B}% 
