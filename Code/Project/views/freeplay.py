@@ -755,6 +755,7 @@ class FreePlay(QtWidgets.QWidget):
                 new_y_ax = 4
             
             self.MplWidget.alter_generated_features(new_X_ax, new_y_ax)
+        
         self.update_km_param_output()
 
     def generate_km_custom_data(self):

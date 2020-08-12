@@ -116,10 +116,8 @@ class KMeansGameboard(QWidget):
 
     
     def plot_data(self):
-        self.clear_canvas()
-        print(self.idx_1, self.idx_2)
         self.canvas.ax.plot(self.X[:, self.idx_1], self.X[:, self.idx_2], 'b.')
-        print("Plot data")
+        self.fig.canvas.draw()
 
 
     show_centroids = False
@@ -208,10 +206,6 @@ class KMeansGameboard(QWidget):
         self.fig.canvas.draw()
             # Need to figure out how to clear the boundaries
 
-        '''
-            self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-            self.y_pred = self.kmeans.fit_predict(self.X)
-            '''
 
     def find_cluster_centre(self):
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
@@ -270,7 +264,7 @@ class KMeansGameboard(QWidget):
         self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
                                     cluster_std=0.6, random_state=0)
 
-        self.plot_clusters(self.X)
+        self.plot_data()
 
         self.kmeans = KMeans(n_clusters=self.k, n_init=self.n_init,
                              max_iter=self.max_iter, algorithm=self.algo)
