@@ -44,6 +44,8 @@ class KMeansGameboard(QWidget):
     playerColors = ['g', 'r']
     boundaries_on = False
     game_mode = ""
+    idx_1 = 0 
+    idx_2 = 1
 
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
@@ -69,18 +71,19 @@ class KMeansGameboard(QWidget):
 
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
-        self.plot_clusters(self.X)
+        self.plot_data()
 
         self.setLayout(self.vertical_layout)
         self.cid = self.canvas.figure.canvas.mpl_connect(
             'button_press_event', self)
         
-    def plot_clusters(self, X, y=None):
-        self.canvas.ax.scatter(X[:, 0], X[:, 1], c=y)
-        self.fig.canvas.draw()
+    #def plot_clusters(self, X, y=None):
+    #    self.canvas.ax.scatter(X[:, 0], X[:, 1], c=y)
+    #    self.fig.canvas.draw()
 
     def show_predictions(self):
-        self.canvas.ax.scatter(self.X[:, 0], self.X[:, 1], c=self.y_pred)
+        self.clear_canvas()
+        self.canvas.ax.scatter(self.X[:, self.idx_1], self.X[:, self.idx_2], c=self.y_pred)
 
 
     def __call__(self, event):
@@ -113,7 +116,9 @@ class KMeansGameboard(QWidget):
 
     
     def plot_data(self):
-        self.canvas.ax.plot(self.X[:, 0], self.X[:, 1], 'k.', markersize=2)
+        self.clear_canvas()
+        print(self.idx_1, self.idx_2)
+        self.canvas.ax.plot(self.X[:, self.idx_1], self.X[:, self.idx_2], 'b.')
         print("Plot data")
 
 
@@ -124,10 +129,10 @@ class KMeansGameboard(QWidget):
             self.centroids = self.centroids[weights > weights.max() / 10]
         
         if self.show_centroids == True:
-            self.canvas.ax.scatter(self.centroids[:, 0], self.centroids[:, 1],
+            self.canvas.ax.scatter(self.centroids[:, self.idx_1], self.centroids[:, self.idx_2],
                                     marker='o', s=30, linewidths=8,
                                     color=circle_color, zorder=10, alpha=0.9)
-            self.canvas.ax.scatter(self.centroids[:, 0], self.centroids[:, 1],
+            self.canvas.ax.scatter(self.centroids[:, self.idx_1], self.centroids[:, self.idx_2],
                         marker='x', s=50, linewidths=50,
                         color=cross_color, zorder=11, alpha=1)
 
@@ -158,6 +163,20 @@ class KMeansGameboard(QWidget):
             self.plot_centroids()
         
         self.fig.canvas.draw()
+
+
+
+    def alter_generated_features(self, idx1, idx2):
+        print("KM alter data")
+        self.clear_canvas()
+        self.clear_canvas()
+
+        self.idx_1 = idx1 - 1
+        self.idx_2 = idx2 - 1
+
+        print(self.idx_1, self.idx_2)
+        self.plot_data()
+        self.fig.canvas.draw()
     
 
     # Experimenting
@@ -167,7 +186,7 @@ class KMeansGameboard(QWidget):
         self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
                                     cluster_std=0.6, random_state=0)
         
-        self.plot_clusters(self.X)
+        self.plot_data()
         self.fig.canvas.draw()
 
         # EXPERIMENT!: finding out cluster centres.
@@ -183,7 +202,7 @@ class KMeansGameboard(QWidget):
             self.plot_decision_boundaries()
         else:
             self.canvas.ax.clear()
-            self.plot_clusters(self.X)  # plot_data(self.X)
+            self.plot_data()  # plot_data(self.X)
             self.boundaries_on = False
             
         self.fig.canvas.draw()
@@ -214,7 +233,7 @@ class KMeansGameboard(QWidget):
             noisy_moons = datasets.make_moons(n_samples=n_samples, noise=.05)
             self.k = 2
 
-        self.plot_clusters(self.X)  # self.fit_model()
+        self.plot_data()  # self.fit_model()
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
         #self.make_prediction()
@@ -303,6 +322,8 @@ class KMeansGameboard(QWidget):
         self.prepopulated = False
         self.canvas.ax.set_xlim([-2, 3])
         self.canvas.ax.set_ylim([-1, 15])
+        self.idx_1 = 0
+        self.idx_2 = 1
 
         self.canvas.ax.clear()
         self.fig.canvas.draw()

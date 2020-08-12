@@ -735,6 +735,26 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfInitialisersLineEdit.setText("")
             self.maxIterationsLineEdit.setText("")
             #self.outliersRadioButton.setChecked(False) # Change to check box
+        elif combo_current_txt != "Custom":
+            if self.f1XRadioButton.isChecked():
+                new_X_ax = 1
+            elif self.f2XRadioButton.isChecked():
+                new_X_ax = 2
+            elif self.f3XRadioButton.isChecked():
+                new_X_ax = 3
+            elif self.f4XRadioButton.isChecked():
+                new_X_ax = 4
+
+            if self.f1YRadioButton.isChecked():
+                new_y_ax = 1
+            elif self.f2YRadioButton.isChecked():
+                new_y_ax = 2
+            elif self.f3YRadioButton.isChecked():
+                new_y_ax = 3
+            elif self.f4YRadioButton.isChecked():
+                new_y_ax = 4
+            
+            self.MplWidget.alter_generated_features(new_X_ax, new_y_ax)
         self.update_km_param_output()
 
     def generate_km_custom_data(self):
