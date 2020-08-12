@@ -985,7 +985,7 @@ class FreePlay(QtWidgets.QWidget):
         self.distFromCentroidLabel.setText(_translate("self", "Distance from Centroid:"))
         self.noOfIterationsLabel.setText(_translate("self", "Number of Iterations:"))
         self.dataSelectComboBox.setItemText(2, _translate("self", "Iris"))
-        self.dataSelectComboBox.setItemText(3, _translate("self", "Something Else!"))
+        self.dataSelectComboBox.setItemText(3, _translate("self", "Moons"))
 
 
     def hide_km_model_options(self):

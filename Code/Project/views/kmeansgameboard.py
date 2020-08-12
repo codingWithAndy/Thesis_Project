@@ -14,6 +14,7 @@ import matplotlib
 ##
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
+from sklearn.datasets import make_moons
 
 matplotlib.use('Qt5Agg')
 
@@ -173,7 +174,10 @@ class KMeansGameboard(QWidget):
         self.idx_2 = idx2 - 1
 
         print(self.idx_1, self.idx_2)
-        self.plot_data()
+        if self.boundaries_on:
+            self.plot_decision_boundaries()
+        else:
+            self.plot_data()
         self.fig.canvas.draw()
     
 
@@ -224,7 +228,8 @@ class KMeansGameboard(QWidget):
             self.X = iris.data
             self.y = iris.target
         elif data_option == 3:
-            noisy_moons = datasets.make_moons(n_samples=n_samples, noise=.05)
+            n_samples = 1000
+            self.X, self.y = make_moons(n_samples=100, noise=0.1)
             self.k = 2
 
         self.plot_data()  # self.fit_model()
@@ -248,7 +253,6 @@ class KMeansGameboard(QWidget):
         self.k = n_clust
 
         self.replot_kmeans()
-
         self.kmeans = KMeans(n_clusters=self.k, n_init=self.n_init, 
                              max_iter=self.max_iter, algorithm=self.algo)
         self.y_pred = self.kmeans.fit_predict(self.X)
@@ -264,18 +268,27 @@ class KMeansGameboard(QWidget):
         self.X, self.y = make_blobs(n_samples=self.data_samples, centers=self.k,
                                     cluster_std=0.6, random_state=0)
 
+        
         self.plot_data()
 
-        self.kmeans = KMeans(n_clusters=self.k, n_init=self.n_init,
-                             max_iter=self.max_iter, algorithm=self.algo)
+        my_dict = {"n_clusters": self.k, 
+                    "n_init" :self.n_init,
+                    "max_iter": self.max_iter, 
+                    "algorithm" : self.algo
+        }
+
+        # own function
+        self.kmeans = KMeans(**my_dict)
         self.y_pred = self.kmeans.fit_predict(self.X)
+        ########
 
         self.fig.canvas.draw()
 
         # EXPERIMENT!: finding out cluster centres.
         self.find_cluster_centre()
 
-    
+    #def predict_kmeans(self):
+    #  
 
     def model_predict(self):
         # Get inputted values

@@ -62,7 +62,7 @@ class LinearRegressionGameboard(QWidget):
         print("game mode:", self.game_mode)
         # create data points
         if self.game_mode == "game":
-            self.generate_data_points()
+            self.generate_data_points(self.data_option)
             self.fit_model()
         else:
             self.canvas.ax.set_xlim([-1, 1])

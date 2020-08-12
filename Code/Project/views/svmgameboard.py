@@ -79,9 +79,9 @@ class SVMGameboard(QWidget):
 
     def __call__(self, event):
         print('click', event)
-        self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-        self.y_pred = self.kmeans.fit_predict(self.X)
-        self.plot_decision_boundaries(self.kmeans, self.X)
+        #self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+        #self.y_pred = self.kmeans.fit_predict(self.X)
+        #self.plot_decision_boundaries(self.kmeans, self.X)
 
         # Plot new data points prediction.
 
