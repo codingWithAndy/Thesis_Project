@@ -5,6 +5,7 @@ from views.kmeansgameboard import KMeansGameboard
 from views.gmmgameboard import GMMGameboard
 from views.linearregressiongameboard import LinearRegressionGameboard
 from views.svmgameboard import SVMGameboard
+from views.nngameboard import NNGameboard
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
@@ -24,7 +25,7 @@ class FreePlay(QtWidgets.QWidget):
 
     model_options = ["k-means", "lda", 
                      "svm", "gmm", 
-                     "linearreg"]
+                     "linearreg", "nn"]
     current_game = ""
     current_model = ""
     previous_data_option = ""
@@ -346,9 +347,13 @@ class FreePlay(QtWidgets.QWidget):
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = LinearRegressionGameboard(self,game_mode="fp")
         elif self.fp_model == 'svm':
-            print("in else if statement for lin_reg")
+            print("in else if statement for svm")
             self.MplWidget = SVMGameboard(self)
             self.boundaryOnOffRadioButton.setChecked(True)
+        elif self.fp_model == 'nn':
+            print("in else if statement for nn")
+            self.MplWidget = NNGameboard(self)
+            #self.boundaryOnOffRadioButton.setChecked(True)
 
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -378,6 +383,8 @@ class FreePlay(QtWidgets.QWidget):
             self.fp_model = "linearreg"
         elif self.modelSelectComboBox.itemText(index) == "SVM":
             self.fp_model = "svm"
+        elif self.modelSelectComboBox.itemText(index) == "NN":
+            self.fp_model = "nn"
                 
         self.MplWidget.hide()
         #self.current_model = self.fp_model
@@ -582,6 +589,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSelectComboBox.setItemText(3, _translate("Form", "Linear Regression"))
         self.modelSelectComboBox.setItemText(4, _translate("Form", "GMM"))
         self.modelSelectComboBox.setItemText(5, _translate("Form", "SVM"))
+        self.modelSelectComboBox.setItemText(6, _translate("Form", "NN"))
 
         self.overviewDescriptionLabel.setText(_translate("Form", self.MplWidget.model_overview))
         self.modelTypeLabel.setText(_translate("Form", self.MplWidget.model_name))

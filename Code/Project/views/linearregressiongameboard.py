@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn import datasets
 from sklearn import metrics
 
-from random import randint
+
 
 matplotlib.use('Qt5Agg')
 
