@@ -404,19 +404,44 @@ selection-color: rgb(200, 200, 200)</string>
                </size>
               </property>
               <property name="title">
-               <string>Model Options:</string>
+               <string>Model:</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_2">
-               <item row="0" column="1">
-                <widget class="QLabel" name="inertiaValueLabel">
+               <item row="3" column="0">
+                <widget class="QLabel" name="outputLabel">
                  <property name="minimumSize">
                   <size>
-                   <width>350</width>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string>Output:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="noOfIterationsValueLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
                    <height>15</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%)</string>
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -426,12 +451,68 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                 </widget>
                </item>
+               <item row="4" column="1">
+                <widget class="QLabel" name="distFromCentroidValueLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="distFromCentroidLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string>Distance from Centroid:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="1">
                 <widget class="QLabel" name="predictInfoLabel">
                  <property name="minimumSize">
                   <size>
-                   <width>350</width>
+                   <width>150</width>
                    <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -470,17 +551,17 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="predictLabel">
+               <item row="3" column="1">
+                <widget class="QLabel" name="outputValueLabel">
                  <property name="minimumSize">
                   <size>
-                   <width>47</width>
+                   <width>150</width>
                    <height>15</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>150</width>
+                   <width>16777215</width>
                    <height>16777215</height>
                   </size>
                  </property>
@@ -488,25 +569,6 @@ selection-color: rgb(200, 200, 200)</string>
                   <string notr="true">background-color: rgba(0,0,0,0%);</string>
                  </property>
                  <property name="text">
-                  <string>Predict:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="distFromCentroidValueLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>350</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
                   <string/>
                  </property>
                  <property name="alignment">
@@ -514,73 +576,28 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="outputValueLabel">
+               <item row="0" column="1">
+                <widget class="QLabel" name="inertiaValueLabel">
                  <property name="minimumSize">
                   <size>
-                   <width>350</width>
+                   <width>150</width>
                    <height>15</height>
                   </size>
                  </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                  <string notr="true">background-color: rgba(0,0,0,0%)</string>
                  </property>
                  <property name="text">
                   <string/>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="outputLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Output:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <spacer name="verticalSpacer_2">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="distFromCentroidLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Distance from Centroid:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -609,131 +626,95 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="noOfIterationsValueLabel">
+               <item row="2" column="0">
+                <widget class="QLabel" name="predictLabel">
                  <property name="minimumSize">
                   <size>
-                   <width>350</width>
+                   <width>47</width>
                    <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: rgba(0,0,0,0%);</string>
                  </property>
                  <property name="text">
-                  <string/>
+                  <string>Predict:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
-               </item>
-               <item row="0" column="2">
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="dataOptionsGroupBox">
+             <widget class="QGroupBox" name="groupBox">
               <property name="minimumSize">
                <size>
                 <width>299</width>
                 <height>0</height>
                </size>
               </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
               <property name="title">
-               <string>Data Options:</string>
+               <string>Model Options:</string>
               </property>
-              <property name="flat">
-               <bool>false</bool>
-              </property>
-              <layout class="QGridLayout" name="gridLayout">
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="noOfInitialisersLineEdit">
-                 <property name="minimumSize">
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="maximumSize">
                   <size>
-                   <width>350</width>
+                   <width>150</width>
                    <height>15</height>
                   </size>
                  </property>
-                 <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string>K:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="kLineEdit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: white;</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <spacer name="horizontalSpacer_2">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
                <item row="1" column="0">
-                <widget class="QLabel" name="noOfInitialisersLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Number of Initialisers:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="maxIterationsLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Max Iterations:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
                 <widget class="QLabel" name="algorithmLabel">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
                    <height>15</height>
                   </size>
                  </property>
@@ -748,41 +729,18 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="maxIterationsLineEdit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>350</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: white;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <spacer name="verticalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="3" column="1">
+               <item row="1" column="1">
                 <widget class="QComboBox" name="algorithmComboBox">
                  <property name="minimumSize">
                   <size>
-                   <width>350</width>
+                   <width>150</width>
                    <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -806,19 +764,74 @@ selection-color: rgb(200, 200, 200)</string>
                  </item>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="noOfClustersLineEdit">
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="dataOptionsGroupBox">
+              <property name="minimumSize">
+               <size>
+                <width>299</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="title">
+               <string>Data Options:</string>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="1" column="0">
+                <widget class="QLabel" name="noDataSamplesLabel">
                  <property name="minimumSize">
                   <size>
-                   <width>350</width>
+                   <width>152</width>
                    <height>15</height>
                   </size>
                  </property>
-                 <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                 <property name="maximumSize">
+                  <size>
+                   <width>152</width>
+                   <height>16777215</height>
+                  </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: white;</string>
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string>Number of Data Samples:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="maxIterationsLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string>Max Iterations:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -830,6 +843,12 @@ selection-color: rgb(200, 200, 200)</string>
                    <height>15</height>
                   </size>
                  </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: rgba(0,0,0,0%);</string>
                  </property>
@@ -838,6 +857,116 @@ selection-color: rgb(200, 200, 200)</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="maxIterationsLineEdit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="noOfInitialisersLineEdit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="noOfInitialisersLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
+                 </property>
+                 <property name="text">
+                  <string>Number of Initialisers:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="noOfClustersLineEdit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="noDataSamplesLineEdit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>15</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: white;</string>
                  </property>
                 </widget>
                </item>
