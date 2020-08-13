@@ -220,10 +220,10 @@ class NNGameboard(QWidget):
         # from classifier game
         if self.playerID == True:
             self.canvas.ax.scatter(self.ix, self.iy,
-                                s=100, c=self.player_colours[0])
+                                   s=100, c=self.player_colours[0], edgecolors='w')
         else:
             self.canvas.ax.scatter(self.ix, self.iy,
-                                   s=100, c=self.player_colours[1])
+                                   s=100, c=self.player_colours[1], edgecolors='w')
 
         self.fig.canvas.draw()
 
