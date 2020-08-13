@@ -4,94 +4,97 @@
 <head>
     <title>Regression</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
 <body>
     <main>
-        <nav role="navigation">
-            <div id="menuToggle">
-                <!--
-                                            A fake / hidden checkbox is used as click reciever,
-                                            so you can use the :checked selector on it.
-                                            -->
-                <input type="checkbox" />
-
-                <!--
-                                            Some spans to act as a hamburger.
-                                            
-                                            They are acting like a real hamburger,
-                                            not that McDonalds stuff.
-                                            -->
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <!--
-                                            Too bad the menu has to be inside of the button
-                                            but hey, it's pure CSS magic.
-                                            -->
-                <ul id="menu">
-                    <a href="https://snappygames.co.uk/Andy/welcome.html">
-                        <li>Welcome</li>
-                    </a>
-                    <a href="#">
-                        <li>What is Machine Learning?</li>
-                    </a>
-                    <a href="#">
-                        <li>Task Driven vs Data Driven</li>
-                    </a>
-                    <a href="#">
-                        <li>Supervised and Unsupervised Learning</li>
-                    </a>
-                    <a href="https://erikterwan.com/" target="_blank">
-                        <li>Classification</li>
-                    </a>
-                    <ul>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
-                            <li>Support Vector Machines (SVM)</li>
+        <main>
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <!--
+                                                        A fake / hidden checkbox is used as click reciever,
+                                                        so you can use the :checked selector on it.
+                                                        -->
+                    <input type="checkbox" />
+            
+                    <!--
+                                                        Some spans to act as a hamburger.
+                                                        
+                                                        They are acting like a real hamburger,
+                                                        not that McDonalds stuff.
+                                                        -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            
+                    <!--
+                                                        Too bad the menu has to be inside of the button
+                                                        but hey, it's pure CSS magic.
+                                                        -->
+                    <ul id="menu">
+                        <a href="welcome.html">
+                            <li>Welcome</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
-                        <li>Nearest Neighbour</li>
+                        <a href="whatismachinelearning.html">
+                            <li>What is Machine Learning?</li>
                         </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
-                        <li>Neural Networks</li>
+                        <a href="taskdrivenvsdatadriven.html">
+                            <li>Task Driven vs Data Driven</li>
+                        </a>
+                        <a href="supervisedvsunsupervised.html">
+                            <li>Supervised and Unsupervised Learning</li>
+                        </a>
+                        <a href="classification.html">
+                            <li>Classification</li>
+                        </a>
+                        <ul>
+                            <a href="svm.html">
+                                <li>Support Vector Machines (SVM)</li>
+                            </a>
+                            <a href="knearestneighbour.html">
+                                <li>Nearest Neighbour</li>
+                            </a>
+                            <a href="neuralnetworks.html">
+                                <li>Neural Networks</li>
+                            </a>
+                        </ul>
+                        <a href="regression.html">
+                            <li>Regression</li>
+                        </a>
+                        <ul>
+                            <a href="linearregression.html">
+                                <li>Linear Regression</li>
+                            </a>
+                            <a href="logisticregression.html">
+                                <li>Logistic Regression</li>
+                            </a>
+                        </ul>
+            
+            
+                        <a href="clustering.html">
+                            <li>Clustering</li>
+                        </a>
+                        <ul>
+                            <a href="kmeans.html">
+                                <li>K-Means</li>
+                            </a>
+                            <a href="gmm.html">
+                                <li>Gaussian Mixture Model (GMM)</li>
+                            </a>
+                        </ul>
+                        <a href="associationrule.html">
+                            <li>Association Rule</li>
                         </a>
                     </ul>
-                    <a href="https://snappygames.co.uk/Andy/regression.html">
-                        <li>Regression</li>
-                    </a>
-                    <ul>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html">
-                            <li>Linear Regression</li>
-                        </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
-                        <li>Logistic Regression</li>
-                        </a>
-                    </ul>
-
-
-                    <a href="https://erikterwan.com/" target="_blank">
-                        <li>Clustering</li>
-                    </a>
-                    <ul>
-                        <a href="https://snappygames.co.uk/Andy/kmeans.html">
-                            <li>K-Means</li>
-                        </a>
-                        <a href="https://snappygames.co.uk/Andy/linearregression.html"></a>
-                        <li>Gaussian Mixture Model (GMM)</li>
-                        </a>
-                    </ul>
-                    <a href="https://erikterwan.com/">
-                        <li>Association Rule</li>
-                    </a>
-                </ul>
-            </div>
-        </nav>
+                </div>
+            </nav>
 
         <div class="container">
 
             <div class="textBackground">
-                <img class="titlePageImg" src="./Images/linearregressiontitle.png" alt="Regression Title Image" />
+                <img class="titlePageImgShort" src="./Images/regression.png" alt="Regression Title Image" />
             </div>
 
             <div class="textBackgroundLight">

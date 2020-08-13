@@ -73,6 +73,15 @@ a:active {
 .titlePageImg {
     width: 890px;
     border-radius: 25px;
+    height: 100px;
+}
+
+.titlePageImgShort {
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
 }
 
 .quote {
