@@ -160,4 +160,35 @@ T.~DeGroat. (2019) The history of javascript: Everything you need to know.
   \url{https://riverbankcomputing.com/software/pyqt/intro}
 \BIBentrySTDinterwordspacing
 
+\bibitem{data_camp_gui}
+\BIBentryALTinterwordspacing
+A.~Sharma. (2020) Introduction to gui with tkinter in python. [Online].
+  Available:
+  \url{https://www.datacamp.com/community/tutorials/gui-tkinter-python?utm_source=adwords_ppc&utm_campaignid=898687156&utm_adgroupid=48947256715&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=229765585186&utm_targetid=aud-299261629574:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1007460&gclid=Cj0KCQjwsuP5BRCoARIsAPtX_wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEALw_wcB}
+\BIBentrySTDinterwordspacing
+
+\bibitem{py_tkinter}
+\BIBentryALTinterwordspacing
+{Python Software Foundation}. (2020) Tkinter. [Online]. Available:
+  \url{https://wiki.python.org/moin/TkInter}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pycharm_get_started}
+\BIBentryALTinterwordspacing
+{PyCharm}. (2020) Get started. [Online]. Available:
+  \url{https://www.jetbrains.com/help/pycharm/quick-start-guide.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{vs_code}
+\BIBentryALTinterwordspacing
+{Microsoft}. (2020) Why did we build visual studio code? [Online]. Available:
+  \url{https://code.visualstudio.com/docs/editor/whyvscode}
+\BIBentrySTDinterwordspacing
+
+\bibitem{atom_explain}
+\BIBentryALTinterwordspacing
+{CloudApp}. (2020) A guide to atom text editor. [Online]. Available:
+  \url{https://www.getcloudapp.com/blog/how-to-use-atom-text-editor}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

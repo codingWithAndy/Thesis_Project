@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  11 AUG 2020 17:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  16 AUG 2020 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2131,7 +2131,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...line {chapter}{Appendices}{20}{section*.7}
+l.39 ...line {chapter}{Appendices}{23}{section*.7}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
@@ -2237,13 +2237,13 @@ Underfull \vbox (badness 1466) has occurred while \output is active []
 Underfull \vbox (badness 4940) has occurred while \output is active []
 
  [13]
-[14]) (./chapter/thesis_conclusion.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[14] [15]
+Underfull \vbox (badness 1466) has occurred while \output is active []
 
- [15]
-[16]) (./thesis.bbl [17
+ [16])
+(./chapter/thesis_conclusion.tex [17] [18
 
-] [18
+]) (./thesis.bbl [19] [20
 
 ]
 bibitemlist
@@ -2259,7 +2259,7 @@ Underfull \hbox (badness 1648) in paragraph at lines 83--87
 hackr . io / blog /
  []
 
-[19]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 114--117
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
@@ -2271,7 +2271,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--117
 &text = Python % 20is % 20a %
  []
 
-) (./chapter/appendix.tex [20]
+
+Underfull \hbox (badness 2662) in paragraph at lines 165--169
+[]\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
+. com / community /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
+ ppc & utm _ campaignid =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
+& utm _ keyword = &utm _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
+creative = 229765585186 &
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
+m _ loc _ interest _ ms =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
+CoARIsAPtX _
+ []
+
+
+Overfull \hbox (30.662pt too wide) in paragraph at lines 165--169
+\T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
+Lw _
+ []
+
+[22]) (./chapter/appendix.tex [23] [24
+
+]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
@@ -2281,9 +2330,7 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 (./listings/hello_world.c
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [21
-
-] [22
+) [25] [26
 
 ])
 Package minitoc Info: I0009
@@ -2291,7 +2338,7 @@ Package minitoc Info: I0009
 (minitoc)             Creating the thesis.maf file.
 \openout4 = `thesis.maf'.
 
- [23]
+ [27]
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -2318,10 +2365,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 40597 strings out of 492616
- 720632 string characters out of 6129480
- 1032965 words of memory out of 5000000
- 43475 multiletter control sequences out of 15000+600000
+ 40611 strings out of 492616
+ 720817 string characters out of 6129480
+ 1033440 words of memory out of 5000000
+ 43480 multiletter control sequences out of 15000+600000
  605173 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,92p,1337b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2334,10 +2381,10 @@ o-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (37 pages, 269142 bytes).
+Output written on thesis.pdf (41 pages, 274897 bytes).
 PDF statistics:
- 503 PDF objects out of 1000 (max. 8388607)
- 448 compressed objects within 5 object streams
- 118 named destinations out of 1000 (max. 500000)
+ 545 PDF objects out of 1000 (max. 8388607)
+ 486 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

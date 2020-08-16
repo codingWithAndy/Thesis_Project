@@ -159,9 +159,16 @@ class LearningZone(QWidget):
         else:
             msg = QMessageBox()
             msg.setWindowTitle("")
-            msg_text = "Sorry!" + \
-                "This page does not have a model in Free Play." + \
-                    "Please try another Model."
+            msg_text = "Sorry! \n" + \
+                "This page does not have a model in Free Play.\n" + \
+                "Please try another Model.\n" + \
+                "The options are:\n" + \
+                "      - SVM\n" + \
+                "      - Neural Networks\n" + \
+                "      - Linear Regression\n" + \
+                "      - K-Means\n" + \
+                "      - GMM"
+
             msg.setText(msg_text)
             x = msg.exec_()
     
