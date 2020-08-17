@@ -84,6 +84,33 @@ a:active {
     height: 100px;
 }
 
+.ImgCentreShort {
+    width: 500px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ImgCentreShortSmall {
+    width: 250px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ImgCentreShortMedium {
+    width: 350px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .quote {
     font-weight: bold;
 }

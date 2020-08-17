@@ -4,177 +4,246 @@
 <head>
     <title>Neural Network</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
-        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 
 <body>
     <main>
-        <main>
-            <nav role="navigation">
-                <div id="menuToggle">
-                    <!--
+        <nav role="navigation">
+            <div id="menuToggle">
+                <!--
                                             A fake / hidden checkbox is used as click reciever,
                                             so you can use the :checked selector on it.
                                             -->
-                    <input type="checkbox" />
+                <input type="checkbox" />
 
-                    <!--
+                <!--
                                             Some spans to act as a hamburger.
                                             
                                             They are acting like a real hamburger,
                                             not that McDonalds stuff.
                                             -->
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
 
-                    <!--
+                <!--
                                             Too bad the menu has to be inside of the button
                                             but hey, it's pure CSS magic.
                                             -->
-                    <ul id="menu">
-                        <a href="welcome.html">
-                            <li>Welcome</li>
-                        </a>
-                        <a href="whatismachinelearning.html">
-                            <li>What is Machine Learning?</li>
-                        </a>
-                        <a href="taskdrivenvsdatadriven.html">
-                            <li>Task Driven vs Data Driven</li>
-                        </a>
-                        <a href="supervisedvsunsupervised.html">
-                            <li>Supervised and Unsupervised Learning</li>
-                        </a>
-                        <a href="classification.html">
-                            <li>Classification</li>
-                        </a>
-                        <ul>
-                            <a href="svm.html">
-                                <li>Support Vector Machines (SVM)</li>
-                            </a>
-                            <a href="knearestneighbour.html">
-                            <li>Nearest Neighbour</li>
-                            </a>
-                            <a href="neuralnetworks.html">
-                            <li>Neural Networks</li>
-                            </a>
-                        </ul>
-                        <a href="regression.html">
-                            <li>Regression</li>
-                        </a>
-                        <ul>
-                            <a href="linearregression.html">
-                                <li>Linear Regression</li>
-                            </a>
-                            <a href="logisticregression.html">
-                            <li>Logistic Regression</li>
-                            </a>
-                        </ul>
-
-
-                        <a href="clustering.html">
-                            <li>Clustering</li>
-                        </a>
-                        <ul>
-                            <a href="kmeans.html">
-                                <li>K-Means</li>
-                            </a>
-                            <a href="gmm.html">
-                            <li>Gaussian Mixture Model (GMM)</li>
-                            </a>
-                        </ul>
-                        <a href="associationrule.html">
-                            <li>Association Rule</li>
-                        </a>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="container">
-
-                <div class="textBackground">
-                    <img class="titlePageImg" src="./Images/neuralnetworks.png" alt="Neural Network Title Image" />
-                </div>
-
-                <div class="textBackgroundLight">
-                    <p>
-                        Overview
-                    </p>
-                </div>
-
-                <div class="textBackground">
-                    <h2>What is a Neural Network?</h2>
-                </div>
-                <div class="textBackgroundLight">
-
-                    <p>
-                        Regression analysis is a form of predictive modelling technique which investigates the
-                        relationship between a dependent (target) and independent variable (s) (predictor). This
-                        technique gets used for forecasting, time series modelling and finding the
-                        causal effect relationship between the variables. For example, the relationship between rash
-                        driving and the number of road accidents by a driver is studied best through regression.
-                    </p>
-
-                    <p>
-                        Regression analysis is an essential tool for modelling and analysing data. Here, we fit a
-                        curve/line to the data points, in such a way that the differences between the distances of data
-                        points from the curve/line get minimised.
-                    </p>
-                </div>
-
-                <div class="textBackground">
-                    <h2>Why do we use Regression Analysis?</h2>
-                </div>
-
-                <div class="textBackgroundLight">
-                    <p>
-                        Regression analysis estimates the relationship between two or more variables. Let’s understand
-                        this with an easy example:
+                <ul id="menu">
+                    <a href="welcome.html">
+                        <li>Welcome</li>
+                    </a>
+                    <a href="whatismachinelearning.html">
+                        <li>What is Machine Learning?</li>
+                    </a>
+                    <a href="taskdrivenvsdatadriven.html">
+                        <li>Task Driven vs Data Driven</li>
+                    </a>
+                    <a href="supervisedvsunsupervised.html">
+                        <li>Supervised and Unsupervised Learning</li>
+                    </a>
+                    <a href="classification.html">
+                        <li>Classification</li>
+                    </a>
                     <ul>
-                        <li>
-                            Let’s imagine you want to estimate growth in sales of a company based on current economic
-                            conditions. You have the recent company data, which indicates that the growth in sales is
-                            around two and a half times the growth in the economy.
-                        </li>
-                        <li>Using this insight, we can predict future sales of the company based on current and past
-                            information.</li>
+                        <a href="svm.html">
+                            <li>Support Vector Machines (SVM)</li>
+                        </a>
+                        <a href="knearestneighbour.html">
+                            <li>Nearest Neighbour</li>
+                        </a>
+                        <a href="neuralnetworks.html">
+                            <li>Neural Networks</li>
+                        </a>
                     </ul>
-                    </p>
-                    <p>
-                        There are multiple benefits of using regression analysis. They are as follows:
-                    <ol>
-                        <li>It indicates the significant relationships between the dependent variable and independent
-                            variable.</li>
-                        <li>It shows the strength of the impact of multiple independent variables on a dependent
-                            variable.</li>
-                    </ol>
-                    </p>
-                    <p>
-                        Regression analysis also allows us to compare the effects of variables measured on different
-                        scales, such as the effect of price changes and the number of promotional activities. These
-                        benefits help market researchers/data analysts/data scientists to
-                        eliminate and evaluate the best set of variables to get used for building predictive models.
-                    </p>
-                </div>
+                    <a href="regression.html">
+                        <li>Regression</li>
+                    </a>
+                    <ul>
+                        <a href="linearregression.html">
+                            <li>Linear Regression</li>
+                        </a>
+                        <a href="logisticregression.html">
+                            <li>Logistic Regression</li>
+                        </a>
+                    </ul>
 
 
-                <!-- Footer -->
-                <footer>
+                    <a href="clustering.html">
+                        <li>Clustering</li>
+                    </a>
+                    <ul>
+                        <a href="kmeans.html">
+                            <li>K-Means</li>
+                        </a>
+                        <a href="gmm.html">
+                            <li>Gaussian Mixture Model (GMM)</li>
+                        </a>
+                    </ul>
+                    <a href="clustering.html">
+                        <li>Dimensionality Reduction</li>
+                    </a>
+                    <ul>
+                        <a href="pca.html">
+                            <li>PCA</li>
+                        </a>
+                        <a href="lda.html">
+                            <li>LDA</li>
+                        </a>
+                    </ul>
+                    <a href="associationrule.html">
+                        <li>Association Rule</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
 
-                    <!-- Copyright -->
-                    <div>
-                        <a href="svm.html"><i class="far fa-arrow-alt-circle-left"
-                                style="padding-left: 38%;"></i> Previous</a> <a href="regression.html"><span
-                                style="padding-left: 20px;">Next</span> <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                    <!-- Copyright -->
+        <div class="container">
 
-                </footer>
-                <!-- Footer -->
+            <div class="textBackground">
+                <img class="titlePageImg" src="./Images/neuralnetworks.png" alt="Neural Network Title Image" />
+            </div>
+
+            <div class="textBackgroundLight">
+                <p>
+                    Artificial neural networks (ANNs) are a class of artificial intelligence algorithms that emerged in the 1980s from developments in cognitive and computer science research. ANNs aims to address the different aspects or elements of learning. Such as how
+                    to learn, how to induce, and how to deduce. For such problems, ANNs can help draw conclusions from case observations and address the issues of prediction and interpretation.
+                </p>
+            </div>
+
+            <div class="textBackground">
+                <h2>What is a Neural Network?</h2>
+            </div>
+            <div class="textBackgroundLight">
+                <p>
+                    The human brain’s visual cortex (see image below) is the part of the brain that gets used to processing visual information that the person receives from the retina. The cortex will take the overall image it has received and will break it down into small
+                    segments, using edges and corners. It will then start to visualise and group features to then detect things like faces and objects, to then act according to visual information.
+                </p>
+
+                <p>
+                    <img src="./Images/visual cortex.png" class="ImgCentreShort" />
+                </p>
+
+
+                <p>
+                    ANN is a bottom-up attempt to model the functionality of the brain, which are biologically inspired, but not necessarily biologically believable. ANN’s have many different properties. These properties include having many neuron-like switching units, many
+                    weighted interconnections among groups, they are highly parallel and can be a distributed process, especially when using GPUs and have an emphasis on tunning weights automatically.
+                </p>
+                <p>
+                    The overall aim of an ANN is to classify the inputted data based on the training data and corresponding labels it gets given when training.
+                </p>
 
             </div>
-        </main>
+
+            <div class="textBackground">
+                <h2>Stages of a Neural Network</h2>
+            </div>
+
+            <div class="textBackgroundLight">
+                <p>
+                    An ANN will get made up of many different stages. These stages include a logistic unit, input layer, hidden layer or layers and an output layer. A more in-depth explanation will follow below.
+                </p>
+                <br>
+
+                <h2>Logistic Unit</h2>
+                <p>
+                    A logistic unit will consist of a logistic function. A logistic function is a function that contains the logistic regression algorithm. The logistic function is also known as a sigmoid function. A logistic function will aim set a values label to a 0 or
+                    1 based on the threshold level that has gets set (see image below).
+                </p>
+                <p>
+                    <img src="./Images/logistic function.png" class="ImgCentreShortSmall" alt="">
+                </p>
+                <p>
+                    The logistic unit will consist of input neurons, and a bias neuron is known as <img src="https://latex.codecogs.com/gif.latex?X_0" title="X_0" /> (see image below). Each neuron gets connected to all the neuron of the next stage in
+                    an ANN. Each connection between neurons has individual weights assigned to them. These individual weights are represented by the
+                    <img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" /> (Omega), and the input data is represented by <img src="https://latex.codecogs.com/gif.latex?X" title="X" />.
+                </p>
+                <p>
+                    <img src="./Images/input labels.png" class="ImgCentreShortSmall" alt=" ">
+                </p>
+                <h2>Perceptron Neural Model</h2>
+                <p>
+                    With having the logistic unit calibrated, we can then initialise the neuron model. A neuron model is a simplification of the real neurons, and its purpose is to develop an understanding of the various networks capabilities which consist of many simple
+                    units (see image below).
+                </p>
+                <p>
+                    <img src="./Images/neuron model.png" class="ImgCentreShortMedium" alt="">
+                </p>
+                <p>
+                    Within an ANN, there can be multiple layers of perceptrons, these additional layers that are not either the input or output layer get known as the hidden layer. There can be as many hidden layers, but having too many may result in overfitting of the data.
+                    Therefore it is a delicate balance between the number of layers needed and performance. The output of one layer becomes the input layer to the next layer.
+                </p>
+                <p>
+                    <img src="./Images/hidden layers.png " class="ImgCentreShortMedium" alt=" ">
+                </p>
+            </div>
+
+            <div class="textBackground">
+                <h2>Multi-Class Problem</h2>
+            </div>
+            <div class="textBackgroundLight">
+                <p>
+                    All of the previous examples have been displaying an ANN with a two-class classification problem, and this results in there being just one output layer. However, what would be required if you have a multi-class problem?
+                </p>
+                <p>
+                    Well, we would need additional output layer neurons, one for each classification. In the example below, we can see an ANN with three output classifications required. These are Sunny, Cloudy and Rain.
+                </p>
+                <p>
+                    <img src="./Images/multiclass output.png" class="ImgCentreShortMedium" alt="">
+                </p>
+                <p>
+                    The output would then represent what label the data gets assigned to (A visual representation is below).
+                </p>
+                <p>
+                    <img src="./Images/multi class labels.png" class="ImgCentreShortSmall" alt="">
+                </p>
+
+            </div>
+
+            <div class="textBackground">
+                <h2>Forward and Back Propagation</h2>
+            </div>
+            <div class="textBackgroundLight">
+                <h2>Forward Propagation</h2>
+                <p>
+                    Forward propagation is the process of the ANN learning using its own learnt features. Forward propagation uses the output data from a given function to input into the next layer. The products of the proceding node's output along with their associated
+                    weights (Omega <img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" />), become the input. These get summed and passed to the subsequent activation layer before being sent to the next node.
+                </p>
+                <h2>Back Propagation</h2>
+                <p>
+                    Once an ANN has reached the final output layer, the ANN will assess how well it has done based on the provided labels against the predicted labels. Therefore backpropagation is checking the ANN classification errors. A standard method to used to check
+                    this is gradient descent. Gradient descent will calculate the gradient loss function concerning each weight in the network. The gradient descent will then update the network's weights between each layer, and this is in an attempt to
+                    minimise the loss function.
+                </p>
+                <p>
+                    Forward propagation can get visualised as going through the ANN from left to right, feeding data from the input layer to the output layer. The output then gets checked against the training labels, and then back propagation start. This action can get visualised
+                    as going from right to left in the ANN, going back through the ANN, updating the weights in an attempt to get better predictions. This process of going forward and back through the ANN gets done multiple times, depending on the epoch
+                    value.
+                </p>
+            </div>
+
+
+            <!-- Footer -->
+            <footer>
+
+                <!-- Copyright -->
+                <div>
+                    <a href="svm.html "><i class="far fa-arrow-alt-circle-left "
+                                style="padding-left: 38%; "></i> Previous</a> <a href="regression.html "><span
+                                style="padding-left: 20px; ">Next</span> <i class="fas fa-arrow-circle-right "></i></a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+
+        </div>
+    </main>
 </body>
 
 </html>
