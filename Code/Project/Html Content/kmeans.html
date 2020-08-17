@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
@@ -189,6 +192,21 @@
 
             <div class="textBackground">
                 <h2>Link to Additional Documents</h2>
+
+                <pre class="line-numbers"><code class="language-python">
+                    from sklearn.cluster import KMeans
+                    from sklearn import datasets
+                    
+                    iris = datasets.load_iris()
+                    k = 3
+                    X = iris.data
+                    y = iris.target
+                    
+                    kmeans = KMeans(n_clusters=k, random_state=42)
+                    y_pred = kmeans.fit_predict(X)
+                </code>
+                    
+                </pre>
             </div>
             <div class="textBackgroundLight">
                 <h2></h2>
@@ -196,6 +214,7 @@
                     <p>
 
             </div>
+            
         </div>
     </main>
     </div>
