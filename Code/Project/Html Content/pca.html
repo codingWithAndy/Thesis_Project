@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>GMM</title>
+    <title>LDA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
@@ -104,76 +104,57 @@
             <div class="container">
 
                 <div class="textBackground">
-                    <img class="titlePageImg" src="./Images/gmm.png" alt="Neural Network Title Image" />
+                    <img class="titlePageImg" src="./Images/PCA title.png" alt="Neural Network Title Image" />
                 </div>
 
                 <div class="textBackgroundLight">
                     <p>
-                        Gaussian mixture models (GMM) are a probabilistic model for representing normally distributed subpopulations within an overall population. Mixture models in general don't require knowing which subpopulation a data point belongs to, allowing the model
-                        to learn the subpopulations automatically. Since subpopulation assignment is not known, this constitutes a form of unsupervised learning.
+                        Principal component analysis (PCA). Linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space. The input data is centered but not scaled for each feature before applying the SVD. It uses
+                        the LAPACK implementation of the full SVD or a randomized truncated SVD by the method of Halko et al. 2009, depending on the shape of the input data and the number of components to extract. It can also use the scipy.sparse.linalg
+                        ARPACK implementation of the truncated SVD.
                     </p>
                 </div>
 
                 <div class="textBackground">
-                    <h2>What is a GMM?</h2>
+                    <h2>What is a Dimensionality?</h2>
                 </div>
                 <div class="textBackgroundLight">
                     <p>
-                        GMM is a <b>unsupervised</b> learning model. Unlike K-Means which aims to minimise the <b>Sum of Squared Error</b>, GMM is a model based approach to data clustering. The model is described by a set of parameters, which are several.
-                        However, as a GMM is not a single Gaussian function, it is not considered a parametric model.
-                    </p>
-                    <p>
-                        GMM use a Gaussian distribution, which is also known as a normal distribution (shown below).
-                        <img src="https://latex.codecogs.com/gif.latex?\mu" title="\mu" /> (Mu) is the mean and <img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> (Sigma) is the standard deviation.
-
-                    </p>
-
-                    <p>
-                        <img src="./Images/normal dist.png" class="ImgCentreShortMedium" alt="">
-                    </p>
-                    <p>
-                        We can use a mixture of Gaussian functions to learn the distribution of the data. The distribution of the data is modelled by a set of parameters:
+                        Inputted data may have thousands or even millions of dimensions. Dimension also get referred to as attributes or features. These attributes might include:
                         <ul>
-                            <li><img src="https://latex.codecogs.com/gif.latex?k" title="k" />, the number of Gaussian functions - like K-Means and the number of <img src="https://latex.codecogs.com/gif.latex?k" title="k" /> clusters.</li>
-                            <li><img src="https://latex.codecogs.com/gif.latex?\mu" title="\mu" />, the mean of the Gaussian function.</li>
-                            <li><img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" />, the standard deviation for each gaussian function. It can also be seen as the covarience matrix <img src="https://latex.codecogs.com/gif.latex?\sum"
-                                    title="\sum" /> for each Gaussian.</li>
-                            <li><img src="https://latex.codecogs.com/gif.latex?P" title="P" />, the mixing coefficient. This is the weights for each Guassian function.</li>
+                            <li>Text or document data</li>
+                            <li>Gene expression data</li>
+                            <li>MEG brain data</li>
                         </ul>
-                        GMM are good at modelling multimodal distributions (see image below). Red curve is the R channel histogram and the blue curves are the two Gaussian functions.
+                    </p>
+                    <h2>Why Dimensionality Reduction?</h2>
+                    <p>
+                        The aim of dimensionality reduction is to reduce the dimensionality of the data while fundamentally maintaining the meaningfulness of the data. The idea is to find a low dimensionality of the data but a useful representation of it. The process of dimensionality
+                        reduction is to discove intrinsic dimensionality of the data because some high demensionality data is actually low dimensional in nature.
                     </p>
                     <p>
-                        <img src="./Images/gmm example.png" class="ImgCentreShortSmall" alt="">
-                    </p>
-                    <p>
-                        GMM is described as a weighted sum of single Gaussian functions (shown below). <img src="https://latex.codecogs.com/gif.latex?P_j" title="P_j" /> are the mixing coefficient. This is also known as the prior probability. j indicatates
-                        the jth Gaussian function within the GMM.
-                    </p>
-                    <p>
-                        <img src="./Images/gmm weighted sum.png" class="ImgCentreShortSmall" alt="">
+                        <img src="./Images/dr example.png" class="ImgCentreShort" alt="">
                     </p>
                 </div>
 
                 <div class="textBackground">
-                    <h2>The Stages of GMM</h2>
+                    <h2>The Curse of Dimensionality</h2>
                 </div>
 
                 <div class="textBackgroundLight">
                     <p>
-                        <ol>
-                            <li>
-                                Initialisation of te learning GMM parameters.
-                            </li>
-                            <li>
-                                Set the posterior probability of the learning GMM parameters.
-                            </li>
-                            <li>
-                                Updating the learning parameters.
-                            </li>
-                            <li>
-                                Repest stages 2 and 3 until the model stabalises and converges.
-                            </li>
-                        </ol>
+                        The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience. The expression
+                        was coined by Richard E. Bellman when considering problems in dynamic programming.
+                    </p>
+                    <p>
+                        Dimensionally cursed phenomena occur in domains such as numerical analysis, sampling, combinatorics, machine learning, data mining and databases. The common theme of these problems is that when the dimensionality increases, the volume of the space increases
+                        so fast that the available data become sparse. This sparsity is problematic for any method that requires statistical significance. In order to obtain a statistically sound and reliable result, the amount of data needed to support
+                        the result often grows exponentially with the dimensionality. Also, organizing and searching data often relies on detecting areas where objects form groups with similar properties; in high dimensional data, however, all objects
+                        appear to be sparse and dissimilar in many ways, which prevents common data organization strategies from being efficient.
+                    </p>
+                    <p>
+                        In a nutshell, the effiency of many algorithms depend on the number of dimensions. However, datasets can hold a lot of redundant features. For example, not all words are useful in classifying documents (and, or, the, of, ...). Distance based similarity
+                        algorithms, like K-Means and GMM, are at least linear to the number of dimensions. High dimensionality is very exspensive to store and indexing and retrieving data in high dimensional space is differcult.
                     </p>
                 </div>
 
@@ -183,9 +164,9 @@
 
                     <!-- Copyright -->
                     <div>
-                        <a href="kmeans.html"><i class="far fa-arrow-alt-circle-left"
+                        <a href="dd.html"><i class="far fa-arrow-alt-circle-left"
                                 style="padding-left: 38%;"></i>
-                            Previous</a> <a href="dd.html"><span style="padding-left: 20px;">Next</span> <i
+                            Previous</a> <a href="lda.html"><span style="padding-left: 20px;">Next</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     <!-- Copyright -->

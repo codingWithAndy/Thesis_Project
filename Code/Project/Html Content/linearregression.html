@@ -4,8 +4,7 @@
 <head>
     <title>Linear Regression</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
-        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
 <body>
@@ -13,25 +12,25 @@
         <nav role="navigation">
             <div id="menuToggle">
                 <!--
-                                                    A fake / hidden checkbox is used as click reciever,
-                                                    so you can use the :checked selector on it.
-                                                    -->
+                                            A fake / hidden checkbox is used as click reciever,
+                                            so you can use the :checked selector on it.
+                                            -->
                 <input type="checkbox" />
-        
+
                 <!--
-                                                    Some spans to act as a hamburger.
-                                                    
-                                                    They are acting like a real hamburger,
-                                                    not that McDonalds stuff.
-                                                    -->
+                                            Some spans to act as a hamburger.
+                                            
+                                            They are acting like a real hamburger,
+                                            not that McDonalds stuff.
+                                            -->
                 <span></span>
                 <span></span>
                 <span></span>
-        
+
                 <!--
-                                                    Too bad the menu has to be inside of the button
-                                                    but hey, it's pure CSS magic.
-                                                    -->
+                                            Too bad the menu has to be inside of the button
+                                            but hey, it's pure CSS magic.
+                                            -->
                 <ul id="menu">
                     <a href="welcome.html">
                         <li>Welcome</li>
@@ -70,8 +69,8 @@
                             <li>Logistic Regression</li>
                         </a>
                     </ul>
-        
-        
+
+
                     <a href="clustering.html">
                         <li>Clustering</li>
                     </a>
@@ -81,6 +80,17 @@
                         </a>
                         <a href="gmm.html">
                             <li>Gaussian Mixture Model (GMM)</li>
+                        </a>
+                    </ul>
+                    <a href="dd.html">
+                        <li>Dimensionality Reduction</li>
+                    </a>
+                    <ul>
+                        <a href="pca.html">
+                            <li>PCA</li>
+                        </a>
+                        <a href="lda.html">
+                            <li>LDA</li>
                         </a>
                     </ul>
                     <a href="associationrule.html">
@@ -109,22 +119,21 @@
             <div class="textBackgroundLight">
                 <h2>What is Linear Regression?</h2>
                 <p>
-
+                    Linear Regression aims to estimate <img src="https://latex.codecogs.com/gif.latex?\hat{y}" title="\hat{y}" /> by a linear function of the data <img src="https://latex.codecogs.com/gif.latex?x" title="x" />: <br>
+                    <img class="ImgCentreShort" src="https://latex.codecogs.com/gif.latex?\hat{y}_n&space;&plus;&space;1&space;=&space;w_0&space;&plus;&space;w_1x_n&plus;1,1&plus;w_2x_n&plus;1,2" title="\hat{y}_n + 1 = w_0 + w_1x_n+1,1+w_2x_n+1,2" />                    <br> In the image below, the example shows the inputted data is two-dimensional
+                    <img src="https://latex.codecogs.com/gif.latex?x_n&plus;1&space;=&space;(x_n&plus;1,1,x_n&plus;1,2)^T" title="x_n+1 = (x_n+1,1,x_n+1,2)^T" />, using the parameters <img src="https://latex.codecogs.com/gif.latex?w_0" title="w_0" />,
+                    <img src="https://latex.codecogs.com/gif.latex?w_1" title="w_1" />, <img src="https://latex.codecogs.com/gif.latex?w_2" title="w_2" /> as the estimates.
                 </p>
-
-                <h2></h2>
-                <p> </p>
                 <p>
-                    These are:
-                    <ul>
-                        <li>
-
-                        </li>
-                        <li>
-
-                        </li>
-                    </ul>
+                    <img src="./Images/lr 2 and 3d.png" class="ImgCentreShort" alt="">
                 </p>
+                <p>
+                    Linear Regression's formula can be generalised into <img src="https://latex.codecogs.com/gif.latex?\hat{y}_n&plus;1&space;=&space;w^Tx_n&plus;1" title="\hat{y}_n+1 = w^Tx_n+1" />. where
+                    <img src="https://latex.codecogs.com/gif.latex?w&space;=&space;(w_0,w_1,w_2,&space;...)^T,&space;x_n&plus;1&space;=&space;(1,&space;x_n&space;&plus;&space;1,1,x_n&plus;1,2,...)^T" title="w = (w_0,w_1,w_2, ...)^T, x_n+1 = (1, x_n + 1,1,x_n+1,2,...)^T"
+                    />. We add 1 to the first component of the <img src="https://latex.codecogs.com/gif.latex?x" title="x" /> data so that we can then write the linear equation as a dot product between two vectors. Also the T denotes
+                    transpose, which will turn a row vector into a column vector.
+                </p>
+
 
                 <h2>The Stages of Linear Regression</h2>
 
@@ -132,23 +141,20 @@
 
                     <ol>
                         <li>
-
+                            Select the required number of features.
                         </li>
                         <li>
+                            Select the cost function to use. The most common method used is the cost function <b>Least Mean Squares (LMS)</b>. LMS aims to minimise the sum of total errors.
+                        </li>
+                        <img src="./Images/lms.png" class="ImgCentreShort" alt="">
 
+                        <li>
+                            Selecting the required method, depending on if its non-linear, Polynomial or Gaussian basis.
                         </li>
                         <li>
-
+                            Fit the data to the model.
                         </li>
-                        <li>
-
-                        </li>
-                        <li>
-
-                        </li>
-
                     </ol>
-
                 </p>
             </div>
 
@@ -174,6 +180,19 @@
                 <p></p>
 
             </div>
+            <!-- Footer -->
+            <footer>
+
+                <!-- Copyright -->
+                <div>
+                    <a href="regression.html "><i class="far fa-arrow-alt-circle-left "
+                                style="padding-left: 38%; "></i> Previous</a> <a href="logisticregression.html "><span
+                                style="padding-left: 20px; ">Next</span> <i class="fas fa-arrow-circle-right "></i></a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
         </div>
     </main>
 </body>

@@ -111,6 +111,15 @@ a:active {
     margin-right: auto;
 }
 
+.ImgCentreShortLong {
+    width: 750px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .quote {
     font-weight: bold;
 }
