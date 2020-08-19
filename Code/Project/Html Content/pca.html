@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>LDA</title>
+    <title>PCA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
@@ -83,7 +83,7 @@
                                 <li>Gaussian Mixture Model (GMM)</li>
                             </a>
                         </ul>
-                        <a href="dd.html">
+                        <a href="dr.html">
                             <li>Dimensionality Reduction</li>
                         </a>
                         <ul>
@@ -116,46 +116,97 @@
                 </div>
 
                 <div class="textBackground">
-                    <h2>What is a Dimensionality?</h2>
+                    <h2>What is a PCA?</h2>
                 </div>
                 <div class="textBackgroundLight">
                     <p>
-                        Inputted data may have thousands or even millions of dimensions. Dimension also get referred to as attributes or features. These attributes might include:
-                        <ul>
-                            <li>Text or document data</li>
-                            <li>Gene expression data</li>
-                            <li>MEG brain data</li>
-                        </ul>
-                    </p>
-                    <h2>Why Dimensionality Reduction?</h2>
-                    <p>
-                        The aim of dimensionality reduction is to reduce the dimensionality of the data while fundamentally maintaining the meaningfulness of the data. The idea is to find a low dimensionality of the data but a useful representation of it. The process of dimensionality
-                        reduction is to discove intrinsic dimensionality of the data because some high demensionality data is actually low dimensional in nature.
+                        PCA is a linear method used to reduce data dimensionality. PCA will aim to reduce the dimensionality, removing the interrelated variables, while retaining as much as possible. Keeping as much variation possible that is present in the data set.
                     </p>
                     <p>
-                        <img src="./Images/dr example.png" class="ImgCentreShort" alt="">
+                        The dimensionality reduction is achieved by transforming the data to a new set of variables, these are called the principal components (PCs). These PCs are uncorrelated, and are ordered in a way that the first couple of PCs retains the most amount of
+                        the variation that are present in the original variables.
+                    </p>
+                    <p>
+                        <img src="./Images/pca example.png" class="ImgCentreShort" alt="">
+                    </p>
+                    <p>
+                        PCA is a decorrelation method (more on this below). PCA will linearly transform the data so that covarience values are all zeros, which in tern retains the components with the largets variences. While also getting rid of the components that have small
+                        varience, therefore achieving dimensionality reduction. The Eigenvectors (more below) correspond to the different pricipal components.
+                    </p>
+                    <p>
+                        <img src="./Images/pca reduction.png" class="ImgCentreShort" alt="">
+                    </p>
+                    <h2>Covarience Matrix</h2>
+                    <p>
+                        Slides 8 - 13
+                    </p>
+                    <p>
+                        <img src="./Images/covarience example.png" class="ImgCentreShort" alt="">
+                    </p>
+                    <h2>Eigenvectors and Eigenvalues</h2>
+                    <p>
+                        Covariance matrix defines both the spread (variance), and the orientation (covariance) of the data. The vector that points into the direction of the largest spread of the data is the eigenvector with the largest eigenvalue. This eigenvalue equals the
+                        spread (variance) in this direction (defined by the corresponding eigenvector). If the covariance matrix of our data is a diagonal matrix, such that the covariances are zero, then this means that the variances must be equal to
+                        the eigenvalues <img src="https://latex.codecogs.com/gif.latex?\lambda" title="\lambda" />.
+                    </p>
+                    <p>
+                        <img src="./Images/eigen vector and values.png" class="ImgCentreShort" alt="">
+                    </p>
+                    <p>
+                        If the covariance matrix is not diagonal, such that the covariances are not zero. The eigenvalues still represent the variance magnitude in the direction of the largest spread of the data. The variance components of the covariance matrix still represent
+                        the variance magnitude in the direction of the x-axis and y-axis. But since the data is not axis aligned, these values are not the same anymore.
+                    </p>
+                    <p>
+                        <img src="./Images/eigen vec images 2.png" class="ImgCentreShort" alt="">
                     </p>
                 </div>
 
                 <div class="textBackground">
-                    <h2>The Curse of Dimensionality</h2>
+                    <h2>The Stages of PCA Dimensionality Reduction</h2>
                 </div>
 
                 <div class="textBackgroundLight">
                     <p>
-                        The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience. The expression
-                        was coined by Richard E. Bellman when considering problems in dynamic programming.
+                        There are three main steps to PCA dimensionality reduction. These are:
+                        <ol>
+                            <li>PCA will list the eigenvalues in descending order</li>
+                            <li>It will then set a threshold and remove principal components that have small variances (small eigenvalues)</li>
+                            <li>
+                                The data is then projected back with reduced dimensionality.
+                            </li>
+                        </ol>
+
+
+
+                    </p>
+                    <p style="text-align: center;">
+                        <img src="./Images/varience table.png" class="ImgCentreShort" alt=""> This table shows where the cut off area of PCs should take place.
+                    </p>
+                    <h2>SVD and PCA</h2>
+                    <p>
+                        For any Matrix <img src="https://latex.codecogs.com/gif.latex?X" title="X" />
                     </p>
                     <p>
-                        Dimensionally cursed phenomena occur in domains such as numerical analysis, sampling, combinatorics, machine learning, data mining and databases. The common theme of these problems is that when the dimensionality increases, the volume of the space increases
-                        so fast that the available data become sparse. This sparsity is problematic for any method that requires statistical significance. In order to obtain a statistically sound and reliable result, the amount of data needed to support
-                        the result often grows exponentially with the dimensionality. Also, organizing and searching data often relies on detecting areas where objects form groups with similar properties; in high dimensional data, however, all objects
-                        appear to be sparse and dissimilar in many ways, which prevents common data organization strategies from being efficient.
+                        <img src="./Images/USV.png" class="ImgCentreShort" alt="">
                     </p>
                     <p>
-                        In a nutshell, the effiency of many algorithms depend on the number of dimensions. However, datasets can hold a lot of redundant features. For example, not all words are useful in classifying documents (and, or, the, of, ...). Distance based similarity
-                        algorithms, like K-Means and GMM, are at least linear to the number of dimensions. High dimensionality is very exspensive to store and indexing and retrieving data in high dimensional space is differcult.
+                        <ul>
+                            <li>Data <img src="https://latex.codecogs.com/gif.latex?X" title="X" />, is one row per data point. The data is zero-centred.</li>
+                            <li><img src="https://latex.codecogs.com/gif.latex?US" title="US" /> gives coordinates of rows of <img src="https://latex.codecogs.com/gif.latex?X" title="X" /> in the space of principle components.</li>
+                            <li><img src="https://latex.codecogs.com/gif.latex?S" title="S" /> is diagagonal,
+                                <img src="https://latex.codecogs.com/gif.latex?S_k&space;>&space;S_k&plus;1" title="S_k > S_k+1" /> is the
+                                <img src="https://latex.codecogs.com/gif.latex?k^{th}" title="k^{th}" /> largest eigenvalue.</li>
+                            <li>Rows of <img src="https://latex.codecogs.com/gif.latex?V^T" title="V^T" /> are the unit length of the eigenvectors.</li>
+                        </ul>
+
                     </p>
+                    <p>
+                        PCA dimensionality reduction is setting “noise” to zero to achieve reduced dimensionality.
+                    </p>
+                    <p>
+                        <img src="./Images/USV2.png" class="ImgCentreShort" alt="">
+                    </p>
+
                 </div>
 
 
@@ -164,7 +215,7 @@
 
                     <!-- Copyright -->
                     <div>
-                        <a href="dd.html"><i class="far fa-arrow-alt-circle-left"
+                        <a href="dr.html"><i class="far fa-arrow-alt-circle-left"
                                 style="padding-left: 38%;"></i>
                             Previous</a> <a href="lda.html"><span style="padding-left: 20px;">Next</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>

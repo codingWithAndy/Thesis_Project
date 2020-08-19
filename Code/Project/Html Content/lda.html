@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LDA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <main>
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <!--
+                                            A fake / hidden checkbox is used as click reciever,
+                                            so you can use the :checked selector on it.
+                                            -->
+                    <input type="checkbox" />
+
+                    <!--
+                                            Some spans to act as a hamburger.
+                                            
+                                            They are acting like a real hamburger,
+                                            not that McDonalds stuff.
+                                            -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <!--
+                                            Too bad the menu has to be inside of the button
+                                            but hey, it's pure CSS magic.
+                                            -->
+                    <ul id="menu">
+                        <a href="welcome.html">
+                            <li>Welcome</li>
+                        </a>
+                        <a href="whatismachinelearning.html">
+                            <li>What is Machine Learning?</li>
+                        </a>
+                        <a href="taskdrivenvsdatadriven.html">
+                            <li>Task Driven vs Data Driven</li>
+                        </a>
+                        <a href="supervisedvsunsupervised.html">
+                            <li>Supervised and Unsupervised Learning</li>
+                        </a>
+                        <a href="classification.html">
+                            <li>Classification</li>
+                        </a>
+                        <ul>
+                            <a href="svm.html">
+                                <li>Support Vector Machines (SVM)</li>
+                            </a>
+                            <a href="knearestneighbour.html">
+                                <li>Nearest Neighbour</li>
+                            </a>
+                            <a href="neuralnetworks.html">
+                                <li>Neural Networks</li>
+                            </a>
+                        </ul>
+                        <a href="regression.html">
+                            <li>Regression</li>
+                        </a>
+                        <ul>
+                            <a href="linearregression.html">
+                                <li>Linear Regression</li>
+                            </a>
+                            <a href="logisticregression.html">
+                                <li>Logistic Regression</li>
+                            </a>
+                        </ul>
+
+
+                        <a href="clustering.html">
+                            <li>Clustering</li>
+                        </a>
+                        <ul>
+                            <a href="kmeans.html">
+                                <li>K-Means</li>
+                            </a>
+                            <a href="gmm.html">
+                                <li>Gaussian Mixture Model (GMM)</li>
+                            </a>
+                        </ul>
+                        <a href="dr.html">
+                            <li>Dimensionality Reduction</li>
+                        </a>
+                        <ul>
+                            <a href="pca.html">
+                                <li>PCA</li>
+                            </a>
+                            <a href="lda.html">
+                                <li>LDA</li>
+                            </a>
+                        </ul>
+                        <a href="associationrule.html">
+                            <li>Association Rule</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container">
+
+                <div class="textBackground">
+                    <img class="titlePageImg" src="./Images/PCA title.png" alt="Neural Network Title Image" />
+                </div>
+
+                <div class="textBackgroundLight">
+                    <p>
+                        Linear discriminant analysis is used as a tool for classification, dimension reduction, and data visualization. It has been around for quite some time now. Despite its simplicity, LDA often produces robust, decent, and interpretable classification results.
+                        When tackling real-world classification problems, LDA is often the first and benchmarking method before other more complicated and flexible ones are employed.
+                    </p>
+                </div>
+
+                <div class="textBackground">
+                    <h2>What is a LDA?</h2>
+                </div>
+                <div class="textBackgroundLight">
+                    <p>
+                        Before we can start looking into what LDA is and what it does, we first need to figure out what a good projection is.
+                    </p>
+                    <h2>What is a Good Projection?</h2>
+                    <p>
+                        A good projection will reduce the dimensionality but will also preserve the classes seperability. For example (See image below), two possible projections are avaiable to turn the 2D into 1D, the blue and purple lines. However, projecting the data points
+                        onto the blue axis will result in the two classes overlapping each other. On the other hand, projecting onto the purple axis will result in the two classes being well seperated.
+                    </p>
+                    <p>
+                        <img src="./Images/good prejection.png" class="ImgCentreShortSmall" alt="">
+                    </p>
+                    <p>
+                        The distance between the classes centroids is useful information to help us with this, along with the within class distance. Allowing us to be able to project the data and keeping the centroids as seperate as possible but also keeping all the same class
+                        data as close together as possible.
+                    </p>
+                    <p>
+                        <img src="./Images/centroid distance lda.png" class="ImgCentreShortSmall" alt=""> <img src="./Images/in class lda.png" class="ImgCentreShortSmall" alt="">
+                    </p>
+                    <p>
+                        LDA finds the most discriminant projection by maximising the between-class distance and by minimising within-class distance. Thus, perform dimensionality reduction while preserving as much of the class discriminatory information as possible.
+                    </p>
+                </div>
+
+                <div class="textBackground">
+                    <h2>The Stages of LDA Dimensionality Reduction</h2>
+                </div>
+
+                <div class="textBackgroundLight">
+                    <p>
+                        There are few steps to LDA's dimensionality reduction. These are: Slides 9 - 12
+                        <ol>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+
+                <div class="textBackground">
+                    <h2>LDA in Action!</h2>
+                </div>
+
+                <div class="textBackgroundLight">
+                    <p>
+                        <ul>
+                            <li><b>Bankruptcy prediction</b>: Edward Altman’s 1968 model predicts the probability of company bankruptcy using trained LDA coefficients. The accuracy is said to be between 80% and 90%, evaluated over 31 years of data.</li>
+                            <li><b>Facial recognition</b>: While features learned from Principal Component Analysis (PCA) are called Eigenfaces, those learned from LDA are called Fisherfaces, named after the statistician, Sir Ronald Fisher. We explain this
+                                connection later.
+                            </li>
+                        </ul>
+                    </p>
+
+
+                </div>
+
+                <!-- Footer -->
+                <footer>
+
+                    <!-- Copyright -->
+                    <div>
+                        <a href="pca.html"><i class="far fa-arrow-alt-circle-left"
+                                style="padding-left: 38%;"></i>
+                            Previous</a> <a href="associationrule.html"><span style="padding-left: 20px;">Next</span> <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    <!-- Copyright -->
+
+                </footer>
+                <!-- Footer -->
+
+            </div>
+        </main>
+</body>
+
+</html>
