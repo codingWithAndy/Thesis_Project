@@ -119,8 +119,12 @@ class MainMenu(QtWidgets.QWidget):
         self.playButton.clicked.connect(self.load_main_gamescreen)
         self.learningZoneButton.clicked.connect(self.load_learning_zone)
         self.freePlayButton.clicked.connect(self.freeplay)
+        self.awardsZoneButton.clicked.connect(self.load_awards_zone)
 
         self.retranslateUi()
+
+    def load_awards_zone(self):
+        self.switch_window.emit('comingsoonscreen,mainmenu')
 
     def load_main_gamescreen(self):
         self.switch_window.emit('maingamescreen,mainmenu')

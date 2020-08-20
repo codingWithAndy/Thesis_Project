@@ -12,6 +12,7 @@ from views.splashscreen import SplashScreen
 from views.quiz import Quiz
 from views.freeplay import FreePlay
 from views.maingamescreen import MainGameScreen
+from views.comingsoon import ComingSoonScreen
 
 
 
@@ -46,6 +47,12 @@ class Controller:
         # show_mainmenu This is needed to connect between the windows
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
+
+    def show_coming_soon_screen(self):
+        self.coming_soon_screen = ComingSoonScreen()
+        # show_mainmenu This is needed to connect between the windows
+        self.coming_soon_screen.switch_window.connect(self.choose_window)
+        self.coming_soon_screen.show()
 
 
     def show_freeplay(self, model_choice=""):
@@ -89,6 +96,9 @@ class Controller:
             self.freeplay.close()
         elif window_options[1] == "maingamescreen":
             self.maingamescreen.close()
+        elif window_options[1] == "comingsoonscreen":
+            self.coming_soon_screen.close()
+            
 
         if window_options[0] == "mainmenu":
             self.show_mainmenu()
@@ -105,6 +115,8 @@ class Controller:
                 self.show_freeplay()
         elif window_options[0] == "maingamescreen":
             self.show_gamescreen()
+        elif window_options[0] == "comingsoonscreen":
+            self.show_coming_soon_screen()
         #else:
         #    self.show_splashscreen()
 

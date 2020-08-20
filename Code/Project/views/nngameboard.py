@@ -181,8 +181,12 @@ class NNGameboard(QWidget):
             sample_preds = (sample_preds > 0.5).astype(np.int32)
             
 
-        a1 = np.sum(self.grid_preds >= 0.5) / (self.res**2)
-        a0 = 1. - a1
+        self.a1 = np.sum(self.grid_preds >= 0.5) / (self.res**2)
+        self.a0 = 1. - self.a1
+
+        self.territory = 'Territory {} | {}'.format((round(self.a0, 2) * 100), (round(self.a1, 2) * 100))
+        print('Territory {} | {}'.format(self.a0, self.a1))
+        print(self.territory)
 
         self.game_turn += 1
         self.game_player = self.game_turn % self.num_players

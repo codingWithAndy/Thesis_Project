@@ -3,8 +3,7 @@
 <head>
     <title>Supervised vs Unsupervised</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
-        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
 <body>
@@ -12,25 +11,25 @@
         <nav role="navigation">
             <div id="menuToggle">
                 <!--
-                                                    A fake / hidden checkbox is used as click reciever,
-                                                    so you can use the :checked selector on it.
-                                                    -->
+                                            A fake / hidden checkbox is used as click reciever,
+                                            so you can use the :checked selector on it.
+                                            -->
                 <input type="checkbox" />
-        
+
                 <!--
-                                                    Some spans to act as a hamburger.
-                                                    
-                                                    They are acting like a real hamburger,
-                                                    not that McDonalds stuff.
-                                                    -->
+                                            Some spans to act as a hamburger.
+                                            
+                                            They are acting like a real hamburger,
+                                            not that McDonalds stuff.
+                                            -->
                 <span></span>
                 <span></span>
                 <span></span>
-        
+
                 <!--
-                                                    Too bad the menu has to be inside of the button
-                                                    but hey, it's pure CSS magic.
-                                                    -->
+                                            Too bad the menu has to be inside of the button
+                                            but hey, it's pure CSS magic.
+                                            -->
                 <ul id="menu">
                     <a href="welcome.html">
                         <li>Welcome</li>
@@ -69,8 +68,8 @@
                             <li>Logistic Regression</li>
                         </a>
                     </ul>
-        
-        
+
+
                     <a href="clustering.html">
                         <li>Clustering</li>
                     </a>
@@ -80,6 +79,17 @@
                         </a>
                         <a href="gmm.html">
                             <li>Gaussian Mixture Model (GMM)</li>
+                        </a>
+                    </ul>
+                    <a href="dr.html">
+                        <li>Dimensionality Reduction</li>
+                    </a>
+                    <ul>
+                        <a href="pca.html">
+                            <li>PCA</li>
+                        </a>
+                        <a href="lda.html">
+                            <li>LDA</li>
                         </a>
                     </ul>
                     <a href="associationrule.html">
@@ -114,8 +124,7 @@
                     Supervised machine learning is the term used when the dataset provided has labels.
                 </p>
                 <p>
-                    There are many different types of supervised learning algorithms which can get split into two main
-                    categories.
+                    There are many different types of supervised learning algorithms which can get split into two main categories.
                 </p>
                 <p>
                     These are:
@@ -137,12 +146,13 @@
                             </div>
                         </ul>
 
-                    <li><b>Classification</b>:</li>
-                    <ul>
-                        <li>k-Nearest Neighbours (kNN);</li>
-                        <li>Support Vector Machines (SVMs);</li>
-                        <li>Decision Trees; Neural Networks.</li>
-                    </ul>
+                        <li><b>Classification</b>:</li>
+                        <ul>
+                            <li>k-Nearest Neighbours (kNN);</li>
+                            <li>Support Vector Machines (SVMs);</li>
+                            <li>Decision Trees;</li>
+                            <li>Neural Networks (ANN).</li>
+                        </ul>
                 </ul>
                 <p></p>
             </div>
@@ -152,52 +162,50 @@
                 <h2>Unsupervised Learning</h2>
 
                 <p>
-                    Unsupervised machine learning is the term used when the dataset provided has no labels. The aim of
-                    the unsupervised models is then to gain insights, from the data, without a teacher.
+                    Unsupervised machine learning is the term used when the dataset provided has no labels. The aim of the unsupervised models is then to gain insights, from the data, without a teacher.
                 </p>
                 <p>
-                    There are many different types of unsupervised learning algorithms which can get split into four
-                    main categories.</br>
+                    There are many different types of unsupervised learning algorithms which can get split into four main categories.</br>
                     These are:
-                <ul>
-                    <li><b>Clustering</b>:</li>
                     <ul>
-                        <div style="width: 50%; float:left;">
-                            <li>K-Means; </li>
-                            <li>DBSCAN;</li>
-                        </div>
-                        <div style="width: 50%; float:right;">
-                            <li>Hierarchical Cluster Analysis (HCA); </li>
-                            <li>Gaussian Mixture Model (GMM).</li>
-                        </div>
+                        <li><b>Clustering</b>:</li>
+                        <ul>
+                            <div style="width: 50%; float:left;">
+                                <li>K-Means; </li>
+                                <li>DBSCAN;</li>
+                            </div>
+                            <div style="width: 50%; float:right;">
+                                <li>Hierarchical Cluster Analysis (HCA); </li>
+                                <li>Gaussian Mixture Model (GMM).</li>
+                            </div>
 
+                        </ul>
+                        <li><b>Anomaly Detection and Novelty Detection</b>:</li>
+                        <ul>
+
+                            <li>One-class SVM;</li>
+                            <li>Isolation Forrest.</li>
+
+                        </ul>
+
+
+                        <li><b>Visualisation and Dimensionality Reduction</b>:</li>
+                        <ul>
+                            <div style="width: 50%; float:left;">
+                                <li>Component Analysis (PCA);</li>
+                                <li>Kernel PCA;</li>
+                            </div>
+                            <div style="width: 50%; float:right;">
+                                <li>Locally Linear Embedding (LLE); </li>
+                                <li>t-Distributed Stochastic Neighbour Embedding (t-SNE).</li>
+                            </div>
+                        </ul>
+                        <li><b>Association Rule Learning</b>:</li>
+                        <ul>
+                            <li>Apriori;</li>
+                            <li>Eclat.</li>
+                        </ul>
                     </ul>
-                    <li><b>Anomaly Detection and Novelty Detection</b>:</li>
-                    <ul>
-
-                        <li>One-class SVM;</li>
-                        <li>Isolation Forrest.</li>
-
-                    </ul>
-
-
-                    <li><b>Visualisation and Dimensionality Reduction</b>:</li>
-                    <ul>
-                        <div style="width: 50%; float:left;">
-                            <li>Component Analysis (PCA);</li>
-                            <li>Kernel PCA;</li>
-                        </div>
-                        <div style="width: 50%; float:right;">
-                            <li>Locally Linear Embedding (LLE); </li>
-                            <li>t-Distributed Stochastic Neighbour Embedding (t-SNE).</li>
-                        </div>
-                    </ul>
-                    <li><b>Association Rule Learning</b>:</li>
-                    <ul>
-                        <li>Apriori;</li>
-                        <li>Eclat.</li>
-                    </ul>
-                </ul>
                 </p>
             </div>
 

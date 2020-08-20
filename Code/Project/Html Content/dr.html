@@ -9,172 +9,171 @@
 
 <body>
     <main>
-        <main>
-            <nav role="navigation">
-                <div id="menuToggle">
-                    <!--
+        <nav role="navigation">
+            <div id="menuToggle">
+                <!--
                                             A fake / hidden checkbox is used as click reciever,
                                             so you can use the :checked selector on it.
                                             -->
-                    <input type="checkbox" />
+                <input type="checkbox" />
 
-                    <!--
+                <!--
                                             Some spans to act as a hamburger.
                                             
                                             They are acting like a real hamburger,
                                             not that McDonalds stuff.
                                             -->
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
 
-                    <!--
+                <!--
                                             Too bad the menu has to be inside of the button
                                             but hey, it's pure CSS magic.
                                             -->
-                    <ul id="menu">
-                        <a href="welcome.html">
-                            <li>Welcome</li>
+                <ul id="menu">
+                    <a href="welcome.html">
+                        <li>Welcome</li>
+                    </a>
+                    <a href="whatismachinelearning.html">
+                        <li>What is Machine Learning?</li>
+                    </a>
+                    <a href="taskdrivenvsdatadriven.html">
+                        <li>Task Driven vs Data Driven</li>
+                    </a>
+                    <a href="supervisedvsunsupervised.html">
+                        <li>Supervised and Unsupervised Learning</li>
+                    </a>
+                    <a href="classification.html">
+                        <li>Classification</li>
+                    </a>
+                    <ul>
+                        <a href="svm.html">
+                            <li>Support Vector Machines (SVM)</li>
                         </a>
-                        <a href="whatismachinelearning.html">
-                            <li>What is Machine Learning?</li>
+                        <a href="knearestneighbour.html">
+                            <li>Nearest Neighbour</li>
                         </a>
-                        <a href="taskdrivenvsdatadriven.html">
-                            <li>Task Driven vs Data Driven</li>
-                        </a>
-                        <a href="supervisedvsunsupervised.html">
-                            <li>Supervised and Unsupervised Learning</li>
-                        </a>
-                        <a href="classification.html">
-                            <li>Classification</li>
-                        </a>
-                        <ul>
-                            <a href="svm.html">
-                                <li>Support Vector Machines (SVM)</li>
-                            </a>
-                            <a href="knearestneighbour.html">
-                                <li>Nearest Neighbour</li>
-                            </a>
-                            <a href="neuralnetworks.html">
-                                <li>Neural Networks</li>
-                            </a>
-                        </ul>
-                        <a href="regression.html">
-                            <li>Regression</li>
-                        </a>
-                        <ul>
-                            <a href="linearregression.html">
-                                <li>Linear Regression</li>
-                            </a>
-                            <a href="logisticregression.html">
-                                <li>Logistic Regression</li>
-                            </a>
-                        </ul>
-
-
-                        <a href="clustering.html">
-                            <li>Clustering</li>
-                        </a>
-                        <ul>
-                            <a href="kmeans.html">
-                                <li>K-Means</li>
-                            </a>
-                            <a href="gmm.html">
-                                <li>Gaussian Mixture Model (GMM)</li>
-                            </a>
-                        </ul>
-                        <a href="dr.html">
-                            <li>Dimensionality Reduction</li>
-                        </a>
-                        <ul>
-                            <a href="pca.html">
-                                <li>PCA</li>
-                            </a>
-                            <a href="lda.html">
-                                <li>LDA</li>
-                            </a>
-                        </ul>
-                        <a href="associationrule.html">
-                            <li>Association Rule</li>
+                        <a href="neuralnetworks.html">
+                            <li>Neural Networks</li>
                         </a>
                     </ul>
-                </div>
-            </nav>
-
-            <div class="container">
-
-                <div class="textBackground">
-                    <img class="titlePageImg" src="./Images/dimensionality reduction title.png" alt="Neural Network Title Image" />
-                </div>
-
-                <div class="textBackgroundLight">
-                    <p>
-                        Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close
-                        to its intrinsic dimension.
-                    </p>
-                </div>
-
-                <div class="textBackground">
-                    <h2>What is a Dimensionality?</h2>
-                </div>
-                <div class="textBackgroundLight">
-                    <p>
-                        Inputted data may have thousands or even millions of dimensions. Dimension also get referred to as attributes or features. These attributes might include:
-                        <ul>
-                            <li>Text or document data</li>
-                            <li>Gene expression data</li>
-                            <li>MEG brain data</li>
-                        </ul>
-                    </p>
-                    <h2>Why Dimensionality Reduction?</h2>
-                    <p>
-                        The aim of dimensionality reduction is to reduce the dimensionality of the data while fundamentally maintaining the meaningfulness of the data. The idea is to find a low dimensionality of the data but a useful representation of it. The process of dimensionality
-                        reduction is to discove intrinsic dimensionality of the data because some high demensionality data is actually low dimensional in nature.
-                    </p>
-                    <p>
-                        <img src="./Images/dr example.png" class="ImgCentreShort" alt="">
-                    </p>
-                </div>
-
-                <div class="textBackground">
-                    <h2>The Curse of Dimensionality</h2>
-                </div>
-
-                <div class="textBackgroundLight">
-                    <p>
-                        The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience. The expression
-                        was coined by Richard E. Bellman when considering problems in dynamic programming.
-                    </p>
-                    <p>
-                        Dimensionally cursed phenomena occur in domains such as numerical analysis, sampling, combinatorics, machine learning, data mining and databases. The common theme of these problems is that when the dimensionality increases, the volume of the space increases
-                        so fast that the available data become sparse. This sparsity is problematic for any method that requires statistical significance. In order to obtain a statistically sound and reliable result, the amount of data needed to support
-                        the result often grows exponentially with the dimensionality. Also, organizing and searching data often relies on detecting areas where objects form groups with similar properties; in high dimensional data, however, all objects
-                        appear to be sparse and dissimilar in many ways, which prevents common data organization strategies from being efficient.
-                    </p>
-                    <p>
-                        In a nutshell, the effiency of many algorithms depend on the number of dimensions. However, datasets can hold a lot of redundant features. For example, not all words are useful in classifying documents (and, or, the, of, ...). Distance based similarity
-                        algorithms, like K-Means and GMM, are at least linear to the number of dimensions. High dimensionality is very exspensive to store and indexing and retrieving data in high dimensional space is differcult.
-                    </p>
-                </div>
+                    <a href="regression.html">
+                        <li>Regression</li>
+                    </a>
+                    <ul>
+                        <a href="linearregression.html">
+                            <li>Linear Regression</li>
+                        </a>
+                        <a href="logisticregression.html">
+                            <li>Logistic Regression</li>
+                        </a>
+                    </ul>
 
 
-                <!-- Footer -->
-                <footer>
+                    <a href="clustering.html">
+                        <li>Clustering</li>
+                    </a>
+                    <ul>
+                        <a href="kmeans.html">
+                            <li>K-Means</li>
+                        </a>
+                        <a href="gmm.html">
+                            <li>Gaussian Mixture Model (GMM)</li>
+                        </a>
+                    </ul>
+                    <a href="dr.html">
+                        <li>Dimensionality Reduction</li>
+                    </a>
+                    <ul>
+                        <a href="pca.html">
+                            <li>PCA</li>
+                        </a>
+                        <a href="lda.html">
+                            <li>LDA</li>
+                        </a>
+                    </ul>
+                    <a href="associationrule.html">
+                        <li>Association Rule</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
 
-                    <!-- Copyright -->
-                    <div>
-                        <a href="gmm.html"><i class="far fa-arrow-alt-circle-left"
+        <div class="container">
+
+            <div class="textBackground">
+                <img class="titlePageImg" src="./Images/dimensionality reduction title.png" alt="Neural Network Title Image" />
+            </div>
+
+            <div class="textBackgroundLight">
+                <p>
+                    Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close
+                    to its intrinsic dimension.
+                </p>
+            </div>
+
+            <div class="textBackground">
+                <h2>What is a Dimensionality?</h2>
+            </div>
+            <div class="textBackgroundLight">
+                <p>
+                    Inputted data may have thousands or even millions of dimensions. Dimension also get referred to as attributes or features. These attributes might include:
+                    <ul>
+                        <li>Text or document data</li>
+                        <li>Gene expression data</li>
+                        <li>MEG brain data</li>
+                    </ul>
+                </p>
+                <h2>Why Dimensionality Reduction?</h2>
+                <p>
+                    The aim of dimensionality reduction is to reduce the dimensionality of the data while fundamentally maintaining the meaningfulness of the data. The idea is to find a low dimensionality of the data but a useful representation of it. The process of dimensionality
+                    reduction is to discove intrinsic dimensionality of the data because some high demensionality data is actually low dimensional in nature.
+                </p>
+                <p>
+                    <img src="./Images/dr example.png" class="ImgCentreShort" alt="">
+                </p>
+            </div>
+
+            <div class="textBackground">
+                <h2>The Curse of Dimensionality</h2>
+            </div>
+
+            <div class="textBackgroundLight">
+                <p>
+                    The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience. The expression
+                    was coined by Richard E. Bellman when considering problems in dynamic programming.
+                </p>
+                <p>
+                    Dimensionally cursed phenomena occur in domains such as numerical analysis, sampling, combinatorics, machine learning, data mining and databases. The common theme of these problems is that when the dimensionality increases, the volume of the space increases
+                    so fast that the available data become sparse. This sparsity is problematic for any method that requires statistical significance. In order to obtain a statistically sound and reliable result, the amount of data needed to support the
+                    result often grows exponentially with the dimensionality. Also, organizing and searching data often relies on detecting areas where objects form groups with similar properties; in high dimensional data, however, all objects appear
+                    to be sparse and dissimilar in many ways, which prevents common data organization strategies from being efficient.
+                </p>
+                <p>
+                    In a nutshell, the effiency of many algorithms depend on the number of dimensions. However, datasets can hold a lot of redundant features. For example, not all words are useful in classifying documents (and, or, the, of, ...). Distance based similarity
+                    algorithms, like K-Means and GMM, are at least linear to the number of dimensions. High dimensionality is very exspensive to store and indexing and retrieving data in high dimensional space is differcult.
+                </p>
+            </div>
+
+
+            <!-- Footer -->
+            <footer>
+
+                <!-- Copyright -->
+                <div>
+                    <a href="gmm.html"><i class="far fa-arrow-alt-circle-left"
                                 style="padding-left: 38%;"></i>
                             Previous</a> <a href="pca.html"><span style="padding-left: 20px;">Next</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                    <!-- Copyright -->
+                </div>
+                <!-- Copyright -->
 
-                </footer>
-                <!-- Footer -->
+            </footer>
+            <!-- Footer -->
 
-            </div>
-        </main>
+        </div>
+    </main>
 </body>
 
 </html>
