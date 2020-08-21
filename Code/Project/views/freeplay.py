@@ -262,7 +262,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsHSplit.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_5.addLayout(self.modelOptionsHSplit)  # Adding Model options to 
         
-        self.data_options_setup() ## Needs removing at a later date
+        #self.data_options_setup() ## Needs removing at a later date
         
         self.groupBoxHButtons = QtWidgets.QHBoxLayout()
         self.groupBoxHButtons.setObjectName("groupBoxHButtons")
@@ -312,6 +312,8 @@ class FreePlay(QtWidgets.QWidget):
         self.button_connection_setup()
         self.retranslateUi()
         self.timer_checker()
+
+        self.data_options_setup()
 
         QtCore.QMetaObject.connectSlotsByName(self)
 
@@ -369,6 +371,9 @@ class FreePlay(QtWidgets.QWidget):
     # Handles radio button toggle actions
     def handleActivated(self, index):
         self.clear_model_options()
+        self.dataSelectComboBox.setCurrentIndex(0)
+        self.data_options_setup()
+        #self.dataSelectComboBox.update()
         
         if self.boundaryOnOffRadioButton.isChecked() == True:
             self.boundaryOnOffRadioButton.setChecked(False)
@@ -395,18 +400,48 @@ class FreePlay(QtWidgets.QWidget):
 
     def data_options_setup(self):
         # Chose what display to show
+        try:
+            self.noDataSelectedLabel.deleteLater()
+        except:
+            pass
+
+        if self.dataSelectComboBox.currentText() == "Please Select:":  # .currentIndex() == 0
+            self.default_data_select()
+            if self.fp_model == 'linearreg' and self.previous_data_option == 'features':
+                self.hide_dataset_feature_data_options()
+            elif self.fp_model == 'linearreg' and self.previous_data_option == 'Custom':
+                self.hide_lr_custom_data_options()
+            self.previous_data_option = 'No Data Selected'
+
         if self.fp_model == 'linearreg':
+            #if self.dataSelectComboBox.currentText() == 'Please Select:':
+            #    if self.previous_data_option == 'features':
+            #        self.hide_dataset_feature_data_options()
+            #    else:
+            #        self.hide_lr_custom_data_options()
             if self.dataSelectComboBox.currentText() == 'Custom':
+                #if self.previous_data_option == 'No Data Selected':
+                #    self.remove_placeholder_labels("data option")
                 if self.previous_data_option == 'features':
                     self.hide_dataset_feature_data_options()
                 self.lr_custom_data_options()
                 self.lr_data_options_retranslateUi()
                 self.previous_data_option = 'Custom'
+            
+            elif self.dataSelectComboBox.currentText() == 'Please Select:':
+                if self.previous_data_option == "Custom":
+                    self.hide_lr_custom_data_options()
+                elif self.previous_data_option == 'features':
+                    self.hide_lr_custom_data_options()
+                self.previous_data_option = 'No Data Selected'
+            
             elif self.dataSelectComboBox.currentText() != 'Custom' and self.previous_data_option != 'features':
                 if self.previous_data_option == "Custom":
                     self.hide_lr_custom_data_options()
                 self.dataset_feature_data_options()
                 self.previous_data_option = 'features'
+            
+        
         elif self.fp_model == 'k-means':
             if self.dataSelectComboBox.currentText() == 'Custom':
                 if self.previous_data_option == 'features':
@@ -418,7 +453,31 @@ class FreePlay(QtWidgets.QWidget):
                     self.hide_km_custom_data_options()
                 self.dataset_feature_data_options()
                 self.previous_data_option = 'features'
+            
+        
+        
+        
+    def remove_placeholder_labels(self, label_group):
+        if label_group == "data option":
+            self.noDataSelectedLabel.deleteLater()
+        else:
+            print("These will be model and parameter place holders")
+    
+    def default_data_select(self):
+        print("Add default place holder label")
+        self.noDataSelectedLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.noDataSelectedLabel.setMinimumSize(QtCore.QSize(300, 0))
+        self.noDataSelectedLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.noDataSelectedLabel.setFont(font)
+        self.noDataSelectedLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.noDataSelectedLabel.setObjectName("noDataSelectedLabel")
+        self.gridLayout.addWidget(self.noDataSelectedLabel, 0, 0, 1, 1)
 
+        _translate = QtCore.QCoreApplication.translate
+
+        self.noDataSelectedLabel.setText(_translate("self", "No Data Options Selected yet!"))
             
     def load_predata(self, value):
         self.MplWidget.data_options = value
@@ -600,7 +659,7 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectComboBox.setItemText(0, _translate("self", "Please Select:"))
         self.dataSelectComboBox.setItemText(1,_translate("self","Custom"))
         
-        self.modelOptionsGroupBox.setTitle(_translate("self","Model Options:"))
+        self.modelOptionsGroupBox.setTitle(_translate("self", "Model Parameters(s):"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
 
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>GMM</title>
+    <title>Logistic Regression</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
@@ -104,76 +104,12 @@
             <div class="container">
 
                 <div class="textBackground">
-                    <img class="titlePageImg" src="./Images/gmm.png" alt="Neural Network Title Image" />
+                    <img class="titlePageImg" src="./Images/logistic regression.png" alt="" />
                 </div>
 
                 <div class="textBackgroundLight">
                     <p>
-                        Gaussian mixture models (GMM) are a probabilistic model for representing normally distributed subpopulations within an overall population. Mixture models in general don't require knowing which subpopulation a data point belongs to, allowing the model
-                        to learn the subpopulations automatically. Since subpopulation assignment is not known, this constitutes a form of unsupervised learning.
-                    </p>
-                </div>
-
-                <div class="textBackground">
-                    <h2>What is a GMM?</h2>
-                </div>
-                <div class="textBackgroundLight">
-                    <p>
-                        GMM is a <b>unsupervised</b> learning model. Unlike K-Means which aims to minimise the <b>Sum of Squared Error</b>, GMM is a model based approach to data clustering. The model is described by a set of parameters, which are several.
-                        However, as a GMM is not a single Gaussian function, it is not considered a parametric model.
-                    </p>
-                    <p>
-                        GMM use a Gaussian distribution, which is also known as a normal distribution (shown below).
-                        <img src="https://latex.codecogs.com/gif.latex?\mu" title="\mu" /> (Mu) is the mean and <img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> (Sigma) is the standard deviation.
-
-                    </p>
-
-                    <p>
-                        <img src="./Images/normal dist.png" class="ImgCentreShortMedium" alt="">
-                    </p>
-                    <p>
-                        We can use a mixture of Gaussian functions to learn the distribution of the data. The distribution of the data is modelled by a set of parameters:
-                        <ul>
-                            <li><img src="https://latex.codecogs.com/gif.latex?k" title="k" />, the number of Gaussian functions - like K-Means and the number of <img src="https://latex.codecogs.com/gif.latex?k" title="k" /> clusters.</li>
-                            <li><img src="https://latex.codecogs.com/gif.latex?\mu" title="\mu" />, the mean of the Gaussian function.</li>
-                            <li><img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" />, the standard deviation for each gaussian function. It can also be seen as the covarience matrix <img src="https://latex.codecogs.com/gif.latex?\sum"
-                                    title="\sum" /> for each Gaussian.</li>
-                            <li><img src="https://latex.codecogs.com/gif.latex?P" title="P" />, the mixing coefficient. This is the weights for each Guassian function.</li>
-                        </ul>
-                        GMM are good at modelling multimodal distributions (see image below). Red curve is the R channel histogram and the blue curves are the two Gaussian functions.
-                    </p>
-                    <p>
-                        <img src="./Images/gmm example.png" class="ImgCentreShortSmall" alt="">
-                    </p>
-                    <p>
-                        GMM is described as a weighted sum of single Gaussian functions (shown below). <img src="https://latex.codecogs.com/gif.latex?P_j" title="P_j" /> are the mixing coefficient. This is also known as the prior probability. j indicatates
-                        the jth Gaussian function within the GMM.
-                    </p>
-                    <p>
-                        <img src="./Images/gmm weighted sum.png" class="ImgCentreShortSmall" alt="">
-                    </p>
-                </div>
-
-                <div class="textBackground">
-                    <h2>The Stages of GMM</h2>
-                </div>
-
-                <div class="textBackgroundLight">
-                    <p>
-                        <ol>
-                            <li>
-                                Initialisation of te learning GMM parameters.
-                            </li>
-                            <li>
-                                Set the posterior probability of the learning GMM parameters.
-                            </li>
-                            <li>
-                                Updating the learning parameters.
-                            </li>
-                            <li>
-                                Repest stages 2 and 3 until the model stabalises and converges.
-                            </li>
-                        </ol>
+                        <img src="./Images/coming soon.png" class=" ImgCentreShort" alt="">
                     </p>
                 </div>
 
@@ -183,9 +119,9 @@
 
                     <!-- Copyright -->
                     <div>
-                        <a href="kmeans.html"><i class="far fa-arrow-alt-circle-left"
+                        <a href="linearregression.html"><i class="far fa-arrow-alt-circle-left"
                                 style="padding-left: 38%;"></i>
-                            Previous</a> <a href="dr.html"><span style="padding-left: 20px;">Next</span> <i
+                            Previous</a> <a href="clustering.html"><span style="padding-left: 20px;">Next</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     <!-- Copyright -->
