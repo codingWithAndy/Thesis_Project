@@ -236,10 +236,12 @@ class FreePlay(QtWidgets.QWidget):
         ## Kmeans Grid Box
         self.modelOptionsGridLayout = QtWidgets.QGridLayout(self.modelOptionsGroupBox)  # Was gridLayout_2
         self.modelOptionsGridLayout.setObjectName("modelOptionsGridLayout")
+
+        
         
         ### Bottom half of Model Options Group Box
         self.setup_gameboard()
-        self.load_model_options()
+        self.load_model_parameters()
         
         #self.lin_reg_model_options_setup()
 
@@ -248,7 +250,17 @@ class FreePlay(QtWidgets.QWidget):
 
         self.horizontalLayout_2.addWidget(self.modelOptionsGroupBox) ## Puts Model options GB onto form
 
+        self.modelGroupBox = QtWidgets.QGroupBox(self.modelSettingsGroupBox)
+        self.modelGroupBox.setMinimumSize(QtCore.QSize(299, 0))
+        self.modelGroupBox.setObjectName("modelGroupBox")
+
+        self.horizontalLayout_2.addWidget(self.modelGroupBox)  # dataOptionsHorizontalLayout
         ### End of model group box
+
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.modelGroupBox)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+
+        self.set_up_model_options() #Setting up middle box
 
         #### Start of Data selection group box
         self.dataOptionsGroupBox = QtWidgets.QGroupBox(self.modelSettingsGroupBox)  # self.modelSettingsGroupBox
@@ -372,6 +384,7 @@ class FreePlay(QtWidgets.QWidget):
     def handleActivated(self, index):
         self.clear_model_options()
         self.dataSelectComboBox.setCurrentIndex(0)
+        # Clear Middle model options box
         self.data_options_setup()
         #self.dataSelectComboBox.update()
         
@@ -394,9 +407,131 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget.hide()
         #self.current_model = self.fp_model
         self.setup_gameboard()
-        self.load_model_options()
+        self.load_model_parameters()
+        self.set_up_model_options()
 
         self.retranslateUi()
+
+    def no_paramaters_available(self):
+        self.noModelParLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.noModelParLabel.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.noModelParLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.noModelParLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.noModelParLabel.setObjectName("noModelParLabel")
+        self.modelOptionsGridLayout.addWidget(self.noModelParLabel, 0, 0, 1, 1)
+
+        _translate = QtCore.QCoreApplication.translate
+        self.noModelParLabel.setText(_translate(
+            "self", "No info available to show, yet!"))
+
+
+    def no_model_options_available(self):
+        self.noModelOpLabel = QtWidgets.QLabel(self.modelGroupBox)
+        self.noModelOpLabel.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.noModelOpLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.noModelOpLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.noModelOpLabel.setObjectName("noModelOpLabel")
+        self.gridLayout_3.addWidget(self.noModelOpLabel, 0, 0, 1, 1)
+
+        _translate = QtCore.QCoreApplication.translate
+        self.noModelOpLabel.setText(_translate(
+            "self", "No Model Options available, yet!"))
+
+    def set_up_model_options(self):
+        try:
+            self.noModelOpLabel.deleteLater()
+        except:
+            pass
+
+        if self.fp_model == "k-means":
+            self.kLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.kLabel.setMinimumSize(QtCore.QSize(100, 15))
+            self.kLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.kLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.kLabel.setObjectName("kLabel")
+            self.gridLayout_3.addWidget(self.kLabel, 0, 0, 1, 1)
+            
+            self.algorithmLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.algorithmLabel.setMinimumSize(QtCore.QSize(100, 15))
+            self.algorithmLabel.setMaximumSize(QtCore.QSize(100, 15))
+            self.algorithmLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.algorithmLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.algorithmLabel.setObjectName("algorithmLabel")
+            self.gridLayout_3.addWidget(self.algorithmLabel, 1, 0, 1, 1)
+
+            self.noOfInitialisersLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.noOfInitialisersLabel.setMinimumSize(QtCore.QSize(101, 15))
+            self.noOfInitialisersLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.noOfInitialisersLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.noOfInitialisersLabel.setObjectName("noOfInitialisersLabel")
+            self.gridLayout_3.addWidget(self.noOfInitialisersLabel, 2, 0, 1, 1)
+
+            self.maxIterationsLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.maxIterationsLabel.setMinimumSize(QtCore.QSize(101, 15))
+            self.maxIterationsLabel.setMaximumSize(QtCore.QSize(101, 15))
+            self.maxIterationsLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.maxIterationsLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.maxIterationsLabel.setObjectName("maxIterationsLabel")
+            self.gridLayout_3.addWidget(self.maxIterationsLabel, 3, 0, 1, 1)
+
+            self.kLineEdit = QtWidgets.QLineEdit(self.modelGroupBox)
+            self.kLineEdit.setMinimumSize(QtCore.QSize(100, 15))
+            self.kLineEdit.setMaximumSize(QtCore.QSize(16777215, 16777215))
+            self.kLineEdit.setStyleSheet("background-color: white;")
+            self.kLineEdit.setObjectName("kLineEdit")
+            self.gridLayout_3.addWidget(self.kLineEdit, 0, 1, 1, 1)
+            
+            self.algorithmComboBox = QtWidgets.QComboBox(self.modelGroupBox)
+            self.algorithmComboBox.setMinimumSize(QtCore.QSize(100, 15))
+            self.algorithmComboBox.setMaximumSize(QtCore.QSize(16777215, 16777215))
+            self.algorithmComboBox.setStyleSheet("background-color: white;\n"
+                                                "selection-color: rgb(200, 200, 200)")
+            self.algorithmComboBox.setObjectName("algorithmComboBox")
+            self.algorithmComboBox.addItem("")
+            self.algorithmComboBox.addItem("")
+            self.algorithmComboBox.addItem("")
+            self.gridLayout_3.addWidget(self.algorithmComboBox, 1, 1, 1, 1)
+
+            self.noOfInitialisersLineEdit = QtWidgets.QLineEdit(self.modelGroupBox)
+            self.noOfInitialisersLineEdit.setMinimumSize(QtCore.QSize(100, 15))
+            self.noOfInitialisersLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+            self.noOfInitialisersLineEdit.setStyleSheet("background-color: white;")
+            self.noOfInitialisersLineEdit.setObjectName("noOfInitialisersLineEdit")
+            self.gridLayout_3.addWidget(self.noOfInitialisersLineEdit, 2, 1, 1, 1)
+        
+            #spacerItem5 = QtWidgets.QSpacerItem(
+            #    40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+            #self.gridLayout.addItem(spacerItem5, 0, 2, 1, 1)
+            
+            self.maxIterationsLineEdit = QtWidgets.QLineEdit(self.modelGroupBox)
+            self.maxIterationsLineEdit.setMinimumSize(QtCore.QSize(100, 15))
+            self.maxIterationsLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
+            self.maxIterationsLineEdit.setStyleSheet("background-color: white;")
+            self.maxIterationsLineEdit.setObjectName("maxIterationsLineEdit")
+            self.gridLayout_3.addWidget(self.maxIterationsLineEdit, 3, 1, 1, 1)
+            
+            # Might need to re add to the Data Options
+            #spacerItem6 = QtWidgets.QSpacerItem(
+            #    20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+            #self.gridLayout_3.addItem(spacerItem6, 4, 0, 1, 1) #og: gridLayout 
+        
+        
+
+            self.km_modeloptions_retranslateUi()
+    
+        else:
+            try:
+                # Needs tidying up.
+                self.remove_km_model_options()
+                #self.kLabel.deleteLater()
+                #self.kLineEdit.deleteLater()
+                #self.algorithmLabel.deleteLater()
+                #self.algorithmComboBox.deleteLater()
+            except:
+                pass
+
+            self.no_model_options_available()
+            
 
     def data_options_setup(self):
         # Chose what display to show
@@ -411,17 +546,14 @@ class FreePlay(QtWidgets.QWidget):
                 self.hide_dataset_feature_data_options()
             elif self.fp_model == 'linearreg' and self.previous_data_option == 'Custom':
                 self.hide_lr_custom_data_options()
+            elif self.fp_model == 'k-means' and self.previous_data_option == 'features':
+                self.hide_dataset_feature_data_options()
+            elif self.fp_model == 'k-means' and self.previous_data_option == 'Custom':
+                self.hide_km_custom_data_options()
             self.previous_data_option = 'No Data Selected'
 
         if self.fp_model == 'linearreg':
-            #if self.dataSelectComboBox.currentText() == 'Please Select:':
-            #    if self.previous_data_option == 'features':
-            #        self.hide_dataset_feature_data_options()
-            #    else:
-            #        self.hide_lr_custom_data_options()
             if self.dataSelectComboBox.currentText() == 'Custom':
-                #if self.previous_data_option == 'No Data Selected':
-                #    self.remove_placeholder_labels("data option")
                 if self.previous_data_option == 'features':
                     self.hide_dataset_feature_data_options()
                 self.lr_custom_data_options()
@@ -448,6 +580,12 @@ class FreePlay(QtWidgets.QWidget):
                     self.hide_dataset_feature_data_options()
                 self.km_custom_data_options()
                 self.previous_data_option = 'Custom'
+            elif self.dataSelectComboBox.currentText() == 'Please Select:':
+                if self.previous_data_option == "Custom":
+                    self.hide_lr_custom_data_options()
+                elif self.previous_data_option == 'features':
+                    self.hide_lr_custom_data_options()
+                self.previous_data_option = 'No Data Selected'
             elif self.dataSelectComboBox.currentText() != 'Custom' and self.previous_data_option != 'features':
                 if self.previous_data_option == "Custom":
                     self.hide_km_custom_data_options()
@@ -577,7 +715,7 @@ class FreePlay(QtWidgets.QWidget):
     ################################################################
 
     ########    Model, Metrics and Data Options    #################
-    def load_model_options(self):
+    def load_model_parameters(self):
         self.hide_model_options()
 
         if self.fp_model == 'linearreg':
@@ -585,6 +723,8 @@ class FreePlay(QtWidgets.QWidget):
             self.lin_reg_retranslateUi()
         elif self.fp_model == "k-means":
             self.km_model_options_setup()
+        else:
+            self.no_paramaters_available()
         
         self.current_model = self.fp_model
     
@@ -597,8 +737,18 @@ class FreePlay(QtWidgets.QWidget):
             self.hide_lr_model_options()
             #self.lr_custom_data_options_hide()
     
+    def remove_param_label(self):
+        self.noModelParLabel.deleteLater()
+
+    def remove_model_label(self):
+        self.noModelOpLabel.deleteLater()
 
     def hide_model_options(self):
+        try:
+            self.remove_param_label()
+        except:
+            pass
+
         if self.current_model == 'linearreg':
             self.hide_lr_model_options()
         elif self.current_model == 'k-means':
@@ -661,6 +811,7 @@ class FreePlay(QtWidgets.QWidget):
         
         self.modelOptionsGroupBox.setTitle(_translate("self", "Model Parameters(s):"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
+        self.modelGroupBox.setTitle(_translate("self", "Model Options:"))
 
 
     # LR Model Options
@@ -825,14 +976,21 @@ class FreePlay(QtWidgets.QWidget):
         
         self.update_km_param_output()
 
+    def km_parameter_setup(self):
+        print("Links the paramteters to the model!")
+
+
     def generate_km_custom_data(self):
-        k = int(self.noOfClustersLineEdit.text())
+        number_of_clusters = int(self.noOfClustersLineEdit.text())
+        number_of_datasamples = int()
+        
+        ### These need to be in the km predict func
         n_init = int(self.noOfInitialisersLineEdit.text())
         max_iter = int(self.maxIterationsLineEdit.text())
         algo = self.algorithmComboBox.currentText().lower()
 
-
-        self.MplWidget.generate_random_data(k, n_init, max_iter, algo)
+        self.MplWidget.generate_random_data(
+            number_of_clusters, n_init, max_iter, algo)
         self.update_km_param_output()
 
 
@@ -948,7 +1106,7 @@ class FreePlay(QtWidgets.QWidget):
 
         # Main Options
         self.inertiaValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.inertiaValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.inertiaValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.inertiaValueLabel.setStyleSheet(
             "background-color: rgba(0,0,0,0%)")
         self.inertiaValueLabel.setText("")
@@ -957,7 +1115,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addWidget(
             self.inertiaValueLabel, 0, 1, 1, 1)
         self.predictInfoLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.predictInfoLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.predictInfoLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.predictInfoLabel.setStyleSheet(
             "background-color: rgba(0,0,0,0%);")
         self.predictInfoLabel.setAlignment(QtCore.Qt.AlignCenter)
@@ -981,7 +1139,7 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLabel.setObjectName("predictLabel")
         self.modelOptionsGridLayout.addWidget(self.predictLabel, 2, 0, 1, 1)
         self.distFromCentroidValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.distFromCentroidValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.distFromCentroidValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.distFromCentroidValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.distFromCentroidValueLabel.setText("")
         self.distFromCentroidValueLabel.setAlignment(QtCore.Qt.AlignCenter)
@@ -989,7 +1147,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addWidget(
             self.distFromCentroidValueLabel, 4, 1, 1, 1)
         self.outputValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
-        self.outputValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.outputValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.outputValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.outputValueLabel.setText("")
         self.outputValueLabel.setAlignment(QtCore.Qt.AlignCenter)
@@ -1026,7 +1184,7 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfIterationsLabel, 1, 0, 1, 1)
         self.noOfIterationsValueLabel = QtWidgets.QLabel(
             self.modelOptionsGroupBox)
-        self.noOfIterationsValueLabel.setMinimumSize(QtCore.QSize(350, 15))
+        self.noOfIterationsValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.noOfIterationsValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.noOfIterationsValueLabel.setText("")
         self.noOfIterationsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
@@ -1137,75 +1295,57 @@ class FreePlay(QtWidgets.QWidget):
 
     # K-Means
     def km_custom_data_options(self):
-        self.noOfInitialisersLineEdit = QtWidgets.QLineEdit(
-            self.dataOptionsGroupBox)
-        self.noOfInitialisersLineEdit.setMinimumSize(QtCore.QSize(350, 15))
-        self.noOfInitialisersLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.noOfInitialisersLineEdit.setStyleSheet("background-color: white;")
-        self.noOfInitialisersLineEdit.setObjectName("noOfInitialisersLineEdit")
-        self.gridLayout.addWidget(self.noOfInitialisersLineEdit, 1, 1, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem5, 0, 2, 1, 1)
-        self.noOfInitialisersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
-        self.noOfInitialisersLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.noOfInitialisersLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
-        self.noOfInitialisersLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        self.noOfInitialisersLabel.setObjectName("noOfInitialisersLabel")
-        self.gridLayout.addWidget(self.noOfInitialisersLabel, 1, 0, 1, 1)
-        self.maxIterationsLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
-        self.maxIterationsLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.maxIterationsLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
-        self.maxIterationsLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        self.maxIterationsLabel.setObjectName("maxIterationsLabel")
-        self.gridLayout.addWidget(self.maxIterationsLabel, 2, 0, 1, 1)
-        self.algorithmLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
-        self.algorithmLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.algorithmLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.algorithmLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        self.algorithmLabel.setObjectName("algorithmLabel")
-        self.gridLayout.addWidget(self.algorithmLabel, 3, 0, 1, 1)
-        self.maxIterationsLineEdit = QtWidgets.QLineEdit(
-            self.dataOptionsGroupBox)
-        self.maxIterationsLineEdit.setMinimumSize(QtCore.QSize(350, 15))
-        self.maxIterationsLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.maxIterationsLineEdit.setStyleSheet("background-color: white;")
-        self.maxIterationsLineEdit.setObjectName("maxIterationsLineEdit")
-        self.gridLayout.addWidget(self.maxIterationsLineEdit, 2, 1, 1, 1)
-        spacerItem6 = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem6, 4, 0, 1, 1)
-        self.algorithmComboBox = QtWidgets.QComboBox(self.dataOptionsGroupBox)
-        self.algorithmComboBox.setMinimumSize(QtCore.QSize(350, 15))
-        self.algorithmComboBox.setStyleSheet("background-color: white;\n"
-                                             "selection-color: rgb(200, 200, 200)")
-        self.algorithmComboBox.setObjectName("algorithmComboBox")
-        self.algorithmComboBox.addItem("")
-        self.algorithmComboBox.addItem("")
-        self.algorithmComboBox.addItem("")
-        self.gridLayout.addWidget(self.algorithmComboBox, 3, 1, 1, 1)
-        self.noOfClustersLineEdit = QtWidgets.QLineEdit(
-            self.dataOptionsGroupBox)
-        self.noOfClustersLineEdit.setMinimumSize(QtCore.QSize(350, 15))
+        self.noOfClustersLineEdit = QtWidgets.QLineEdit(self.dataOptionsGroupBox)
+        self.noOfClustersLineEdit.setMinimumSize(QtCore.QSize(150, 15))
         self.noOfClustersLineEdit.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.noOfClustersLineEdit.setStyleSheet("background-color: white;")
         self.noOfClustersLineEdit.setObjectName("noOfClustersLineEdit")
         self.gridLayout.addWidget(self.noOfClustersLineEdit, 0, 1, 1, 1)
+        
         self.noOfClustersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
-        self.noOfClustersLabel.setMinimumSize(QtCore.QSize(0, 15))
-        self.noOfClustersLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.noOfClustersLabel.setMinimumSize(QtCore.QSize(150, 15))
+        self.noOfClustersLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.noOfClustersLabel.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.noOfClustersLabel.setObjectName("noOfClustersLabel")
         self.gridLayout.addWidget(self.noOfClustersLabel, 0, 0, 1, 1)
 
+        self.noDataSamplesLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
+        self.noDataSamplesLabel.setMinimumSize(QtCore.QSize(150, 15))
+        self.noDataSamplesLabel.setMaximumSize(QtCore.QSize(152, 16777215))
+        self.noDataSamplesLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.noDataSamplesLabel.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.noDataSamplesLabel.setObjectName("noDataSamplesLabel")
+        self.gridLayout.addWidget(self.noDataSamplesLabel, 1, 0, 1, 1)
+
+        self.noDataSamplesLineEdit = QtWidgets.QLineEdit(self.dataOptionsGroupBox)
+        self.noDataSamplesLineEdit.setMinimumSize(QtCore.QSize(150, 15))
+        self.noDataSamplesLineEdit.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.noDataSamplesLineEdit.setStyleSheet("background-color: white;")
+        self.noDataSamplesLineEdit.setObjectName("noDataSamplesLineEdit")
+        self.gridLayout.addWidget(self.noDataSamplesLineEdit, 1, 1, 1, 1)
+
         self.km_model_custom_retranslateUi()
+
+
+    def km_modeloptions_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.kLabel.setText(_translate("self", "K:"))
+        self.algorithmLabel.setText(_translate("self", "Algorithm:"))
+        self.algorithmComboBox.setItemText(0, _translate("self", "Auto"))
+        self.algorithmComboBox.setItemText(1, _translate("self", "Full"))
+        self.algorithmComboBox.setItemText(2, _translate("self", "Elkan"))
+        self.noOfInitialisersLabel.setText(_translate("self", "No. of Initialisers:"))
+        self.maxIterationsLabel.setText(_translate("self", "Max Iterations:"))
+
+
+    def remove_km_model_options(self):
+        self.kLabel.deleteLater()
+        self.algorithmComboBox.deleteLater()
+        self.noOfInitialisersLabel.deleteLater()
+        self.maxIterationsLabel.deleteLater()
+        self.noOfInitialisersLineEdit.deleteLater()
+        self.maxIterationsLineEdit.deleteLater()
 
     
     # Show General Feature Data Options
@@ -1278,13 +1418,9 @@ class FreePlay(QtWidgets.QWidget):
 
     def km_model_custom_retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.noOfInitialisersLabel.setText(_translate("self", "Number of Initialisers:"))
-        self.maxIterationsLabel.setText(_translate("self", "Max Iterations:"))
-        self.algorithmLabel.setText(_translate("self", "Algorithm:"))
-        self.algorithmComboBox.setItemText(0, _translate("self", "Auto"))
-        self.algorithmComboBox.setItemText(1, _translate("self", "Full"))
-        self.algorithmComboBox.setItemText(2, _translate("self", "Elkan"))
+        
         self.noOfClustersLabel.setText(_translate("self", "Number of Clusters:"))
+        self.noDataSamplesLabel.setText(_translate("self", "Number of Data Samples:"))
 
 
     # Hide LR Custom Data Options
@@ -1299,14 +1435,16 @@ class FreePlay(QtWidgets.QWidget):
 
     # Hide KMeans
     def hide_km_custom_data_options(self):
-        self.noOfInitialisersLineEdit.deleteLater()
-        self.noOfInitialisersLabel.deleteLater()
-        self.maxIterationsLabel.deleteLater()
-        self.algorithmLabel.deleteLater()
-        self.maxIterationsLineEdit.deleteLater()
-        self.algorithmComboBox.deleteLater()
+        #self.noOfInitialisersLineEdit.deleteLater()
+        #self.noOfInitialisersLabel.deleteLater()
+        #self.maxIterationsLabel.deleteLater()
+        #self.algorithmLabel.deleteLater()
+        #self.maxIterationsLineEdit.deleteLater()
+        #self.algorithmComboBox.deleteLater()
         self.noOfClustersLineEdit.deleteLater()
         self.noOfClustersLabel.deleteLater()
+        self.noDataSamplesLineEdit.deleteLater()
+        self.noDataSamplesLabel.deleteLater()
     
     
     

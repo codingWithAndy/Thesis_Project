@@ -14,8 +14,7 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
 
     path = os.getcwd()
-    app.setWindowIcon(
-        QIcon(path + "/Code/Project/Images/Water-drop-data-v2.png"))
+    app.setWindowIcon(QIcon(path + "/Code/Project/Images/Water-drop-data-v2.png"))
     controller = Controller()
     controller.show_splashscreen()
     sys.exit(app.exec_())

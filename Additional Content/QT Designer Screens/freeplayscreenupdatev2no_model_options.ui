@@ -407,136 +407,11 @@ selection-color: rgb(200, 200, 200)</string>
                <string>Model:</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_2">
-               <item row="3" column="0">
-                <widget class="QLabel" name="outputLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Output:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="noOfIterationsValueLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="distFromCentroidValueLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="distFromCentroidLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Distance from Centroid:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="predictInfoLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>{Click in Grid to plot}</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="0">
-                <widget class="QLabel" name="inertiaLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>60</width>
-                   <height>15</height>
-                  </size>
-                 </property>
+                <widget class="QLabel" name="noModelParLabel">
                  <property name="maximumSize">
                   <size>
-                   <width>150</width>
+                   <width>300</width>
                    <height>16777215</height>
                   </size>
                  </property>
@@ -544,110 +419,10 @@ selection-color: rgb(200, 200, 200)</string>
                   <string notr="true">background-color: rgba(0,0,0,0%);</string>
                  </property>
                  <property name="text">
-                  <string>Inertia:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="outputValueLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string/>
+                  <string>No info available to show, yet!</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="inertiaValueLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%)</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="noOfIterationsLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>138</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Number of Iterations:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="predictLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>47</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Predict:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -655,7 +430,7 @@ selection-color: rgb(200, 200, 200)</string>
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="groupBox">
+             <widget class="QGroupBox" name="modelGroupBox">
               <property name="minimumSize">
                <size>
                 <width>299</width>
@@ -667,101 +442,22 @@ selection-color: rgb(200, 200, 200)</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
                <item row="0" column="0">
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="noModelOpLabel">
                  <property name="maximumSize">
                   <size>
-                   <width>150</width>
-                   <height>15</height>
+                   <width>300</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: rgba(0,0,0,0%);</string>
                  </property>
                  <property name="text">
-                  <string>K:</string>
+                  <string>No Model Options available, yet!</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignCenter</set>
                  </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="kLineEdit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: white;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="algorithmLabel">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(0,0,0,0%);</string>
-                 </property>
-                 <property name="text">
-                  <string>Algorithm:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="algorithmComboBox">
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: white;
-selection-color: rgb(200, 200, 200)</string>
-                 </property>
-                 <item>
-                  <property name="text">
-                   <string>Auto</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Full</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Elkan</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
               </layout>
