@@ -261,6 +261,7 @@ class KMeansGameboard(QWidget):
         self.data_sample = sample_size
         self.stand_dev   = stand_dev
         self.random_gen  = rand_state
+        self.k = data_k
 
         self.X, self.y   = make_blobs(n_samples=self.data_samples, centers=self.data_k,
                                       cluster_std=self.stand_dev, random_state=self.random_gen)

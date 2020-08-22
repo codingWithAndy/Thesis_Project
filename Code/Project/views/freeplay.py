@@ -1017,16 +1017,18 @@ class FreePlay(QtWidgets.QWidget):
 
     def generate_km_custom_data(self):
         number_of_clusters = int(self.noOfClustersLineEdit.text())
-        number_of_datasamples = int()
+        number_of_datasamples = int(self.noDataSamplesLineEdit.text())
         
         ### These need to be in the km predict func
-        n_init = int(self.noOfInitialisersLineEdit.text())
-        max_iter = int(self.maxIterationsLineEdit.text())
-        algo = self.algorithmComboBox.currentText().lower()
+        #n_init = int(self.noOfInitialisersLineEdit.text())
+        #max_iter = int(self.maxIterationsLineEdit.text())
+        #algo = self.algorithmComboBox.currentText().lower()
 
-        self.MplWidget.generate_random_data(
-            number_of_clusters, n_init, max_iter, algo)
+        self.MplWidget.generate_random_data(number_of_clusters, number_of_datasamples)
         self.update_km_param_output()
+
+        self.noOfClustersLineEdit.setText("")
+        self.noDataSamplesLineEdit.setText("")
 
 
     def km_predict(self):
