@@ -151,7 +151,7 @@ class LearningZone(QWidget):
         html_title = str(self.webView.title())
 
         print("quizURL is:", str(html_title))
-        if html_title in ['K-Means','GMM','Linear Regression','LDA','SVM']:
+        if html_title in ['K-Means','GMM','Linear Regression','LDA','SVM', 'Neural Network']:
             html_title = 'linearreg' if html_title == 'Linear Regression' else html_title.lower()
             #if html_title == 'Linear Regression':
             #    html_title = 'linearreg'

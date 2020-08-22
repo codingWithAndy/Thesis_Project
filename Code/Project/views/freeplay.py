@@ -25,7 +25,7 @@ class FreePlay(QtWidgets.QWidget):
 
     model_options = ["k-means", "lda", 
                      "svm", "gmm", 
-                     "linearreg", "nn"]
+                     "linearreg", "neural network"]
     current_game = ""
     current_model = ""
     previous_data_option = ""
@@ -217,8 +217,7 @@ class FreePlay(QtWidgets.QWidget):
         self.boundaryOnOffRadioButton.setMaximumSize(
             QtCore.QSize(25, 16777215))
         self.boundaryOnOffRadioButton.setText("")
-        self.boundaryOnOffRadioButton.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.boundaryOnOffRadioButton.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
         self.horizontalLayout_3.addWidget(self.boundaryOnOffRadioButton)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -348,26 +347,34 @@ class FreePlay(QtWidgets.QWidget):
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = KMeansGameboard(self)
             self.MplWidget.game_mode = "fp"
+            idx = 1
         elif self.fp_model == 'lda':
             print("in else if statement for lda")
             self.MplWidget = MplWidget(self)
             self.boundaryOnOffRadioButton.setChecked(True)
+            idx = 2
         elif self.fp_model == 'gmm':
             print("in else if statement for gmm")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = GMMGameboard(self)
+            idx = 4
         elif self.fp_model == 'linearreg':
             print("in else if statement for lin_reg")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = LinearRegressionGameboard(self,game_mode="fp")
+            idx = 3
         elif self.fp_model == 'svm':
             print("in else if statement for svm")
             self.MplWidget = SVMGameboard(self)
             self.boundaryOnOffRadioButton.setChecked(True)
-        elif self.fp_model == 'nn':
+            idx = 5
+        elif self.fp_model == 'neural network':
             print("in else if statement for nn")
             self.MplWidget = NNGameboard(self)
+            idx = 6
             #self.boundaryOnOffRadioButton.setChecked(True)
+        
+        self.modelSelectComboBox.setCurrentIndex(idx)
 
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -401,8 +408,8 @@ class FreePlay(QtWidgets.QWidget):
             self.fp_model = "linearreg"
         elif self.modelSelectComboBox.itemText(index) == "SVM":
             self.fp_model = "svm"
-        elif self.modelSelectComboBox.itemText(index) == "NN":
-            self.fp_model = "nn"
+        elif self.modelSelectComboBox.itemText(index) == "Neural Network":
+            self.fp_model = "neural network"
                 
         self.MplWidget.hide()
         #self.current_model = self.fp_model
@@ -798,7 +805,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSelectComboBox.setItemText(3, _translate("Form", "Linear Regression"))
         self.modelSelectComboBox.setItemText(4, _translate("Form", "GMM"))
         self.modelSelectComboBox.setItemText(5, _translate("Form", "SVM"))
-        self.modelSelectComboBox.setItemText(6, _translate("Form", "NN"))
+        self.modelSelectComboBox.setItemText(6, _translate("Form", "Neural Network"))
 
         self.overviewDescriptionLabel.setText(_translate("Form", self.MplWidget.model_overview))
         self.modelTypeLabel.setText(_translate("Form", self.MplWidget.model_name))
@@ -924,29 +931,55 @@ class FreePlay(QtWidgets.QWidget):
             if self.predictLineEdit.text() != "":
                 self.lr_pred()
         elif combo_current_txt != "Custom":
-            if self.f1XRadioButton.isChecked():
-                new_X_ax = 1
-            elif self.f2XRadioButton.isChecked():
-                new_X_ax = 2
-            elif self.f3XRadioButton.isChecked():
-                new_X_ax = 3
-            elif self.f4XRadioButton.isChecked():
-                new_X_ax = 4
-            
-            if self.f1YRadioButton.isChecked():
-                new_y_ax = 1
-            elif self.f2YRadioButton.isChecked():
-                new_y_ax = 2
-            elif self.f3YRadioButton.isChecked():
-                new_y_ax = 3
-            elif self.f4YRadioButton.isChecked():
-                new_y_ax = 4
+            if self.predictLineEdit.text() != "":
+                self.lr_pred()
+            else:
+                if self.boundaryOnOffRadioButton.isChecked():
+                    self.set_boundary_rb_check(False)
+                if self.f1XRadioButton.isChecked():
+                    new_X_ax = 1
+                elif self.f2XRadioButton.isChecked():
+                    new_X_ax = 2
+                elif self.f3XRadioButton.isChecked():
+                    new_X_ax = 3
+                elif self.f4XRadioButton.isChecked():
+                    new_X_ax = 4
+                
+                if self.f1YRadioButton.isChecked():
+                    new_y_ax = 1
+                elif self.f2YRadioButton.isChecked():
+                    new_y_ax = 2
+                elif self.f3YRadioButton.isChecked():
+                    new_y_ax = 3
+                elif self.f4YRadioButton.isChecked():
+                    new_y_ax = 4
 
-            self.MplWidget.alter_generated_features(combo_current_txt, new_X_ax, new_y_ax)
+                self.MplWidget.alter_generated_features(combo_current_txt, new_X_ax, new_y_ax)
 
     def km_play_button_control(self):
         combo_current_txt = self.dataSelectComboBox.currentText()
-        if combo_current_txt == "Custom":
+        self.set_boundary_rb_check(False)
+
+        if self.kLineEdit.text() != "":
+            k = int(self.kLineEdit.text())
+            n_init = int(self.noOfInitialisersLineEdit.text()) if self.noOfInitialisersLineEdit.text() != "" else 300
+            max_iter = int(self.maxIterationsLineEdit.text()) if self.maxIterationsLineEdit.text() != "" else 300
+            algo = self.algorithmComboBox.currentText()
+            params = {"n_clusters": k, 
+                      "n_init" : n_init,
+                      "max_iter": max_iter, 
+                      "algorithm" : algo.lower()
+            }
+
+            self.MplWidget.clear_canvas()
+            self.MplWidget.fit_model(k, n_init, max_iter, algo.lower())
+            
+            self.kLineEdit.text()
+            self.noOfInitialisersLineEdit.text()
+            self.maxIterationsLineEdit.text()
+            #self.algorithmComboBoxcombo.setCurrentIndex(0)
+            print("Passing through k params")
+        elif combo_current_txt == "Custom":
             self.set_boundary_rb_check(False)
             self.generate_km_custom_data()
             self.noOfClustersLineEdit.setText("")
@@ -954,6 +987,8 @@ class FreePlay(QtWidgets.QWidget):
             self.maxIterationsLineEdit.setText("")
             #self.outliersRadioButton.setChecked(False) # Change to check box
         elif combo_current_txt != "Custom":
+            if self.boundaryOnOffRadioButton.isChecked():
+                self.set_boundary_rb_check(False)
             if self.f1XRadioButton.isChecked():
                 new_X_ax = 1
             elif self.f2XRadioButton.isChecked():
@@ -1026,14 +1061,12 @@ class FreePlay(QtWidgets.QWidget):
         self.interceptValueLabel.setText("")
         self.interceptValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.interceptValueLabel.setObjectName("interceptValueLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.interceptValueLabel, 0, 1, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.interceptValueLabel, 0, 1, 1, 1)
         self.coefLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.coefLabel.setMinimumSize(QtCore.QSize(138, 15))
         self.coefLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.coefLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.coefLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.coefLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.coefLabel.setObjectName("coefLabel")
         self.modelOptionsGridLayout.addWidget(self.coefLabel, 1, 0, 1, 1)
         self.coefValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
@@ -1047,8 +1080,7 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
         self.predictLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.predictLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.predictLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.predictLabel.setObjectName("predictLabel")
         self.modelOptionsGridLayout.addWidget(self.predictLabel, 2, 0, 1, 1)
         self.predictLineEdit = QtWidgets.QLineEdit(self.modelOptionsGroupBox)
@@ -1095,8 +1127,7 @@ class FreePlay(QtWidgets.QWidget):
         # Need to convert LR model options to a grid.
         # Cluster centres click switch add
         self.clusterCentresOnOffLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
-        self.clusterCentresOnOffLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.clusterCentresOnOffLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.clusterCentresOnOffLabel.setObjectName("clusterCentresOnOffLabel")
         self.horizontalLayout_3.addWidget(self.clusterCentresOnOffLabel)
         self.checkBox = QtWidgets.QCheckBox(self.modelSettingsGroupBox)
@@ -1107,27 +1138,22 @@ class FreePlay(QtWidgets.QWidget):
         # Main Options
         self.inertiaValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.inertiaValueLabel.setMinimumSize(QtCore.QSize(150, 15))
-        self.inertiaValueLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%)")
+        self.inertiaValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%)")
         self.inertiaValueLabel.setText("")
         self.inertiaValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.inertiaValueLabel.setObjectName("inertiaValueLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.inertiaValueLabel, 0, 1, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.inertiaValueLabel, 0, 1, 1, 1)
         self.predictInfoLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.predictInfoLabel.setMinimumSize(QtCore.QSize(150, 15))
-        self.predictInfoLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%);")
+        self.predictInfoLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.predictInfoLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.predictInfoLabel.setObjectName("predictInfoLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.predictInfoLabel, 2, 1, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.predictInfoLabel, 2, 1, 1, 1)
         self.inertiaLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.inertiaLabel.setMinimumSize(QtCore.QSize(60, 15))
         self.inertiaLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.inertiaLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.inertiaLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.inertiaLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.inertiaLabel.setObjectName("inertiaLabel")
         self.modelOptionsGridLayout.addWidget(self.inertiaLabel, 0, 0, 1, 1)
         self.predictLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
@@ -1144,56 +1170,46 @@ class FreePlay(QtWidgets.QWidget):
         self.distFromCentroidValueLabel.setText("")
         self.distFromCentroidValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.distFromCentroidValueLabel.setObjectName("distFromCentroidValueLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.distFromCentroidValueLabel, 4, 1, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.distFromCentroidValueLabel, 4, 1, 1, 1)
         self.outputValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.outputValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.outputValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.outputValueLabel.setText("")
         self.outputValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.outputValueLabel.setObjectName("outputValueLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.outputValueLabel, 3, 1, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.outputValueLabel, 3, 1, 1, 1)
         self.outputLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.outputLabel.setMinimumSize(QtCore.QSize(0, 15))
         self.outputLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.outputLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.outputLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.outputLabel.setObjectName("outputLabel")
         self.modelOptionsGridLayout.addWidget(self.outputLabel, 3, 0, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.modelOptionsGridLayout.addItem(spacerItem3, 5, 0, 1, 1)
-        self.distFromCentroidLabel = QtWidgets.QLabel(
-            self.modelOptionsGroupBox)
+        #spacerItem3 = QtWidgets.QSpacerItem(
+        #    20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        #self.modelOptionsGridLayout.addItem(spacerItem3, 5, 0, 1, 1)
+        self.distFromCentroidLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.distFromCentroidLabel.setMinimumSize(QtCore.QSize(0, 15))
         self.distFromCentroidLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.distFromCentroidLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.distFromCentroidLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.distFromCentroidLabel.setObjectName("distFromCentroidLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.distFromCentroidLabel, 4, 0, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.distFromCentroidLabel, 4, 0, 1, 1)
         self.noOfIterationsLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.noOfIterationsLabel.setMinimumSize(QtCore.QSize(138, 15))
         self.noOfIterationsLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.noOfIterationsLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.noOfIterationsLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.noOfIterationsLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.noOfIterationsLabel.setObjectName("noOfIterationsLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.noOfIterationsLabel, 1, 0, 1, 1)
-        self.noOfIterationsValueLabel = QtWidgets.QLabel(
-            self.modelOptionsGroupBox)
+        self.modelOptionsGridLayout.addWidget(self.noOfIterationsLabel, 1, 0, 1, 1)
+        self.noOfIterationsValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.noOfIterationsValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.noOfIterationsValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.noOfIterationsValueLabel.setText("")
         self.noOfIterationsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.noOfIterationsValueLabel.setObjectName("noOfIterationsValueLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.noOfIterationsValueLabel, 1, 1, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.modelOptionsGridLayout.addItem(spacerItem4, 0, 2, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.noOfIterationsValueLabel, 1, 1, 1, 1)
+        #spacerItem4 = QtWidgets.QSpacerItem(
+        #    40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        #self.modelOptionsGridLayout.addItem(spacerItem4, 0, 2, 1, 1)
 
         self.checkBox.toggled.connect(self.show_km_centroids)
         self.update_km_param_output()
@@ -1243,8 +1259,7 @@ class FreePlay(QtWidgets.QWidget):
         self.gridLayout.addWidget(self.dataSampleLabel, 0, 0, 1, 1)
         self.dataSampleLineedit = QtWidgets.QLineEdit(self.dataOptionsGroupBox)
         self.dataSampleLineedit.setMinimumSize(QtCore.QSize(150, 15))
-        self.dataSampleLineedit.setMaximumSize(
-            QtCore.QSize(16777215, 16777215))
+        self.dataSampleLineedit.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.dataSampleLineedit.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.dataSampleLineedit.setAutoFillBackground(False)
         self.dataSampleLineedit.setStyleSheet("background-color: white;")
@@ -1341,6 +1356,8 @@ class FreePlay(QtWidgets.QWidget):
 
     def remove_km_model_options(self):
         self.kLabel.deleteLater()
+        self.kLineEdit.deleteLater()
+        self.algorithmLabel.deleteLater()
         self.algorithmComboBox.deleteLater()
         self.noOfInitialisersLabel.deleteLater()
         self.maxIterationsLabel.deleteLater()
