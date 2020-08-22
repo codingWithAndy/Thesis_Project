@@ -56,7 +56,6 @@ class KMeansGameboard(QWidget):
               }
 
 
-
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
 
@@ -123,8 +122,6 @@ class KMeansGameboard(QWidget):
         self.turn += 1
 
         
-
-    
     def plot_data(self):
         self.canvas.ax.plot(self.X[:, self.idx_1],
                             self.X[:, self.idx_2], 'b.', markersize=0.6)
@@ -185,11 +182,9 @@ class KMeansGameboard(QWidget):
 
         if self.boundaries_on: self.plot_decision_boundaries()
         else: self.plot_data()
-
-        #self.fig.canvas.draw()
     
 
-    # Experimenting
+
     def replot_kmeans(self):
         self.canvas.ax.clear()
         
@@ -197,7 +192,6 @@ class KMeansGameboard(QWidget):
                                     cluster_std=0.6, random_state=0)
         
         self.plot_data()
-        #self.fig.canvas.draw()
 
 
 
@@ -211,11 +205,9 @@ class KMeansGameboard(QWidget):
             self.plot_data()
             self.boundaries_on = False
             
-        #self.fig.canvas.draw()
 
 
     def generate_data_points(self, data_option):
-        ## Taken from LR -> Nees addapting to K-Means
         self.clear_canvas()
 
         if data_option == 2:
@@ -229,9 +221,8 @@ class KMeansGameboard(QWidget):
             self.k = 2
 
         self.plot_data()
-        
         self.fit_model(self.k)
-        #self.fig.canvas.draw()
+        
 
 
     def find_parameters(self):
@@ -253,8 +244,7 @@ class KMeansGameboard(QWidget):
         self.kmeans  = KMeans(**self.params)
         self.y_pred  = self.kmeans.fit_predict(self.X)
         self.centroids = self.kmeans.cluster_centers_
-        # Is this needed?
-        #self.centers = self.kmeans.cluster_centers_
+        
 
     def generate_random_data(self, data_k, sample_size, stand_dev=1.0, rand_state=None):
         self.data_k      = data_k
@@ -268,7 +258,7 @@ class KMeansGameboard(QWidget):
         
         self.canvas.ax.clear()
         self.plot_data()
-        #self.fig.canvas.draw()
+        
 
 
     def model_predict(self):
@@ -289,8 +279,7 @@ class KMeansGameboard(QWidget):
         
         #print("euclidean_dist:", self.euclidean_dist[0])
         
-
-
+        
     def clear_canvas(self):
         self.canvas.ax.clear()
 

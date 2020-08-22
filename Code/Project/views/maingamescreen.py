@@ -58,7 +58,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.titleLabel.setStyleSheet("")
         self.titleLabel.setText("")
         self.titleLabel.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/linearregression.png"))
+            self.current_path+"/Code/Project/Images/game zone title.png"))
         self.titleLabel.setScaledContents(True)
         self.titleLabel.setObjectName("titleLabel")
         self.horizontalLayout.addWidget(self.titleLabel)
