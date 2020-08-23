@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  16 AUG 2020 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  23 AUG 2020 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2039,7 +2039,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 37.
-<graphics/swansea.png, id=107, 416.2752pt x 284.7438pt>
+<graphics/swansea.png, id=119, 416.2752pt x 284.7438pt>
 File: graphics/swansea.png Graphic file (type png)
 <use graphics/swansea.png>
 Package pdftex.def Info: graphics/swansea.png  used on input line 37.
@@ -2131,7 +2131,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...line {chapter}{Appendices}{23}{section*.7}
+l.39 ...rline {5.1}Contributions}{21}{section.5.1}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
@@ -2143,24 +2143,23 @@ l.2 \newpage
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 11.
-
-
-LaTeX Warning: Reference `chap:resources' on page 1 undefined on input line 19.
-
-
-
-LaTeX Warning: Reference `chap:typesetting' on page 1 undefined on input line 1
-9.
-
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 26.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 
-])
-(./chapter/background_lit_review.tex [2]) (./chapter/thesis_methodology.tex
+]
+
+LaTeX Warning: Reference `chap:resources' on page 2 undefined on input line 57.
+
+
+
+LaTeX Warning: Reference `chap:typesetting' on page 2 undefined on input line 5
+7.
+
+) (./chapter/background_lit_review.tex [2]) (./chapter/thesis_methodology.tex
 [3
 
 ] [4
@@ -2215,35 +2214,46 @@ LaTeX Warning: Citation `list exam boards here' on page 9 undefined on input li
 ne 12.
 
 [9]
-Underfull \vbox (badness 2529) has occurred while \output is active []
-
- [10]
-<graphics/python_vs_java_vs_c++.jpg, id=311, 770.88pt x 578.16pt>
+<graphics/python_vs_java_vs_c++.jpg, id=310, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
- 33.
-(pdftex.def)             Requested size: 426.79134pt x 320.08861pt.
+ 17.
+(pdftex.def)             Requested size: 426.79134pt x 258.86366pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 33--34
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 17--18
 [][] 
  []
 
 
-Underfull \vbox (badness 1466) has occurred while \output is active []
+Underfull \vbox (badness 3713) has occurred while \output is active []
+
+ [10 <./graphics/python_vs_java_vs_c++.jpg>]
+Underfull \vbox (badness 2529) has occurred while \output is active []
 
  [11]
-[12 <./graphics/python_vs_java_vs_c++.jpg>]
-Underfull \vbox (badness 4940) has occurred while \output is active []
-
- [13]
-[14] [15]
 Underfull \vbox (badness 1466) has occurred while \output is active []
 
- [16])
-(./chapter/thesis_conclusion.tex [17] [18
+ [12]
+[13] [14]
+Underfull \vbox (badness 4940) has occurred while \output is active []
 
-]) (./thesis.bbl [19] [20
+ [15]
+[16]
+
+LaTeX Warning: Reference `pop_up_example' on page 17 undefined on input line 12
+9.
+
+[17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19])
+(./chapter/thesis_conclusion.tex [20]) (./thesis.bbl [21
+
+] [22
 
 ]
 bibitemlist
@@ -2259,66 +2269,66 @@ Underfull \hbox (badness 1648) in paragraph at lines 83--87
 hackr . io / blog /
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
 \T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
 &text = Python % 20is % 20a %
  []
 
 
-Underfull \hbox (badness 2662) in paragraph at lines 165--169
+Underfull \hbox (badness 2662) in paragraph at lines 159--163
 []\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 165--169
+Underfull \hbox (badness 3536) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
 . com / community /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
  ppc & utm _ campaignid =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
 & utm _ keyword = &utm _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
 creative = 229765585186 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
 m _ loc _ interest _ ms =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
 CoARIsAPtX _
  []
 
 
-Overfull \hbox (30.662pt too wide) in paragraph at lines 165--169
+Overfull \hbox (30.662pt too wide) in paragraph at lines 159--163
 \T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
 Lw _
  []
 
-[22]) (./chapter/appendix.tex [23] [24
+[24]) (./chapter/appendix.tex [25] [26
 
 ]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2330,7 +2340,7 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 (./listings/hello_world.c
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [25] [26
+) [27] [28
 
 ])
 Package minitoc Info: I0009
@@ -2338,7 +2348,7 @@ Package minitoc Info: I0009
 (minitoc)             Creating the thesis.maf file.
 \openout4 = `thesis.maf'.
 
- [27]
+ [29]
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -2354,7 +2364,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9FBFBE1DFB8D8C764AE786DB98431077;1541.
+(rerunfilecheck)             Checksum: 0758285C3F3BA0E9B4F40C2A74F483EA;1730.
 
 
 LaTeX Warning: There were undefined references.
@@ -2365,13 +2375,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 40611 strings out of 492616
- 720817 string characters out of 6129480
- 1033440 words of memory out of 5000000
- 43480 multiletter control sequences out of 15000+600000
+ 40621 strings out of 492616
+ 720958 string characters out of 6129480
+ 1033744 words of memory out of 5000000
+ 43486 multiletter control sequences out of 15000+600000
  605173 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,92p,1337b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,92p,1802b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_24hhf2.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -2381,10 +2391,10 @@ o-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (41 pages, 274897 bytes).
+Output written on thesis.pdf (43 pages, 272193 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
- 127 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 570 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 

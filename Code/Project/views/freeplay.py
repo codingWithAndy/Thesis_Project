@@ -558,6 +558,13 @@ class FreePlay(QtWidgets.QWidget):
             elif self.fp_model == 'k-means' and self.previous_data_option == 'Custom':
                 self.hide_km_custom_data_options()
             self.previous_data_option = 'No Data Selected'
+        #if self.dataSelectComboBox.currentText() == 'Moons' and self.fp_model == 'k-means':
+        #    self.default_data_select()
+        #    if self.fp_model == 'k-means' and self.previous_data_option == 'features':
+        #        self.hide_dataset_feature_data_options()
+        #    elif self.fp_model == 'k-means' and self.previous_data_option == 'Custom':
+        #        self.hide_km_custom_data_options()
+        #    self.previous_data_option = 'No Data Selected'
 
         if self.fp_model == 'linearreg':
             if self.dataSelectComboBox.currentText() == 'Custom':
@@ -571,7 +578,7 @@ class FreePlay(QtWidgets.QWidget):
                 if self.previous_data_option == "Custom":
                     self.hide_lr_custom_data_options()
                 elif self.previous_data_option == 'features':
-                    self.hide_lr_custom_data_options()
+                    self.hide_dataset_feature_data_options()
                 self.previous_data_option = 'No Data Selected'
             
             elif self.dataSelectComboBox.currentText() != 'Custom' and self.previous_data_option != 'features':
@@ -589,11 +596,11 @@ class FreePlay(QtWidgets.QWidget):
                 self.previous_data_option = 'Custom'
             elif self.dataSelectComboBox.currentText() == 'Please Select:':
                 if self.previous_data_option == "Custom":
-                    self.hide_lr_custom_data_options()
+                    self.hide_km_custom_data_options()
                 elif self.previous_data_option == 'features':
-                    self.hide_lr_custom_data_options()
+                    self.hide_dataset_feature_data_options()
                 self.previous_data_option = 'No Data Selected'
-            elif self.dataSelectComboBox.currentText() != 'Custom' and self.previous_data_option != 'features':
+            elif self.dataSelectComboBox.currentText() != 'Custom'  and self.previous_data_option != 'features':
                 if self.previous_data_option == "Custom":
                     self.hide_km_custom_data_options()
                 self.dataset_feature_data_options()
@@ -625,7 +632,6 @@ class FreePlay(QtWidgets.QWidget):
         self.noDataSelectedLabel.setText(_translate("self", "No Data Options Selected yet!"))
             
     def load_predata(self, value):
-        self.MplWidget.data_options = value
         self.MplWidget.generate_data_points(int(value))
         self.set_boundary_rb_check(False)
         
@@ -816,9 +822,9 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectComboBox.setItemText(0, _translate("self", "Please Select:"))
         self.dataSelectComboBox.setItemText(1,_translate("self","Custom"))
         
-        self.modelOptionsGroupBox.setTitle(_translate("self", "Model Parameters(s):"))
-        self.dataOptionsGroupBox.setTitle(_translate("self", "Data Options:"))
-        self.modelGroupBox.setTitle(_translate("self", "Model Options:"))
+        self.modelOptionsGroupBox.setTitle(_translate("self", "Model Attribute(s):"))
+        self.modelGroupBox.setTitle(_translate("self", "Model Parameter(s):"))
+        self.dataOptionsGroupBox.setTitle(_translate("self", "Data Option(s):"))
 
 
     # LR Model Options
@@ -986,7 +992,8 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfInitialisersLineEdit.setText("")
             self.maxIterationsLineEdit.setText("")
             #self.outliersRadioButton.setChecked(False) # Change to check box
-        elif combo_current_txt != "Custom":
+        
+        elif combo_current_txt == "Iris":
             if self.boundaryOnOffRadioButton.isChecked():
                 self.set_boundary_rb_check(False)
             if self.f1XRadioButton.isChecked():

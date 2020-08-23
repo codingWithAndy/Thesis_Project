@@ -97,10 +97,16 @@ A.~Goel. (2020) Best programming language to learn in 2020 (for job and
   [Online]. Available: \url{https://www.python.org/doc/essays/blurb/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{pyqt_rbc}
+\BIBentryALTinterwordspacing
+{Riverbank Computing}. (2020) What is pyqt? [Online]. Available:
+  \url{https://riverbankcomputing.com/software/pyqt/intro}
+\BIBentrySTDinterwordspacing
+
 \bibitem{python_comparison}
 \BIBentryALTinterwordspacing
-------. (2020) Comparing python to other languages. [Online]. Available:
-  \url{https://www.python.org/doc/essays/comparisons/}
+{Python Software Foundation}. (2020) Comparing python to other languages.
+  [Online]. Available: \url{https://www.python.org/doc/essays/comparisons/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{r_project}
@@ -135,12 +141,6 @@ G.~D. Maayan. (2020) The iot rundown for 2020: Stats, risks, and solutions.
   \url{https://webfoundation.org/about/vision/history-of-the-web/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{css_history}
-\BIBentryALTinterwordspacing
-{W3C}. (2016) A brief history of css until 2016. [Online]. Available:
-  \url{https://www.w3.org/Style/CSS20/history.html}
-\BIBentrySTDinterwordspacing
-
 \bibitem{js_springboard}
 \BIBentryALTinterwordspacing
 T.~DeGroat. (2019) The history of javascript: Everything you need to know.
@@ -152,12 +152,6 @@ T.~DeGroat. (2019) The history of javascript: Everything you need to know.
 \BIBentryALTinterwordspacing
 {Pygame}. (2020) About. [Online]. Available:
   \url{https://www.pygame.org/wiki/about}
-\BIBentrySTDinterwordspacing
-
-\bibitem{pyqt_rbc}
-\BIBentryALTinterwordspacing
-{Riverbank Computing}. (2020) What is pyqt? [Online]. Available:
-  \url{https://riverbankcomputing.com/software/pyqt/intro}
 \BIBentrySTDinterwordspacing
 
 \bibitem{data_camp_gui}
