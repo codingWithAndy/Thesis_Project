@@ -5,40 +5,61 @@
 \contentsline {xchapter}{}{viii}{section*.4}% 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Overview of the Problem}{1}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}Overview of the Solution}{1}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Motivations}{1}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Aims}{2}{section.1.4}% 
-\contentsline {subsection}{\numberline {1.4.1}Objective}{2}{subsection.1.4.1}% 
-\contentsline {section}{\numberline {1.5}Contributions}{2}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Thesis Overview}{2}{section.1.6}% 
-\contentsline {chapter}{\chapternumberline {2}Background \& Literature Review}{3}{chapter.2}% 
-\contentsline {chapter}{\chapternumberline {3}Methodology}{5}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Overview of Application}{5}{section.3.1}% 
-\contentsline {subsection}{\numberline {3.1.1}Design}{6}{subsection.3.1.1}% 
-\contentsline {section}{\numberline {3.2}Overview of Specific Game Components}{6}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Game Arena}{6}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Free Play}{6}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}Learning Zone}{6}{subsection.3.2.3}% 
-\contentsline {subsection}{\numberline {3.2.4}Awards Zone}{6}{subsection.3.2.4}% 
-\contentsline {section}{\numberline {3.3}Evaluation of Application}{6}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}User Study}{7}{subsection.3.3.1}% 
-\contentsline {chapter}{\chapternumberline {4}Implementation}{9}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Tools}{9}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Programming Languages}{9}{subsection.4.1.1}% 
-\contentsline {section}{\numberline {4.2}Frameworks}{13}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}GUI Framework}{13}{subsection.4.2.1}% 
-\contentsline {section}{\numberline {4.3}Packages}{14}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}IDE}{14}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Intricacies of the Game Components}{16}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Gameplay Area}{16}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Learning Zone Area}{16}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Free Play Area}{17}{subsection.4.5.3}% 
-\contentsline {subsection}{\numberline {4.5.4}Achievements Area}{20}{subsection.4.5.4}% 
-\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{20}{section.4.6}% 
-\contentsline {chapter}{\chapternumberline {5}Conclusions and Future Work}{21}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Contributions}{21}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Future Work}{21}{section.5.2}% 
-\contentsline {chapter}{Bibliography}{23}{chapter*.6}% 
-\contentsline {chapter}{Appendices}{25}{section*.7}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{27}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{29}{appendix.B}% 
+\contentsline {section}{\numberline {1.2}Overview of the Solution}{2}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Motivations}{2}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}Aims \& Objectives}{2}{subsection.1.3.1}% 
+\contentsline {section}{\numberline {1.4}Contributions}{2}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Thesis Overview}{3}{section.1.5}% 
+\contentsline {chapter}{\chapternumberline {2}Background \& Literature Review}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Introduction to Edu-Games}{5}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Gamification}{5}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Gamification in Education}{7}{subsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.1.3}Example Applications}{9}{subsection.2.1.3}% 
+\contentsline {section}{\numberline {2.2}Machine Learning}{9}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Machine Learning Fundamentals}{9}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Supervised vs Unsupervised Learning}{9}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Methods}{10}{subsection.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.1}K-Means}{10}{subsubsection.2.2.3.1}% 
+\contentsline {subsubsection}{\numberline {2.2.3.2}Gaussian Mixture Model}{10}{subsubsection.2.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.2.3.3}Neural Network}{10}{subsubsection.2.2.3.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.4}Linear Regression}{11}{subsubsection.2.2.3.4}% 
+\contentsline {subsubsection}{\numberline {2.2.3.5}Logistic Regression}{11}{subsubsection.2.2.3.5}% 
+\contentsline {subsubsection}{\numberline {2.2.3.6}SVM}{11}{subsubsection.2.2.3.6}% 
+\contentsline {subsubsection}{\numberline {2.2.3.7}Linear Discriminant Analysis}{12}{subsubsection.2.2.3.7}% 
+\contentsline {subsubsection}{\numberline {2.2.3.8}PCA}{12}{subsubsection.2.2.3.8}% 
+\contentsline {subsubsection}{\numberline {2.2.3.9}kNN}{12}{subsubsection.2.2.3.9}% 
+\contentsline {subsection}{\numberline {2.2.4}Machine Learning in Education}{12}{subsection.2.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.4.1}Classical Approaches}{12}{subsubsection.2.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.2.4.2}Machine Learning Edu-Games}{12}{subsubsection.2.2.4.2}% 
+\contentsline {section}{\numberline {2.3}Proposed Solution}{12}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Summary and Oviewview of Proposed Solution}{12}{section.2.4}% 
+\contentsline {chapter}{\chapternumberline {3}Methodology}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Overview of Application}{13}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Design}{14}{subsection.3.1.1}% 
+\contentsline {section}{\numberline {3.2}Overview of Specific Game Components}{14}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Game Arena}{14}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Free Play}{14}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Learning Zone}{14}{subsection.3.2.3}% 
+\contentsline {subsection}{\numberline {3.2.4}Awards Zone}{14}{subsection.3.2.4}% 
+\contentsline {section}{\numberline {3.3}Evaluation of Application}{14}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}User Study}{15}{subsection.3.3.1}% 
+\contentsline {chapter}{\chapternumberline {4}Implementation}{17}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Tools}{17}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Programming Languages}{17}{subsection.4.1.1}% 
+\contentsline {section}{\numberline {4.2}Frameworks}{21}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}GUI Framework}{21}{subsection.4.2.1}% 
+\contentsline {section}{\numberline {4.3}Packages}{23}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}IDE}{23}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Intricacies of the Game Components}{24}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Gameplay Area}{24}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Learning Zone Area}{24}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Free Play Area}{25}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.4}Achievements Area}{28}{subsection.4.5.4}% 
+\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{28}{section.4.6}% 
+\contentsline {chapter}{\chapternumberline {5}Conclusions and Future Work}{29}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Contributions}{29}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Future Work}{29}{section.5.2}% 
+\contentsline {chapter}{Bibliography}{31}{chapter*.6}% 
+\contentsline {chapter}{Appendices}{35}{section*.7}% 
+\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{37}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{39}{appendix.B}% 

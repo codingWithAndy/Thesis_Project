@@ -353,11 +353,13 @@ class FreePlay(QtWidgets.QWidget):
             self.MplWidget = MplWidget(self)
             self.boundaryOnOffRadioButton.setChecked(True)
             idx = 2
+            self.no_data_options_retranslateUi()
         elif self.fp_model == 'gmm':
             print("in else if statement for gmm")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = GMMGameboard(self)
             idx = 4
+            self.no_data_options_retranslateUi()
         elif self.fp_model == 'linearreg':
             print("in else if statement for lin_reg")
             self.boundaryOnOffRadioButton.setChecked(False)
@@ -368,10 +370,12 @@ class FreePlay(QtWidgets.QWidget):
             self.MplWidget = SVMGameboard(self)
             self.boundaryOnOffRadioButton.setChecked(True)
             idx = 5
+            self.no_data_options_retranslateUi()
         elif self.fp_model == 'neural network':
             print("in else if statement for nn")
             self.MplWidget = NNGameboard(self)
             idx = 6
+            self.no_data_options_retranslateUi()
             #self.boundaryOnOffRadioButton.setChecked(True)
         
         self.modelSelectComboBox.setCurrentIndex(idx)
@@ -821,11 +825,18 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectionLabel.setText(_translate("self","Data Selection:"))
         self.dataSelectComboBox.setItemText(0, _translate("self", "Please Select:"))
         self.dataSelectComboBox.setItemText(1,_translate("self","Custom"))
+        #self.dataSelectComboBox.setItemText(2,_translate("self",""))
+        #self.dataSelectComboBox.setItemText(3, _translate("self", ""))
         
         self.modelOptionsGroupBox.setTitle(_translate("self", "Model Attribute(s):"))
         self.modelGroupBox.setTitle(_translate("self", "Model Parameter(s):"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Option(s):"))
 
+    def no_data_options_retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.dataSelectComboBox.setItemText(1,_translate("self",""))
+        self.dataSelectComboBox.setItemText(2,_translate("self",""))
+        self.dataSelectComboBox.setItemText(3, _translate("self", ""))
 
     # LR Model Options
     def lin_reg_retranslateUi(self):

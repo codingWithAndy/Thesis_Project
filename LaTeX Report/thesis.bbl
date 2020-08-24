@@ -28,6 +28,145 @@
   \url{https://thingsteck.wordpress.com/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{quora5misconcepts}
+Quora, ``What are the top 5 misconceptions surrounding artificial intelligence
+  and machine learning?''\hskip 1em plus 0.5em minus 0.4em\relax Retrieved May
+  10, 2020 from:
+  https://www.quora.com/What-are-the-top-5-misconceptions-surrounding-Artificial-Intelligence-and-Machine-Learning.
+
+
+\bibitem{sklearn_api}
+L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A.~Mueller, O.~Grisel,
+  V.~Niculae, P.~Prettenhofer, A.~Gramfort, J.~Grobler, R.~Layton,
+  J.~VanderPlas, A.~Joly, B.~Holt, and G.~Varoquaux, ``{API} design for machine
+  learning software: experiences from the scikit-learn project,'' in \emph{ECML
+  PKDD Workshop: Languages for Data Mining and Machine Learning}, 2013, pp.
+  108--122.
+
+\bibitem{tensorflow2015-whitepaper}
+\BIBentryALTinterwordspacing
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
+  X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
+  systems,'' 2015, software available from tensorflow.org. [Online]. Available:
+  \url{https://www.tensorflow.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{4}
+S.~Walz, in \emph{The Gameful World: Approaches, Issues, Applications}.\hskip
+  1em plus 0.5em minus 0.4em\relax MIT Press, 2015.
+
+\bibitem{3e}
+\BIBentryALTinterwordspacing
+{Growth Engineering}. (2019) The history of gamification: From the very
+  beginning to right now. [Online]. Available:
+  \url{https://www.growthengineering.co.uk/history-of-gamification/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{5}
+\BIBentryALTinterwordspacing
+{Wikipedia}. (2020) Gamification. [Online]. Available:
+  \url{https://en.wikipedia.org/wiki/Gamification}
+\BIBentrySTDinterwordspacing
+
+\bibitem{6}
+\BIBentryALTinterwordspacing
+J.~McGonigal. (2010) Gaming can make a better world. [Online]. Available:
+  \url{https://www.ted.com/talks/jane_mcgonigal_gaming_can_make_a_better_world?language=en#t-1184578}
+\BIBentrySTDinterwordspacing
+
+\bibitem{7}
+\BIBentryALTinterwordspacing
+{Gamification: Using Game-Design Elements in Non-Gaming Contexts}. (2011)
+  {CHI}. [Online]. Available:
+  \url{http://chi2011.org/communities/games/index.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{11}
+\BIBentryALTinterwordspacing
+{Wikipedia}. (2020) Data aggregation. [Online]. Available:
+  \url{https://en.wikipedia.org/wiki/Data_aggregation}
+\BIBentrySTDinterwordspacing
+
+\bibitem{8}
+\BIBentryALTinterwordspacing
+R.~Swatman. (2016) Pokémon go catches five new world records. [Online].
+  Available:
+  \url{https://www.guinnessworldrecords.com/news/2016/8/pokemon-go-catches-five-world-records-439327}
+\BIBentrySTDinterwordspacing
+
+\bibitem{9}
+R.~Silverman, ``Latest game theory: Mixing work and play — companies adopt
+  gaming techniques to motivate employees.''\hskip 1em plus 0.5em minus
+  0.4em\relax Wallstreet Journal, 2011.
+
+\bibitem{10}
+\BIBentryALTinterwordspacing
+M.~Herger. (2012) Gamification and law or how to stay out of prison despite
+  gamification. [Online]. Available:
+  \url{https://web.archive.org/web/20120425121358/http:/enterprise-gamification.com/index.php/en/blog/4-blog/65-gamification-and-law-or-how-to-stay-out-of-prison-despite-gamification}
+\BIBentrySTDinterwordspacing
+
+\bibitem{22}
+\BIBentryALTinterwordspacing
+{Wikipedia}. (2020) Gamification of learning. [Online]. Available:
+  \url{https://en.wikipedia.org/wiki/Gamification_of_learning}
+\BIBentrySTDinterwordspacing
+
+\bibitem{24}
+\BIBentryALTinterwordspacing
+A.~Deese. (2020) 5 benefits of gamification. [Online]. Available:
+  \url{https://ssec.si.edu/stemvisions-blog/5-benefits-gamification}
+\BIBentrySTDinterwordspacing
+
+\bibitem{25}
+\BIBentryALTinterwordspacing
+H.~Deese. (2012) Using gamification to aid in adolescent development in the
+  classroom: Cognitive and physical processes can enhance growth. [Online].
+  Available:
+  \url{http://www.ashleydeese.com/2012/09/26/using-gamification-to-aid-in-adolescent-development-in-the-classroom-cognitive-and-physical-processes-can-enhance-growth/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{26}
+A.~Blum-Dimaya, S.~A. Reeve, K.~F. Reeve, and H.~Hoch, ``Teaching children with
+  autism to play a video game using activity schedules and game-embedded
+  simultaneous video modeling,'' in \emph{Education and Treatment of
+  Children}.\hskip 1em plus 0.5em minus 0.4em\relax West Virginia University
+  Press, 2010, pp. 351--370.
+
+\bibitem{27}
+\BIBentryALTinterwordspacing
+M.~Doyle. (2014) Learning with simcity: Valuable lessons kids can learn playing
+  mayor. [Online]. Available:
+  \url{https://www.brightpips.com/learning-simcity-valuable-lessons-kids-learn-playing-mayor/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{wikiserious}
+\BIBentryALTinterwordspacing
+{Wikipedia}. (2020) Serious game. [Online]. Available:
+  \url{https://en.wikipedia.org/wiki/Serious_game}
+\BIBentrySTDinterwordspacing
+
+\bibitem{10seriousrules}
+M.~Baaden, O.~Delalande, N.~Ferey, S.~Pasquali, J.~Waldisp{\"u}hl, and A.~Taly,
+  ``Ten simple rules to create a serious game, illustrated with examples from
+  structural biology.''\hskip 1em plus 0.5em minus 0.4em\relax Public Library
+  of Science, 2018.
+
+\bibitem{follett2015analysis}
+R.~Follett and V.~Strezov, ``An analysis of citizen science based research:
+  usage and publication patterns,'' \emph{PloS one}, vol.~10, no.~11, p.
+  e0143687, 2015.
+
+\bibitem{mazzanti2017can}
+L.~Mazzanti, S.~Doutreligne, C.~Gageat, P.~Derreumaux, A.~Taly, M.~Baaden, and
+  S.~Pasquali, ``What can human-guided simulations bring to rna folding?''
+  \emph{Biophysical journal}, vol. 113, no.~2, pp. 302--312, 2017.
+
 \bibitem{sizeofinternet}
 \BIBentryALTinterwordspacing
 {Internet Live Stats}. (2020). [Online]. Available:

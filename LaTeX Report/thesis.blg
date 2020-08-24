@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 95 of file thesis.aux
+White space in argument---line 156 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -12,50 +12,61 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
+Repeated entry---line 796 of file citations.bib
+ : @inproceedings{kaj86
+ :                     ,
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty booktitle in quora5misconcepts
+Warning--empty year in quora5misconcepts
+Warning--empty booktitle in matlanintrotoml
+Warning--empty year in matlanintrotoml
+Warning--empty title in 4
+Warning--empty booktitle in 9
+Warning--empty booktitle in 10seriousrules
 
 Done.
-You've used 26 entries,
+You've used 49 entries,
             4087 wiz_defined-function locations,
-            931 strings with 10818 characters,
-and the built_in function-call counts, 9727 in all, are:
-= -- 773
-> -- 112
-< -- 9
-+ -- 58
-- -- 26
-* -- 291
-:= -- 1836
-add.period$ -- 53
-call.type$ -- 26
-change.case$ -- 26
-chr.to.int$ -- 24
-cite$ -- 26
-duplicate$ -- 743
-empty$ -- 934
-format.name$ -- 26
-if$ -- 2121
+            1028 strings with 15468 characters,
+and the built_in function-call counts, 22077 in all, are:
+= -- 1636
+> -- 506
+< -- 41
++ -- 258
+- -- 117
+* -- 772
+:= -- 3754
+add.period$ -- 103
+call.type$ -- 49
+change.case$ -- 48
+chr.to.int$ -- 96
+cite$ -- 56
+duplicate$ -- 1683
+empty$ -- 2078
+format.name$ -- 123
+if$ -- 4960
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 186
-newline$ -- 151
-num.names$ -- 26
-pop$ -- 574
+int.to.str$ -- 49
+missing$ -- 415
+newline$ -- 246
+num.names$ -- 49
+pop$ -- 1259
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 768
+skip$ -- 1722
 stack$ -- 0
-substring$ -- 60
-swap$ -- 477
-text.length$ -- 1
+substring$ -- 255
+swap$ -- 1118
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 26
-warning$ -- 0
-while$ -- 30
-width$ -- 28
-write$ -- 282
-(There was 1 error message)
+type$ -- 49
+warning$ -- 7
+while$ -- 66
+width$ -- 51
+write$ -- 494
+(There were 2 error messages)

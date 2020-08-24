@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  23 AUG 2020 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  24 AUG 2020 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2039,7 +2039,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 37.
-<graphics/swansea.png, id=119, 416.2752pt x 284.7438pt>
+<graphics/swansea.png, id=131, 416.2752pt x 284.7438pt>
 File: graphics/swansea.png Graphic file (type png)
 <use graphics/swansea.png>
 Package pdftex.def Info: graphics/swansea.png  used on input line 37.
@@ -2131,7 +2131,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...rline {5.1}Contributions}{21}{section.5.1}
+l.53 ...s of the Game Components}{24}{section.4.5}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
@@ -2142,29 +2142,40 @@ l.2 \newpage
 (./chapter/thesis_intro.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 26.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [1
 
 
 ]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 33.
+ [2]) (./chapter/background_lit_review.tex
+[3] [4
 
-LaTeX Warning: Reference `chap:resources' on page 2 undefined on input line 57.
+] [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [6]
+Underfull \vbox (badness 1728) has occurred while \output is active []
 
+ [7]
 
-LaTeX Warning: Reference `chap:typesetting' on page 2 undefined on input line 5
-7.
+LaTeX Warning: Reference `fig:seriousg' on page 8 undefined on input line 39.
 
-) (./chapter/background_lit_review.tex [2]) (./chapter/thesis_methodology.tex
-[3
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
 
-] [4
+ []
 
-]
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
+
+ []
+
+[10]) (./chapter/thesis_methodology.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
@@ -2174,7 +2185,9 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5]
+ [13
+
+]
 LaTeX Font Info:    Try loading font information for T1+SourceCodePro-TLF on in
 put line 20.
 
@@ -2206,15 +2219,15 @@ urceCodePro-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 6.
- [6])) (./chapter/thesis_implementation.tex [7] [8
+ [14])) (./chapter/thesis_implementation.tex [15] [16
 
 ]
 
-LaTeX Warning: Citation `list exam boards here' on page 9 undefined on input li
-ne 12.
+LaTeX Warning: Citation `list exam boards here' on page 17 undefined on input l
+ine 12.
 
-[9]
-<graphics/python_vs_java_vs_c++.jpg, id=310, 951.555pt x 577.15625pt>
+[17]
+<graphics/python_vs_java_vs_c++.jpg, id=452, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
@@ -2226,109 +2239,127 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 17--18
  []
 
 
-Underfull \vbox (badness 3713) has occurred while \output is active []
+Underfull \vbox (badness 7256) has occurred while \output is active []
 
- [10 <./graphics/python_vs_java_vs_c++.jpg>]
+ [18 <./graphics/python_vs_java_vs_c++.jpg>]
 Underfull \vbox (badness 2529) has occurred while \output is active []
 
- [11]
+ [19]
 Underfull \vbox (badness 1466) has occurred while \output is active []
 
- [12]
-[13] [14]
-Underfull \vbox (badness 4940) has occurred while \output is active []
+ [20]
+[21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-[16]
+ [22]
+[23] [24]
 
-LaTeX Warning: Reference `pop_up_example' on page 17 undefined on input line 12
+LaTeX Warning: Reference `pop_up_example' on page 25 undefined on input line 12
 9.
 
-[17]
+[25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19])
-(./chapter/thesis_conclusion.tex [20]) (./thesis.bbl [21
+ [27])
+(./chapter/thesis_conclusion.tex [28]) (./thesis.bbl [29
 
-] [22
+] [30
 
 ]
 bibitemlist
+[31]
+Underfull \hbox (badness 1881) in paragraph at lines 97--101
+[]\T1/ptm/m/n/10.95 R. Swat-man. (2016) Poké-mon go catches five new world
+ []
 
-Overfull \hbox (15.54434pt too wide) in paragraph at lines 63--67
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--113
+\T1/ptm/m/n/10.95 web / 20120425121358 / http : /enterprise-[]gami^^\cation . c
+om / index . php / en / blog / 4-[]blog /
+ []
+
+
+Overfull \hbox (174.94147pt too wide) in paragraph at lines 128--133
+\T1/ptm/m/n/10.95 using-[]gami^^\cation-[]to-[]aid-[]in-[]adolescent-[]developm
+ent-[]in-[]the-[]classroom-[]cognitive-[]and-[]physical-[]processes-[]can-[]enh
+ance-[]growth/$[] 
+ []
+
+[32]
+Overfull \hbox (15.54434pt too wide) in paragraph at lines 202--206
 \T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
 -[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 83--87
+Underfull \hbox (badness 1648) in paragraph at lines 222--226
 \T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
 hackr . io / blog /
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
 \T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
 &text = Python % 20is % 20a %
  []
 
-
-Underfull \hbox (badness 2662) in paragraph at lines 159--163
+[34]
+Underfull \hbox (badness 2662) in paragraph at lines 298--302
 []\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 159--163
+Underfull \hbox (badness 3536) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
 . com / community /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
  ppc & utm _ campaignid =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
 & utm _ keyword = &utm _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
 creative = 229765585186 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
 m _ loc _ interest _ ms =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
 CoARIsAPtX _
  []
 
 
-Overfull \hbox (30.662pt too wide) in paragraph at lines 159--163
+Overfull \hbox (30.662pt too wide) in paragraph at lines 298--302
 \T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
 Lw _
  []
 
-[24]) (./chapter/appendix.tex [25] [26
+) (./chapter/appendix.tex [35] [36
 
 ]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2340,7 +2371,7 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 (./listings/hello_world.c
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [27] [28
+) [37] [38
 
 ])
 Package minitoc Info: I0009
@@ -2348,7 +2379,7 @@ Package minitoc Info: I0009
 (minitoc)             Creating the thesis.maf file.
 \openout4 = `thesis.maf'.
 
- [29]
+ [39]
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -2364,7 +2395,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0758285C3F3BA0E9B4F40C2A74F483EA;1730.
+(rerunfilecheck)             Checksum: F42F099BDF0F3C7357AF247CE7846B2A;1967.
 
 
 LaTeX Warning: There were undefined references.
@@ -2375,26 +2406,32 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 40621 strings out of 492616
- 720958 string characters out of 6129480
- 1033744 words of memory out of 5000000
- 43486 multiletter control sequences out of 15000+600000
+ 40713 strings out of 492616
+ 722046 string characters out of 6129480
+ 1034750 words of memory out of 5000000
+ 43514 multiletter control sequences out of 15000+600000
  605173 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,92p,1802b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
-c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_24hhf2.en
-c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Bold.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePr
-o-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (43 pages, 272193 bytes).
+pdfTeX warning (dest): name{cite.geron2019hands} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.matlanintrotoml} has been referenced but does 
+not exist, replaced by a fixed one
+
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.enc}
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_24hhf2.enc}
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Bold.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-
+Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (53 pages, 301148 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
- 508 compressed objects within 6 object streams
- 131 named destinations out of 1000 (max. 500000)
- 247 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 753 PDF objects out of 1000 (max. 8388607)
+ 680 compressed objects within 7 object streams
+ 195 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
