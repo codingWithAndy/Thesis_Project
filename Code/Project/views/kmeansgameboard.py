@@ -21,9 +21,12 @@ matplotlib.use('Qt5Agg')
 
 
 class KMeansGameboard(QWidget):
-    model_name = "K-Means!"
-    learning_type = "Unsupervised Learning!"
-    model_overview = """K-Means is one of the hard partitioning clustering algorithms. The centre of the cluster represents each cluster of data, and each data point gets assigned to the nearest cluster centre, also known as the centroid. However, the number of clusters is a pre-set value. This pre-set value is known as the number of K. K-Means is an iterative process which starts with random initialisation of the centroids and updates on each iteration."""
+    model_name = "K-Means"
+    learning_type = "Unsupervised Learning"
+    model_overview = "K-Means is one of the hard partitioning clustering algorithms.\n\n" +\
+                     "The centre of the cluster represents each cluster of data, and each data point gets assigned to the nearest cluster centre, also known as the centroid.\n\n" +\
+                     "However, the number of clusters is a pre-set value. This pre-set value is known as the number of K.\n\n" +\
+                     "K-Means is an iterative process which starts with random initialisation of the centroids and updates on each iteration."
 
     blob_centers = np.array(
         [[0.2,  2.3],
@@ -39,16 +42,17 @@ class KMeansGameboard(QWidget):
                          0.1]
                         )
 
-    k = 5
+    k      = 5
     data_k = 5
 
-    data_samples = 1000
-    playerColors = ['g', 'r']
-    boundaries_on = False
-    game_mode = ""
-    idx_1 = 0 
-    idx_2 = 1
-
+    data_samples   = 1000
+    playerColors   = ['g', 'r']
+    boundaries_on  = False
+    show_centroids = False
+    game_mode      = ""
+    
+    idx_1  = 0 
+    idx_2  = 1
     params = {"n_clusters": 5,
               "n_init": 200,
               "max_iter": 200,
@@ -59,20 +63,20 @@ class KMeansGameboard(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
 
-        self.ix, iy = 0, 0
-        self.playerID = False
-        self.turn = 0
+        self.ix, iy     = 0, 0
+        self.playerID   = False
+        self.turn       = 0
         self.pointOwner = []
-        self.points = []
+        self.points     = []
         self.boundaries_on = False
 
-        self.canvas = FigureCanvas(Figure())
+        self.canvas    = FigureCanvas(Figure())
+        self.fig       = self.canvas.figure
+        self.canvas.ax = self.fig.add_subplot(111)
+        self.cid       = self.canvas.figure.canvas.mpl_connect('button_press_event', self)
 
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
-
-        self.fig = self.canvas.figure
-        self.canvas.ax = self.fig.add_subplot(111)
 
         # create data points
         self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
@@ -80,11 +84,10 @@ class KMeansGameboard(QWidget):
 
         self.kmeans = KMeans(n_clusters=self.k, random_state=42)
         self.y_pred = self.kmeans.fit_predict(self.X)
+        
         self.plot_data()
-
         self.setLayout(self.vertical_layout)
-        self.cid = self.canvas.figure.canvas.mpl_connect(
-            'button_press_event', self)
+        
         
     #def plot_clusters(self, X, y=None):
     #    self.canvas.ax.scatter(X[:, 0], X[:, 1], c=y)
@@ -110,6 +113,7 @@ class KMeansGameboard(QWidget):
         self.playerID = not self.playerID
         self.canvas.ax.scatter(self.ix, self.iy, marker='x',
                                s=20, c=self.playerColors[self.playerID])
+        
         self.fig.canvas.draw()
 
         if self.game_mode == 'fp':
@@ -128,7 +132,7 @@ class KMeansGameboard(QWidget):
         self.fig.canvas.draw()
 
 
-    show_centroids = False
+    
 
     def plot_centroids(self, weights=None, circle_color='w', cross_color='k'):
         self.fit_model(self.k) # Been added
@@ -149,17 +153,16 @@ class KMeansGameboard(QWidget):
     def plot_decision_boundaries(self, resolution=1000, show_centroids=True,
                                 show_xlabels=True, show_ylabels=True):
         try:
-            mins = self.X.min(axis=0) - 0.1
-            maxs = self.X.max(axis=0) + 0.1
+            mins   = self.X.min(axis=0) - 0.1
+            maxs   = self.X.max(axis=0) + 0.1
             xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
                                 np.linspace(mins[1], maxs[1], resolution))
+            
             Z = self.kmeans.predict(np.c_[xx.ravel(), yy.ravel()])
             Z = Z.reshape(xx.shape)
 
-            self.canvas.ax.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
-                        cmap="Pastel2")
-            self.canvas.ax.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]),
-                        linewidths=1, colors='k')
+            self.canvas.ax.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), cmap="Pastel2")
+            self.canvas.ax.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), linewidths=1, colors='k')
             self.plot_data()
         except:
             self.show_predictions()
@@ -180,10 +183,11 @@ class KMeansGameboard(QWidget):
         self.idx_2 = idx2 - 1
         #print(self.idx_1, self.idx_2)
 
-        if self.boundaries_on: self.plot_decision_boundaries()
-        else: self.plot_data()
+        if self.boundaries_on: 
+            self.plot_decision_boundaries() 
+        else: 
+            self.plot_data()
     
-
 
     def replot_kmeans(self):
         self.canvas.ax.clear()
@@ -192,7 +196,6 @@ class KMeansGameboard(QWidget):
                                     cluster_std=0.6, random_state=0)
         
         self.plot_data()
-
 
 
     # Toggle decision boundary off
@@ -231,9 +234,10 @@ class KMeansGameboard(QWidget):
 
         return inetia, n_iterations
 
+
     def fit_model(self, k=5, n_init=200, max_iter=200, algo="auto"):
         # Model fits datapoints to the model
-        self.k = k
+        self.k      = k
         self.params = {"n_clusters": k,
                        "n_init": n_init,
                        "max_iter": max_iter,
@@ -241,8 +245,8 @@ class KMeansGameboard(QWidget):
                        }
 
         #self.replot_kmeans()
-        self.kmeans  = KMeans(**self.params)
-        self.y_pred  = self.kmeans.fit_predict(self.X)
+        self.kmeans    = KMeans(**self.params)
+        self.y_pred    = self.kmeans.fit_predict(self.X)
         self.centroids = self.kmeans.cluster_centers_
         
 
@@ -251,7 +255,7 @@ class KMeansGameboard(QWidget):
         self.data_sample = sample_size
         self.stand_dev   = stand_dev
         self.random_gen  = rand_state
-        self.k = data_k
+        self.k           = data_k
 
         self.X, self.y   = make_blobs(n_samples=self.data_samples, centers=self.data_k,
                                       cluster_std=self.stand_dev, random_state=self.random_gen)
@@ -260,55 +264,56 @@ class KMeansGameboard(QWidget):
         self.plot_data()
         
 
-
     def model_predict(self):
         # Get inputted values
-        idx = len(self.points) - 1
-        print("points location:", self.points[idx][0], self.points[idx][1])
-        self.pred_x = self.points[idx][0]
-        self.pred_y = self.points[idx][1]
+        idx             = len(self.points) - 1
+        self.pred_x     = self.points[idx][0]
+        self.pred_y     = self.points[idx][1]
         self.prediction = self.kmeans.predict([[self.points[idx][0], self.points[idx][1]]])
-        #print("Label: ", self.prediction)
-        label = int(self.prediction)
+        label           = int(self.prediction)
+        
         self.prediction_centre = self.kmeans.cluster_centers_
-        #print("Cluster Centres:", self.kmeans.cluster_centers_)
         self.prediction_centre = self.prediction_centre[label]
+        self.euclidean_dist    = euclidean_distances([[self.points[idx][0], self.points[idx][1]]], 
+                                                     [self.prediction_centre])
+        
+        #print("points location:", self.points[idx][0], self.points[idx][1])
+        #print("Label: ", self.prediction)
+        #print("Cluster Centres:", self.kmeans.cluster_centers_)
         #print("Predict centre:", self.prediction_centre)
         #print("Predict centre X:",self.prediction_centre[0], "Predict centre y:", self.prediction_centre[1])
-        self.euclidean_dist = euclidean_distances([[self.points[idx][0], self.points[idx][1]]], [self.prediction_centre])
         
         #print("euclidean_dist:", self.euclidean_dist[0])
         
         
     def clear_canvas(self):
         self.canvas.ax.clear()
-
-    def clear_values(self):
-        self.ix, iy = 0, 0
-        self.playerID = False
-        self.turn = 0
-        self.pointOwner = []
-        self.points = []
-        self.X = []
-        self.y = []
-        self.x_point = []
-        self.y_point = []
-        self.prepopulated = False
-        self.canvas.ax.set_xlim([-2, 3])
-        self.canvas.ax.set_ylim([-1, 15])
-        self.idx_1 = 0
-        self.idx_2 = 1
-
-        self.canvas.ax.clear()
         self.fig.canvas.draw()
 
-        self.k = 5
-        self.data_k = 5
-
-        self.params = {"n_clusters": self.k,
+    def clear_values(self):
+        self.ix, iy  = 0, 0
+        self.turn    = 0
+        self.points  = []
+        self.X       = []
+        self.y       = []
+        self.x_point = []
+        self.y_point = []
+        self.idx_1   = 0
+        self.idx_2   = 1
+        self.k       = 5
+        self.data_k  = 5
+        self.params  = {"n_clusters": self.k,
                        "n_init": 200,
                        "max_iter": 200,
                        "algorithm": "auto"
                        }
+        
+        self.playerID     = False
+        self.pointOwner   = []
+        self.prepopulated = False
 
+        self.canvas.ax.clear()
+        self.canvas.ax.set_xlim([-1, 1])
+        self.canvas.ax.set_ylim([-1, 1])
+        self.fig.canvas.draw()
 

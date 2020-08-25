@@ -11,12 +11,13 @@ from PyQt5.QtGui import QIcon
 from views.controller import Controller
 
 def main():
-    app = QtWidgets.QApplication(sys.argv)
-
-    path = os.getcwd()
-    app.setWindowIcon(QIcon(path + "/Code/Project/Images/Water-drop-data-v2.png"))
+    path       = os.getcwd()
+    app        = QtWidgets.QApplication(sys.argv)
     controller = Controller()
+
+    app.setWindowIcon(QIcon(path + "/Code/Project/Images/Water-drop-data-v2.png"))
     controller.show_splashscreen()
+    
     sys.exit(app.exec_())
 
 

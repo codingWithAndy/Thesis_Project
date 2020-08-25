@@ -16,15 +16,12 @@ matplotlib.use('Qt5Agg')
 
 
 class GMMGameboard(QWidget):
-    model_name = "GMM - Gaussian Mixture Model"
+    model_name = "Gaussian Mixture Model (GMM)"
     learning_type = "Unsupervised Learning"
-    model_overview = """A Gaussian Mixture is a function that is comprised of several Gaussians, each identified by k ∈ {1,…, K}, where K is the number of clusters of our dataset. Each Gaussian k in the mixture is comprised of the following parameters:
-    
-    - A mean μ that defines its centre.
-
-    - A covariance Σ that defines its width. This would be equivalent to the dimensions of an ellipsoid in a multivariate scenario.
-    
-    - A mixing probability π that defines how big or small the Gaussian function will be."""
+    model_overview = "A Gaussian Mixture is a function that is comprised of several Gaussians, each identified by k ∈ {1,…, K}, where K is the number of clusters of our dataset. \n\nEach Gaussian k in the mixture is comprised of the following parameters:" +\
+    "\n- A mean μ that defines its centre." + \
+    "\n- A covariance Σ that defines its width. This would be equivalent to the dimensions of an ellipsoid in a multivariate scenario." +\
+    "\n- A mixing probability π that defines how big or small the Gaussian function will be."
 
     data = load_iris()
     X = data.data

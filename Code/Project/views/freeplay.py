@@ -212,10 +212,8 @@ class FreePlay(QtWidgets.QWidget):
         self.boundaryLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.horizontalLayout_3.addWidget(self.boundaryLabel)
 
-        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(
-            self.modelSettingsGroupBox)
-        self.boundaryOnOffRadioButton.setMaximumSize(
-            QtCore.QSize(25, 16777215))
+        self.boundaryOnOffRadioButton = QtWidgets.QRadioButton(self.modelSettingsGroupBox)
+        self.boundaryOnOffRadioButton.setMaximumSize(QtCore.QSize(25, 16777215))
         self.boundaryOnOffRadioButton.setText("")
         self.boundaryOnOffRadioButton.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.boundaryOnOffRadioButton.setObjectName("boundaryOnOffRadioButton")
@@ -318,8 +316,6 @@ class FreePlay(QtWidgets.QWidget):
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
         ########
-        
-
         self.button_connection_setup()
         self.retranslateUi()
         self.timer_checker()
@@ -342,37 +338,37 @@ class FreePlay(QtWidgets.QWidget):
 
     # Interactive game board set up
     def setup_gameboard(self):
-        print("in setup gameboard")
+        #print("in setup gameboard")
         if self.fp_model == 'k-means':
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = KMeansGameboard(self)
             self.MplWidget.game_mode = "fp"
             idx = 1
         elif self.fp_model == 'lda':
-            print("in else if statement for lda")
+            #print("in else if statement for lda")
             self.MplWidget = MplWidget(self)
             self.boundaryOnOffRadioButton.setChecked(True)
             idx = 2
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'gmm':
-            print("in else if statement for gmm")
+            #print("in else if statement for gmm")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = GMMGameboard(self)
             idx = 4
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'linearreg':
-            print("in else if statement for lin_reg")
+            #print("in else if statement for lin_reg")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = LinearRegressionGameboard(self,game_mode="fp")
             idx = 3
         elif self.fp_model == 'svm':
-            print("in else if statement for svm")
+            #print("in else if statement for svm")
             self.MplWidget = SVMGameboard(self)
             self.boundaryOnOffRadioButton.setChecked(True)
             idx = 5
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'neural network':
-            print("in else if statement for nn")
+            #print("in else if statement for nn")
             self.MplWidget = NNGameboard(self)
             idx = 6
             self.no_data_options_retranslateUi()
@@ -380,10 +376,8 @@ class FreePlay(QtWidgets.QWidget):
         
         self.modelSelectComboBox.setCurrentIndex(idx)
 
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHeightForWidth(
-            self.MplWidget.sizePolicy().hasHeightForWidth())
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHeightForWidth(self.MplWidget.sizePolicy().hasHeightForWidth())
         self.MplWidget.setSizePolicy(sizePolicy)
         self.MplWidget.setMinimumSize(QtCore.QSize(450, 350))
         self.MplWidget.setMaximumSize(QtCore.QSize(855, 525))
@@ -455,6 +449,11 @@ class FreePlay(QtWidgets.QWidget):
             pass
 
         if self.fp_model == "k-means":
+            try:
+                self.remove_nn_model_options()
+
+            except:
+                pass
             self.kLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.kLabel.setMinimumSize(QtCore.QSize(100, 15))
             self.kLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
@@ -525,24 +524,116 @@ class FreePlay(QtWidgets.QWidget):
             #spacerItem6 = QtWidgets.QSpacerItem(
             #    20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
             #self.gridLayout_3.addItem(spacerItem6, 4, 0, 1, 1) #og: gridLayout 
-        
-        
 
             self.km_modeloptions_retranslateUi()
-    
-        else:
+        
+        elif self.fp_model == "neural network":
             try:
-                # Needs tidying up.
                 self.remove_km_model_options()
-                #self.kLabel.deleteLater()
-                #self.kLineEdit.deleteLater()
-                #self.algorithmLabel.deleteLater()
-                #self.algorithmComboBox.deleteLater()
             except:
                 pass
 
+            self.noOfLayersLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.noOfLayersLabel.setMinimumSize(QtCore.QSize(0, 18))
+            self.noOfLayersLabel.setMaximumSize(QtCore.QSize(150, 18))
+            self.noOfLayersLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.noOfLayersLabel.setAlignment(
+                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.noOfLayersLabel.setObjectName("noOfLayersLabel")
+            self.gridLayout_3.addWidget(self.noOfLayersLabel, 0, 0, 1, 1)
+            self.noOfNeuronsLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.noOfNeuronsLabel.setMinimumSize(QtCore.QSize(0, 15))
+            self.noOfNeuronsLabel.setMaximumSize(QtCore.QSize(150, 15))
+            self.noOfNeuronsLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.noOfNeuronsLabel.setAlignment(
+                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.noOfNeuronsLabel.setObjectName("noOfNeuronsLabel")
+            self.gridLayout_3.addWidget(self.noOfNeuronsLabel, 1, 0, 1, 1)
+            self.layerActivationLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.layerActivationLabel.setMinimumSize(QtCore.QSize(0, 15))
+            self.layerActivationLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+            self.layerActivationLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.layerActivationLabel.setAlignment(
+                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.layerActivationLabel.setObjectName("layerActivationLabel")
+            self.gridLayout_3.addWidget(self.layerActivationLabel, 2, 0, 1, 1)
+            self.outputActivationLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.outputActivationLabel.setMinimumSize(QtCore.QSize(0, 15))
+            self.outputActivationLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+            self.outputActivationLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.outputActivationLabel.setAlignment(
+                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.outputActivationLabel.setObjectName("outputActivationLabel")
+            self.gridLayout_3.addWidget(self.outputActivationLabel, 3, 0, 1, 1)
+            self.noOfNeuronsValueLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.noOfNeuronsValueLabel.setMinimumSize(QtCore.QSize(0, 15))
+            self.noOfNeuronsValueLabel.setMaximumSize(QtCore.QSize(16777215, 15))
+            self.noOfNeuronsValueLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.noOfNeuronsValueLabel.setText("")
+            self.noOfNeuronsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+            self.noOfNeuronsValueLabel.setObjectName("noOfNeuronsValueLabel")
+            self.gridLayout_3.addWidget(self.noOfNeuronsValueLabel, 1, 1, 1, 1)
+            self.layerActivationValueLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.layerActivationValueLabel.setMinimumSize(QtCore.QSize(220, 15))
+            self.layerActivationValueLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.layerActivationValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+            self.layerActivationValueLabel.setObjectName(
+                "layerActivationValueLabel")
+            self.gridLayout_3.addWidget(self.layerActivationValueLabel, 2, 1, 1, 1)
+            self.outputActivationValueLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.outputActivationValueLabel.setMinimumSize(QtCore.QSize(220, 15))
+            self.outputActivationValueLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.outputActivationValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+            self.outputActivationValueLabel.setObjectName(
+                "outputActivationValueLabel")
+            self.gridLayout_3.addWidget(
+                self.outputActivationValueLabel, 3, 1, 1, 1)
+            self.noOfLayersValueLabel = QtWidgets.QLabel(self.modelGroupBox)
+            self.noOfLayersValueLabel.setMinimumSize(QtCore.QSize(0, 15))
+            self.noOfLayersValueLabel.setStyleSheet(
+                "background-color: rgba(0,0,0,0%);")
+            self.noOfLayersValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+            self.noOfLayersValueLabel.setObjectName("noOfLayersValueLabel")
+            self.gridLayout_3.addWidget(self.noOfLayersValueLabel, 0, 1, 1, 1)
+
+            _translate = QtCore.QCoreApplication.translate
+            self.noOfLayersLabel.setText(_translate("self", "Number of Layers:"))
+            self.noOfNeuronsLabel.setText(_translate("self", "Number of Neurons:"))
+            self.layerActivationLabel.setText(_translate("self", "Input Layer Activation:"))
+            self.outputActivationLabel.setText(_translate("self", "Output Activation:"))
+            self.layerActivationValueLabel.setText(_translate("self", self.MplWidget.l0_activation))
+            self.outputActivationValueLabel.setText(_translate("self", self.MplWidget.output_activation))
+            self.noOfNeuronsValueLabel.setText(_translate("self", str(self.MplWidget.no_neurons)))
+            self.noOfLayersValueLabel.setText(_translate("self", str(self.MplWidget.no_layers)))
+        
+        
+        else:
+            try:
+                self.remove_km_model_options()
+            except:
+                pass
+            try:
+                self.remove_nn_model_options()
+            except:
+                pass             
+
             self.no_model_options_available()
-            
+    
+    def remove_nn_model_options(self):
+        self.noOfLayersLabel.deleteLater()
+        self.noOfNeuronsLabel.deleteLater()
+        self.layerActivationLabel.deleteLater()
+        self.outputActivationLabel.deleteLater()
+        self.noOfNeuronsValueLabel.deleteLater()
+        self.layerActivationValueLabel.deleteLater()
+        self.outputActivationValueLabel.deleteLater()
+        self.noOfLayersValueLabel.deleteLater()
 
     def data_options_setup(self):
         # Chose what display to show
@@ -591,7 +682,6 @@ class FreePlay(QtWidgets.QWidget):
                 self.dataset_feature_data_options()
                 self.previous_data_option = 'features'
             
-        
         elif self.fp_model == 'k-means':
             if self.dataSelectComboBox.currentText() == 'Custom':
                 if self.previous_data_option == 'features':
@@ -610,9 +700,7 @@ class FreePlay(QtWidgets.QWidget):
                 self.dataset_feature_data_options()
                 self.previous_data_option = 'features'
             
-        
-        
-        
+   
     def remove_placeholder_labels(self, label_group):
         if label_group == "data option":
             self.noDataSelectedLabel.deleteLater()
@@ -636,8 +724,15 @@ class FreePlay(QtWidgets.QWidget):
         self.noDataSelectedLabel.setText(_translate("self", "No Data Options Selected yet!"))
             
     def load_predata(self, value):
-        self.MplWidget.generate_data_points(int(value))
-        self.set_boundary_rb_check(False)
+        try:
+            self.MplWidget.generate_data_points(int(value))
+            self.set_boundary_rb_check(False)
+        except:
+            self.dataSelectComboBox.setCurrentIndex(0)
+            msg = "This model does not have any data options"
+            self.create_msgbox(msg)
+            
+        #self.set_boundary_rb_check(False)
         
 
     # Linking to Models boundaries on off function
@@ -666,13 +761,7 @@ class FreePlay(QtWidgets.QWidget):
 
     def clear_graph(self):
         # Only trigger own cleaning if different values are used
-        if self.modelSelectComboBox.currentText() == "K-Means":
-            self.clear_kmeans()
-        elif self.modelSelectComboBox.currentText() == "LDA":
-            self.clear_lda()
-        else:
-            self.MplWidget.clear_values()
-
+        self.MplWidget.clear_values()
         self.set_boundary_rb_check(False)
 
     
@@ -697,6 +786,7 @@ class FreePlay(QtWidgets.QWidget):
         else:
             self.MplWidget.show_centroids = False
             self.MplWidget.clear_canvas()
+            
             if self.boundaryOnOffRadioButton.isChecked() == True:
                 self.MplWidget.plot_decision_boundaries()
             else:
@@ -706,27 +796,27 @@ class FreePlay(QtWidgets.QWidget):
 
 
     ###########          Clearning Models       ####################
-    def clear_kmeans(self):
-        ### This needs to become a method in the KMeans Class
-        self.MplWidget.canvas.ax.clear()
-        self.MplWidget.canvas.ax.set_xlim([-1, 1])
-        self.MplWidget.canvas.ax.set_ylim([-1, 1])
-        self.MplWidget.canvas.draw()
-
-
-    def clear_lda(self):
-        ### This needs to become a method in the LDA Class
-        self.MplWidget.points = []
-        self.MplWidget.turn = 0
-        self.MplWidget.pointOwner = []
-        self.MplWidget.canvas.ax.clear()
-        self.MplWidget.canvas.ax.set_xlim([-1, 1])
-        self.MplWidget.canvas.ax.set_ylim([-1, 1])
-        self.MplWidget.canvas.draw()
-
-
-    def clear_linreg(self):
-        print("Need to clear linear regression contents.")
+    #def clear_kmeans(self):
+    #    ### This needs to become a method in the KMeans Class
+    #    self.MplWidget.canvas.ax.clear()
+    #    self.MplWidget.canvas.ax.set_xlim([-1, 1])
+    #    self.MplWidget.canvas.ax.set_ylim([-1, 1])
+    #    self.MplWidget.canvas.draw()
+#
+#
+    #def clear_lda(self):
+    #    ### This needs to become a method in the LDA Class
+    #    self.MplWidget.points = []
+    #    self.MplWidget.turn = 0
+    #    self.MplWidget.pointOwner = []
+    #    self.MplWidget.canvas.ax.clear()
+    #    self.MplWidget.canvas.ax.set_xlim([-1, 1])
+    #    self.MplWidget.canvas.ax.set_ylim([-1, 1])
+    #    self.MplWidget.canvas.draw()
+#
+#
+    #def clear_linreg(self):
+    #    print("Need to clear linear regression contents.")
 
 
     ################################################################
@@ -740,6 +830,8 @@ class FreePlay(QtWidgets.QWidget):
             self.lin_reg_retranslateUi()
         elif self.fp_model == "k-means":
             self.km_model_options_setup()
+        elif self.fp_model == "neural network":
+            self.nn_model_options_setup()
         else:
             self.no_paramaters_available()
         
@@ -774,6 +866,8 @@ class FreePlay(QtWidgets.QWidget):
             pass
         elif self.current_model == 'lda':
             pass
+        elif self.current_model == "neural network":
+            self.remove_nn_model_details()
 
     
     def update_models_metrics(self):
@@ -781,6 +875,12 @@ class FreePlay(QtWidgets.QWidget):
             self.update_lr_param_output()
         elif self.fp_model == "k-means":
             self.km_predict()
+        elif self.fp_model == "neural network":
+            try:
+                territory = '{} | {}'.format((round(self.MplWidget.a0, 2) * 100), (round(self.MplWidget.a1, 2) * 100))
+                self.terratoryValueLabel.setText(territory)
+            except:
+                self.terratoryValueLabel.setText("{Click in Grid to start}")
             #self.asked_q = False
             #if self.MplWidget.turn > 0 and self.MplWidget.turn % 5 == 0 and self.asked_q == False:
             #    # This eventually needs to be in line with the other if
@@ -978,24 +1078,22 @@ class FreePlay(QtWidgets.QWidget):
         self.set_boundary_rb_check(False)
 
         if self.kLineEdit.text() != "":
-            k = int(self.kLineEdit.text())
-            n_init = int(self.noOfInitialisersLineEdit.text()) if self.noOfInitialisersLineEdit.text() != "" else 300
+            k        = int(self.kLineEdit.text())
+            n_init   = int(self.noOfInitialisersLineEdit.text()) if self.noOfInitialisersLineEdit.text() != "" else 300
             max_iter = int(self.maxIterationsLineEdit.text()) if self.maxIterationsLineEdit.text() != "" else 300
-            algo = self.algorithmComboBox.currentText()
-            params = {"n_clusters": k, 
+            algo     = self.algorithmComboBox.currentText()
+            params   = {"n_clusters": k, 
                       "n_init" : n_init,
                       "max_iter": max_iter, 
                       "algorithm" : algo.lower()
             }
 
-            self.MplWidget.clear_canvas()
             self.MplWidget.fit_model(k, n_init, max_iter, algo.lower())
             
-            self.kLineEdit.text()
-            self.noOfInitialisersLineEdit.text()
-            self.maxIterationsLineEdit.text()
-            #self.algorithmComboBoxcombo.setCurrentIndex(0)
-            print("Passing through k params")
+            self.kLineEdit.setText("")
+            self.noOfInitialisersLineEdit.setText("")
+            self.maxIterationsLineEdit.setText("")
+            
         elif combo_current_txt == "Custom":
             self.set_boundary_rb_check(False)
             self.generate_km_custom_data()
@@ -1029,12 +1127,12 @@ class FreePlay(QtWidgets.QWidget):
         
         self.update_km_param_output()
 
-    def km_parameter_setup(self):
-        print("Links the paramteters to the model!")
+    #def km_parameter_setup(self):
+    #    print("Links the paramteters to the model!")
 
 
     def generate_km_custom_data(self):
-        number_of_clusters = int(self.noOfClustersLineEdit.text())
+        number_of_clusters    = int(self.noOfClustersLineEdit.text())
         number_of_datasamples = int(self.noDataSamplesLineEdit.text())
         
         ### These need to be in the km predict func
@@ -1052,10 +1150,9 @@ class FreePlay(QtWidgets.QWidget):
     def km_predict(self):
         try:
             self.outputValueLabel.setText(str(self.MplWidget.prediction))
-            self.distFromCentroidValueLabel.setText(
-                str(round(float(self.MplWidget.euclidean_dist[0]), 4)))
+            self.distFromCentroidValueLabel.setText(str(round(float(self.MplWidget.euclidean_dist[0]), 4)))
             pred_txt = "X: " + str(round(float(self.MplWidget.pred_x), 4)) + \
-                " | y: " + str(round(float(self.MplWidget.pred_y), 4))
+                       " | y: " + str(round(float(self.MplWidget.pred_y), 4))
             self.predictInfoLabel.setText(pred_txt)
         except:
             self.outputValueLabel.setText("No Preiction(s) yet!")
@@ -1065,6 +1162,33 @@ class FreePlay(QtWidgets.QWidget):
 
     #######    Hide and Show Model and Data Options ################
     ##### Model Options #######
+    def nn_model_options_setup(self):
+        self.terratoryLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.terratoryLabel.setMinimumSize(QtCore.QSize(60, 15))
+        self.terratoryLabel.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.terratoryLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+        self.terratoryLabel.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.terratoryLabel.setObjectName("terratoryLabel")
+        self.modelOptionsGridLayout.addWidget(self.terratoryLabel, 0, 0, 1, 1)
+        self.terratoryValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
+        self.terratoryValueLabel.setMinimumSize(QtCore.QSize(150, 15))
+        self.terratoryValueLabel.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.terratoryValueLabel.setStyleSheet(
+            "background-color: rgba(0,0,0,0%)")
+        self.terratoryValueLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.terratoryValueLabel.setObjectName("terratoryValueLabel")
+        self.modelOptionsGridLayout.addWidget(
+            self.terratoryValueLabel, 0, 1, 1, 1)
+
+        # Add retranslate
+        _translate = QtCore.QCoreApplication.translate
+        self.terratoryLabel.setText(_translate("self", "Terratory:"))
+
+    def remove_nn_model_details(self):
+        self.terratoryLabel.deleteLater()
+        self.terratoryValueLabel.deleteLater()
+
     # Show LR Model Options
     def lin_reg_model_options_setup(self):
         self.interceptLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
@@ -1115,8 +1239,7 @@ class FreePlay(QtWidgets.QWidget):
         self.outcomeLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.outcomeLabel.setMinimumSize(QtCore.QSize(60, 15))
         self.outcomeLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.outcomeLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.outcomeLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.outcomeLabel.setObjectName("outcomeLabel")
         self.modelOptionsGridLayout.addWidget(self.outcomeLabel, 3, 0, 1, 1)
         self.outputLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
@@ -1180,8 +1303,7 @@ class FreePlay(QtWidgets.QWidget):
         self.predictLabel.setMinimumSize(QtCore.QSize(47, 15))
         self.predictLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.predictLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.predictLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing 
-                                       | QtCore.Qt.AlignVCenter)
+        self.predictLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.predictLabel.setObjectName("predictLabel")
         self.modelOptionsGridLayout.addWidget(self.predictLabel, 2, 0, 1, 1)
         self.distFromCentroidValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
