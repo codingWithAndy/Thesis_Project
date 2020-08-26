@@ -861,7 +861,7 @@ class FreePlay(QtWidgets.QWidget):
             self.km_predict()
         elif self.fp_model == "neural network":
             try:
-                territory = 'Red: {}%   |    Blue: {}%'.format(int((round(self.MplWidget.a0, 2) * 100)), int((round(self.MplWidget.a1, 2) * 100)))
+                territory = 'Blue: {}%   |    Red: {}%'.format(int((round(self.MplWidget.a0, 2) * 100)), int((round(self.MplWidget.a1, 2) * 100)))
                 self.terratoryValueLabel.setText(territory)
             except:
                 self.terratoryValueLabel.setText("{Click in Grid to start}")
