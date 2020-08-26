@@ -15,7 +15,6 @@ from views.maingamescreen import MainGameScreen
 from views.comingsoon import ComingSoonScreen
 
 
-
 class Controller:
 
 

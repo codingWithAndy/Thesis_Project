@@ -21,13 +21,14 @@ import numpy as np
 
 class FreePlay(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
-    current_path = os.getcwd()
-
+    current_path  = os.getcwd()
     model_options = ["k-means", "lda", 
                      "svm", "gmm", 
-                     "linearreg", "neural network"]
-    current_game = ""
-    current_model = ""
+                     "linearreg", "neural network"
+                    ]
+    
+    current_game         = ""
+    current_model        = ""
     previous_data_option = ""
     
     def __init__(self, model_choice=""):
@@ -74,8 +75,7 @@ class FreePlay(QtWidgets.QWidget):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.gamboardModelInforLayoutV = QtWidgets.QHBoxLayout()
-        self.gamboardModelInforLayoutV.setObjectName(
-            "gamboardModelInforLayoutV")
+        self.gamboardModelInforLayoutV.setObjectName("gamboardModelInforLayoutV")
 
         self.gameboardPlacing = QtWidgets.QHBoxLayout()
         self.gameboardPlacing.setObjectName("gameboardPlacing")
@@ -87,12 +87,10 @@ class FreePlay(QtWidgets.QWidget):
         self.modelInfoLayoutV.setObjectName("modelInfoLayoutV")
 
         self.frame = QtWidgets.QFrame(self)
-        sizePolicy = QtWidgets.QSizePolicy(
-            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(2)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(
-            self.frame.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy)
         self.frame.setMinimumSize(QtCore.QSize(570, 350))
         self.frame.setMaximumSize(QtCore.QSize(1710, 525))
@@ -537,67 +535,53 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfLayersLabel.setMinimumSize(QtCore.QSize(0, 18))
             self.noOfLayersLabel.setMaximumSize(QtCore.QSize(150, 18))
             self.noOfLayersLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-            self.noOfLayersLabel.setAlignment(
-                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.noOfLayersLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
             self.noOfLayersLabel.setObjectName("noOfLayersLabel")
             self.gridLayout_3.addWidget(self.noOfLayersLabel, 0, 0, 1, 1)
             self.noOfNeuronsLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.noOfNeuronsLabel.setMinimumSize(QtCore.QSize(0, 15))
             self.noOfNeuronsLabel.setMaximumSize(QtCore.QSize(150, 15))
-            self.noOfNeuronsLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
-            self.noOfNeuronsLabel.setAlignment(
-                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.noOfNeuronsLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.noOfNeuronsLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
             self.noOfNeuronsLabel.setObjectName("noOfNeuronsLabel")
             self.gridLayout_3.addWidget(self.noOfNeuronsLabel, 1, 0, 1, 1)
             self.layerActivationLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.layerActivationLabel.setMinimumSize(QtCore.QSize(0, 15))
             self.layerActivationLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-            self.layerActivationLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
-            self.layerActivationLabel.setAlignment(
-                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.layerActivationLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.layerActivationLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
             self.layerActivationLabel.setObjectName("layerActivationLabel")
             self.gridLayout_3.addWidget(self.layerActivationLabel, 2, 0, 1, 1)
             self.outputActivationLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.outputActivationLabel.setMinimumSize(QtCore.QSize(0, 15))
             self.outputActivationLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-            self.outputActivationLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
-            self.outputActivationLabel.setAlignment(
-                QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+            self.outputActivationLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
+            self.outputActivationLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
             self.outputActivationLabel.setObjectName("outputActivationLabel")
             self.gridLayout_3.addWidget(self.outputActivationLabel, 3, 0, 1, 1)
             self.noOfNeuronsValueLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.noOfNeuronsValueLabel.setMinimumSize(QtCore.QSize(0, 15))
             self.noOfNeuronsValueLabel.setMaximumSize(QtCore.QSize(16777215, 15))
-            self.noOfNeuronsValueLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
+            self.noOfNeuronsValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
             self.noOfNeuronsValueLabel.setText("")
             self.noOfNeuronsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
             self.noOfNeuronsValueLabel.setObjectName("noOfNeuronsValueLabel")
             self.gridLayout_3.addWidget(self.noOfNeuronsValueLabel, 1, 1, 1, 1)
             self.layerActivationValueLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.layerActivationValueLabel.setMinimumSize(QtCore.QSize(220, 15))
-            self.layerActivationValueLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
+            self.layerActivationValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
             self.layerActivationValueLabel.setAlignment(QtCore.Qt.AlignCenter)
-            self.layerActivationValueLabel.setObjectName(
-                "layerActivationValueLabel")
+            self.layerActivationValueLabel.setObjectName("layerActivationValueLabel")
             self.gridLayout_3.addWidget(self.layerActivationValueLabel, 2, 1, 1, 1)
             self.outputActivationValueLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.outputActivationValueLabel.setMinimumSize(QtCore.QSize(220, 15))
-            self.outputActivationValueLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
+            self.outputActivationValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
             self.outputActivationValueLabel.setAlignment(QtCore.Qt.AlignCenter)
-            self.outputActivationValueLabel.setObjectName(
-                "outputActivationValueLabel")
-            self.gridLayout_3.addWidget(
-                self.outputActivationValueLabel, 3, 1, 1, 1)
+            self.outputActivationValueLabel.setObjectName("outputActivationValueLabel")
+            self.gridLayout_3.addWidget(self.outputActivationValueLabel, 3, 1, 1, 1)
             self.noOfLayersValueLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.noOfLayersValueLabel.setMinimumSize(QtCore.QSize(0, 15))
-            self.noOfLayersValueLabel.setStyleSheet(
-                "background-color: rgba(0,0,0,0%);")
+            self.noOfLayersValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
             self.noOfLayersValueLabel.setAlignment(QtCore.Qt.AlignCenter)
             self.noOfLayersValueLabel.setObjectName("noOfLayersValueLabel")
             self.gridLayout_3.addWidget(self.noOfLayersValueLabel, 0, 1, 1, 1)
@@ -877,7 +861,7 @@ class FreePlay(QtWidgets.QWidget):
             self.km_predict()
         elif self.fp_model == "neural network":
             try:
-                territory = '{} | {}'.format((round(self.MplWidget.a0, 2) * 100), (round(self.MplWidget.a1, 2) * 100))
+                territory = 'Red: {}%   |    Blue: {}%'.format(int((round(self.MplWidget.a0, 2) * 100)), int((round(self.MplWidget.a1, 2) * 100)))
                 self.terratoryValueLabel.setText(territory)
             except:
                 self.terratoryValueLabel.setText("{Click in Grid to start}")
