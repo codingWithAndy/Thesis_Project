@@ -131,7 +131,7 @@ class LinearRegressionGameboard(QWidget):
         self.fit_model()
         self.make_prediction()
 
-        coef = self.lin_reg.intercept_
+        coef      = self.lin_reg.intercept_
         intercept = self.lin_reg.coef_
         #print("Est coef:", coef, "Intercept:", intercept[0])
 
@@ -156,19 +156,18 @@ class LinearRegressionGameboard(QWidget):
     
     def pin_the_data_result(self):
         for idx in range(len(self.points)):
-            data = np.asarray(self.points)
+            data  = np.asarray(self.points)
             new_X = data[:, :-1]
             new_y = data[:, 1]
 
             new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1)) 
             mse_value = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
-            #print('Mean Squared Error:', mse_value)
+ 
             self.results.append(mse_value)
             self.results_id.append(self.pointOwner[idx])
 
         self.data_points = self.points
-        #print("results length:",len(self.results))
-        #print("data_points length:", len(self.data_points))
+        
 
         n = len(self.data_points)
         for i in range(n-1):
@@ -211,8 +210,7 @@ class LinearRegressionGameboard(QWidget):
 
     #### Free Play Linear Regression Interaction options.
     def fp_predict(self,pred):
-        print("Free Play is being used")
-        data = np.asarray(pred)
+        data       = np.asarray(pred)
         prediction = self.lin_reg.predict(data.reshape(1, -1))
         print("Linear Reg prediction is:", prediction)
 
@@ -233,8 +231,6 @@ class LinearRegressionGameboard(QWidget):
 
 
     def generate_random_data(self, n_samples, outliers="no", n_outliers=0):
-        # Clear ax
-        # self.canvas.ax.clear()
         self.clear_values()
         self.prepopulated = True
         
@@ -243,10 +239,7 @@ class LinearRegressionGameboard(QWidget):
                                                         n_informative=1, noise=10,
                                                         coef=True, random_state=randint(0, 100))
 
-        #print("generate random data coef:", coef)
-        # Creating Prediction values for fitting model
         self.X_new = self.X
-        #self.y_pred = self.X
 
         # Create outliers
         if outliers == "yes":
@@ -254,13 +247,6 @@ class LinearRegressionGameboard(QWidget):
             self.X[:n_outliers] = 3 + 0.5 * \
                 np.random.normal(size=(n_outliers, 1))
             self.y[:n_outliers] = -3 + 10 * np.random.normal(size=n_outliers)
-
-        
-            # Possible addition -> https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html#sphx-glr-auto-examples-linear-model-plot-ransac-py
-            #ransac = linear_model.RANSACRegressor()
-            #ransac.fit(X, y)
-            #inlier_mask = ransac.inlier_mask_
-            #outlier_mask = np.logical_not(inlier_mask)
 
         # Fit Data
         self.fit_model()
@@ -278,9 +264,7 @@ class LinearRegressionGameboard(QWidget):
             self.X = diabetes.data[:, 2]
             self.X = self.X.reshape(-1, 1)
             self.y = diabetes.target
-            #self.X = self.X[:, np.newaxis, 2]
             self.X_new = self.X
-            #print("X Shape:", self.X.shape)
         
         elif data_option == 3:
             print("In boston data options")
@@ -290,14 +274,14 @@ class LinearRegressionGameboard(QWidget):
             self.X = boston.data[:, 5]
             self.X = self.X.reshape(-1, 1)
             self.y = boston.target
+
             self.X_new = self.X
 
         else:
             self.X = 2 * np.random.rand(100, 1)
             self.y = 4+3 * self.X + np.random.randn(100, 1)
-            #print("X Shape:", self.X.shape)
+
             self.X_new = np.array([[0], [2]])
-        
         
         self.fit_model()
         self.make_prediction()
@@ -327,26 +311,17 @@ class LinearRegressionGameboard(QWidget):
         self.fig.canvas.draw()
 
 
-
     def clear_values(self):
-        self.ix, iy = 0, 0
-        self.playerID = False
-        self.turn = 0
+        self.ix, iy     = 0, 0
+        self.playerID   = False
         self.pointOwner = []
-        self.points = []
-        self.X = []
-        self.y = []
-        self.x_point = []
-        self.y_point = []
+        self.points     = []
+        self.turn       = 0
+        self.X          = []
+        self.y          = []
+        self.x_point    = []
+        self.y_point    = []
         self.prepopulated = False
-        #self.canvas.ax.set_xlim([-2, 3])
-        #self.canvas.ax.set_ylim([-1, 15])
 
         self.canvas.ax.clear()
         self.fig.canvas.draw()
-
-    ###### Note: Need to get the xlim/ylim to reset to a standard value but doesn't affect the premade data points.
-
-
-
-

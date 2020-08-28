@@ -387,9 +387,7 @@ class FreePlay(QtWidgets.QWidget):
     def handleActivated(self, index):
         self.clear_model_options()
         self.dataSelectComboBox.setCurrentIndex(0)
-        # Clear Middle model options box
         self.data_options_setup()
-        #self.dataSelectComboBox.update()
         
         if self.boundaryOnOffRadioButton.isChecked() == True:
             self.boundaryOnOffRadioButton.setChecked(False)
@@ -408,7 +406,6 @@ class FreePlay(QtWidgets.QWidget):
             self.fp_model = "neural network"
                 
         self.MplWidget.hide()
-        #self.current_model = self.fp_model
         self.setup_gameboard()
         self.load_model_parameters()
         self.set_up_model_options()
@@ -506,10 +503,6 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfInitialisersLineEdit.setStyleSheet("background-color: white;")
             self.noOfInitialisersLineEdit.setObjectName("noOfInitialisersLineEdit")
             self.gridLayout_3.addWidget(self.noOfInitialisersLineEdit, 2, 1, 1, 1)
-        
-            #spacerItem5 = QtWidgets.QSpacerItem(
-            #    40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-            #self.gridLayout.addItem(spacerItem5, 0, 2, 1, 1)
             
             self.maxIterationsLineEdit = QtWidgets.QLineEdit(self.modelGroupBox)
             self.maxIterationsLineEdit.setMinimumSize(QtCore.QSize(100, 15))
@@ -517,11 +510,6 @@ class FreePlay(QtWidgets.QWidget):
             self.maxIterationsLineEdit.setStyleSheet("background-color: white;")
             self.maxIterationsLineEdit.setObjectName("maxIterationsLineEdit")
             self.gridLayout_3.addWidget(self.maxIterationsLineEdit, 3, 1, 1, 1)
-            
-            # Might need to re add to the Data Options
-            #spacerItem6 = QtWidgets.QSpacerItem(
-            #    20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-            #self.gridLayout_3.addItem(spacerItem6, 4, 0, 1, 1) #og: gridLayout 
 
             self.km_modeloptions_retranslateUi()
         
@@ -637,13 +625,6 @@ class FreePlay(QtWidgets.QWidget):
             elif self.fp_model == 'k-means' and self.previous_data_option == 'Custom':
                 self.hide_km_custom_data_options()
             self.previous_data_option = 'No Data Selected'
-        #if self.dataSelectComboBox.currentText() == 'Moons' and self.fp_model == 'k-means':
-        #    self.default_data_select()
-        #    if self.fp_model == 'k-means' and self.previous_data_option == 'features':
-        #        self.hide_dataset_feature_data_options()
-        #    elif self.fp_model == 'k-means' and self.previous_data_option == 'Custom':
-        #        self.hide_km_custom_data_options()
-        #    self.previous_data_option = 'No Data Selected'
 
         if self.fp_model == 'linearreg':
             if self.dataSelectComboBox.currentText() == 'Custom':
@@ -692,7 +673,6 @@ class FreePlay(QtWidgets.QWidget):
             print("These will be model and parameter place holders")
     
     def default_data_select(self):
-        print("Add default place holder label")
         self.noDataSelectedLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.noDataSelectedLabel.setMinimumSize(QtCore.QSize(300, 0))
         self.noDataSelectedLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
@@ -715,8 +695,6 @@ class FreePlay(QtWidgets.QWidget):
             self.dataSelectComboBox.setCurrentIndex(0)
             msg = "This model does not have any data options"
             self.create_msgbox(msg)
-            
-        #self.set_boundary_rb_check(False)
         
 
     # Linking to Models boundaries on off function
@@ -775,32 +753,6 @@ class FreePlay(QtWidgets.QWidget):
                 self.MplWidget.plot_decision_boundaries()
             else:
                 self.MplWidget.plot_data()
-            
-
-
-
-    ###########          Clearning Models       ####################
-    #def clear_kmeans(self):
-    #    ### This needs to become a method in the KMeans Class
-    #    self.MplWidget.canvas.ax.clear()
-    #    self.MplWidget.canvas.ax.set_xlim([-1, 1])
-    #    self.MplWidget.canvas.ax.set_ylim([-1, 1])
-    #    self.MplWidget.canvas.draw()
-#
-#
-    #def clear_lda(self):
-    #    ### This needs to become a method in the LDA Class
-    #    self.MplWidget.points = []
-    #    self.MplWidget.turn = 0
-    #    self.MplWidget.pointOwner = []
-    #    self.MplWidget.canvas.ax.clear()
-    #    self.MplWidget.canvas.ax.set_xlim([-1, 1])
-    #    self.MplWidget.canvas.ax.set_ylim([-1, 1])
-    #    self.MplWidget.canvas.draw()
-#
-#
-    #def clear_linreg(self):
-    #    print("Need to clear linear regression contents.")
 
 
     ################################################################
@@ -823,18 +775,19 @@ class FreePlay(QtWidgets.QWidget):
     
     
     def clear_model_options(self):
-        #self.clear_all_data_options()
-
         if self.current_model == "linearreg":
             self.lin_reg_shown = True
             self.hide_lr_model_options()
             #self.lr_custom_data_options_hide()
     
+
     def remove_param_label(self):
         self.noModelParLabel.deleteLater()
 
+
     def remove_model_label(self):
         self.noModelOpLabel.deleteLater()
+
 
     def hide_model_options(self):
         try:
@@ -865,12 +818,6 @@ class FreePlay(QtWidgets.QWidget):
                 self.terratoryValueLabel.setText(territory)
             except:
                 self.terratoryValueLabel.setText("{Click in Grid to start}")
-            #self.asked_q = False
-            #if self.MplWidget.turn > 0 and self.MplWidget.turn % 5 == 0 and self.asked_q == False:
-            #    # This eventually needs to be in line with the other if
-            #    msg = "What about turning on the boundary line?"
-            #    self.create_msgbox(msg)
-            #    self.asked_q = True
 
 
     ###############################################################
@@ -882,13 +829,11 @@ class FreePlay(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("self", "Data Splash! - Free Play"))
         self.learningTypeLabel.setText(_translate("self", "Learning Type:"))
-        self.learningTypeInfoLabel.setText(
-            _translate("self", "Learning type info"))
+        self.learningTypeInfoLabel.setText(_translate("self", "Learning type info"))
         self.modelLabel_2.setText(_translate("self", "Model:"))
         self.modelTypeLabel.setText(_translate("self", "Model name"))
         self.overviewLabel.setText(_translate("self", "Overview:"))
-        self.modelSettingsGroupBox.setTitle(
-            _translate("self", "Model Options:"))
+        self.modelSettingsGroupBox.setTitle(_translate("self", "Model Options:"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "General:"))
         self.modelSelectionLabel.setText(_translate("self", "Model:"))
         self.boundaryLabel.setText(_translate("self", "Model Visualisation (On/Off):"))
@@ -909,18 +854,18 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectionLabel.setText(_translate("self","Data Selection:"))
         self.dataSelectComboBox.setItemText(0, _translate("self", "Please Select:"))
         self.dataSelectComboBox.setItemText(1,_translate("self","Custom"))
-        #self.dataSelectComboBox.setItemText(2,_translate("self",""))
-        #self.dataSelectComboBox.setItemText(3, _translate("self", ""))
         
         self.modelOptionsGroupBox.setTitle(_translate("self", "Model Attribute(s):"))
         self.modelGroupBox.setTitle(_translate("self", "Model Parameter(s):"))
         self.dataOptionsGroupBox.setTitle(_translate("self", "Data Option(s):"))
+
 
     def no_data_options_retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.dataSelectComboBox.setItemText(1,_translate("self",""))
         self.dataSelectComboBox.setItemText(2,_translate("self",""))
         self.dataSelectComboBox.setItemText(3, _translate("self", ""))
+
 
     # LR Model Options
     def lin_reg_retranslateUi(self):
@@ -933,11 +878,13 @@ class FreePlay(QtWidgets.QWidget):
         self.dataSelectComboBox.setItemText(2, _translate("self", "Diabeties"))
         self.dataSelectComboBox.setItemText(3, _translate("self", "Boston House Prices"))
 
+
     # LR Custom Data Options
     def lr_data_options_retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         # Data Options
         self.dataSampleLabel.setText(_translate("self", "Number of data samples:"))
+
 
     # Feature Data Options
     def dataset_feature_retranslateUi(self):
@@ -955,10 +902,8 @@ class FreePlay(QtWidgets.QWidget):
         self.feature3Label.setText(_translate("self", "Feature 3:"))
         self.f3YRadioButton.setText(_translate("self", "y"))
         self.f1YRadioButton.setText(_translate("self", "y"))
-        #self.f2NoneRadioButton.setText(_translate("self", "None"))
         self.feature2Label.setText(_translate("self", "Feature 2:"))
         self.f2XRadioButton.setText(_translate("self", "X"))
-        #self.f3NoneRadioButton.setText(_translate("self", "None"))
     
 
     def custom_data_retranslateUi(self):
@@ -1018,7 +963,6 @@ class FreePlay(QtWidgets.QWidget):
             self.interceptValueLabel.setText("No Value, yet!")
 
 
-
     # Play button LR action handler
     def lr_play_button_control(self):
         combo_current_txt = self.dataSelectComboBox.currentText()
@@ -1067,10 +1011,10 @@ class FreePlay(QtWidgets.QWidget):
             max_iter = int(self.maxIterationsLineEdit.text()) if self.maxIterationsLineEdit.text() != "" else 300
             algo     = self.algorithmComboBox.currentText()
             params   = {"n_clusters": k, 
-                      "n_init" : n_init,
-                      "max_iter": max_iter, 
-                      "algorithm" : algo.lower()
-            }
+                        "n_init" : n_init,
+                        "max_iter": max_iter, 
+                        "algorithm" : algo.lower()
+                        }
 
             self.MplWidget.fit_model(k, n_init, max_iter, algo.lower())
             
@@ -1118,11 +1062,6 @@ class FreePlay(QtWidgets.QWidget):
     def generate_km_custom_data(self):
         number_of_clusters    = int(self.noOfClustersLineEdit.text())
         number_of_datasamples = int(self.noDataSamplesLineEdit.text())
-        
-        ### These need to be in the km predict func
-        #n_init = int(self.noOfInitialisersLineEdit.text())
-        #max_iter = int(self.maxIterationsLineEdit.text())
-        #algo = self.algorithmComboBox.currentText().lower()
 
         self.MplWidget.generate_random_data(number_of_clusters, number_of_datasamples)
         self.update_km_param_output()
@@ -1151,19 +1090,16 @@ class FreePlay(QtWidgets.QWidget):
         self.terratoryLabel.setMinimumSize(QtCore.QSize(60, 15))
         self.terratoryLabel.setMaximumSize(QtCore.QSize(150, 16777215))
         self.terratoryLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.terratoryLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.terratoryLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.terratoryLabel.setObjectName("terratoryLabel")
         self.modelOptionsGridLayout.addWidget(self.terratoryLabel, 0, 0, 1, 1)
         self.terratoryValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.terratoryValueLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.terratoryValueLabel.setMaximumSize(QtCore.QSize(16777215, 15))
-        self.terratoryValueLabel.setStyleSheet(
-            "background-color: rgba(0,0,0,0%)")
+        self.terratoryValueLabel.setStyleSheet("background-color: rgba(0,0,0,0%)")
         self.terratoryValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.terratoryValueLabel.setObjectName("terratoryValueLabel")
-        self.modelOptionsGridLayout.addWidget(
-            self.terratoryValueLabel, 0, 1, 1, 1)
+        self.modelOptionsGridLayout.addWidget(self.terratoryValueLabel, 0, 1, 1, 1)
 
         # Add retranslate
         _translate = QtCore.QCoreApplication.translate
@@ -1179,8 +1115,7 @@ class FreePlay(QtWidgets.QWidget):
         self.interceptLabel.setMinimumSize(QtCore.QSize(60, 15))
         self.interceptLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.interceptLabel.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.interceptLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.interceptLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.interceptLabel.setObjectName("interceptLabel")
         self.modelOptionsGridLayout.addWidget(self.interceptLabel, 0, 0, 1, 1)
         self.interceptValueLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
@@ -1233,7 +1168,6 @@ class FreePlay(QtWidgets.QWidget):
         self.outputLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.outputLabel.setObjectName("outputLabel")
         self.modelOptionsGridLayout.addWidget(self.outputLabel, 3, 1, 1, 1)
-        #self.horizontalLayout_4.addLayout(self.modelOptionsGridLayout)
 
 
     # Hide LR Model Options
@@ -1310,9 +1244,6 @@ class FreePlay(QtWidgets.QWidget):
         self.outputLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.outputLabel.setObjectName("outputLabel")
         self.modelOptionsGridLayout.addWidget(self.outputLabel, 3, 0, 1, 1)
-        #spacerItem3 = QtWidgets.QSpacerItem(
-        #    20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        #self.modelOptionsGridLayout.addItem(spacerItem3, 5, 0, 1, 1)
         self.distFromCentroidLabel = QtWidgets.QLabel(self.modelOptionsGroupBox)
         self.distFromCentroidLabel.setMinimumSize(QtCore.QSize(0, 15))
         self.distFromCentroidLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
@@ -1333,9 +1264,6 @@ class FreePlay(QtWidgets.QWidget):
         self.noOfIterationsValueLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.noOfIterationsValueLabel.setObjectName("noOfIterationsValueLabel")
         self.modelOptionsGridLayout.addWidget(self.noOfIterationsValueLabel, 1, 1, 1, 1)
-        #spacerItem4 = QtWidgets.QSpacerItem(
-        #    40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        #self.modelOptionsGridLayout.addItem(spacerItem4, 0, 2, 1, 1)
 
         self.checkBox.toggled.connect(self.show_km_centroids)
         self.update_km_param_output()
@@ -1371,8 +1299,6 @@ class FreePlay(QtWidgets.QWidget):
         self.checkBox.deleteLater()
 
 
-   
- 
     ##########
 
     ######### Data Options ###########
@@ -1397,8 +1323,7 @@ class FreePlay(QtWidgets.QWidget):
         self.outliersLabel.setMinimumSize(QtCore.QSize(0, 15))
         self.outliersLabel.setObjectName("outliersLabel")
         self.gridLayout.addWidget(self.outliersLabel, 1, 0, 1, 1)
-        self.outliersRadioButton = QtWidgets.QRadioButton(
-            self.dataOptionsGroupBox)
+        self.outliersRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.outliersRadioButton.setMinimumSize(QtCore.QSize(0, 15))
         self.outliersRadioButton.setText("")
         self.outliersRadioButton.setObjectName("outliersRadioButton")
@@ -1419,8 +1344,6 @@ class FreePlay(QtWidgets.QWidget):
         outliersGroup = QButtonGroup(self)
         outliersGroup.setExclusive(True)
         outliersGroup.addButton(self.outliersRadioButton)
-
-        #self.outliersNoLineedit.setEnabled(not self.outliersRadioButton.isChecked())
 
         self.custom_data_retranslateUi()
         self.outliersRadioButton.toggled.connect(self.handle_outliers_selection) 
@@ -1446,8 +1369,7 @@ class FreePlay(QtWidgets.QWidget):
         self.noOfClustersLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.noOfClustersLabel.setMinimumSize(QtCore.QSize(150, 15))
         self.noOfClustersLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        self.noOfClustersLabel.setAlignment(
-            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
+        self.noOfClustersLabel.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.noOfClustersLabel.setObjectName("noOfClustersLabel")
         self.gridLayout.addWidget(self.noOfClustersLabel, 0, 0, 1, 1)
 
@@ -1527,8 +1449,7 @@ class FreePlay(QtWidgets.QWidget):
         self.f1YRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f1YRadioButton.setObjectName("f1YRadioButton")
         self.gridLayout.addWidget(self.f1YRadioButton, 0, 2, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem3, 4, 1, 1, 1)
         self.feature2Label = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.feature2Label.setMinimumSize(QtCore.QSize(0, 15))
@@ -1537,8 +1458,7 @@ class FreePlay(QtWidgets.QWidget):
         self.f2XRadioButton = QtWidgets.QRadioButton(self.dataOptionsGroupBox)
         self.f2XRadioButton.setObjectName("f2XRadioButton")
         self.gridLayout.addWidget(self.f2XRadioButton, 1, 1, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem5, 0, 4, 1, 1)
 
         self.dataOptionsGroupBox.setLayout(self.gridLayout)
@@ -1578,12 +1498,6 @@ class FreePlay(QtWidgets.QWidget):
 
     # Hide KMeans
     def hide_km_custom_data_options(self):
-        #self.noOfInitialisersLineEdit.deleteLater()
-        #self.noOfInitialisersLabel.deleteLater()
-        #self.maxIterationsLabel.deleteLater()
-        #self.algorithmLabel.deleteLater()
-        #self.maxIterationsLineEdit.deleteLater()
-        #self.algorithmComboBox.deleteLater()
         self.noOfClustersLineEdit.deleteLater()
         self.noOfClustersLabel.deleteLater()
         self.noDataSamplesLineEdit.deleteLater()
@@ -1599,20 +1513,13 @@ class FreePlay(QtWidgets.QWidget):
         self.f3XRadioButton.deleteLater()
         self.f4XRadioButton.deleteLater()
         self.f4YRadioButton.deleteLater()
-        #self.f4NoneRadioButton.deleteLater()
         self.feature4Label.deleteLater()
-        self.f1XRadioButton.deleteLater()
-        #self.f1NoneRadioButton.deleteLater()
         self.f2YRadioButton.deleteLater()
         self.feature3Label.deleteLater()
         self.f3YRadioButton.deleteLater()
         self.f1YRadioButton.deleteLater()
-        #self.f2NoneRadioButton.deleteLater()
         self.feature2Label.deleteLater()
         self.f2XRadioButton.deleteLater()
-        #self.f3NoneRadioButton.deleteLater()
-
-    
 
 
     ############################################################

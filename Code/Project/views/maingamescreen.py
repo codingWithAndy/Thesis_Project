@@ -57,7 +57,6 @@ class MainGameScreen(QtWidgets.QWidget):
         self.setMinimumSize(QtCore.QSize(1300, 770))
         self.setStyleSheet("background-color: rgb(47,85,151);")
 
-
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -197,8 +196,7 @@ class MainGameScreen(QtWidgets.QWidget):
         font.setPointSize(25)
         self.p1Label.setFont(font)
         self.p1Label.setStyleSheet("color: white;")
-        self.p1Label.setAlignment(
-            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.p1Label.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.p1Label.setObjectName("p1Label")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.p1Label)
         self.p11Label = QtWidgets.QLabel(self.frame_5)
@@ -249,8 +247,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.p14Label.setFont(font)
         self.p14Label.setStyleSheet("color: white;")
         self.p14Label.setObjectName("p14Label")
-        self.formLayout.setWidget(
-            4, QtWidgets.QFormLayout.LabelRole, self.p14Label)
+        self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.p14Label)
         self.p1M4Label = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -279,76 +276,66 @@ class MainGameScreen(QtWidgets.QWidget):
         self.label_17.setFont(font)
         self.label_17.setStyleSheet("color: white;")
         self.label_17.setObjectName("label_17")
-        self.formLayout_2.setWidget(
-            1, QtWidgets.QFormLayout.LabelRole, self.label_17)
+        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_17)
         self.p2M1Label = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.p2M1Label.setFont(font)
         self.p2M1Label.setStyleSheet("color: white;")
         self.p2M1Label.setObjectName("p2M1Label")
-        self.formLayout_2.setWidget(
-            1, QtWidgets.QFormLayout.FieldRole, self.p2M1Label)
+        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.p2M1Label)
         self.label_18 = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.label_18.setFont(font)
         self.label_18.setStyleSheet("color: white;")
         self.label_18.setObjectName("label_18")
-        self.formLayout_2.setWidget(
-            2, QtWidgets.QFormLayout.LabelRole, self.label_18)
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_18)
         self.p2M2Label = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.p2M2Label.setFont(font)
         self.p2M2Label.setStyleSheet("color: white;")
         self.p2M2Label.setObjectName("p2M2Label")
-        self.formLayout_2.setWidget(
-            2, QtWidgets.QFormLayout.FieldRole, self.p2M2Label)
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.p2M2Label)
         self.label_19 = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.label_19.setFont(font)
         self.label_19.setStyleSheet("color: white;")
         self.label_19.setObjectName("label_19")
-        self.formLayout_2.setWidget(
-            3, QtWidgets.QFormLayout.LabelRole, self.label_19)
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_19)
         self.p2M3Label = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.p2M3Label.setFont(font)
         self.p2M3Label.setStyleSheet("color: white;")
         self.p2M3Label.setObjectName("p2M3Label")
-        self.formLayout_2.setWidget(
-            3, QtWidgets.QFormLayout.FieldRole, self.p2M3Label)
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.p2M3Label)
         self.label_20 = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.label_20.setFont(font)
         self.label_20.setStyleSheet("color: white;")
         self.label_20.setObjectName("label_20")
-        self.formLayout_2.setWidget(
-            4, QtWidgets.QFormLayout.LabelRole, self.label_20)
+        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_20)
         self.p2M4Label = QtWidgets.QLabel(self.frame_5)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.p2M4Label.setFont(font)
         self.p2M4Label.setStyleSheet("color: white;")
         self.p2M4Label.setObjectName("p2M4Label")
-        self.formLayout_2.setWidget(
-            4, QtWidgets.QFormLayout.FieldRole, self.p2M4Label)
+        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.p2M4Label)
         self.horizontalLayout_6.addLayout(self.formLayout_2)
         self.horizontalLayout_7.addWidget(self.frame_5)
-        spacerItem4 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem4)
         self.verticalLayout_6.addLayout(self.horizontalLayout_7)
         self.gameModeInforFrame = QtWidgets.QFrame(self.scoreFrame)
         self.gameModeInforFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.gameModeInforFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.gameModeInforFrame.setObjectName("gameModeInforFrame")
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(
-            self.gameModeInforFrame)
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.gameModeInforFrame)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.frame_2 = QtWidgets.QFrame(self.gameModeInforFrame)
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -505,7 +492,6 @@ class MainGameScreen(QtWidgets.QWidget):
         self.tipContentLabel.setObjectName("tipContentLabel")
         self.verticalLayout_4.addWidget(self.tipContentLabel)
         self.horizontalLayout_3.addWidget(self.tipInfoFrame)
-
         
         self.homeButton = QtWidgets.QPushButton(self)
         self.homeButton.setMinimumSize(QtCore.QSize(120, 60))
@@ -513,8 +499,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.homeButton.setStyleSheet("background-color: rgb(3,193,161); border-radius: 15px;")
         self.homeButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QtCore.QSize(80, 40))
         self.homeButton.setObjectName("homeButton")
@@ -536,7 +521,6 @@ class MainGameScreen(QtWidgets.QWidget):
         self.aimLabel.setText(_translate("self", "Aim:"))
         #self.aimDescriptionLabel.setText(_translate("self", "Description"))
         self.scoreLabel.setText(_translate("self", "Score: "))
-
 
         self.play1ScoreLabel.setText(_translate("self", "P1 - {}".format(self.player1_total_score)))
         self.player2ScoreLabel.setText(_translate("self", "P2 - {}".format(self.player1_total_score)))
@@ -572,7 +556,6 @@ class MainGameScreen(QtWidgets.QWidget):
         self.moveValueLabel.setText(_translate("self", str(self.move_no)))
         self.roundUpdatesGroupbox.setTitle(_translate("self", "Round Updates:"))
         self.highestTerritoryValueLabel.setText(_translate("self", "{Value}"))
-        self.currentLeaderValueLabel.setText(_translate("self", "{Score}"))
         self.currentLeaderLabel.setText(_translate("self", "Current Leader:"))
         self.highestTerritoryLabel.setText(_translate("self", "Highest Territory:"))
         self.p1LastScoreLabel.setText(_translate("self", "P1 Last Turn Score:"))
@@ -652,7 +635,6 @@ class MainGameScreen(QtWidgets.QWidget):
             self.create_msgbox(msg_text)
 
             if self.round_no == self.total_rounds:
-                
                 self.load_mainmenu()
             else:
                 self.round_no += 1
@@ -670,10 +652,8 @@ class MainGameScreen(QtWidgets.QWidget):
         self.timer_checker(action="start")
 
         _translate = QtCore.QCoreApplication.translate
-        self.play1ScoreLabel.setText(_translate(
-            "self", "P1 - {}".format(self.player1_total_score)))
-        self.player2ScoreLabel.setText(_translate(
-            "self", "P2 - {}".format(self.player2_total_score)))
+        self.play1ScoreLabel.setText(_translate("self", "P1 - {}".format(self.player1_total_score)))
+        self.player2ScoreLabel.setText(_translate("self", "P2 - {}".format(self.player2_total_score)))
         self.p1Label.setText(_translate("self", "P1:"))
         self.p11Label.setText(_translate("self", "1:"))
         self.p1M1Label.setText(_translate("self", "X, y"))
@@ -704,7 +684,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.moveValueLabel.setText(_translate("self", str(self.move_no)))
         self.roundUpdatesGroupbox.setTitle(_translate("self", "Round Updates:"))
         self.highestTerritoryValueLabel.setText(_translate("self", "{Value}"))
-        self.currentLeaderValueLabel.setText(_translate("self", "{Score}"))
+        
         self.currentLeaderLabel.setText(_translate("self", "Current Leader:"))
         self.highestTerritoryLabel.setText(_translate("self", "Highest Territory:"))
         self.p1LastScoreLabel.setText(_translate("self", "P1 Last Turn Score:"))
@@ -729,11 +709,12 @@ class MainGameScreen(QtWidgets.QWidget):
             self.p2M4Label.setText(self.player_moves[7])
 
             # Players Turn Indicator 
-        players_turn = "Player 2's Turn!" if self.gbWidget.playerID == True else "Player 1's Turn!"
-        self.playerTurnLabel.setText(players_turn)
+        players_turn     = "Player 2's Turn!" if self.gbWidget.playerID == True else "Player 1's Turn!"
         self.no_of_turns = int(self.gbWidget.turn / 2)
+        self.move_no     = int(self.gbWidget.turn / 2) + 1
+        
+        self.playerTurnLabel.setText(players_turn)
         self.noOfMovesValueLabel.setText(str(self.no_of_turns))
-        self.move_no = int(self.gbWidget.turn / 2) + 1
         self.moveValueLabel.setText(str(self.move_no))
     
     def generate_winner(self):
@@ -759,17 +740,23 @@ class MainGameScreen(QtWidgets.QWidget):
         self.player1_total_score += self.player1_score
         self.player2_total_score += self.player2_score
         
-        msg = "P1: " + str(self.player1_score)
-        self.play1ScoreLabel.setText(msg)
-        msg = "P2: " + str(self.player2_score)
-        self.player2ScoreLabel.setText(msg)
+        self.play1ScoreLabel.setText("P1 - {}".format(self.player1_total_score))
+        self.player2ScoreLabel.setText("P2 - {}".format(self.player2_total_score))
 
         if self.player1_score > self.player2_score:
             self.game_winner = 1
+            
         elif self.player2_score > self.player1_score:
             self.game_winner = 2
         else:
             self.game_winner = "Draw"
+
+        if self.player1_total_score > self.player2_total_score:
+            self.currentLeaderValueLabel.setText("Player 1")
+        elif self.player2_total_score > self.player1_total_score:
+            self.currentLeaderValueLabel.setText("Player 2")
+        else:
+            self.currentLeaderValueLabel.setText("Draw")
             
 
 

@@ -108,25 +108,6 @@ class SVMGameboard(QWidget):
 
         self.fig.canvas.draw()
 
-
-    #def replot_kmeans(self):
-    #    print(self.k)
-    #    self.canvas.ax.clear()
-    #    self.blob_centers = np.array(
-    #        [[0.2,  2.3],
-    #         [-1.5,  2.3],
-    #         [-2.8,  1.3]
-    #         ]
-    #    )
-    #    self.blob_std = np.array([0.4, 0.3,
-    #                              0.1]
-    #                             )
-    #    self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
-    #                                cluster_std=self.blob_std, random_state=7)
-
-    #    self.plot_clusters(self.X)
-    #    self.fig.canvas.draw()
-
     
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
@@ -135,7 +116,6 @@ class SVMGameboard(QWidget):
         else:
             print("boundary = False")
             
-
         self.fig.canvas.draw()
         # Need to figure out how to clear the boundaries
     

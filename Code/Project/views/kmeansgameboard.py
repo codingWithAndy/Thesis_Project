@@ -86,6 +86,8 @@ class KMeansGameboard(QWidget):
 
         # create data points
         if self.game_mode == "game":
+            self.show_centroids = True
+            
             data_option = randint(1,3)
             if data_option != 3:
                 self.generate_random_data(randint(3,7), 1000)
@@ -230,7 +232,7 @@ class KMeansGameboard(QWidget):
         self.clear_canvas()
 
         if data_option == 2:
-            iris = datasets.load_iris()
+            iris   = datasets.load_iris()
             self.k = 3
             self.X = iris.data
             self.y = iris.target
@@ -245,7 +247,7 @@ class KMeansGameboard(QWidget):
 
 
     def find_parameters(self):
-        inetia = self.kmeans.inertia_
+        inetia       = self.kmeans.inertia_
         n_iterations = self.kmeans.n_iter_
 
         return inetia, n_iterations
