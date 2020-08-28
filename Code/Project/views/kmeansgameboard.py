@@ -60,16 +60,22 @@ class KMeansGameboard(QWidget):
               }
 
 
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, game_mode=""):
         QWidget.__init__(self, parent)
 
+        self.game_mode  = game_mode
         self.ix, iy     = 0, 0
         self.playerID   = False
         self.turn       = 0
         self.pointOwner = []
         self.points     = []
         self.boundaries_on = False
+        self.all_euclidean_dist = []
 
+        self.results    = []
+        self.results_id = []
+        self.place      = 0
+        
         self.canvas    = FigureCanvas(Figure())
         self.fig       = self.canvas.figure
         self.canvas.ax = self.fig.add_subplot(111)
@@ -79,13 +85,21 @@ class KMeansGameboard(QWidget):
         self.vertical_layout.addWidget(self.canvas)
 
         # create data points
-        self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
-                                    cluster_std=self.blob_std, random_state=7)
+        if self.game_mode == "game":
+            data_option = randint(1,3)
+            if data_option != 3:
+                self.generate_random_data(randint(3,7), 1000)
+            else:
+                self.generate_data_points(3)  # data_option
+        else:
+            self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
+                                        cluster_std=self.blob_std, random_state=7)
 
-        self.kmeans = KMeans(n_clusters=self.k, random_state=42)
-        self.y_pred = self.kmeans.fit_predict(self.X)
-        
-        self.plot_data()
+            self.kmeans = KMeans(n_clusters=self.k, random_state=42)
+            self.y_pred = self.kmeans.fit_predict(self.X)
+
+            self.plot_data()
+
         self.setLayout(self.vertical_layout)
         
         
@@ -110,16 +124,18 @@ class KMeansGameboard(QWidget):
         self.pointOwner.append(self.playerID)
 
         # from classifier game
-        self.playerID = not self.playerID
+        if self.game_mode == "game":
+            self.playerID = not self.playerID
+
         self.canvas.ax.scatter(self.ix, self.iy, marker='x',
                                s=20, c=self.playerColors[self.playerID])
+        self.fig.canvas.draw()
         
         self.fig.canvas.draw()
+        self.model_predict()
+        
 
-        if self.game_mode == 'fp':
-            self.model_predict()
-
-        if not self.playerID and self.turn >= 6 and self.game_mode == "game":
+        if not self.playerID and self.turn > 6 and self.game_mode == "game":
             self.boundaries_on = True
             self.switch_boundaries_on_off()
 
@@ -248,6 +264,7 @@ class KMeansGameboard(QWidget):
         self.kmeans    = KMeans(**self.params)
         self.y_pred    = self.kmeans.fit_predict(self.X)
         self.centroids = self.kmeans.cluster_centers_
+        print("At the end of fit model")
         
 
     def generate_random_data(self, data_k, sample_size, stand_dev=1.0, rand_state=None):
@@ -262,6 +279,7 @@ class KMeansGameboard(QWidget):
         
         self.canvas.ax.clear()
         self.plot_data()
+        self.fit_model(self.k)
         
 
     def model_predict(self):
@@ -276,6 +294,8 @@ class KMeansGameboard(QWidget):
         self.prediction_centre = self.prediction_centre[label]
         self.euclidean_dist    = euclidean_distances([[self.points[idx][0], self.points[idx][1]]], 
                                                      [self.prediction_centre])
+
+        self.all_euclidean_dist.append(self.euclidean_dist)
         
         #print("points location:", self.points[idx][0], self.points[idx][1])
         #print("Label: ", self.prediction)
@@ -285,7 +305,75 @@ class KMeansGameboard(QWidget):
         
         #print("euclidean_dist:", self.euclidean_dist[0])
         
+    def pin_the_data_result(self):
+        print(self.all_euclidean_dist)
+        for idx in range(len(self.all_euclidean_dist)):
+                self.results_id.append(self.pointOwner[idx])
         
+        self.data_points = self.points
+        self.results = self.all_euclidean_dist
+
+        print("results:", self.results)
+        print("results id:", self.results_id)
+        print("Data points:", self.data_points)
+
+        n = len(self.all_euclidean_dist)
+        for i in range(n-1):
+            for j in range(0, n-i-1):
+                if self.results[j] > self.results[j+1]:
+                    changed_value = self.results[j]
+                    self.results[j] = self.results[j+1]
+                    self.results[j+1] = changed_value
+
+                    changed_value_id = self.results_id[j]
+                    self.results_id[j] = self.results_id[j+1]
+                    self.results_id[j+1] = changed_value_id
+
+                    # Experiment
+                    changed_value_coor = self.data_points[j]
+                    self.data_points[j] = self.data_points[j+1]
+                    self.data_points[j+1] = changed_value_coor
+        
+        print("results:", self.results)
+        print("results id:", self.results_id)
+        print("Data points:", self.data_points)
+
+        #pass
+        ## From Linear Regression
+        #for idx in range(len(self.points)):
+        #    data = np.asarray(self.points)
+        #    new_X = data[:, :-1]
+        #    new_y = data[:, 1]
+
+        #    new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1))
+        #    mse_value = metrics.mean_squared_error(
+        #        new_y[idx].reshape(1, -1), new_pred_y)
+        #    #print('Mean Squared Error:', mse_value)
+        #    self.results.append(mse_value)
+        #    self.results_id.append(self.pointOwner[idx])
+
+        #self.data_points = self.points
+        ##print("results length:",len(self.results))
+        ##print("data_points length:", len(self.data_points))
+
+        #n = len(self.data_points)
+        #for i in range(n-1):
+        #    for j in range(0, n-i-1):
+        #        if self.results[j] > self.results[j+1]:
+        #            changed_value = self.results[j]
+        #            self.results[j] = self.results[j+1]
+        #            self.results[j+1] = changed_value
+
+        #            changed_value_id = self.results_id[j]
+        #            self.results_id[j] = self.results_id[j+1]
+        #            self.results_id[j+1] = changed_value_id
+
+        #            # Experiment
+        #            changed_value_coor = self.data_points[j]
+        #            self.data_points[j] = self.data_points[j+1]
+        #            self.data_points[j+1] = changed_value_coor
+
+
     def clear_canvas(self):
         self.canvas.ax.clear()
         self.fig.canvas.draw()
