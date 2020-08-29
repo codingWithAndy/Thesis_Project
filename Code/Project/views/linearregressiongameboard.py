@@ -121,7 +121,6 @@ class LinearRegressionGameboard(QWidget):
         if not self.playerID and self.turn >= 6 and self.game_mode == "game":
             self.boundaries_on = True
             self.switch_boundaries_on_off()
-            # Make prediction
 
         self.fig.canvas.draw()
     

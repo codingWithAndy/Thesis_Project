@@ -21,7 +21,7 @@ class Quiz(QtWidgets.QWidget):
         self.answer_options_number = 0
         self.score = 0
 
-        with open(self.current_path+"/Code/Project/Quiz Questions/"+self.question_topic+".txt") as f:
+        with open(self.current_path+"/Quiz Questions/"+self.question_topic+".txt") as f:
             for line in f:
                 inner_list = [elt.strip() for elt in line.split(',')]
                 self.questions_and_answers.append(inner_list)
@@ -49,13 +49,11 @@ class Quiz(QtWidgets.QWidget):
         self.label.setMinimumSize(QtCore.QSize(631, 200))
         self.label.setMaximumSize(QtCore.QSize(631, 231))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/quiz title.png"))
+        self.label.setPixmap(QtGui.QPixmap(self.current_path+"/Images/quiz title.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
-        spacerItem1 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
@@ -63,8 +61,7 @@ class Quiz(QtWidgets.QWidget):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem2 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem2)
         self.questionLabel = QtWidgets.QLabel(self)
         self.questionLabel.setMinimumSize(QtCore.QSize(1000, 150))
@@ -140,7 +137,7 @@ class Quiz(QtWidgets.QWidget):
 
         self.homeButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"),
+        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Images/home-solid.svg"),
                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QtCore.QSize(40, 50))

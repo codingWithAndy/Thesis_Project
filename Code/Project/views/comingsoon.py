@@ -30,8 +30,8 @@ class ComingSoonScreen(QtWidgets.QWidget):
         font.setBold(True)
         font.setWeight(75)
         self.mainmenuButton.setFont(font)
-        self.mainmenuButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
-                                      "border-radius: 15px; color: white;")
+        self.mainmenuButton.setStyleSheet("background-color: rgb(3, 193, 161);"
+                                          "border-radius: 15px; color: white;")
         self.mainmenuButton.setObjectName("pushButton")
         self.horizontalLayout.addWidget(self.mainmenuButton)
         spacerItem1 = QtWidgets.QSpacerItem(
@@ -47,7 +47,7 @@ class ComingSoonScreen(QtWidgets.QWidget):
         self.comingSoonLabel = QtWidgets.QLabel(self)
         self.comingSoonLabel.setMinimumSize(QtCore.QSize(700, 0))
         self.comingSoonLabel.setText("")
-        self.comingSoonLabel.setPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/coming soon.png"))
+        self.comingSoonLabel.setPixmap(QtGui.QPixmap(self.current_path+"/Images/coming soon.png"))
         self.comingSoonLabel.setObjectName("comingSoonLabel")
         self.gridLayout.addWidget(self.comingSoonLabel, 1, 1, 1, 1)
         spacerItem4 = QtWidgets.QSpacerItem(

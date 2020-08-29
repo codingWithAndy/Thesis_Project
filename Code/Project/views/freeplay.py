@@ -1,22 +1,22 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QTimer
-from views.mplwidget import MplWidget
-from views.kmeansgameboard import KMeansGameboard
-from views.gmmgameboard import GMMGameboard
-from views.linearregressiongameboard import LinearRegressionGameboard
-from views.svmgameboard import SVMGameboard
-from views.nngameboard import NNGameboard
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-
-
-from matplotlib import pyplot as plt # Test
-
 import sys
 import os
 import random
 import numpy as np
+
+from PyQt5           import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore    import QTimer
+from PyQt5.QtGui     import *
+from PyQt5.QtCore    import *
+from PyQt5.QtWidgets import *
+
+from matplotlib      import pyplot as plt
+
+from views.mplwidget                 import MplWidget
+from views.kmeansgameboard           import KMeansGameboard
+from views.gmmgameboard              import GMMGameboard
+from views.linearregressiongameboard import LinearRegressionGameboard
+from views.svmgameboard              import SVMGameboard
+from views.nngameboard               import NNGameboard
 
 
 class FreePlay(QtWidgets.QWidget):
@@ -63,8 +63,7 @@ class FreePlay(QtWidgets.QWidget):
         self.titleLabel.setMinimumSize(QtCore.QSize(582, 120))
         self.titleLabel.setMaximumSize(QtCore.QSize(582, 120))
         self.titleLabel.setText("")
-        self.titleLabel.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/freeplay.png"))
+        self.titleLabel.setPixmap(QtGui.QPixmap(self.current_path+"/Images/freeplay.png"))
         self.titleLabel.setObjectName("titleLabel")
         self.horizontalLayout.addWidget(self.titleLabel)
 
@@ -282,7 +281,7 @@ class FreePlay(QtWidgets.QWidget):
         self.playButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.playButton.setIcon(icon)
         self.playButton.setIconSize(QtCore.QSize(40, 40))
         self.playButton.setObjectName("playButton")
@@ -292,7 +291,7 @@ class FreePlay(QtWidgets.QWidget):
         self.clearButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                        "border-radius: 15px;")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/times-circle-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(self.current_path+"/Images/times-circle-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.clearButton.setIcon(icon1)
         self.clearButton.setIconSize(QtCore.QSize(40, 40))
         self.clearButton.setObjectName("clearButton")
@@ -302,7 +301,7 @@ class FreePlay(QtWidgets.QWidget):
         self.homeButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
                                       "border-radius: 15px;")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"),
+        icon2.addPixmap(QtGui.QPixmap(self.current_path+"/Images/home-solid.svg"),
                         QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.homeButton.setIcon(icon2)
         self.homeButton.setIconSize(QtCore.QSize(40, 30))

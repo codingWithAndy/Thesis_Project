@@ -33,7 +33,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.label.setMaximumSize(QtCore.QSize(900, 300))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/Data Splash Title.png"))
+            self.current_path+"/Images/Data Splash Title.png"))  # /Code/Project/
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
@@ -60,7 +60,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.label_2.setMaximumSize(QtCore.QSize(400, 600))
         self.label_2.setText("")
         self.label_2.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/Water-drop-data-v2.png"))
+            self.current_path+"/Images/Water-drop-data-v2.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")

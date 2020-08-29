@@ -55,7 +55,7 @@ class LearningZone(QWidget):
         self.freePlayButton.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.freePlayButton.setFont(font)
         icon1 = QIcon()
-        icon1.addPixmap(QPixmap(self.current_path+"/Code/Project/Images/play-circle-regular.svg"),
+        icon1.addPixmap(QPixmap(self.current_path+"/Images/play-circle-regular.svg"),
                         QIcon.Normal, QIcon.Off)
         self.freePlayButton.setIcon(icon1)
         self.freePlayButton.setIconSize(QSize(60, 60))
@@ -72,7 +72,7 @@ class LearningZone(QWidget):
                                       "border-radius: 15px;")
         self.homeButton.setText("")
         icon = QIcon()
-        icon.addPixmap(QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"),
+        icon.addPixmap(QPixmap(self.current_path+"/Images/home-solid.svg"),
                        QIcon.Normal, QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QSize(50, 60))
@@ -87,7 +87,7 @@ class LearningZone(QWidget):
 "border-radius: 15px;")
         self.quizButton.setText("")
         icon2 = QIcon()
-        icon2.addPixmap(QPixmap(self.current_path+"/Code/Project/Images/Screenshot 2020-06-26 at 11.46.35.png"),
+        icon2.addPixmap(QPixmap(self.current_path+"/Images/Screenshot 2020-06-26 at 11.46.35.png"),
                         QIcon.Normal, QIcon.Off)
         self.quizButton.setIcon(icon2)
         self.quizButton.setIconSize(QSize(60, 60))

@@ -42,7 +42,6 @@ class MainGameScreen(QtWidgets.QWidget):
         else:
             self.game_mode = model_choice
 
-        #print("game mode:", self.game_mode)
         self.setupUi()
 
 
@@ -66,7 +65,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.titleLabel.setMaximumSize(QtCore.QSize(700, 16777215))
         self.titleLabel.setStyleSheet("")
         self.titleLabel.setText("")
-        self.titleLabel.setPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/game zone title.png"))
+        self.titleLabel.setPixmap(QtGui.QPixmap(self.current_path+"/Images/game zone title.png"))
         self.titleLabel.setScaledContents(True)
         self.titleLabel.setObjectName("titleLabel")
         self.horizontalLayout.addWidget(self.titleLabel)
@@ -499,7 +498,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.homeButton.setStyleSheet("background-color: rgb(3,193,161); border-radius: 15px;")
         self.homeButton.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Code/Project/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Images/home-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QtCore.QSize(80, 40))
         self.homeButton.setObjectName("homeButton")
@@ -611,30 +610,39 @@ class MainGameScreen(QtWidgets.QWidget):
 
             
             if self.game_mode == "linearreg":
-                msg_text =  "Level Over!\n" + \
-                            "You have both made all of your moves!\n" + \
-                            "Scores are in......\n" + \
-                            "Player " + str(self.winner_id) + " wins the bonus point!\n"  +\
+                msg_text =  "             Round Over!\n\n" + \
+                            "You have both made all of your moves!\n\n" + \
+                            "Scores are in......\n\n" + \
+                            "Player " + str(self.winner_id) + " wins the bonus point!\n\n"  +\
                             "With the co-ordinance: X: " + str(round(self.winning_points[0],2)) + " y: " + str(round(self.winning_points[1],2)) + "\n" +\
-                            "With an SSE score of: " + str(round(self.winner, 3)) + "!\n" +\
+                            "With an SSE score of: " + str(round(self.winner, 3)) + "!\n\n" +\
                             "Player 1 score: " + str(self.player1_score) + "\n" +\
-                            "Player 2 score: " + str(self.player2_score) + "\n" +\
-                            "Player " + str(self.game_winner) + " wins the round!!!!!!"
+                            "Player 2 score: " + str(self.player2_score) + "\n\n" +\
+                            "         Player " + \
+                            str(self.game_winner) + " wins the round!!!!!!"
             elif self.game_mode == "k-means":
-                msg_text = "Level Over!\n" + \
-                    "You have both made all of your moves!\n" + \
-                    "Scores are in......\n" + \
-                    "Player " + str(self.winner_id) + " wins the bonus point!\n" +\
-                    "With the co-ordinance: X: " + str(round(self.winning_points[0], 2)) + " y: " + str(round(self.winning_points[1], 2)) + "\n" +\
-                    "With an Euclidean Distance of: " + str(round(float(self.winner),2)) + "!\n" +\
-                    "Player 1 score: " + str(self.player1_score) + "\n" +\
-                    "Player 2 score: " + str(self.player2_score) + "\n" +\
-                    "Player " + str(self.game_winner) + \
-                    " wins the round!!!!!!"
+                msg_text = "            Round Over!\n\n" + \
+                           "You have both made all of your moves!\n\n" + \
+                           "Scores are in......\n\n" + \
+                           "Player " + str(self.winner_id) + " wins the bonus point!\n\n" +\
+                           "With the co-ordinance: X: " + str(round(self.winning_points[0], 2)) + " y: " + str(round(self.winning_points[1], 2)) + "\n" +\
+                           "With an Euclidean Distance of: " + str(round(float(self.winner),2)) + "!\n\n" +\
+                           "Player 1 score: " + str(self.player1_score) + "\n" +\
+                           "Player 2 score: " + str(self.player2_score) + "\n\n" +\
+                           "         Player " + str(self.game_winner) + \
+                           " wins the round!!!!!!"
 
             self.create_msgbox(msg_text)
 
             if self.round_no == self.total_rounds:
+                msg_text = "                  Game Over!\n\n" + \
+                           "You have both made all of your moves in every round!\n\n" + \
+                           "Scores are in......\n\n" + \
+                           "Player 1 score: " + str(self.player1_total_score) + "\n" +\
+                           "Player 2 score: " + str(self.player2_total_score) + "\n\n" +\
+                           "           Player " + str(self.win) + \
+                           " wins the Game!!!!!!"
+                self.create_msgbox(msg_text)
                 self.load_mainmenu()
             else:
                 self.round_no += 1
@@ -753,8 +761,10 @@ class MainGameScreen(QtWidgets.QWidget):
 
         if self.player1_total_score > self.player2_total_score:
             self.currentLeaderValueLabel.setText("Player 1")
+            self.win = 1
         elif self.player2_total_score > self.player1_total_score:
             self.currentLeaderValueLabel.setText("Player 2")
+            self.win = 2
         else:
             self.currentLeaderValueLabel.setText("Draw")
             

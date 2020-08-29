@@ -1,0 +1,15 @@
+Cython==0.29.13
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.0.9
+matplotlib==3.1.1
+numpy==1.17.2
+pandas==0.25.1
+PyQt5==5.15.0
+PyQt5-sip==12.8.0
+pyqtgraph==0.11.0
+PyQtWebEngine==5.15.0
+scikit-image==0.15.0
+scikit-learn==0.21.3
+tensorboard==2.0.2
+tensorflow==2.0.0
+tensorflow-estimator==2.0.1

@@ -1,28 +1,29 @@
-from sklearn.metrics.pairwise import euclidean_distances
-from sklearn.datasets.samples_generator import make_blobs
-from sklearn import datasets
-from random import randint
 import matplotlib.pyplot as plt
 import numpy as np
-
-from PyQt5.QtWidgets import *
-from matplotlib.backends.backend_qt5agg import FigureCanvas
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
 import matplotlib
 
-##
-from sklearn.cluster import KMeans
+from random import randint
+
+from matplotlib.figure import Figure
+from PyQt5.QtWidgets   import *
+
+from matplotlib.backends.backend_qt5agg import FigureCanvas
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+
+from sklearn          import datasets
 from sklearn.datasets import make_blobs
 from sklearn.datasets import make_moons
+from sklearn.cluster  import KMeans
+
+from sklearn.metrics.pairwise           import euclidean_distances
+from sklearn.datasets.samples_generator import make_blobs
 
 matplotlib.use('Qt5Agg')
 
 
-
 class KMeansGameboard(QWidget):
-    model_name = "K-Means"
-    learning_type = "Unsupervised Learning"
+    model_name     = "K-Means"
+    learning_type  = "Unsupervised Learning"
     model_overview = "K-Means is one of the hard partitioning clustering algorithms.\n\n" +\
                      "The centre of the cluster represents each cluster of data, and each data point gets assigned to the nearest cluster centre, also known as the centroid.\n\n" +\
                      "However, the number of clusters is a pre-set value. This pre-set value is known as the number of K.\n\n" +\
@@ -104,10 +105,6 @@ class KMeansGameboard(QWidget):
 
         self.setLayout(self.vertical_layout)
         
-        
-    #def plot_clusters(self, X, y=None):
-    #    self.canvas.ax.scatter(X[:, 0], X[:, 1], c=y)
-    #    self.fig.canvas.draw()
 
     def show_predictions(self):
         self.clear_canvas()
@@ -149,8 +146,6 @@ class KMeansGameboard(QWidget):
                             self.X[:, self.idx_2], 'b.', markersize=0.6)
         self.fig.canvas.draw()
 
-
-    
 
     def plot_centroids(self, weights=None, circle_color='w', cross_color='k'):
         self.fit_model(self.k) # Been added
@@ -199,7 +194,6 @@ class KMeansGameboard(QWidget):
 
         self.idx_1 = idx1 - 1
         self.idx_2 = idx2 - 1
-        #print(self.idx_1, self.idx_2)
 
         if self.boundaries_on: 
             self.plot_decision_boundaries() 
@@ -226,7 +220,6 @@ class KMeansGameboard(QWidget):
             self.plot_data()
             self.boundaries_on = False
             
-
 
     def generate_data_points(self, data_option):
         self.clear_canvas()
@@ -266,7 +259,6 @@ class KMeansGameboard(QWidget):
         self.kmeans    = KMeans(**self.params)
         self.y_pred    = self.kmeans.fit_predict(self.X)
         self.centroids = self.kmeans.cluster_centers_
-        print("At the end of fit model")
         
 
     def generate_random_data(self, data_k, sample_size, stand_dev=1.0, rand_state=None):
@@ -299,13 +291,6 @@ class KMeansGameboard(QWidget):
 
         self.all_euclidean_dist.append(self.euclidean_dist)
         
-        #print("points location:", self.points[idx][0], self.points[idx][1])
-        #print("Label: ", self.prediction)
-        #print("Cluster Centres:", self.kmeans.cluster_centers_)
-        #print("Predict centre:", self.prediction_centre)
-        #print("Predict centre X:",self.prediction_centre[0], "Predict centre y:", self.prediction_centre[1])
-        
-        #print("euclidean_dist:", self.euclidean_dist[0])
         
     def pin_the_data_result(self):
         print(self.all_euclidean_dist)

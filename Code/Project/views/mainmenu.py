@@ -21,8 +21,7 @@ class MainMenu(QtWidgets.QWidget):
         self.label = QtWidgets.QLabel(self)
         self.label.setMaximumSize(QtCore.QSize(821, 311))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/Main Menu.png"))
+        self.label.setPixmap(QtGui.QPixmap(self.current_path+"/Images/Main Menu.png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
@@ -70,8 +69,7 @@ class MainMenu(QtWidgets.QWidget):
         self.freePlayButton.setStyleSheet("background-color : rgb(3, 193, 161);\n"
                                           "border-radius: 15px;")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(
-            self.current_path+"/Code/Project/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(self.current_path+"/Images/play-circle-regular.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.freePlayButton.setIcon(icon)
         self.freePlayButton.setIconSize(QtCore.QSize(35, 35))
         self.freePlayButton.setObjectName("freePlayButton")
