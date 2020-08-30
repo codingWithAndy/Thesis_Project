@@ -147,16 +147,27 @@
 
                 <div class="textBackgroundLight">
                     <p>
-                        There are few steps to LDA's dimensionality reduction. These are: Slides 9 - 12
+                        There are few steps to LDA's dimensionality reduction. These are:
                         <ol>
                             <li>
+                                In order to find a good projection vector, we need to define a measure of separation between the projections. The distance between the projected mean values gives us a measurements. This meansurement gives us the measure of seprability between the two
+                                classes after projection. <br>
+                                <img src="https://latex.codecogs.com/gif.latex?|\widetilde{\mu&space;_1}&space;-&space;\widetilde{\mu&space;_2}|=|w^T(\mu&space;_1-\mu&space;_2)|" title="|\widetilde{\mu _1} - \widetilde{\mu _2}|=|w^T(\mu _1-\mu _2)|" />
+                                <br>
 
                             </li>
                             <li>
+                                The solution to do this is proposed by Fisher, which aims to maximise a function that represents the difference between the means and the normalised by a meansure of the within class scatter. The Fisher's linear discriminant is defined as the linear function
+                                <img src="https://latex.codecogs.com/gif.latex?w^Tx" title="w^Tx" />
 
                             </li>
                             <li>
-
+                                Using the Fisher's LDA criterion. We are looking for a projection where the samples from the same class are projected very close to each other and the projected means are projected as far apart as possible. <br>
+                                <img src="./Images/LDA example.png" class="ImgCentreShort" alt="">
+                            </li>
+                            <li>
+                                LDA can be generalised to be able to handle multi-class problems (C-class). Where instead of having only one projection, we see C projections.
+                                <img src="./Images/lda multi.png" class="ImgCentreShort" alt="">
                             </li>
                         </ol>
                     </p>

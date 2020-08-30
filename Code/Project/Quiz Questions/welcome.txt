@@ -1,4 +1,4 @@
-"Welcome Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"Welcome Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"Welcome Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"Welcome Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+"Which of these is a topic you will cover?","Classification","Dividing", "Classification", "Addition", "Segregation"
+"Which model will you cover in regression?","Linear","K-Means", "Neural Networks", "GMM", "Linear"
+"Which model will you cover in Clustering?","K-Means", "K-Means", "Logistic", "Linear", "SVM"
+"Which model will you cover in Classification?","SVM", "K-Means", "Logistic", "Linear", "SVM"

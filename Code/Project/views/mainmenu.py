@@ -3,9 +3,8 @@ import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class MainMenu(QtWidgets.QWidget):
-    print(" in the mainmenu class")
     switch_window = QtCore.pyqtSignal(str)
-    current_path = os.getcwd()
+    current_path  = os.getcwd()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
@@ -28,8 +27,7 @@ class MainMenu(QtWidgets.QWidget):
         self.gridLayout.addWidget(self.label, 0, 1, 1, 1)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.gridLayout.addLayout(self.horizontalLayout, 0, 3, 1, 1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -37,8 +35,7 @@ class MainMenu(QtWidgets.QWidget):
         self.gridLayout.addLayout(self.verticalLayout, 0, 4, 1, 1)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem1 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.gridLayout.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -57,8 +54,7 @@ class MainMenu(QtWidgets.QWidget):
                                               "border-radius: 15px;")
         self.learningZoneButton.setObjectName("learningZoneButton")
         self.gridLayout_2.addWidget(self.learningZoneButton, 2, 1, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout_2.addItem(spacerItem2, 5, 1, 1, 1)
         self.freePlayButton = QtWidgets.QPushButton(self)
         self.freePlayButton.setMinimumSize(QtCore.QSize(641, 80))
@@ -84,8 +80,7 @@ class MainMenu(QtWidgets.QWidget):
         self.selectLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.selectLabel.setObjectName("selectLabel")
         self.gridLayout_2.addWidget(self.selectLabel, 0, 1, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem3, 0, 2, 1, 1)
         self.awardsZoneButton = QtWidgets.QPushButton(self)
         self.awardsZoneButton.setMinimumSize(QtCore.QSize(641, 80))
@@ -105,14 +100,11 @@ class MainMenu(QtWidgets.QWidget):
                                       "border-radius: 15px;")
         self.playButton.setObjectName("playButton")
         self.gridLayout_2.addWidget(self.playButton, 1, 1, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem4, 0, 0, 1, 1)
         self.verticalLayout_2.addLayout(self.gridLayout_2)
         self.gridLayout.addLayout(self.verticalLayout_2, 1, 0, 1, 5)
 
-        
-        
         # Button Connects
         self.playButton.clicked.connect(self.load_main_gamescreen)
         self.learningZoneButton.clicked.connect(self.load_learning_zone)

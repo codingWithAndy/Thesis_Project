@@ -420,8 +420,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addWidget(self.noModelParLabel, 0, 0, 1, 1)
 
         _translate = QtCore.QCoreApplication.translate
-        self.noModelParLabel.setText(_translate(
-            "self", "No info available to show, yet!"))
+        self.noModelParLabel.setText(_translate("self", "No info available to show, yet!"))
 
 
     def no_model_options_available(self):
@@ -583,7 +582,6 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfNeuronsValueLabel.setText(_translate("self", str(self.MplWidget.no_neurons)))
             self.noOfLayersValueLabel.setText(_translate("self", str(self.MplWidget.no_layers)))
         
-        
         else:
             try:
                 self.remove_km_model_options()
@@ -596,6 +594,7 @@ class FreePlay(QtWidgets.QWidget):
 
             self.no_model_options_available()
     
+
     def remove_nn_model_options(self):
         self.noOfLayersLabel.deleteLater()
         self.noOfNeuronsLabel.deleteLater()
@@ -605,6 +604,7 @@ class FreePlay(QtWidgets.QWidget):
         self.layerActivationValueLabel.deleteLater()
         self.outputActivationValueLabel.deleteLater()
         self.noOfLayersValueLabel.deleteLater()
+
 
     def data_options_setup(self):
         # Chose what display to show
@@ -671,13 +671,12 @@ class FreePlay(QtWidgets.QWidget):
         else:
             print("These will be model and parameter place holders")
     
+    
     def default_data_select(self):
         self.noDataSelectedLabel = QtWidgets.QLabel(self.dataOptionsGroupBox)
         self.noDataSelectedLabel.setMinimumSize(QtCore.QSize(300, 0))
         self.noDataSelectedLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.noDataSelectedLabel.setFont(font)
+        
         self.noDataSelectedLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.noDataSelectedLabel.setObjectName("noDataSelectedLabel")
         self.gridLayout.addWidget(self.noDataSelectedLabel, 0, 0, 1, 1)
@@ -1054,9 +1053,6 @@ class FreePlay(QtWidgets.QWidget):
         
         self.update_km_param_output()
 
-    #def km_parameter_setup(self):
-    #    print("Links the paramteters to the model!")
-
 
     def generate_km_custom_data(self):
         number_of_clusters    = int(self.noOfClustersLineEdit.text())
@@ -1079,7 +1075,6 @@ class FreePlay(QtWidgets.QWidget):
         except:
             self.outputValueLabel.setText("No Preiction(s) yet!")
             self.distFromCentroidValueLabel.setText("No Preiction(s) yet!")
-
 
 
     #######    Hide and Show Model and Data Options ################

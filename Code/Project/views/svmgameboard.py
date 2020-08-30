@@ -1,17 +1,15 @@
-from random import randint
-import matplotlib.pyplot as plt
 import numpy as np
 
+from random          import randint
+from sklearn         import svm, datasets
 from PyQt5.QtWidgets import *
-from matplotlib.backends.backend_qt5agg import FigureCanvas
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
-import matplotlib
 
-##
-import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
-from sklearn import svm, datasets
+
+from matplotlib.backends.backend_qt5agg import FigureCanvas, FigureCanvasQTAgg
+from matplotlib.figure                  import Figure
+
 matplotlib.use('Qt5Agg')
 
 

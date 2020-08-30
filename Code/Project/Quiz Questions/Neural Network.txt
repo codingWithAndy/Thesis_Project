@@ -1,4 +1,4 @@
-"NN Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"NN Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"NN Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"NN Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What does ANN stand for?,Artificial neural network,A nice network,Artificial neural network,Artificial neural netlinks,ANN
+In what year did ANN's emerge?,1980's,1970's,1980's,1990's,2000
+Which of these is a stage within a ANN?,Logistic unit,Cables,Input later,Magic box,Logistic unit
+Which name is used for recaluculating the ANN's weights?,Back propagation,Back propagation,Forward propagation,Input layer,Output layer

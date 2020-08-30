@@ -232,7 +232,10 @@ class KMeansGameboard(QWidget):
         elif data_option == 3:
             n_samples = 1000
             self.X, self.y = make_moons(n_samples=100, noise=0.1)
-            self.k = 2
+            if self.game_mode == "game":
+                self.k = randint(2,5)
+            else:
+                self.k = 2
 
         self.plot_data()
         self.fit_model(self.k)
@@ -255,7 +258,6 @@ class KMeansGameboard(QWidget):
                        "algorithm": algo
                        }
 
-        #self.replot_kmeans()
         self.kmeans    = KMeans(**self.params)
         self.y_pred    = self.kmeans.fit_predict(self.X)
         self.centroids = self.kmeans.cluster_centers_
@@ -293,73 +295,28 @@ class KMeansGameboard(QWidget):
         
         
     def pin_the_data_result(self):
-        print(self.all_euclidean_dist)
         for idx in range(len(self.all_euclidean_dist)):
                 self.results_id.append(self.pointOwner[idx])
         
         self.data_points = self.points
-        self.results = self.all_euclidean_dist
-
-        print("results:", self.results)
-        print("results id:", self.results_id)
-        print("Data points:", self.data_points)
+        self.results     = self.all_euclidean_dist
 
         n = len(self.all_euclidean_dist)
         for i in range(n-1):
             for j in range(0, n-i-1):
                 if self.results[j] > self.results[j+1]:
-                    changed_value = self.results[j]
-                    self.results[j] = self.results[j+1]
+                    changed_value     = self.results[j]
+                    self.results[j]   = self.results[j+1]
                     self.results[j+1] = changed_value
 
-                    changed_value_id = self.results_id[j]
-                    self.results_id[j] = self.results_id[j+1]
+                    changed_value_id     = self.results_id[j]
+                    self.results_id[j]   = self.results_id[j+1]
                     self.results_id[j+1] = changed_value_id
 
-                    # Experiment
-                    changed_value_coor = self.data_points[j]
-                    self.data_points[j] = self.data_points[j+1]
+                    changed_value_coor   = self.data_points[j]
+                    self.data_points[j]  = self.data_points[j+1]
                     self.data_points[j+1] = changed_value_coor
         
-        print("results:", self.results)
-        print("results id:", self.results_id)
-        print("Data points:", self.data_points)
-
-        #pass
-        ## From Linear Regression
-        #for idx in range(len(self.points)):
-        #    data = np.asarray(self.points)
-        #    new_X = data[:, :-1]
-        #    new_y = data[:, 1]
-
-        #    new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1))
-        #    mse_value = metrics.mean_squared_error(
-        #        new_y[idx].reshape(1, -1), new_pred_y)
-        #    #print('Mean Squared Error:', mse_value)
-        #    self.results.append(mse_value)
-        #    self.results_id.append(self.pointOwner[idx])
-
-        #self.data_points = self.points
-        ##print("results length:",len(self.results))
-        ##print("data_points length:", len(self.data_points))
-
-        #n = len(self.data_points)
-        #for i in range(n-1):
-        #    for j in range(0, n-i-1):
-        #        if self.results[j] > self.results[j+1]:
-        #            changed_value = self.results[j]
-        #            self.results[j] = self.results[j+1]
-        #            self.results[j+1] = changed_value
-
-        #            changed_value_id = self.results_id[j]
-        #            self.results_id[j] = self.results_id[j+1]
-        #            self.results_id[j+1] = changed_value_id
-
-        #            # Experiment
-        #            changed_value_coor = self.data_points[j]
-        #            self.data_points[j] = self.data_points[j+1]
-        #            self.data_points[j+1] = changed_value_coor
-
 
     def clear_canvas(self):
         self.canvas.ax.clear()
@@ -378,9 +335,9 @@ class KMeansGameboard(QWidget):
         self.k       = 5
         self.data_k  = 5
         self.params  = {"n_clusters": self.k,
-                       "n_init": 200,
-                       "max_iter": 200,
-                       "algorithm": "auto"
+                        "n_init": 200,
+                        "max_iter": 200,
+                        "algorithm": "auto"
                        }
         
         self.playerID     = False

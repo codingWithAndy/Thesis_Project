@@ -1,4 +1,4 @@
-"WIML? Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"WIML? Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"WIML? Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"WIML? Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What is machine learning?,The science of programming computers so they can learn from data,A balck box,The science of programming computers so they can learn from data,A bit of magic!,Computer stuff!
+What is machine learning also referred to as?,An art of programming computers,An art of programming computers,A bit of magic!,Computer stuff!,A balck box
+What is machine learning in a nutshell?,Are algorithms,Are probelms,a big black box,Are algorithms,Fancy computer things
+What do the machine learning algorithms do?,find and apply patterns in data,find data,apply patterns,find and apply patterns in data,Some fancy stuff

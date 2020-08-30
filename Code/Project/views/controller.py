@@ -31,37 +31,31 @@ class Controller:
         self.mainmenu = MainMenu()
         self.mainmenu.show()
         self.mainmenu.switch_window.connect(self.choose_window)
-        print("Still in the mainmenu function")
 
 
     def show_learningzone(self):
         self.learningzone = LearningZone()
-        # show_mainmenu This is needed to connect between the windows
         self.learningzone.switch_window.connect(self.choose_window)
         self.learningzone.show()
 
 
     def show_quizscreen(self,q_topic):
         self.quizscreen = Quiz(q_topic)
-        # show_mainmenu This is needed to connect between the windows
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
 
     def show_coming_soon_screen(self):
         self.coming_soon_screen = ComingSoonScreen()
-        # show_mainmenu This is needed to connect between the windows
         self.coming_soon_screen.switch_window.connect(self.choose_window)
         self.coming_soon_screen.show()
 
 
     def show_freeplay(self, model_choice=""):
         self.freeplay = FreePlay(model_choice)
-        # show_mainmenu This is needed to connect between the windows
         self.freeplay.switch_window.connect(self.choose_window)    
         self.freeplay.show()
 
     def show_window_two(self):
-        #self.window_two = MainWindow()
         self.window.close()
         self.login.show()
 
@@ -116,8 +110,3 @@ class Controller:
             self.show_gamescreen()
         elif window_options[0] == "comingsoonscreen":
             self.show_coming_soon_screen()
-        #else:
-        #    self.show_splashscreen()
-
-        #print("Window to open:", window_options[0])
-        #print("Window to close:", window_options[1])

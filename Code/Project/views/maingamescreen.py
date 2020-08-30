@@ -13,6 +13,7 @@ from views.kmeansgameboard           import KMeansGameboard
 from views.nngameboard               import NNGameboard
 from views.svmgameboard              import SVMGameboard
 from views.mplwidget                 import MplWidget
+from views.gmmgameboard              import GMMGameboard
 
 
 class MainGameScreen(QtWidgets.QWidget):

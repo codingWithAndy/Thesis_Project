@@ -36,12 +36,12 @@ class LinearRegressionGameboard(QWidget):
     def __init__(self, parent=None, game_mode=""):
         QWidget.__init__(self, parent)
 
-        self.ix, iy     = 0, 0
-        self.playerID   = False
-        self.turn       = 0
-        self.pointOwner = []
-        self.points     = []
-        self.game_mode  = game_mode
+        self.ix, iy      = 0, 0
+        self.playerID    = False
+        self.turn        = 0
+        self.pointOwner  = []
+        self.points      = []
+        self.game_mode   = game_mode
         self.data_option = randint(0, 4)
         self.X = [] 
         self.y = [] 
@@ -61,7 +61,6 @@ class LinearRegressionGameboard(QWidget):
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout.addWidget(self.canvas)
 
-        print("game mode:", self.game_mode)
         # create data points
         if self.game_mode == "game":
             self.generate_data_points(self.data_option)
@@ -77,8 +76,6 @@ class LinearRegressionGameboard(QWidget):
 
     # Gameboard Click interaction handling
     def __call__(self, event):
-        #print('click', event)
-        #print("Turn", self.turn)
         if event.inaxes != self.canvas.ax:
             return
 
@@ -107,13 +104,11 @@ class LinearRegressionGameboard(QWidget):
         if self.game_mode == "fp":
             ## FP data points
             if self.prepopulated == True:
-                #print("Trigger an event that adds inputted values to the X array.")
                 self.add_data_to_existing()
             else:
                 self.create_own_points()
 
             if self.turn >= 6 and self.boundaries_on == True:
-                #print("In embedded if statement for boundary")
                 self.boundaries_on = True
                 self.switch_boundaries_on_off()
                 self.find_parameters()
@@ -132,7 +127,6 @@ class LinearRegressionGameboard(QWidget):
 
         coef      = self.lin_reg.intercept_
         intercept = self.lin_reg.coef_
-        #print("Est coef:", coef, "Intercept:", intercept[0])
 
         return coef, intercept
         
@@ -211,7 +205,6 @@ class LinearRegressionGameboard(QWidget):
     def fp_predict(self,pred):
         data       = np.asarray(pred)
         prediction = self.lin_reg.predict(data.reshape(1, -1))
-        print("Linear Reg prediction is:", prediction)
 
         return prediction
 
@@ -260,13 +253,13 @@ class LinearRegressionGameboard(QWidget):
         
         if data_option == 2:
             diabetes = datasets.load_diabetes()
-            self.X = diabetes.data[:, 2]
-            self.X = self.X.reshape(-1, 1)
-            self.y = diabetes.target
+            self.X   = diabetes.data[:, 2]
+            self.X   = self.X.reshape(-1, 1)
+            self.y   = diabetes.target
+            
             self.X_new = self.X
         
         elif data_option == 3:
-            print("In boston data options")
             boston = datasets.load_boston()
             #self.X, self.y = datasets.load_boston(return_X_y=True)
             #self.X = self.X[:, np.newaxis, 5]
@@ -290,10 +283,10 @@ class LinearRegressionGameboard(QWidget):
     def alter_generated_features(self, dataset, new_X, new_y):
         self.clear_canvas()
         if dataset == 'Diabeties':
-            data = datasets.load_diabetes()
+            data         = datasets.load_diabetes()
             feature_skip = 2
         elif dataset == 'Boston House Prices':
-            data = datasets.load_boston()
+            data         = datasets.load_boston()
             feature_skip = 4
 
         new_X = int(new_X)+ feature_skip
@@ -301,7 +294,6 @@ class LinearRegressionGameboard(QWidget):
         
         self.X = data.data[:, new_X]
         self.y = data.data[:, new_y]
-
         self.X = self.X.reshape(-1, 1)
         self.y = self.y.reshape(-1, 1)
 

@@ -1,11 +1,11 @@
 import sys
 import os
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import *
-from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtCore import *
+
+from PyQt5           import QtCore, QtWidgets
+from PyQt5.QtGui     import QIcon
+from PyQt5.QtGui     import *
+from PyQt5.QtCore    import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon
 
 # Views
 from views.controller import Controller

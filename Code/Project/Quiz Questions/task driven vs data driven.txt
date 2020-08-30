@@ -1,4 +1,4 @@
-"TDVSDD Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"TDVSDD Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"TDVSDD Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"TDVSDD Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What are the two main routes of machine learning?,Supervised and unsupervised learning,Clustering and Regression,Supervised and unsupervised learning,Classification and Regression,Association and Dimensionality Reduction
+What avenue would you take if you had labeled data?,Task Driven,Unsupervised,Clustering,Data Driven,Task Driven
+What is a task driven approach?,Classification,Classification,Clustering,Dimensionality Reduction,Association
+What is a not a data driven approach?,Classification,Classification,Clustering,Dimensionality Reduction,Association

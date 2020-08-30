@@ -1,4 +1,4 @@
-"supvsun Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"supvsun Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"supvsun Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"supvsun Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What is the term used when a dataset has provided labels?,Supervised learning,Unsupervised learning,Supervised learning,Reinforced learning,Neural Networks
+What is the term used when a dataset does not have provided labels?,Unsupervised learning,Unsupervised learning,Supervised learning,Reinforced learning,Neural Networks
+What is a supervised learning algorithm?,Logistic Regression,K-Means,PCA,GMM,Logistic Regression
+What is a unsupervised learning algorithm?,PCA,SVM,PCA,Linear Regression,Logistic Regression

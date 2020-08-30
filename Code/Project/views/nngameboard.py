@@ -45,8 +45,9 @@ class NNGameboard(QWidget):
         self.players     = [[], []]
 
         self.game_round  = 0
-        self.game_turn   = 0
+        self.turn        = 0
         self.game_player = 0
+        
 
         self.retrain    = False
         ### from LDA
@@ -181,10 +182,10 @@ class NNGameboard(QWidget):
             #print('Territory {} | {}'.format(self.a0, self.a1))
             #print(self.territory)
 
-            self.game_turn  += 1
-            self.game_player = self.game_turn % self.num_players
+            self.turn  += 1
+            self.game_player = self.turn % self.num_players
 
-            self.retrain = self.game_turn > (num_points_per_round-1) and ((self.game_turn-1) %
+            self.retrain = self.turn > (num_points_per_round-1) and ((self.turn-1) %
                                                                 (num_points_per_round * self.num_players)) == 0
 
             
