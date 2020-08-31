@@ -47,7 +47,7 @@ class FreePlay(QtWidgets.QWidget):
     def setupUi(self):
         self.setObjectName("self")
         self.resize(1300, 770)
-        #self.setMinimumSize(1300, 770)
+        
         self.setStyleSheet("background-color:rgb(47, 85, 151);")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -168,8 +168,7 @@ class FreePlay(QtWidgets.QWidget):
         self.modelSettingsGroupBox.setObjectName("modelSettingsGroupBox")
 
         #### Start of first virtical row -> Model options, Data options and boundary on/off
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(
-            self.modelSettingsGroupBox)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.modelSettingsGroupBox)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.modelOptionsHSplit = QtWidgets.QVBoxLayout()
         self.modelOptionsHSplit.setObjectName("modelOptionsHSplit")
@@ -335,41 +334,34 @@ class FreePlay(QtWidgets.QWidget):
 
     # Interactive game board set up
     def setup_gameboard(self):
-        #print("in setup gameboard")
         if self.fp_model == 'k-means':
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = KMeansGameboard(self)
             self.MplWidget.game_mode = "fp"
             idx = 1
         elif self.fp_model == 'lda':
-            #print("in else if statement for lda")
             self.MplWidget = MplWidget(self)
             self.boundaryOnOffRadioButton.setChecked(True)
             idx = 2
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'gmm':
-            #print("in else if statement for gmm")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = GMMGameboard(self)
             idx = 4
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'linearreg':
-            #print("in else if statement for lin_reg")
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = LinearRegressionGameboard(self,game_mode="fp")
             idx = 3
         elif self.fp_model == 'svm':
-            #print("in else if statement for svm")
             self.MplWidget = SVMGameboard(self)
             self.boundaryOnOffRadioButton.setChecked(True)
             idx = 5
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'neural network':
-            #print("in else if statement for nn")
             self.MplWidget = NNGameboard(self)
             idx = 6
             self.no_data_options_retranslateUi()
-            #self.boundaryOnOffRadioButton.setChecked(True)
         
         self.modelSelectComboBox.setCurrentIndex(idx)
 
@@ -712,7 +704,6 @@ class FreePlay(QtWidgets.QWidget):
 
     ################ Button click actions #################
     def update_graph(self):
-        print("update graph pressed!")
         if self.modelSelectComboBox.currentText() == "K-Means":
             self.km_play_button_control()
         elif self.modelSelectComboBox.currentText() == "Linear Regression":

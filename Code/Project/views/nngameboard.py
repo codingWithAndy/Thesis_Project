@@ -64,7 +64,6 @@ class NNGameboard(QWidget):
         self.grid        = np.stack([self.xv, self.yv], axis=-1)
         self.grid_preds  = np.ones((self.res, self.res)) * 0.5
         self.loss, self.acc = 0, [0]
-        #self.player_colours = plt.get_cmap('RdBu')
         self.player_colours = ['b', 'r']#np.array([self.player_colours(64), self.player_colours(255-64)])
 
         # Canvas setup
@@ -95,9 +94,9 @@ class NNGameboard(QWidget):
 
         model    = Model(inputs=inputs, outputs=outputs)
 
-        self.no_layers  = 2
-        self.no_neurons = 10
-        self.l0_activation = 'Relu'
+        self.no_layers         = 2
+        self.no_neurons        = 10
+        self.l0_activation     = 'Relu'
         self.output_activation = 'Sigmoid'
 
         return model
@@ -127,10 +126,17 @@ class NNGameboard(QWidget):
             self.players[self.game_player] += [new_point]
 
             ## from LDA
-            print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
 
             self.points.append([self.ix, self.iy])
             self.pointOwner.append(self.playerID)
+
+            if self.playerID == True:
+                self.canvas.ax.scatter(self.ix, self.iy,
+                                       s=100, c=self.player_colours[1], edgecolors='w')
+            else:
+                self.canvas.ax.scatter(self.ix, self.iy,
+                                       s=100, c=self.player_colours[0], edgecolors='w')
+
             self.playerID = not self.playerID
 
             if (self.retrain):
@@ -139,7 +145,6 @@ class NNGameboard(QWidget):
                 sample_labels    = []
 
                 for player_id in range(self.num_players):
-                    print("in 1st player_id")
                     for point in self.players[player_id]:
                         sample_points += [self.sample_normal((samples_per_point, 2), point, np.array([[variance, variance]]))]
                     sample_labels += [np.ones((len(self.players[player_id])* samples_per_point,), dtype=np.int32) * player_id]
@@ -187,24 +192,9 @@ class NNGameboard(QWidget):
 
             self.retrain = self.turn > (num_points_per_round-1) and ((self.turn-1) %
                                                                 (num_points_per_round * self.num_players)) == 0
-
-            
-            #self.canvas.ax.clear()
-            #self.canvas.ax.set_xlim([-1, 1])
-            #self.canvas.ax.set_ylim([-1, 1])
             
             self.canvas.ax.imshow((self.grid_preds-0.5)*0.6, extent=(-1, 1, 1, -1), vmin=-0.5, vmax=0.5,
-                                interpolation='bilinear', cmap="cool" )#self.player_colours[self.game_player])
-
-            #self.fig.canvas.draw()
-            
-            # from classifier game
-            if self.playerID == True:
-                self.canvas.ax.scatter(self.ix, self.iy,
-                                    s=100, c=self.player_colours[0], edgecolors='w')
-            else:
-                self.canvas.ax.scatter(self.ix, self.iy,
-                                    s=100, c=self.player_colours[1], edgecolors='w')
+                                   interpolation='bilinear', cmap="cool" )#self.player_colours[self.game_player])
 
             self.fig.canvas.draw()
 
