@@ -1,37 +1,34 @@
 import sys
 import os
-from PyQt5 import QtCore, QtGui, QtWidgets
+
+from PyQt5           import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 
 
 class Quiz(QtWidgets.QWidget):
     switch_window = QtCore.pyqtSignal(str)
-    current_path = os.getcwd()
+    current_path  = os.getcwd()
     
     def __init__(self, q_topic):
         QtWidgets.QWidget.__init__(self)
+        
         self.question_topic = q_topic
+        
         self.setupUi()
 
     
     def setupUi(self):
         self.questions_and_answers = []
-        self.question_number = 0
-        self.answer_number = 0
+        self.question_number       = 0
+        self.answer_number         = 0
         self.answer_options_number = 0
-        self.score = 0
+        self.score                 = 0
 
         with open(self.current_path+"/Quiz Questions/"+self.question_topic+".txt") as f:
             for line in f:
                 inner_list = [elt.strip() for elt in line.split(',')]
                 self.questions_and_answers.append(inner_list)
         
-
-        #print("Did the questions print out?:", self.questions_and_answers)
-        #print("Q+A Length:", len(self.questions_and_answers))
-        #print("inner list contents:", inner_list)
-
-
         self.setObjectName("self")
         self.resize(1300, 770)
         self.setMinimumSize(QtCore.QSize(1158, 770))
@@ -42,8 +39,7 @@ class Quiz(QtWidgets.QWidget):
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.label = QtWidgets.QLabel(self)
         self.label.setMinimumSize(QtCore.QSize(631, 200))
@@ -71,15 +67,13 @@ class Quiz(QtWidgets.QWidget):
         self.questionLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.questionLabel.setObjectName("questionLabel")
         self.horizontalLayout_2.addWidget(self.questionLabel)
-        spacerItem3 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem3)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        spacerItem4 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem4)
         self.option1Button = QtWidgets.QPushButton(self)
         self.option1Button.setMinimumSize(QtCore.QSize(401, 131))
@@ -87,8 +81,7 @@ class Quiz(QtWidgets.QWidget):
                                          " border-radius: 15px;")
         self.option1Button.setObjectName("option1Button")
         self.horizontalLayout_4.addWidget(self.option1Button)
-        spacerItem5 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem5)
         self.option2Button = QtWidgets.QPushButton(self)
         self.option2Button.setMinimumSize(QtCore.QSize(401, 131))
@@ -96,14 +89,12 @@ class Quiz(QtWidgets.QWidget):
                                          " border-radius: 15px;")
         self.option2Button.setObjectName("option2Button")
         self.horizontalLayout_4.addWidget(self.option2Button)
-        spacerItem6 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem6)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        spacerItem7 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem7)
         self.option3Button = QtWidgets.QPushButton(self)
         self.option3Button.setMinimumSize(QtCore.QSize(401, 131))
@@ -111,8 +102,7 @@ class Quiz(QtWidgets.QWidget):
                                          " border-radius: 15px;")
         self.option3Button.setObjectName("option3Button")
         self.horizontalLayout_5.addWidget(self.option3Button)
-        spacerItem8 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem8)
         self.option4Button = QtWidgets.QPushButton(self)
         self.option4Button.setMinimumSize(QtCore.QSize(401, 131))
@@ -120,14 +110,12 @@ class Quiz(QtWidgets.QWidget):
                                          "border-radius: 15px;")
         self.option4Button.setObjectName("option4Button")
         self.horizontalLayout_5.addWidget(self.option4Button)
-        spacerItem9 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem9)
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        spacerItem10 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem10)
 
         self.homeButton = QtWidgets.QPushButton(self)
@@ -144,8 +132,7 @@ class Quiz(QtWidgets.QWidget):
         self.homeButton.setObjectName("homeButton")
 
         self.horizontalLayout_6.addWidget(self.homeButton)
-        spacerItem11 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem11)
         self.verticalLayout_2.addLayout(self.horizontalLayout_6)
 
@@ -185,22 +172,17 @@ class Quiz(QtWidgets.QWidget):
     
 
     def options_pressed(self, button):
-        #print("checked ID:", self.clickedButton)
-        #print("Button ID Pressed:", button.text())
         if button.text() == self.questions_and_answers[self.answer_number][1]:
-            #print("Correct!")
             self.score += 1
-            self.updateButtonOptions()
-        else:
-            #print("Incorrect")
-            self.updateButtonOptions()
+        self.updateButtonOptions()
+        
 
-        #self.questionLabel.setText("I have changed the label!")
+
 
     
     def updateButtonOptions(self):
         self.question_number += 1
-        self.answer_number += 1
+        self.answer_number   += 1
 
         if self.question_number >= len(self.questions_and_answers):
             self.showScore()
@@ -232,10 +214,6 @@ class Quiz(QtWidgets.QWidget):
         else:
             self.question_topic = "kmeans"
         x = msg.exec_()
-        
-        
-
-        # Need to put a check in that not all the questions have been asked.
         
 
 

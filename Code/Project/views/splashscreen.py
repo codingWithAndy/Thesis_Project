@@ -1,15 +1,18 @@
 import sys
 import os
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class SplashScreen(QtWidgets.QWidget):
-    current_path = os.getcwd()
+    current_path  = os.getcwd()
     switch_window = QtCore.pyqtSignal(str)
+
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         self.setupUi()
+
 
     def setupUi(self):
         self.setObjectName("Form")
@@ -24,8 +27,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.horizontalLayout.addLayout(self.horizontalLayout_2)
         self.label = QtWidgets.QLabel(self)

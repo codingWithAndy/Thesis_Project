@@ -80,7 +80,6 @@ class LinearRegressionGameboard(QWidget):
             return
 
         self.ix, self.iy = event.xdata, event.ydata
-        #print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
 
         self.points.append([self.ix, self.iy])
         self.pointOwner.append(self.playerID)
@@ -88,7 +87,6 @@ class LinearRegressionGameboard(QWidget):
         self.x_point.append(self.ix)
         self.y_point.append(self.iy)
         
-        # from classifier game
         if self.game_mode == "game":
             self.playerID = not self.playerID
 
@@ -102,7 +100,6 @@ class LinearRegressionGameboard(QWidget):
     
     def game_mode_controls(self):
         if self.game_mode == "fp":
-            ## FP data points
             if self.prepopulated == True:
                 self.add_data_to_existing()
             else:
@@ -134,7 +131,6 @@ class LinearRegressionGameboard(QWidget):
     # Toggle decision boundary off
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
-            #print("In != False boundaries.")
             if self.game_mode != "game": 
                 self.clear_canvas()
             self.fit_model()
@@ -142,11 +138,12 @@ class LinearRegressionGameboard(QWidget):
             self.canvas.ax.plot(self.X_new, self.y_pred, "r-")
         else:
             self.clear_canvas()
-            self.canvas.ax.plot(self.X, self.y, "b.")  # plot_data(self.X)
+            self.canvas.ax.plot(self.X, self.y, "b.")
             self.boundaries_on = False
 
         self.fig.canvas.draw()
     
+
     def pin_the_data_result(self):
         for idx in range(len(self.points)):
             data  = np.asarray(self.points)
@@ -161,7 +158,6 @@ class LinearRegressionGameboard(QWidget):
 
         self.data_points = self.points
         
-
         n = len(self.data_points)
         for i in range(n-1):
             for j in range(0,n-i-1):
@@ -208,6 +204,7 @@ class LinearRegressionGameboard(QWidget):
 
         return prediction
 
+
     ####### Data Generation ########
     def create_own_points(self):
         self.X = np.asarray(self.x_point).reshape(-1, 1)
@@ -245,8 +242,8 @@ class LinearRegressionGameboard(QWidget):
         self.make_prediction()
         self.fig.canvas.draw()
 
-    def generate_data_points(self, data_option): # Change this to existing datasets
-        #print("Data option:",self.data_option)
+
+    def generate_data_points(self, data_option):
         self.clear_canvas()
         self.clear_values()
         self.prepopulated = True
@@ -261,8 +258,6 @@ class LinearRegressionGameboard(QWidget):
         
         elif data_option == 3:
             boston = datasets.load_boston()
-            #self.X, self.y = datasets.load_boston(return_X_y=True)
-            #self.X = self.X[:, np.newaxis, 5]
             self.X = boston.data[:, 5]
             self.X = self.X.reshape(-1, 1)
             self.y = boston.target

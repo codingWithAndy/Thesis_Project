@@ -1,15 +1,15 @@
 from random import randint
-import matplotlib.pyplot as plt
 import numpy as np
 
 from PyQt5.QtWidgets import *
+
+import matplotlib
+import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
-import matplotlib
+from matplotlib.figure                  import Figure
 
-##
-from sklearn.mixture import GaussianMixture
+from sklearn.mixture  import GaussianMixture
 from sklearn.datasets import load_iris
 
 matplotlib.use('Qt5Agg')
@@ -90,8 +90,8 @@ class GMMGameboard(QWidget):
 
 
     def clear_values(self):
-        self.ix, iy    = 0, 0
-        self.playerID  = False
+        self.ix, iy     = 0, 0
+        self.playerID   = False
         self.turn       = 0
         self.pointOwner = []
         self.points     = []

@@ -1,26 +1,22 @@
 import sys
 import os
 
+from PyQt5.QtGui              import *
 from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtCore             import *
+from PyQt5.QtWidgets          import *
 from PyQt5 import QtCore, QtWidgets, QtGui
-
-#from bs4 import BeautifulSoup
-
 
 
 class LearningZone(QWidget):
-
     switch_window = QtCore.pyqtSignal(str)
-    current_path = os.getcwd()
-    topic = "welcome" # Change this when the time comes to welcome
+    current_path  = os.getcwd()
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
+        
         self.setupUi()
+
 
     def setupUi(self):
         self.setObjectName("self")
@@ -84,21 +80,18 @@ class LearningZone(QWidget):
         self.quizButton.setMinimumSize(QtCore.QSize(121, 71))
         self.quizButton.setMaximumSize(QtCore.QSize(121, 71))
         self.quizButton.setStyleSheet("background-color: rgb(3, 193, 161);\n"
-"border-radius: 15px;")
+                                      "border-radius: 15px;")
         self.quizButton.setText("")
         icon2 = QIcon()
-        icon2.addPixmap(QPixmap(self.current_path+"/Images/Screenshot 2020-06-26 at 11.46.35.png"),
-                        QIcon.Normal, QIcon.Off)
+        icon2.addPixmap(QPixmap(self.current_path+"/Images/Screenshot 2020-06-26 at 11.46.35.png"),QIcon.Normal, QIcon.Off)
         self.quizButton.setIcon(icon2)
         self.quizButton.setIconSize(QSize(60, 60))
         self.quizButton.setObjectName("quizButton")
         self.gridLayout.addWidget(self.quizButton, 0, 3, 1, 1)
         
-        
         self.horizontalLayout.addLayout(self.gridLayout)
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.verticalLayout_2.addLayout(self.verticalLayout_3)
-
 
         self.retranslateUi()
 
@@ -106,6 +99,7 @@ class LearningZone(QWidget):
         self.homeButton.clicked.connect(self.home_pressed)
         self.freePlayButton.clicked.connect(self.freeplay_pressed)
         self.quizButton.clicked.connect(self.quiz_pressed)
+
 
     def setup_webview(self):
         self.webView = QWebEngineView(self)
@@ -115,18 +109,6 @@ class LearningZone(QWidget):
         self.webView.setUrl(QUrl("https://snappygames.co.uk/Andy/welcome.html"))
         self.verticalLayout.addWidget(self.webView)
         self.webView.show()
-
-
-    # Changing URL 
-    def url(self,content):
-        if content == "kmeans":
-            url = QUrl("https://snappygames.co.uk/Andy/kmeans.html")
-        elif content == "welcome":
-            url = QUrl("https://snappygames.co.uk/Andy/welcome.html")
-        elif content == "linear":
-            url = QUrl("https://snappygames.co.uk/Andy/linearregression.html")
-        
-        return url
 
 
     # Updating Layout on init
@@ -139,29 +121,25 @@ class LearningZone(QWidget):
     # Navigational Functions
     def home_pressed(self):
         self.switch_window.emit("mainmenu,learningzone")
-        # self.switch_window.emit(self.line_edit.text()) will pass a value through
     
+
     def quiz_pressed(self):
         html_title = str(self.webView.title())
-        
-        print("quizURL is:", str(html_title))
         self.switch_window.emit("quiz,learningzone,"+html_title)
     
+
     def freeplay_pressed(self):
         html_title = str(self.webView.title())
 
-        print("quizURL is:", str(html_title))
         if html_title in ['K-Means','GMM','Linear Regression','LDA','SVM', 'Neural Network']:
             html_title = 'linearreg' if html_title == 'Linear Regression' else html_title.lower()
-            #if html_title == 'Linear Regression':
-            #    html_title = 'linearreg'
-            self.switch_window.emit("freeplay,learningzone,"+html_title)
+            self.switch_window.emit("freeplay,learningzone," + html_title)
         else:
             msg = QMessageBox()
             msg.setWindowTitle("")
             msg_text = "Sorry! \n" + \
                 "This page does not have a model in Free Play.\n" + \
-                "Please try another Model.\n" + \
+                "Please try another Model.\n\n" + \
                 "The options are:\n" + \
                 "      - SVM\n" + \
                 "      - Neural Networks\n" + \

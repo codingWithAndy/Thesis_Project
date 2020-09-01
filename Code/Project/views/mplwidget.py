@@ -1,11 +1,13 @@
-from matplotlib.backends.backend_qt5agg import (
-    FigureCanvas, FigureCanvasQTAgg)
-from random import randint
 from PyQt5.QtWidgets import *
-
-from matplotlib.figure import Figure
-import matplotlib, sklearn.discriminant_analysis
+from random          import randint
 import numpy as np
+
+import matplotlib
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_qt5agg import (FigureCanvas, FigureCanvasQTAgg)
+
+import sklearn.discriminant_analysis
+
 matplotlib.use('Qt5Agg')
 
 
@@ -52,21 +54,18 @@ class MplWidget(QWidget):
 
         
     def __call__(self, event):
-        print('click', event)
         if event.inaxes != self.canvas.ax:
             return
         
         self.ix, self.iy = event.xdata, event.ydata
-        #print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
         
         self.points.append([self.ix, self.iy])
         self.pointOwner.append(self.playerID)
   
-        # from classifier game
         self.playerID = not self.playerID
         self.canvas.ax.scatter(self.ix, self.iy, marker='x', 
                                  s=20, c=self.playerColors[self.playerID])
-        self.fig.canvas.draw() # self.canvas.draw()
+        self.fig.canvas.draw()
 
         if not self.playerID and self.turn >= 4 and self.boundaries_on != False:
             self.clear_canvas()
@@ -84,7 +83,6 @@ class MplWidget(QWidget):
             # Plot boundary
             Z = Z.reshape(self.xx.shape)
             
-            #plt.savefig('graphs.png')
             self.canvas.ax.contour(self.xx, self.yy, Z) # Creates decision bondary
             
             # Relayout Canvas
@@ -98,7 +96,6 @@ class MplWidget(QWidget):
 
         else:
             self.clear_canvas()
-            # plot_data(self.X)
             if self.points != []:
                 player_points = np.asarray([self.points[i] for i in np.where(self.pointOwner)[0].tolist()])
                 self.canvas.ax.scatter(player_points[:, 0], player_points[:, 1],
@@ -110,11 +107,13 @@ class MplWidget(QWidget):
 
         self.fig.canvas.draw()
 
+
     def clear_canvas(self):
         self.canvas.ax.clear()
         self.canvas.ax.set_xlim([-1, 1])
         self.canvas.ax.set_ylim([-1, 1])
     
+
     def clear_values(self):
         self.ix, iy     = 0, 0
         self.playerID   = False

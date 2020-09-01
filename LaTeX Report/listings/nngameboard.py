@@ -1,32 +1,33 @@
-import os
-import traceback
-import numpy as np
-
-import tensorflow as tf
+from scipy.ndimage import sobel
 from tensorflow.keras.callbacks  import EarlyStopping
 from tensorflow.keras            import backend as K
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.models     import Model
 from tensorflow.keras.layers     import Input, Dense, Lambda, Concatenate
-
+from tensorflow.keras.models     import Model
+import tensorflow as tf
 from sklearn.metrics import confusion_matrix
-from scipy.ndimage   import sobel
-from random          import randint
+from random import randint
+import matplotlib.pyplot as plt
+import numpy as np
 
 from PyQt5.QtWidgets import *
-
-import matplotlib
-import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-from matplotlib.figure                  import Figure
+from matplotlib.figure import Figure
+import matplotlib
+
+import os
+
+import traceback
+
+import numpy as np
 
 matplotlib.use('Qt5Agg')
 
 
 class NNGameboard(QWidget):
-    model_name     = "Neural Network (ANN)"
-    learning_type  = "Supervised Learning"
+    model_name = "Neural Network (ANN)"
+    learning_type = "Supervised Learning"
     model_overview = "A neural network has input and output neurons, which are connected by weighted synapses.\n\n" + \
                      "The weights affect how much of the forward propagation goes through the neural network.\n\n The weights can then be changed during the back propagation " + \
                      " — this is the part where the neural network is now learning.\n\nThis process of forward propagation and backward propagation is conducted iteratively on every piece of data " + \
@@ -47,7 +48,9 @@ class NNGameboard(QWidget):
         self.turn        = 0
         self.game_player = 0
         
+
         self.retrain    = False
+        ### from LDA
         self.pointOwner = []
         self.playerID   = False
         self.points     = []
@@ -78,7 +81,7 @@ class NNGameboard(QWidget):
         self.setLayout(self.vertical_layout)
 
     def make_model(self):
-        # Fully connected NN
+        # Fully connected NN #Dense means Fully Connected
         inputs   = Input(shape=(2,))
 
         f_sin    = Lambda(lambda x: K.sin(x))(inputs)
@@ -119,6 +122,8 @@ class NNGameboard(QWidget):
             self.ix, self.iy = event.xdata, event.ydata
             new_point        = np.array([self.ix, self.iy])
             self.players[self.game_player] += [new_point]
+
+            ## from LDA
 
             self.points.append([self.ix, self.iy])
             self.pointOwner.append(self.playerID)
@@ -172,10 +177,13 @@ class NNGameboard(QWidget):
                 sample_preds  = self.model.predict(sample_points)
                 sample_preds  = (sample_preds > 0.5).astype(np.int32)
                 
+
             self.a1 = np.sum(self.grid_preds >= 0.5) / (self.res**2)
             self.a0 = 1. - self.a1
 
             self.territory = 'Territory {} | {}'.format((round(self.a0, 2) * 100), (round(self.a1, 2) * 100))
+            #print('Territory {} | {}'.format(self.a0, self.a1))
+            #print(self.territory)
 
             self.turn  += 1
             self.game_player = self.turn % self.num_players
@@ -184,12 +192,13 @@ class NNGameboard(QWidget):
                                                                 (num_points_per_round * self.num_players)) == 0
             
             self.canvas.ax.imshow((self.grid_preds-0.5)*0.6, extent=(-1, 1, 1, -1), vmin=-0.5, vmax=0.5,
-                                   interpolation='bilinear', cmap="cool")
+                                   interpolation='bilinear', cmap="cool" )#self.player_colours[self.game_player])
 
             self.fig.canvas.draw()
 
         except Exception:
             print("In exception")
+        #    self.canvas.ax.set_title(traceback.format_exc())
 
     def clear_values(self):
         pass

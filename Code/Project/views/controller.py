@@ -1,18 +1,19 @@
 import sys
 import os
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtGui import *
-from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
 
-from views.mainmenu import MainMenu
-from views.learningzone import LearningZone
-from views.splashscreen import SplashScreen
-from views.quiz import Quiz
-from views.freeplay import FreePlay
+from PyQt5                    import QtCore, QtWidgets
+from PyQt5.QtGui              import *
+from PyQt5.QtWebEngineWidgets import *
+from PyQt5.QtCore             import *
+from PyQt5.QtWidgets          import *
+
+from views.mainmenu       import MainMenu
+from views.learningzone   import LearningZone
+from views.splashscreen   import SplashScreen
+from views.quiz           import Quiz
+from views.freeplay       import FreePlay
 from views.maingamescreen import MainGameScreen
-from views.comingsoon import ComingSoonScreen
+from views.comingsoon     import ComingSoonScreen
 
 
 class Controller:
@@ -44,6 +45,7 @@ class Controller:
         self.quizscreen.switch_window.connect(self.choose_window)
         self.quizscreen.show()
 
+
     def show_coming_soon_screen(self):
         self.coming_soon_screen = ComingSoonScreen()
         self.coming_soon_screen.switch_window.connect(self.choose_window)
@@ -55,9 +57,11 @@ class Controller:
         self.freeplay.switch_window.connect(self.choose_window)    
         self.freeplay.show()
 
+
     def show_window_two(self):
         self.window.close()
         self.login.show()
+
 
     def show_gamescreen(self):
         self.maingamescreen = MainGameScreen()
@@ -92,7 +96,6 @@ class Controller:
         elif window_options[1] == "comingsoonscreen":
             self.coming_soon_screen.close()
             
-
         if window_options[0] == "mainmenu":
             self.show_mainmenu()
         elif window_options[0] == "learningzone":

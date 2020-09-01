@@ -1,12 +1,11 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib
-
-from random import randint
-
-from matplotlib.figure import Figure
+from random            import randint
 from PyQt5.QtWidgets   import *
 
+
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 
@@ -36,7 +35,6 @@ class KMeansGameboard(QWidget):
          [-2.8,  2.8],
          [-2.8,  1.3]]
          )
-
 
     blob_std = np.array([0.4, 0.3, 
                          0.1, 0.1, 
@@ -93,7 +91,7 @@ class KMeansGameboard(QWidget):
             if data_option != 3:
                 self.generate_random_data(randint(3,7), 1000)
             else:
-                self.generate_data_points(3)  # data_option
+                self.generate_data_points(3)
         else:
             self.X, self.y = make_blobs(n_samples=2000, centers=self.blob_centers,
                                         cluster_std=self.blob_std, random_state=7)
@@ -117,12 +115,10 @@ class KMeansGameboard(QWidget):
             return
 
         self.ix, self.iy = event.xdata, event.ydata
-        #print('x = {0:.3f}, y = {1:.3f}'.format(self.ix, self.iy))
 
         self.points.append([self.ix, self.iy])
         self.pointOwner.append(self.playerID)
 
-        # from classifier game
         if self.game_mode == "game":
             self.playerID = not self.playerID
 
@@ -133,7 +129,6 @@ class KMeansGameboard(QWidget):
         self.fig.canvas.draw()
         self.model_predict()
         
-
         if not self.playerID and self.turn > 6 and self.game_mode == "game":
             self.boundaries_on = True
             self.switch_boundaries_on_off()
@@ -148,7 +143,7 @@ class KMeansGameboard(QWidget):
 
 
     def plot_centroids(self, weights=None, circle_color='w', cross_color='k'):
-        self.fit_model(self.k) # Been added
+        self.fit_model(self.k)
         if weights is not None:
             self.centroids = self.centroids[weights > weights.max() / 10]
         
@@ -186,7 +181,6 @@ class KMeansGameboard(QWidget):
             self.plot_centroids()
         
         self.fig.canvas.draw()
-
 
 
     def alter_generated_features(self, idx1, idx2):
@@ -240,7 +234,6 @@ class KMeansGameboard(QWidget):
         self.plot_data()
         self.fit_model(self.k)
         
-
 
     def find_parameters(self):
         inetia       = self.kmeans.inertia_
@@ -321,6 +314,7 @@ class KMeansGameboard(QWidget):
     def clear_canvas(self):
         self.canvas.ax.clear()
         self.fig.canvas.draw()
+
 
     def clear_values(self):
         self.ix, iy  = 0, 0

@@ -8,7 +8,9 @@ class MainMenu(QtWidgets.QWidget):
 
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
+        
         self.setupUi()
+
 
     def setupUi(self):
         self.setObjectName("self")
@@ -113,17 +115,22 @@ class MainMenu(QtWidgets.QWidget):
 
         self.retranslateUi()
 
+
     def load_awards_zone(self):
         self.switch_window.emit('comingsoonscreen,mainmenu')
+
 
     def load_main_gamescreen(self):
         self.switch_window.emit('maingamescreen,mainmenu')
 
+
     def load_learning_zone(self):
         self.switch_window.emit('learningzone,mainmenu')
 
+
     def freeplay(self):
         self.switch_window.emit('freeplay,mainmenu')
+
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate

@@ -34,6 +34,8 @@ Quora, ``What are the top 5 misconceptions surrounding artificial intelligence
   10, 2020 from:
   https://www.quora.com/What-are-the-top-5-misconceptions-surrounding-Artificial-Intelligence-and-Machine-Learning.
 
+\bibitem{matlanintrotoml}
+{MathWorks}, ``Introducing machine learning.''
 
 \bibitem{sklearn_api}
 L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A.~Mueller, O.~Grisel,
@@ -167,29 +169,10 @@ L.~Mazzanti, S.~Doutreligne, C.~Gageat, P.~Derreumaux, A.~Taly, M.~Baaden, and
   S.~Pasquali, ``What can human-guided simulations bring to rna folding?''
   \emph{Biophysical journal}, vol. 113, no.~2, pp. 302--312, 2017.
 
-\bibitem{sizeofinternet}
-\BIBentryALTinterwordspacing
-{Internet Live Stats}. (2020). [Online]. Available:
-  \url{https://www.internetlivestats.com}
-\BIBentrySTDinterwordspacing
-
-\bibitem{gwern}
-\BIBentryALTinterwordspacing
-G.~Branwen. (2020) Internet search tips. [Online]. Available:
-  \url{https://www.gwern.net/Search}
-\BIBentrySTDinterwordspacing
-
-\bibitem{mendeley}
-\BIBentryALTinterwordspacing
-{RELX Group}. (2019) Mendeley. [Online]. Available:
-  \url{https://www.mendeley.com}
-\BIBentrySTDinterwordspacing
-
-\bibitem{kaj86}
-J.~T. Kajiya, ``The rendering equation,'' in \emph{Proceedings of the 13th
-  Annual Conference on Computer Graphics and Interactive Techniques}, ser.
-  SIGGRAPH '86.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: ACM,
-  1986, pp. 143--150.
+\bibitem{geron2019hands}
+A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent
+  Systems}.\hskip 1em plus 0.5em minus 0.4em\relax O'Reilly Media, 2019.
 
 \bibitem{swift}
 \BIBentryALTinterwordspacing

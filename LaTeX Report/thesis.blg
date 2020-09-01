@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 156 of file thesis.aux
+White space in argument---line 147 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -12,10 +12,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
-Repeated entry---line 796 of file citations.bib
- : @inproceedings{kaj86
- :                     ,
-I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -28,45 +24,45 @@ Warning--empty booktitle in 9
 Warning--empty booktitle in 10seriousrules
 
 Done.
-You've used 49 entries,
+You've used 45 entries,
             4087 wiz_defined-function locations,
-            1028 strings with 15468 characters,
-and the built_in function-call counts, 22077 in all, are:
-= -- 1636
-> -- 506
-< -- 41
-+ -- 258
-- -- 117
-* -- 772
-:= -- 3754
-add.period$ -- 103
-call.type$ -- 49
-change.case$ -- 48
-chr.to.int$ -- 96
-cite$ -- 56
-duplicate$ -- 1683
-empty$ -- 2078
-format.name$ -- 123
-if$ -- 4960
+            1008 strings with 15106 characters,
+and the built_in function-call counts, 20174 in all, are:
+= -- 1486
+> -- 482
+< -- 32
++ -- 244
+- -- 113
+* -- 705
+:= -- 3436
+add.period$ -- 94
+call.type$ -- 45
+change.case$ -- 45
+chr.to.int$ -- 72
+cite$ -- 52
+duplicate$ -- 1540
+empty$ -- 1896
+format.name$ -- 119
+if$ -- 4526
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 415
-newline$ -- 246
-num.names$ -- 49
-pop$ -- 1259
+int.to.str$ -- 45
+missing$ -- 384
+newline$ -- 228
+num.names$ -- 45
+pop$ -- 1169
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1722
+skip$ -- 1573
 stack$ -- 0
-substring$ -- 255
-swap$ -- 1118
-text.length$ -- 9
+substring$ -- 198
+swap$ -- 1017
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 49
+type$ -- 45
 warning$ -- 7
-while$ -- 66
-width$ -- 51
-write$ -- 494
-(There were 2 error messages)
+while$ -- 58
+width$ -- 47
+write$ -- 455
+(There was 1 error message)
