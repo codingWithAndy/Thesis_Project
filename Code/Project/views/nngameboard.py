@@ -111,8 +111,6 @@ class NNGameboard(QWidget):
 
 
     def __call__(self, event):
-        #print("In call!")
-        #print('click', event)
         try:
             num_points_per_round = 2
             samples_per_point    = 100
