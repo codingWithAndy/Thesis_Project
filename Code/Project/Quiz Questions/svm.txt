@@ -1,4 +1,3 @@
-"SVM Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"SVM Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"SVM Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"SVM Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+SVM stands for?,Support Vector Machine,Support Vent Machine,Support Vector Machine,Super Vector Machine,Something Very Mean
+What type of learning is SVM,Supervised,Supervised,Unsupervised,Reinforment,All
+SVM model is a representaion of....,the examples as points in space,the examples as points in time,the examples as points in sea,the examples as points in pixels,the examples as points in space

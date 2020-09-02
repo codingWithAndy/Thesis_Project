@@ -1,4 +1,4 @@
-"LDA Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"LDA Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"LDA Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"LDA Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What does LDA stand for?,Linear Discriminant Analysis,Linear Discriminant Analysis,Line Decision Analysis,Lets Divide Algorithm,Lots Done Analysis
+What does LDA aim to do?,Reduce data dimentionality,Reduce users time,Create nice data,Reduce data dimentionality,Reduce everything
+What type of learning is LDA?,Supervised,Supervised,Unsupervised,Regression,All
+What is the undelying solution for LDA?,Fisher,Birds Eye,Fisher,Boat,Sea

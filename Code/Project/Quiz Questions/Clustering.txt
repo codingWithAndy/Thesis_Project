@@ -1,0 +1,4 @@
+What type of learning are clustering algorithms?,Unsupervised,Supervised,Unsupervised,Regression,None
+What types of clustering algorithms are there?,All,Connectivity,Centroid,Distribution,All
+What does hard clustering algorithms do?,Each data point either belongs to a cluster entirely or not,It is hard on the data points,Each data point either belongs to a cluster entirely or not,A probability or likelihood of that data point,It is hard to implement
+What does soft clustering algorithms do?,A probability or likelihood of that data point,It is hard on the data points,each data point either belongs to a cluster entirely or not,A probability or likelihood of that data point,It is hard to implement

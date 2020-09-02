@@ -34,15 +34,13 @@ class SplashScreen(QtWidgets.QWidget):
         self.label.setMinimumSize(QtCore.QSize(500, 250))
         self.label.setMaximumSize(QtCore.QSize(900, 300))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Images/Data Splash Title.png"))  # /Code/Project/
+        self.label.setPixmap(QtGui.QPixmap(self.current_path+"/Images/Data Splash Title.png"))  # /Code/Project/
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem1 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem1)
         self.horizontalLayout.addLayout(self.horizontalLayout_3)
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -53,24 +51,21 @@ class SplashScreen(QtWidgets.QWidget):
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        spacerItem2 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem2)
         self.horizontalLayout_4.addLayout(self.horizontalLayout_5)
         self.label_2 = QtWidgets.QLabel(self)
         self.label_2.setMinimumSize(QtCore.QSize(200, 400))
         self.label_2.setMaximumSize(QtCore.QSize(400, 600))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap(
-            self.current_path+"/Images/Water-drop-data-v2.png"))
+        self.label_2.setPixmap(QtGui.QPixmap(self.current_path+"/Images/Water-drop-data-v2.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_4.addWidget(self.label_2)
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        spacerItem3 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem3)
         self.horizontalLayout_4.addLayout(self.horizontalLayout_6)
         self.verticalLayout_3.addLayout(self.horizontalLayout_4)
@@ -81,8 +76,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        spacerItem4 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_8.addItem(spacerItem4)
         self.horizontalLayout_7.addLayout(self.horizontalLayout_8)
         self.mainmenuButton = QtWidgets.QPushButton(self)
@@ -97,8 +91,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.horizontalLayout_7.addWidget(self.mainmenuButton)
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        spacerItem5 = QtWidgets.QSpacerItem(
-            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_9.addItem(spacerItem5)
         self.horizontalLayout_7.addLayout(self.horizontalLayout_9)
         self.verticalLayout_4.addLayout(self.horizontalLayout_7)
@@ -106,19 +99,15 @@ class SplashScreen(QtWidgets.QWidget):
 
         self.retranslateUi()
         
-
         self.mainmenuButton.clicked.connect(
             self.mainmenu)
+
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Form", "Data Splash!"))
         self.mainmenuButton.setText(_translate("Form", "Enter!"))
 
-    #def retranslateUi(self):
-    #    _translate = QtCore.QCoreApplication.translate
-    #    self.setWindowTitle(_translate("MainWindow", "Data Splash!"))
-    #    self.mainmenuButton.setText(_translate("MainWindow", "Enter!"))
 
     def mainmenu(self):
         self.switch_window.emit("mainmenu,splashscreen")

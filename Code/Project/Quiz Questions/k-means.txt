@@ -1,4 +1,4 @@
-"Kmeans Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"Kmeans Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"Kmeans Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"Kmeans Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What type of learning is K-Means?,Unsupervised,Supervised,Unsupervised,Regression,None
+What type of algorithm is K-Means?,Clustering,Regression,Classification,Clustering,Dimensionality Reduction
+What values is used to set the number of clusters?,k,a,b,k,l
+How is the value of k set?,Predetiminted by user,Algorithm picks at random,No need to do it,Predetiminted by user,Computer picks at random

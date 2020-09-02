@@ -1,4 +1,4 @@
-"PCA Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"PCA Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"PCA Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"PCA Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What does PCA stand for?,Principal Component Analysis,Principal Component Analysis,Pretty Cool Analysis,Please Copy Away,Principal Computer Analysis
+What does PCA aim to do?,Reduce data dimentionality,Reduce users time,Create nice data,Reduce data dimentionality,Reduce everything
+What type of learning is PCA?,Unsupervised,Supervised,Unsupervised,Regression,All
+What are the new fetures called in PCA?,PC's,Police,PC's,Features,Attributes

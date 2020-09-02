@@ -1,4 +1,4 @@
-"DR Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"DR Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"DR Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"DR Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What is Dimentionality Reduction?,Transforming high dimensional data in low,Transforming high dimensional data in low,Transforming low dimensional data in high,Transforming all types of data,Clustering
+What can dimensions also get refered to as?,Attributes,Rows,Attributes,Columns,All
+What can dimensions also get refered to as?,Features,Rows,Features,Columns,All
+Is dimensionality reduction .....,Supervised and unsupervised,supervised,Unsupervised,Supervised and unsupervised,None

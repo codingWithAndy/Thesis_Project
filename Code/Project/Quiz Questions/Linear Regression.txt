@@ -1,4 +1,4 @@
-"LR Question 1","Question 1","Question 1", "Question 2", "Question 3", "Question 4"
-"LR Question 2","Question 2","Question 1", "Question 2", "Question 3", "Question 4"
-"LR Question 3","Question 3","Question 1", "Question 2", "Question 3", "Question 4"
-"LR Question 4","Question 4","Question 1", "Question 2", "Question 3", "Question 4"
+What time of learning is Linear Regression,Supervised,Supervised,Unsupervised,Clustering,All
+What is the Metric Linear Regression uses?,SSE,ESS,SSE,SES,SNES
+What is the aim of Linear Regression?,Find correlation,Find data points,Find correlations,Look nice in a graph,Not much
+What are the vaiations of Linear Regression?,All,Non-linear,Polynomial,Gaussian,All
