@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  3 SEP 2020 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  4 SEP 2020 10:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2263,39 +2263,32 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 33.
- [2]) (./chapter/background_lit_review.tex
-[3] [4
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+ [2] [3]) (./chapter/background_lit_review.tex
+[4] [5
 
-] [5]
+] [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-Underfull \vbox (badness 1728) has occurred while \output is active []
 
  [7]
 
-LaTeX Warning: Reference `fig:seriousg' on page 8 undefined on input line 39.
+LaTeX Warning: Reference `fig:seriousg' on page 8 undefined on input line 37.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
+Underfull \hbox (badness 10000) in paragraph at lines 76--80
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
+Underfull \hbox (badness 10000) in paragraph at lines 83--87
 
  []
 
 [10]
 
-LaTeX Warning: Citation `handson book' on page 11 undefined on input line 110.
+LaTeX Warning: Citation `handson book' on page 11 undefined on input line 108.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11])
-(./chapter/thesis_methodology.tex [12] [13
+[11]) (./chapter/thesis_methodology.tex [12] [13
 
 ] [14] [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2330,26 +2323,28 @@ Underfull \vbox (badness 2529) has occurred while \output is active []
 Underfull \vbox (badness 1466) has occurred while \output is active []
 
  [22]
-[23]
+[23] [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
-[25] [26]
+ [25]
+[26] [27]
+
+LaTeX Warning: Reference `pop_up_example' on page 28 undefined on input line 11
+9.
+
+
+Underfull \vbox (badness 2529) has occurred while \output is active []
+
+ [28]
+[29]
 Underfull \vbox (badness 4940) has occurred while \output is active []
 
- [27]
-
-LaTeX Warning: Reference `pop_up_example' on page 28 undefined on input line 13
-3.
-
-[28] [29]
+ [30])
+(./chapter/thesis_conclusion.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31])
-(./chapter/thesis_conclusion.tex [32]) (./thesis.bbl [33
+ [31]
+[32]) (./thesis.bbl [33
 
 ] [34
 
@@ -2592,7 +2587,7 @@ urceCodePro-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/time
 s/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (62 pages, 357873 bytes).
+Output written on thesis.pdf (62 pages, 358828 bytes).
 PDF statistics:
  1010 PDF objects out of 1200 (max. 8388607)
  925 compressed objects within 10 object streams
