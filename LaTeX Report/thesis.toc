@@ -54,10 +54,12 @@
 \contentsline {subsection}{\numberline {4.5.3}Free Play Area}{29}{subsection.4.5.3}% 
 \contentsline {subsection}{\numberline {4.5.4}Achievements Area}{31}{subsection.4.5.4}% 
 \contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{32}{section.4.6}% 
-\contentsline {chapter}{\chapternumberline {5}Conclusions and Future Work}{33}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Contributions}{33}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Future Work}{33}{section.5.2}% 
-\contentsline {chapter}{Bibliography}{35}{chapter*.6}% 
-\contentsline {chapter}{Appendices}{39}{section*.7}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{41}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{43}{appendix.B}% 
+\contentsline {chapter}{\chapternumberline {5}Evaluation and Conclusion}{33}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{33}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Conclusion \& Discussion}{33}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Reflection on the application}{33}{subsection.5.2.1}% 
+\contentsline {chapter}{\chapternumberline {6}Summary and Final Comments}{35}{chapter.6}% 
+\contentsline {chapter}{Bibliography}{37}{chapter*.6}% 
+\contentsline {chapter}{Appendices}{41}{section*.7}% 
+\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{43}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{45}{appendix.B}% 
