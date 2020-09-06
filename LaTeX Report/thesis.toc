@@ -54,12 +54,15 @@
 \contentsline {subsection}{\numberline {4.5.3}Free Play Area}{29}{subsection.4.5.3}% 
 \contentsline {subsection}{\numberline {4.5.4}Achievements Area}{31}{subsection.4.5.4}% 
 \contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{32}{section.4.6}% 
-\contentsline {chapter}{\chapternumberline {5}Evaluation and Conclusion}{33}{chapter.5}% 
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{33}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{33}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Conclusion \& Discussion}{33}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}Reflection on the application}{33}{subsection.5.2.1}% 
-\contentsline {chapter}{\chapternumberline {6}Summary and Final Comments}{35}{chapter.6}% 
-\contentsline {chapter}{Bibliography}{37}{chapter*.6}% 
-\contentsline {chapter}{Appendices}{41}{section*.7}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{43}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{45}{appendix.B}% 
+\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{35}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Reflection on the application}{35}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{36}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{36}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Future Work}{38}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Summary and closing comments}{39}{section.6.5}% 
+\contentsline {chapter}{Bibliography}{41}{chapter*.6}% 
+\contentsline {chapter}{Appendices}{45}{section*.7}% 
+\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{47}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{49}{appendix.B}% 
