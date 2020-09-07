@@ -174,6 +174,18 @@ A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
   TensorFlow: Concepts, Tools, and Techniques to Build Intelligent
   Systems}.\hskip 1em plus 0.5em minus 0.4em\relax O'Reilly Media, 2019.
 
+\bibitem{sklearn_lr}
+\BIBentryALTinterwordspacing
+{Sci-Kit Learn}. (2020) Linear models. [Online]. Available:
+  \url{https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sklearn_svm}
+\BIBentryALTinterwordspacing
+------. (2020) Support vector machines. [Online]. Available:
+  \url{https://scikit-learn.org/stable/modules/svm.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{swift}
 \BIBentryALTinterwordspacing
 {Apple Inc.} (2020) Swift. [Online]. Available:

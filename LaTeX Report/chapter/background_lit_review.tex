@@ -8,7 +8,7 @@
 	
 	\subsection{Gamification}
 	%%% From HCI Report
-	Presented to us has been a task to research within a subtopic of Human-Computer Interaction (HCI). The subtopic we chose was gamification and gamification within education. Researching into gamification within educations has been influenced by the author's previous experience of being a teacher and working within schools. We wanted to find out what the context of gamification is, and how it can be used within education, to take aspects of teaching and learning that can get brought into the 21st Century. To make aspects of education more accessible to students in a manner that they are more accustomed to in their everyday lives. 
+	We wanted to find out what the context of gamification is, and how it can be used within education, to take aspects of teaching and learning that can get brought into the 21st Century. To make aspects of education more accessible to students in a manner that they are more accustomed to in their everyday lives. 
 	
 	Gamification, a term first coined in 2002, is an HCI technique used to add a game layer to traditional non-game like situations. The gamification aims to create extrinsic motivators for a person to be encouraged to do particular actions. Each action, upon completion, will have a little reward which, upon doing so, will release dopamine into the brain. The release of dopamine creates a good feeling within the participant's mind, which in turn is encouraging them to do it again. These rewards can be in the form of badges, achievements or progress bars, to name a few.
 	
@@ -95,23 +95,27 @@
 	\subsubsection{Gaussian Mixture Model}
 	\subsubsection{Neural Network}
 	%%% Spec
-	Neural Networks (NN) or also known Artificial Neural Networks (ANN), are at the very core of Deep Learning (DL). An ANN is an ML model inspired by networks of biological neurons found in our brains. However, ANN has become very different from their biological cousins that they took inspiration. ANN is what powers Google's image classifications, Apple's Siri and YouTube's video recommendation, as well as learning to beat the worlds best player at the game called Go, named 'DeepMind's Alpha Go' \cite{geron2019hands}.
-	%%%
+	Linear regression is a model that aims to fit a line of best fit to the data provided \cite{geron2019hands, sklearn_lr}.  A requirement for linear regression is for a set of methods intended for regression in which the target value expects to be a linear combination of the features. In mathematical notation, if $\hat{y}$ is the predicted value. $\hat{y}(w,x)=w_0+w_1x_1+...+w_px_p$
+	Across the module, we designate the vector $w=(w_1,...,w_p)$ as the coefficient and w0 as the intercept \cite{sklearn_lr}
 	
-	\subsubsection{Linear Regression}
-	%%% Spec
-	\textbf{Linear regression} is a model that aims to fit a line of best fit to the data provided. In order to achieve the best fit, the algorithm chooses the best overall score from the 'Root Mean Square Error' (RMSE). Therefore, to train a linear regression model, we need to find the value of $0$ that minimises the RMSE \cite{geron2019hands}.
+	LinearRegression fits a linear model with coefficients $w=(w_1,...,w_p)$ to minimise the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation \cite{sklearn_lr}. To achieve the best fit to the dataset the algorithm chooses the best overall score from the 'Root Mean Square Error' (RMSE). Therefore, to train a linear regression model, we need to find the value of $0$ that minimises the RMSE \cite{geron2019hands}.
 	%%%
+	Mathematically it solves a problem of the form \cite{sklearn_lr}:
+	$\min\limits_{w} = ||Xw-y||^2_2$
+	
+	The coefficient estimates for linear regression rely on the independence of the features. When features are correlated, and the columns of the design matrix $X$ have an approximate linear dependence, the design matrix becomes close to the singular, which causes the least-squares estimate to become highly sensitive to random errors in the observed target, which in turn produces a large variance. This situation of multicollinearity can arise, for example, when data get collected without an experimental design \cite{sklearn_lr, geron2019hands}.
 	
 	\subsubsection{Logistic Regression}
 	%%% Spec
-	\textbf{Logistic regression} is an algorithm that gets used for classification. Logistic regression gets used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than 50\%, the model predicts that the instance belongs to that class. If the model has predicted that the instance belongs to that class, also known as the positive class, it gets a '1' label \cite{handson book}. 
+	\textbf{Logistic regression} is an algorithm that gets used for classification. Logistic regression gets used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than 50\%, the model predicts that the instance belongs to that class. If the model has predicted that the instance belongs to that class, also known as the positive class, it gets a '1' label \cite{handsonbook}. 
 	%%%
 	
 	\subsubsection{SVM}
 	%%% Spec
-	Support Vector Machine (SVM) is another powerful and versatile ML model. The model is capable of performing linear or nonlinear classification, regression and even outlier detection. SVM is one of the most popular ML models and are best suited for small to medium-sized datasets. SVM aims to separate the data categories by using a decision boundary, with the largest margin between them. The algorithm is known as the 'large margin classification' \cite{geron2019hands}.
+	Support Vector Machine (SVM) is a powerful and versatile ML model. The model is capable of performing linear or nonlinear classification, regression and even outlier detection \cite{geron2019hands, sklearn_svm}. This model is one of the most popular ML models and is best suited for small to medium-sized datasets. The model aims to separate the data categories by using a decision boundary, with the largest margin between them. Due to the model using a large margin to separate the data, the algorithm gets known as the 'large margin classification' \cite{geron2019hands}.
 	%%%
+	
+	SVMs are a set of supervised learning methods and have many advantages, especially when working in high dimensional spaces. SVMs are also useful in situations where the number of dimensions is greater than the number of samples. Due to the model using subsets of the training points in the decision function, the model is memory efficient, and it is very versatile. The model is very versatile due to the different kernel functions are can be used \cite{sklearn_svm}. Although the model does have many strengths, it does also have a few disadvantages. A disadvantage is if the number of features is considerably greater than the number of data samples, then overfitting can happen. A way to overcome this is to choose different kernel functions, and regularisation of the term is crucial. Another disadvantage is that SVMs do not provide probability estimates. These estimates get calculated by using an expensive five-fold cross-validation \cite{sklearn_svm}.
 	
 	\subsubsection{Linear Discriminant Analysis}
 	

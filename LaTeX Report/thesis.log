@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  6 SEP 2020 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  7 SEP 2020 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1314,126 +1314,7 @@ Package: bibentry 2007/10/30 1.5 (PWD)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/genmisc/nth.sty
 Package: nth 2002/02/27
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pythontex/pythontex.sty
-Package: pythontex 2017/07/20 v0.16 execute and typeset Python code and other l
-anguages
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fvextra/fvextra.sty
-Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count354
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2019/01/15
-
-Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
-\FV@CodeLineNo=\count355
-\FV@InFile=\read3
-\FV@TabBox=\box104
-\c@FancyVerbLine=\count356
-\FV@StepNumber=\count357
-\FV@OutFile=\write5
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count358
-\output=\toks51
-\linenoprevgraf=\count359
-\linenumbersep=\dimen298
-\linenumberwidth=\dimen299
-\c@linenumber=\count360
-\c@pagewiselinenumber=\count361
-\c@LN@truepage=\count362
-\c@internallinenumber=\count363
-\c@internallinenumbers=\count364
-\quotelinenumbersep=\dimen300
-\bframerule=\dimen301
-\bframesep=\dimen302
-\bframebox=\box105
-LaTeX Info: Redefining \\ on input line 3056.
-)
-\c@FV@TrueTabGroupLevel=\count365
-\c@FV@TrueTabCounter=\count366
-\FV@TabBox@Group=\box106
-\FV@TmpLength=\skip299
-\c@FV@HighlightLinesStart=\count367
-\c@FV@HighlightLinesStop=\count368
-\FV@LoopCount=\count369
-\FV@NCharsBox=\box107
-\FV@BreakIndent=\dimen303
-\FV@BreakIndentNChars=\count370
-\FV@BreakSymbolSepLeft=\dimen304
-\FV@BreakSymbolSepLeftNChars=\count371
-\FV@BreakSymbolSepRight=\dimen305
-\FV@BreakSymbolSepRightNChars=\count372
-\FV@BreakSymbolIndentLeft=\dimen306
-\FV@BreakSymbolIndentLeftNChars=\count373
-\FV@BreakSymbolIndentRight=\dimen307
-\FV@BreakSymbolIndentRightNChars=\count374
-\c@FancyVerbLineBreakLast=\count375
-\FV@LineBox=\box108
-\FV@LineIndentBox=\box109
-\FV@LineWidth=\dimen308
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgfopts/pgfopts.sty
-Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks52
-\pgfkeys@temptoks=\toks53
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
-\pgfkeys@tmptoks=\toks54
-)))
-\pgfopts@list@add@a@toks=\toks55
-\pgfopts@list@add@b@toks=\toks56
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/newfloat.sty
-Package: newfloat 2018/03/04 v1.1a Defining new floating environments (AR)
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/currfile/currfile.sty
-Package: currfile 2015/04/23 v0.7c Provides the file path elements of the curre
-nt input file
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/filehook/filehook.sty
-Package: filehook 2011/10/12 v0.5d Hooks for input files
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/filehook/filehook-memoir.sty
-Package: filehook-memoir 2011/01/03 v0.1 filehook patch for memoir class
-Package filehook Info: Detected 'memoir' class: the memoir hooks will be moved 
-to the `At...OfFiles' hooks on input line 43.
-))
-\c@currfiledepth=\count376
-)
-\pytx@codefile=\write6
-\openout6 = `thesis.pytxcode'.
-
-\c@pytx@FancyVerbLineTemp=\count377
-
-! Undefined control sequence.
-\pgfkeyssetevalue ...emptoks =\pgfutil@scantokens 
-                                                  \expandafter {\expandafter...
-l.1197 }
-        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-\c@pytx@py@default@default=\count378
-\c@pytx@pycon@default@default=\count379
-\c@pytx@sympy@default@default=\count380
-\c@pytx@sympycon@default@default=\count381
-\c@pytx@pylab@default@default=\count382
-\c@pytx@pylabcon@default@default=\count383
-) (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2019/05/04 3.31 The Babel package
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/switch.def
@@ -1444,11 +1325,11 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2019/05/04 3.31 Babel common definitions
-\babel@savecnt=\count384
-\U@D=\dimen309
+\babel@savecnt=\count354
+\U@D=\dimen298
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count385
+\bbl@dirlevel=\count355
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -1459,14 +1340,14 @@ File: babel.def 2019/05/04 3.31 Babel common definitions
 (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks57
-\pgfutil@tempdima=\dimen310
-\pgfutil@tempdimb=\dimen311
+\pgfutil@everybye=\toks51
+\pgfutil@tempdima=\dimen299
+\pgfutil@tempdimb=\dimen300
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box110
+\pgfutil@abb=\box104
 (/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -1480,25 +1361,33 @@ Package: pgf 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2019/04/04 v3.1.2 (3.1.2)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-\pgf@x=\dimen312
-\pgf@y=\dimen313
-\pgf@xa=\dimen314
-\pgf@ya=\dimen315
-\pgf@xb=\dimen316
-\pgf@yb=\dimen317
-\pgf@xc=\dimen318
-\pgf@yc=\dimen319
-\w@pgf@writea=\write7
-\r@pgf@reada=\read4
-\c@pgf@counta=\count386
-\c@pgf@countb=\count387
-\c@pgf@countc=\count388
-\c@pgf@countd=\count389
-\t@pgf@toka=\toks58
-\t@pgf@tokb=\toks59
-\t@pgf@tokc=\toks60
-\pgf@sys@id@count=\count390
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks52
+\pgfkeys@temptoks=\toks53
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks54
+))
+\pgf@x=\dimen301
+\pgf@y=\dimen302
+\pgf@xa=\dimen303
+\pgf@ya=\dimen304
+\pgf@xb=\dimen305
+\pgf@yb=\dimen306
+\pgf@xc=\dimen307
+\pgf@yc=\dimen308
+\w@pgf@writea=\write5
+\r@pgf@reada=\read3
+\c@pgf@counta=\count356
+\c@pgf@countb=\count357
+\c@pgf@countc=\count358
+\c@pgf@countd=\count359
+\t@pgf@toka=\toks55
+\t@pgf@tokb=\toks56
+\t@pgf@tokc=\toks57
+\pgf@sys@id@count=\count360
+
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2019/04/04 v3.1.2 (3.1.2)
 )
@@ -1515,8 +1404,8 @@ File: pgfsys-common-pdf.def 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfsyssoftpath@smallbuffer@items=\count391
-\pgfsyssoftpath@bigbuffer@items=\count392
+\pgfsyssoftpath@smallbuffer@items=\count361
+\pgfsyssoftpath@bigbuffer@items=\count362
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -1528,12 +1417,12 @@ Package: pgfcore 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen320
-\pgfmath@count=\count393
-\pgfmath@box=\box111
-\pgfmath@toks=\toks61
-\pgfmath@stack@operand=\toks62
-\pgfmath@stack@operation=\toks63
+\pgfmath@dimen=\dimen309
+\pgfmath@count=\count363
+\pgfmath@box=\box105
+\pgfmath@toks=\toks58
+\pgfmath@stack@operand=\toks59
+\pgfmath@stack@operation=\toks60
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -1554,57 +1443,57 @@ code.tex)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count394
+\c@pgfmathroundto@lastzeros=\count364
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@picminx=\dimen321
-\pgf@picmaxx=\dimen322
-\pgf@picminy=\dimen323
-\pgf@picmaxy=\dimen324
-\pgf@pathminx=\dimen325
-\pgf@pathmaxx=\dimen326
-\pgf@pathminy=\dimen327
-\pgf@pathmaxy=\dimen328
-\pgf@xx=\dimen329
-\pgf@xy=\dimen330
-\pgf@yx=\dimen331
-\pgf@yy=\dimen332
-\pgf@zx=\dimen333
-\pgf@zy=\dimen334
+\pgf@picminx=\dimen310
+\pgf@picmaxx=\dimen311
+\pgf@picminy=\dimen312
+\pgf@picmaxy=\dimen313
+\pgf@pathminx=\dimen314
+\pgf@pathmaxx=\dimen315
+\pgf@pathminy=\dimen316
+\pgf@pathmaxy=\dimen317
+\pgf@xx=\dimen318
+\pgf@xy=\dimen319
+\pgf@yx=\dimen320
+\pgf@yy=\dimen321
+\pgf@zx=\dimen322
+\pgf@zy=\dimen323
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@path@lastx=\dimen335
-\pgf@path@lasty=\dimen336
+\pgf@path@lastx=\dimen324
+\pgf@path@lasty=\dimen325
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
 File: pgfcorepathusage.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@shorten@end@additional=\dimen337
-\pgf@shorten@start@additional=\dimen338
+\pgf@shorten@end@additional=\dimen326
+\pgf@shorten@start@additional=\dimen327
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
 File: pgfcorescopes.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfpic=\box112
-\pgf@hbox=\box113
-\pgf@layerbox@main=\box114
-\pgf@picture@serial@count=\count395
+\pgfpic=\box106
+\pgf@hbox=\box107
+\pgf@layerbox@main=\box108
+\pgf@picture@serial@count=\count365
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
 File: pgfcoregraphicstate.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgflinewidth=\dimen339
+\pgflinewidth=\dimen328
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
 File: pgfcoretransformations.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@pt@x=\dimen340
-\pgf@pt@y=\dimen341
-\pgf@pt@temp=\dimen342
+\pgf@pt@x=\dimen329
+\pgf@pt@y=\dimen330
+\pgf@pt@temp=\dimen331
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
@@ -1621,14 +1510,14 @@ File: pgfcorepathprocessing.code.tex 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
 File: pgfcorearrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfarrowsep=\dimen343
+\pgfarrowsep=\dimen332
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@max=\dimen344
-\pgf@sys@shading@range@num=\count396
-\pgf@shadingcount=\count397
+\pgf@max=\dimen333
+\pgf@sys@shading@range@num=\count366
+\pgf@shadingcount=\count367
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -1637,7 +1526,7 @@ File: pgfcoreimage.code.tex 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
 File: pgfcoreexternal.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfexternal@startupbox=\box115
+\pgfexternal@startupbox=\box109
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
@@ -1658,7 +1547,7 @@ File: pgfcorerdf.code.tex 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfnodeparttextbox=\box116
+\pgfnodeparttextbox=\box110
 )
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -1667,24 +1556,26 @@ File: pgfmoduleplot.code.tex 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
 Package: pgfcomp-version-0-65 2019/04/04 v3.1.2 (3.1.2)
-\pgf@nodesepstart=\dimen345
-\pgf@nodesepend=\dimen346
+\pgf@nodesepstart=\dimen334
+\pgf@nodesepend=\dimen335
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
 Package: pgfcomp-version-1-18 2019/04/04 v3.1.2 (3.1.2)
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2019/04/04 v3.1.2 (3.1.2)
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen347
-\pgffor@skip=\dimen348
-\pgffor@stack=\toks64
-\pgffor@toks=\toks65
+\pgffor@iter=\dimen336
+\pgffor@skip=\dimen337
+\pgffor@stack=\toks61
+\pgffor@toks=\toks62
 ))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -1693,32 +1584,32 @@ Package: tikz 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@plot@mark@count=\count398
-\pgfplotmarksize=\dimen349
+\pgf@plot@mark@count=\count368
+\pgfplotmarksize=\dimen338
 )
-\tikz@lastx=\dimen350
-\tikz@lasty=\dimen351
-\tikz@lastxsaved=\dimen352
-\tikz@lastysaved=\dimen353
-\tikzleveldistance=\dimen354
-\tikzsiblingdistance=\dimen355
-\tikz@figbox=\box117
-\tikz@figbox@bg=\box118
-\tikz@tempbox=\box119
-\tikz@tempbox@bg=\box120
-\tikztreelevel=\count399
-\tikznumberofchildren=\count400
-\tikznumberofcurrentchild=\count401
-\tikz@fig@count=\count402
+\tikz@lastx=\dimen339
+\tikz@lasty=\dimen340
+\tikz@lastxsaved=\dimen341
+\tikz@lastysaved=\dimen342
+\tikzleveldistance=\dimen343
+\tikzsiblingdistance=\dimen344
+\tikz@figbox=\box111
+\tikz@figbox@bg=\box112
+\tikz@tempbox=\box113
+\tikz@tempbox@bg=\box114
+\tikztreelevel=\count369
+\tikznumberofchildren=\count370
+\tikznumberofcurrentchild=\count371
+\tikz@fig@count=\count372
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfmatrixcurrentrow=\count403
-\pgfmatrixcurrentcolumn=\count404
-\pgf@matrix@numberofcolumns=\count405
+\pgfmatrixcurrentrow=\count373
+\pgfmatrixcurrentcolumn=\count374
+\pgf@matrix@numberofcolumns=\count375
 )
-\tikz@expandcount=\count406
+\tikz@expandcount=\count376
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1756,6 +1647,7 @@ Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
 Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
 Package: xcolor-patch 2016/05/16 xcolor patch
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
 Package hobsub Info: Skipping package `atbegshi' (already loaded).
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
@@ -1763,16 +1655,16 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen356
-\Hy@linkcounter=\count407
-\Hy@pagecounter=\count408
+\@linkdim=\dimen345
+\Hy@linkcounter=\count377
+\Hy@pagecounter=\count378
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count409
+\Hy@SavedSpaceFactor=\count379
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -1785,17 +1677,17 @@ Package hyperref Info: Plain pages OFF on input line 4534.
 Package hyperref Info: Backreferencing OFF on input line 4539.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
-\c@Hy@tempcnt=\count410
+\c@Hy@tempcnt=\count380
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5125.
-\XeTeXLinkMargin=\dimen357
-\Fld@menulength=\count411
-\Field@Width=\dimen358
-\Fld@charsize=\dimen359
+\XeTeXLinkMargin=\dimen346
+\Fld@menulength=\count381
+\Field@Width=\dimen347
+\Fld@charsize=\dimen348
 Package hyperref Info: Hyper figures OFF on input line 6380.
 Package hyperref Info: Link nesting OFF on input line 6385.
 Package hyperref Info: Hyper index ON on input line 6388.
@@ -1805,49 +1697,49 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6405.
 Package hyperref Info: PDF/A mode OFF on input line 6410.
 LaTeX Info: Redefining \ref on input line 6450.
 LaTeX Info: Redefining \pageref on input line 6454.
-\Hy@abspage=\count412
-\c@Item=\count413
-\c@Hfootnote=\count414
+\Hy@abspage=\count382
+\c@Item=\count383
+\c@Hfootnote=\count384
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/memoir/memhfixc.sty
 Package: memhfixc 2013/05/30 v1.17 nameref/hyperref package fixes for memoir cl
 ass
-\c@memhycontfloat=\count415
-\c@Hpagenote=\count416
+\c@memhycontfloat=\count385
+\c@Hpagenote=\count386
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
-\Fld@listcount=\count417
-\c@bookmark@seq@number=\count418
+\Fld@listcount=\count387
+\c@bookmark@seq@number=\count388
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip300
+\Hy@SectionHShift=\skip299
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count419
-\lst@gtempboxa=\box121
-\lst@token=\toks66
-\lst@length=\count420
-\lst@currlwidth=\dimen360
-\lst@column=\count421
-\lst@pos=\count422
-\lst@lostspace=\dimen361
-\lst@width=\dimen362
-\lst@newlines=\count423
-\lst@lineno=\count424
-\lst@maxwidth=\dimen363
+\lst@mode=\count389
+\lst@gtempboxa=\box115
+\lst@token=\toks63
+\lst@length=\count390
+\lst@currlwidth=\dimen349
+\lst@column=\count391
+\lst@pos=\count392
+\lst@lostspace=\dimen350
+\lst@width=\dimen351
+\lst@newlines=\count393
+\lst@lineno=\count394
+\lst@maxwidth=\dimen352
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
-\c@lstnumber=\count425
-\lst@skipnumbers=\count426
-\lst@framebox=\box122
+\c@lstnumber=\count395
+\lst@skipnumbers=\count396
+\lst@framebox=\box116
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/02/27 1.8b listings configuration
@@ -1857,7 +1749,7 @@ Package: listings 2019/02/27 1.8b (Carsten Heinz)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lstaddons/lstautogobble.sty
 Package: lstautogobble 2012/05/03 v0.1 Implements 'autogobble' option for 'list
 ings'
-\lstag@spacecount=\count427
+\lstag@spacecount=\count397
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sourcecodepro/sourcecodepro.sty
 Package: sourcecodepro 2015/10/09 v2.6 Adobe's Source Code Pro typeface
@@ -2027,16 +1919,16 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen364
-\captionmargin@=\dimen365
-\captionwidth=\dimen366
-\caption@tempdima=\dimen367
-\caption@indent=\dimen368
-\caption@parindent=\dimen369
-\caption@hangindent=\dimen370
+\captionmargin=\dimen353
+\captionmargin@=\dimen354
+\captionwidth=\dimen355
+\caption@tempdima=\dimen356
+\caption@indent=\dimen357
+\caption@parindent=\dimen358
+\caption@hangindent=\dimen359
 )
-\c@caption@flags=\count428
-\c@ContinuedFloat=\count429
+\c@caption@flags=\count398
+\c@ContinuedFloat=\count399
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -2050,17 +1942,17 @@ Package caption Info: threeparttable package is loaded.
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count430
-\sf@farskip=\skip301
-\sf@captopadj=\dimen371
-\sf@capskip=\skip302
-\sf@nearskip=\skip303
-\c@subfigure=\count431
-\c@subfigure@save=\count432
-\c@subtable=\count433
-\c@subtable@save=\count434
-\sf@top=\skip304
-\sf@bottom=\skip305
+\c@KVtest=\count400
+\sf@farskip=\skip300
+\sf@captopadj=\dimen360
+\sf@capskip=\skip301
+\sf@nearskip=\skip302
+\c@subfigure=\count401
+\c@subfigure@save=\count402
+\c@subtable=\count403
+\c@subtable@save=\count404
+\sf@top=\skip303
+\sf@bottom=\skip304
 )) (./thesis.aux
 
 LaTeX Warning: Label `sec:packages_used' multiply defined.
@@ -2101,34 +1993,26 @@ LaTeX Font Info:    ... okay on input line 10.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count435
-\scratchdimen=\dimen372
-\scratchbox=\box123
-\nofMPsegments=\count436
-\nofMParguments=\count437
-\everyMPshowfont=\toks67
-\MPscratchCnt=\count438
-\MPscratchDim=\dimen373
-\MPnumerator=\count439
-\makeMPintoPDFobject=\count440
-\everyMPtoPDFconversion=\toks68
+\scratchcounter=\count405
+\scratchdimen=\dimen361
+\scratchbox=\box117
+\nofMPsegments=\count406
+\nofMParguments=\count407
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count408
+\MPscratchDim=\dimen362
+\MPnumerator=\count409
+\makeMPintoPDFobject=\count410
+\everyMPtoPDFconversion=\toks65
 )
-\c@minilofdepth=\count441
-\c@minilotdepth=\count442
-\c@partlofdepth=\count443
-\c@partlotdepth=\count444
-\c@sectlofdepth=\count445
-\c@sectlotdepth=\count446
-\AtBeginShipoutBox=\box124
-
-No file pythontex-files-thesis/thesis.pytxmcr.
-Run PythonTeX to create it.
-Package newfloat Info: New float `listing' with options `fileext=lopytx' on inp
-ut line 10.
-\c@listing=\count447
-Package newfloat Info: float type `listing'=4 on input line 10.
-\c@lopytxdepth=\count448
-ABD: EveryShipout initializing macros
+\c@minilofdepth=\count411
+\c@minilotdepth=\count412
+\c@partlofdepth=\count413
+\c@partlotdepth=\count414
+\c@sectlofdepth=\count415
+\c@sectlotdepth=\count416
+\AtBeginShipoutBox=\box118
+ ABD: EveryShipout initializing macros
 Package hyperref Info: Link coloring ON on input line 10.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -2137,7 +2021,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count449
+\c@section@level=\count417
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -2146,10 +2030,10 @@ LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 (./thesis.out) (./thesis.out)
-\@outlinefile=\write8
-\openout8 = `thesis.out'.
+\@outlinefile=\write6
+\openout6 = `thesis.out'.
 
-\c@lstlisting=\count450
+\c@lstlisting=\count418
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -2247,7 +2131,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 ...or example playthroughs)}{32}{section.4.6}
+l.55 ...or example playthroughs)}{32}{section.4.6}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
@@ -2286,7 +2170,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--87
 
 [10]
 
-LaTeX Warning: Citation `handson book' on page 11 undefined on input line 108.
+LaTeX Warning: Citation `handsonbook' on page 11 undefined on input line 110.
 
 [11]) (./chapter/thesis_methodology.tex [12] [13
 
@@ -2302,7 +2186,7 @@ LaTeX Warning: Citation `list exam boards here' on page 19 undefined on input l
 ine 12.
 
 [19]
-<graphics/python_vs_java_vs_c++.jpg, id=449, 951.555pt x 577.15625pt>
+<graphics/python_vs_java_vs_c++.jpg, id=462, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
@@ -2379,77 +2263,77 @@ ance-[]growth/$[]
  []
 
 [42]
-Overfull \hbox (15.54434pt too wide) in paragraph at lines 185--189
+Overfull \hbox (15.54434pt too wide) in paragraph at lines 197--201
 \T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
 -[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
  []
 
-
-Underfull \hbox (badness 1648) in paragraph at lines 205--209
+[43]
+Underfull \hbox (badness 1648) in paragraph at lines 217--221
 \T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
 hackr . io / blog /
  []
 
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--257
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+Underfull \hbox (badness 10000) in paragraph at lines 254--257
 \T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
 &text = Python % 20is % 20a %
  []
 
-
-Underfull \hbox (badness 2662) in paragraph at lines 281--285
+[44]
+Underfull \hbox (badness 2662) in paragraph at lines 293--297
 []\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 281--285
+Underfull \hbox (badness 3536) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
 . com / community /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+Underfull \hbox (badness 10000) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
  ppc & utm _ campaignid =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+Underfull \hbox (badness 10000) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
 & utm _ keyword = &utm _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+Underfull \hbox (badness 10000) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
 creative = 229765585186 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+Underfull \hbox (badness 10000) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
 m _ loc _ interest _ ms =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+Underfull \hbox (badness 10000) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
 CoARIsAPtX _
  []
 
 
-Overfull \hbox (30.662pt too wide) in paragraph at lines 281--285
+Overfull \hbox (30.662pt too wide) in paragraph at lines 293--297
 \T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
 Lw _
  []
 
-[44]) (./chapter/appendix.tex [45] [46
+) (./chapter/appendix.tex [45] [46
 
 ]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2477,92 +2361,21 @@ LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
 ) [47] [48
 
-]
-(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-(./listings/nngameboard.py
-LaTeX Font Info:    Try loading font information for TS1+SourceCodePro-TLF on i
-nput line 25.
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/sourcecodepro/TS1SourceCodePro-TL
-F.fd
-File: TS1SourceCodePro-TLF.fd 2015/10/08 (autoinst) Font definitions for TS1/So
-urceCodePro-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 25.
- [49]
-
-! Package inputenc Error: Invalid UTF-8 byte sequence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33                      " — 
-                                this is the part where the neural network is...
-
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! Package inputenc Error: Invalid UTF-8 byte "94.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33                      " — 
-                                this is the part where the neural network is...
-
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 53.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [51]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [52]
-LaTeX Font Info:    Font shape `TS1/SourceCodePro-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 185.
-
-Overfull \hbox (25.43047pt too wide) in paragraph at lines 192--194
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [53]))
+])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the thesis.maf file.
 \openout4 = `thesis.maf'.
 
+ [49]
+\tf@toc=\write7
+\openout7 = `thesis.toc'.
 
-[54]
-\tf@toc=\write9
-\openout9 = `thesis.toc'.
+\tf@lot=\write8
+\openout8 = `thesis.lot'.
 
-\tf@lot=\write10
-\openout10 = `thesis.lot'.
-
-\tf@lof=\write11
-\openout11 = `thesis.lof'.
+\tf@lof=\write9
+\openout9 = `thesis.lof'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
@@ -2578,29 +2391,30 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 43762 strings out of 492616
- 778454 string characters out of 6129480
- 1253844 words of memory out of 5000000
- 46310 multiletter control sequences out of 15000+600000
- 586664 words of font info for 96 fonts, out of 8000000 for 9000
+ 40602 strings out of 492616
+ 719335 string characters out of 6129480
+ 1015990 words of memory out of 5000000
+ 43414 multiletter control sequences out of 15000+600000
+ 588070 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,12n,96p,1959b,2270s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_24hhf2.en
-c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
+ 63i,12n,92p,1959b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Bold.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePr
-o-It.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/So
-urceCodePro-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (68 pages, 368684 bytes).
+o-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (63 pages, 336345 bytes).
 PDF statistics:
- 1063 PDF objects out of 1200 (max. 8388607)
- 972 compressed objects within 10 object streams
- 398 named destinations out of 1000 (max. 500000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 717 compressed objects within 8 object streams
+ 189 named destinations out of 1000 (max. 500000)
  303 words of extra memory for PDF output out of 10000 (max. 10000000)
 
