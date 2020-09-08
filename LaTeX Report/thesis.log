@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  7 SEP 2020 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  8 SEP 2020 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2131,7 +2131,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.55 ...or example playthroughs)}{32}{section.4.6}
+l.55 ...or example playthroughs)}{34}{section.4.6}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
@@ -2170,23 +2170,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--87
 
 [10]
 
-LaTeX Warning: Citation `handsonbook' on page 11 undefined on input line 110.
+LaTeX Warning: Reference `representation_of_gauss' on page 11 undefined on inpu
+t line 106.
 
-[11]) (./chapter/thesis_methodology.tex [12] [13
+[11]
 
-] [14] [15]
+LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 124.
+
+
+LaTeX Warning: Reference `log regression' on page 12 undefined on input line 12
+6.
+
+
+LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 126.
+
+[12] [13]) (./chapter/thesis_methodology.tex [14] [15
+
+] [16] [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16])
-(./chapter/thesis_implementation.tex [17] [18
+ [18])
+(./chapter/thesis_implementation.tex [19] [20
 
 ]
 
-LaTeX Warning: Citation `list exam boards here' on page 19 undefined on input l
+LaTeX Warning: Citation `list exam boards here' on page 21 undefined on input l
 ine 12.
 
-[19]
-<graphics/python_vs_java_vs_c++.jpg, id=462, 951.555pt x 577.15625pt>
+[21]
+<graphics/python_vs_java_vs_c++.jpg, id=492, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
@@ -2200,51 +2212,51 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 17--18
 
 Underfull \vbox (badness 7256) has occurred while \output is active []
 
- [20 <./graphics/python_vs_java_vs_c++.jpg>]
+ [22 <./graphics/python_vs_java_vs_c++.jpg>]
 Underfull \vbox (badness 2529) has occurred while \output is active []
 
- [21]
+ [23]
 Underfull \vbox (badness 1466) has occurred while \output is active []
 
- [22]
-[23] [24]
+ [24]
+[25] [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
-[26] [27]
+ [27]
+[28] [29]
 
-LaTeX Warning: Reference `pop_up_example' on page 28 undefined on input line 11
+LaTeX Warning: Reference `pop_up_example' on page 30 undefined on input line 11
 9.
 
 
 Underfull \vbox (badness 2529) has occurred while \output is active []
 
- [28]
-[29]
+ [30]
+[31]
 Underfull \vbox (badness 4940) has occurred while \output is active []
 
- [30])
+ [32])
 (./chapter/thesis_conclusion.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-[32] [33
+ [33]
+[34] [35
 
-] [34
+] [36
 
 ]
 Underfull \vbox (badness 2818) has occurred while \output is active []
 
- [35]
-[36]
+ [37]
+[38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37])
-(./thesis.bbl [38] [39] [40
+ [39])
+(./thesis.bbl [40] [41] [42
 
 ]
 bibitemlist
-[41]
+[43]
 Underfull \hbox (badness 1881) in paragraph at lines 99--103
 []\T1/ptm/m/n/10.95 R. Swat-man. (2016) Poké-mon go catches five new world
  []
@@ -2262,78 +2274,78 @@ ent-[]in-[]the-[]classroom-[]cognitive-[]and-[]physical-[]processes-[]can-[]enh
 ance-[]growth/$[] 
  []
 
-[42]
-Overfull \hbox (15.54434pt too wide) in paragraph at lines 197--201
+[44]
+Overfull \hbox (15.54434pt too wide) in paragraph at lines 209--213
 \T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
 -[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
  []
 
-[43]
-Underfull \hbox (badness 1648) in paragraph at lines 217--221
+[45]
+Underfull \hbox (badness 1648) in paragraph at lines 229--233
 \T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
 hackr . io / blog /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
 \T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
 &text = Python % 20is % 20a %
  []
 
-[44]
-Underfull \hbox (badness 2662) in paragraph at lines 293--297
+[46]
+Underfull \hbox (badness 2662) in paragraph at lines 305--309
 []\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 293--297
+Underfull \hbox (badness 3536) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
 . com / community /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--297
+Underfull \hbox (badness 10000) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
  ppc & utm _ campaignid =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--297
+Underfull \hbox (badness 10000) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
 & utm _ keyword = &utm _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--297
+Underfull \hbox (badness 10000) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
 creative = 229765585186 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--297
+Underfull \hbox (badness 10000) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
 m _ loc _ interest _ ms =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--297
+Underfull \hbox (badness 10000) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
 CoARIsAPtX _
  []
 
 
-Overfull \hbox (30.662pt too wide) in paragraph at lines 293--297
+Overfull \hbox (30.662pt too wide) in paragraph at lines 305--309
 \T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
 Lw _
  []
 
-) (./chapter/appendix.tex [45] [46
+) (./chapter/appendix.tex [47] [48
 
 ]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2359,7 +2371,7 @@ LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
  (./listings/hello_world.c
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [47] [48
+) [49] [50
 
 ])
 Package minitoc Info: I0009
@@ -2367,7 +2379,7 @@ Package minitoc Info: I0009
 (minitoc)             Creating the thesis.maf file.
 \openout4 = `thesis.maf'.
 
- [49]
+ [51]
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -2394,11 +2406,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 40602 strings out of 492616
- 719335 string characters out of 6129480
- 1015990 words of memory out of 5000000
- 43414 multiletter control sequences out of 15000+600000
- 588070 words of font info for 97 fonts, out of 8000000 for 9000
+ 40618 strings out of 492616
+ 719493 string characters out of 6129480
+ 1016122 words of memory out of 5000000
+ 43418 multiletter control sequences out of 15000+600000
+ 591134 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,92p,1959b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
@@ -2408,13 +2420,15 @@ exlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Bold.pfb><
 o-Regular.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (63 pages, 336345 bytes).
+msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (65 pages, 347661 bytes).
 PDF statistics:
- 802 PDF objects out of 1000 (max. 8388607)
- 717 compressed objects within 8 object streams
- 189 named destinations out of 1000 (max. 500000)
+ 843 PDF objects out of 1000 (max. 8388607)
+ 754 compressed objects within 8 object streams
+ 193 named destinations out of 1000 (max. 500000)
  303 words of extra memory for PDF output out of 10000 (max. 10000000)
 

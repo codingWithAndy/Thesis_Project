@@ -2,11 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 114 of file thesis.aux
- : \citation{handson
- :                   book}
-I'm skipping whatever remains of this command
-White space in argument---line 154 of file thesis.aux
+White space in argument---line 160 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -16,6 +12,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
+Warning--I didn't find a database entry for "handsonbook"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -28,45 +25,45 @@ Warning--empty booktitle in 9
 Warning--empty booktitle in 10seriousrules
 
 Done.
-You've used 47 entries,
+You've used 49 entries,
             4087 wiz_defined-function locations,
-            1015 strings with 15306 characters,
-and the built_in function-call counts, 20870 in all, are:
-= -- 1542
-> -- 490
+            1021 strings with 15426 characters,
+and the built_in function-call counts, 21566 in all, are:
+= -- 1598
+> -- 498
 < -- 32
-+ -- 248
-- -- 115
-* -- 723
-:= -- 3569
-add.period$ -- 98
-call.type$ -- 47
-change.case$ -- 47
++ -- 252
+- -- 117
+* -- 741
+:= -- 3701
+add.period$ -- 102
+call.type$ -- 49
+change.case$ -- 49
 chr.to.int$ -- 72
-cite$ -- 54
-duplicate$ -- 1594
-empty$ -- 1964
-format.name$ -- 121
-if$ -- 4679
+cite$ -- 56
+duplicate$ -- 1648
+empty$ -- 2032
+format.name$ -- 123
+if$ -- 4833
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 398
-newline$ -- 238
-num.names$ -- 47
-pop$ -- 1213
+int.to.str$ -- 49
+missing$ -- 412
+newline$ -- 248
+num.names$ -- 49
+pop$ -- 1257
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1629
+skip$ -- 1685
 stack$ -- 0
 substring$ -- 198
-swap$ -- 1051
+swap$ -- 1085
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 47
+type$ -- 49
 warning$ -- 7
-while$ -- 60
-width$ -- 49
-write$ -- 475
-(There were 2 error messages)
+while$ -- 62
+width$ -- 51
+write$ -- 495
+(There was 1 error message)

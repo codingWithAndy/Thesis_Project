@@ -92,7 +92,21 @@
 	\subsection{Methods}
 	
 	\subsubsection{K-Means}
+	The KMeans algorithm aims to clusters the data by trying to separate samples into $n$ groups of equal variance. While also seeking to minimise a criterion known as the inertia or even referenced as a within-cluster sum-of-squares \cite{geron2019hands, sklearn_km}. The formula for the sum-of-squares is \cite{sklearn_km}: $\sum_{i=0}^{n}\min_{\mu_j \in C}(||x_i - \mu_j||^2)$. 
+	
+	This algorithm requires the number of clusters to get specified before initialising the model. The K-means algorithm strives to choose centroids that minimise the inertia, or within-cluster sum-of-squares criterion. The k-means algorithm divides a set of $N$ samples $X$ into $K$ disjoint clusters $C$, each described by the mean $\mu_j$ of the samples in the cluster. The means get commonly called the cluster's "centroids". However, these are not usually points from $X$, although they live in the same space. K-means gets associated with Lloyd's algorithm \cite{geron2019hands, sklearn_km}. 
+	
+	The algorithm has three steps. The first step chooses the initial centroids, with the most basic method being to choose k samples from the dataset $X$. After initialisation, K-means consists of looping between the two other steps. The first step assigns each sample to its nearest centroid. The second step creates new centroids by taking the mean value of all of the samples assigned to each previous centroid. The difference between the old and the new centroids get computed, and the algorithm iterates these last two steps until this value is less than a threshold. It is, in essence, repeating until the centroids do not move significantly \cite{geron2019hands, sklearn_km}.
+	
+	K-means scales well to a large number of samples and gets used across a broad range of application areas in many varied fields. K-means is equivalent to the expectation-maximisation algorithm with a small, all-equal, diagonal covariance matrix. When given enough time, K-means will always converge. However, this may be to a local minimum. Converging to a local minimum is highly dependent on the initialisation of the centroids. Therefore, as a result, the computation is often done several times, with different initialisations of the centroids \cite{sklearn_km}.
+	
 	\subsubsection{Gaussian Mixture Model}
+	A Gaussian mixture model is a probabilistic model that assumes all the data points get generated from a mixture of a finite number of Gaussian distributions with unknown parameters \cite{geron2019hands, sklearn_gmm}. It can get thought of that Gaussian mixture models are a generalised form of k-means clustering to incorporate information about the covariance structure of the data as well as the centres of the underlying Gaussians \cite{sklearn_gmm}. 
+	
+	There are multiple GMM variants, but in its simplest form for the model to get implemented it requires to know in advance the number of $k$ Gaussian distributions. At the same time, an assumption on the dataset that it gets generated through a probabilistic process (displayed in fig:\ref{representation_of_gauss}) \cite{geron2019hands}. 
+	
+	GMM 's do have many advantages from its speed, and its agnostics, which is due to the algorithm only maximising the likelihood. However, GMM's do have some disadvantages. These are it suffering from singularities. This disadvantage causes the algorithm to diverge and find solutions with infinite likelihoods unless one regularises, which is due to handling of the estimates of the covariance matrices. These become difficult when the algorithm is dealing with insufficiently many points per mixture \cite{sklearn_gmm}. Another disadvantage is the algorithm dealing with several components. This disadvantage is due to the algorithm using all the features it has available. Forcing the need for held-out data to help decide on the number of components required in the absence of external cues \cite{sklearn_gmm}.
+	
 	\subsubsection{Neural Network}
 	%%% Spec
 	Linear regression is a model that aims to fit a line of best fit to the data provided \cite{geron2019hands, sklearn_lr}.  A requirement for linear regression is for a set of methods intended for regression in which the target value expects to be a linear combination of the features. In mathematical notation, if $\hat{y}$ is the predicted value. $\hat{y}(w,x)=w_0+w_1x_1+...+w_px_p$
@@ -107,8 +121,9 @@
 	
 	\subsubsection{Logistic Regression}
 	%%% Spec
-	\textbf{Logistic regression} is an algorithm that gets used for classification. Logistic regression gets used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than 50\%, the model predicts that the instance belongs to that class. If the model has predicted that the instance belongs to that class, also known as the positive class, it gets a '1' label \cite{handsonbook}. 
-	%%%
+	Logistic regression is an algorithm that gets used for classification and, despite its name, is a linear model rather than a regression one. Logistic regression gets also known in the literature as logit regression, maximum-entropy classification (MaxEnt) or the log-linear classifier. In this model, the probabilities describing the possible outcomes of a single trial getting modelled using a logistic function \cite{sklearn_lr, handson_book}. Logistic regression's model estimated probability in its vectorised form: $\hat{p}=h_\theta(x) = \sigma(x^T\theta)$ \cite{geron2019hands}.
+	
+	Logistic regression gets used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than 50\%, the model predicts that the instance belongs to that class. If the model has predicted that the instance belongs to that class, also known as the positive class, it gets a '1' label  (see fig \ref{log regression}) \cite{handson_book, geron2019hands}. Logistic regression can fit binary, One-vs-Rest, or multinomial logistic regression. That also has an optional $\ell1, \ell2$ or Elastic-Net regularisation \cite{sklearn_lr}.
 	
 	\subsubsection{SVM}
 	%%% Spec
