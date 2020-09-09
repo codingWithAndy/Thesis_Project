@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 160 of file thesis.aux
+White space in argument---line 167 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -12,7 +12,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
-Warning--I didn't find a database entry for "handsonbook"
+Warning--I didn't find a database entry for "handson_book"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -27,7 +27,7 @@ Warning--empty booktitle in 10seriousrules
 Done.
 You've used 49 entries,
             4087 wiz_defined-function locations,
-            1021 strings with 15426 characters,
+            1021 strings with 15427 characters,
 and the built_in function-call counts, 21566 in all, are:
 = -- 1598
 > -- 498

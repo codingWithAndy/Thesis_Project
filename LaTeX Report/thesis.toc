@@ -23,13 +23,13 @@
 \contentsline {subsubsection}{\numberline {2.2.3.3}Neural Network}{12}{subsubsection.2.2.3.3}% 
 \contentsline {subsubsection}{\numberline {2.2.3.4}Logistic Regression}{12}{subsubsection.2.2.3.4}% 
 \contentsline {subsubsection}{\numberline {2.2.3.5}SVM}{13}{subsubsection.2.2.3.5}% 
-\contentsline {subsubsection}{\numberline {2.2.3.6}Linear Discriminant Analysis}{13}{subsubsection.2.2.3.6}% 
-\contentsline {subsubsection}{\numberline {2.2.3.7}PCA}{13}{subsubsection.2.2.3.7}% 
-\contentsline {subsubsection}{\numberline {2.2.3.8}kNN}{13}{subsubsection.2.2.3.8}% 
-\contentsline {subsection}{\numberline {2.2.4}Machine Learning in Education}{13}{subsection.2.2.4}% 
-\contentsline {subsubsection}{\numberline {2.2.4.1}Classical Approaches}{13}{subsubsection.2.2.4.1}% 
-\contentsline {subsubsection}{\numberline {2.2.4.2}Machine Learning Edu-Games}{13}{subsubsection.2.2.4.2}% 
-\contentsline {section}{\numberline {2.3}Proposed Solution}{13}{section.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.6}Linear Discriminant Analysis}{14}{subsubsection.2.2.3.6}% 
+\contentsline {subsubsection}{\numberline {2.2.3.7}PCA}{14}{subsubsection.2.2.3.7}% 
+\contentsline {subsubsection}{\numberline {2.2.3.8}kNN}{14}{subsubsection.2.2.3.8}% 
+\contentsline {subsection}{\numberline {2.2.4}Machine Learning in Education}{14}{subsection.2.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.4.1}Classical Approaches}{14}{subsubsection.2.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.2.4.2}Machine Learning Edu-Games}{14}{subsubsection.2.2.4.2}% 
+\contentsline {section}{\numberline {2.3}Proposed Solution}{14}{section.2.3}% 
 \contentsline {section}{\numberline {2.4}Summary and Overview of Proposed Solution}{14}{section.2.4}% 
 \contentsline {chapter}{\chapternumberline {3}Methodology}{15}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Overview of Application}{15}{section.3.1}% 

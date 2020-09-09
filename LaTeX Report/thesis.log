@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  8 SEP 2020 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  9 SEP 2020 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2158,33 +2158,27 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: Reference `fig:seriousg' on page 8 undefined on input line 37.
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 76--80
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 83--87
-
- []
-
-[10]
+[8] [9] [10]
 
 LaTeX Warning: Reference `representation_of_gauss' on page 11 undefined on inpu
-t line 106.
+t line 99.
 
 [11]
 
-LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 124.
+LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 117.
 
 
-LaTeX Warning: Reference `log regression' on page 12 undefined on input line 12
-6.
+LaTeX Warning: Reference `log regression' on page 12 undefined on input line 11
+9.
 
 
-LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 126.
+LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 119.
 
-[12] [13]) (./chapter/thesis_methodology.tex [14] [15
+[12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13])
+(./chapter/thesis_methodology.tex [14] [15
 
 ] [16] [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2425,7 +2419,7 @@ msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><
 texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (65 pages, 347661 bytes).
+Output written on thesis.pdf (65 pages, 348088 bytes).
 PDF statistics:
  843 PDF objects out of 1000 (max. 8388607)
  754 compressed objects within 8 object streams
