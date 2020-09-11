@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  10 SEP 2020 09:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  11 SEP 2020 10:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2152,12 +2152,13 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 [4] [5
 
 ] [6]
+
+LaTeX Warning: Reference `fig:seriousg' on page 7 undefined on input line 37.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
-
-LaTeX Warning: Reference `fig:seriousg' on page 8 undefined on input line 37.
-
 [8] [9] [10]
 
 LaTeX Warning: Reference `representation_of_gauss' on page 11 undefined on inpu
@@ -2174,7 +2175,11 @@ LaTeX Warning: Reference `log regression' on page 12 undefined on input line 11
 
 LaTeX Warning: Citation `handson_book' on page 12 undefined on input line 119.
 
-[12] [13]) (./chapter/thesis_methodology.tex [14] [15
+[12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13])
+(./chapter/thesis_methodology.tex [14] [15
 
 ] [16] [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2396,8 +2401,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 40621 strings out of 492616
- 719570 string characters out of 6129480
+ 40622 strings out of 492616
+ 719586 string characters out of 6129480
  1016406 words of memory out of 5000000
  43421 multiletter control sequences out of 15000+600000
  591134 words of font info for 105 fonts, out of 8000000 for 9000
@@ -2415,10 +2420,10 @@ msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><
 texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (65 pages, 348365 bytes).
+Output written on thesis.pdf (65 pages, 348123 bytes).
 PDF statistics:
- 843 PDF objects out of 1000 (max. 8388607)
- 754 compressed objects within 8 object streams
- 193 named destinations out of 1000 (max. 500000)
+ 844 PDF objects out of 1000 (max. 8388607)
+ 755 compressed objects within 8 object streams
+ 194 named destinations out of 1000 (max. 500000)
  303 words of extra memory for PDF output out of 10000 (max. 10000000)
 

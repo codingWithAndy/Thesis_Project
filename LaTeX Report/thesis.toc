@@ -13,7 +13,8 @@
 \contentsline {section}{\numberline {2.1}Introduction to Edu-Games}{5}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}Gamification}{5}{subsection.2.1.1}% 
 \contentsline {subsection}{\numberline {2.1.2}Gamification in Education}{6}{subsection.2.1.2}% 
-\contentsline {subsection}{\numberline {2.1.3}Example Applications}{9}{subsection.2.1.3}% 
+\contentsline {subsection}{\numberline {2.1.3}Gamification in Science}{8}{subsection.2.1.3}% 
+\contentsline {subsection}{\numberline {2.1.4}Example Applications}{9}{subsection.2.1.4}% 
 \contentsline {section}{\numberline {2.2}Machine Learning}{9}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Machine Learning Fundamentals}{9}{subsection.2.2.1}% 
 \contentsline {subsection}{\numberline {2.2.2}Supervised vs Unsupervised Learning}{9}{subsection.2.2.2}% 
