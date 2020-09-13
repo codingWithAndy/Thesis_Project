@@ -58,6 +58,12 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   \url{https://www.tensorflow.org/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{barab2009transformational}
+S.~A. Barab, B.~Scott, S.~Siyahhan, R.~Goldstone, A.~Ingram-Goble, S.~J.
+  Zuiker, and S.~Warren, ``Transformational play as a curricular scaffold:
+  Using videogames to support science education,'' \emph{Journal of Science
+  Education and Technology}, vol.~18, no.~4, p. 305, 2009.
+
 \bibitem{4}
 S.~Walz, in \emph{The Gameful World: Approaches, Issues, Applications}.\hskip
   1em plus 0.5em minus 0.4em\relax MIT Press, 2015.
@@ -140,18 +146,73 @@ A.~Blum-Dimaya, S.~A. Reeve, K.~F. Reeve, and H.~Hoch, ``Teaching children with
   Children}.\hskip 1em plus 0.5em minus 0.4em\relax West Virginia University
   Press, 2010, pp. 351--370.
 
-\bibitem{27}
-\BIBentryALTinterwordspacing
-M.~Doyle. (2014) Learning with simcity: Valuable lessons kids can learn playing
-  mayor. [Online]. Available:
-  \url{https://www.brightpips.com/learning-simcity-valuable-lessons-kids-learn-playing-mayor/}
-\BIBentrySTDinterwordspacing
+\bibitem{national2010exploring}
+N.~R. Council \emph{et~al.}, \emph{Exploring the intersection of science
+  education and 21st century skills: A workshop summary}.\hskip 1em plus 0.5em
+  minus 0.4em\relax National Academies Press, 2010.
+
+\bibitem{morris2013gaming}
+B.~Morris, S.~Croker, C.~Zimmerman, D.~Gill, and C.~Romig, ``Gaming science:
+  the “gamification” of scientific thinking,'' \emph{Frontiers in
+  psychology}, vol.~4, p. 607, 2013.
+
+\bibitem{weiner1995attribution}
+B.~Weiner, ``Attribution theory in organizational behavior: A relationship of
+  mutual benefit,'' \emph{Attribution theory: An organizational perspective},
+  pp. 3--6, 1995.
+
+\bibitem{rosas2003beyond}
+R.~Rosas, M.~Nussbaum, P.~Cumsille, V.~Marianov, M.~Correa, P.~Flores, V.~Grau,
+  F.~Lagos, X.~L{\'o}pez, V.~L{\'o}pez \emph{et~al.}, ``Beyond nintendo: design
+  and assessment of educational video games for first and second grade
+  students,'' \emph{Computers \& Education}, vol.~40, no.~1, pp. 71--94, 2003.
+
+\bibitem{annetta2008serious}
+L.~A. Annetta, ``Serious educational games,'' \emph{Theory into Practice},
+  vol.~83, 2008.
+
+\bibitem{squire2003harnessing}
+K.~Squire and H.~Jenkins, ``Harnessing the power of games in education,''
+  \emph{Insight}, vol.~3, no.~1, pp. 5--33, 2003.
+
+\bibitem{cheng2012students}
+M.-T. Cheng and L.~Annetta, ``Students’ learning outcomes and learning
+  experiences through playing a serious educational game,'' \emph{Journal of
+  Biological Education}, vol.~46, no.~4, pp. 203--213, 2012.
+
+\bibitem{national2012framework}
+N.~R. Council \emph{et~al.}, \emph{A framework for K-12 science education:
+  Practices, crosscutting concepts, and core ideas}.\hskip 1em plus 0.5em minus
+  0.4em\relax National Academies Press, 2012.
 
 \bibitem{wikiserious}
 \BIBentryALTinterwordspacing
 {Wikipedia}. (2020) Serious game. [Online]. Available:
   \url{https://en.wikipedia.org/wiki/Serious_game}
 \BIBentrySTDinterwordspacing
+
+\bibitem{galas2006river}
+C.~Galas and D.~J. Ketelhut, ``River city, the muve,'' \emph{Learning and
+  Leading with Technology}, vol.~33, no.~7, p.~31, 2006.
+
+\bibitem{nelson2007robust}
+B.~C. Nelson, D.~J. Ketelhut, J.~Clarke, E.~Dieterle, C.~Dede, and
+  B.~Erlandson, ``Robust design strategies for scaling educational innovations:
+  The river city case study,'' in \emph{The design and use of simulation
+  computer games in education}.\hskip 1em plus 0.5em minus 0.4em\relax Brill
+  Sense, 2007, pp. 217--239.
+
+\bibitem{squire2007mad}
+K.~D. Squire and M.~Jan, ``Mad city mystery: Developing scientific
+  argumentation skills with a place-based augmented reality game on handheld
+  computers,'' \emph{Journal of science education and technology}, vol.~16,
+  no.~1, pp. 5--29, 2007.
+
+\bibitem{adachi2013more}
+P.~J. Adachi and T.~Willoughby, ``More than just fun and games: the
+  longitudinal relationships between strategic video games, self-reported
+  problem solving skills, and academic grades,'' \emph{Journal of youth and
+  adolescence}, vol.~42, no.~7, pp. 1041--1052, 2013.
 
 \bibitem{10seriousrules}
 M.~Baaden, O.~Delalande, N.~Ferey, S.~Pasquali, J.~Waldisp{\"u}hl, and A.~Taly,
@@ -196,6 +257,26 @@ A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
 \BIBentryALTinterwordspacing
 ------. (2020) Support vector machines. [Online]. Available:
   \url{https://scikit-learn.org/stable/modules/svm.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sklearn_knn}
+\BIBentryALTinterwordspacing
+------. (2020) Nearest neighbors classification. [Online]. Available:
+  \url{https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification}
+\BIBentrySTDinterwordspacing
+
+\bibitem{udemy}
+\BIBentryALTinterwordspacing
+{Udemy}. (2020) Improving lives through learning. [Online]. Available:
+  \url{https://about.udemy.com/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{coursera}
+\BIBentryALTinterwordspacing
+{Coursera}. (2020) We envision a world where anyone, anywhere can transform
+  their life by accessing the world’s best learning experience. [Online].
+  Available:
+  \url{https://blog.coursera.org/about/#:~:text=Coursera%20was%20founded%20by%20Daphne,learn%20skills%20of%20the%20future.}
 \BIBentrySTDinterwordspacing
 
 \bibitem{swift}

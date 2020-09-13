@@ -12,57 +12,57 @@
 \contentsline {chapter}{\chapternumberline {2}Background \& Literature Review}{5}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Introduction to Edu-Games}{5}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}Gamification}{5}{subsection.2.1.1}% 
-\contentsline {subsection}{\numberline {2.1.2}Gamification in Education}{6}{subsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.1.2}Gamification in Education}{7}{subsection.2.1.2}% 
 \contentsline {subsection}{\numberline {2.1.3}Gamification in Science}{8}{subsection.2.1.3}% 
-\contentsline {subsection}{\numberline {2.1.4}Example Applications}{9}{subsection.2.1.4}% 
-\contentsline {section}{\numberline {2.2}Machine Learning}{9}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Machine Learning Fundamentals}{9}{subsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.2}Supervised vs Unsupervised Learning}{9}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Methods}{10}{subsection.2.2.3}% 
-\contentsline {subsubsection}{\numberline {2.2.3.1}K-Means}{10}{subsubsection.2.2.3.1}% 
-\contentsline {subsubsection}{\numberline {2.2.3.2}Gaussian Mixture Model}{11}{subsubsection.2.2.3.2}% 
-\contentsline {subsubsection}{\numberline {2.2.3.3}Neural Network}{12}{subsubsection.2.2.3.3}% 
-\contentsline {subsubsection}{\numberline {2.2.3.4}Logistic Regression}{12}{subsubsection.2.2.3.4}% 
-\contentsline {subsubsection}{\numberline {2.2.3.5}SVM}{13}{subsubsection.2.2.3.5}% 
-\contentsline {subsubsection}{\numberline {2.2.3.6}Linear Discriminant Analysis}{13}{subsubsection.2.2.3.6}% 
-\contentsline {subsubsection}{\numberline {2.2.3.7}PCA}{13}{subsubsection.2.2.3.7}% 
-\contentsline {subsubsection}{\numberline {2.2.3.8}kNN}{13}{subsubsection.2.2.3.8}% 
-\contentsline {subsection}{\numberline {2.2.4}Machine Learning in Education}{13}{subsection.2.2.4}% 
-\contentsline {subsubsection}{\numberline {2.2.4.1}Classical Approaches}{14}{subsubsection.2.2.4.1}% 
-\contentsline {subsubsection}{\numberline {2.2.4.2}Machine Learning Edu-Games}{14}{subsubsection.2.2.4.2}% 
-\contentsline {section}{\numberline {2.3}Proposed Solution}{14}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Summary and Overview of Proposed Solution}{14}{section.2.4}% 
-\contentsline {chapter}{\chapternumberline {3}Methodology}{15}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Overview of Application}{15}{section.3.1}% 
-\contentsline {subsection}{\numberline {3.1.1}Design}{15}{subsection.3.1.1}% 
-\contentsline {section}{\numberline {3.2}Overview of Specific Game Components}{16}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Game Arena}{16}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Learning Zone}{17}{subsection.3.2.2}% 
-\contentsline {subsection}{\numberline {3.2.3}Free Play}{18}{subsection.3.2.3}% 
-\contentsline {subsection}{\numberline {3.2.4}Awards Zone}{19}{subsection.3.2.4}% 
-\contentsline {section}{\numberline {3.3}Evaluation of Application}{19}{section.3.3}% 
-\contentsline {chapter}{\chapternumberline {4}Implementation}{21}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Tools}{21}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Programming Languages}{21}{subsection.4.1.1}% 
-\contentsline {section}{\numberline {4.2}Frameworks}{25}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}GUI Framework}{25}{subsection.4.2.1}% 
-\contentsline {section}{\numberline {4.3}Packages}{26}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}IDE}{26}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Intricacies of the Game Components}{28}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Gameplay Area}{28}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Learning Zone Area}{29}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Free Play Area}{31}{subsection.4.5.3}% 
-\contentsline {subsection}{\numberline {4.5.4}Achievements Area}{33}{subsection.4.5.4}% 
-\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{34}{section.4.6}% 
-\contentsline {chapter}{\chapternumberline {5}Evaluation}{35}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{35}{section.5.1}% 
-\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{37}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Reflection on the application}{37}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{38}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{38}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Future Work}{40}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Summary and closing comments}{41}{section.6.5}% 
-\contentsline {chapter}{Bibliography}{43}{chapter*.6}% 
-\contentsline {chapter}{Appendices}{47}{section*.7}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{49}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{51}{appendix.B}% 
+\contentsline {subsection}{\numberline {2.1.4}Example Applications}{10}{subsection.2.1.4}% 
+\contentsline {section}{\numberline {2.2}Machine Learning}{10}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Machine Learning Fundamentals}{10}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Supervised vs Unsupervised Learning}{10}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Methods}{11}{subsection.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.1}K-Means}{11}{subsubsection.2.2.3.1}% 
+\contentsline {subsubsection}{\numberline {2.2.3.2}Gaussian Mixture Model}{12}{subsubsection.2.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.2.3.3}Neural Network}{13}{subsubsection.2.2.3.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.4}Logistic Regression}{13}{subsubsection.2.2.3.4}% 
+\contentsline {subsubsection}{\numberline {2.2.3.5}SVM}{14}{subsubsection.2.2.3.5}% 
+\contentsline {subsubsection}{\numberline {2.2.3.6}Linear Discriminant Analysis}{14}{subsubsection.2.2.3.6}% 
+\contentsline {subsubsection}{\numberline {2.2.3.7}PCA}{14}{subsubsection.2.2.3.7}% 
+\contentsline {subsubsection}{\numberline {2.2.3.8}kNN}{14}{subsubsection.2.2.3.8}% 
+\contentsline {subsection}{\numberline {2.2.4}Machine Learning in Education}{15}{subsection.2.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.4.1}Classical Approaches}{15}{subsubsection.2.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.2.4.2}Machine Learning Edu-Games}{16}{subsubsection.2.2.4.2}% 
+\contentsline {section}{\numberline {2.3}Proposed Solution}{16}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Summary and Overview of Proposed Solution}{16}{section.2.4}% 
+\contentsline {chapter}{\chapternumberline {3}Methodology}{17}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Overview of Application}{17}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Design}{17}{subsection.3.1.1}% 
+\contentsline {section}{\numberline {3.2}Overview of Specific Game Components}{18}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Game Arena}{18}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Learning Zone}{19}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Free Play}{20}{subsection.3.2.3}% 
+\contentsline {subsection}{\numberline {3.2.4}Awards Zone}{21}{subsection.3.2.4}% 
+\contentsline {section}{\numberline {3.3}Evaluation of Application}{21}{section.3.3}% 
+\contentsline {chapter}{\chapternumberline {4}Implementation}{23}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Tools}{23}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Programming Languages}{23}{subsection.4.1.1}% 
+\contentsline {section}{\numberline {4.2}Frameworks}{27}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}GUI Framework}{27}{subsection.4.2.1}% 
+\contentsline {section}{\numberline {4.3}Packages}{28}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}IDE}{28}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Intricacies of the Game Components}{30}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Gameplay Area}{30}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Learning Zone Area}{31}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Free Play Area}{33}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.4}Achievements Area}{35}{subsection.4.5.4}% 
+\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{36}{section.4.6}% 
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{37}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{37}{section.5.1}% 
+\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{39}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Reflection on the application}{39}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{40}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{40}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Future Work}{42}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Summary and closing comments}{43}{section.6.5}% 
+\contentsline {chapter}{Bibliography}{45}{chapter*.6}% 
+\contentsline {chapter}{Appendices}{51}{section*.7}% 
+\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{53}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{55}{appendix.B}% 
