@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{geron2019hands}
+A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent
+  Systems}.\hskip 1em plus 0.5em minus 0.4em\relax O'Reilly Media, 2019.
+
 \bibitem{py_ja_c++}
 \BIBentryALTinterwordspacing
 {Things Tech}, ``Which programming language to start with as a beginner,''
@@ -107,18 +112,6 @@ R.~Swatman. (2016) Pokémon go catches five new world records. [Online].
   \url{https://www.guinnessworldrecords.com/news/2016/8/pokemon-go-catches-five-world-records-439327}
 \BIBentrySTDinterwordspacing
 
-\bibitem{9}
-R.~Silverman, ``Latest game theory: Mixing work and play — companies adopt
-  gaming techniques to motivate employees.''\hskip 1em plus 0.5em minus
-  0.4em\relax Wallstreet Journal, 2011.
-
-\bibitem{10}
-\BIBentryALTinterwordspacing
-M.~Herger. (2012) Gamification and law or how to stay out of prison despite
-  gamification. [Online]. Available:
-  \url{https://web.archive.org/web/20120425121358/http:/enterprise-gamification.com/index.php/en/blog/4-blog/65-gamification-and-law-or-how-to-stay-out-of-prison-despite-gamification}
-\BIBentrySTDinterwordspacing
-
 \bibitem{22}
 \BIBentryALTinterwordspacing
 {Wikipedia}. (2020) Gamification of learning. [Online]. Available:
@@ -136,7 +129,7 @@ A.~Deese. (2020) 5 benefits of gamification. [Online]. Available:
 H.~Deese. (2012) Using gamification to aid in adolescent development in the
   classroom: Cognitive and physical processes can enhance growth. [Online].
   Available:
-  \url{http://www.ashleydeese.com/2012/09/26/using-gamification-to-aid-in-adolescent-development-in-the-classroom-cognitive-and-physical-processes-can-enhance-growth/}
+  \url{http://www.ashleydeese.com/2012/09/26/using-gamification-to-aid\\-in-adolescent-development-in-the-classroom-cognitive-and-physical-processes-can-enhance-growth/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{26}
@@ -230,38 +223,34 @@ L.~Mazzanti, S.~Doutreligne, C.~Gageat, P.~Derreumaux, A.~Taly, M.~Baaden, and
   S.~Pasquali, ``What can human-guided simulations bring to rna folding?''
   \emph{Biophysical journal}, vol. 113, no.~2, pp. 302--312, 2017.
 
-\bibitem{geron2019hands}
-A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
-  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent
-  Systems}.\hskip 1em plus 0.5em minus 0.4em\relax O'Reilly Media, 2019.
-
 \bibitem{sklearn_km}
 \BIBentryALTinterwordspacing
-{Sci-Kit Learn}. (2020) Clustering. [Online]. Available:
+{Sci-Kit Learn K-m}. (2020) Clustering. [Online]. Available:
   \url{https://scikit-learn.org/stable/modules/clustering.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sklearn_gmm}
 \BIBentryALTinterwordspacing
-------. (2020) Gaussian mixture models. [Online]. Available:
+{Sci-Kit Learn GMM}. (2020) Gaussian mixture models. [Online]. Available:
   \url{https://scikit-learn.org/stable/modules/clustering.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sklearn_lr}
 \BIBentryALTinterwordspacing
-------. (2020) Linear models. [Online]. Available:
+{Sci-Kit Learn LR}. (2020) Linear models. [Online]. Available:
   \url{https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sklearn_svm}
 \BIBentryALTinterwordspacing
-------. (2020) Support vector machines. [Online]. Available:
+{Sci-Kit Learn SVM}. (2020) Support vector machines. [Online]. Available:
   \url{https://scikit-learn.org/stable/modules/svm.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sklearn_knn}
 \BIBentryALTinterwordspacing
-------. (2020) Nearest neighbors classification. [Online]. Available:
+{Sci-Kit Learn kNN}. (2020) Nearest neighbors classification. [Online].
+  Available:
   \url{https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification}
 \BIBentrySTDinterwordspacing
 
@@ -278,6 +267,16 @@ A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
   Available:
   \url{https://blog.coursera.org/about/#:~:text=Coursera%20was%20founded%20by%20Daphne,learn%20skills%20of%20the%20future.}
 \BIBentrySTDinterwordspacing
+
+\bibitem{clark2016learning}
+R.~C. Clark and R.~E. Mayer, \emph{E-learning and the science of instruction:
+  Proven guidelines for consumers and designers of multimedia learning}.\hskip
+  1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, 2016.
+
+\bibitem{duffy2008engaging}
+P.~Duffy, ``Engaging the youtube google-eyed generation: Strategies for using
+  web 2.0 in teaching and learning.'' \emph{Electronic Journal of E-learning},
+  vol.~6, no.~2, pp. 119--130, 2008.
 
 \bibitem{swift}
 \BIBentryALTinterwordspacing
@@ -393,6 +392,15 @@ A.~Sharma. (2020) Introduction to gui with tkinter in python. [Online].
 {Python Software Foundation}. (2020) Tkinter. [Online]. Available:
   \url{https://wiki.python.org/moin/TkInter}
 \BIBentrySTDinterwordspacing
+
+\bibitem{hunter2007matplotlib}
+J.~D. Hunter, ``Matplotlib: A 2d graphics environment,'' \emph{Computing in
+  science \& engineering}, vol.~9, no.~3, pp. 90--95, 2007.
+
+\bibitem{walt2011numpy}
+S.~v.~d. Walt, S.~C. Colbert, and G.~Varoquaux, ``The numpy array: a structure
+  for efficient numerical computation,'' \emph{Computing in Science \&
+  Engineering}, vol.~13, no.~2, pp. 22--30, 2011.
 
 \bibitem{pycharm_get_started}
 \BIBentryALTinterwordspacing
