@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 209 of file thesis.aux
+White space in argument---line 220 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -24,45 +24,45 @@ Warning--empty title in 4
 Warning--empty booktitle in 10seriousrules
 
 Done.
-You've used 66 entries,
+You've used 71 entries,
             4087 wiz_defined-function locations,
-            1125 strings with 18727 characters,
-and the built_in function-call counts, 33676 in all, are:
-= -- 2628
-> -- 782
+            1146 strings with 19334 characters,
+and the built_in function-call counts, 35602 in all, are:
+= -- 2792
+> -- 802
 < -- 133
-+ -- 402
-- -- 169
-* -- 1307
-:= -- 5598
-add.period$ -- 136
-call.type$ -- 66
-change.case$ -- 63
++ -- 412
+- -- 174
+* -- 1373
+:= -- 5972
+add.period$ -- 146
+call.type$ -- 71
+change.case$ -- 71
 chr.to.int$ -- 270
-cite$ -- 72
-duplicate$ -- 2535
-empty$ -- 2960
-format.name$ -- 188
-if$ -- 7645
+cite$ -- 77
+duplicate$ -- 2688
+empty$ -- 3139
+format.name$ -- 193
+if$ -- 8064
 int.to.chr$ -- 0
-int.to.str$ -- 66
-missing$ -- 568
-newline$ -- 301
-num.names$ -- 66
-pop$ -- 1587
+int.to.str$ -- 71
+missing$ -- 606
+newline$ -- 326
+num.names$ -- 71
+pop$ -- 1697
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2646
+skip$ -- 2798
 stack$ -- 0
-substring$ -- 687
-swap$ -- 1822
+substring$ -- 696
+swap$ -- 1913
 text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 66
+type$ -- 71
 warning$ -- 6
-while$ -- 122
-width$ -- 68
-write$ -- 666
+while$ -- 127
+width$ -- 73
+write$ -- 719
 (There was 1 error message)

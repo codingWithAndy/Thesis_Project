@@ -21,6 +21,13 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{gaming_relics}
+\BIBentryALTinterwordspacing
+{Nintendo}, ``Top selling title sales unit,'' 2020, [Online: accessed September
+  16, 2020]. [Online]. Available:
+  \url{https://www.nintendo.co.jp/ir/en/finance/software/ds.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{geron2019hands}
 A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
   TensorFlow: Concepts, Tools, and Techniques to Build Intelligent
@@ -222,6 +229,33 @@ R.~Follett and V.~Strezov, ``An analysis of citizen science based research:
 L.~Mazzanti, S.~Doutreligne, C.~Gageat, P.~Derreumaux, A.~Taly, M.~Baaden, and
   S.~Pasquali, ``What can human-guided simulations bring to rna folding?''
   \emph{Biophysical journal}, vol. 113, no.~2, pp. 302--312, 2017.
+
+\bibitem{27}
+\BIBentryALTinterwordspacing
+M.~Doyle. (2014) Learning with simcity: Valuable lessons kids can learn playing
+  mayor. [Online]. Available:
+  \url{https://www.brightpips.com/learning-simcity-valuable-lessons-kids-learn-playing-mayor/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{my_maths}
+\BIBentryALTinterwordspacing
+{My Maths}. (2020) My maths. [Online]. Available:
+  \url{https://riverbankcomputing.com/software/pyqt/intro}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bt_sales}
+\BIBentryALTinterwordspacing
+{Gaming Relics}, ``Mario is missing,'' 2020, [Online: accessed September 16,
+  2020]. [Online]. Available:
+  \url{https://www.gamingrelics.com/image/cache/catalog/snes-cases/Mario%20is%20Missing-1280x800.jpg}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bt_award}
+\BIBentryALTinterwordspacing
+L.~Jenner, ``Brain training wins edge award,'' 2006, [Online: accessed
+  September 16, 2020]. [Online]. Available:
+  \url{https://web.archive.org/web/20070129031900/http://www.gamespot.com/news/6156124.html}
+\BIBentrySTDinterwordspacing
 
 \bibitem{sklearn_km}
 \BIBentryALTinterwordspacing

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  15 SEP 2020 19:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  16 SEP 2020 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2162,37 +2162,38 @@ Underfull \vbox (badness 1728) has occurred while \output is active []
 Underfull \vbox (badness 4940) has occurred while \output is active []
 
  [9]
-[10] [11]
-<graphics/gmm_example.jpeg, id=417, 1215.54124pt x 496.85625pt>
+[10]
+<graphics/Mario_is_Missing_box_art.jpg, id=395, 963.6pt x 602.25pt>
+File: graphics/Mario_is_Missing_box_art.jpg Graphic file (type jpg)
+<use graphics/Mario_is_Missing_box_art.jpg>
+Package pdftex.def Info: graphics/Mario_is_Missing_box_art.jpg  used on input l
+ine 65.
+(pdftex.def)             Requested size: 256.0748pt x 160.04578pt.
+ [11 <./graphics/Mario_is_Missing_box_art.jpg>] [12]
+<graphics/gmm_example.jpeg, id=434, 1215.54124pt x 496.85625pt>
 File: graphics/gmm_example.jpeg Graphic file (type jpg)
 <use graphics/gmm_example.jpeg>
-Package pdftex.def Info: graphics/gmm_example.jpeg  used on input line 87.
+Package pdftex.def Info: graphics/gmm_example.jpeg  used on input line 106.
 (pdftex.def)             Requested size: 256.0748pt x 104.66888pt.
- [12 <./graphics/gmm_example.jpeg>]
-<graphics/logistic_reg.jpeg, id=441, 1225.57875pt x 396.48125pt>
-File: graphics/logistic_reg.jpeg Graphic file (type jpg)
-<use graphics/logistic_reg.jpeg>
-Package pdftex.def Info: graphics/logistic_reg.jpeg  used on input line 115.
-(pdftex.def)             Requested size: 256.0748pt x 82.84003pt.
-
-
-LaTeX Warning: Citation `handson_book' on page 13 undefined on input line 122.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [13 <./graphics/gmm_example.jpeg>] [14]
+<graphics/logistic_reg.jpeg, id=470, 1225.57875pt x 396.48125pt>
+File: graphics/logistic_reg.jpeg Graphic file (type jpg)
+<use graphics/logistic_reg.jpeg>
+Package pdftex.def Info: graphics/logistic_reg.jpeg  used on input line 134.
+(pdftex.def)             Requested size: 256.0748pt x 82.84003pt.
 
-LaTeX Warning: Citation `handson_book' on page 14 undefined on input line 124.
 
-[14 <./graphics/logistic_reg.jpeg>] [15]
-Underfull \vbox (badness 4940) has occurred while \output is active []
+LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 141.
 
- [16])
-(./chapter/thesis_methodology.tex [17] [18
 
-]
-<graphics/ui_screens.png, id=505, 812.03375pt x 970.62625pt>
+LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 143.
+
+[15 <./graphics/logistic_reg.jpeg>] [16] [17])
+(./chapter/thesis_methodology.tex [18]
+<graphics/ui_screens.png, id=522, 812.03375pt x 970.62625pt>
 File: graphics/ui_screens.png Graphic file (type png)
 <use graphics/ui_screens.png>
 Package pdftex.def Info: graphics/ui_screens.png  used on input line 15.
@@ -2202,7 +2203,9 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 15--16
 [][] 
  []
 
-[19] [20] [21]
+[19
+
+] [20] [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22])
@@ -2214,7 +2217,7 @@ ine 12.
 [25
 
 ]
-<graphics/python_vs_java_vs_c++.jpg, id=557, 951.555pt x 577.15625pt>
+<graphics/python_vs_java_vs_c++.jpg, id=574, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
@@ -2232,7 +2235,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30]
 [31] [32]
-<graphics/no_model_warning.png, id=649, 367.3725pt x 247.92625pt>
+<graphics/no_model_warning.png, id=666, 367.3725pt x 247.92625pt>
 File: graphics/no_model_warning.png Graphic file (type png)
 <use graphics/no_model_warning.png>
 Package pdftex.def Info: graphics/no_model_warning.png  used on input line 117.
@@ -2268,83 +2271,83 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 bibitemlist
 [47]
-Underfull \hbox (badness 1881) in paragraph at lines 110--114
+Underfull \hbox (badness 1881) in paragraph at lines 117--121
 []\T1/ptm/m/n/10.95 R. Swat-man. (2016) Poké-mon go catches five new world
  []
 
 
-Overfull \hbox (62.17995pt too wide) in paragraph at lines 129--134
+Overfull \hbox (62.17995pt too wide) in paragraph at lines 136--141
 \T1/ptm/m/n/10.95 -[]in-[]adolescent-[]development-[]in-[]the-[]classroom-[]cog
 nitive-[]and-[]physical-[]processes-[]can-[]enhance-[]growth/$[] 
  []
 
 [48] [49] [50]
-Overfull \hbox (15.54434pt too wide) in paragraph at lines 289--293
+Overfull \hbox (15.54434pt too wide) in paragraph at lines 323--327
 \T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
 -[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 309--313
+Underfull \hbox (badness 1648) in paragraph at lines 343--347
 \T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
 hackr . io / blog /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 346--349
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 380--383
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--349
+Underfull \hbox (badness 10000) in paragraph at lines 380--383
 \T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
 &text = Python % 20is % 20a %
  []
 
-[51]
-Underfull \hbox (badness 2662) in paragraph at lines 385--389
+
+Underfull \hbox (badness 2662) in paragraph at lines 419--423
 []\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 385--389
+Underfull \hbox (badness 3536) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
 . com / community /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
  ppc & utm _ campaignid =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
 & utm _ keyword = &utm _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
 creative = 229765585186 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
 m _ loc _ interest _ ms =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
 CoARIsAPtX _
  []
 
 
-Overfull \hbox (30.662pt too wide) in paragraph at lines 385--389
+Overfull \hbox (30.662pt too wide) in paragraph at lines 419--423
 \T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
 Lw _
  []
@@ -2399,7 +2402,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9EC55F8DB552CAC34C9FA5E73CA1C005;2298.
+(rerunfilecheck)             Checksum: 02C3969BC9BB27A15191C707EFA92CAC;2298.
 
 
 LaTeX Warning: There were undefined references.
@@ -2410,10 +2413,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 40677 strings out of 492616
- 720925 string characters out of 6129480
- 1018149 words of memory out of 5000000
- 43455 multiletter control sequences out of 15000+600000
+ 40695 strings out of 492616
+ 721294 string characters out of 6129480
+ 1019819 words of memory out of 5000000
+ 43466 multiletter control sequences out of 15000+600000
  591134 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,92p,2269b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2429,10 +2432,10 @@ msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><
 texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (71 pages, 1652308 bytes).
+Output written on thesis.pdf (71 pages, 1987872 bytes).
 PDF statistics:
- 928 PDF objects out of 1000 (max. 8388607)
- 824 compressed objects within 9 object streams
- 210 named destinations out of 1000 (max. 500000)
- 323 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 955 PDF objects out of 1000 (max. 8388607)
+ 849 compressed objects within 9 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 328 words of extra memory for PDF output out of 10000 (max. 10000000)
 
