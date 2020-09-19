@@ -21,7 +21,6 @@ class MainGameScreen(QtWidgets.QWidget):
     current_path  = os.getcwd()
 
     model_options = ["k-means", "linearreg"]
-    #, "gmm","lda","svm", "neural network"
 
     score = [100, 80, 60, 50, 40, 30, 20, 0]
 
@@ -153,9 +152,7 @@ class MainGameScreen(QtWidgets.QWidget):
         # Here is where the gameboard sits.
         self.horizontalLayout_2.addLayout(self.gameboardPlacing)
 
-
         self.setup_gameboard()
-        
         
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
@@ -438,7 +435,6 @@ class MainGameScreen(QtWidgets.QWidget):
         self.verticalLayout_6.addItem(spacerItem5)
         self.verticalLayout.addWidget(self.scoreFrame)
 
-
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -519,9 +515,7 @@ class MainGameScreen(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("self", "Data Splash! - Game Zone"))
         self.aimLabel.setText(_translate("self", "Aim:"))
-        #self.aimDescriptionLabel.setText(_translate("self", "Description"))
         self.scoreLabel.setText(_translate("self", "Score: "))
-
         self.play1ScoreLabel.setText(_translate("self", "P1 - {}".format(self.player1_total_score)))
         self.player2ScoreLabel.setText(_translate("self", "P2 - {}".format(self.player1_total_score)))
         self.scoreDividerLabel.setText(_translate("self", "|"))
@@ -565,8 +559,7 @@ class MainGameScreen(QtWidgets.QWidget):
         self.playerTurnLabel.setText(_translate("self", "Player % Turn!"))
         self.tipLabel.setText(_translate("self", "Tip: "))
         self.tipContentLabel.setText(_translate("self", self.tip))
-        self.aimDescriptionLabel.setText(_translate("Form", self.aim_desc))
-        
+        self.aimDescriptionLabel.setText(_translate("Form", self.aim_desc))    
 
     
     def timer_checker(self, duration=50, action="start"):
@@ -577,6 +570,7 @@ class MainGameScreen(QtWidgets.QWidget):
             self.qTimer.start()
         elif action == "stop":
             self.qTimer.stop()
+
 
     def wait_timer(self, duration=1000):
         loop = QEventLoop()
@@ -609,7 +603,6 @@ class MainGameScreen(QtWidgets.QWidget):
             self.generate_winner()
             self.wait_timer()
 
-            
             if self.game_mode == "linearreg":
                 msg_text =  "             Round Over!\n\n" + \
                             "You have both made all of your moves!\n\n" + \
@@ -769,16 +762,16 @@ class MainGameScreen(QtWidgets.QWidget):
         else:
             self.currentLeaderValueLabel.setText("Draw")
             
-
-
+    # Quit on Esc press
     def keyPressEvent(self, e):
-        #print("Button pressed:", e.key())
         if e.key() == 16777216:
             self.close()
+
 
     def load_mainmenu(self):
         self.switch_window.emit('mainmenu,maingamescreen')
     
+
     def setup_gameboard(self):
         if self.game_mode == 'k-means':
             self.gbWidget = KMeansGameboard(self, game_mode="game")
@@ -807,21 +800,22 @@ class MainGameScreen(QtWidgets.QWidget):
 
         self.setup_aim_desc()
     
+    
     def setup_aim_desc(self):
         if self.game_type == "Pin the data point on the decision line":
             self.aim_desc = "Your aim is to place your data points as close to the decision boundary as possible. " + \
-                "The more you have close to the boundary, the more points. " + \
-                "Bonus points are awarded for the lowest SSE score."
+                            "The more you have close to the boundary, the more points. " + \
+                            "Bonus points are awarded for the lowest SSE score."
             self.tip = "Look at the direction of the data points and where most sit."
             
         elif self.game_type == "Pin the data point on the centroid":
             self.aim_desc = "Your aim is to place your data points as close to cluster centroids as possible. " + \
-                "The more you have close to the centroids, the more points. " + \
-                "Bonus points are awarded for the lowest Euclidean Distance score."
+                            "The more you have close to the centroids, the more points. " + \
+                            "Bonus points are awarded for the lowest Euclidean Distance score."
             self.tip = "Loot at where the number of data points is dense."
         elif self.game_type == "Territory":
             self.aim_desc = "Your aim is to claim as much of the screen as possible. " + \
-                "The more territory you claim, the more the points you gain. " + \
-                "The game will end after the set number of turns."
+                            "The more territory you claim, the more the points you gain. " + \
+                            "The game will end after the set number of turns."
             self.tip = "Not everything needs to be close together."
 

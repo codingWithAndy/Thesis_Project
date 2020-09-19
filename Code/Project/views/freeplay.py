@@ -31,6 +31,7 @@ class FreePlay(QtWidgets.QWidget):
     current_model        = ""
     previous_data_option = ""
     
+    
     def __init__(self, model_choice=""):
         QtWidgets.QWidget.__init__(self)
 
@@ -78,9 +79,9 @@ class FreePlay(QtWidgets.QWidget):
 
         self.gameboardPlacing = QtWidgets.QHBoxLayout()
         self.gameboardPlacing.setObjectName("gameboardPlacing")
+        
         # Here is where the gameboard sits.
         self.gamboardModelInforLayoutV.addLayout(self.gameboardPlacing)
-        
         
         self.modelInfoLayoutV = QtWidgets.QHBoxLayout()
         self.modelInfoLayoutV.setObjectName("modelInfoLayoutV")
@@ -230,16 +231,9 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout = QtWidgets.QGridLayout(self.modelOptionsGroupBox)  # Was gridLayout_2
         self.modelOptionsGridLayout.setObjectName("modelOptionsGridLayout")
 
-        
-        
         ### Bottom half of Model Options Group Box
         self.setup_gameboard()
         self.load_model_parameters()
-        
-        #self.lin_reg_model_options_setup()
-
-        # Lin Reg Options
-        #self.horizontalLayout_4.addLayout(self.formLayout_4) ### Need to change to grid
 
         self.horizontalLayout_2.addWidget(self.modelOptionsGroupBox) ## Puts Model options GB onto form
 
@@ -335,32 +329,32 @@ class FreePlay(QtWidgets.QWidget):
     # Interactive game board set up
     def setup_gameboard(self):
         if self.fp_model == 'k-means':
+            idx = 1
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = KMeansGameboard(self)
             self.MplWidget.game_mode = "fp"
-            idx = 1
         elif self.fp_model == 'lda':
+            idx = 2
             self.MplWidget = MplWidget(self)
             self.boundaryOnOffRadioButton.setChecked(True)
-            idx = 2
-            self.no_data_options_retranslateUi()
-        elif self.fp_model == 'gmm':
-            self.boundaryOnOffRadioButton.setChecked(False)
-            self.MplWidget = GMMGameboard(self)
-            idx = 4
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'linearreg':
+            idx = 3
             self.boundaryOnOffRadioButton.setChecked(False)
             self.MplWidget = LinearRegressionGameboard(self,game_mode="fp")
-            idx = 3
+        elif self.fp_model == 'gmm':
+            idx = 4
+            self.boundaryOnOffRadioButton.setChecked(False)
+            self.MplWidget = GMMGameboard(self)
+            self.no_data_options_retranslateUi()
         elif self.fp_model == 'svm':
+            idx = 5
             self.MplWidget = SVMGameboard(self)
             self.boundaryOnOffRadioButton.setChecked(True)
-            idx = 5
             self.no_data_options_retranslateUi()
         elif self.fp_model == 'neural network':
-            self.MplWidget = NNGameboard(self)
             idx = 6
+            self.MplWidget = NNGameboard(self)
             self.no_data_options_retranslateUi()
         
         self.modelSelectComboBox.setCurrentIndex(idx)
@@ -373,6 +367,7 @@ class FreePlay(QtWidgets.QWidget):
         self.MplWidget.setStyleSheet("background-color: white;")
         self.MplWidget.setObjectName("MplWidget")
         self.gameboardPlacing.addWidget(self.MplWidget)
+
 
     # Handles radio button toggle actions
     def handleActivated(self, index):
@@ -416,16 +411,14 @@ class FreePlay(QtWidgets.QWidget):
 
 
     def no_model_options_available(self):
+        _translate = QtCore.QCoreApplication.translate
         self.noModelOpLabel = QtWidgets.QLabel(self.modelGroupBox)
         self.noModelOpLabel.setMaximumSize(QtCore.QSize(300, 16777215))
         self.noModelOpLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.noModelOpLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.noModelOpLabel.setObjectName("noModelOpLabel")
         self.gridLayout_3.addWidget(self.noModelOpLabel, 0, 0, 1, 1)
-
-        _translate = QtCore.QCoreApplication.translate
-        self.noModelOpLabel.setText(_translate(
-            "self", "No Model Options available, yet!"))
+        self.noModelOpLabel.setText(_translate("self", "No Model Options available, yet!"))
 
     def set_up_model_options(self):
         try:
@@ -436,9 +429,9 @@ class FreePlay(QtWidgets.QWidget):
         if self.fp_model == "k-means":
             try:
                 self.remove_nn_model_options()
-
             except:
                 pass
+
             self.kLabel = QtWidgets.QLabel(self.modelGroupBox)
             self.kLabel.setMinimumSize(QtCore.QSize(100, 15))
             self.kLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
@@ -585,17 +578,6 @@ class FreePlay(QtWidgets.QWidget):
                 pass             
 
             self.no_model_options_available()
-    
-
-    def remove_nn_model_options(self):
-        self.noOfLayersLabel.deleteLater()
-        self.noOfNeuronsLabel.deleteLater()
-        self.layerActivationLabel.deleteLater()
-        self.outputActivationLabel.deleteLater()
-        self.noOfNeuronsValueLabel.deleteLater()
-        self.layerActivationValueLabel.deleteLater()
-        self.outputActivationValueLabel.deleteLater()
-        self.noOfLayersValueLabel.deleteLater()
 
 
     def data_options_setup(self):
@@ -767,15 +749,6 @@ class FreePlay(QtWidgets.QWidget):
         if self.current_model == "linearreg":
             self.lin_reg_shown = True
             self.hide_lr_model_options()
-            #self.lr_custom_data_options_hide()
-    
-
-    def remove_param_label(self):
-        self.noModelParLabel.deleteLater()
-
-
-    def remove_model_label(self):
-        self.noModelOpLabel.deleteLater()
 
 
     def hide_model_options(self):
@@ -813,7 +786,6 @@ class FreePlay(QtWidgets.QWidget):
 
 
     ##########          Retranslate UI          ###################
-    ### Note: Try and connect these into one big one ####
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("self", "Data Splash! - Free Play"))
@@ -907,7 +879,7 @@ class FreePlay(QtWidgets.QWidget):
 
     ##############################################################
 
-    ###########      Linear Regression Actions      ##############
+    ###########      Param and Data Actions      ##############
     def generate_lr_custom_data(self):
         n_sample = int(self.dataSampleLineedit.text()) #if self.dataSampleLineedit.text() != "" else 2
         n_sample = int(n_sample)
@@ -1017,7 +989,6 @@ class FreePlay(QtWidgets.QWidget):
             self.noOfClustersLineEdit.setText("")
             self.noOfInitialisersLineEdit.setText("")
             self.maxIterationsLineEdit.setText("")
-            #self.outliersRadioButton.setChecked(False) # Change to check box
         
         elif combo_current_txt == "Iris":
             if self.boundaryOnOffRadioButton.isChecked():
@@ -1090,9 +1061,6 @@ class FreePlay(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         self.terratoryLabel.setText(_translate("self", "Terratory:"))
 
-    def remove_nn_model_details(self):
-        self.terratoryLabel.deleteLater()
-        self.terratoryValueLabel.deleteLater()
 
     # Show LR Model Options
     def lin_reg_model_options_setup(self):
@@ -1155,23 +1123,11 @@ class FreePlay(QtWidgets.QWidget):
         self.modelOptionsGridLayout.addWidget(self.outputLabel, 3, 1, 1, 1)
 
 
-    # Hide LR Model Options
-    def hide_lr_model_options(self):
-        self.interceptLabel.deleteLater()
-        self.interceptValueLabel.deleteLater()
-        self.coefLabel.deleteLater()
-        self.coefValueLabel.deleteLater()
-        self.predictLabel.deleteLater()
-        self.predictLineEdit.deleteLater()
-        self.outcomeLabel.deleteLater()
-        self.outputLabel.deleteLater()
+    
 
 
     # K-Means
     def km_model_options_setup(self):
-        print("In km model set up")
-        # Need to convert LR model options to a grid.
-        # Cluster centres click switch add
         self.clusterCentresOnOffLabel = QtWidgets.QLabel(self.modelSettingsGroupBox)
         self.clusterCentresOnOffLabel.setStyleSheet("background-color: rgba(0,0,0,0%);")
         self.clusterCentresOnOffLabel.setObjectName("clusterCentresOnOffLabel")
@@ -1266,22 +1222,6 @@ class FreePlay(QtWidgets.QWidget):
         self.noOfIterationsLabel.setText(_translate("self", "Number of Iterations:"))
         self.dataSelectComboBox.setItemText(2, _translate("self", "Iris"))
         self.dataSelectComboBox.setItemText(3, _translate("self", "Moons"))
-
-
-    def hide_km_model_options(self):
-        print("In hide km model")
-        self.inertiaValueLabel.deleteLater()
-        self.predictInfoLabel.deleteLater()
-        self.inertiaLabel.deleteLater()
-        self.predictLabel.deleteLater()
-        self.distFromCentroidValueLabel.deleteLater()
-        self.outputValueLabel.deleteLater()
-        self.outputLabel.deleteLater()
-        self.distFromCentroidLabel.deleteLater()
-        self.noOfIterationsLabel.deleteLater()
-        self.noOfIterationsValueLabel.deleteLater()
-        self.clusterCentresOnOffLabel.deleteLater()
-        self.checkBox.deleteLater()
 
 
     ##########
@@ -1387,16 +1327,6 @@ class FreePlay(QtWidgets.QWidget):
         self.maxIterationsLabel.setText(_translate("self", "Max Iterations:"))
 
 
-    def remove_km_model_options(self):
-        self.kLabel.deleteLater()
-        self.kLineEdit.deleteLater()
-        self.algorithmLabel.deleteLater()
-        self.algorithmComboBox.deleteLater()
-        self.noOfInitialisersLabel.deleteLater()
-        self.maxIterationsLabel.deleteLater()
-        self.noOfInitialisersLineEdit.deleteLater()
-        self.maxIterationsLineEdit.deleteLater()
-
     
     # Show General Feature Data Options
     def dataset_feature_data_options(self):
@@ -1470,6 +1400,17 @@ class FreePlay(QtWidgets.QWidget):
         self.noOfClustersLabel.setText(_translate("self", "Number of Clusters:"))
         self.noDataSamplesLabel.setText(_translate("self", "Number of Data Samples:"))
 
+    # Hide LR Model Options
+    def hide_lr_model_options(self):
+        self.interceptLabel.deleteLater()
+        self.interceptValueLabel.deleteLater()
+        self.coefLabel.deleteLater()
+        self.coefValueLabel.deleteLater()
+        self.predictLabel.deleteLater()
+        self.predictLineEdit.deleteLater()
+        self.outcomeLabel.deleteLater()
+        self.outputLabel.deleteLater()
+
 
     # Hide LR Custom Data Options
     def hide_lr_custom_data_options(self):
@@ -1488,9 +1429,6 @@ class FreePlay(QtWidgets.QWidget):
         self.noDataSamplesLineEdit.deleteLater()
         self.noDataSamplesLabel.deleteLater()
     
-    
-    
-
 
     # Hide General Feature Data Options
     def hide_dataset_feature_data_options(self):
@@ -1505,20 +1443,60 @@ class FreePlay(QtWidgets.QWidget):
         self.f1YRadioButton.deleteLater()
         self.feature2Label.deleteLater()
         self.f2XRadioButton.deleteLater()
+        self.f1XRadioButton.deleteLater()
+
+
+    def hide_km_model_options(self):
+        self.inertiaValueLabel.deleteLater()
+        self.predictInfoLabel.deleteLater()
+        self.inertiaLabel.deleteLater()
+        self.predictLabel.deleteLater()
+        self.distFromCentroidValueLabel.deleteLater()
+        self.outputValueLabel.deleteLater()
+        self.outputLabel.deleteLater()
+        self.distFromCentroidLabel.deleteLater()
+        self.noOfIterationsLabel.deleteLater()
+        self.noOfIterationsValueLabel.deleteLater()
+        self.clusterCentresOnOffLabel.deleteLater()
+        self.checkBox.deleteLater()
+
+
+    def remove_km_model_options(self):
+        self.kLabel.deleteLater()
+        self.kLineEdit.deleteLater()
+        self.algorithmLabel.deleteLater()
+        self.algorithmComboBox.deleteLater()
+        self.noOfInitialisersLabel.deleteLater()
+        self.maxIterationsLabel.deleteLater()
+        self.noOfInitialisersLineEdit.deleteLater()
+        self.maxIterationsLineEdit.deleteLater()
+
+
+    def remove_nn_model_options(self):
+        self.noOfLayersLabel.deleteLater()
+        self.noOfNeuronsLabel.deleteLater()
+        self.layerActivationLabel.deleteLater()
+        self.outputActivationLabel.deleteLater()
+        self.noOfNeuronsValueLabel.deleteLater()
+        self.layerActivationValueLabel.deleteLater()
+        self.outputActivationValueLabel.deleteLater()
+        self.noOfLayersValueLabel.deleteLater()
+
+
+    def remove_nn_model_details(self):
+        self.terratoryLabel.deleteLater()
+        self.terratoryValueLabel.deleteLater()
+
+
+    def remove_param_label(self):
+        self.noModelParLabel.deleteLater()
+
+
+    def remove_model_label(self):
+        self.noModelOpLabel.deleteLater()
 
 
     ############################################################
-
-    
-    #########     Data Options       #########################
-    
-    #def lr_custom_data_options_hide(self):
-    #    self.dataSampleLineedit.hide()
-    #    self.dataSampleLabel.hide()
-        
-
-    #########################################################
-
 
     #########    Form Refresh & Misc Actions    #############
     def timer_checker(self, duration=50, action="start"):
@@ -1542,27 +1520,3 @@ class FreePlay(QtWidgets.QWidget):
         x = msg.exec_()
 
     #######################################################
-         
-        
-
-'''
-    self.clearButton.clicked.connect(lambda: self.boxdelete(self.modelOptionsGridLayout))
-
-    def deleteItemsOfLayout(self, layout):
-        if layout is not None:
-                while layout.count():
-                        item = layout.takeAt(0)
-                        widget = item.widget()
-                        if widget is not None:
-                                widget.setParent(None)
-                        else:
-                                deleteItemsOfLayout(item.layout())
-
-    def boxdelete(self, box):
-        for i in range(self.vlayout.count()):
-                layout_item = self.vlayout.itemAt(i)
-                if layout_item.layout() == box:
-                        self.deleteItemsOfLayout(layout_item.layout())
-                        self.vlayout.removeItem(layout_item)
-                        break
-                    '''

@@ -306,8 +306,8 @@ class KMeansGameboard(QWidget):
                     self.results_id[j]   = self.results_id[j+1]
                     self.results_id[j+1] = changed_value_id
 
-                    changed_value_coor   = self.data_points[j]
-                    self.data_points[j]  = self.data_points[j+1]
+                    changed_value_coor    = self.data_points[j]
+                    self.data_points[j]   = self.data_points[j+1]
                     self.data_points[j+1] = changed_value_coor
         
 

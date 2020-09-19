@@ -76,8 +76,6 @@
 
 	\section{Machine Learning}
 	
-	\subsection{Machine Learning Fundamentals}
-	
 	
 	\subsection{Supervised vs Unsupervised Learning}
 	%%% Spec
@@ -118,7 +116,7 @@
 	
 	GMM 's do have many advantages from its speed, and its agnostics, which is due to the algorithm only maximising the likelihood. However, GMM's do have some disadvantages. These are it suffering from singularities. This disadvantage causes the algorithm to diverge and find solutions with infinite likelihoods unless one regularises, which is due to handling of the estimates of the covariance matrices. These become difficult when the algorithm is dealing with insufficiently many points per mixture \cite{sklearn_gmm}. Another disadvantage is the algorithm dealing with several components. This disadvantage is due to the algorithm using all the features it has available. Forcing the need for held-out data to help decide on the number of components required in the absence of external cues \cite{sklearn_gmm}.
 	
-	\subsubsection{Neural Network (NN)+}
+	\subsubsection{Neural Network (NN)}
 	%%% Spec
 	Linear regression is a model that aims to fit a line of best fit to the data provided \cite{geron2019hands, sklearn_lr}.  A requirement for linear regression is for a set of methods intended for regression in which the target value expects to be a linear combination of the features. In mathematical notation, if $\hat{y}$ is the predicted value. $\hat{y}(w,x)=w_0+w_1x_1+...+w_px_p$
 	Across the module, we designate the vector $w=(w_1,...,w_p)$ as the coefficient and w0 as the intercept \cite{sklearn_lr}

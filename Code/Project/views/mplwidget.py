@@ -93,7 +93,6 @@ class MplWidget(QWidget):
     def switch_boundaries_on_off(self):
         if self.boundaries_on != False:
             pass
-
         else:
             self.clear_canvas()
             if self.points != []:

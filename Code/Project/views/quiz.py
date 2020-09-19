@@ -152,6 +152,7 @@ class Quiz(QtWidgets.QWidget):
 
         self.retranslateUi()
 
+
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("self", "Data Splash - Quiz!"))
@@ -177,9 +178,6 @@ class Quiz(QtWidgets.QWidget):
         self.updateButtonOptions()
         
 
-
-
-    
     def updateButtonOptions(self):
         self.question_number += 1
         self.answer_number   += 1
@@ -199,12 +197,13 @@ class Quiz(QtWidgets.QWidget):
             self.option4Button.setText(
                 self.questions_and_answers[self.question_number][5])
 
+
     def showScore(self):
         # Create a pop up window for the test
         msg = QMessageBox()
         msg.setWindowTitle("The Results are in......!")
-        msg_text = "The Results are in......!\nYour score was: " + \
-            str(self.score)
+        msg_text = "The Results are in......!\n" + \
+                   "Your score was: " + str(self.score)
         msg.setText(msg_text)
 
         self.score = 0

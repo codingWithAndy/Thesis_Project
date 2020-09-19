@@ -5,7 +5,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class ComingSoonScreen(QtWidgets.QWidget):
-    current_path = os.getcwd()
+    current_path  = os.getcwd()
     switch_window = QtCore.pyqtSignal(str)
 
     def __init__(self):

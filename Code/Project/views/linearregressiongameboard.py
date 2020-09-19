@@ -151,7 +151,7 @@ class LinearRegressionGameboard(QWidget):
             new_y = data[:, 1]
 
             new_pred_y = self.lin_reg.predict(new_X[idx].reshape(1, -1)) 
-            mse_value = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
+            mse_value  = metrics.mean_squared_error(new_y[idx].reshape(1, -1), new_pred_y)
  
             self.results.append(mse_value)
             self.results_id.append(self.pointOwner[idx])
