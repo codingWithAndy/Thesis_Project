@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  19 SEP 2020 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  19 SEP 2020 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1958,9 +1958,6 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 LaTeX Warning: Label `sec:packages_used' multiply defined.
 
 
-LaTeX Warning: Label `fig:km_example' multiply defined.
-
-
 LaTeX Warning: Label `sec:ide_used' multiply defined.
 
 )
@@ -2101,30 +2098,41 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 
 ] [6
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
- been already used, duplicate ignored
+]
+LaTeX Font Info:    Try loading font information for T1+SourceCodePro-TLF on in
+put line 64.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/sourcecodepro/T1SourceCodePro-TLF
+.fd
+File: T1SourceCodePro-TLF.fd 2015/10/08 (autoinst) Font definitions for T1/Sour
+ceCodePro-TLF.
+)
+LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 64.
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 	\end{abstract}
+l.68 	\end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.ii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 	\end{abstract}
+l.68 	\end{abstract}
                      [2
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 	\end{Acknowledgements}
+l.73 	\end{Acknowledgements}
                              [3
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 	\end{Acknowledgements}
+l.73 	\end{Acknowledgements}
                              [4
 
 ] (./thesis.toc
@@ -2164,7 +2172,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
 [10]
-<graphics/Mario_is_Missing_box_art.jpg, id=417, 963.6pt x 602.25pt>
+<graphics/Mario_is_Missing_box_art.jpg, id=432, 963.6pt x 602.25pt>
 File: graphics/Mario_is_Missing_box_art.jpg Graphic file (type jpg)
 <use graphics/Mario_is_Missing_box_art.jpg>
 Package pdftex.def Info: graphics/Mario_is_Missing_box_art.jpg  used on input l
@@ -2174,29 +2182,38 @@ ine 67.
 Underfull \vbox (badness 2512) has occurred while \output is active []
 
  [11 <./graphics/Mario_is_Missing_box_art.jpg>] [12]
-<graphics/gmm_example.jpeg, id=454, 1215.54124pt x 496.85625pt>
+<graphics/km_example.png, id=465, 1052.93375pt x 258.9675pt>
+File: graphics/km_example.png Graphic file (type png)
+<use graphics/km_example.png>
+Package pdftex.def Info: graphics/km_example.png  used on input line 98.
+(pdftex.def)             Requested size: 426.79134pt x 104.96819pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 98--99
+ [] 
+ []
+
+[13 <./graphics/km_example.png>]
+<graphics/gmm_example.jpeg, id=489, 1215.54124pt x 496.85625pt>
 File: graphics/gmm_example.jpeg Graphic file (type jpg)
 <use graphics/gmm_example.jpeg>
-Package pdftex.def Info: graphics/gmm_example.jpeg  used on input line 106.
+Package pdftex.def Info: graphics/gmm_example.jpeg  used on input line 118.
 (pdftex.def)             Requested size: 256.0748pt x 104.66888pt.
-
-Underfull \vbox (badness 4416) has occurred while \output is active []
-
- [13]
-[14 <./graphics/gmm_example.jpeg>]
-<graphics/logistic_reg.jpeg, id=490, 1225.57875pt x 396.48125pt>
-File: graphics/logistic_reg.jpeg Graphic file (type jpg)
-<use graphics/logistic_reg.jpeg>
-Package pdftex.def Info: graphics/logistic_reg.jpeg  used on input line 134.
-(pdftex.def)             Requested size: 256.0748pt x 82.84003pt.
-
+ [14 <./graphics/gmm_example.jpeg>]
 
 LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 141.
 
+<graphics/logistic_reg.jpeg, id=510, 1225.57875pt x 396.48125pt>
+File: graphics/logistic_reg.jpeg Graphic file (type jpg)
+<use graphics/logistic_reg.jpeg>
+Package pdftex.def Info: graphics/logistic_reg.jpeg  used on input line 145.
+(pdftex.def)             Requested size: 256.0748pt x 82.84003pt.
 
-LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 143.
+LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 152.
 
-[15 <./graphics/logistic_reg.jpeg>] [16] [17]
+[15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./graphics/logistic_reg.jpeg>] [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18])
@@ -2206,7 +2223,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1430) has occurred while \output is active []
 
  [21]
-<graphics/main_menu.png, id=555, 1072.005pt x 331.2375pt>
+<graphics/main_menu.png, id=577, 1072.005pt x 331.2375pt>
 File: graphics/main_menu.png Graphic file (type png)
 <use graphics/main_menu.png>
 Package pdftex.def Info: graphics/main_menu.png  used on input line 37.
@@ -2217,7 +2234,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 37--38
  []
 
 [22 <./graphics/main_menu.png>]
-<graphics/game_zone.png, id=563, 1072.005pt x 329.23pt>
+<graphics/game_zone.png, id=585, 1072.005pt x 329.23pt>
 File: graphics/game_zone.png Graphic file (type png)
 <use graphics/game_zone.png>
 Package pdftex.def Info: graphics/game_zone.png  used on input line 54.
@@ -2231,7 +2248,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 54--55
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./graphics/game_zone.png>]
-<graphics/learning_zone.png, id=570, 1074.0125pt x 330.23375pt>
+<graphics/learning_zone.png, id=592, 1074.0125pt x 330.23375pt>
 File: graphics/learning_zone.png Graphic file (type png)
 <use graphics/learning_zone.png>
 Package pdftex.def Info: graphics/learning_zone.png  used on input line 68.
@@ -2245,7 +2262,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 68--69
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./graphics/learning_zone.png>]
-<graphics/free_play.png, id=577, 1073.00874pt x 327.2225pt>
+<graphics/free_play.png, id=600, 1073.00874pt x 327.2225pt>
 File: graphics/free_play.png Graphic file (type png)
 <use graphics/free_play.png>
 Package pdftex.def Info: graphics/free_play.png  used on input line 78.
@@ -2259,7 +2276,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 78--79
 Underfull \vbox (badness 4120) has occurred while \output is active []
 
  [25 <./graphics/free_play.png>]
-<graphics/awards_zone.png, id=584, 1065.9825pt x 320.19624pt>
+<graphics/awards_zone.png, id=607, 1065.9825pt x 320.19624pt>
 File: graphics/awards_zone.png Graphic file (type png)
 <use graphics/awards_zone.png>
 Package pdftex.def Info: graphics/awards_zone.png  used on input line 96.
@@ -2281,7 +2298,7 @@ LaTeX Warning: Citation `list exam boards here' on page 29 undefined on input l
 ine 12.
 
 [29]
-<graphics/python_vs_java_vs_c++.jpg, id=621, 951.555pt x 577.15625pt>
+<graphics/python_vs_java_vs_c++.jpg, id=643, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
@@ -2302,54 +2319,98 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-<graphics/no_model_warning.png, id=717, 367.3725pt x 247.92625pt>
+<graphics/lz_navi_quiz.png, id=740, 1063.975pt x 323.2075pt>
+File: graphics/lz_navi_quiz.png Graphic file (type png)
+<use graphics/lz_navi_quiz.png>
+Package pdftex.def Info: graphics/lz_navi_quiz.png  used on input line 126.
+(pdftex.def)             Requested size: 426.79134pt x 129.64566pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 126--127
+ [] 
+ []
+
+<graphics/no_model_warning.png, id=741, 367.3725pt x 247.92625pt>
 File: graphics/no_model_warning.png Graphic file (type png)
 <use graphics/no_model_warning.png>
-Package pdftex.def Info: graphics/no_model_warning.png  used on input line 130.
+Package pdftex.def Info: graphics/no_model_warning.png  used on input line 138.
 
 (pdftex.def)             Requested size: 170.71652pt x 115.21263pt.
-
-[38 <./graphics/no_model_warning.png>] [39]
-<graphics/remaining_fp_examples.png, id=731, 1069.9975pt x 628.3475pt>
+[38 <./graphics/lz_navi_quiz.png>] [39 <./graphics/no_model_warning.png>]
+<graphics/remaining_fp_examples.png, id=755, 1069.9975pt x 628.3475pt>
 File: graphics/remaining_fp_examples.png Graphic file (type png)
 <use graphics/remaining_fp_examples.png>
 Package pdftex.def Info: graphics/remaining_fp_examples.png  used on input line
- 147.
+ 156.
 (pdftex.def)             Requested size: 426.79134pt x 250.63463pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 147--148
-[][] 
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 156--157
+ [] 
  []
 
 
-LaTeX Warning: Reference `' on page 40 undefined on input line 152.
-
-
-Underfull \vbox (badness 1325) has occurred while \output is active []
+Underfull \vbox (badness 2790) has occurred while \output is active []
 
  [40 <./graphics/remaining_fp_examples.png>]
-<graphics/chaning_k_fp_example.png, id=737, 1059.96pt x 326.21875pt>
+<graphics/chaning_k_fp_example.png, id=762, 1059.96pt x 326.21875pt>
 File: graphics/chaning_k_fp_example.png Graphic file (type png)
 <use graphics/chaning_k_fp_example.png>
 Package pdftex.def Info: graphics/chaning_k_fp_example.png  used on input line 
-157.
+168.
 (pdftex.def)             Requested size: 426.79134pt x 131.3513pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 157--158
-[][] 
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 168--169
+ [] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
-[41 <./graphics/chaning_k_fp_example.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
 
- [42])
-(./chapter/thesis_conclusion.tex [43] [44
+Underfull \vbox (badness 3068) has occurred while \output is active []
 
-] [45] [46
+ [41 <./graphics/chaning_k_fp_example.png>]
+<graphics/manipulating_lr_data.png, id=770, 1059.96pt x 320.19624pt>
+File: graphics/manipulating_lr_data.png Graphic file (type png)
+<use graphics/manipulating_lr_data.png>
+Package pdftex.def Info: graphics/manipulating_lr_data.png  used on input line 
+181.
+(pdftex.def)             Requested size: 426.79134pt x 128.92635pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 181--182
+ [] 
+ []
+
+<graphics/lr_changing_xy.png, id=771, 1058.95625pt x 321.2pt>
+File: graphics/lr_changing_xy.png Graphic file (type png)
+<use graphics/lr_changing_xy.png>
+Package pdftex.def Info: graphics/lr_changing_xy.png  used on input line 189.
+(pdftex.def)             Requested size: 426.79134pt x 129.45303pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 189--190
+ [] 
+ []
+
+<graphics/km_change_xy.png, id=772, 1064.97874pt x 324.21124pt>
+File: graphics/km_change_xy.png Graphic file (type png)
+<use graphics/km_change_xy.png>
+Package pdftex.def Info: graphics/km_change_xy.png  used on input line 197.
+(pdftex.def)             Requested size: 426.79134pt x 129.9246pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 197--198
+ [] 
+ []
+
+
+Underfull \vbox (badness 5217) has occurred while \output is active []
+
+ [42 <./graphics/manipulating_lr_data.png>]
+Underfull \vbox (badness 1584) has occurred while \output is active []
+
+ [43 <./graphics/lr_changing_xy.png> <./graphics/km_change_xy.png>])
+(./chapter/thesis_conclusion.tex [44] [45
+
+] [46
 
 ]
 Underfull \vbox (badness 2818) has occurred while \output is active []
@@ -2375,79 +2436,77 @@ nitive-[]and-[]physical-[]processes-[]can-[]enhance-[]growth/$[]
  []
 
 [54] [55] [56]
-Overfull \hbox (15.54434pt too wide) in paragraph at lines 332--336
+Overfull \hbox (15.54434pt too wide) in paragraph at lines 337--341
 \T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
 -[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
  []
 
 [57]
-Underfull \hbox (badness 1648) in paragraph at lines 352--356
+Underfull \hbox (badness 1648) in paragraph at lines 357--361
 \T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
 hackr . io / blog /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--392
+Underfull \hbox (badness 10000) in paragraph at lines 394--397
 []$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
  ~ : text = New % 20libraries % 20or % 20tools %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--392
+Underfull \hbox (badness 10000) in paragraph at lines 394--397
 \T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
 &text = Python % 20is % 20a %
  []
 
 [58]
-Underfull \hbox (badness 2662) in paragraph at lines 428--432
+Underfull \hbox (badness 2662) in paragraph at lines 433--437
 []\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 428--432
+Underfull \hbox (badness 3536) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
 . com / community /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--432
+Underfull \hbox (badness 10000) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
  ppc & utm _ campaignid =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--432
+Underfull \hbox (badness 10000) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
 & utm _ keyword = &utm _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--432
+Underfull \hbox (badness 10000) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
 creative = 229765585186 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--432
+Underfull \hbox (badness 10000) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
 m _ loc _ interest _ ms =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--432
+Underfull \hbox (badness 10000) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
 CoARIsAPtX _
  []
 
 
-Overfull \hbox (30.662pt too wide) in paragraph at lines 428--432
+Overfull \hbox (30.662pt too wide) in paragraph at lines 433--437
 \T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
 Lw _
  []
 
-) (./chapter/appendix.tex [59] [60
-
-]
+[59]) (./chapter/appendix.tex [60]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
@@ -2456,22 +2515,15 @@ File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 5.
-LaTeX Font Info:    Try loading font information for T1+SourceCodePro-TLF on in
-put line 5.
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/sourcecodepro/T1SourceCodePro-TLF
-.fd
-File: T1SourceCodePro-TLF.fd 2015/10/08 (autoinst) Font definitions for T1/Sour
-ceCodePro-TLF.
-)
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 5.
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 5.
- (./listings/hello_world.c
+
+(./listings/hello_world.c
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
-) [61] [62
+) [61
+
+] [62
 
 ])
 Package minitoc Info: I0009
@@ -2489,13 +2541,13 @@ Package minitoc Info: I0009
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1F76A59061A03206CCF1F476A9539365;2365.
+(rerunfilecheck)             Checksum: 2F393B5DA820292B5BBE53467AE79A0F;2365.
 
 
 LaTeX Warning: There were undefined references.
@@ -2503,16 +2555,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 40798 strings out of 492616
- 723163 string characters out of 6129480
- 1020550 words of memory out of 5000000
- 43541 multiletter control sequences out of 15000+600000
- 599927 words of font info for 127 fonts, out of 8000000 for 9000
+ 40836 strings out of 492616
+ 724162 string characters out of 6129480
+ 1023295 words of memory out of 5000000
+ 43567 multiletter control sequences out of 15000+600000
+ 600228 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,92p,2269b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,92p,2269b,1404s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
 c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Bold.pfb><
@@ -2525,10 +2577,10 @@ msy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><
 texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (77 pages, 3795977 bytes).
+Output written on thesis.pdf (77 pages, 5916022 bytes).
 PDF statistics:
- 1022 PDF objects out of 1200 (max. 8388607)
- 898 compressed objects within 9 object streams
- 230 named destinations out of 1000 (max. 500000)
- 366 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1054 PDF objects out of 1200 (max. 8388607)
+ 918 compressed objects within 10 object streams
+ 236 named destinations out of 1000 (max. 500000)
+ 391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

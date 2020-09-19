@@ -91,7 +91,15 @@
 	\subsection{Methods}
 	
 	\subsubsection{K-Means}
-	The KMeans algorithm aims to clusters the data by trying to separate samples into $n$ groups of equal variance. While also seeking to minimise a criterion known as the inertia or even referenced as a within-cluster sum-of-squares \cite{geron2019hands, sklearn_km}. The formula for the sum-of-squares is \cite{sklearn_km}: $\sum_{i=0}^{n}\min_{\mu_j \in C}(||x_i - \mu_j||^2)$. 
+	The KMeans algorithm aims to clusters the data by trying to separate samples into $n$ groups of equal variance (see fig: \ref{fig:km_handson_example}). While also seeking to minimise a criterion known as the inertia or even referenced as a within-cluster sum-of-squares \cite{geron2019hands, sklearn_km}. The formula for the sum-of-squares is \cite{sklearn_km}: $\sum_{i=0}^{n}\min_{\mu_j \in C}(||x_i - \mu_j||^2)$. 
+	
+	\begin{figure}[t]
+		\begin{center}
+			\includegraphics[width=15cm]{graphics/km_example.png}
+			\caption{An example of a data distribution and the assigned cluster that k-means has predicted \cite{geron2019hands}.}
+			\label{fig:km_handson_example}
+		\end{center}
+	\end{figure}
 	
 	This algorithm requires the number of clusters to get specified before initialising the model. The K-means algorithm strives to choose centroids that minimise the inertia, or within-cluster sum-of-squares criterion. The k-means algorithm divides a set of $N$ samples $X$ into $K$ disjoint clusters $C$, each described by the mean $\mu_j$ of the samples in the cluster. The means get commonly called the cluster's "centroids". However, these are not usually points from $X$, although they live in the same space. K-means gets associated with Lloyd's algorithm \cite{geron2019hands, sklearn_km}. 
 	
@@ -101,18 +109,17 @@
 	
 	\subsubsection{Gaussian Mixture Model (GMM)}
 	
+	A Gaussian mixture model is a probabilistic model that assumes all the data points get generated from a mixture of a finite number of Gaussian distributions with unknown parameters \cite{geron2019hands, sklearn_gmm}. It can get thought of that Gaussian mixture models are a generalised form of k-means clustering to incorporate information about the covariance structure of the data as well as the centres of the underlying Gaussians \cite{sklearn_gmm}. 
+	
+	There are multiple GMM variants, but in its simplest form for the model to get implemented it requires to know in advance the number of $k$ Gaussian distributions. At the same time, an assumption on the dataset that it gets generated through a probabilistic process (displayed in fig: \ref{fig:gmm_example}) \cite{geron2019hands}. 
+	
 	\begin{figure}[t]
 		\begin{center}
 			\includegraphics[width=9cm]{graphics/gmm_example.jpeg}
 			\caption{An example of a GMM distribution \cite{geron2019hands}.}
 			\label{fig:gmm_example}
 		\end{center}
-		
 	\end{figure}
-	
-	A Gaussian mixture model is a probabilistic model that assumes all the data points get generated from a mixture of a finite number of Gaussian distributions with unknown parameters \cite{geron2019hands, sklearn_gmm}. It can get thought of that Gaussian mixture models are a generalised form of k-means clustering to incorporate information about the covariance structure of the data as well as the centres of the underlying Gaussians \cite{sklearn_gmm}. 
-	
-	There are multiple GMM variants, but in its simplest form for the model to get implemented it requires to know in advance the number of $k$ Gaussian distributions. At the same time, an assumption on the dataset that it gets generated through a probabilistic process (displayed in fig: \ref{fig:gmm_example}) \cite{geron2019hands}. 
 	
 	GMM 's do have many advantages from its speed, and its agnostics, which is due to the algorithm only maximising the likelihood. However, GMM's do have some disadvantages. These are it suffering from singularities. This disadvantage causes the algorithm to diverge and find solutions with infinite likelihoods unless one regularises, which is due to handling of the estimates of the covariance matrices. These become difficult when the algorithm is dealing with insufficiently many points per mixture \cite{sklearn_gmm}. Another disadvantage is the algorithm dealing with several components. This disadvantage is due to the algorithm using all the features it has available. Forcing the need for held-out data to help decide on the number of components required in the absence of external cues \cite{sklearn_gmm}.
 	
@@ -129,6 +136,10 @@
 	The coefficient estimates for linear regression rely on the independence of the features. When features are correlated, and the columns of the design matrix $X$ have an approximate linear dependence, the design matrix becomes close to the singular, which causes the least-squares estimate to become highly sensitive to random errors in the observed target, which in turn produces a large variance. This situation of multicollinearity can arise, for example, when data get collected without an experimental design \cite{sklearn_lr, geron2019hands}.
 	
 	\subsubsection{Logistic Regression}
+	
+	%%% Spec
+	Logistic regression is an algorithm that gets used for classification and, despite its name, is a linear model rather than a regression one. Logistic regression gets also known in the literature as logit regression, maximum-entropy classification (MaxEnt) or the log-linear classifier. In this model, the probabilities describing the possible outcomes of a single trial getting modelled using a logistic function \cite{sklearn_lr, handson_book}. Logistic regression's model estimated probability in its vectorised form: $\hat{p}=h_\theta(x) = \sigma(x^T\theta)$ \cite{geron2019hands}.
+	
 	\begin{figure}[t]
 		\begin{center}
 			\includegraphics[width=9cm]{graphics/logistic_reg.jpeg}
@@ -137,8 +148,6 @@
 		\end{center}
 		
 	\end{figure}
-	%%% Spec
-	Logistic regression is an algorithm that gets used for classification and, despite its name, is a linear model rather than a regression one. Logistic regression gets also known in the literature as logit regression, maximum-entropy classification (MaxEnt) or the log-linear classifier. In this model, the probabilities describing the possible outcomes of a single trial getting modelled using a logistic function \cite{sklearn_lr, handson_book}. Logistic regression's model estimated probability in its vectorised form: $\hat{p}=h_\theta(x) = \sigma(x^T\theta)$ \cite{geron2019hands}.
 	
 	Logistic regression gets used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than 50\%, the model predicts that the instance belongs to that class. If the model has predicted that the instance belongs to that class, also known as the positive class, it gets a '1' label  (see fig \ref{fig:logr_example}) \cite{handson_book, geron2019hands}. Logistic regression can fit binary, One-vs-Rest, or multinomial logistic regression. That also has an optional $\ell1, \ell2$ or Elastic-Net regularisation \cite{sklearn_lr}.
 	
@@ -152,6 +161,7 @@
 	
 	\subsubsection{k-Nearest Neighbour (kNN)}
 		\label{seb_sec:kNN}
+		
 		A Neighbours-based classification is a type of instance-based learning or non-generalising learning: it does not attempt to construct a general internal model, but simply stores instances of the training data. Classification gets computed from a simple majority vote of the nearest neighbours of each point: a query point is assigned the data class which has the most representatives within the nearest neighbours of the point. Although kNN gets usually used as a classification method, it can also get used as a regression method.
 		
 		The k-neighbours classification in KNeighborsClassifier is the most commonly used technique. The optimal choice of the value k is highly data-dependent: in general, a larger k suppresses the effects of noise but makes the classification boundaries less distinct \cite{sklearn_knn}.
@@ -186,6 +196,8 @@
 	
 	\subsubsection{Machine Learning Edu-Games}
 		\label{sub_sec:ml_edu_games}
+		
+		The focus is on machine learning getting used to aid educational purposes, like predicting students grades, improving student retention, testing students and predicting student performance \cite{kuvcak2018machine}, rather than getting used to enable the learning and teach its concepts, especially in a Serious game context.
 	
 	\section{Proposed Solution}
 	% Taken from spec

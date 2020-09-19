@@ -20,10 +20,10 @@
 \contentsline {subsection}{\numberline {2.2.2}Methods}{13}{subsection.2.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.2.1}K-Means}{13}{subsubsection.2.2.2.1}% 
 \contentsline {subsubsection}{\numberline {2.2.2.2}Gaussian Mixture Model (GMM)}{14}{subsubsection.2.2.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.2.3}Neural Network (NN)}{14}{subsubsection.2.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.2.3}Neural Network (NN)}{15}{subsubsection.2.2.2.3}% 
 \contentsline {subsubsection}{\numberline {2.2.2.4}Logistic Regression}{15}{subsubsection.2.2.2.4}% 
 \contentsline {subsubsection}{\numberline {2.2.2.5}Support Vector Machines (SVM)}{16}{subsubsection.2.2.2.5}% 
-\contentsline {subsubsection}{\numberline {2.2.2.6}k-Nearest Neighbour (kNN)}{16}{subsubsection.2.2.2.6}% 
+\contentsline {subsubsection}{\numberline {2.2.2.6}k-Nearest Neighbour (kNN)}{17}{subsubsection.2.2.2.6}% 
 \contentsline {subsection}{\numberline {2.2.3}Dimensionality Reduction}{17}{subsection.2.2.3}% 
 \contentsline {subsection}{\numberline {2.2.4}Machine Learning in Education}{17}{subsection.2.2.4}% 
 \contentsline {subsubsection}{\numberline {2.2.4.1}Classical Approaches}{17}{subsubsection.2.2.4.1}% 
@@ -51,8 +51,8 @@
 \contentsline {subsection}{\numberline {4.5.2}Gameplay Area}{36}{subsection.4.5.2}% 
 \contentsline {subsection}{\numberline {4.5.3}Learning Zone Area}{38}{subsection.4.5.3}% 
 \contentsline {subsection}{\numberline {4.5.4}Free Play Area}{39}{subsection.4.5.4}% 
-\contentsline {subsection}{\numberline {4.5.5}Achievements Area}{43}{subsection.4.5.5}% 
-\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{43}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.5.5}Achievements Area}{44}{subsection.4.5.5}% 
+\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{44}{section.4.6}% 
 \contentsline {chapter}{\chapternumberline {5}Evaluation}{45}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{45}{section.5.1}% 
 \contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{47}{chapter.6}% 
@@ -61,7 +61,7 @@
 \contentsline {section}{\numberline {6.3}Reflection of the Project Development}{48}{section.6.3}% 
 \contentsline {section}{\numberline {6.4}Future Work}{50}{section.6.4}% 
 \contentsline {section}{\numberline {6.5}Summary and closing comments}{51}{section.6.5}% 
-\contentsline {chapter}{Bibliography}{53}{chapter*.17}% 
-\contentsline {chapter}{Appendices}{59}{section*.18}% 
+\contentsline {chapter}{Bibliography}{53}{chapter*.22}% 
+\contentsline {chapter}{Appendices}{60}{section*.23}% 
 \contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{61}{appendix.A}% 
 \contentsline {appendix}{\chapternumberline {B}Supplementary Data}{63}{appendix.B}% 
