@@ -88,7 +88,7 @@
 	The other primary method learning, unsupervised learning, aims to find hidden patterns or intrinsic structures in the data \cite{geron2019hands}. In the same regard as supervised learning, unsupervised learning seeks to obtain insights from the data. However, where supervised learning has the output labels for the provided dataset, unsupervised does not. So unsupervised learning aims to explore the data to find patterns or groupings in the data \cite{matlanintrotoml}. Unsupervised learning can take the form of clustering, like k-means, GMM, or through a technique called association rule. Examples of clustering applications include gene sequence analysis, market research, and object recognition and examples of the association rule are services providing a recommendation, like Netflix's "watch next" or Amazon's "you might also like" \cite{matlanintrotoml}.
 	
 	
-	\subsection{Methods}
+	\subsection{Machine Learning Models}
 	
 	\subsubsection{K-Means}
 	The KMeans algorithm aims to clusters the data by trying to separate samples into $n$ groups of equal variance (see fig: \ref{fig:km_handson_example}). While also seeking to minimise a criterion known as the inertia or even referenced as a within-cluster sum-of-squares \cite{geron2019hands, sklearn_km}. The formula for the sum-of-squares is \cite{sklearn_km}: $\sum_{i=0}^{n}\min_{\mu_j \in C}(||x_i - \mu_j||^2)$. 
@@ -168,8 +168,24 @@
 		
 	\subsection{Dimensionality Reduction}
 		\label{seb_sec:dd}
+		
+		Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension \cite{geron2019hands}.
+		
+		Dimensionality reduction aims to reduce the dimensionality of the data. However, it also strives to maintain the meaningfulness of the data fundamentally at the same time \cite{jason_lectures_LDA}. The idea is to find a low dimensionality of the data but a useful representation of it. The process of dimensionality reduction is to discover the intrinsic dimensionality of the data. This reduction gets used due to some high dimensionality data actually being very low in dimensionality in reality.
+		
+		Dimensionality reduction aims to reduce the curse of dimensionality. The curse of dimensionality refers to various phenomena that arise when analysing and organising data in high-dimensional spaces that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience. The expression was coined by Richard E. Bellman when considering problems in dynamic programming \cite{jason_lectures_LDA}.
+		
+		The cursed of dimensionally phenomena usually occurs in: numerical analysis, sampling, combinatorics, machine learning, data mining and databases. The common theme of these problems is that when the dimensionality increases, the volume of the space increases so fast that the available data becomes sparse. This sparsity is problematic for any method that requires statistical significance. To obtain a statistically sound and reliable result, the amount of data needed to support the result often grows exponentially with the dimensionality. Also, organising and searching data relies on detecting areas, within the data, where objects form groups with similar properties, for example, in high dimensional data. However, all objects appear to be sparse and dissimilar in many ways, which prevents common data organisation strategies from being efficient \cite{geron2019hands}.
+		
+		In a nutshell, the efficiency of many algorithms depends on the number of dimensions. However, datasets can hold a lot of redundant features. For example, not all words are useful in classifying documents like: and, or, the, of. Distance-based similarity algorithms, like K-Means and GMM, are at least linear to the number of dimensions. High dimensionality is very expensive to store, and indexing and retrieving data in high dimensional space is difficult.
 	
-		Linear Discriminant Analysis+ PCA
+		Principal Component Analysis (PCA) is a prevalent data reduction algorithm that gets classed as an unsupervised method. 
+		
+		PCA is a linear method used which will aim to reduce the data's dimensionality. It aims to do this by removing the interrelated variables while retaining as much as possible. The algorithm seeks to keeping as much variation as possible that is present within the data set.
+		
+		The dimensionality reduction gets achieved by transforming the data into a new set of variables. These new variables are called the principal components (PCs). These PCs are uncorrelated and get ordered in a way that the first couple of PCs retains the most amount of the variation that is present in the original variables.
+		
+		PCA is a decorrelation method which will linearly transform the data so that covariance values are all zeros, which, as a result, retains the components with the largest variances. While also getting rid of the components that have small variance, therefore achieving dimensionality reduction. The Eigenvectors (more below) correspond to the different principal components \cite{jason_lectures_PCA}. 
 	
 	\subsection{Machine Learning in Education}
 		\label{seb_sec:ml_in_learning}
