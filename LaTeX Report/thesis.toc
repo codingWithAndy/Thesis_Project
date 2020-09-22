@@ -2,7 +2,7 @@
 \contentsline {chapter}{List of Tables}{vii}{section*.3}% 
 \contentsline {xchapter}{}{vii}{section*.3}% 
 \contentsline {chapter}{List of Figures}{viii}{section*.4}% 
-\contentsline {xchapter}{}{viii}{section*.4}% 
+\contentsline {xchapter}{}{ix}{section*.4}% 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Overview of the Problem}{1}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Overview of the Solution}{2}{section.1.2}% 
@@ -52,16 +52,16 @@
 \contentsline {subsection}{\numberline {4.5.3}Learning Zone Area}{40}{subsection.4.5.3}% 
 \contentsline {subsection}{\numberline {4.5.4}Free Play Area}{41}{subsection.4.5.4}% 
 \contentsline {subsection}{\numberline {4.5.5}Achievements Area}{46}{subsection.4.5.5}% 
-\contentsline {section}{\numberline {4.6}Example user stories (A UML term for case studies or example playthroughs)}{46}{section.4.6}% 
-\contentsline {chapter}{\chapternumberline {5}Evaluation}{47}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{47}{section.5.1}% 
-\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{49}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Reflection on the application}{49}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{50}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{50}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Future Work}{52}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Summary and closing comments}{53}{section.6.5}% 
-\contentsline {chapter}{Bibliography}{55}{chapter*.22}% 
-\contentsline {chapter}{Appendices}{62}{section*.23}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{63}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{65}{appendix.B}% 
+\contentsline {section}{\numberline {4.6}Example User Stories (A UML term for case studies or example playthroughs)}{46}{section.4.6}% 
+\contentsline {chapter}{\chapternumberline {5}Evaluation}{49}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{49}{section.5.1}% 
+\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{51}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Reflection on the application}{51}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{52}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{52}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Future Work}{54}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Summary and closing comments}{55}{section.6.5}% 
+\contentsline {chapter}{Bibliography}{57}{chapter*.27}% 
+\contentsline {chapter}{Appendices}{64}{section*.28}% 
+\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{65}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{67}{appendix.B}% 

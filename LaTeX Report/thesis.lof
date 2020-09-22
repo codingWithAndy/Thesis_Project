@@ -1,6 +1,6 @@
 \babel@toc {english}{}
 \contentsline {xchapter}{}{vii}{section*.3}% 
-\contentsline {xchapter}{}{viii}{section*.4}% 
+\contentsline {xchapter}{}{ix}{section*.4}% 
 \addvspace {10pt}
 \contentsline {xchapter}{}{1}{chapter.1}% 
 \addvspace {10pt}
@@ -24,13 +24,18 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces SVM, LDA and GMM UI screens.\relax }}{42}{figure.caption.17}% 
 \contentsline {figure}{\numberline {4.5}{\ignorespaces A comparison of the K-Means k value unchanged ($k=3$) when creating the dataset and then being changed by the user ($k=5$).\relax }}{43}{figure.caption.18}% 
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Extra data points have been added by clicking with the plot widget and therefore changing the models prediction fit.\relax }}{44}{figure.caption.19}% 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces The player changing the features selected for the linear regression model.\relax }}{45}{figure.caption.20}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces The player changing the features selected for the linear regression model.\relax }}{44}{figure.caption.20}% 
 \contentsline {figure}{\numberline {4.8}{\ignorespaces The player changing the features selected for the k-means model.\relax }}{45}{figure.caption.21}% 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Example user story scenario 1.\relax }}{46}{figure.caption.22}% 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Example user story scenario 2.\relax }}{47}{figure.caption.23}% 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Example user story scenario 3.\relax }}{47}{figure.caption.24}% 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Example user story scenario 4.\relax }}{48}{figure.caption.25}% 
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Example user story scenario 5.\relax }}{48}{figure.caption.26}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{47}{chapter.5}% 
+\contentsline {xchapter}{}{49}{chapter.5}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{49}{chapter.6}% 
+\contentsline {xchapter}{}{51}{chapter.6}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{63}{appendix.A}% 
+\contentsline {xchapter}{}{65}{appendix.A}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{65}{appendix.B}% 
+\contentsline {xchapter}{}{67}{appendix.B}% 
