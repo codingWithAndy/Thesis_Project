@@ -47,7 +47,11 @@ Quora, ``What are the top 5 misconceptions surrounding artificial intelligence
   https://www.quora.com/What-are-the-top-5-misconceptions-surrounding-Artificial-Intelligence-and-Machine-Learning.
 
 \bibitem{matlanintrotoml}
-{MathWorks}, ``Introducing machine learning.''
+\BIBentryALTinterwordspacing
+{MathWorks}, ``Introducing machine learning,'' 2016, [accessed July 12, 2020].
+  [Online]. Available:
+  \url{https://www.mathworks.com/content/dam/mathworks/tag-team/Objects/i/88174_92991v00_machine_learning_section1_ebook.pdf}
+\BIBentrySTDinterwordspacing
 
 \bibitem{sklearn_api}
 L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A.~Mueller, O.~Grisel,
@@ -73,8 +77,8 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
 \bibitem{barab2009transformational}
 S.~A. Barab, B.~Scott, S.~Siyahhan, R.~Goldstone, A.~Ingram-Goble, S.~J.
   Zuiker, and S.~Warren, ``Transformational play as a curricular scaffold:
-  Using videogames to support science education,'' \emph{Journal of Science
-  Education and Technology}, vol.~18, no.~4, p. 305, 2009.
+  Using videogames to support science education,'' \emph{Journal of {S}cience
+  {E}ducation and {T}echnology}, vol.~18, no.~4, p. 305, 2009.
 
 \bibitem{van2006digital}
 R.~Van~Eck, ``Digital game-based learning: It's not just the digital natives
@@ -162,8 +166,8 @@ N.~R. Council \emph{et~al.}, \emph{Exploring the intersection of science
 
 \bibitem{morris2013gaming}
 B.~Morris, S.~Croker, C.~Zimmerman, D.~Gill, and C.~Romig, ``Gaming science:
-  the “gamification” of scientific thinking,'' \emph{Frontiers in
-  psychology}, vol.~4, p. 607, 2013.
+  the “{G}amification” of scientific thinking,'' \emph{Frontiers in
+  Psychology}, vol.~4, p. 607, 2013.
 
 \bibitem{weiner1995attribution}
 B.~Weiner, ``Attribution theory in organizational behavior: A relationship of
@@ -214,7 +218,7 @@ B.~C. Nelson, D.~J. Ketelhut, J.~Clarke, E.~Dieterle, C.~Dede, and
 \bibitem{squire2007mad}
 K.~D. Squire and M.~Jan, ``Mad city mystery: Developing scientific
   argumentation skills with a place-based augmented reality game on handheld
-  computers,'' \emph{Journal of science education and technology}, vol.~16,
+  computers,'' \emph{Journal of Science Education and Technology}, vol.~16,
   no.~1, pp. 5--29, 2007.
 
 \bibitem{adachi2013more}
@@ -248,7 +252,7 @@ M.~Doyle. (2014) Learning with simcity: Valuable lessons kids can learn playing
 
 \bibitem{my_maths}
 \BIBentryALTinterwordspacing
-{My Maths}. (2020) My maths. [Online]. Available:
+{My Maths}, ``My maths,'' 2020, 15/08/20. [Online]. Available:
   \url{https://riverbankcomputing.com/software/pyqt/intro}
 \BIBentrySTDinterwordspacing
 

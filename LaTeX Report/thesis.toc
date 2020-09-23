@@ -55,13 +55,12 @@
 \contentsline {section}{\numberline {4.6}Example User Stories (A UML term for case studies or example playthroughs)}{46}{section.4.6}% 
 \contentsline {chapter}{\chapternumberline {5}Evaluation}{49}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{49}{section.5.1}% 
-\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{51}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Reflection on the application}{51}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{52}{section.6.2}% 
-\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{52}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Future Work}{54}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Summary and closing comments}{55}{section.6.5}% 
-\contentsline {chapter}{Bibliography}{57}{chapter*.29}% 
-\contentsline {chapter}{Appendices}{64}{section*.30}% 
-\contentsline {appendix}{\chapternumberline {A}Implementation of a Relevant Algorithm}{65}{appendix.A}% 
-\contentsline {appendix}{\chapternumberline {B}Supplementary Data}{67}{appendix.B}% 
+\contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{53}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Reflection on the application}{53}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{54}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Reflection of the Project Development}{55}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Future Work}{56}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Summary and closing comments}{57}{section.6.5}% 
+\contentsline {chapter}{Bibliography}{59}{chapter*.29}% 
+\contentsline {chapter}{Appendices}{66}{section*.30}% 
+\contentsline {appendix}{\chapternumberline {A}User Study Questionnaire}{67}{appendix.A}% 

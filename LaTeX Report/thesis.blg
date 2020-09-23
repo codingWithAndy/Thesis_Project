@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 234 of file thesis.aux
+White space in argument---line 239 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -13,56 +13,56 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
 Warning--I didn't find a database entry for "handson_book"
+Warning--I didn't find a database entry for "jason_lectures_LDA"
+Warning--I didn't find a database entry for "jason_lectures_PCA"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty booktitle in quora5misconcepts
 Warning--empty year in quora5misconcepts
-Warning--empty booktitle in matlanintrotoml
-Warning--empty year in matlanintrotoml
 Warning--empty title in 4
 Warning--empty booktitle in 10seriousrules
 
 Done.
 You've used 74 entries,
             4087 wiz_defined-function locations,
-            1163 strings with 19848 characters,
-and the built_in function-call counts, 37424 in all, are:
-= -- 2958
+            1170 strings with 20077 characters,
+and the built_in function-call counts, 37586 in all, are:
+= -- 2985
 > -- 834
 < -- 146
 + -- 428
 - -- 180
-* -- 1459
-:= -- 6284
+* -- 1473
+:= -- 6325
 add.period$ -- 152
 call.type$ -- 74
-change.case$ -- 74
+change.case$ -- 76
 chr.to.int$ -- 288
-cite$ -- 80
-duplicate$ -- 2834
-empty$ -- 3277
+cite$ -- 78
+duplicate$ -- 2842
+empty$ -- 3275
 format.name$ -- 201
-if$ -- 8481
+if$ -- 8512
 int.to.chr$ -- 0
 int.to.str$ -- 74
-missing$ -- 631
-newline$ -- 335
+missing$ -- 636
+newline$ -- 337
 num.names$ -- 74
-pop$ -- 1743
+pop$ -- 1747
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2947
+skip$ -- 2958
 stack$ -- 0
-substring$ -- 745
-swap$ -- 2026
+substring$ -- 750
+swap$ -- 2038
 text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 74
-warning$ -- 6
+warning$ -- 4
 while$ -- 135
 width$ -- 76
-write$ -- 750
+write$ -- 756
 (There was 1 error message)
