@@ -33,12 +33,12 @@
 \contentsline {chapter}{\chapternumberline {3}Design}{23}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Overview of Application}{23}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Overview of Specific Game Components}{24}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Main Menu}{24}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.1}Main Menu \& Modular Design}{24}{subsection.3.2.1}% 
 \contentsline {subsection}{\numberline {3.2.2}Game Arena}{24}{subsection.3.2.2}% 
 \contentsline {subsection}{\numberline {3.2.3}Learning Zone}{26}{subsection.3.2.3}% 
 \contentsline {subsection}{\numberline {3.2.4}Free Play}{27}{subsection.3.2.4}% 
 \contentsline {subsection}{\numberline {3.2.5}Awards Zone}{28}{subsection.3.2.5}% 
-\contentsline {section}{\numberline {3.3}Evaluation of Application}{29}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Evaluation of Application}{28}{section.3.3}% 
 \contentsline {chapter}{\chapternumberline {4}Methodolgy and Implementation}{31}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Tools}{31}{section.4.1}% 
 \contentsline {subsection}{\numberline {4.1.1}Programming Languages}{31}{subsection.4.1.1}% 
@@ -57,10 +57,10 @@
 \contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{49}{section.5.1}% 
 \contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{53}{chapter.6}% 
 \contentsline {section}{\numberline {6.1}Reflection on the application}{53}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{54}{section.6.2}% 
+\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{55}{section.6.2}% 
 \contentsline {section}{\numberline {6.3}Reflection of the Project Development}{55}{section.6.3}% 
-\contentsline {section}{\numberline {6.4}Future Work}{56}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Summary and closing comments}{57}{section.6.5}% 
+\contentsline {section}{\numberline {6.4}Future Work}{57}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Summary and closing comments}{58}{section.6.5}% 
 \contentsline {chapter}{Bibliography}{59}{chapter*.29}% 
 \contentsline {chapter}{Appendices}{66}{section*.30}% 
 \contentsline {appendix}{\chapternumberline {A}User Study Questionnaire}{67}{appendix.A}% 
