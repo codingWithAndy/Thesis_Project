@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  25 SEP 2020 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.22)  27 SEP 2020 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -35,8 +35,8 @@ Package ifluatex Info: LuaTeX not detected.
 \trimtop=\skip46
 \trimedge=\skip47
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/memoir/mem11.clo
-File: mem11.clo 2008/01/30 v0.3 memoir class 11pt size option
+(/usr/local/texlive/2019/texmf-dist/tex/latex/memoir/mem10.clo
+File: mem10.clo 2008/01/30 v0.3 memoir class 10pt size option
 )
 \binding=\skip48
 \spinemargin=\skip49
@@ -572,19 +572,19 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 Stock height and width: 845.04684pt by 597.50787pt
 Top and edge trims: 0pt and 0pt
 Page height and width: 845.04684pt by 597.50787pt
-Text height and width: 595.80026pt by 412pt
+Text height and width: 598pt by 412pt
 Spine and edge margins: 113.81102pt and 71.13188pt
-Upper and lower margins: 126.74379pt and 122.50279pt
-Headheight and headsep: 13.6pt and 19.8738pt
-Footskip: 27.46295pt
+Upper and lower margins: 125.33748pt and 121.70937pt
+Headheight and headsep: 12pt and 18.06749pt
+Footskip: 25.29494pt
 Columnsep and columnseprule: 10pt and 0pt
 Marginparsep and marginparwidth: 7pt and 57.13188pt
-Sidecapsep and sidecapwidth: 7pt and 101pt
-Sidebarhsep and sidebarwidth: 7pt and 101pt
-Sidebarvsep and sidebartopsep: 13.6pt and 0pt
-Sidebarheight: 594.32022pt
-Sidefoothsep and sidefootwidth: 7pt and 101pt
-Sidefootvsep and sidefootheight: 13.6pt and 594.32022pt
+Sidecapsep and sidecapwidth: 7pt and 117pt
+Sidebarhsep and sidebarwidth: 7pt and 117pt
+Sidebarvsep and sidebartopsep: 12pt and 0pt
+Sidebarheight: 596.39996pt
+Sidefoothsep and sidefootwidth: 7pt and 117pt
+Sidefootvsep and sidefootheight: 12pt and 596.39996pt
 ******************************************************
 
 \c@theorem=\count154
@@ -2060,7 +2060,7 @@ LaTeX Info: Redefining \nameref on input line 10.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 37.
 <graphics/swansea.png, id=147, 416.2752pt x 284.7438pt>
 File: graphics/swansea.png Graphic file (type png)
@@ -2096,26 +2096,23 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 37.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Try loading font information for U+stmry on input line 37.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-Underfull \vbox (badness 1365) has occurred while \output is active []
-
- [1
+(/usr/local/texlive/2019/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
 
- <./graphics/swansea.png>] [2]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
+ <./graphics/swansea.png>] [2
+
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 37.
- [3
-
-] [4
+ [3] [4
 
 ] [5
 
@@ -2131,7 +2128,7 @@ File: T1SourceCodePro-TLF.fd 2015/10/08 (autoinst) Font definitions for T1/Sour
 ceCodePro-TLF.
 )
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 64.
+(Font)              scaled to size 10.0pt on input line 64.
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -2159,54 +2156,59 @@ l.73 	\end{Acknowledgements}
                              [4
 
 ] (./thesis.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.49 ...s of the Game Components}{38}{section.4.5}
+l.59 ...6}Conclusion \& Discussion}{47}{chapter.6}
                                                   % [5])
 (./list_of_tables_and_figures.texpdfTeX warning (ext4): destination with the sa
 me identifier (name{page.vi}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.2 \newpage
-             [6] (./thesis.lot) [7] (./thesis.lof [8])) [9] [10
-
-]
+             [6] (./thesis.lot) [7] (./thesis.lof)) [8]
 (./chapter/thesis_intro.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
  [1
+
 
 ]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 28.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2] [3])
-(./chapter/background_lit_review.tex [4] [5
+) [2])
+(./chapter/background_lit_review.tex [3] [4
 
-]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+] [5]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
- [6] [7] [8]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
-[10]
-<graphics/Mario_is_Missing_box_art.jpg, id=450, 963.6pt x 602.25pt>
+ [6]
+Underfull \vbox (badness 6608) has occurred while \output is active []
+
+ [7]
+Underfull \vbox (badness 3312) has occurred while \output is active []
+
+ [8]
+[9]
+<graphics/Mario_is_Missing_box_art.jpg, id=434, 963.6pt x 602.25pt>
 File: graphics/Mario_is_Missing_box_art.jpg Graphic file (type jpg)
 <use graphics/Mario_is_Missing_box_art.jpg>
 Package pdftex.def Info: graphics/Mario_is_Missing_box_art.jpg  used on input l
 ine 67.
 (pdftex.def)             Requested size: 256.0748pt x 160.04578pt.
 
-Underfull \vbox (badness 2512) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./graphics/Mario_is_Missing_box_art.jpg>] [12]
-<graphics/km_example.png, id=483, 1052.93375pt x 258.9675pt>
+ [10 <./graphics/Mario_is_Missing_box_art.jpg>]
+<graphics/km_example.png, id=460, 1052.93375pt x 258.9675pt>
 File: graphics/km_example.png Graphic file (type png)
 <use graphics/km_example.png>
 Package pdftex.def Info: graphics/km_example.png  used on input line 98.
@@ -2216,52 +2218,42 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 98--99
  [] 
  []
 
-[13 <./graphics/km_example.png>]
-<graphics/gmm_example.jpeg, id=506, 1215.54124pt x 496.85625pt>
+[11]
+<graphics/gmm_example.jpeg, id=484, 1215.54124pt x 496.85625pt>
 File: graphics/gmm_example.jpeg Graphic file (type jpg)
 <use graphics/gmm_example.jpeg>
 Package pdftex.def Info: graphics/gmm_example.jpeg  used on input line 118.
 (pdftex.def)             Requested size: 256.0748pt x 104.66888pt.
- [14 <./graphics/gmm_example.jpeg>]
+ [12 <./graphics/km_example.png>] [13 <./graphics/gmm_example.jpeg>]
 
-LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 141.
+LaTeX Warning: Citation `handson_book' on page 14 undefined on input line 145.
 
-<graphics/logistic_reg.jpeg, id=527, 1225.57875pt x 396.48125pt>
+<graphics/logistic_reg.jpeg, id=516, 1225.57875pt x 396.48125pt>
 File: graphics/logistic_reg.jpeg Graphic file (type jpg)
 <use graphics/logistic_reg.jpeg>
-Package pdftex.def Info: graphics/logistic_reg.jpeg  used on input line 145.
+Package pdftex.def Info: graphics/logistic_reg.jpeg  used on input line 149.
 (pdftex.def)             Requested size: 256.0748pt x 82.84003pt.
 
-LaTeX Warning: Citation `handson_book' on page 15 undefined on input line 152.
+LaTeX Warning: Citation `handson_book' on page 14 undefined on input line 156.
+
+[14 <./graphics/logistic_reg.jpeg>]
+
+LaTeX Warning: Citation `jason_lectures_LDA' on page 15 undefined on input line
+ 178.
+
+
+LaTeX Warning: Citation `jason_lectures_LDA' on page 15 undefined on input line
+ 180.
 
 [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./graphics/logistic_reg.jpeg>]
+LaTeX Warning: Citation `jason_lectures_PCA' on page 16 undefined on input line
+ 192.
 
-LaTeX Warning: Citation `jason_lectures_LDA' on page 17 undefined on input line
- 174.
-
-
-LaTeX Warning: Citation `jason_lectures_LDA' on page 17 undefined on input line
- 176.
-
-[17]
-
-LaTeX Warning: Citation `jason_lectures_PCA' on page 18 undefined on input line
- 188.
-
-[18]
-Underfull \vbox (badness 4940) has occurred while \output is active []
-
- [19]
-[20]) (./chapter/thesis_methodology.tex [21] [22
+[16] [17] [18]) (./chapter/thesis_methodology.tex [19] [20
 
 ]
-Underfull \vbox (badness 1430) has occurred while \output is active []
-
- [23]
-<graphics/main_menu.png, id=606, 1072.005pt x 331.2375pt>
+<graphics/main_menu.png, id=582, 1072.005pt x 331.2375pt>
 File: graphics/main_menu.png Graphic file (type png)
 <use graphics/main_menu.png>
 Package pdftex.def Info: graphics/main_menu.png  used on input line 37.
@@ -2271,8 +2263,12 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 37--38
 [][] 
  []
 
-[24 <./graphics/main_menu.png>]
-<graphics/game_zone.png, id=615, 1072.005pt x 329.23pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+[22 <./graphics/main_menu.png>]
+<graphics/game_zone.png, id=595, 1072.005pt x 329.23pt>
 File: graphics/game_zone.png Graphic file (type png)
 <use graphics/game_zone.png>
 Package pdftex.def Info: graphics/game_zone.png  used on input line 52.
@@ -2282,8 +2278,8 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 52--53
 [][] 
  []
 
-[25 <./graphics/game_zone.png>]
-<graphics/learning_zone.png, id=621, 1074.0125pt x 330.23375pt>
+[23 <./graphics/game_zone.png>]
+<graphics/learning_zone.png, id=604, 1074.0125pt x 330.23375pt>
 File: graphics/learning_zone.png Graphic file (type png)
 <use graphics/learning_zone.png>
 Package pdftex.def Info: graphics/learning_zone.png  used on input line 72.
@@ -2293,11 +2289,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 72--73
 [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26 <./graphics/learning_zone.png>]
-<graphics/free_play.png, id=628, 1073.00874pt x 327.2225pt>
+<graphics/free_play.png, id=605, 1073.00874pt x 327.2225pt>
 File: graphics/free_play.png Graphic file (type png)
 <use graphics/free_play.png>
 Package pdftex.def Info: graphics/free_play.png  used on input line 82.
@@ -2307,11 +2299,8 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 82--83
 [][] 
  []
 
-
-Underfull \vbox (badness 4120) has occurred while \output is active []
-
- [27 <./graphics/free_play.png>]
-<graphics/awards_zone.png, id=636, 1065.9825pt x 320.19624pt>
+[24 <./graphics/learning_zone.png>]
+<graphics/awards_zone.png, id=612, 1065.9825pt x 320.19624pt>
 File: graphics/awards_zone.png Graphic file (type png)
 <use graphics/awards_zone.png>
 Package pdftex.def Info: graphics/awards_zone.png  used on input line 101.
@@ -2321,37 +2310,30 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 101--102
 [][] 
  []
 
-[28]) (./chapter/thesis_implementation.tex [29 <./graphics/awards_zone.png>]
-[30
+[25 <./graphics/free_play.png>]) (./chapter/thesis_implementation.tex [26 <./gr
+aphics/awards_zone.png>]
 
-]
-
-LaTeX Warning: Citation `list exam boards here' on page 31 undefined on input l
+LaTeX Warning: Citation `list exam boards here' on page 27 undefined on input l
 ine 12.
 
-[31]
-<graphics/python_vs_java_vs_c++.jpg, id=671, 951.555pt x 577.15625pt>
+[27
+
+]
+<graphics/python_vs_java_vs_c++.jpg, id=646, 951.555pt x 577.15625pt>
 File: graphics/python_vs_java_vs_c++.jpg Graphic file (type jpg)
 <use graphics/python_vs_java_vs_c++.jpg>
 Package pdftex.def Info: graphics/python_vs_java_vs_c++.jpg  used on input line
  18.
 (pdftex.def)             Requested size: 241.84842pt x 146.68411pt.
- [32 <./graphics/python_vs_java_vs_c++.jpg>]
-Underfull \vbox (badness 2529) has occurred while \output is active []
-
- [33]
-Underfull \vbox (badness 2529) has occurred while \output is active []
-
- [34]
-[35]
+ [28 <./graphics/python_vs_java_vs_c++.jpg>] [29] [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-[37] [38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [31]
+Underfull \vbox (badness 1571) has occurred while \output is active []
 
- [39]
-<graphics/lz_navi_quiz.png, id=769, 1063.975pt x 323.2075pt>
+ [32]
+[33]
+<graphics/lz_navi_quiz.png, id=733, 1063.975pt x 323.2075pt>
 File: graphics/lz_navi_quiz.png Graphic file (type png)
 <use graphics/lz_navi_quiz.png>
 Package pdftex.def Info: graphics/lz_navi_quiz.png  used on input line 126.
@@ -2361,198 +2343,168 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 126--127
  [] 
  []
 
-<graphics/no_model_warning.png, id=770, 367.3725pt x 247.92625pt>
+[34]
+<graphics/no_model_warning.png, id=739, 367.3725pt x 247.92625pt>
 File: graphics/no_model_warning.png Graphic file (type png)
 <use graphics/no_model_warning.png>
 Package pdftex.def Info: graphics/no_model_warning.png  used on input line 138.
 
 (pdftex.def)             Requested size: 170.71652pt x 115.21263pt.
-[40 <./graphics/lz_navi_quiz.png>] [41 <./graphics/no_model_warning.png>]
-<graphics/remaining_fp_examples.png, id=784, 1069.9975pt x 628.3475pt>
+ [35 <./graphics/lz_navi_quiz.png> <./graphics/no_model_warning.png>]
+<graphics/remaining_fp_examples.png, id=748, 1069.9975pt x 628.3475pt>
 File: graphics/remaining_fp_examples.png Graphic file (type png)
 <use graphics/remaining_fp_examples.png>
 Package pdftex.def Info: graphics/remaining_fp_examples.png  used on input line
  156.
 (pdftex.def)             Requested size: 341.43306pt x 200.50003pt.
 
-Underfull \vbox (badness 1478) has occurred while \output is active []
+Underfull \vbox (badness 3078) has occurred while \output is active []
 
- [42 <./graphics/remaining_fp_examples.png>]
-<graphics/chaning_k_fp_example.png, id=791, 1059.96pt x 326.21875pt>
+ [36 <./graphics/remaining_fp_examples.png>]
+<graphics/chaning_k_fp_example.png, id=756, 1059.96pt x 326.21875pt>
 File: graphics/chaning_k_fp_example.png Graphic file (type png)
 <use graphics/chaning_k_fp_example.png>
 Package pdftex.def Info: graphics/chaning_k_fp_example.png  used on input line 
 168.
 (pdftex.def)             Requested size: 369.88582pt x 113.83978pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
-
-Underfull \vbox (badness 3601) has occurred while \output is active []
-
- [43 <./graphics/chaning_k_fp_example.png>]
-<graphics/manipulating_lr_data.png, id=798, 1059.96pt x 320.19624pt>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 169.
+ [37 <./graphics/chaning_k_fp_example.png>]
+<graphics/manipulating_lr_data.png, id=763, 1059.96pt x 320.19624pt>
 File: graphics/manipulating_lr_data.png Graphic file (type png)
 <use graphics/manipulating_lr_data.png>
 Package pdftex.def Info: graphics/manipulating_lr_data.png  used on input line 
 181.
 (pdftex.def)             Requested size: 369.88582pt x 111.73811pt.
-<graphics/lr_changing_xy.png, id=799, 1058.95625pt x 321.2pt>
+<graphics/lr_changing_xy.png, id=764, 1058.95625pt x 321.2pt>
 File: graphics/lr_changing_xy.png Graphic file (type png)
 <use graphics/lr_changing_xy.png>
 Package pdftex.def Info: graphics/lr_changing_xy.png  used on input line 189.
 (pdftex.def)             Requested size: 369.88582pt x 112.19133pt.
-<graphics/km_change_xy.png, id=800, 1064.97874pt x 324.21124pt>
+<graphics/km_change_xy.png, id=765, 1064.97874pt x 324.21124pt>
 File: graphics/km_change_xy.png Graphic file (type png)
 <use graphics/km_change_xy.png>
 Package pdftex.def Info: graphics/km_change_xy.png  used on input line 197.
 (pdftex.def)             Requested size: 369.88582pt x 112.60495pt.
- [44 <./graphics/manipulating_lr_data.png> <./graphics/lr_changing_xy.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45 <./graphics/km_change_xy.png>]
-<graphics/player_example_1.png, id=813, 1400.23125pt x 831.105pt>
+[38 <./graphics/manipulating_lr_data.png> <./graphics/lr_changing_xy.png>]
+<graphics/player_example_1.png, id=772, 1400.23125pt x 831.105pt>
 File: graphics/player_example_1.png Graphic file (type png)
 <use graphics/player_example_1.png>
-Package pdftex.def Info: graphics/player_example_1.png  used on input line 219.
+Package pdftex.def Info: graphics/player_example_1.png  used on input line 220.
 
 (pdftex.def)             Requested size: 227.62204pt x 135.09734pt.
-<graphics/player_example_2.png, id=815, 2105.8675pt x 410.53375pt>
-File: graphics/player_example_2.png Graphic file (type png)
-<use graphics/player_example_2.png>
-Package pdftex.def Info: graphics/player_example_2.png  used on input line 229.
+<graphics/lz_us_example.png, id=773, 1139.25626pt x 237.88875pt>
+File: graphics/lz_us_example.png Graphic file (type png)
+<use graphics/lz_us_example.png>
+Package pdftex.def Info: graphics/lz_us_example.png  used on input line 228.
+(pdftex.def)             Requested size: 369.88582pt x 77.23306pt.
 
-(pdftex.def)             Requested size: 369.88582pt x 72.10757pt.
- [46 <./graphics/player_example_1.png>]
-<graphics/player_example_3.png, id=824, 1393.205pt x 825.0825pt>
-File: graphics/player_example_3.png Graphic file (type png)
-<use graphics/player_example_3.png>
-Package pdftex.def Info: graphics/player_example_3.png  used on input line 241.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(pdftex.def)             Requested size: 227.62204pt x 134.79822pt.
-<graphics/player_example_4.png, id=826, 2097.8375pt x 409.53pt>
-File: graphics/player_example_4.png Graphic file (type png)
-<use graphics/player_example_4.png>
-Package pdftex.def Info: graphics/player_example_4.png  used on input line 252.
+ [39 <./graphics/km_change_xy.png>]
+<graphics/fp_us_example.png, id=782, 985.6825pt x 407.5225pt>
+File: graphics/fp_us_example.png Graphic file (type png)
+<use graphics/fp_us_example.png>
+Package pdftex.def Info: graphics/fp_us_example.png  used on input line 242.
+(pdftex.def)             Requested size: 227.62204pt x 94.10751pt.
+<graphics/not_enough_data.png, id=783, 229.85875pt x 120.45pt>
+File: graphics/not_enough_data.png Graphic file (type png)
+<use graphics/not_enough_data.png>
+Package pdftex.def Info: graphics/not_enough_data.png  used on input line 250.
+(pdftex.def)             Requested size: 170.71652pt x 89.46242pt.
+ [40 <./graphics/player_example_1.png> <./graphics/lz_us_example.png>]) (./chap
+ter/thesis_conclusion.tex [41 <./graphics/fp_us_example.png> <./graphics/not_en
+ough_data.png>] [42
 
-(pdftex.def)             Requested size: 369.88582pt x 72.20622pt.
-<graphics/player_example_5.png, id=828, 1388.18625pt x 827.09pt>
-File: graphics/player_example_5.png Graphic file (type png)
-<use graphics/player_example_5.png>
-Package pdftex.def Info: graphics/player_example_5.png  used on input line 262.
-
-(pdftex.def)             Requested size: 227.62204pt x 135.6184pt.
-)
-(./chapter/thesis_conclusion.tex [47 <./graphics/player_example_2.png> <./graph
-ics/player_example_3.png>] [48 <./graphics/player_example_4.png> <./graphics/pl
-ayer_example_5.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[49
-
-] [50] [51] [52
+] [43] [44] [45] [46
 
 ]
-Underfull \vbox (badness 2818) has occurred while \output is active []
+Underfull \vbox (badness 1867) has occurred while \output is active []
 
- [53]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [47]
+[48] [49] [50]) (./thesis.bbl [51] [52
 
- [54]
-[55]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [56]
-[57]) (./thesis.bbl [58]
+]
 bibitemlist
-[59
 
-]
-Underfull \hbox (badness 1881) in paragraph at lines 130--134
-[]\T1/ptm/m/n/10.95 R. Swat-man. (2016) Poké-mon go catches five new world
+Underfull \hbox (badness 1694) in paragraph at lines 44--48
+\T1/ptm/m/n/10 learn-ing?'' Re-trieved May 10, 2020 from: https://www.quora.com
+/What-are-the-top-5-
  []
 
-[60]
-Overfull \hbox (62.17995pt too wide) in paragraph at lines 149--154
-\T1/ptm/m/n/10.95 -[]in-[]adolescent-[]development-[]in-[]the-[]classroom-[]cog
-nitive-[]and-[]physical-[]processes-[]can-[]enhance-[]growth/$[] 
- []
-
-[61] [62] [63]
-Overfull \hbox (15.54434pt too wide) in paragraph at lines 341--345
-\T1/ptm/m/n/10.95 apple-[]hits-[]1-[]5-[]billion-[]active-[]devices-[]with-[]80
--[]of-[]recent-[]iphones-[]and-[]ipads-[]running-[]ios-[]13/$[] 
+[53]
+Underfull \hbox (badness 2334) in paragraph at lines 149--154
+\T1/ptm/m/n/10 line]. Avail-able: []$http : / / www . ashleydeese . com / 2012 
+/ 09 / 26 / using-[]gami^^\cation-[]to-[]aid \
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 361--365
-\T1/ptm/m/n/10.95 (for job and fu-ture). [On-line]. Avail-able: []$https : / / 
-hackr . io / blog /
+Overfull \hbox (21.60544pt too wide) in paragraph at lines 149--154
+\T1/ptm/m/n/10 -[]in-[]adolescent-[]development-[]in-[]the-[]classroom-[]cognit
+ive-[]and-[]physical-[]processes-[]can-[]enhance-[]growth/$[] 
+ []
+
+[54]
+Underfull \hbox (badness 1675) in paragraph at lines 248--252
+[]\T1/ptm/m/n/10 M. Doyle. (2014) Learn-ing with sim-c-ity: Valu-able lessons k
+ids
  []
 
 
+Underfull \hbox (badness 1048) in paragraph at lines 248--252
+\T1/ptm/m/n/10 can learn play-ing mayor. [On-line]. Avail-able: []$https : / / 
+www . brightpips . com /
+ []
+
+[55] [56]
 Underfull \hbox (badness 10000) in paragraph at lines 398--401
-[]$\T1/ptm/m/n/10.95 https : / / www . guru99 . com / r-[]vs-[]python . html# :
- ~ : text = New % 20libraries % 20or % 20tools %
+\T1/ptm/m/n/10 20are ,[] general % 20approach % 20to % 20data % 20science . &te
+xt = Python % 20is % 20a % 20general %
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--401
-\T1/ptm/m/n/10.95 20are ,[] general % 20approach % 20to % 20data % 20science . 
-&text = Python % 20is % 20a %
- []
-
-[64]
-Underfull \hbox (badness 2662) in paragraph at lines 437--441
-[]\T1/ptm/m/n/10.95 A. Sharma. (2020) In-tro-duc-tion to gui with tk-in-ter in
- []
-
-
-Underfull \hbox (badness 3536) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 python. [On-line]. Avail-able: []$https : / / www . datacamp 
-. com / community /
+[57]
+Underfull \hbox (badness 7907) in paragraph at lines 437--441
+\T1/ptm/m/n/10 Avail-able: []$https : / / www . datacamp . com / community / tu
+torials / gui-[]tkinter-[]python ? utm _
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 tutorials / gui-[]tkinter-[]python ? utm _ source = adwords _
- ppc & utm _ campaignid =
+\T1/ptm/m/n/10 source = adwords _ ppc & utm _ campaignid = 898687156 & utm _ ad
+groupid = 48947256715 & utm _
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 898687156 & utm _ adgroupid = 48947256715 & utm _ device = c 
-& utm _ keyword = &utm _
+\T1/ptm/m/n/10 device = c & utm _ keyword = &utm _ matchtype = b & utm _ networ
+k = g & utm _ adpostion = &utm _
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 matchtype = b & utm _ network = g & utm _ adpostion = &utm _ 
-creative = 229765585186 &
+\T1/ptm/m/n/10 creative = 229765585186 & utm _ targetid = aud-[]299261629574 : 
+dsa-[]429603003980 & utm _ loc _
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 utm _ targetid = aud-[]299261629574 : dsa-[]429603003980 & ut
-m _ loc _ interest _ ms =
+\T1/ptm/m/n/10 interest _ ms = &utm _ loc _ physical _ ms = 1007460 & gclid = C
+j0KCQjwsuP5BRCoARIsAPtX _
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 &utm _ loc _ physical _ ms = 1007460 & gclid = Cj0KCQjwsuP5BR
-CoARIsAPtX _
+\T1/ptm/m/n/10 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEALw 
+_
  []
 
-
-Overfull \hbox (30.662pt too wide) in paragraph at lines 437--441
-\T1/ptm/m/n/10.95 wGxaCEuqKDVDDyVASqiCw2zIKYwN2Duo3DObWGcfwQAjH3oxWK5WfoaAhafEA
-Lw _
- []
-
-[65]) (./chapter/appendix.tex [66]
-<DS_User_Study.pdf, id=1008, 597.23125pt x 845.1575pt>
+) (./chapter/appendix.tex [58]
+<DS_User_Study.pdf, id=955, 597.23125pt x 845.1575pt>
 File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf>
 Package pdftex.def Info: DS_User_Study.pdf  used on input line 5.
@@ -2561,7 +2513,7 @@ File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf>
 Package pdftex.def Info: DS_User_Study.pdf  used on input line 5.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-<DS_User_Study.pdf, id=1011, page=1, 597.23125pt x 845.1575pt>
+<DS_User_Study.pdf, id=958, page=1, 597.23125pt x 845.1575pt>
 File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 1>
 Package pdftex.def Info: DS_User_Study.pdf , page1 used on input line 5.
@@ -2570,7 +2522,7 @@ File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 1>
 Package pdftex.def Info: DS_User_Study.pdf , page1 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [67
+ [59
 
 ]
 File: DS_User_Study.pdf Graphic file (type pdf)
@@ -2585,8 +2537,8 @@ File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 1>
 Package pdftex.def Info: DS_User_Study.pdf , page1 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [68 <./DS_User_Study.pdf>]
-<DS_User_Study.pdf, id=1080, page=2, 597.23125pt x 845.1575pt>
+ [60 <./DS_User_Study.pdf>]
+<DS_User_Study.pdf, id=1029, page=2, 597.23125pt x 845.1575pt>
 File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 2>
 Package pdftex.def Info: DS_User_Study.pdf , page2 used on input line 5.
@@ -2599,8 +2551,8 @@ File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 2>
 Package pdftex.def Info: DS_User_Study.pdf , page2 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [69 <./DS_User_Study.pdf>]
-<DS_User_Study.pdf, id=1118, page=3, 597.23125pt x 845.1575pt>
+ [61 <./DS_User_Study.pdf>]
+<DS_User_Study.pdf, id=1066, page=3, 597.23125pt x 845.1575pt>
 File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 3>
 Package pdftex.def Info: DS_User_Study.pdf , page3 used on input line 5.
@@ -2613,8 +2565,8 @@ File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 3>
 Package pdftex.def Info: DS_User_Study.pdf , page3 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [70 <./DS_User_Study.pdf>]
-<DS_User_Study.pdf, id=1139, page=4, 597.23125pt x 845.1575pt>
+ [62 <./DS_User_Study.pdf>]
+<DS_User_Study.pdf, id=1087, page=4, 597.23125pt x 845.1575pt>
 File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 4>
 Package pdftex.def Info: DS_User_Study.pdf , page4 used on input line 5.
@@ -2627,7 +2579,7 @@ File: DS_User_Study.pdf Graphic file (type pdf)
 <use DS_User_Study.pdf, page 4>
 Package pdftex.def Info: DS_User_Study.pdf , page4 used on input line 5.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [71 <./DS_User_Study.pdf>])
+ [63 <./DS_User_Study.pdf>])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the thesis.maf file.
@@ -2644,12 +2596,11 @@ Package minitoc Info: I0009
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
-
-(./thesis.aux)
+ (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A1D4C30105F4C45E8DDCA353532B6DAF;2296.
+(rerunfilecheck)             Checksum: ED95C439DBD6A2C932208DACB65FD3DE;2296.
 
 
 LaTeX Warning: There were undefined references.
@@ -2657,11 +2608,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 40709 strings out of 492616
- 724379 string characters out of 6129480
- 843299 words of memory out of 5000000
+ 40699 strings out of 492616
+ 724147 string characters out of 6129480
+ 844101 words of memory out of 5000000
  43436 multiletter control sequences out of 15000+600000
- 596272 words of font info for 122 fonts, out of 8000000 for 9000
+ 599208 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,18n,92p,2269b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/sourcecodepro/a_ind2fo.en
@@ -2675,10 +2626,10 @@ exlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (87 pages, 9070836 bytes).
+Output written on thesis.pdf (77 pages, 7774877 bytes).
 PDF statistics:
- 1234 PDF objects out of 1440 (max. 8388607)
- 1026 compressed objects within 11 object streams
- 245 named destinations out of 1000 (max. 500000)
- 443 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1180 PDF objects out of 1200 (max. 8388607)
+ 985 compressed objects within 10 object streams
+ 235 named destinations out of 1000 (max. 500000)
+ 438 words of extra memory for PDF output out of 10000 (max. 10000000)
 

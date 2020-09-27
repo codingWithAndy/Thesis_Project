@@ -208,6 +208,7 @@
 	
 	
 	\subsection{Achievements Area}
+	
 	The intensions for the Achievement Area was displaying to the user all of the gamification badges available. Providing an overview and hits on how to unlock them. The achievements were going to have a bronze, silver and gold level, and we planned to be unlocked once the user had completed specific tasks like playing the game three times or completing a quiz. However, due to time limitation, this was not possible, and the application, as it currently stands, displays a coming soon image and button for the user to navigate back to the main menu.
 	
 	
@@ -222,48 +223,40 @@
 			\end{center}
 		\end{figure}
 	
-	Example user story one (see fig: \ref{fig:user_story_1}) shows a user's motions through the game. The user first went into the game area and had played an entire game of three rounds. They then went to the free play area to interact with some of the models they came across within the game area, which then was followed by reading about the models in the learning zone and then taking a quiz on them.
-	
-	\begin{figure}[t]
+	\begin{figure}[b]
 		\begin{center}
-			\includegraphics[width=13cm]{graphics/player_example_2.png}
+			\includegraphics[width=13cm]{graphics/lz_us_example.png}
 			\caption{Example user story scenario 2.}
 			\label{fig:user_story_2}
 		\end{center}
 	\end{figure}
 	
-	The user story example two (see fig: \ref{fig:user_story_2}) shows the user first going to the learning zone, as they want to get an idea of what the different machine learning models are first. They then will click the free play button, which will take the user to the free play area with the required model pre-loaded. The player will then interact with the model and then have an attempt at the game area. Playing through the generated rounds.
 	
-	User story example three (see fig: \ref{fig:user_story_3}) depicts the example playthrough of the user going to the learning zone first, followed by the quiz. After the user has taken the quiz, they then interact with the models in the learning zone, exploring their many features. Once they have finished in the learning zone, they will then try their hand at playing the game area against a fellow player.
-	
-		\begin{figure}[b]
-			\begin{center}
-				\includegraphics[width=8cm]{graphics/player_example_3.png}
-				\caption{Example user story scenario 3.}
-				\label{fig:user_story_3}
-			\end{center}
-		\end{figure}
-	
-	In the fourth user story example (see fig: \ref{fig:user_story_4}), it shows a case of a user going straight into the learning zone, gaining insights about the different models. Then testing their knowledge on a quiz within the game and then applying it strategically within the game area, in a head to head gaming situation. 
+	Example user story one (see fig: \ref{fig:user_story_1}) shows a user's motions through the game. The user first went into the game area and had played an entire game of three rounds. They then went to the free play area to interact with some of the models they came across within the game area, which then was followed by reading about the models in the learning zone and then taking a quiz on them.
 	
 	
-		\begin{figure}[t]
-			\begin{center}
-				\includegraphics[width=13cm]{graphics/player_example_4.png}
-				\caption{Example user story scenario 4.}
-				\label{fig:user_story_4}
-			\end{center}
-		\end{figure}
+	User story example two (see fig: \ref{fig:user_story_2}) shows how a user can navigate between the learning zone area. The user can select an area to visit within the welcome's page content overview sections. The hyperlinks will take them to another learning content page within the learning zone. Additionally, the user can navigate through the application by using the pop-out navigational bar, as well as the next and previous buttons at the bottom of the page. However, if the user uses the next or previous links at the bottom of the page, they will only go to the next page in the order of the navigational pop-out menu.
 	
-	The user story example five (see fig: \ref{fig:user_story_5}) shows a scenario where the player has gone into the free play area to interact with different models. They have then tried to see how well they fair up in a head to head setting against another player in the game area. Once they have completed the game area's multiple rounds, they then enter the learning zone to get a better understanding of the models and takes the quiz to assess their knowledge. 
+	\begin{figure}[t]
+		\begin{center}
+			\includegraphics[width=8cm]{graphics/fp_us_example.png}
+			\caption{Example user story scenario 3.}
+			\label{fig:user_story_3}
+		\end{center}
+	\end{figure}
+
+	\begin{figure}[b]
+		\begin{center}
+			\includegraphics[width=6cm]{graphics/not_enough_data.png}
+			\caption{Example user story scenario 3.}
+			\label{fig:not_enough_data}
+		\end{center}
+	\end{figure}
 	
-		\begin{figure}[t]
-			\begin{center}
-				\includegraphics[width=8cm]{graphics/player_example_5.png}
-				\caption{Example user story scenario 5.}
-				\label{fig:user_story_5}
-			\end{center}
-		\end{figure}
+	
+	User story example three (see fig: \ref{fig:user_story_3}) depicts the user interacting with the free play area and the linear regression model. At first, the user gets greeted with the model empty, but the layer can start placing their data points within the model. Once a minimum of four data points has been placed, the user can then toggle the model's decision line on and off. However, if the user has not placed enough data points, a message box appears (see fig: \ref{fig:not_enough_data}. The user then might choose to create a custom dataset. The user can select the number of data points they want and if they want any outliers. If they want outliers the total amount, they want. They can then display the model's visualisation and add additional data points, adding the additional data points will manipulate the model's decision line. Another action the user could take is then to choose a pre-generated dataset. Also changing the model's feature selection for the X or y-axis, as well as adding data points to these models, creating further exploration.
+	
+		
 	
 	
 	

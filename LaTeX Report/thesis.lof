@@ -1,39 +1,38 @@
 \babel@toc {english}{}
 \contentsline {xchapter}{}{vii}{section*.3}% 
-\contentsline {xchapter}{}{ix}{section*.4}% 
+\contentsline {xchapter}{}{viii}{section*.4}% 
 \addvspace {10pt}
 \contentsline {xchapter}{}{1}{chapter.1}% 
 \addvspace {10pt}
 \contentsline {xchapter}{}{5}{chapter.2}% 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Box art and game discription for Mario is Missing! \cite {gaming_relics}\relax }}{11}{figure.caption.5}% 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of a data distribution and the assigned cluster that k-means has predicted \cite {geron2019hands}.\relax }}{13}{figure.caption.6}% 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of a GMM distribution \cite {geron2019hands}.\relax }}{14}{figure.caption.7}% 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces An example of a logistic regression threshold distribution \cite {geron2019hands}.\relax }}{16}{figure.caption.8}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Box art and game discription for Mario is Missing! \cite {gaming_relics}\relax }}{10}{figure.caption.5}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of a data distribution and the assigned cluster that k-means has predicted \cite {geron2019hands}.\relax }}{12}{figure.caption.6}% 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of a GMM distribution \cite {geron2019hands}.\relax }}{13}{figure.caption.7}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces An example of a logistic regression threshold distribution \cite {geron2019hands}.\relax }}{14}{figure.caption.8}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{23}{chapter.3}% 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A comparison of the main menu's designed screen UI and the final implmented UI.\relax }}{24}{figure.caption.9}% 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A comparison of the game area's designed screen UI and the final implmented UI.\relax }}{25}{figure.caption.10}% 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A comparison of the learning zone's designed screen UI and the final implmented UI.\relax }}{26}{figure.caption.11}% 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces A comparison of the free play's designed screen UI and the final implmented UI.\relax }}{27}{figure.caption.12}% 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces A comparison of the awards zone's designed screen UI and the final implmented UI.\relax }}{29}{figure.caption.13}% 
+\contentsline {xchapter}{}{21}{chapter.3}% 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A comparison of the main menu's designed screen UI and the final implmented UI.\relax }}{22}{figure.caption.9}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A comparison of the game area's designed screen UI and the final implmented UI.\relax }}{23}{figure.caption.10}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A comparison of the learning zone's designed screen UI and the final implmented UI.\relax }}{24}{figure.caption.11}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A comparison of the free play's designed screen UI and the final implmented UI.\relax }}{25}{figure.caption.12}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A comparison of the awards zone's designed screen UI and the final implmented UI.\relax }}{26}{figure.caption.13}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{31}{chapter.4}% 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A comparison between Java, Python and C++ to print an output to the console. \cite {py_ja_c++}\relax }}{32}{figure.caption.14}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Demonstration of the navigation menu and the quiz section.\relax }}{40}{figure.caption.15}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces An image displaying the warning message displayed to users.\relax }}{41}{figure.caption.16}% 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces SVM, LDA and GMM UI screens.\relax }}{42}{figure.caption.17}% 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces A comparison of the K-Means k value unchanged ($k=3$) when creating the dataset and then being changed by the user ($k=5$).\relax }}{43}{figure.caption.18}% 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Extra data points have been added by clicking with the plot widget and therefore changing the models prediction fit.\relax }}{44}{figure.caption.19}% 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces The player changing the features selected for the linear regression model.\relax }}{44}{figure.caption.20}% 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces The player changing the features selected for the k-means model.\relax }}{45}{figure.caption.21}% 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Example user story scenario 1.\relax }}{46}{figure.caption.22}% 
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Example user story scenario 2.\relax }}{47}{figure.caption.23}% 
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Example user story scenario 3.\relax }}{47}{figure.caption.24}% 
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Example user story scenario 4.\relax }}{48}{figure.caption.25}% 
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Example user story scenario 5.\relax }}{48}{figure.caption.26}% 
+\contentsline {xchapter}{}{27}{chapter.4}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A comparison between Java, Python and C++ to print an output to the console. \cite {py_ja_c++}\relax }}{28}{figure.caption.14}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Demonstration of the navigation menu and the quiz section.\relax }}{35}{figure.caption.15}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces An image displaying the warning message displayed to users.\relax }}{35}{figure.caption.16}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces SVM, LDA and GMM UI screens.\relax }}{36}{figure.caption.17}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces A comparison of the K-Means k value unchanged ($k=3$) when creating the dataset and then being changed by the user ($k=5$).\relax }}{37}{figure.caption.18}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Extra data points have been added by clicking with the plot widget and therefore changing the models prediction fit.\relax }}{38}{figure.caption.19}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces The player changing the features selected for the linear regression model.\relax }}{38}{figure.caption.20}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The player changing the features selected for the k-means model.\relax }}{39}{figure.caption.21}% 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Example user story scenario 1.\relax }}{40}{figure.caption.22}% 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Example user story scenario 2.\relax }}{40}{figure.caption.23}% 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Example user story scenario 3.\relax }}{41}{figure.caption.24}% 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Example user story scenario 3.\relax }}{41}{figure.caption.25}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{49}{chapter.5}% 
+\contentsline {xchapter}{}{43}{chapter.5}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{53}{chapter.6}% 
+\contentsline {xchapter}{}{47}{chapter.6}% 
 \addvspace {10pt}
-\contentsline {xchapter}{}{67}{appendix.A}% 
+\contentsline {xchapter}{}{59}{appendix.A}% 
