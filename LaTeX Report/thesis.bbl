@@ -23,8 +23,8 @@
 
 \bibitem{gaming_relics}
 \BIBentryALTinterwordspacing
-{Nintendo}, ``Top selling title sales unit,'' 2020, [Online: accessed September
-  16, 2020]. [Online]. Available:
+{Nintendo}, ``Top selling title sales unit,'' 2020, [Accessed: September 16,
+  2020]. [Online]. Available:
   \url{https://www.nintendo.co.jp/ir/en/finance/software/ds.html}
 \BIBentrySTDinterwordspacing
 
@@ -36,7 +36,7 @@ A.~G{\'e}ron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
 \bibitem{py_ja_c++}
 \BIBentryALTinterwordspacing
 {Things Tech}, ``Which programming language to start with as a beginner,''
-  2020, [Online; accessed August 10th, 2020]. [Online]. Available:
+  2020, [Accessed: August 10, 2020]. [Online]. Available:
   \url{https://thingsteck.wordpress.com/}
 \BIBentrySTDinterwordspacing
 
@@ -57,9 +57,8 @@ Quora, ``What are the top 5 misconceptions surrounding artificial intelligence
 L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A.~Mueller, O.~Grisel,
   V.~Niculae, P.~Prettenhofer, A.~Gramfort, J.~Grobler, R.~Layton,
   J.~VanderPlas, A.~Joly, B.~Holt, and G.~Varoquaux, ``{API} design for machine
-  learning software: experiences from the scikit-learn project,'' in \emph{ECML
-  PKDD Workshop: Languages for Data Mining and Machine Learning}, 2013, pp.
-  108--122.
+  learning software: experiences from the scikit-learn project,'' in
+  \emph{Languages for Data Mining and Machine Learning}, 2013, pp. 108--122.
 
 \bibitem{tensorflow2015-whitepaper}
 \BIBentryALTinterwordspacing
@@ -70,7 +69,7 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
   F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
   X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
-  systems,'' 2015, software available from tensorflow.org. [Online]. Available:
+  systems,'' 2015, [Accessed: June 9, 2020]. [Online]. Available:
   \url{https://www.tensorflow.org/}
 \BIBentrySTDinterwordspacing
 
@@ -101,10 +100,9 @@ S.~Walz, in \emph{The Gameful World: Approaches, Issues, Applications}.\hskip
 \BIBentrySTDinterwordspacing
 
 \bibitem{5}
-\BIBentryALTinterwordspacing
-{Wikipedia}. (2020) Gamification. [Online]. Available:
-  \url{https://en.wikipedia.org/wiki/Gamification}
-\BIBentrySTDinterwordspacing
+K.~Robson, K.~Plangger, J.~H. Kietzmann, I.~McCarthy, and L.~Pitt, ``Is it all
+  a game? understanding the principles of gamification,'' \emph{Business
+  horizons}, vol.~58, no.~4, pp. 411--420, 2015.
 
 \bibitem{6}
 \BIBentryALTinterwordspacing
@@ -120,10 +118,7 @@ J.~McGonigal. (2010) Gaming can make a better world. [Online]. Available:
 \BIBentrySTDinterwordspacing
 
 \bibitem{11}
-\BIBentryALTinterwordspacing
-{Wikipedia}. (2020) Data aggregation. [Online]. Available:
-  \url{https://en.wikipedia.org/wiki/Data_aggregation}
-\BIBentrySTDinterwordspacing
+{Gamification Research Network}. (2020) About. [Accessed: June 8, 2020].
 
 \bibitem{8}
 \BIBentryALTinterwordspacing
@@ -133,10 +128,9 @@ R.~Swatman. (2016) Pokémon go catches five new world records. [Online].
 \BIBentrySTDinterwordspacing
 
 \bibitem{22}
-\BIBentryALTinterwordspacing
-{Wikipedia}. (2020) Gamification of learning. [Online]. Available:
-  \url{https://en.wikipedia.org/wiki/Gamification_of_learning}
-\BIBentrySTDinterwordspacing
+K.~M. Kapp, \emph{The gamification of learning and instruction: game-based
+  methods and strategies for training and education}.\hskip 1em plus 0.5em
+  minus 0.4em\relax John Wiley \& Sons, 2012.
 
 \bibitem{24}
 \BIBentryALTinterwordspacing
@@ -245,21 +239,21 @@ L.~Mazzanti, S.~Doutreligne, C.~Gageat, P.~Derreumaux, A.~Taly, M.~Baaden, and
 
 \bibitem{27}
 \BIBentryALTinterwordspacing
-M.~Doyle. (2014) Learning with simcity: Valuable lessons kids can learn playing
-  mayor. [Online]. Available:
+M.~Doyle, ``Learning with simcity: Valuable lessons kids can learn playing
+  mayor,'' 2014, [Accessed: June 10, 2020]. [Online]. Available:
   \url{https://www.brightpips.com/learning-simcity-valuable-lessons-kids-learn-playing-mayor/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{my_maths}
 \BIBentryALTinterwordspacing
-{My Maths}, ``My maths,'' 2020, 15/08/20. [Online]. Available:
-  \url{https://riverbankcomputing.com/software/pyqt/intro}
+{My Maths}, ``My maths,'' 2020, [Accessed: August 15, 2020]. [Online].
+  Available: \url{https://www.mymaths.co.uk/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bt_sales}
 \BIBentryALTinterwordspacing
-{Gaming Relics}, ``Mario is missing,'' 2020, [Online: accessed September 16,
-  2020]. [Online]. Available:
+{Gaming Relics}, ``Mario is missing,'' 2020, [Accessed: September 16, 2020].
+  [Online]. Available:
   \url{https://www.gamingrelics.com/image/cache/catalog/snes-cases/Mario%20is%20Missing-1280x800.jpg}
 \BIBentrySTDinterwordspacing
 
@@ -301,6 +295,15 @@ L.~Jenner, ``Brain training wins edge award,'' 2006, [Online: accessed
   \url{https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bishop2006pattern}
+C.~M. Bishop, \emph{Pattern recognition and machine learning}.\hskip 1em plus
+  0.5em minus 0.4em\relax springer, 2006.
+
+\bibitem{friedman2001elements}
+J.~Friedman, T.~Hastie, and R.~Tibshirani, \emph{The elements of statistical
+  learning}.\hskip 1em plus 0.5em minus 0.4em\relax Springer series in
+  statistics New York, 2001, vol.~1, no.~10.
+
 \bibitem{udemy}
 \BIBentryALTinterwordspacing
 {Udemy}. (2020) Improving lives through learning. [Online]. Available:
@@ -332,103 +335,111 @@ D.~Ku{\v{c}}ak, V.~Juri{\v{c}}i{\'c}, and G.~{\DJ}ambi{\'c}, ``Machine learning
 
 \bibitem{swift}
 \BIBentryALTinterwordspacing
-{Apple Inc.} (2020) Swift. [Online]. Available:
+{Apple Inc.}, ``Swift,'' 2020, [Accessed: August 9, 2020]. [Online]. Available:
   \url{https://developer.apple.com/documentation/swift}
 \BIBentrySTDinterwordspacing
 
 \bibitem{9to5mac}
 \BIBentryALTinterwordspacing
-M.~Potuck. (2020) Apple hits 1.5 billion active devices with ~80% of recent
-  iphones and ipads running ios 13. [Online]. Available:
+M.~Potuck, ``Apple hits 1.5 billion active devices with ~80% of recent iphones
+  and ipads running ios 13,'' 2020, [Accessed: August 9, 2020]. [Online].
+  Available:
   \url{https://9to5mac.com/2020/01/28/apple-hits-1-5-billion-active-devices-with-80-of-recent-iphones-and-ipads-running-ios-13/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{wired_python}
 \BIBentryALTinterwordspacing
-K.~Finley. (2020) Python is more popular than ever. [Online]. Available:
+K.~Finley, ``Python is more popular than ever,'' 2020, [Accessed: August 9,
+  2020]. [Online]. Available:
   \url{https://www.wired.com/story/python-language-more-popular-than-ever/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sof_dev_servay20}
 \BIBentryALTinterwordspacing
-B.~Popper. (2020) The 2020 developer survey results are here! [Online].
-  Available:
+B.~Popper, ``The 2020 developer survey results are here!'' 2020, [Accessed:
+  August 9, 2020]. [Online]. Available:
   \url{https://stackoverflow.blog/2020/05/27/2020-stack-overflow-developer-survey-results/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{hackr.io}
 \BIBentryALTinterwordspacing
-A.~Goel. (2020) Best programming language to learn in 2020 (for job and
-  future). [Online]. Available:
+A.~Goel, ``Best programming language to learn in 2020 (for job and future),''
+  2020, [Accessed: August 9, 2020]. [Online]. Available:
   \url{https://hackr.io/blog/best-programming-languages-to-learn-2020-jobs-future}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sto_cpython}
 \BIBentryALTinterwordspacing
-{Stack Overflow}. (2013) Python vs cpythony. [Online]. Available:
+{Stack Overflow}, ``Python vs cpythony,'' 2013, [Accessed: August 10, 2020].
+  [Online]. Available:
   \url{https://stackoverflow.com/questions/17130975/python-vs-cpython}
 \BIBentrySTDinterwordspacing
 
 \bibitem{python_desc}
 \BIBentryALTinterwordspacing
-{Python Software Foundation}. (2020) What is python? executive summary.
-  [Online]. Available: \url{https://www.python.org/doc/essays/blurb/}
+{Python Software Foundation}, ``What is python? executive summary,'' 2020,
+  [Accessed: August 9, 2020]. [Online]. Available:
+  \url{https://www.python.org/doc/essays/blurb/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{pyqt_rbc}
 \BIBentryALTinterwordspacing
-{Riverbank Computing}. (2020) What is pyqt? [Online]. Available:
-  \url{https://riverbankcomputing.com/software/pyqt/intro}
+{Riverbank Computing}, ``What is pyqt?'' 2020, [Accessed: August 11, 2020].
+  [Online]. Available: \url{https://riverbankcomputing.com/software/pyqt/intro}
 \BIBentrySTDinterwordspacing
 
 \bibitem{python_comparison}
 \BIBentryALTinterwordspacing
-{Python Software Foundation}. (2020) Comparing python to other languages.
-  [Online]. Available: \url{https://www.python.org/doc/essays/comparisons/}
+{Python Software Foundation}, ``Comparing python to other languages,'' 2020,
+  [Accessed: August 10, 2020]. [Online]. Available:
+  \url{https://www.python.org/doc/essays/comparisons/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{r_project}
 \BIBentryALTinterwordspacing
-{The R Foundation}. (2020) What is r? [Online]. Available:
-  \url{https://www.r-project.org/about.html}
+{The R Foundation}, ``What is r?'' 2020, [Accessed: August 9, 2020]. [Online].
+  Available: \url{https://www.r-project.org/about.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{r_vs_py}
 \BIBentryALTinterwordspacing
-{Guru 99}. (2020) R vs python: What’s the difference? [Online]. Available:
+{Guru 99}, ``R vs python: What’s the difference?'' 2020, [Accessed: August
+  10, 2020]. [Online]. Available:
   \url{https://www.guru99.com/r-vs-python.html#:~:text=New%20libraries%20or%20tools%20are,general%20approach%20to%20data%20science.&text=Python%20is%20a%20general%2Dpurpose,and%20encompasses%20their%20specific%20language.}
 \BIBentrySTDinterwordspacing
 
 \bibitem{securitytoday}
 \BIBentryALTinterwordspacing
-G.~D. Maayan. (2020) The iot rundown for 2020: Stats, risks, and solutions.
-  [Online]. Available:
+G.~D. Maayan, ``The iot rundown for 2020: Stats, risks, and solutions,'' 2020,
+  [Accessed: August 11, 2020]. [Online]. Available:
   \url{https://securitytoday.com/Articles/2020/01/13/The-IoT-Rundown-for-2020.aspx?Page=1}
 \BIBentrySTDinterwordspacing
 
 \bibitem{statista_iot}
 \BIBentryALTinterwordspacing
-{Statista}. (2020) Internet of things (iot) connected devices installed base
-  worldwide from 2015 to 2025. [Online]. Available:
+{Statista}, ``Internet of things (iot) connected devices installed base
+  worldwide from 2015 to 2025,'' 2020, [Accessed: August 11, 2020]. [Online].
+  Available:
   \url{https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{web_foundation}
 \BIBentryALTinterwordspacing
-{World Wide Web Foundation}. (2020) History of the web. [Online]. Available:
+{World Wide Web Foundation}, ``History of the web,'' 2020, [Accessed: August
+  11, 2020]. [Online]. Available:
   \url{https://webfoundation.org/about/vision/history-of-the-web/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{js_springboard}
 \BIBentryALTinterwordspacing
-T.~DeGroat. (2019) The history of javascript: Everything you need to know.
-  [Online]. Available:
+T.~DeGroat, ``The history of javascript: Everything you need to know,'' 2019,
+  [Accessed: August 11, 2020]. [Online]. Available:
   \url{https://www.springboard.com/blog/history-of-javascript/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{pygame_wiki}
 \BIBentryALTinterwordspacing
-{Pygame}. (2020) About. [Online]. Available:
+{Pygame}. (2020) About. [Accessed: August 11, 2020]. [Online]. Available:
   \url{https://www.pygame.org/wiki/about}
 \BIBentrySTDinterwordspacing
 

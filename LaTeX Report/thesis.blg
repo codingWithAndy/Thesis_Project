@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: IEEEtran.bst
-White space in argument---line 239 of file thesis.aux
+White space in argument---line 241 of file thesis.aux
  : \citation{list
  :                exam boards here}
 I'm skipping whatever remains of this command
@@ -12,9 +12,12 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
+I was expecting a `,' or a `}'---line 596 of file citations.bib
+ :  
+ :  url                      = {http://gamification-research.org/about/},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "handson_book"
-Warning--I didn't find a database entry for "jason_lectures_LDA"
-Warning--I didn't find a database entry for "jason_lectures_PCA"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -24,45 +27,45 @@ Warning--empty title in 4
 Warning--empty booktitle in 10seriousrules
 
 Done.
-You've used 74 entries,
+You've used 76 entries,
             4087 wiz_defined-function locations,
-            1170 strings with 20077 characters,
-and the built_in function-call counts, 37586 in all, are:
-= -- 2985
-> -- 834
-< -- 146
-+ -- 428
-- -- 180
-* -- 1473
-:= -- 6325
-add.period$ -- 152
-call.type$ -- 74
-change.case$ -- 76
-chr.to.int$ -- 288
-cite$ -- 78
-duplicate$ -- 2842
-empty$ -- 3275
-format.name$ -- 201
-if$ -- 8512
+            1183 strings with 20514 characters,
+and the built_in function-call counts, 40112 in all, are:
+= -- 3231
+> -- 876
+< -- 159
++ -- 450
+- -- 188
+* -- 1655
+:= -- 6747
+add.period$ -- 158
+call.type$ -- 76
+change.case$ -- 93
+chr.to.int$ -- 312
+cite$ -- 80
+duplicate$ -- 3050
+empty$ -- 3469
+format.name$ -- 211
+if$ -- 9096
 int.to.chr$ -- 0
-int.to.str$ -- 74
-missing$ -- 636
+int.to.str$ -- 76
+missing$ -- 671
 newline$ -- 337
-num.names$ -- 74
-pop$ -- 1747
+num.names$ -- 76
+pop$ -- 1780
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2958
+skip$ -- 3156
 stack$ -- 0
-substring$ -- 750
-swap$ -- 2038
-text.length$ -- 50
+substring$ -- 859
+swap$ -- 2159
+text.length$ -- 55
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 74
+type$ -- 76
 warning$ -- 4
-while$ -- 135
-width$ -- 76
-write$ -- 756
-(There was 1 error message)
+while$ -- 141
+width$ -- 78
+write$ -- 785
+(There were 2 error messages)
