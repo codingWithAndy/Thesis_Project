@@ -5,11 +5,9 @@
 	
 	\subsection{Programming Languages}
 	
-	For the implementation of our application, three primary programming languages deemed to be best suited for development. Apple's Swift programming language \cite{swift} got considered early on, due to the author's familiarisation with the programming language. The programming language gets used for creating applications for Apple's mobile and desktop operating systems, and with 1.5 billion \cite{9to5mac} iOS devices in circulation, that was a lot of potential users. Additionally, Apple's iOS devices are prevalent within most educational settings, with Apple's iPad being one of the primary go-to devices. However, due to the language not supporting key frameworks required, or providing similar alternatives, the decision to not use this language got made. 
+	For the implementation of our application, three primary programming languages deemed to be best suited for development. Apple's Swift programming language \cite{swift} got considered early on, due to the author's familiarisation with the programming language. The programming language gets used for creating applications for Apple's mobile and desktop operating systems, and with 1.5 billion \cite{9to5mac} iOS devices in circulation, that was a lot of potential users. Additionally, Apple's iOS devices are prevalent within most educational settings, with Apple's iPad being one of the primary go-to devices. However, due to the language not supporting key frameworks required, or providing similar alternatives, the decision to not use this language got made. We then got presented with three main options to use, Python, R and HTML, CSS and JavaScript.
 	
-	We then got presented with three main options to use, Python, R and HTML, CSS and JavaScript.
-	
-	Python is a very popular programming language \cite{wired_python, sof_dev_servay20}, it is fast, easy-to-use, and easy-to-deploy programming language that gets widely used to develop scalable applications. Examples include YouTube, Instagram, Pinterest and SurveyMonkey \cite{hackr.io}. The Python Software Foundation state that Python is a high-level, object-orientated (OOP), interpreted language with dynamic semantics. Due to the language being a high-level, it has many built-in data structures. These features, along with the dynamic typing and dynamic binding together make Python attractive to development teams working in a Rapid Application Development (RAD). As Python is an extracted level above the C language \cite{sto_cpython}, Python can get used as the glue that connects existing components, as well as being able to be used as a scripting language \cite{python_desc}. Python gets considered to be easy to learn the language due to its high readability and is recommended by many exam boards as the language to use for teaching Computer Science at GCSE and A-Level level \cite{list exam boards here}. Python's simple and easy to learn syntax emphasises on readability, which, as a result, reduces the cost of program maintenance \cite{python_desc, pyqt_rbc}. 
+	Python is a very popular programming language \cite{wired_python, sof_dev_servay20}, it is fast, easy-to-use, and easy-to-deploy programming language that gets widely used to develop scalable applications. Examples include YouTube, Instagram, Pinterest and SurveyMonkey \cite{hackr.io}. The Python Software Foundation state that Python is a high-level, object-orientated (OOP), interpreted language with dynamic semantics. Due to the language being a high-level, it has many built-in data structures. These features, along with the dynamic typing and dynamic binding together make Python attractive to development teams working in a Rapid Application Development (RAD). As Python is an extracted level above the C language \cite{sto_cpython}, Python can get used as the glue that connects existing components, as well as being able to be used as a scripting language \cite{python_desc}. Python gets considered to be easy to learn the language due to its high readability and is recommended by many exam boards as the language to use for teaching Computer Science at GCSE and A-Level level. Python's simple and easy to learn syntax emphasises on readability, which, as a result, reduces the cost of program maintenance \cite{python_desc, pyqt_rbc}. 
 	
 	Python gets compared to a lot of other languages. However, due to the requirements and expectations of the application, we will compare it to other similar style applications that can potentially do a similar job. These being Java, JavaScript and C++. In general, the choice of the programming language to use is many other real-world constraints, for example, financial cost, availability, training and even personal preferences and attachments. However, we will focus on language issues for the comparisons.
 	
@@ -98,11 +96,11 @@
 	\section{Intricacies of the Game Components}
 	\label{sec:gaem_intricacies}
 	
-	\subsection{Controller Class}
+	%\subsection{Controller Class}
 	
 	
 	
-	\subsection{Gameplay Area}
+	\subsection{Gameplay Zone}
 		
 		The Game Zone area is the main area where the gamification and game mechanics for the models get implemented.  The models that have been implemented and found within this area are K-Means and Linear Regression. These both have the same game mode style, for linear regression, it is to fit the data point on the decision line, and K-Means is to place the data point as close to the centroid of a cluster as possible. 
 		
@@ -115,7 +113,7 @@
 		The game mode has a default of three rounds, with each round being a random model and data set for the available models. Each round ends when the players have made four moves each, with each round creating individual scores. A message box will appear displaying the results to that round, with each rounds scores getting added to an overall game score. This score will always get displayed to the player in the top right area of the screen. Once the game is over, another message box will appear, giving an overview of the overall game and then returning the player to the main menu.
 	
 	
-	\subsection{Learning Zone Area}
+	\subsection{Learning Zone}
 	
 		The Learning Zone (LZ) area is an area that we intend to allow the user to do most of the learning. The LZ, in terms of UI, is very basic. It has a web browser window and three buttons. The web browser window is where the HTML and CSS documents, which the created web documents, get displayed within the application. 
 	
@@ -145,7 +143,7 @@
 	
 		The Quiz area is an additional area to the learning zone. The Quiz area is where the user can get tested on what they learned in the LZ area, in the form of a multiple-choice quiz. When the user is viewing a topic on the LZ, and they decide to take a quiz, the user will click on the quiz button, and this will read the title tags of the HTML document and open the required quiz. The quiz questions and answers are within their text file, and the name of the file matches the title tag's content. The text file itself holds the information in the format of a 2D array, that has the question at position zero, the answer at position one and then position 2 to 5 are the multiple-choice options. This information from the text file populates a question label and four buttons, allowing the user to click what button they think is the answer. The total of correct answers get added up and displayed to the user at the end in a message box.
 	
-	\subsection{Free Play Area}
+	\subsection{Free Play}
 	
 		The Free Play (FP) zone is an area where the user gets to interact and play with different ML models. The models include Linear Regression, K-Means, Neural Networks, Linear Discriminant Analysis, Gaussian Mixture Models and SVM. The intension for the FP zone was to have all the models explained in the learning zone be available for the player to interact with, so it could help them fully understand how the model works by allowing the user to manipulate parameters and data points. However, due to time restrictions, there are only six models available, with 5 of the models having real interactivity but to different degrees.
 		
@@ -173,8 +171,6 @@
 		
 		When K-Means gets selected (see fig: \ref{fig:km_example}), both the attributes and parameters group boxes have information and selection options displayed to the user. The attributes group box displays the information for Inertia, the number of iterations that got performed fitting the data, prediction, which relies on the user to click within the Matplotlib widget and the X and y coordinates get displayed along with a cluster prediction label in the output label. There is also a distance from the centroid value displayed, and this value got achieved by using the SKLearn Metrics library. The model parameters group box displays multiple line edits and a combo box that allows the user to input values to the model. These will alter the K-Means k value (number of clusters), the number of initialisers, the max number of iterations and the underlying algorithm (auto, full or Elkan), that gets used.  The k value is independent of the number of clusters in the data options, so they do not impact on each other. Allowing the k value to be changed independently will allow the user to be able to experiment with the model to see how two, three or other k values affect the prediction, even when known that the data may have, for example, five different clusters. K-Means also brings up an additional option, and this is to be able to switch on and off the centres of the clusters. When the checkbox gets enabled, this will lay on top of the data points an 'X' where each of the cluster centres is and when it is disabled, it will remove the 'X'.
 		
-	
-		[NN Att no. of layers/ neurons -> params set the values. Not implemented in-app yet!]
 		
 		\begin{figure}[t]
 			\begin{center}
@@ -215,13 +211,13 @@
 	\end{figure}
 	
 	
-	\subsection{Achievements Area}
+	\subsection{Awards Zone}
 	
-	The intensions for the Achievement Area was displaying to the user all of the gamification badges available. Providing an overview and hits on how to unlock them. The achievements were going to have a bronze, silver and gold level, and we planned to be unlocked once the user had completed specific tasks like playing the game three times or completing a quiz. However, due to time limitation, this was not possible, and the application, as it currently stands, displays a coming soon image and button for the user to navigate back to the main menu.
+	The intensions for the awards zone achievement area was displaying to the user all of the gamification badges available. Providing an overview and hits on how to unlock them. The achievements were going to have a bronze, silver and gold level, and we planned to be unlocked once the user had completed specific tasks like playing the game three times or completing a quiz. However, due to time limitation, this was not possible, and the application, as it currently stands, displays a coming soon image and button for the user to navigate back to the main menu.
 	
 	
 
-	\section{Example User Stories (A UML term for case studies or example playthroughs)}
+	\section{Example User Stories}
 	\label{sec:user_stories}
 	
 		
@@ -242,7 +238,7 @@
 	
 	\begin{figure}[b]
 		\begin{center}
-			\includegraphics[width=8cm]{graphics/fp_us_example.png}
+			\includegraphics[width=11cm]{graphics/fp_us_example.png}
 			\caption{Example user story scenario 3.}
 			\label{fig:user_story_3}
 		\end{center}

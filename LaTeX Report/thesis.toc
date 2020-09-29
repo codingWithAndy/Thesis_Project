@@ -35,10 +35,10 @@
 \contentsline {section}{\numberline {3.1}Overview of Application}{21}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Overview of Specific Game Components}{22}{section.3.2}% 
 \contentsline {subsection}{\numberline {3.2.1}Main Menu \& Modular Design}{22}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Game Arena}{22}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.2}Game Zone}{22}{subsection.3.2.2}% 
 \contentsline {subsection}{\numberline {3.2.3}Learning Zone}{23}{subsection.3.2.3}% 
 \contentsline {subsection}{\numberline {3.2.4}Free Play}{24}{subsection.3.2.4}% 
-\contentsline {subsection}{\numberline {3.2.5}Awards Zone}{25}{subsection.3.2.5}% 
+\contentsline {subsection}{\numberline {3.2.5}Awards Zone}{26}{subsection.3.2.5}% 
 \contentsline {section}{\numberline {3.3}Evaluation of Application}{26}{section.3.3}% 
 \contentsline {chapter}{\chapternumberline {4}Methodolgy and Implementation}{27}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Tools}{27}{section.4.1}% 
@@ -48,20 +48,19 @@
 \contentsline {section}{\numberline {4.3}Packages}{31}{section.4.3}% 
 \contentsline {section}{\numberline {4.4}IDE}{32}{section.4.4}% 
 \contentsline {section}{\numberline {4.5}Intricacies of the Game Components}{33}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Controller Class}{33}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Gameplay Area}{33}{subsection.4.5.2}% 
-\contentsline {subsection}{\numberline {4.5.3}Learning Zone Area}{34}{subsection.4.5.3}% 
-\contentsline {subsection}{\numberline {4.5.4}Free Play Area}{36}{subsection.4.5.4}% 
-\contentsline {subsection}{\numberline {4.5.5}Achievements Area}{39}{subsection.4.5.5}% 
-\contentsline {section}{\numberline {4.6}Example User Stories (A UML term for case studies or example playthroughs)}{40}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.5.1}Gameplay Zone}{33}{subsection.4.5.1}% 
+\contentsline {subsection}{\numberline {4.5.2}Learning Zone}{34}{subsection.4.5.2}% 
+\contentsline {subsection}{\numberline {4.5.3}Free Play}{35}{subsection.4.5.3}% 
+\contentsline {subsection}{\numberline {4.5.4}Awards Zone}{39}{subsection.4.5.4}% 
+\contentsline {section}{\numberline {4.6}Example User Stories}{40}{section.4.6}% 
 \contentsline {chapter}{\chapternumberline {5}Evaluation}{43}{chapter.5}% 
 \contentsline {section}{\numberline {5.1}Evaluation of User Study and Approach}{43}{section.5.1}% 
 \contentsline {chapter}{\chapternumberline {6}Conclusion \& Discussion}{47}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Reflection on the application}{47}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Reflection on the evaluation}{48}{section.6.2}% 
+\contentsline {section}{\numberline {6.1}Reflection on the Application}{47}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Reflection on the Evaluation}{48}{section.6.2}% 
 \contentsline {section}{\numberline {6.3}Reflection of the Project Development}{49}{section.6.3}% 
 \contentsline {section}{\numberline {6.4}Future Work}{50}{section.6.4}% 
-\contentsline {section}{\numberline {6.5}Summary and closing comments}{51}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}Summary \& Closing Comments}{51}{section.6.5}% 
 \contentsline {chapter}{Bibliography}{53}{chapter*.28}% 
-\contentsline {chapter}{Appendices}{58}{section*.29}% 
-\contentsline {appendix}{\chapternumberline {A}User Study Questionnaire}{59}{appendix.A}% 
+\contentsline {chapter}{Appendices}{59}{section*.29}% 
+\contentsline {appendix}{\chapternumberline {A}User Study Questionnaire}{61}{appendix.A}% 

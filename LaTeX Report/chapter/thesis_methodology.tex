@@ -23,10 +23,6 @@
 	%	\label{fig:ui_screens}
 	%\end{figure}
 	
-	
-	
-		
-		
 		
 	\section{Overview of Specific Game Components}
 		\label{sec:overview_game_components}
@@ -47,7 +43,7 @@
 	The application got designed in a modular way, by creating the application this way allowed for code to be reusable, especially in regards to the machine learning models. Therefore allowing the game area and the free play zone to be able to use the same models, as well as use the same functions. However, these functions work differently based on the model that gets selected. 
 	
 		
-	\subsection{Game Arena}
+	\subsection{Game Zone}
 	
 		The 'Game Zone' was the critical area that intended to use game mechanics, and gamification, to help drive the learning of the different machine learning models. The game zone is an area that allows one on one (player vs player) game action. The game gets conducted over three rounds, with each game round having a random model generated for the players to interact. At the time of writing this report, the available models for the game zone are Linear Regression and K-Means. A Neural Network got implemented with game mechanics, but due to time restrictions, we were unable to add them to the application in time. As the research suggested, having a competitive nature to the game creates desired external motivation for the player to learn more about the ML models, to be able to have a better chance of winning. A running score is presented to the players to let them know who won the previous round and who is currently winning. The multiple forms of game stats allow the players to have an idea of what is needed to win the game potentially through using sport like game mechanics to add the layer of progress updates continuously, to create that sense of competitiveness and external motivation. Even though there were only two models implemented fully into the game, these models offered several different gaming outcomes. For example, each model had multiple datasets which would get selected at random. In terms of K-Means, a random dataset would get generated each time or a preselected dataset, but the k value would change and be a random number. So even though the dataset was a k value of 2, the challenge would be added by not knowing what k value was given to the model for the user to predict the centroid value. 
 		
@@ -64,6 +60,7 @@
 		
 		With having multiple models available, as well as getting the models and their datasets randomly selected each time, this allows the game to feel fresh each time and not have a set pattern of motions. Therefore, by creating a sense of game mode uncertainty or randomness will keep things fresh. Thus, ultimately making sure that a critical mechanic of gamification, which is replayability, be achieved.  
 		
+		The design of the game area (see fig: \ref{fig:ui_ga}) did have some minor changes. However, these changes came at a later date. When the capability of the area expanded, for the players, it got realised that additional information got required. Therefore to accommodate these changes, a slight redesign got carried out. A banner got also added to add consistency between the screens.
 	
 	\subsection{Learning Zone}
 	
@@ -72,6 +69,10 @@
 	With the teaching and learning getting conducted through text and images on the webpages, we decided to add a quiz. The quiz was to allow the user to assess how much they have learnt. A useful tool used by teachers to evaluate students learning is different questioning techniques. In an attempt to allow the users to test their subject knowledge, but keeping everything in a game-like manner, a quiz was implemented. The quiz, with not only challenging the user but also offers an overall score allowing the user to know how they did and will enable a form of competition to happen and also let the use sense a way of progression by observing their performance improving.
 	
 	An option available to the user is not only to quiz themself but also to have the ability to go straight to the Free Play area. When the user selected this option, the model that the user has been learning about will be preloaded into the screen, allowing them to be able to interact with it. We decided to do this as although you can learn a lot about a topic by reading about it, an effective way to truly learn about something is to be able to interact with it and see what is happening by, in essence, trying to break it in a sort of way.
+	
+	There were intentions for the Learning Zone to also provide example code for the user, after specific gamification actions, for example getting full marks in the quiz, were completed as bonus rewards. The intention of this was to allow the users to not only learn about the code but also see the code, to help see the mechanics in it. However, due to time restrictions and certain gamification features not being implemented, this additional feature did not get added at this point.
+	
+	The design of the learning zone stayed the same (see fig \ref{fig:ui_lz}). The button sizes changed, from what got initially designed, to keep consistency throughout the application, but the layout and asset locations are within the same areas.
 	
 	\begin{figure}[t]
 		\begin{center}
@@ -97,6 +98,10 @@
 	
 	There were intentions for the Learning Zone to also provide example code for the user, after specific gamification actions, for example getting full marks in the quiz, were completed as bonus rewards. The intention of this was to allow the users to not only learn about the code but also see the code, to help see the mechanics in it. However, due to time restrictions and certain gamification features not being implemented, this additional feature was not added at this point.
 	
+	The models had three data settings, a custom one and two pre-generated datasets. The pre-generated data sets allow the user to be able to change the features that are used, assigning news features to the X and y-axis.
+	
+	We can see from the design to the final UI of the free play area (see fig: \ref{fig:ui_fp}) that the designed stayed very close to what got initially envisioned. However, some colours did change, and a banner got added for consistency between the screens.
+	
 	
 	
 	\subsection{Awards Zone}
@@ -112,7 +117,7 @@
 	
 	The achievement area has just a title, coming soon image and a button. Once the button gets pressed, it will return the player to the main menu. This area intention was to be the central hub of where all the gamification elements of badge unlock and progress, would be displayed to the user, giving them instant feedback on unlocked prizes and game modes,  as well as hints on what to do to unlock additional features. However, due to time restrictions, this was unable to be implemented within the application. The idea was to allow the users to see how or what affects the models, from little changes to significant changes like changing the number of clusters in k-Means or the main algorithm being used to fit the clustering data. The intention was to allow the user to get hands-on with the different models, to see what they have learnt from the learning zone in motion, and also try out strategies for the game zone. 
 	
-	The models had three data settings, a custom one and two pre-generated datasets. The pre-generated data sets allow the user to be able to change the features that are used, assigning news features to the X and y-axis.
+	As we can see from the initial design (see fig: \ref{fig:ui_az}), due to unforeseen time restrictions, this area's design idea changed dramatically to what got designed.
 	
 			
 	\section{Evaluation of Application}
