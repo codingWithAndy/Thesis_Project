@@ -15,7 +15,7 @@ from sklearn.datasets import make_moons
 from sklearn.cluster  import KMeans
 
 from sklearn.metrics.pairwise           import euclidean_distances
-from sklearn.datasets.samples_generator import make_blobs
+from sklearn.datasets                   import make_blobs
 
 matplotlib.use('Qt5Agg')
 
